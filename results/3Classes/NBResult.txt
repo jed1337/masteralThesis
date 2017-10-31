@@ -1,0 +1,20 @@
+=== Summary of NB===
+Correctly Classified Instances        8783               87.83   %
+Incorrectly Classified Instances      1217               12.17   %
+Kappa statistic                          0.8143
+Mean absolute error                      0.081 
+Root mean squared error                  0.2825
+Relative absolute error                 19.4367 %
+Root relative squared error             61.8836 %
+Total Number of Instances            10000     
+=== Detailed Accuracy By Class ===
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.009    0.975      1.000    0.987      0.983    0.997     0.985     neptune
+                 1.000    0.153    0.685      1.000    0.813      0.761    0.992     0.955     smurf
+                 0.757    0.000    0.999      0.757    0.861      0.780    0.997     0.997     normal
+Weighted Avg.    0.878    0.041    0.915      0.878    0.881      0.826    0.996     0.984     
+=== Confusion Matrix ===
+    a    b    c   <-- classified as
+ 2499    0    1 |    a = neptune
+    0 2499    1 |    b = smurf
+   64 1151 3785 |    c = normal

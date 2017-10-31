@@ -1,0 +1,20 @@
+=== Summary of KNN===
+Correctly Classified Instances        9991               99.91   %
+Incorrectly Classified Instances         9                0.09   %
+Kappa statistic                          0.9986
+Mean absolute error                      0.0007
+Root mean squared error                  0.0245
+Relative absolute error                  0.179  %
+Root relative squared error              5.3658 %
+Total Number of Instances            10000     
+=== Detailed Accuracy By Class ===
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      0.999    1.000     0.999     neptune
+                 0.999    0.001    0.998      0.999    0.999      0.998    0.999     0.998     smurf
+                 0.999    0.001    0.999      0.999    0.999      0.998    0.999     0.999     normal
+Weighted Avg.    0.999    0.001    0.999      0.999    0.999      0.999    0.999     0.999     
+=== Confusion Matrix ===
+    a    b    c   <-- classified as
+ 2499    0    1 |    a = neptune
+    0 2497    3 |    b = smurf
+    1    4 4995 |    c = normal

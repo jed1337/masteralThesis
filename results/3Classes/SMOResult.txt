@@ -1,0 +1,20 @@
+=== Summary of SMO===
+Correctly Classified Instances        9984               99.84   %
+Incorrectly Classified Instances        16                0.16   %
+Kappa statistic                          0.9974
+Mean absolute error                      0.2226
+Root mean squared error                  0.2728
+Relative absolute error                 53.4175 %
+Root relative squared error             59.7714 %
+Total Number of Instances            10000     
+=== Detailed Accuracy By Class ===
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.001    0.998      1.000    0.999      0.999    1.000     0.998     neptune
+                 1.000    0.001    0.996      1.000    0.998      0.997    0.999     0.996     smurf
+                 0.997    0.000    1.000      0.997    0.998      0.997    0.998     0.998     normal
+Weighted Avg.    0.998    0.001    0.998      0.998    0.998      0.997    0.999     0.998     
+=== Confusion Matrix ===
+    a    b    c   <-- classified as
+ 2499    0    1 |    a = neptune
+    0 2499    1 |    b = smurf
+    4   10 4986 |    c = normal

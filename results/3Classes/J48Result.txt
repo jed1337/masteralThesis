@@ -1,0 +1,20 @@
+=== Summary of J48===
+Correctly Classified Instances        9985               99.85   %
+Incorrectly Classified Instances        15                0.15   %
+Kappa statistic                          0.9976
+Mean absolute error                      0.0014
+Root mean squared error                  0.0315
+Relative absolute error                  0.3359 %
+Root relative squared error              6.9072 %
+Total Number of Instances            10000     
+=== Detailed Accuracy By Class ===
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.998    0.001    0.996      0.998    0.997      0.996    0.998     0.991     neptune
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     smurf
+                 0.998    0.001    0.999      0.998    0.998      0.997    0.998     0.998     normal
+Weighted Avg.    0.999    0.001    0.999      0.999    0.999      0.998    0.999     0.997     
+=== Confusion Matrix ===
+    a    b    c   <-- classified as
+ 2495    0    5 |    a = neptune
+    0 2500    0 |    b = smurf
+   10    0 4990 |    c = normal
