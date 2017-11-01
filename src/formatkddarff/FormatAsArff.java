@@ -1,13 +1,13 @@
 package formatkddarff;
 
-import java.io.File;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.converters.ArffSaver;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.StringToNominal;
@@ -15,13 +15,23 @@ import weka.filters.unsupervised.instance.Randomize;
 
 public class FormatAsArff extends Format{
    private Instances instances;
+   
+   private String folderPath="";
+   private String fileName="";
 
    public FormatAsArff(Instances instances) {
       this.instances = instances;
    }
 
    public FormatAsArff(String path) throws FileNotFoundException, IOException {
-      this.instances = Utils.getInstances(path);
+      this(path.substring(0, path.lastIndexOf("/")),
+           path.substring(path.lastIndexOf("/")+1)
+      );
+   }
+   
+   public FormatAsArff(String initFolderPath, String initPath) throws FileNotFoundException, IOException {
+      this.fileName = initPath;
+      this.instances = Utils.getInstances(initFolderPath+initPath);
    }
 
    public Instances getInstances() {
@@ -120,12 +130,23 @@ public class FormatAsArff extends Format{
       filter.setInputFormat(instances);
       this.instances = Filter.useFilter(instances, filter);
    }
+   
+   public void writeArffInstances() throws IOException{
+      writeArffInstances(this.folderPath+this.fileName);
+   }
 
-   public void writeArffInstances(String saveFilename) throws IOException {
-      super.setSaveFileName(saveFilename);
-      ArffSaver saver = new ArffSaver();
-      saver.setInstances(instances);
-      saver.setFile(new File(saveFilename));
-      saver.writeBatch();//System.out.println(instNew);
+   public void writeArffInstances(String saveFileName) throws IOException {
+      writeArffInstances(saveFileName.substring(0, saveFileName.lastIndexOf("/")),
+           saveFileName.substring(saveFileName.lastIndexOf("/")+1)
+      );
+   }
+   
+   public void writeArffInstances(String folderPath, String fileName) throws IOException {
+      super.setSaveFileName(folderPath+fileName);
+      
+      BufferedWriter writer = new BufferedWriter(new FileWriter(folderPath+fileName));
+      writer.write(this.instances.toString());
+      writer.flush();
+      writer.close();
    }
 }
