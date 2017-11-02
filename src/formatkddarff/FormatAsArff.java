@@ -3,7 +3,6 @@ package formatkddarff;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.filters.Filter;
@@ -19,16 +18,9 @@ public class FormatAsArff extends Format{
    }
 
    public FormatAsArff(String path) throws FileNotFoundException, IOException {
-//      this(path.substring(0, path.lastIndexOf("/")),
-//           path.substring(path.lastIndexOf("/")+1)
-//      );
       this.instances = UtilsInstances.getInstances(path);
    }
    
-//   public FormatAsArff(String folderPath, String fileName) throws FileNotFoundException, IOException {
-//      this.fileName = initPath;
-//   }
-
    public Instances getInstances() {
       return instances;
    }
@@ -65,7 +57,7 @@ public class FormatAsArff extends Format{
             attributeIndeces.add((index+1)+"");
          }
       }
-      removeAttributes(Utils.getArrayListString(attributeIndeces));
+      removeAttributes(String.join(",", attributeIndeces));
    }
 
    /**
@@ -87,31 +79,33 @@ public class FormatAsArff extends Format{
 
    public void removeNonMatchingClasses(String attributeName, String... classesToRetain) {
       removeNonMatchingClasses(
-              UtilsInstances.getAttributeIndex(instances, attributeName), 
-              new ArrayList<>(Arrays.asList(classesToRetain)));
+         UtilsInstances.getAttributeIndex(instances, attributeName), 
+         classesToRetain);
    }
 
-   public void removeNonMatchingClasses(String attributeName, ArrayList<String> classesToRetain) {
-      removeNonMatchingClasses(UtilsInstances.getAttributeIndex(instances, attributeName), classesToRetain);
-   }
-   
-   public void removeNonMatchingClasses(int attributeIndex, ArrayList<String> classesToRetain) {
+   public void removeNonMatchingClasses(int attributeIndex, String... classesToRetain) {
       // Iterate from last to first because when we remove an instance, the rest shifts by one position.
       for (int i = instances.numInstances() - 1; i >= 0; i--) {
          Instance inst = instances.get(i);
-         if(!classesToRetain.contains(inst.stringValue(attributeIndex))){
+         if(!arrayContains(classesToRetain, inst.stringValue(attributeIndex))){
             instances.delete(i);
          }
       }
    }
-   
-   //keepXInstances(isAttack, "neptune", 2500)
-   // keep only 2500 instances of neptune. Look for "neptune" in isAttack
+
+   /**
+    * keepXInstances("isAttack", "neptune", 2500)
+    * Keep only 2500 instances of "neptune" from "isAttack"
+    * @param attribute
+    * @param attributeValue
+    * @param toKeep
+    */
    public void keepXInstances(String attribute, String attributeValue, int toKeep){
       keepXInstances(UtilsInstances.getAttributeIndex(instances, attribute), 
                      attributeValue, 
                      toKeep);
    }
+   
    public void keepXInstances(int attributeIndex, String attributeValue, int toKeep){
       int cur = 0;
       
@@ -138,10 +132,4 @@ public class FormatAsArff extends Format{
       filter.setInputFormat(instances);
       this.instances = Filter.useFilter(instances, filter);
    }
-
-//   public void writeArffInstances(String saveFileName) throws IOException {
-//      super.setSaveFileName(saveFileName);
-//      
-//      Utils.writeFile(saveFileName, this.instances.toString(), false);
-//   }
 }
