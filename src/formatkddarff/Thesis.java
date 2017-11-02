@@ -18,7 +18,7 @@ public class Thesis{
    }
    
    private static HashMap<String, String> replaceAttribute(String attribute, ArrayList<String> toReplace){
-      return replaceAttribute(attribute, getArrayListString(toReplace));
+      return replaceAttribute(attribute, Utils.getArrayListString(toReplace));
    }
    
    private static HashMap<String, String> replaceAttribute(String attribute, String toReplace){
@@ -48,16 +48,6 @@ public class Thesis{
       return temp;
    }
 
-   private static String getArrayListString(ArrayList<String> strings) {
-      StringBuilder sb = new StringBuilder();
-      strings.forEach((string)->{
-         sb.append(string);
-         sb.append(",");
-      });
-      sb.deleteCharAt(sb.length()-1); //Delete the extra "," at the end
-      return sb.toString();
-   }
-
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
 //      final String FORMATTED_KDD_TEST               = FORMATTED_DIRECTORY+"FormattedKDDTest+.arff";
 //      final String FORMATTED_KDD_TEST_MINUS_21      = FORMATTED_DIRECTORY+"FormattedKDDTest-21.arff";
@@ -81,42 +71,59 @@ public class Thesis{
 
       final String SERVICES = "aol,auth,bgp,courier,csnet_ns,ctf,daytime,discard,domain,domain_u,echo,eco_i,ecr_i,efs,exec,finger,ftp,ftp_data,gopher,harvest,hostnames,http,http_2784,http_443,http_8001,imap4,IRC,iso_tsap,klogin,kshell,ldap,link,login,mtp,name,netbios_dgm,netbios_ns,netbios_ssn,netstat,nnsp,nntp,ntp_u,other,pm_dump,pop_2,pop_3,printer,private,red_i,remote_job,rje,shell,smtp,sql_net,ssh,sunrpc,supdup,systat,telnet,tftp_u,tim_i,time,urh_i,urp_i,uucp,uucp_path,vmnet,whois,X11,Z39_50";
       final String ALL_ATTACKS = "apache2,back,buffer_overflow,ftp_write,guess_passwd,httptunnel,imap,ipsweep,land,loadmodule,mailbomb,mscan,multihop,named,neptune,nmap,normal,perl,phf,pod,portsweep,processtable,ps,rootkit,saint,satan,sendmail,smurf,snmpgetattack,snmpguess,spy,sqlattack,teardrop,udpstorm,warezclient,warezmaster,worm,xlock,xsnoop,xterm";
+      final String[] featuresToRemove = {"land","hot","num_failed_logins","logged_in","num_compromised","root_shell","su_attempted","num_root","num_file_creations","num_shells","num_access_files","num_outbound_cmds","is_host_login","is_guest_login","difficulty"};
 
-      FormatAsArff fArff = new FormatAsArff(UNFORMATTED_DIR, KDD_TRAIN_20_Percent);
-      fArff.removeAttributes("7,10-22,last"); //Removes land; isRoot, etc features; difficulty
+      FormatAsArff fArff = new FormatAsArff(UNFORMATTED_DIR+KDD_TRAIN_20_Percent);
+      fArff.removeAttributes(featuresToRemove); //Removes land; isRoot, etc features; difficulty
       fArff.removeNonMatchingClasses("isAttack", HIGH_RATE_AND_NORMAL);
-      
       fArff.randomise(11);
-      fArff.removeNonMatchingClasses("isAttack", "normal");
+      fArff.removeNonMatchingClasses("isAttack", "normal", "neptune");
       fArff.keepXInstances("isAttack", "normal", 5000);
-      fArff.writeArffInstances(FORMATTED_DIR, KDD_TRAIN_20_Percent);
+      fArff.keepXInstances("isAttack", "neptune", 5000);
+      fArff.setSaveFileName(FORMATTED_DIR+KDD_TRAIN_20_Percent);
+//      fArff.writeArffInstances(FORMATTED_DIR, KDD_TRAIN_20_Percent);
+      
+      Utils.writeFile(
+         fArff.getSaveFileName(), 
+         fArff.getInstances().toString(), 
+         false);
 
       FormatAsText fText = new FormatAsText(fArff.getSaveFileName());
       fText.replaceAllStrings(
-        replaceAttribute("isAttack", "normal", "tcpFlood"),
+        replaceAttribute("isAttack", "normal", "neptune", "tcpFlood"),
         replaceAttribute("service", SERVICES)
       );
 
-      fArff = new FormatAsArff(UNFORMATTED_DIR, CNIS_HIGHRATE);
-      fArff.removeAttributes("7"); 
+      fArff = new FormatAsArff(UNFORMATTED_DIR+ CNIS_HIGHRATE);
+      fArff.removeAttributes(featuresToRemove); 
       fArff.randomise(11);
       fArff.keepXInstances("isAttack", "tcpFlood", 5000);
-      fArff.writeArffInstances(FORMATTED_DIR, CNIS_HIGHRATE);
+      fArff.setSaveFileName(FORMATTED_DIR+CNIS_HIGHRATE);
+//      fArff.writeArffInstances(FORMATTED_DIR, CNIS_HIGHRATE);
+      Utils.writeFile(
+         fArff.getSaveFileName(), 
+         fArff.getInstances().toString(), 
+         false);
 
       fText = new FormatAsText(fArff.getSaveFileName());
       fText.replaceAllStrings(
-        replaceAttribute("isAttack", "normal", "tcpFlood"),
+        replaceAttribute("isAttack", "normal", "neptune", "tcpFlood"),
         replaceAttribute("service", SERVICES)
       );
+      
+//      fText = new FormatAsText(FORMATTED_DIR+"Crossfold.arff");
+//      fText.clearFile();
+//      fText.addInstances(FORMATTED_DIR+CNIS_HIGHRATE,"");
+//      fText.addInstances(FORMATTED_DIR+KDD_TRAIN_20_Percent, "@data");
 
       //build model
-//      final String folderPath = "results/OnlyDoSandNormal/";
+//      final String folderPath = "results/NormalLowrateLoic/";
 //      
-//      Instances trainingSet = Utils.getInstances(FORMATTED_KDD_TRAIN_20_Percent);
+//      Instances trainingSet = UtilsInstances.getInstances(FORMATTED_DIR+"Crossfold.arff");
 //      trainingSet.setClassIndex(trainingSet.numAttributes()-1);
 //
-//      Instances testSet = Utils.getInstances(FORMATTED_KDD_TEST_MINUS_21);
-//      testSet.setClassIndex(testSet.numAttributes()-1);
+////      Instances testSet = Utils.getInstances(FORMATTED_KDD_TEST_MINUS_21);
+////      testSet.setClassIndex(testSet.numAttributes()-1);
 //
 //      ArrayList<ClassifierHolder> classifiers = new ArrayList<>();
 //      classifiers.add(new ClassifierHolder(new NaiveBayes(), trainingSet, "NB", folderPath));
@@ -126,9 +133,9 @@ public class Thesis{
 ////      classifiers.add(new ClassifierHolder(new MultilayerPerceptron(), instances, "MLP", "models/3Classes"));
 //
 //      for (ClassifierHolder ch : classifiers) {
-////         UtilsClssifiers.writeModel(ch);
-//         UtilsClssifiers.saveTestEvaluationToFile(ch, testSet);
-////         UtilsClssifiers.saveCrossValidationToFile(ch);
+//         UtilsClssifiers.writeModel(ch);
+////         UtilsClssifiers.saveTestEvaluationToFile(ch, testSet);
+//         UtilsClssifiers.saveCrossValidationToFile(ch, 10);
 ////         UtilsClssifiers.saveCrossValidationToFile(
 ////                 UtilsClssifiers.readModel(ch.getModelName()),
 ////                 instances,

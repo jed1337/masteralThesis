@@ -27,7 +27,7 @@
 @attribute dst_host_srv_serror_rate numeric
 @attribute dst_host_rerror_rate numeric
 @attribute dst_host_srv_rerror_rate numeric
-@attribute isAttack {normal,tcpFlood}
+@attribute isAttack {normal,neptune,tcpFlood}
 
 @data
 0,tcp,http,OTH,78,0,0,0,8908,8908,0,0,0,0,1,0,0,70,70,1,0,0.03,0,0,0,0,0,tcpFlood

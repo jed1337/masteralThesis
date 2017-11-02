@@ -1,8 +1,6 @@
 package formatkddarff;
 
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,23 +14,20 @@ import weka.filters.unsupervised.instance.Randomize;
 public class FormatAsArff extends Format{
    private Instances instances;
    
-   private String folderPath="";
-   private String fileName="";
-
    public FormatAsArff(Instances instances) {
       this.instances = instances;
    }
 
    public FormatAsArff(String path) throws FileNotFoundException, IOException {
-      this(path.substring(0, path.lastIndexOf("/")),
-           path.substring(path.lastIndexOf("/")+1)
-      );
+//      this(path.substring(0, path.lastIndexOf("/")),
+//           path.substring(path.lastIndexOf("/")+1)
+//      );
+      this.instances = UtilsInstances.getInstances(path);
    }
    
-   public FormatAsArff(String initFolderPath, String initPath) throws FileNotFoundException, IOException {
-      this.fileName = initPath;
-      this.instances = Utils.getInstances(initFolderPath+initPath);
-   }
+//   public FormatAsArff(String folderPath, String fileName) throws FileNotFoundException, IOException {
+//      this.fileName = initPath;
+//   }
 
    public Instances getInstances() {
       return instances;
@@ -61,18 +56,31 @@ public class FormatAsArff extends Format{
       rand.setRandomSeed(seed);
       useFilter(instances, rand);
    }
-
-   public void removeAttributes(String attributeIndeces) throws Exception {
-      removeAttributes(attributeIndeces, false);
+   
+   public void removeAttributes (String... attributeNames) throws Exception{
+      ArrayList<String> attributeIndeces = new ArrayList<>();
+      for (String attributeName : attributeNames) {
+         int index = UtilsInstances.getAttributeIndex(this.instances, attributeName);
+         if(index!=-1){
+            attributeIndeces.add((index+1)+"");
+         }
+      }
+      removeAttributes(Utils.getArrayListString(attributeIndeces));
    }
 
-   public void removeAttributes(String attributeIndeces, boolean isInverted)
+   /**
+    * Removes attributes (Starting at 1) from the instances
+    * @param attributeIndeces
+    * @throws FileNotFoundException
+    * @throws IOException
+    * @throws Exception
+    */
+   public void removeAttributes(String attributeIndeces)
            throws FileNotFoundException, IOException, Exception {
       Remove remove;
 
       remove = new Remove();
       remove.setAttributeIndices(attributeIndeces);
-      remove.setInvertSelection(isInverted);
       
       useFilter(instances, remove);
    }
@@ -130,23 +138,10 @@ public class FormatAsArff extends Format{
       filter.setInputFormat(instances);
       this.instances = Filter.useFilter(instances, filter);
    }
-   
-   public void writeArffInstances() throws IOException{
-      writeArffInstances(this.folderPath+this.fileName);
-   }
 
-   public void writeArffInstances(String saveFileName) throws IOException {
-      writeArffInstances(saveFileName.substring(0, saveFileName.lastIndexOf("/")),
-           saveFileName.substring(saveFileName.lastIndexOf("/")+1)
-      );
-   }
-   
-   public void writeArffInstances(String folderPath, String fileName) throws IOException {
-      super.setSaveFileName(folderPath+fileName);
-      
-      BufferedWriter writer = new BufferedWriter(new FileWriter(folderPath+fileName));
-      writer.write(this.instances.toString());
-      writer.flush();
-      writer.close();
-   }
+//   public void writeArffInstances(String saveFileName) throws IOException {
+//      super.setSaveFileName(saveFileName);
+//      
+//      Utils.writeFile(saveFileName, this.instances.toString(), false);
+//   }
 }

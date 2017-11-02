@@ -13,25 +13,42 @@ public class FormatAsText extends Format{
       this.path = path;
    }
 
+   /**
+    * Adds instances to the file in @param addToPath
+    * @param addToPath The relative path from the NB folder to check
+    * @param delimiter The String to look for (e.g. @data). Skip that then add lines.
+    * If the delimiter is empty (""), this function will add all lines to path
+    * @throws IOException
+    */
    public void addInstances(String addToPath, String delimiter) throws IOException {
       StringBuilder sb = new StringBuilder();
 
       try (BufferedReader br = Utils.getBufferedReader(addToPath)) {
          String line;
-         boolean passedData = false;
+         
+//       passedDelimiter is true if the delimiter's empty
+         boolean passedDelimiter = false || delimiter.isEmpty();
 
          while ((line = br.readLine()) != null) {
-            if (line.startsWith(delimiter)) {
-               passedData = true;
+            if (!passedDelimiter && line.startsWith(delimiter)) {
+               passedDelimiter = true;
                continue; //Skip this afterwards so that it's not added
             }
-            if (passedData) {
+            if (passedDelimiter) {
                sb.append(line);
                sb.append(NEW_LINE);
             }
          }
       }
-      Utils.writeStringFile(path, sb.toString(), true);
+      Utils.writeFile(path, sb.toString(), true);
+   }
+   
+   /**
+    * Removes everything from the file in path
+    * @throws IOException
+    */
+   public void clearFile() throws IOException{
+      Utils.writeFile(path, "", false);  
    }
 
    public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {
@@ -41,7 +58,7 @@ public class FormatAsText extends Format{
             allLines = allLines.replaceAll(entry.getKey(), entry.getValue());
          }
       }
-      Utils.writeStringFile(path, allLines, false);
+      Utils.writeFile(path, allLines, false);
    }
     
    public String getFileContents(String filename) throws IOException{
