@@ -1,0 +1,21 @@
+=== Dedicated test set ====== Summary of NB===
+
+Correctly Classified Instances        3684               98.7403 %
+Incorrectly Classified Instances        47                1.2597 %
+Kappa statistic                          0.9742
+Mean absolute error                      0.0126
+Root mean squared error                  0.1122
+Relative absolute error                  2.5196 %
+Root relative squared error             22.4474 %
+Total Number of Instances             3731     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.022    0.984      0.994    0.989      0.974    0.985     0.982     normal
+                 0.978    0.006    0.992      0.978    0.985      0.974    0.996     0.991     neptune
+Weighted Avg.    0.987    0.015    0.987      0.987    0.987      0.974    0.990     0.986     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2139   13 |    a = normal
+   34 1545 |    b = neptune

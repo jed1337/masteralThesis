@@ -1,6 +1,6 @@
 package formatkddarff;
 
-import java.io.File;
+import formatkddarff.utils.Utils;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 
@@ -31,9 +31,8 @@ public class ClassifierHolder {
       this.resultName     = folderPath+classifierName+"Result.txt";
       this.modelName      = folderPath+classifierName+".model";
       
-      if(!folderPath.isEmpty()){
-         new File(folderPath).mkdirs();
-      }
+      Utils.makeFolders(folderPath);
+      
       classifier.buildClassifier(instances);
    }
    
@@ -56,6 +55,4 @@ public class ClassifierHolder {
    public String getModelName() {
       return modelName;
    }
-   
-   
 }

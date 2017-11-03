@@ -1,0 +1,29 @@
+=== 10 fold Cross validation ====== Summary of NB===
+
+Correctly Classified Instances        2935               48.9167 %
+Incorrectly Classified Instances      3065               51.0833 %
+Kappa statistic                          0.387 
+Mean absolute error                      0.1692
+Root mean squared error                  0.3989
+Relative absolute error                 60.9036 %
+Root relative squared error            107.0436 %
+Total Number of Instances             6000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.062    0.002    0.849      0.062    0.116      0.203    0.786     0.392     slowBody
+                 0.427    0.187    0.313      0.427    0.361      0.213    0.789     0.354     slowHeaders
+                 0.040    0.013    0.374      0.040    0.072      0.075    0.776     0.347     slowRead
+                 1.000    0.298    0.402      1.000    0.573      0.531    0.996     0.989     tcpFlood
+                 0.993    0.102    0.661      0.993    0.793      0.766    0.971     0.888     udpFlood
+                 0.413    0.010    0.890      0.413    0.564      0.562    0.957     0.763     httpFlood
+Weighted Avg.    0.489    0.102    0.581      0.489    0.413      0.392    0.879     0.622     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+  62 483  27 390   3  35 |   a = slowBody
+   3 427  34 526   7   3 |   b = slowHeaders
+   5 454  40 411  78  12 |   c = slowRead
+   0   0   0 1000   0   0 |   d = tcpFlood
+   0   0   6   0 993   1 |   e = udpFlood
+   3   0   0 162 422 413 |   f = httpFlood
