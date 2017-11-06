@@ -12,11 +12,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.functions.SMO;
-import weka.classifiers.lazy.IBk;
-import weka.classifiers.trees.J48;
-import weka.core.Instances;
 
 public class Thesis{
    private static HashMap<String, String> replaceAttribute(String attribute, String... toReplace){
@@ -48,9 +43,9 @@ public class Thesis{
       FormatAsText fText = new FormatAsText(fileName);
       fText.replaceAllStrings(
         replaceAttribute("service", SERVICES),
-        replaceAttribute("isAttack", "slowBody","slowHeaders","slowRead","tcpFlood","udpFlood","httpFlood")
+        replaceAttribute("isAttack", "highrate", "lowrate", "normal")
+//        replaceAttribute("isAttack", "slowBody","slowHeaders","slowRead","tcpFlood","udpFlood","httpFlood")
         // replaceAttribute("isAttack", "tcpFlood","udpFlood","httpFlood","neptune","smurf")
-//        replaceAttribute("isAttack", "highrate", "lowrate")
 //        replaceAttribute("isAttack", "normal", "neptune")
 //        replaceAttribute("isAttack", ALL_ATTACKS)
       );
@@ -71,15 +66,29 @@ public class Thesis{
    private static final String CNIS_HIGHRATE = "CNISHighrate.arff";
    private static final String CNIS_LOWRATE  = "CNISLowrate.arff";
 
+   private static FormatAsText fat;
+
 //   private static final String[] LOW_RATE_ATTACKS     = {"slowBody", "slowHeaders", "slowRead"};
 //   private static final String[] HIGH_RATE_ATTACKS    = {"back", "land", "neptune", "pod", "smurf", "teardrop"};
 //   private static final String[] HIGH_RATE_AND_NORMAL = {"normal","back", "land", "neptune", "pod", "smurf", "teardrop"};
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
+      FormatAsArff formatNormal = new FormatAsArff(UNFORMATTED_DIR+KDD_TRAIN_20_PERCENT);
+      formatNormal.removeAttributes(FEATURES_TO_REMOVE); //Removes land; isRoot, etc features; difficulty
+      formatNormal.removeNonMatchingClasses("isAttack", "normal");
+      formatNormal.randomise(11);
+      formatNormal.keepXInstances("isAttack", "normal", 3000);
+      formatNormal.setSaveFileFullPath(FORMATTED_DIR+KDD_TRAIN_20_PERCENT);
+      Utils.writeFile(
+         formatNormal.getSaveFileFullPath(),
+         formatNormal.getInstances().toString(),
+         false);
+      formatAsText(formatNormal.getSaveFileFullPath());
+
+
       FormatAsArff formatFirst = new FormatAsArff(UNFORMATTED_DIR+CNIS_LOWRATE);
       formatFirst.removeAttributes(FEATURES_TO_REMOVE); //Removes land; isRoot, etc features; difficulty
       formatFirst.randomise(11);
-//      formatFirst.removeNonMatchingClasses("isAttack", "smurf", "neptune");
       formatFirst.keepXInstances("isAttack", "slowBody", 1000);
       formatFirst.keepXInstances("isAttack", "slowHeaders", 1000);
       formatFirst.keepXInstances("isAttack", "slowRead",   1000);
@@ -90,8 +99,8 @@ public class Thesis{
          false);
       formatAsText(formatFirst.getSaveFileFullPath());
 
-//      FormatAsText fat = new FormatAsText(formatFirst.getSaveFileFullPath());
-//      fat.replaceAllStrings(hashMaps);
+      fat = new FormatAsText(formatFirst.getSaveFileFullPath());
+      fat.replaceAllStrings(getHashMap("lowrate", "slowBody","slowHeaders","slowRead"));
 
       FormatAsArff formatSecond = new FormatAsArff(UNFORMATTED_DIR+ CNIS_HIGHRATE);
       formatSecond.removeAttributes(FEATURES_TO_REMOVE);
@@ -105,47 +114,22 @@ public class Thesis{
          formatSecond.getInstances().toString(),
          false);
       formatAsText(formatSecond.getSaveFileFullPath());
-      
-//      buildModels(formatFirst, formatSecond);
-      final String folderPath = "results/CrossValidation/lowrateHighrate(Test)/";
-      final String crossfoldName = "Crossfold.arff";
 
-//      Utils.makeFolders(folderPath);
+      fat = new FormatAsText(formatSecond.getSaveFileFullPath());
+      fat.replaceAllStrings(getHashMap("highrate", "tcpFlood","udpFlood","httpFlood"));
+
+      final String folderPath = "results/CrossValidation/lowrateHighrateNormal/";
+      final String crossfoldName = "Crossfold.arff";
 
       FormatAsText fText = new FormatAsText(FORMATTED_DIR+crossfoldName);
       fText.clearFile();
       fText.addInstances(formatFirst.getSaveFileFullPath(),"");
       fText.addInstances(formatSecond.getSaveFileFullPath(), "@data");
-      
-      Classify classify = new CrossValidation(folderPath, FORMATTED_DIR+crossfoldName);
-      classify.buildModel();
-      classify.evaluateModel();
+      fText.addInstances(formatNormal.getSaveFileFullPath(), "@data");
+      fText.addClassCount("isAttack");
 
-
-   }
-
-   private static void buildModels(FormatAsArff formatFirst, FormatAsArff formatSecond) throws IOException, Exception{
-      Instances trainSet = UtilsInstances.getInstances(FORMATTED_DIR+crossfoldName);
-      Utils.writeFile(folderPath+crossfoldName, trainSet.toString(), false);
-
-//      Instances trainSet = formatFirst.getInstances();
-//      Utils.writeFile(folderPath+"trainSet.arff", trainSet.toString(), false);
-//
-//      Instances testSet = formatSecond.getInstances();
-//      testSet.setClassIndex(testSet.numAttributes()-1);
-//      Utils.writeFile(folderPath+"testSet.arff", trainSet.toString(), false);
-
-//      ArrayList<ClassifierHolder> classifiers = new ArrayList<>();
-      classifiers.add(new ClassifierHolder(new NaiveBayes(), trainSet, "NB", folderPath));
-      classifiers.add(new ClassifierHolder(new IBk(), trainSet, "KNN", folderPath));
-      classifiers.add(new ClassifierHolder(new J48(), trainSet, "J48", folderPath));
-      classifiers.add(new ClassifierHolder(new SMO(), trainSet, "SMO", folderPath));
-//      classifiers.add(new ClassifierHolder(new MultilayerPerceptron(), instances, "MLP", "models/3Classes"));
-
-      for (ClassifierHolder ch : classifiers) {
-         UtilsClssifiers.writeModel(ch);
-//         UtilsClssifiers.saveTestEvaluationToFile(ch, testSet);
-         UtilsClssifiers.saveCrossValidationToFile(ch, 10);
-      }
+//      Classify classify = new CrossValidation(folderPath, FORMATTED_DIR+crossfoldName);
+//      classify.buildModel();
+//      classify.evaluateModel();
    }
 }

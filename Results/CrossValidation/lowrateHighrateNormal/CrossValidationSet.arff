@@ -1,6 +1,3 @@
-% isAttack normal:	3000
-% isAttack highrate:	3000
-% isAttack lowrate:	3000
 @relation Slowrate-weka.filters.unsupervised.attribute.Remove-R7-weka.filters.unsupervised.instance.Randomize-S11
 
 @attribute duration numeric

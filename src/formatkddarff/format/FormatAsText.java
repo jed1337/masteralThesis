@@ -1,10 +1,13 @@
 package formatkddarff.format;
 
 import formatkddarff.utils.Utils;
+import formatkddarff.utils.UtilsInstances;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import weka.core.Instance;
+import weka.core.Instances;
 
 public class FormatAsText extends Format{
    private final String NEW_LINE = "\n";
@@ -50,6 +53,47 @@ public class FormatAsText extends Format{
     */
    public void clearFile() throws IOException{
       Utils.writeFile(path, "", false);  
+   }
+   
+   public void insertString(String toAdd, int position) throws IOException{
+      String pathContents = getFileContents(this.path);
+      pathContents = pathContents.substring(0, position) 
+         + toAdd 
+         + pathContents.substring(position, pathContents.length());
+      
+      Utils.writeFile(path, pathContents, false);  
+   }
+   
+   public void addClassCount(String attributeName) throws IOException{
+      Instances instances = UtilsInstances.getInstances(this.path);
+      int attributeIndex = UtilsInstances.getAttributeIndex(instances, attributeName);
+      Map<String, MutableInt> freq = new HashMap<>();
+      MutableInt count;
+      
+      for (int i = instances.numInstances() - 1; i >= 0; i--) {
+         Instance inst = instances.get(i);
+         String attributeValue = inst.stringValue(attributeIndex);
+         
+         count = freq.get(attributeValue);
+         if (count == null) {
+            freq.put(attributeValue, new MutableInt());
+         } else {
+            count.increment();
+         }
+      }
+      
+      StringBuilder sb = new StringBuilder();
+      freq.forEach((k,v)->{
+         sb.append("% ");
+         sb.append(attributeName);
+         sb.append(" ");
+         sb.append(k);
+         sb.append(":\t");
+         sb.append(v.get());
+         sb.append(NEW_LINE);
+      });
+      
+      insertString(sb.toString(), 0);
    }
 
    public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {

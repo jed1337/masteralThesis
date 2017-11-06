@@ -1,0 +1,22 @@
+=== 10 fold Cross validation ===
+=== Summary of KNN===
+
+Correctly Classified Instances        5951               99.1833 %
+Incorrectly Classified Instances        49                0.8167 %
+Kappa statistic                          0.9837
+Mean absolute error                      0.0084
+Root mean squared error                  0.0906
+Relative absolute error                  1.682  %
+Root relative squared error             18.1167 %
+Total Number of Instances             6000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.992    0.008    0.992      0.992    0.992      0.984    0.993     0.990     highrate
+                 0.992    0.008    0.992      0.992    0.992      0.984    0.993     0.989     lowrate
+Weighted Avg.    0.992    0.008    0.992      0.992    0.992      0.984    0.993     0.990     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2975   25 |    a = highrate
+   24 2976 |    b = lowrate

@@ -1,0 +1,24 @@
+=== 10 fold Cross validation ===
+=== Summary of SMO===
+
+Correctly Classified Instances        8762               97.3556 %
+Incorrectly Classified Instances       238                2.6444 %
+Kappa statistic                          0.9603
+Mean absolute error                      0.2282
+Root mean squared error                  0.2829
+Relative absolute error                 51.3389 %
+Root relative squared error             60.0062 %
+Total Number of Instances             9000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.971    0.024    0.954      0.971    0.962      0.943    0.980     0.940     highrate
+                 0.951    0.014    0.971      0.951    0.961      0.942    0.971     0.941     lowrate
+                 0.999    0.002    0.996      0.999    0.998      0.996    0.999     0.996     normal
+Weighted Avg.    0.974    0.013    0.974      0.974    0.974      0.960    0.983     0.959     
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 2913   82    5 |    a = highrate
+  141 2852    7 |    b = lowrate
+    1    2 2997 |    c = normal

@@ -1,0 +1,22 @@
+=== 10 fold Cross validation ===
+=== Summary of NB===
+
+Correctly Classified Instances        5573               92.8833 %
+Incorrectly Classified Instances       427                7.1167 %
+Kappa statistic                          0.8577
+Mean absolute error                      0.1042
+Root mean squared error                  0.2625
+Relative absolute error                 20.8475 %
+Root relative squared error             52.499  %
+Total Number of Instances             6000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.900    0.043    0.955      0.900    0.927      0.859    0.966     0.957     highrate
+                 0.957    0.100    0.906      0.957    0.931      0.859    0.967     0.968     lowrate
+Weighted Avg.    0.929    0.071    0.930      0.929    0.929      0.859    0.967     0.963     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2701  299 |    a = highrate
+  128 2872 |    b = lowrate
