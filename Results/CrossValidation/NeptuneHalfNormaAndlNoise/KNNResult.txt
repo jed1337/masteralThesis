@@ -1,0 +1,22 @@
+=== 10 fold Cross validation ===
+=== Summary of KNN===
+
+Correctly Classified Instances        5997               99.95   %
+Incorrectly Classified Instances         3                0.05   %
+Kappa statistic                          0.999 
+Mean absolute error                      0.0007
+Root mean squared error                  0.0224
+Relative absolute error                  0.1369 %
+Root relative squared error              4.4715 %
+Total Number of Instances             6000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.000    1.000      0.999    0.999      0.999    1.000     1.000     normal
+                 1.000    0.001    0.999      1.000    1.000      0.999    1.000     0.999     neptune
+Weighted Avg.    1.000    0.001    1.000      1.000    0.999      0.999    1.000     0.999     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2997    3 |    a = normal
+    0 3000 |    b = neptune

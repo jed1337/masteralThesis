@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Utils {
+   private static final String NEW_LINE = "\n";
+   
    public static BufferedReader getBufferedReader(String path) throws FileNotFoundException {
       return new BufferedReader(new FileReader(path));
    }
@@ -25,6 +27,18 @@ public class Utils {
       }
       else{
          System.err.println("'"+folderPath+"' already exists.");
+      }
+   }
+
+   public static String getFileContents(String filename) throws IOException{
+      StringBuilder sb = new StringBuilder();
+      try (BufferedReader br = Utils.getBufferedReader(filename)) {
+         String line;
+         while ((line = br.readLine()) != null) {
+            sb.append(line);
+            sb.append(NEW_LINE);
+         }
+         return sb.toString();
       }
    }
 }

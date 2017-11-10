@@ -1,0 +1,22 @@
+=== 10 fold Cross validation ===
+=== Summary of NB===
+
+Correctly Classified Instances        5968               99.4667 %
+Incorrectly Classified Instances        32                0.5333 %
+Kappa statistic                          0.9893
+Mean absolute error                      0.0052
+Root mean squared error                  0.0709
+Relative absolute error                  1.0336 %
+Root relative squared error             14.178  %
+Total Number of Instances             6000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.991    0.001    0.999      0.991    0.995      0.989    0.999     0.998     normal
+                 0.999    0.009    0.991      0.999    0.995      0.989    0.999     0.998     neptune
+Weighted Avg.    0.995    0.005    0.995      0.995    0.995      0.989    0.999     0.998     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2972   28 |    a = normal
+    4 2996 |    b = neptune

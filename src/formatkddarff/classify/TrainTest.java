@@ -15,19 +15,19 @@ public class TrainTest extends Classify{
    private final Instances trainSet;
    private final Instances testSet;
 
-   public TrainTest(String folderPath, String trainPath, String testPath) throws IOException, Exception {
-      super(folderPath);
+   public TrainTest(String subFolderPath, String trainPath, String testPath) throws IOException, Exception {
+      super("results/TestTrain/"+subFolderPath);
 
       this.trainSet = UtilsInstances.getInstances(trainPath);
-      Utils.writeFile(folderPath+"trainSet.arff", this.trainSet.toString(), false);
+      Utils.writeFile(super.folderPath+"trainSet.arff",Utils.getFileContents(trainPath), false);
 
       this.testSet =  UtilsInstances.getInstances(testPath);
-      Utils.writeFile(folderPath+"testSet.arff", this.trainSet.toString(), false);
+      Utils.writeFile(super.folderPath+"testSet.arff", Utils.getFileContents(testPath), false);
 
-      super.classifiers.add(new ClassifierHolder(new NaiveBayes(),   this.trainSet, "NB", folderPath));
-      super.classifiers.add(new ClassifierHolder(new IBk(),          this.trainSet, "KNN", folderPath));
-      super.classifiers.add(new ClassifierHolder(new J48(),          this.trainSet, "J48", folderPath));
-      super.classifiers.add(new ClassifierHolder(new SMO(),          this.trainSet, "SMO", folderPath));
+      super.classifiers.add(new ClassifierHolder(new NaiveBayes(),   this.trainSet, "NB", super.folderPath));
+      super.classifiers.add(new ClassifierHolder(new IBk(),          this.trainSet, "KNN", super.folderPath));
+      super.classifiers.add(new ClassifierHolder(new J48(),          this.trainSet, "J48", super.folderPath));
+      super.classifiers.add(new ClassifierHolder(new SMO(),          this.trainSet, "SMO", super.folderPath));
    }
 
    @Override

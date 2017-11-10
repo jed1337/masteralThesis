@@ -56,7 +56,7 @@ public class FormatAsText extends Format{
    }
    
    public void insertString(String toAdd, int position) throws IOException{
-      String pathContents = getFileContents(this.path);
+      String pathContents = Utils.getFileContents(this.path);
       pathContents = pathContents.substring(0, position) 
          + toAdd 
          + pathContents.substring(position, pathContents.length());
@@ -97,24 +97,12 @@ public class FormatAsText extends Format{
    }
 
    public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {
-      String allLines = getFileContents(path);
+      String allLines = Utils.getFileContents(path);
       for (HashMap<String, String> hashMap : hashMaps) {
          for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             allLines = allLines.replaceAll(entry.getKey(), entry.getValue());
          }
       }
       Utils.writeFile(path, allLines, false);
-   }
-    
-   public String getFileContents(String filename) throws IOException{
-      StringBuilder sb = new StringBuilder();
-      try (BufferedReader br = Utils.getBufferedReader(filename)) {
-         String line;
-         while ((line = br.readLine()) != null) {
-            sb.append(line);
-            sb.append(NEW_LINE);
-         }
-         return sb.toString();
-      }
    }
 }

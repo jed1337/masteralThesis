@@ -14,15 +14,16 @@ import weka.core.Instances;
 public class CrossValidation extends Classify{
    private final Instances CrossValidationSet;
 
-   public CrossValidation(String folderPath, String CrossValidationPath) throws IOException, Exception {
-      super(folderPath);
+   public CrossValidation(String subFolderName, String CrossValidationPath) throws IOException, Exception {
+      super("results/CrossValidation/"+subFolderName);
+      
       this.CrossValidationSet = UtilsInstances.getInstances(CrossValidationPath);
-      Utils.writeFile(folderPath + "CrossValidationSet.arff", this.CrossValidationSet.toString(), false);
+      Utils.writeFile(super.folderPath + "CrossValidationSet.arff", Utils.getFileContents(CrossValidationPath), false);
 
-      super.classifiers.add(new ClassifierHolder(new NaiveBayes(),   this.CrossValidationSet, "NB", folderPath));
-      super.classifiers.add(new ClassifierHolder(new IBk(),          this.CrossValidationSet, "KNN", folderPath));
-      super.classifiers.add(new ClassifierHolder(new J48(),          this.CrossValidationSet, "J48", folderPath));
-      super.classifiers.add(new ClassifierHolder(new SMO(),          this.CrossValidationSet, "SMO", folderPath));
+      super.classifiers.add(new ClassifierHolder(new NaiveBayes(),   this.CrossValidationSet, "NB", super.folderPath));
+      super.classifiers.add(new ClassifierHolder(new IBk(),          this.CrossValidationSet, "KNN",super.folderPath));
+      super.classifiers.add(new ClassifierHolder(new J48(),          this.CrossValidationSet, "J48",super.folderPath));
+      super.classifiers.add(new ClassifierHolder(new SMO(),          this.CrossValidationSet, "SMO",super.folderPath));
 
    }
 
