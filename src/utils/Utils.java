@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.function.Predicate;
 
 public class Utils {
    private static final String NEW_LINE = "\n";
@@ -29,14 +30,24 @@ public class Utils {
          System.err.println("'"+folderPath+"' already exists.");
       }
    }
-
+   
    public static String getFileContents(String filename) throws IOException{
+      return getFileContents(filename, s->false);
+   }
+
+   public static String getFileContents(
+           String filename, Predicate<String> breakCondition) throws IOException{
+      
       StringBuilder sb = new StringBuilder();
       try (BufferedReader br = Utils.getBufferedReader(filename)) {
          String line;
          while ((line = br.readLine()) != null) {
             sb.append(line);
             sb.append(NEW_LINE);
+            
+            if(breakCondition.test(line)){
+               break;
+            }
          }
          return sb.toString();
       }
