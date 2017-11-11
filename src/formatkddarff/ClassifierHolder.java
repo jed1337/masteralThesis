@@ -1,6 +1,6 @@
 package formatkddarff;
 
-import formatkddarff.utils.Utils;
+import utils.Utils;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 
