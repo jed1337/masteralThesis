@@ -1,0 +1,22 @@
+=== 10 fold Cross validation ===
+=== Summary of NB===
+
+Correctly Classified Instances        9901               85.6636 %
+Incorrectly Classified Instances      1657               14.3364 %
+Kappa statistic                          0.7148
+Mean absolute error                      0.1451
+Root mean squared error                  0.3311
+Relative absolute error                 29.0553 %
+Root relative squared error             66.2773 %
+Total Number of Instances            11558     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.776    0.056    0.937      0.776    0.849      0.726    0.947     0.957     normal
+                 0.944    0.224    0.796      0.944    0.864      0.726    0.945     0.929     attack
+Weighted Avg.    0.857    0.137    0.869      0.857    0.856      0.726    0.946     0.943     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4657 1343 |    a = normal
+  314 5244 |    b = attack

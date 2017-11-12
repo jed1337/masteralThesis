@@ -19,6 +19,7 @@ public class TrainNoise extends Train{
 
    @Override
    protected void keepXInstances() {
-      super.faa.keepXInstances("isAttack", "normal", 1500);
+      super.faa.keepXInstances("isAttack", "normal", 3000);
+//      super.faa.keepXInstances("isAttack", "normal", 1500);
    }
 }

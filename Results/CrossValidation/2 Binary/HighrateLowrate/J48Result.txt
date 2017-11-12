@@ -1,0 +1,22 @@
+=== 10 fold Cross validation ===
+=== Summary of J48===
+
+Correctly Classified Instances        5539               99.6582 %
+Incorrectly Classified Instances        19                0.3418 %
+Kappa statistic                          0.9931
+Mean absolute error                      0.0045
+Root mean squared error                  0.0583
+Relative absolute error                  0.9088 %
+Root relative squared error             11.6871 %
+Total Number of Instances             5558     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.003    0.997      0.996    0.996      0.993    0.998     0.996     highrate
+                 0.997    0.004    0.996      0.997    0.997      0.993    0.998     0.997     lowrate
+Weighted Avg.    0.997    0.004    0.997      0.997    0.997      0.993    0.998     0.997     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2547   11 |    a = highrate
+    8 2992 |    b = lowrate

@@ -2,12 +2,10 @@ package format;
 
 import utils.Utils;
 import utils.UtilsInstances;
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Predicate;
 import weka.core.Instance;
 import weka.core.Instances;
 
@@ -25,48 +23,7 @@ public class FormatAsText extends Format{
          s->s.startsWith("@data")
       );
    }
-//   
-//   public String getArffHeader() throws FileNotFoundException, IOException{
-//      StringBuilder sb = new StringBuilder();
-//
-//      try (BufferedReader br = Utils.getBufferedReader(this.path)) {
-//         String line;
-//
-//         while ((line = br.readLine()) != null) {
-//            //apply boolean check function here
-//            
-//            sb.append(line);
-//            sb.append(NEW_LINE);
-//            
-//            if (line.startsWith("@data")) {
-//               break;
-//            }
-//         }
-//      }
-//      return sb.toString();
-//   }
-//
-//   public void addInstances(String addToPath) throws IOException {
-//      StringBuilder sb = new StringBuilder();
-//
-//      try (BufferedReader br = Utils.getBufferedReader(addToPath)) {
-//         String line;
-//         boolean passedDelimiter = false;
-//         
-//         while ((line = br.readLine()) != null) {
-//            if (!passedDelimiter && line.startsWith("@data")) {
-//               passedDelimiter = true;
-//               continue; //Skip this afterwards so that it's not added
-//            }
-//            if (passedDelimiter) {
-//               sb.append(line);
-//               sb.append(NEW_LINE);
-//            }
-//         }
-//      }
-//      Utils.writeFile(path, sb.toString(), true);
-//   }
-   
+
    public void addInstances(String addToPath) throws IOException {
       String fileContents = Utils.getFileContents(addToPath);
       int afterDataIndex=fileContents.indexOf("@data")+6; //The +6 is because 
@@ -122,7 +79,7 @@ public class FormatAsText extends Format{
          sb.append(v.get());
          sb.append(NEW_LINE);
       });
-      
+      System.out.println(sb.toString());
       insertString(sb.toString(), 0);
    }
 

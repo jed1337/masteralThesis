@@ -110,9 +110,11 @@ public class FormatAsArff extends Format{
     * @param toKeep
     */
    public void keepXInstances(String attribute, String attributeValue, int toKeep){
-      keepXInstances(UtilsInstances.getAttributeIndex(instances, attribute), 
-                     attributeValue, 
-                     toKeep);
+      keepXInstances(
+         UtilsInstances.getAttributeIndex(instances, attribute), 
+         attributeValue, 
+         toKeep
+      );
    }
    
    public void keepXInstances(int attributeIndex, String attributeValue, int toKeep){
@@ -135,6 +137,44 @@ public class FormatAsArff extends Format{
       stn.setAttributeRange(rangeList);
       
       useFilter(instances, stn);
+   }
+   
+   /**
+    * @param filename The final filename is filename+numerator[i]/denominator
+    * @param denominator
+    * @param numerators vararg containing how much of the instances file to be placed in each new file
+    */
+   public void splitFile(int denominator, String filename, int... numerators) throws IllegalArgumentException, IOException{
+      int sum=0;
+      for (int numerator : numerators) {
+         sum+=numerator;
+         if(numerator<0){
+            throw new IllegalArgumentException("Can't have a negative numerator");
+         }
+         if(numerator==0){
+            throw new IllegalArgumentException("Having a numerator of 0 creates an empty file");
+         }
+      }
+      
+      if(sum<denominator){
+         System.err.println(
+              "Some instances won't be copied "
+              + "because of the value of the numerators");
+      } else if(sum>denominator){
+         throw new IllegalArgumentException("The total sum can't be greater than the denominator");
+      }
+      
+      int sliceFrom=0;
+      for (int numerator : numerators) {
+         int sliceX = Math.round(this.instances.numInstances() * (numerator/denominator)); //0.8 = 80%
+         Instances slicedInstances = new Instances(this.instances, sliceFrom, sliceFrom+sliceX);
+         
+         UtilsInstances.writeFile(filename+" "+numerator+"/"+denominator, 
+            slicedInstances.toString(), 
+            false);
+         
+         sliceFrom+=sliceX;
+      }
    }
    
    private void useFilter(Instances instances, Filter filter) throws Exception{
