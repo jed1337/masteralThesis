@@ -5,10 +5,6 @@ import utils.UtilsClssifiers;
 import utils.Utils;
 import utils.UtilsInstances;
 import java.io.IOException;
-import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.functions.SMO;
-import weka.classifiers.lazy.IBk;
-import weka.classifiers.trees.J48;
 import weka.core.Instances;
 
 public class TrainTest extends Classify{
@@ -23,11 +19,11 @@ public class TrainTest extends Classify{
 
       this.testSet =  UtilsInstances.getInstances(testPath);
       Utils.writeFile(super.folderPath+"testSet.arff", Utils.getFileContents(testPath), false);
+   }
 
-      super.classifiers.add(new ClassifierHolder(new NaiveBayes(),   this.trainSet, "NB", super.folderPath));
-      super.classifiers.add(new ClassifierHolder(new IBk(),          this.trainSet, "KNN", super.folderPath));
-      super.classifiers.add(new ClassifierHolder(new J48(),          this.trainSet, "J48", super.folderPath));
-      super.classifiers.add(new ClassifierHolder(new SMO(),          this.trainSet, "SMO", super.folderPath));
+   @Override
+   public void buildModel() throws Exception{
+      super.buildModel(this.trainSet);
    }
 
    @Override

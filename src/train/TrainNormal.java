@@ -15,6 +15,7 @@ public class TrainNormal extends Train{
    @Override
    protected void removeNonMatchingClasses() {
       super.faa.removeNonMatchingClasses("isAttack", "normal");
+//      super.faa.removeNonMatchingClasses("isAttack", "normal", "neptune");
       super.faa.removeNonMatchingClasses("service", "http");
    }
 

@@ -20,6 +20,7 @@ public class Utils {
       try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename, append))) {
          bw.write(allLines);
       }
+      System.out.println("Created '"+filename+"'");
    }
    
    public static void makeFolders(String folderPath){

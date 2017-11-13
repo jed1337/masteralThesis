@@ -26,7 +26,7 @@
 @attribute dst_host_srv_serror_rate numeric
 @attribute dst_host_rerror_rate numeric
 @attribute dst_host_srv_rerror_rate numeric
-@attribute isAttack {highrate,lowrate}
+@attribute isAttack {neptune,lowrate,normal}
 
 @data
 0,tcp,OTH,60,0,0,0,993,993,0,0,0,0,1,0,0,46,46,1,0,0,0,0,0,0,0,lowrate

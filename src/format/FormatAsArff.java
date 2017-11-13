@@ -4,6 +4,8 @@ import utils.UtilsInstances;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.filters.Filter;
@@ -35,7 +37,7 @@ public class FormatAsArff extends Format{
          }
       } else {
          for (final T e : array) {
-            if (e == v || v.equals(e)) {
+            if (e == v || v.equals(e) || ((String) e).equalsIgnoreCase(((String)v)) ) {
                return true;
             }
          }
@@ -140,13 +142,14 @@ public class FormatAsArff extends Format{
    }
    
    /**
-    * @param filename The final filename is filename+numerator[i]/denominator
-    * @param denominator
-    * @param numerators vararg containing how much of the instances file to be placed in each new file
+    * @param denominator how many slices
+    * @param splitParam vararg containing how much of the instances file to be placed in each new file and its new filename
+    * @throws java.io.IOException
     */
-   public void splitFile(int denominator, String filename, int... numerators) throws IllegalArgumentException, IOException{
+//   public void splitFile(int denominator, String filename, int... numerators) throws IllegalArgumentException, IOException{
+   public void splitFile(int denominator, HashMap<String, Float> splitParam) throws IllegalArgumentException, IOException{
       int sum=0;
-      for (int numerator : numerators) {
+      for (Float numerator : splitParam.values()) {
          sum+=numerator;
          if(numerator<0){
             throw new IllegalArgumentException("Can't have a negative numerator");
@@ -165,15 +168,19 @@ public class FormatAsArff extends Format{
       }
       
       int sliceFrom=0;
-      for (int numerator : numerators) {
-         int sliceX = Math.round(this.instances.numInstances() * (numerator/denominator)); //0.8 = 80%
-         Instances slicedInstances = new Instances(this.instances, sliceFrom, sliceFrom+sliceX);
+//      for (int numerator : numerators) {
+      for (Map.Entry<String, Float> entry : splitParam.entrySet()) {
+         int sliceHowMany = Math.round(this.instances.numInstances() * (entry.getValue()/denominator)); //0.8 = 80%
+         while((sliceFrom+sliceHowMany) > this.instances.numInstances()){
+            sliceHowMany--;
+         }
+         Instances slicedInstances = new Instances(this.instances, sliceFrom, sliceHowMany);
          
-         UtilsInstances.writeFile(filename+" "+numerator+"/"+denominator, 
+         UtilsInstances.writeFile(entry.getKey()+" ",
             slicedInstances.toString(), 
             false);
          
-         sliceFrom+=sliceX;
+         sliceFrom+=sliceHowMany;
       }
    }
    
