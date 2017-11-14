@@ -2,7 +2,9 @@ package formatkddarff;
 
 import classify.Classify;
 import classify.CrossValidation;
+import constants.FileNameConstants;
 import constants.PathConstants;
+import format.FormatAsArff;
 import format.FormatAsText;
 import train.Train;
 import train.TrainLowrate;
@@ -12,10 +14,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 import train.TrainHighrate;
-import train.TrainNoise;
-import train.TrainNormal;
 import utils.UtilsInstances;
+import utils.Utils;
 import weka.core.Instances;
 
 public class Thesis{
@@ -46,11 +48,13 @@ public class Thesis{
    }
 //</editor-fold>
    
-   private static FormatAsText fat;
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
-     ArrayList<Train> trainList = new ArrayList<>();
-     trainList.add(new TrainNoise());
-     trainList.add(new TrainNormal());
+//      FormatAsArff faa = new FormatAsArff(PathConstants.UNFORMATTED_DIR+""+FileNameConstants.HEADER);
+//      
+//      System.out.println("allah");
+        ArrayList<Train> trainList = new ArrayList<>();
+//     trainList.add(new TrainNoise());
+//     trainList.add(new TrainNormal());
      trainList.add(new TrainHighrate());
      trainList.add(new TrainLowrate());
 
@@ -67,47 +71,17 @@ public class Thesis{
 //            replaceAttribute("isAttack", "neptune", "lowrate", "normal")
          );
       }
-
-      String header = trainList.get(0).getFat().getArffHeader();
-      fat = new FormatAsText(PathConstants.FORMATTED_DIR+"Train.arff");
-      fat.clearFile();
-      fat.insertString(header, 0);
-      for (Train train : trainList) {
-         fat.addInstances(train.getFaa().getSaveFileFullPath());
-      }
-      fat.addClassCount("isAttack");
-
-//      open instances file at fat location
-      Instances toSplit = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR+"Train.arff");
-
-//Put under TestTrainValidation(String folder, String path);
-   //Gather all normal, highrate, lowrate into sepate Instances file
-//         HashMap<FormatAsArff, String> singleClass = new HashMap<>();
-//   //      singleClass.put(new FormatAsArff(new Instances(toSplit)), "Normal");
-//         singleClass.put(new FormatAsArff(new Instances(toSplit)), "HIGHRATE");
-//         singleClass.put(new FormatAsArff(new Instances(toSplit)), "Lowrate");
-//
-//         singleClass.forEach((faa, str)->{
-//           try {
-//              faa.removeNonMatchingClasses("isAttack", str);
-//              Utils.writeFile("Only"+str+".arff", faa.getInstances().toString(), false);
-//              HashMap<String, Float> splitParam = new HashMap<>();
-//              splitParam.put("Only"+str+" Train.arff",      new Float(4.0));
-//              splitParam.put("Only"+str+" Test.arff",       new Float(1.0));
-//              splitParam.put("Only"+str+" Validation.arff", new Float(1.0));
-//   //           faa.splitFile(6, str, 4, 1, 1);
-//
-//              faa.splitFile(6, splitParam);
-//           } catch (IOException ex) {
-//              System.err.println("eow");
-//              Logger.getLogger(Thesis.class.getName()).log(Level.SEVERE, null, ex);
-//           }
-//         });
       
+      Utils.createArff(
+         PathConstants.FORMATTED_DIR+"Train.arff",
+         trainList.stream().
+            map(tl->tl.getFaa().getSavePath())
+            .collect(Collectors.toList())
+      );
 
       Classify classify = new CrossValidation(
 //         "2 Binary/HighrateLowrate/"
-         "allahModified/"
+         "allahmodified/"
          ,PathConstants.FORMATTED_DIR.toString()+"Train.arff"
         //PathConstants.FORMATTED_DIR.toString()+FileNameConstants.KDD_TEST_MINUS_21
       );

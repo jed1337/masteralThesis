@@ -1,24 +1,22 @@
 === 10 fold Cross validation ===
 === Summary of SMO===
 
-Correctly Classified Instances        7294               99.9315 %
-Incorrectly Classified Instances         5                0.0685 %
-Kappa statistic                          0.9989
-Mean absolute error                      0.2224
-Root mean squared error                  0.2724
-Relative absolute error                 52.9063 %
-Root relative squared error             59.4307 %
-Total Number of Instances             7299     
+Correctly Classified Instances        5369               96.5995 %
+Incorrectly Classified Instances       189                3.4005 %
+Kappa statistic                          0.9312
+Mean absolute error                      0.034 
+Root mean squared error                  0.1844
+Relative absolute error                  6.8443 %
+Root relative squared error             36.9981 %
+Total Number of Instances             5558     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     neptune
-                 1.000    0.001    0.999      1.000    0.999      0.999    0.999     0.998     lowrate
-                 0.999    0.000    1.000      0.999    0.999      0.999    0.999     0.999     normal
-Weighted Avg.    0.999    0.000    0.999      0.999    0.999      0.999    0.999     0.999     
+                 0.927    0.001    0.999      0.927    0.962      0.933    0.963     0.960     highrate
+                 0.999    0.073    0.941      0.999    0.969      0.933    0.963     0.941     lowrate
+Weighted Avg.    0.966    0.040    0.968      0.966    0.966      0.933    0.963     0.950     
 === Confusion Matrix ===
 
-    a    b    c   <-- classified as
- 1299    0    0 |    a = neptune
-    0 2999    1 |    b = lowrate
-    0    4 2996 |    c = normal
+    a    b   <-- classified as
+ 2371  187 |    a = highrate
+    2 2998 |    b = lowrate

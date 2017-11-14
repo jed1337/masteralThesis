@@ -1,7 +1,10 @@
 package utils;
 
+import constants.PathConstants;
+import format.FormatAsText;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import train.Train;
 import weka.core.Instances;
 
 public class UtilsInstances extends Utils{

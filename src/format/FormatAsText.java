@@ -11,26 +11,41 @@ import weka.core.Instances;
 
 public class FormatAsText extends Format{
    private final String NEW_LINE = "\n";
-   private final String path;
+   private final String PATH;
 
-   public FormatAsText(String path) {
-      this.path = path;
+   public FormatAsText(String PATH) {
+      this.PATH = PATH;
    }
    
    public String getArffHeader() throws FileNotFoundException, IOException{
       return Utils.getFileContents(
-         this.path, 
+         this.PATH, 
          s->s.startsWith("@data")
       );
    }
+   
+   /**
+    * @return true if the text in the path has an ARFF header (@relation)
+    * @throws IOException
+    */
+   public boolean hasHeader() throws IOException{
+      String pathContents = Utils.getFileContents(this.PATH);
+      return pathContents.contains("@relation");
+   }
 
+   /**
+    * Adds Arff instances to this.PATH
+    * Will only append the header from addToPath if there's no header in this.PATH
+    * @param addToPath
+    * @throws IOException
+    */
    public void addInstances(String addToPath) throws IOException {
       String fileContents = Utils.getFileContents(addToPath);
-      int afterDataIndex=fileContents.indexOf("@data")+6; //The +6 is because 
+      int afterDataIndex=fileContents.indexOf("@data")+6; //The +6 is because of "@data\n"
       
       Utils.writeFile(
-         path, 
-         fileContents.substring(afterDataIndex), 
+         PATH, 
+         hasHeader()? fileContents.substring(afterDataIndex) : fileContents, 
          true);
    }
    
@@ -39,20 +54,20 @@ public class FormatAsText extends Format{
     * @throws IOException
     */
    public void clearFile() throws IOException{
-      Utils.writeFile(path, "", false);  
+      Utils.writeFile(PATH, "", false);  
    }
    
    public void insertString(String toAdd, int position) throws IOException{
-      String pathContents = Utils.getFileContents(this.path);
+      String pathContents = Utils.getFileContents(this.PATH);
       pathContents = pathContents.substring(0, position) 
          + toAdd 
          + pathContents.substring(position, pathContents.length());
       
-      Utils.writeFile(path, pathContents, false);  
+      Utils.writeFile(this.PATH, pathContents, false);  
    }
    
    public void addClassCount(String attributeName) throws IOException{
-      Instances instances = UtilsInstances.getInstances(this.path);
+      Instances instances = UtilsInstances.getInstances(this.PATH);
       int attributeIndex = UtilsInstances.getAttributeIndex(instances, attributeName);
       Map<String, MutableInt> freq = new HashMap<>();
       MutableInt count;
@@ -84,12 +99,12 @@ public class FormatAsText extends Format{
    }
 
    public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {
-      String allLines = Utils.getFileContents(path);
+      String allLines = Utils.getFileContents(PATH);
       for (HashMap<String, String> hashMap : hashMaps) {
          for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             allLines = allLines.replaceAll(entry.getKey(), entry.getValue());
          }
       }
-      Utils.writeFile(path, allLines, false);
+      Utils.writeFile(PATH, allLines, false);
    }
 }

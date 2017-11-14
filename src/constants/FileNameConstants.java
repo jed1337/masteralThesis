@@ -2,6 +2,8 @@ package constants;
 
 public enum FileNameConstants{
 	CROSSFOLD_NAME       ("Crossfold.arff"),
+   
+	HEADER               ("Header.arff"),
 
 	KDD_TEST             ("KDDTest+.arff"),
 	KDD_TEST_MINUS_21    ("KDDTest-21.arff"),

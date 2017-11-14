@@ -17,9 +17,9 @@ public abstract class Train {
 
    protected Train(FileNameConstants fileName) throws IOException{
       faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
-      faa.setSaveFileFullPath(PathConstants.FORMATTED_DIR+  ""+fileName);
+      faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
 //      ...
-      fat = new FormatAsText(faa.getSaveFileFullPath());
+      fat = new FormatAsText(faa.getSavePath());
    }
 
    public void setup() throws IOException, Exception{
@@ -40,7 +40,7 @@ public abstract class Train {
 
    public void writeFile() throws IOException{
       Utils.writeFile(
-        faa.getSaveFileFullPath(),
+        faa.getSavePath(),
         faa.getInstances().toString(),
         false);
    }

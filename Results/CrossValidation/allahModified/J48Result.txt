@@ -1,24 +1,22 @@
 === 10 fold Cross validation ===
 === Summary of J48===
 
-Correctly Classified Instances        7283               99.7808 %
-Incorrectly Classified Instances        16                0.2192 %
-Kappa statistic                          0.9965
-Mean absolute error                      0.0023
-Root mean squared error                  0.0382
-Relative absolute error                  0.5587 %
-Root relative squared error              8.3325 %
-Total Number of Instances             7299     
+Correctly Classified Instances        5540               99.6761 %
+Incorrectly Classified Instances        18                0.3239 %
+Kappa statistic                          0.9935
+Mean absolute error                      0.004 
+Root mean squared error                  0.0555
+Relative absolute error                  0.8136 %
+Root relative squared error             11.1272 %
+Total Number of Instances             5558     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1.000    0.001    0.995      1.000    0.998      0.997    1.000     0.999     neptune
-                 0.998    0.001    0.998      0.998    0.998      0.997    0.998     0.996     lowrate
-                 0.997    0.001    0.998      0.997    0.998      0.996    0.998     0.998     normal
-Weighted Avg.    0.998    0.001    0.998      0.998    0.998      0.996    0.998     0.997     
+                 0.997    0.004    0.996      0.997    0.996      0.993    0.999     0.998     highrate
+                 0.996    0.003    0.998      0.996    0.997      0.993    0.999     0.998     lowrate
+Weighted Avg.    0.997    0.003    0.997      0.997    0.997      0.993    0.999     0.998     
 === Confusion Matrix ===
 
-    a    b    c   <-- classified as
- 1299    0    0 |    a = neptune
-    2 2993    5 |    b = lowrate
-    4    5 2991 |    c = normal
+    a    b   <-- classified as
+ 2551    7 |    a = highrate
+   11 2989 |    b = lowrate

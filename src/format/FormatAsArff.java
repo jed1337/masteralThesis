@@ -15,13 +15,23 @@ import weka.filters.unsupervised.instance.Randomize;
 
 public class FormatAsArff extends Format{
    private Instances instances;
+   private String savePath;
    
-   public FormatAsArff(Instances instances) {
-      this.instances = instances;
-   }
+//   public FormatAsArff(Instances instances) {
+//      this.instances = instances;
+//   }
 
    public FormatAsArff(String path) throws FileNotFoundException, IOException {
+      this.savePath = path;
       this.instances = UtilsInstances.getInstances(path);
+   }
+
+   public String getSavePath() {
+      return savePath;
+   }
+
+   public void setSavePath(String savePath) {
+      this.savePath = savePath;
    }
    
    public Instances getInstances() {

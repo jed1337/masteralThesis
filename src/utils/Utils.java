@@ -1,5 +1,6 @@
 package utils;
 
+import format.FormatAsText;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class Utils {
@@ -52,5 +54,19 @@ public class Utils {
          }
          return sb.toString();
       }
+   }
+   
+   public static void createArff(String filename, List<String> paths) throws IOException{
+//      String header = new FormatAsText(paths.get(0)).getArffHeader();
+      
+      FormatAsText fat = new FormatAsText(filename);
+      fat.clearFile();
+//      fat.insertString(header, 0);
+      
+      for (String path : paths) {
+         fat.addInstances(path);
+      }
+      
+      fat.addClassCount("isAttack");
    }
 }

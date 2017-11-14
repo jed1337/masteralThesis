@@ -1,24 +1,22 @@
 === 10 fold Cross validation ===
 === Summary of KNN===
 
-Correctly Classified Instances        7293               99.9178 %
-Incorrectly Classified Instances         6                0.0822 %
-Kappa statistic                          0.9987
-Mean absolute error                      0.0007
-Root mean squared error                  0.0234
-Relative absolute error                  0.1778 %
-Root relative squared error              5.1056 %
-Total Number of Instances             7299     
+Correctly Classified Instances        5498               98.9205 %
+Incorrectly Classified Instances        60                1.0795 %
+Kappa statistic                          0.9783
+Mean absolute error                      0.011 
+Root mean squared error                  0.1039
+Relative absolute error                  2.2086 %
+Root relative squared error             20.842  %
+Total Number of Instances             5558     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1.000    0.000    0.999      1.000    1.000      1.000    1.000     0.999     neptune
-                 0.999    0.001    0.999      0.999    0.999      0.999    0.999     0.999     lowrate
-                 0.999    0.000    0.999      0.999    0.999      0.998    0.999     0.999     normal
-Weighted Avg.    0.999    0.001    0.999      0.999    0.999      0.999    0.999     0.999     
+                 0.989    0.011    0.987      0.989    0.988      0.978    0.991     0.986     highrate
+                 0.989    0.011    0.991      0.989    0.990      0.978    0.991     0.988     lowrate
+Weighted Avg.    0.989    0.011    0.989      0.989    0.989      0.978    0.991     0.987     
 === Confusion Matrix ===
 
-    a    b    c   <-- classified as
- 1299    0    0 |    a = neptune
-    0 2998    2 |    b = lowrate
-    1    3 2996 |    c = normal
+    a    b   <-- classified as
+ 2531   27 |    a = highrate
+   33 2967 |    b = lowrate
