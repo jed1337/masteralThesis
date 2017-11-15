@@ -21,8 +21,8 @@ public class TrainTest extends Classify{
       this.testSet =  UtilsInstances.getInstances(testPath);
       Utils.writeFile(
          super.fullPath+FileNameConstants.TEST,
-         Utils.getFileContents(testPath),
-         false);
+         Utils.getFileContents(testPath)
+      );
    }
 
    @Override

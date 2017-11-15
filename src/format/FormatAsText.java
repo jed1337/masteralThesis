@@ -54,7 +54,7 @@ public class FormatAsText {
     * @throws IOException
     */
    public void clearFile() throws IOException{
-      Utils.writeFile(PATH, "", false);  
+      Utils.writeFile(PATH, "");
    }
    
    public void insertString(String toAdd, int position) throws IOException{
@@ -63,7 +63,7 @@ public class FormatAsText {
          + toAdd 
          + pathContents.substring(position, pathContents.length());
       
-      Utils.writeFile(this.PATH, pathContents, false);  
+      Utils.writeFile(this.PATH, pathContents);
    }
    
    public void addClassCount(String attributeName) throws IOException{
@@ -85,13 +85,13 @@ public class FormatAsText {
       }
       
       StringBuilder sb = new StringBuilder();
-      freq.forEach((k,v)->{
+      freq.forEach((name, amount)->{
          sb.append("% ");
          sb.append(attributeName);
          sb.append(" ");
-         sb.append(k);
+         sb.append(name);
          sb.append(":\t");
-         sb.append(v.get());
+         sb.append(amount.get());
          sb.append(NEW_LINE);
       });
       System.out.println(sb.toString());
@@ -105,6 +105,6 @@ public class FormatAsText {
             allLines = allLines.replaceAll(entry.getKey(), entry.getValue());
          }
       }
-      Utils.writeFile(PATH, allLines, false);
+      Utils.writeFile(PATH, allLines);
    }
 }

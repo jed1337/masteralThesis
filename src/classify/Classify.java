@@ -26,8 +26,8 @@ public abstract class Classify {
       this.trainSet = UtilsInstances.getInstances(trainPath);
       Utils.writeFile(
          this.fullPath + FileNameConstants.TRAIN,
-         Utils.getFileContents(trainPath), 
-         false);
+         Utils.getFileContents(trainPath)
+      );
       
       this.classifiers = new ArrayList<>();
    }

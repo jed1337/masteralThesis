@@ -1,7 +1,15 @@
 package format;
 
 public class MutableInt {
-   int value = 1; // note that we start at 1 since we're counting
+   int value;
+   
+   public MutableInt() {
+      this(1);
+   }
+   
+   public MutableInt(int value){
+      this.value = value;
+   }
 
    public void increment() {
       ++value;

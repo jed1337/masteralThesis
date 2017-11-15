@@ -18,6 +18,10 @@ public class Utils {
       return new BufferedReader(new FileReader(path));
    }
 
+   public static void writeFile(String filename, String allLines) throws IOException {
+      writeFile(filename, allLines, false);
+   }
+   
    public static void writeFile(String filename, String allLines, boolean append) throws IOException {
       try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename, append))) {
          bw.write(allLines);

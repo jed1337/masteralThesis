@@ -58,6 +58,12 @@ public class FormatAsArff {
       useFilter(instances, rand);
    }
    
+   public void removeAllInstances(){
+      for (int i = instances.numInstances() - 1; i >= 0; i--) {
+         instances.delete(i);
+      }
+   }
+   
    /**
     * Removes all the attributes whose name is in attributeNames from instances
     * Also sets the class index as the last index
@@ -182,9 +188,10 @@ public class FormatAsArff {
          }
          Instances slicedInstances = new Instances(this.instances, sliceFrom, sliceHowMany);
          
-         UtilsInstances.writeFile(entry.getKey()+" ",
-            slicedInstances.toString(), 
-            false);
+         UtilsInstances.writeFile(
+            entry.getKey()+" ",
+            slicedInstances.toString()
+         );
          
          sliceFrom+=sliceHowMany;
       }

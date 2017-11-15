@@ -1,18 +1,31 @@
 package utils;
 
+import constants.FileNameConstants;
 import constants.PathConstants;
-import format.FormatAsText;
+import format.FormatAsArff;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import train.Train;
 import weka.core.Instances;
 
 public class UtilsInstances extends Utils{
-   
    public static Instances getInstances(String path) throws FileNotFoundException, IOException {
       Instances instances = new Instances(Utils.getBufferedReader(path));
       instances.setClassIndex(instances.numAttributes()-1);
       return instances;
+   }
+   
+   public static Instances getHeader(String... featuresToRemove) throws IOException, Exception{
+      return getHeader(
+         PathConstants.UNFORMATTED_DIR+FileNameConstants.HEADER,
+         featuresToRemove
+      );
+   }
+   
+   public static Instances getHeader(String path, String... featuresToRemove) throws IOException, Exception{
+      FormatAsArff faa = new FormatAsArff(path);
+      faa.removeAllInstances();
+      faa.removeAttributes(featuresToRemove);
+      return faa.getInstances();
    }
 
    /**

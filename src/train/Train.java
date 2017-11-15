@@ -1,5 +1,6 @@
 package train;
 
+import constants.FormatConstants;
 import constants.PathConstants;
 import format.FormatAsArff;
 import format.FormatAsText;
@@ -8,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public abstract class Train {
-   private final String[] FEATURES_TO_REMOVE = {"service","land","hot","num_failed_logins","logged_in","num_compromised","root_shell","su_attempted","num_root","num_file_creations","num_shells","num_access_files","num_outbound_cmds","is_host_login","is_guest_login","difficulty"};
+//   private final String[] FEATURES_TO_REMOVE = {"service","land","hot","num_failed_logins","logged_in","num_compromised","root_shell","su_attempted","num_root","num_file_creations","num_shells","num_access_files","num_outbound_cmds","is_host_login","is_guest_login","difficulty"};
    private final int RANDOM_SEED = 11;
 
    protected final FormatAsArff faa;
@@ -24,7 +25,7 @@ public abstract class Train {
    public void setup() throws IOException, Exception{
       removeNonMatchingClasses();
 
-      this.faa.removeAttributes(this.FEATURES_TO_REMOVE);
+      this.faa.removeAttributes(FormatConstants.FEATURES_TO_REMOVE);
       this.faa.randomise(this.RANDOM_SEED);
 
       keepXInstances();
@@ -40,8 +41,8 @@ public abstract class Train {
    public void writeFile() throws IOException{
       Utils.writeFile(
         faa.getSavePath(),
-        faa.getInstances().toString(),
-        false);
+        faa.getInstances().toString()
+      );
    }
 
    public FormatAsArff getFaa() {

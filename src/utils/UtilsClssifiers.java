@@ -45,6 +45,6 @@ public class UtilsClssifiers extends Utils {
 
       System.out.println(sb);
 
-      writeFile(ch.getResultName(), sb.toString(), false);
+      writeFile(ch.getResultName(), sb.toString());
    }
 }

@@ -2,6 +2,7 @@ package formatkddarff;
 
 import classify.Classify;
 import classify.CrossValidation;
+import classify.TempHolder;
 import constants.FileNameConstants;
 import constants.PathConstants;
 import train.Train;
@@ -15,6 +16,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import train.TrainHighrate;
 import utils.Utils;
+import utils.UtilsInstances;
+import weka.core.Instance;
+import weka.core.Instances;
 
 public class Thesis{
 //<editor-fold defaultstate="collapsed" desc="Functions">
@@ -45,41 +49,47 @@ public class Thesis{
 //</editor-fold>
    
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
-     ArrayList<Train> trainList = new ArrayList<>();
-//     trainList.add(new TrainNoise());
-//     trainList.add(new TrainNormal());
-     trainList.add(new TrainHighrate());
-     trainList.add(new TrainLowrate());
-
-      for (Train train : trainList) {
-         train.setup();
-         train.writeFile();
-         train.replaceAllStrings(
-            getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-            getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-//            getHashMap("attack", "highrate", "lowrate"),
-
-            replaceAttribute("isAttack", "highrate", "lowrate")
-//            replaceAttribute("isAttack", "normal", "attack")
-//            replaceAttribute("isAttack", "neptune", "lowrate", "normal")
-         );
-      }
+//      Instances instances = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN);
+//      Instance first = instances.get(0);
+//      
+//     ArrayList<Train> trainList = new ArrayList<>();
+////     trainList.add(new TrainNoise());
+////     trainList.add(new TrainNormal());
+//     trainList.add(new TrainHighrate());
+//     trainList.add(new TrainLowrate());
+//
+//      for (Train train : trainList) {
+//         train.setup();
+//         train.writeFile();
+//         train.replaceAllStrings(
+//            getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
+//            getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
+////            getHashMap("attack", "highrate", "lowrate"),
+//
+//            replaceAttribute("isAttack", "highrate", "lowrate")
+////            replaceAttribute("isAttack", "normal", "attack")
+////            replaceAttribute("isAttack", "neptune", "lowrate", "normal")
+//         );
+//      }
+//      
+//      Utils.createArff(
+//         PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN,
+//         trainList.stream().
+//            map(tl->tl.getFaa().getSavePath())
+//            .collect(Collectors.toList())
+//      );
       
-      Utils.createArff(
-         PathConstants.FORMATTED_DIR+"Train.arff",
-         trainList.stream().
-            map(tl->tl.getFaa().getSavePath())
-            .collect(Collectors.toList())
-      );
+      TempHolder th = new TempHolder(PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN);
+      th.renameMe(PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN);
 
-      Classify classify = new CrossValidation(
-//         "2 Binary/HighrateLowrate/"
-         "allahmodified/"
-         ,PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN
-        //PathConstants.FORMATTED_DIR+FileNameConstants.KDD_TEST_MINUS_21
-      );
-      classify.buildModel();
-      classify.writeModel();
-      classify.evaluateModel();
+//      Classify classify = new CrossValidation(
+////         "2 Binary/HighrateLowrate/"
+//         "allahmodified/"
+//         ,PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN
+//        //PathConstants.FORMATTED_DIR+FileNameConstants.KDD_TEST_MINUS_21
+//      );
+//      classify.buildModel();
+//      classify.writeModel();
+//      classify.evaluateModel();
    }
 }
