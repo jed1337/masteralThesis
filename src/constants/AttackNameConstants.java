@@ -1,17 +1,9 @@
 package constants;
 
-public enum AttackNameConstants {
-   LOW_RATE_ATTACKS     ("slowBody", "slowHeaders", "slowRead"),
-   HIGH_RATE_ATTACKS    ("back", "land", "neptune", "pod", "smurf", "teardrop"),
-   HIGH_RATE_AND_NORMAL ("normal","back", "land", "neptune", "pod", "smurf", "teardrop");
+public final class AttackNameConstants {
+   public static final String[]LOW_RATE_ATTACKS      = new String[]{"slowBody", "slowHeaders", "slowRead"};
+   public static final String[]HIGH_RATE_ATTACKS     = new String[]{"back", "land", "neptune", "pod", "smurf", "teardrop"};
+   public static final String[]HIGH_RATE_AND_NORMAL  = new String[]{"normal","back", "land", "neptune", "pod", "smurf", "teardrop"};
 
-   private final String[] values;
-
-   private AttackNameConstants(String... values) {
-      this.values = values;
-   }
-
-   public String[] getValues() {
-      return values;
-   }
+   private AttackNameConstants(){}
 }

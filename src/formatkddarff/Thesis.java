@@ -4,8 +4,6 @@ import classify.Classify;
 import classify.CrossValidation;
 import constants.FileNameConstants;
 import constants.PathConstants;
-import format.FormatAsArff;
-import format.FormatAsText;
 import train.Train;
 import train.TrainLowrate;
 import java.io.FileNotFoundException;
@@ -16,9 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import train.TrainHighrate;
-import utils.UtilsInstances;
 import utils.Utils;
-import weka.core.Instances;
 
 public class Thesis{
 //<editor-fold defaultstate="collapsed" desc="Functions">
@@ -49,10 +45,7 @@ public class Thesis{
 //</editor-fold>
    
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
-//      FormatAsArff faa = new FormatAsArff(PathConstants.UNFORMATTED_DIR+""+FileNameConstants.HEADER);
-//      
-//      System.out.println("allah");
-        ArrayList<Train> trainList = new ArrayList<>();
+     ArrayList<Train> trainList = new ArrayList<>();
 //     trainList.add(new TrainNoise());
 //     trainList.add(new TrainNormal());
      trainList.add(new TrainHighrate());
@@ -82,8 +75,8 @@ public class Thesis{
       Classify classify = new CrossValidation(
 //         "2 Binary/HighrateLowrate/"
          "allahmodified/"
-         ,PathConstants.FORMATTED_DIR.toString()+"Train.arff"
-        //PathConstants.FORMATTED_DIR.toString()+FileNameConstants.KDD_TEST_MINUS_21
+         ,PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN
+        //PathConstants.FORMATTED_DIR+FileNameConstants.KDD_TEST_MINUS_21
       );
       classify.buildModel();
       classify.writeModel();

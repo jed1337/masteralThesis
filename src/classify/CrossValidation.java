@@ -5,11 +5,12 @@ import utils.UtilsClssifiers;
 import java.io.IOException;
 
 public class CrossValidation extends Classify{
-   public CrossValidation(String subFolderName, String CrossValidationPath) throws IOException, Exception {
-      super("results/CrossValidation/"+subFolderName, CrossValidationPath);
-      
-//      this.CrossValidationSet = UtilsInstances.getInstances(CrossValidationPath);
-//      Utils.writeFile(super.folderPath + "CrossValidationSet.arff", Utils.getFileContents(CrossValidationPath), false);
+   public CrossValidation(String subFolderPath, String CrossValidationPath) throws IOException, Exception {
+      this("results/CrossValidation/",subFolderPath, CrossValidationPath);
+   }
+   
+   public CrossValidation(String folderPath, String subFolderPath, String CrossValidationPath) throws IOException, Exception {
+      super(folderPath, subFolderPath, CrossValidationPath);
    }
 
    @Override

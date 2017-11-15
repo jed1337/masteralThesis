@@ -7,7 +7,7 @@ public class TrainHighrate extends Train{
    public TrainHighrate() throws IOException {
       this(FileNameConstants.CNIS_HIGHRATE);
    }
-   public TrainHighrate(FileNameConstants fileName) throws IOException {
+   public TrainHighrate(String fileName) throws IOException {
       super(fileName);
    }
 

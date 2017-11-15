@@ -9,7 +9,7 @@ import java.util.Map;
 import weka.core.Instance;
 import weka.core.Instances;
 
-public class FormatAsText extends Format{
+public class FormatAsText {
    private final String NEW_LINE = "\n";
    private final String PATH;
 

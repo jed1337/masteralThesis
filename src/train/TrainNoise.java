@@ -8,7 +8,7 @@ public class TrainNoise extends Train{
       this(FileNameConstants.CNIS_NOISE);
    }
    
-   public TrainNoise(FileNameConstants fileName) throws IOException {
+   public TrainNoise(String fileName) throws IOException {
       super(fileName);
    }
 

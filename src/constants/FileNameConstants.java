@@ -1,27 +1,22 @@
 package constants;
 
-public enum FileNameConstants{
-	CROSSFOLD_NAME       ("Crossfold.arff"),
-   
-	HEADER               ("Header.arff"),
+public final class FileNameConstants{
+	public static final String CROSSFOLD_NAME       = "Crossfold.arff";
 
-	KDD_TEST             ("KDDTest+.arff"),
-	KDD_TEST_MINUS_21    ("KDDTest-21.arff"),
-	KDD_TRAIN            ("KDDTrain+.arff"),
-	KDD_TRAIN_20_PERCENT ("KDDTrain+_20Percent.arff"),
+	public static final String HEADER               = "Header.arff";
 
-	CNIS_HIGHRATE        ("CNISHighrate.arff"),
-	CNIS_LOWRATE         ("CNISLowrate.arff"),
-	CNIS_NOISE           ("CNISNoise.arff");
+	public static final String TEST                 = "test.arff";
+	public static final String TRAIN                = "train.arff";
+	public static final String VALIDATION           = "validation.arff";
 
-	private final String VALUE;
+	public static final String KDD_TEST             = "KDDTest+.arff";
+	public static final String KDD_TEST_MINUS_21    = "KDDTest-21.arff";
+	public static final String KDD_TRAIN            = "KDDTrain+.arff";
+	public static final String KDD_TRAIN_20_PERCENT = "KDDTrain+_20Percent.arff";
 
-	private FileNameConstants(String value){
-		this.VALUE = value;
-	}
+	public static final String CNIS_HIGHRATE        = "CNISHighrate.arff";
+	public static final String CNIS_LOWRATE         = "CNISLowrate.arff";
+	public static final String CNIS_NOISE           = "CNISNoise.arff";
 
-   @Override
-   public String toString() {
-      return VALUE;
-   }
+	private FileNameConstants(){}
 }

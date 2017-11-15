@@ -1,17 +1,8 @@
 package constants;
 
-public enum PathConstants{
-   UNFORMATTED_DIR ("Data/RawFiles/"),
-   FORMATTED_DIR   ("Data/FormattedFiles/");
+public final class PathConstants{
+   public static final String UNFORMATTED_DIR = "Data/RawFiles/";
+   public static final String FORMATTED_DIR   = "Data/FormattedFiles/";
 
-	private final String value;
-
-	private PathConstants(String value){
-		this.value = value;
-	}
-
-   @Override
-   public String toString(){
-      return value;
-   }
+   private PathConstants(){}
 }

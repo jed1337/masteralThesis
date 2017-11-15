@@ -1,17 +1,31 @@
 package classify;
 
+import constants.FileNameConstants;
 import format.FormatAsArff;
-import formatkddarff.Thesis;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import utils.Utils;
+import utils.UtilsInstances;
 import weka.core.Instances;
 
-public class TrainTestValidation{
-//   private final Instances validationSet;
+public class TrainTestValidation extends TrainTest{
+   protected final Instances validationSet;
+   
+   public TrainTestValidation(String subFolderPath, String trainPath, String testPath, String validationPath) throws IOException, Exception {
+      this("results/TestTrainValidation/", subFolderPath, trainPath, testPath, validationPath);
+   }
+   
+   public TrainTestValidation(String folderPath, String subFolderPath, String trainPath, String testPath, String validationPath) throws IOException, Exception {
+      super(folderPath, subFolderPath, trainPath, testPath);
+      
+      this.validationSet = UtilsInstances.getInstances(validationPath);
+      Utils.writeFile(
+         super.fullPath + FileNameConstants.VALIDATION,
+         Utils.getFileContents(validationPath), 
+         false);
+   }
+   
 	/**
 	 * Gather all normal, highrate, lowrate into sepate Instances file
 	 * @param toSplitPath

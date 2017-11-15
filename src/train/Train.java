@@ -1,6 +1,5 @@
 package train;
 
-import constants.FileNameConstants;
 import constants.PathConstants;
 import format.FormatAsArff;
 import format.FormatAsText;
@@ -15,7 +14,7 @@ public abstract class Train {
    protected final FormatAsArff faa;
    protected final FormatAsText fat;
 
-   protected Train(FileNameConstants fileName) throws IOException{
+   protected Train(String fileName) throws IOException{
       faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
       faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
 //      ...

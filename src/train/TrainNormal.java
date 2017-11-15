@@ -8,7 +8,7 @@ public class TrainNormal extends Train{
       this(FileNameConstants.KDD_TRAIN);
    }
    
-   public TrainNormal(FileNameConstants fileName) throws IOException {
+   public TrainNormal(String fileName) throws IOException {
       super(fileName);
    }
 

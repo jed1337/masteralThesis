@@ -1,5 +1,6 @@
 package classify;
 
+import constants.FileNameConstants;
 import formatkddarff.ClassifierHolder;
 import utils.UtilsClssifiers;
 import utils.Utils;
@@ -11,10 +12,17 @@ public class TrainTest extends Classify{
    protected final Instances testSet;
 
    public TrainTest(String subFolderPath, String trainPath, String testPath) throws IOException, Exception {
-      super("results/TestTrain/"+subFolderPath, trainPath);
+      this("results/TestTrain/", subFolderPath, trainPath, testPath);
+   }
+   
+   public TrainTest(String folderPath, String subFolderPath, String trainPath, String testPath) throws IOException, Exception {
+      super(folderPath, subFolderPath, trainPath);
 
       this.testSet =  UtilsInstances.getInstances(testPath);
-      Utils.writeFile(super.folderPath+"testSet.arff", Utils.getFileContents(testPath), false);
+      Utils.writeFile(
+         super.fullPath+FileNameConstants.TEST,
+         Utils.getFileContents(testPath),
+         false);
    }
 
    @Override

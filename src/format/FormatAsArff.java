@@ -13,14 +13,10 @@ import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.StringToNominal;
 import weka.filters.unsupervised.instance.Randomize;
 
-public class FormatAsArff extends Format{
+public class FormatAsArff {
    private Instances instances;
    private String savePath;
    
-//   public FormatAsArff(Instances instances) {
-//      this.instances = instances;
-//   }
-
    public FormatAsArff(String path) throws FileNotFoundException, IOException {
       this.savePath = path;
       this.instances = UtilsInstances.getInstances(path);
