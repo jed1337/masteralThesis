@@ -1,7 +1,7 @@
 package classify;
 
 import constants.FileNameConstants;
-import formatkddarff.ClassifierHolder;
+import driver.ClassifierHolder;
 import utils.UtilsClssifiers;
 import utils.Utils;
 import java.io.IOException;

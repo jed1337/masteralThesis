@@ -43,7 +43,7 @@ public class Utils {
    }
 
    public static String getFileContents(
-           String filename, Predicate<String> breakCondition) throws IOException{
+      String filename, Predicate<String> breakCondition) throws IOException{
       
       StringBuilder sb = new StringBuilder();
       try (BufferedReader br = Utils.getBufferedReader(filename)) {
@@ -61,16 +61,17 @@ public class Utils {
    }
    
    public static void createArff(String filename, List<String> paths) throws IOException{
-//      String header = new FormatAsText(paths.get(0)).getArffHeader();
+      createArff(filename, paths, "isAttack");
+   }
       
+   public static void createArff(String filename, List<String> paths, String attributeName) throws IOException{
       FormatAsText fat = new FormatAsText(filename);
       fat.clearFile();
-//      fat.insertString(header, 0);
       
       for (String path : paths) {
          fat.addInstances(path);
       }
       
-      fat.addClassCount("isAttack");
+      fat.addClassCount(attributeName);
    }
 }

@@ -1,6 +1,6 @@
 package classify;
 
-import formatkddarff.ClassifierHolder;
+import driver.ClassifierHolder;
 import utils.UtilsClssifiers;
 import java.io.IOException;
 

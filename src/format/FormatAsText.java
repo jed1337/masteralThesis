@@ -72,6 +72,11 @@ public class FormatAsText {
       Map<String, MutableInt> freq = new HashMap<>();
       MutableInt count;
       
+      if(attributeIndex == -1){
+         throw new IOException
+            ("Attribute "+attributeName+" not found. The classcount can't continue");
+      }
+      
       for (int i = instances.numInstances() - 1; i >= 0; i--) {
          Instance inst = instances.get(i);
          String attributeValue = inst.stringValue(attributeIndex);
@@ -84,18 +89,18 @@ public class FormatAsText {
          }
       }
       
-      StringBuilder sb = new StringBuilder();
+      StringBuilder sbHeader = new StringBuilder();
       freq.forEach((name, amount)->{
-         sb.append("% ");
-         sb.append(attributeName);
-         sb.append(" ");
-         sb.append(name);
-         sb.append(":\t");
-         sb.append(amount.get());
-         sb.append(NEW_LINE);
+         sbHeader.append("% ");
+         sbHeader.append(attributeName);
+         sbHeader.append(" ");
+         sbHeader.append(name);
+         sbHeader.append(":\t");
+         sbHeader.append(amount.get());
+         sbHeader.append(NEW_LINE);
       });
-      System.out.println(sb.toString());
-      insertString(sb.toString(), 0);
+      System.out.println(sbHeader.toString());
+      insertString(sbHeader.toString(), 0);
    }
 
    public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {

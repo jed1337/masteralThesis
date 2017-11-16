@@ -1,6 +1,5 @@
 package classify;
 
-import constants.FileNameConstants;
 import constants.FormatConstants;
 import format.FormatAsArff;
 import format.FormatAsText;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import utils.*;
-import weka.core.Attribute;
 import weka.core.Instances;
 
 public class TempHolder {
@@ -19,7 +17,7 @@ public class TempHolder {
 	final Instances input;
    final String inputPath;
 
-   final ArrayList<Counter> counters;
+   final ArrayList<SplitFileCounter> counters;
 
 	public TempHolder(String inputPath) throws IOException{
 		this.inputPath    = inputPath;
@@ -28,7 +26,18 @@ public class TempHolder {
 		this.newInstances = new HashMap<>();
 	}
 
-	public void renameMe(String source) throws IOException, Exception{
+   /**
+    * Assumes that the different paths are different from one another
+    * 
+    * Currently looks horrible, but works
+    * @param headerSource
+    * @param trainPath
+    * @param testPath
+    * @param validationPath
+    * @throws IOException
+    * @throws Exception 
+    */
+	public void setTrainTestValidation(String headerSource, String trainPath, String testPath, String validationPath) throws IOException, Exception{
       int isAttackIndex = UtilsInstances.getAttributeIndex(this.input, this.isAttack);
 		HashMap<String, FormatAsArff> singleClass = new HashMap<>();
       
@@ -38,43 +47,86 @@ public class TempHolder {
       }
       
       HashMap<String, Float> splitParam = new HashMap<>();
-      splitParam.put(FileNameConstants.TRAIN,      new Float(4.0));
-      splitParam.put(FileNameConstants.TEST,       new Float(1.0));
-      splitParam.put(FileNameConstants.VALIDATION, new Float(1.0));
+      splitParam.put(trainPath,      new Float(4.0));
+      splitParam.put(testPath,       new Float(1.0));
+      splitParam.put(validationPath, new Float(1.0));
       
-      for (String path : splitParam.keySet()) {
-         this.newInstances.put(path, UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
-      }
+      addHeaders(splitParam, headerSource);
 
-      //Setup limits
-      singleClass.entrySet().forEach((scEntry)->{
-         String attackType = scEntry.getKey();
-         FormatAsArff faa  = scEntry.getValue();
-
-         faa.removeNonMatchingClasses(this.isAttack, attackType);
-         splitParam.entrySet().forEach((spEntry)->{
-            int limit = Math.round(
-               faa.getInstances().numInstances() * ((float)spEntry.getValue()/6)
-            );
-            this.counters.add(new Counter(attackType, spEntry.getKey(), limit));
-         });
-      });
+      setupLimits(singleClass, splitParam);
       
-      int attackIndex = UtilsInstances.getAttributeIndex(this.input, isAttack);
 		this.input.forEach((instance)->{
          this.counters.stream()
             .filter((counter)->
-            (instance.stringValue(attackIndex).equalsIgnoreCase(counter.getAttackType())))
+            (instance.stringValue(isAttackIndex).equalsIgnoreCase(counter.getAttackType())))
             .filter((counter)->!counter.isFull())
             .forEach((counter)->{
                counter.increment();
                this.newInstances.get(counter.getFileType()).add(instance);
             });
 		});
+      
+      writeFiles();
+	}
+
+   private void writeFiles() throws IOException {
       for (Map.Entry<String, Instances> entry : newInstances.entrySet()) {
          Utils.writeFile(entry.getKey(), entry.getValue().toString());
          FormatAsText fat = new FormatAsText(entry.getKey());
          fat.addClassCount(isAttack);
       }
-	}
+   }
+
+   private void addHeaders(HashMap<String, Float> splitParam, String source) throws Exception {
+      for (String path : splitParam.keySet()) {
+         this.newInstances.put(
+            path,
+            UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE
+         ));
+      }
+   }
+
+   private void setupLimits(HashMap<String, FormatAsArff> singleClass, HashMap<String, Float> splitParam) {
+      singleClass.entrySet().forEach((scEntry)->{
+         String attackType = scEntry.getKey();
+         FormatAsArff faa  = scEntry.getValue();
+         
+         faa.removeNonMatchingClasses(this.isAttack, attackType);
+         splitParam.entrySet().forEach((spEntry)->{
+            int limit = Math.round(
+                    faa.getInstances().numInstances() * ((float)spEntry.getValue()/6)// The 6 is from 4+1+1
+            );
+            this.counters.add(new SplitFileCounter(attackType, spEntry.getKey(), limit));
+         });
+      });
+   }
+   private class SplitFileCounter{
+      private final String attackType;
+      private final String fileType;
+      private final int limit;
+      private int cur;
+
+      public SplitFileCounter(String attackType, String fileType, int limit) {
+         this.attackType = attackType;
+         this.fileType = fileType;
+         this.limit = limit;
+         this.cur = 0;
+      }
+
+      public void increment(){
+         this.cur++;
+      }
+
+      public boolean isFull(){
+         return (this.cur == this.limit);
+      }
+
+      public String getAttackType() {
+         return attackType;
+      }
+
+      public String getFileType() {
+         return fileType;
+      }
+   }
 }

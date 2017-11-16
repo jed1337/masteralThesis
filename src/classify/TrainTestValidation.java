@@ -1,11 +1,10 @@
 package classify;
 
 import constants.FileNameConstants;
-import format.FormatAsArff;
+import driver.ClassifierHolder;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import utils.Utils;
+import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.core.Instances;
 
@@ -25,32 +24,10 @@ public class TrainTestValidation extends TrainTest{
          Utils.getFileContents(validationPath)
       );
    }
-
-	/**
-	 * Gather all normal, highrate, lowrate into separate Instances file
-	 * @param toSplitPath
-	 * @throws java.io.IOException
-	 */
-	public void ttv(String toSplitPath) throws IOException, IllegalArgumentException{
-		HashMap<FormatAsArff, String> singleClass = new HashMap<>();
-		singleClass.put(new FormatAsArff(toSplitPath), "Normal");
-		singleClass.put(new FormatAsArff(toSplitPath), "Highrate");
-		singleClass.put(new FormatAsArff(toSplitPath), "Lowrate");
-
-		for (Map.Entry<FormatAsArff, String> entry : singleClass.entrySet()) {
-         FormatAsArff faa = entry.getKey();
-//         Instances instances = faa.getInstances();
-//         instances.get(0).
-			String str = entry.getValue();
-
-			faa.removeNonMatchingClasses("isAttack", str);
-			Utils.writeFile("Only"+str+".arff", faa.getInstances().toString());
-
-			HashMap<String, Float> splitParam = new HashMap<>();
-			splitParam.put("Only"+str+ FileNameConstants.TRAIN,      new Float(4.0));
-			splitParam.put("Only"+str+ FileNameConstants.TEST,       new Float(1.0));
-			splitParam.put("Only"+str+ FileNameConstants.VALIDATION, new Float(1.0));
-         faa.splitFile(6, splitParam);
-		}
-	}
+   
+   public void evaluateValidation() throws Exception{
+      for (ClassifierHolder ch : super.classifiers) {
+         UtilsClssifiers.saveTestEvaluationToFile(ch, this.validationSet);
+      }
+   }
 }

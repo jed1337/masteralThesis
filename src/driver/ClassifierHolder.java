@@ -1,4 +1,4 @@
-package formatkddarff;
+package driver;
 
 import utils.Utils;
 import weka.classifiers.Classifier;

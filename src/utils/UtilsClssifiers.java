@@ -1,6 +1,6 @@
 package utils;
 
-import formatkddarff.ClassifierHolder;
+import driver.ClassifierHolder;
 import java.io.IOException;
 import java.util.Random;
 import weka.classifiers.Classifier;
