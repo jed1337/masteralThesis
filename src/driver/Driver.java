@@ -1,23 +1,20 @@
 package driver;
 
-import classify.Classify;
-import classify.TempHolder;
-import classify.TrainTestValidation;
-import constants.FileNameConstants;
-import constants.PathConstants;
-import train.Train;
-import train.TrainLowrate;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+import train.Train;
 import train.TrainHighrate;
+import train.TrainLowrate;
 import train.TrainNoise;
 import train.TrainNormal;
-import utils.Utils;
+import utils.UtilsClssifiers;
+import utils.UtilsInstances;
+import weka.classifiers.Classifier;
+import weka.core.Instances;
 
 public class Driver{
 //<editor-fold defaultstate="collapsed" desc="Functions">
@@ -48,50 +45,66 @@ public class Driver{
 //</editor-fold>
 
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
-     ArrayList<Train> trainList = new ArrayList<>();
-//     trainList.add(new TrainNoise());
-//     trainList.add(new TrainNormal());
-     trainList.add(new TrainHighrate());
-     trainList.add(new TrainLowrate());
+      ArrayList<Train> trainNormalOrAttack = new ArrayList<>();
+      trainNormalOrAttack.add(new TrainNoise());
+      trainNormalOrAttack.add(new TrainNormal());
+      trainNormalOrAttack.add(new TrainHighrate());
+      trainNormalOrAttack.add(new TrainLowrate());
+     
+      new SystemTrain(
+         "NormalOrAttack/", 
+         trainNormalOrAttack,
+         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
+         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
+//         getHashMap("attack", "highrate", "lowrate"),
 
-      for (Train train : trainList) {
-         train.setup();
-         train.writeFile();
-         train.replaceAllStrings(
-            getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-            getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-//            getHashMap("attack", "highrate", "lowrate"),
+//         replaceAttribute("isAttack", "normal", "attack")
+         replaceAttribute("isAttack", "normal", "attack", "lowrate", "highrate")
+     );
+      
+     ArrayList<Train> trainHL = new ArrayList<>();
+     trainHL.add(new TrainHighrate());
+     trainHL.add(new TrainLowrate());
+     
+     new SystemTrain(
+         "HL/", 
+         trainHL,
+         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
+         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
 
-            replaceAttribute("isAttack", "highrate", "lowrate")
-//            replaceAttribute("isAttack", "normal", "attack")
-//            replaceAttribute("isAttack", "neptune", "lowrate", "normal")
+         replaceAttribute("isAttack", "highrate", "lowrate")
+     );
+      system();
+   }
+   public static void system() throws IOException, Exception{
+      Instances validation = UtilsInstances.getInstances("Results/TestTrainValidation/NormalOrAttack/Validation.arff");
+      Instances hlValidation = UtilsInstances.getInstances("Results/TestTrainValidation/HL/Validation.arff");
+      Classifier normalClassifier = UtilsClssifiers.readModel("Results/TestTrainValidation/NormalOrAttack/KNN.model");
+      Classifier hlClassifier     = UtilsClssifiers.readModel("Results/TestTrainValidation/HL/KNN.model");
+      
+      for(int i=0; i< validation.classAttribute().numValues(); i++){
+         System.out.println("Value "+i+" = "+validation.classAttribute().value(i));
+      }
+      for (int i = 0; i < validation.size(); i++) {
+//         double label = classifier.classifyInstance(train.instance(i));
+//         train.instance(i).setClassValue(label);
+//
+//         System.out.println(train.instance(i).stringValue(26));
+
+         String predictedValue = validation.classAttribute().value((int)normalClassifier.classifyInstance(validation.get(i)));
+//         String predictedValue = validation.classAttribute().value((int)hlClassifier.classifyInstance(validation.get(i)));
+         String actualValue = validation.get(i).stringValue(26);
+         
+         if(predictedValue.equalsIgnoreCase("attack")){
+            predictedValue = hlValidation.classAttribute().value((int)hlClassifier.classifyInstance(validation.get(i)));   
+         }
+         
+         System.out.println(
+            i+")\tPredictedValue: "+predictedValue
+//            normalValidation.classAttribute().value((int)hlClassifier.classifyInstance(normalValidation.get(i)))+
+            +"\t\tActualValue:\t"+actualValue
          );
       }
-
-      Utils.createArff(
-         PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED,
-         trainList.stream().
-            map(tl->tl.getFaa().getSavePath())
-            .collect(Collectors.toList())
-      );
-
-      TempHolder th = new TempHolder(PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN);
-      th.setTrainTestValidation(
-         PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED,
-         PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN,
-         PathConstants.FORMATTED_DIR+FileNameConstants.TEST,
-         PathConstants.FORMATTED_DIR+FileNameConstants.VALIDATION
-      );
-
-      Classify classify = new TrainTestValidation(
-         "2 Binary/HighrateLowrate/",
-         "allahmodified/",
-         PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN,
-         PathConstants.FORMATTED_DIR+FileNameConstants.TEST,
-         PathConstants.FORMATTED_DIR+FileNameConstants.VALIDATION
-      );
-      classify.buildModel();
-      classify.writeModel();
-      classify.evaluateModel();
+      
    }
 }

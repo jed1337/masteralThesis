@@ -44,5 +44,14 @@ public abstract class Classify {
          UtilsClssifiers.writeModel(ch);
       }
    };
+   
+   public void temp(){
+      this.validationSet = UtilsInstances.getInstances(validationPath);
+      Utils.writeFile(
+         super.fullPath + FileNameConstants.VALIDATION,
+         Utils.getFileContents(validationPath)
+      );
+   }
+   
    public abstract void evaluateModel() throws Exception;
 }

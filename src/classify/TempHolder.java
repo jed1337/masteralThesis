@@ -14,14 +14,14 @@ public class TempHolder {
    final HashMap<String, Instances> newInstances;
 
    final String isAttack = "isAttack";
-	final Instances input;
-   final String inputPath;
+	final Instances combineInstances;
+   final String combinePath;
 
    final ArrayList<SplitFileCounter> counters;
 
-	public TempHolder(String inputPath) throws IOException{
-		this.inputPath    = inputPath;
-		this.input        = UtilsInstances.getInstances(inputPath);
+	public TempHolder(String combinedPath) throws IOException{
+		this.combinePath    = combinedPath;
+		this.combineInstances        = UtilsInstances.getInstances(combinedPath);
 		this.counters     = new ArrayList<>();
 		this.newInstances = new HashMap<>();
 	}
@@ -30,20 +30,19 @@ public class TempHolder {
     * Assumes that the different paths are different from one another
     * 
     * Currently looks horrible, but works
-    * @param headerSource
     * @param trainPath
     * @param testPath
     * @param validationPath
     * @throws IOException
     * @throws Exception 
     */
-	public void setTrainTestValidation(String headerSource, String trainPath, String testPath, String validationPath) throws IOException, Exception{
-      int isAttackIndex = UtilsInstances.getAttributeIndex(this.input, this.isAttack);
+	public void setTrainTestValidation(String trainPath, String testPath, String validationPath) throws IOException, Exception{
+      int isAttackIndex = UtilsInstances.getAttributeIndex(this.combineInstances, this.isAttack);
 		HashMap<String, FormatAsArff> singleClass = new HashMap<>();
       
-      for (int i = 0; i < this.input.attribute(isAttackIndex).numValues(); i++) {
-         String attName = this.input.attribute(isAttackIndex).value(i);
-         singleClass.put(attName, new FormatAsArff(this.inputPath));
+      for (int i = 0; i < this.combineInstances.attribute(isAttackIndex).numValues(); i++) {
+         String attName = this.combineInstances.attribute(isAttackIndex).value(i);
+         singleClass.put(attName, new FormatAsArff(this.combinePath));
       }
       
       HashMap<String, Float> splitParam = new HashMap<>();
@@ -51,11 +50,11 @@ public class TempHolder {
       splitParam.put(testPath,       new Float(1.0));
       splitParam.put(validationPath, new Float(1.0));
       
-      addHeaders(splitParam, headerSource);
+      addHeaders(splitParam, this.combinePath);
 
       setupLimits(singleClass, splitParam);
       
-		this.input.forEach((instance)->{
+		this.combineInstances.forEach((instance)->{
          this.counters.stream()
             .filter((counter)->
             (instance.stringValue(isAttackIndex).equalsIgnoreCase(counter.getAttackType())))
