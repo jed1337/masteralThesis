@@ -6,6 +6,7 @@ import utils.UtilsClssifiers;
 import utils.Utils;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import utils.UtilsInstances;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.SMO;
@@ -17,41 +18,52 @@ public abstract class Classify {
    protected final String fullPath;
    protected final ArrayList<ClassifierHolder> classifiers;
    
-   private final Instances trainSet;
+   protected final HashMap<String, Instances> instancesHM;
+   
+//   private final Instances trainSet;
+   private final String trainPath;
    
    protected Classify(String folderPath, String subFolderPath, String trainPath) throws IOException, Exception {
       this.fullPath = folderPath+subFolderPath;
       Utils.makeFolders(this.fullPath);
       
-      this.trainSet = UtilsInstances.getInstances(trainPath);
-      Utils.writeFile(
-         this.fullPath + FileNameConstants.TRAIN,
-         Utils.getFileContents(trainPath)
-      );
+      this.instancesHM = new HashMap<>();
+      this.trainPath = trainPath;
+      addInstance(trainPath);
+
+//Put this function outside      
+      Utils.duplicateFile(trainPath, this.fullPath+FileNameConstants.TRAIN);
+      
+//      this.trainSet = UtilsInstances.getInstances(trainPath);
+//      Utils.duplicateFile(
+//         this.fullPath + FileNameConstants.TRAIN,
+//         Utils.getFileContents(trainPath)
+//      );
       
       this.classifiers = new ArrayList<>();
    }
    
-   public void buildModel() throws Exception{
-      this.classifiers.add(new ClassifierHolder(new NaiveBayes(), this.trainSet, "NB",  this.fullPath));
-      this.classifiers.add(new ClassifierHolder(new IBk(),        this.trainSet, "KNN", this.fullPath));
-      this.classifiers.add(new ClassifierHolder(new J48(),        this.trainSet, "J48", this.fullPath));
-      this.classifiers.add(new ClassifierHolder(new SMO(),        this.trainSet, "SMO", this.fullPath));
+   protected final void addInstance(String path) throws IOException {
+      Instances instances = UtilsInstances.getInstances(path);
+      Utils.addToMap(instancesHM, path, instances);
+   }
+   
+   public final void buildModel() throws Exception{
+      buildModel(this.trainPath);
    };
    
-   public void writeModel() throws Exception{
+   protected final void buildModel(String key) throws Exception{
+      this.classifiers.add(new ClassifierHolder(new NaiveBayes(), this.instancesHM.get(key), "NB",  this.fullPath));
+      this.classifiers.add(new ClassifierHolder(new IBk(),        this.instancesHM.get(key), "KNN", this.fullPath));
+      this.classifiers.add(new ClassifierHolder(new J48(),        this.instancesHM.get(key), "J48", this.fullPath));
+      this.classifiers.add(new ClassifierHolder(new SMO(),        this.instancesHM.get(key), "SMO", this.fullPath));
+   }
+   
+   public final void writeModel() throws Exception{
       for (ClassifierHolder ch : this.classifiers) {
          UtilsClssifiers.writeModel(ch);
       }
    };
-   
-   public void temp(){
-      this.validationSet = UtilsInstances.getInstances(validationPath);
-      Utils.writeFile(
-         super.fullPath + FileNameConstants.VALIDATION,
-         Utils.getFileContents(validationPath)
-      );
-   }
    
    public abstract void evaluateModel() throws Exception;
 }

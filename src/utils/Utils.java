@@ -9,33 +9,16 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 
 public class Utils {
    private static final String NEW_LINE = "\n";
+
+   protected Utils() {}
    
    public static BufferedReader getBufferedReader(String path) throws FileNotFoundException {
       return new BufferedReader(new FileReader(path));
-   }
-
-   public static void writeFile(String filename, String allLines) throws IOException {
-      writeFile(filename, allLines, false);
-   }
-   
-   public static void writeFile(String filename, String allLines, boolean append) throws IOException {
-      try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename, append))) {
-         bw.write(allLines);
-      }
-      System.out.println("Created '"+filename+"'");
-   }
-   
-   public static void makeFolders(String folderPath){
-      if(!folderPath.isEmpty()){
-         new File(folderPath).mkdirs();
-      }
-      else{
-         System.err.println("'"+folderPath+"' already exists.");
-      }
    }
    
    public static String getFileContents(String filename) throws IOException{
@@ -59,7 +42,32 @@ public class Utils {
          return sb.toString();
       }
    }
+      
+   public static void duplicateFile(String source, String destination) throws IOException{
+      String sourceContents = getFileContents(source);
+      writeFile(destination, sourceContents);
+   }
    
+   public static void writeFile(String destination, String allLines) throws IOException {
+      writeFile(destination, allLines, false);
+   }
+   
+   public static void writeFile(String destination, String allLines, boolean append) throws IOException {
+      try (BufferedWriter bw = new BufferedWriter(new FileWriter(destination, append))) {
+         bw.write(allLines);
+      }
+      System.out.println("Created '"+destination+"'");
+   }
+   
+   public static void makeFolders(String folderPath){
+      if(!folderPath.isEmpty()){
+         new File(folderPath).mkdirs();
+      }
+      else{
+         System.err.println("'"+folderPath+"' already exists.");
+      }
+   }
+
    public static void createArff(String filename, List<String> paths) throws IOException{
       createArff(filename, paths, "isAttack");
    }
@@ -73,5 +81,13 @@ public class Utils {
       }
       
       fat.addClassCount(attributeName);
+   }
+   
+   public static <K extends Object, V extends Object> void addToMap(Map map, K key, V value) throws IllegalArgumentException{
+      if(!map.containsKey(key)){
+         map.put(key, value);
+      } else{
+         throw new IllegalArgumentException(key+" already exists");
+      }
    }
 }

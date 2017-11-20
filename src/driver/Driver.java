@@ -52,7 +52,7 @@ public class Driver{
       trainNormalOrAttack.add(new TrainLowrate());
      
       new SystemTrain(
-         "NormalOrAttack/", 
+         "Allah/NormalOrAttack/", 
          trainNormalOrAttack,
          getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
          getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
@@ -62,19 +62,19 @@ public class Driver{
          replaceAttribute("isAttack", "normal", "attack", "lowrate", "highrate")
      );
       
-     ArrayList<Train> trainHL = new ArrayList<>();
-     trainHL.add(new TrainHighrate());
-     trainHL.add(new TrainLowrate());
-     
-     new SystemTrain(
-         "HL/", 
-         trainHL,
-         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-
-         replaceAttribute("isAttack", "highrate", "lowrate")
-     );
-      system();
+//     ArrayList<Train> trainHL = new ArrayList<>();
+//     trainHL.add(new TrainHighrate());
+//     trainHL.add(new TrainLowrate());
+//     
+//     new SystemTrain(
+//         "Allah/HL/", 
+//         trainHL,
+//         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
+//         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
+//
+//         replaceAttribute("isAttack", "highrate", "lowrate")
+//     );
+//      system();
    }
    public static void system() throws IOException, Exception{
       Instances validation = UtilsInstances.getInstances("Results/TestTrainValidation/NormalOrAttack/Validation.arff");

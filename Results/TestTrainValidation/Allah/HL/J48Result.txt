@@ -1,0 +1,22 @@
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        3700               99.865  %
+Incorrectly Classified Instances         5                0.135  %
+Kappa statistic                          0.9973
+Mean absolute error                      0.0026
+Root mean squared error                  0.0361
+Relative absolute error                  0.5234 %
+Root relative squared error              7.2347 %
+Total Number of Instances             3705     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.002    0.998      0.999    0.999      0.997    1.000     1.000     highrate
+                 0.998    0.001    0.999      0.998    0.999      0.997    1.000     1.000     lowrate
+Weighted Avg.    0.999    0.001    0.999      0.999    0.999      0.997    1.000     1.000     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1704    1 |    a = highrate
+    4 1996 |    b = lowrate

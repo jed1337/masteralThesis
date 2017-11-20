@@ -9,6 +9,8 @@ import weka.core.Instances;
 import static utils.Utils.writeFile;
 
 public class UtilsClssifiers extends Utils {
+   private UtilsClssifiers() {}
+   
    public static Classifier readModel(String filename) throws Exception {
       return (Classifier) weka.core.SerializationHelper.read(filename);
    }

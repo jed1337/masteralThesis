@@ -8,6 +8,8 @@ import java.io.IOException;
 import weka.core.Instances;
 
 public class UtilsInstances extends Utils{
+   private UtilsInstances() {}
+   
    public static Instances getInstances(String path) throws FileNotFoundException, IOException {
       Instances instances = new Instances(Utils.getBufferedReader(path));
       instances.setClassIndex(instances.numAttributes()-1);

@@ -8,62 +8,64 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import utils.*;
+import weka.core.Instance;
 import weka.core.Instances;
 
 public class TempHolder {
    final HashMap<String, Instances> newInstances;
 
    final String isAttack = "isAttack";
-	final Instances combineInstances;
+	final Instances combinedInstances;
    final String combinePath;
 
    final ArrayList<SplitFileCounter> counters;
 
 	public TempHolder(String combinedPath) throws IOException{
 		this.combinePath    = combinedPath;
-		this.combineInstances        = UtilsInstances.getInstances(combinedPath);
+		this.combinedInstances        = UtilsInstances.getInstances(combinedPath);
 		this.counters     = new ArrayList<>();
 		this.newInstances = new HashMap<>();
 	}
 
    /**
     * Assumes that the different paths are different from one another
-    * 
+    *
     * Currently looks horrible, but works
     * @param trainPath
     * @param testPath
     * @param validationPath
     * @throws IOException
-    * @throws Exception 
+    * @throws Exception
     */
 	public void setTrainTestValidation(String trainPath, String testPath, String validationPath) throws IOException, Exception{
-      int isAttackIndex = UtilsInstances.getAttributeIndex(this.combineInstances, this.isAttack);
+      int isAttackIndex = UtilsInstances.getAttributeIndex(this.combinedInstances, this.isAttack);
 		HashMap<String, FormatAsArff> singleClass = new HashMap<>();
-      
-      for (int i = 0; i < this.combineInstances.attribute(isAttackIndex).numValues(); i++) {
-         String attName = this.combineInstances.attribute(isAttackIndex).value(i);
+
+      for (int i = 0; i < this.combinedInstances.attribute(isAttackIndex).numValues(); i++) {
+         String attName = this.combinedInstances.attribute(isAttackIndex).value(i);
          singleClass.put(attName, new FormatAsArff(this.combinePath));
       }
-      
+
       HashMap<String, Float> splitParam = new HashMap<>();
       splitParam.put(trainPath,      new Float(4.0));
       splitParam.put(testPath,       new Float(1.0));
       splitParam.put(validationPath, new Float(1.0));
-      
+
       addHeaders(splitParam, this.combinePath);
 
       setupLimits(singleClass, splitParam);
       
-		this.combineInstances.forEach((instance)->{
-         this.counters.stream()
-            .filter((counter)->
-            (instance.stringValue(isAttackIndex).equalsIgnoreCase(counter.getAttackType())))
-            .filter((counter)->!counter.isFull())
-            .forEach((counter)->{
-               counter.increment();
-               this.newInstances.get(counter.getFileType()).add(instance);
-            });
-		});
+      for (Instance instance : combinedInstances) {
+         for (SplitFileCounter counter : counters) {
+            if(instance.stringValue(isAttackIndex).equalsIgnoreCase(counter.getAttackType())){
+               if(!counter.isFull()){
+                  counter.increment();
+                  this.newInstances.get(counter.getFileType()).add(instance);
+                  break; // To ensure that only 1 counter gets incremented
+               }
+            }
+         }
+      }
       
       writeFiles();
 	}
@@ -89,7 +91,7 @@ public class TempHolder {
       singleClass.entrySet().forEach((scEntry)->{
          String attackType = scEntry.getKey();
          FormatAsArff faa  = scEntry.getValue();
-         
+
          faa.removeNonMatchingClasses(this.isAttack, attackType);
          splitParam.entrySet().forEach((spEntry)->{
             int limit = Math.round(
@@ -99,6 +101,10 @@ public class TempHolder {
          });
       });
    }
+   
+   /**
+    * Doesn't get any instances. Is literally just a counter
+    */
    private class SplitFileCounter{
       private final String attackType;
       private final String fileType;
