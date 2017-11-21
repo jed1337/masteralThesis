@@ -26,7 +26,7 @@
 @attribute dst_host_srv_serror_rate numeric
 @attribute dst_host_rerror_rate numeric
 @attribute dst_host_srv_rerror_rate numeric
-@attribute isAttack {normal,attack,lowrate,highrate}
+@attribute isAttack {normal,attack}
 
 @data
 0,tcp,SF,240,4017,0,0,2,2,0,0,0,0,1,0,0,46,255,1,0,0.02,0.02,0,0,0,0,normal

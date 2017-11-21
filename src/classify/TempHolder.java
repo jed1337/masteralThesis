@@ -43,18 +43,22 @@ public class TempHolder {
 
       for (int i = 0; i < this.combinedInstances.attribute(isAttackIndex).numValues(); i++) {
          String attName = this.combinedInstances.attribute(isAttackIndex).value(i);
-         singleClass.put(attName, new FormatAsArff(this.combinePath));
+         Utils.addToMap(singleClass,attName, new FormatAsArff(this.combinePath));
+//         singleClass.put(attName, new FormatAsArff(this.combinePath));
       }
 
       HashMap<String, Float> splitParam = new HashMap<>();
-      splitParam.put(trainPath,      new Float(4.0));
-      splitParam.put(testPath,       new Float(1.0));
-      splitParam.put(validationPath, new Float(1.0));
+      Utils.addToMap(splitParam, trainPath,      new Float(4.0));
+      Utils.addToMap(splitParam, testPath,       new Float(1.0));
+      Utils.addToMap(splitParam, validationPath, new Float(1.0));
+      // splitParam.put(trainPath,      new Float(4.0));
+      // splitParam.put(testPath,       new Float(1.0));
+      // splitParam.put(validationPath, new Float(1.0));
 
       addHeaders(splitParam, this.combinePath);
 
       setupLimits(singleClass, splitParam);
-      
+
       for (Instance instance : combinedInstances) {
          for (SplitFileCounter counter : counters) {
             if(instance.stringValue(isAttackIndex).equalsIgnoreCase(counter.getAttackType())){
@@ -66,25 +70,31 @@ public class TempHolder {
             }
          }
       }
-      
+
       writeFiles();
 	}
 
    private void writeFiles() throws IOException {
-      for (Map.Entry<String, Instances> entry : newInstances.entrySet()) {
+      for (Map.Entry<String, Instances> entry : this.newInstances.entrySet()) {
          Utils.writeFile(entry.getKey(), entry.getValue().toString());
          FormatAsText fat = new FormatAsText(entry.getKey());
-         fat.addClassCount(isAttack);
+         fat.addClassCount(this.isAttack);
       }
    }
 
+   //Find out why extracting Instances header causes the train, test, and validation files to be of the same length
+   //Doing the header thingy seems to give all the Instances in newInstances the same HashCode value
+   // The reason is because they use the same header variable as the HM's value
+//    If 1 value is edited, all the others are as well.
+//       They aren't technically edited, but since they point to the same object, 1 edit reflects to all
    private void addHeaders(HashMap<String, Float> splitParam, String source) throws Exception {
+//      Instances header = UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE);
       for (String path : splitParam.keySet()) {
-         this.newInstances.put(
-            path,
-            UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE
-         ));
+//         this.newInstances.put(path, header);
+          Utils.addToMap(this.newInstances, path, UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
+          // this.newInstances.put(path, UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
       }
+      System.out.println("");
    }
 
    private void setupLimits(HashMap<String, FormatAsArff> singleClass, HashMap<String, Float> splitParam) {
@@ -101,7 +111,7 @@ public class TempHolder {
          });
       });
    }
-   
+
    /**
     * Doesn't get any instances. Is literally just a counter
     */

@@ -56,24 +56,24 @@ public class Driver{
          trainNormalOrAttack,
          getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
          getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-//         getHashMap("attack", "highrate", "lowrate"),
+         getHashMap("attack", "highrate", "lowrate"),
 
-//         replaceAttribute("isAttack", "normal", "attack")
-         replaceAttribute("isAttack", "normal", "attack", "lowrate", "highrate")
+         replaceAttribute("isAttack", "normal", "attack")
+//         replaceAttribute("isAttack", "normal", "lowrate", "highrate")
      );
       
-//     ArrayList<Train> trainHL = new ArrayList<>();
-//     trainHL.add(new TrainHighrate());
-//     trainHL.add(new TrainLowrate());
-//     
-//     new SystemTrain(
-//         "Allah/HL/", 
-//         trainHL,
-//         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-//         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-//
-//         replaceAttribute("isAttack", "highrate", "lowrate")
-//     );
+     ArrayList<Train> trainHL = new ArrayList<>();
+     trainHL.add(new TrainHighrate());
+     trainHL.add(new TrainLowrate());
+     
+     new SystemTrain(
+         "Allah/HL/", 
+         trainHL,
+         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
+         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
+
+         replaceAttribute("isAttack", "highrate", "lowrate")
+     );
 //      system();
    }
    public static void system() throws IOException, Exception{
