@@ -15,7 +15,7 @@ import weka.classifiers.trees.J48;
 import weka.core.Instances;
 
 public abstract class Classify {
-   protected final String fullPath;
+   protected final String fullFolderPath;
    protected final ArrayList<ClassifierHolder> classifiers;
    
    protected final HashMap<String, Instances> instancesHM;
@@ -24,23 +24,27 @@ public abstract class Classify {
    private final String trainPath;
    
    protected Classify(String folderPath, String subFolderPath, String trainPath) throws IOException, Exception {
-      this.fullPath = folderPath+subFolderPath;
-      Utils.makeFolders(this.fullPath);
+      this.fullFolderPath = folderPath+subFolderPath;
+      Utils.makeFolders(this.fullFolderPath);
       
       this.instancesHM = new HashMap<>();
       this.trainPath = trainPath;
       addInstance(trainPath);
 
 //Put this function outside      
-      Utils.duplicateFile(trainPath, this.fullPath+FileNameConstants.TRAIN);
+      Utils.duplicateFile(trainPath, this.fullFolderPath+FileNameConstants.TRAIN);
       
 //      this.trainSet = UtilsInstances.getInstances(trainPath);
 //      Utils.duplicateFile(
-//         this.fullPath + FileNameConstants.TRAIN,
+//         this.fullFolderPath + FileNameConstants.TRAIN,
 //         Utils.getFileContents(trainPath)
 //      );
       
       this.classifiers = new ArrayList<>();
+   }
+
+   public String getFullFolderPath() {
+      return this.fullFolderPath;
    }
    
    protected final void addInstance(String path) throws IOException {
@@ -53,10 +57,10 @@ public abstract class Classify {
    };
    
    protected final void buildModel(String key) throws Exception{
-      this.classifiers.add(new ClassifierHolder(new NaiveBayes(), this.instancesHM.get(key), "NB",  this.fullPath));
-      this.classifiers.add(new ClassifierHolder(new IBk(),        this.instancesHM.get(key), "KNN", this.fullPath));
-      this.classifiers.add(new ClassifierHolder(new J48(),        this.instancesHM.get(key), "J48", this.fullPath));
-      this.classifiers.add(new ClassifierHolder(new SMO(),        this.instancesHM.get(key), "SMO", this.fullPath));
+      this.classifiers.add(new ClassifierHolder(new NaiveBayes(), this.instancesHM.get(key), "NB",  this.fullFolderPath));
+      this.classifiers.add(new ClassifierHolder(new IBk(),        this.instancesHM.get(key), "KNN", this.fullFolderPath));
+      this.classifiers.add(new ClassifierHolder(new J48(),        this.instancesHM.get(key), "J48", this.fullFolderPath));
+      this.classifiers.add(new ClassifierHolder(new SMO(),        this.instancesHM.get(key), "SMO", this.fullFolderPath));
    }
    
    public final void writeModel() throws Exception{

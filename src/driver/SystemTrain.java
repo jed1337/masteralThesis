@@ -5,6 +5,7 @@ import classify.TempHolder;
 import classify.TrainTestValidation;
 import constants.FileNameConstants;
 import constants.PathConstants;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
@@ -44,5 +45,11 @@ public class SystemTrain {
       classify.buildModel();
       classify.writeModel();
       classify.evaluateModel();
+      
+      Utils.duplicateFolder(PathConstants.FORMATTED_DIR, classify.getFullFolderPath());
+//      final File directory = new File(PathConstants.FORMATTED_DIR);
+//      for (final File file : directory.listFiles()) {
+//         Utils.duplicateFile(file.getAbsolutePath(), classify.getFullFolderPath()+file.getName());
+//      }
    }
 }

@@ -2,33 +2,40 @@ package classify;
 
 import constants.FileNameConstants;
 import driver.ClassifierHolder;
-import utils.UtilsClssifiers;
-import utils.Utils;
-import utils.UtilsInstances;
 import java.io.IOException;
-import weka.core.Instances;
+import utils.Utils;
+import utils.UtilsClssifiers;
 
 public class TrainTest extends Classify{
-   protected final Instances testSet;
-
+//   protected final Instances testSet;
+   
+   private final String testPath;
    public TrainTest(String subFolderPath, String trainPath, String testPath) throws IOException, Exception {
       this("results/TestTrain/", subFolderPath, trainPath, testPath);
    }
    
    public TrainTest(String folderPath, String subFolderPath, String trainPath, String testPath) throws IOException, Exception {
       super(folderPath, subFolderPath, trainPath);
+      this.testPath = testPath;
 
-      this.testSet =  UtilsInstances.getInstances(testPath);
-      Utils.writeFile(
-         super.fullPath+FileNameConstants.TEST,
-         Utils.getFileContents(testPath)
-      );
+      super.addInstance(this.testPath);
+//      this.testSet =  UtilsInstances.getInstances(testPath);
+//      Utils.writeFile(
+//         super.fullFolderPath+FileNameConstants.TEST,
+//         Utils.getFileContents(testPath)
+//      );
    }
+   
+//   @Override
+//   protected String getPath(){
+//      return this.testPath;
+//   }
 
    @Override
    public void evaluateModel() throws Exception{
       for (ClassifierHolder ch : super.classifiers) {
-         UtilsClssifiers.saveTestEvaluationToFile(ch, this.testSet);
+         UtilsClssifiers.saveTestEvaluationToFile(ch, super.instancesHM.get(this.testPath));
+//         UtilsClssifiers.saveTestEvaluationToFile(ch, this.testSet);
       }
    }
 }

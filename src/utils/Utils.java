@@ -1,5 +1,6 @@
 package utils;
 
+import constants.PathConstants;
 import format.FormatAsText;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -40,6 +41,21 @@ public class Utils {
             }
          }
          return sb.toString();
+      }
+   }
+   
+   /**
+    * Copies all the files in sourceDir to destinationDir
+    * Doesn't work with non txt readable files
+    * From https://stackoverflow.com/questions/19190584/
+    * @param sourceDir
+    * @param destinationDir
+    * @throws IOException
+    */
+   public static void duplicateFolder(String sourceDir, String destinationDir) throws IOException{
+      final File directory = new File(sourceDir);
+      for (final File file : directory.listFiles()) {
+         duplicateFile(file.getAbsolutePath(), destinationDir+file.getName());
       }
    }
       

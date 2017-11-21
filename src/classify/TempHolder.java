@@ -82,8 +82,6 @@ public class TempHolder {
       }
    }
 
-   //Find out why extracting Instances header causes the train, test, and validation files to be of the same length
-   //Doing the header thingy seems to give all the Instances in newInstances the same HashCode value
    // The reason is because they use the same header variable as the HM's value
 //    If 1 value is edited, all the others are as well.
 //       They aren't technically edited, but since they point to the same object, 1 edit reflects to all
