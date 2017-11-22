@@ -1,0 +1,32 @@
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1223               85.6443 %
+Incorrectly Classified Instances       205               14.3557 %
+Kappa statistic                          0.8215
+Mean absolute error                      0.0464
+Root mean squared error                  0.1635
+Relative absolute error                 20.1612 %
+Root relative squared error             48.2232 %
+Total Number of Instances             1428     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.002    0.996      1.000    0.998      0.997    0.999     0.996     normal
+                 0.988    0.000    1.000      0.988    0.994      0.993    0.994     0.989     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.970    0.001    0.994      0.970    0.982      0.980    0.985     0.967     httpFlood
+                 0.437    0.037    0.608      0.437    0.509      0.463    0.912     0.590     slowBody
+                 0.790    0.082    0.562      0.790    0.657      0.614    0.934     0.661     slowHeaders
+                 0.587    0.041    0.653      0.587    0.618      0.572    0.914     0.635     slowRead
+Weighted Avg.    0.856    0.020    0.860      0.856    0.854      0.838    0.969     0.863     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 500   0   0   0   0   0   0 |   a = normal
+   2 165   0   0   0   0   0 |   b = tcpFlood
+   0   0  93   0   0   0   0 |   c = udpFlood
+   0   0   0 162   1   2   2 |   d = httpFlood
+   0   0   0   0  73  59  35 |   e = slowBody
+   0   0   0   1  19 132  15 |   f = slowHeaders
+   0   0   0   0  27  42  98 |   g = slowRead

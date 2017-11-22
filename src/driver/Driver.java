@@ -45,39 +45,68 @@ public class Driver{
 //</editor-fold>
 
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
+      final String folderPath = "HLNormNoise(Allah)/";
+//      hybridMethod(folderPath);
+      singleClassifier(folderPath);
+//      system();
+   }
+   private static void hybridMethod(String folderPath) throws IOException, Exception{
       ArrayList<Train> trainNormalOrAttack = new ArrayList<>();
-      trainNormalOrAttack.add(new TrainNoise());
-      trainNormalOrAttack.add(new TrainNormal());
-      trainNormalOrAttack.add(new TrainHighrate());
-      trainNormalOrAttack.add(new TrainLowrate());
+      trainNormalOrAttack.add(new TrainNoise(3000));
+      trainNormalOrAttack.add(new TrainNormal(3000));
+      trainNormalOrAttack.add(new TrainHighrate(3000));
+      trainNormalOrAttack.add(new TrainLowrate(3000));
      
       new SystemTrain(
-         "Allah/NormalOrAttack/", 
+         folderPath+"NormalOrAttack/", 
          trainNormalOrAttack,
          getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
          getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
          getHashMap("attack", "highrate", "lowrate"),
 
          replaceAttribute("isAttack", "normal", "attack")
-//         replaceAttribute("isAttack", "normal", "lowrate", "highrate")
      );
       
      ArrayList<Train> trainHL = new ArrayList<>();
-     trainHL.add(new TrainHighrate());
-     trainHL.add(new TrainLowrate());
+     trainHL.add(new TrainHighrate(3000));
+     trainHL.add(new TrainLowrate(3000));
      
      new SystemTrain(
-         "Allah/HL/", 
+         folderPath+"HL/", 
          trainHL,
          getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
          getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
 
          replaceAttribute("isAttack", "highrate", "lowrate")
+//         replaceAttribute(
+//            "isAttack",
+//            "tcpFlood", "udpFlood", "httpFlood",
+//            "slowBody", "slowHeaders", "slowRead")
      );
-//      system();
+   }
+
+   public static void singleClassifier(String folderPath) throws IOException, Exception{
+      ArrayList<Train> train = new ArrayList<>();
+      train.add(new TrainNoise(1500));
+      train.add(new TrainNormal(1500));
+      train.add(new TrainHighrate(3000));
+      train.add(new TrainLowrate(3000));
+
+      new SystemTrain(
+         folderPath + "Single/",
+         train,
+         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
+         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
+         replaceAttribute("isAttack", "normal", "highrate", "lowrate")
+//         replaceAttribute(
+//            "isAttack", 
+//            "normal", 
+//            "tcpFlood", "udpFlood", "httpFlood", 
+//            "slowBody", "slowHeaders", "slowRead")
+      );
    }
    public static void system() throws IOException, Exception{
-      Instances validation = UtilsInstances.getInstances("Results/TestTrainValidation/NormalOrAttack/Validation.arff");
+      Instances validation   = UtilsInstances.getInstances("Results/TestTrainValidation/NormalOrAttack/Validation.arff");
       Instances hlValidation = UtilsInstances.getInstances("Results/TestTrainValidation/HL/Validation.arff");
       Classifier normalClassifier = UtilsClssifiers.readModel("Results/TestTrainValidation/NormalOrAttack/KNN.model");
       Classifier hlClassifier     = UtilsClssifiers.readModel("Results/TestTrainValidation/HL/KNN.model");
@@ -86,13 +115,8 @@ public class Driver{
          System.out.println("Value "+i+" = "+validation.classAttribute().value(i));
       }
       for (int i = 0; i < validation.size(); i++) {
-//         double label = classifier.classifyInstance(train.instance(i));
-//         train.instance(i).setClassValue(label);
-//
-//         System.out.println(train.instance(i).stringValue(26));
 
          String predictedValue = validation.classAttribute().value((int)normalClassifier.classifyInstance(validation.get(i)));
-//         String predictedValue = validation.classAttribute().value((int)hlClassifier.classifyInstance(validation.get(i)));
          String actualValue = validation.get(i).stringValue(26);
          
          if(predictedValue.equalsIgnoreCase("attack")){
@@ -101,10 +125,8 @@ public class Driver{
          
          System.out.println(
             i+")\tPredictedValue: "+predictedValue
-//            normalValidation.classAttribute().value((int)hlClassifier.classifyInstance(normalValidation.get(i)))+
             +"\t\tActualValue:\t"+actualValue
          );
       }
-      
    }
 }

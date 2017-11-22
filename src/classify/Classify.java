@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import utils.UtilsInstances;
 import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.bayes.net.search.global.SimulatedAnnealing;
 import weka.classifiers.functions.SMO;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
+import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 
 public abstract class Classify {
@@ -57,10 +59,12 @@ public abstract class Classify {
    };
    
    protected final void buildModel(String key) throws Exception{
-      this.classifiers.add(new ClassifierHolder(new NaiveBayes(), this.instancesHM.get(key), "NB",  this.fullFolderPath));
-      this.classifiers.add(new ClassifierHolder(new IBk(),        this.instancesHM.get(key), "KNN", this.fullFolderPath));
-      this.classifiers.add(new ClassifierHolder(new J48(),        this.instancesHM.get(key), "J48", this.fullFolderPath));
-      this.classifiers.add(new ClassifierHolder(new SMO(),        this.instancesHM.get(key), "SMO", this.fullFolderPath));
+      Instances instances = this.instancesHM.get(key);
+      this.classifiers.add(new ClassifierHolder(new NaiveBayes(),    instances, "NB",  this.fullFolderPath));
+      this.classifiers.add(new ClassifierHolder(new IBk(),           instances, "KNN", this.fullFolderPath));
+      this.classifiers.add(new ClassifierHolder(new J48(),           instances, "J48", this.fullFolderPath));
+      this.classifiers.add(new ClassifierHolder(new SMO(),           instances, "SMO", this.fullFolderPath));
+      this.classifiers.add(new ClassifierHolder(new RandomForest(),  instances, "RF", this.fullFolderPath));
    }
    
    public final void writeModel() throws Exception{

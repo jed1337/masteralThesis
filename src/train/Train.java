@@ -14,8 +14,11 @@ public abstract class Train {
 
    protected final FormatAsArff faa;
    protected final FormatAsText fat;
-
-   protected Train(String fileName) throws IOException{
+   
+   protected final int instancesCount;
+   
+   protected Train(int instancesCount, String fileName) throws IOException{
+      this.instancesCount = instancesCount;
       faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
       faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
 //      ...

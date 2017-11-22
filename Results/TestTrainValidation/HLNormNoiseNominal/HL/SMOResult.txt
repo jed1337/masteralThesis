@@ -1,0 +1,30 @@
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         591               63.6853 %
+Incorrectly Classified Instances       337               36.3147 %
+Kappa statistic                          0.5614
+Mean absolute error                      0.2353
+Root mean squared error                  0.3306
+Relative absolute error                 85.2383 %
+Root relative squared error             88.9867 %
+Total Number of Instances              928     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.928    0.000    1.000      0.928    0.963      0.956    0.976     0.957     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.862    0.003    0.986      0.862    0.920      0.907    0.935     0.878     httpFlood
+                 0.521    0.189    0.377      0.521    0.437      0.295    0.713     0.306     slowBody
+                 0.647    0.243    0.369      0.647    0.470      0.334    0.761     0.332     slowHeaders
+                 0.024    0.008    0.400      0.024    0.045      0.060    0.725     0.294     slowRead
+Weighted Avg.    0.637    0.080    0.664      0.637    0.610      0.559    0.840     0.598     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 155   0   0   0  12   0 |   a = tcpFlood
+   0  93   0   0   0   0 |   b = udpFlood
+   0   0 144   7  16   0 |   c = httpFlood
+   0   0   1  87  75   4 |   d = slowBody
+   0   0   1  56 108   2 |   e = slowHeaders
+   0   0   0  81  82   4 |   f = slowRead
