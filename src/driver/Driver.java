@@ -45,7 +45,7 @@ public class Driver{
 //</editor-fold>
 
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
-      final String folderPath = "HLNormNoise(Allah)/";
+      final String folderPath = "HLNormNoise(Allah3)/";
 //      hybridMethod(folderPath);
       singleClassifier(folderPath);
 //      system();

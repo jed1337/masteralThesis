@@ -17,12 +17,15 @@ public abstract class Train {
    
    protected final int instancesCount;
    
-   protected Train(int instancesCount, String fileName) throws IOException{
+   private final String[] attackTypes;
+   
+   protected Train(int instancesCount, String fileName, String[] attackTypes) throws IOException{
       this.instancesCount = instancesCount;
       faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
       faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
 //      ...
       fat = new FormatAsText(faa.getSavePath());
+      this.attackTypes = attackTypes;
    }
 
    public void setup() throws IOException, Exception{
@@ -34,9 +37,6 @@ public abstract class Train {
       keepXInstances();
    }
 
-   protected abstract void removeNonMatchingClasses();
-   protected abstract void keepXInstances();
-   
    public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {
       fat.replaceAllStrings(hashMaps);
    }
@@ -56,4 +56,18 @@ public abstract class Train {
       return fat;
    }
    
+   protected void removeNonMatchingClasses() {
+      this.faa.removeNonMatchingClasses("isAttack", this.attackTypes);
+      this.faa.removeNonMatchingClasses("service", "http");
+   }
+   
+   protected void keepXInstances() {
+      for (String attackType : this.attackTypes) {
+         this.faa.keepXInstances("isAttack", attackType, getDivider());
+      }
+   }
+   
+   private int getDivider(){
+      return Math.round(this.instancesCount/this.attackTypes.length);
+   }
 }

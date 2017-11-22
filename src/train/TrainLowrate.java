@@ -3,7 +3,7 @@ package train;
 import constants.FileNameConstants;
 import java.io.IOException;
 
-public class TrainLowrate extends TrainMultiple{
+public class TrainLowrate extends Train{
    public TrainLowrate(int instancesCount) throws IOException{
       this(instancesCount, FileNameConstants.CNIS_LOWRATE);
    }
