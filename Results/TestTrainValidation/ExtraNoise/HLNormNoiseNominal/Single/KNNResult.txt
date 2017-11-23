@@ -1,0 +1,32 @@
+=== Dedicated test set ===
+=== Summary of KNN===
+
+Correctly Classified Instances         721               50.4902 %
+Incorrectly Classified Instances       707               49.5098 %
+Kappa statistic                          0.4375
+Mean absolute error                      0.1416
+Root mean squared error                  0.3755
+Relative absolute error                 61.5688 %
+Root relative squared error            110.7403 %
+Total Number of Instances             1428     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.068    0.004    0.895      0.068    0.126      0.189    0.559     0.402     normal
+                 0.982    0.002    0.988      0.982    0.985      0.983    0.991     0.973     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.952    0.298    0.297      0.952    0.453      0.434    0.853     0.363     httpFlood
+                 0.527    0.122    0.364      0.527    0.430      0.347    0.723     0.254     slowBody
+                 0.581    0.081    0.487      0.581    0.530      0.464    0.765     0.340     slowHeaders
+                 0.515    0.055    0.555      0.515    0.534      0.475    0.753     0.348     slowRead
+Weighted Avg.    0.505    0.067    0.693      0.505    0.452      0.447    0.739     0.472     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+  34   0   0 366  60  32   8 |   a = normal
+   3 164   0   0   0   0   0 |   b = tcpFlood
+   0   0  93   0   0   0   0 |   c = udpFlood
+   1   0   0 159   4   1   2 |   d = httpFlood
+   0   1   0   1  88  43  34 |   e = slowBody
+   0   0   0   3  42  97  25 |   f = slowHeaders
+   0   1   0   6  48  26  86 |   g = slowRead

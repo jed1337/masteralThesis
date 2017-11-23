@@ -1,0 +1,22 @@
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        1061               55.0883 %
+Incorrectly Classified Instances       865               44.9117 %
+Kappa statistic                          0.13  
+Mean absolute error                      0.4491
+Root mean squared error                  0.6702
+Relative absolute error                 89.9558 %
+Root relative squared error            134.1315 %
+Total Number of Instances             1926     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.143    0.009    0.947      0.143    0.248      0.250    0.567     0.580     normal
+                 0.991    0.857    0.517      0.991    0.680      0.250    0.567     0.517     attack
+Weighted Avg.    0.551    0.417    0.740      0.551    0.456      0.250    0.567     0.550     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 143 857 |   a = normal
+   8 918 |   b = attack

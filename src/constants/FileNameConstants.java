@@ -19,6 +19,7 @@ public final class FileNameConstants{
 	public static final String CNIS_HIGHRATE        = "CNISHighrate.arff";
 	public static final String CNIS_LOWRATE         = "CNISLowrate.arff";
 	public static final String CNIS_NOISE           = "CNISNoise.arff";
+	public static final String CNIS_EXTRA_NOISE     = "CNISExtraNoise.arff";
 
 	private FileNameConstants(){}
 }

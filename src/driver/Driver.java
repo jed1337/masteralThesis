@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import train.Train;
+import train.TrainExtraNoise;
 import train.TrainHighrate;
 import train.TrainLowrate;
 import train.TrainNoise;
@@ -45,15 +46,17 @@ public class Driver{
 //</editor-fold>
 
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
-      final String folderPath = "HLNormNoise(Allah3)/";
-//      hybridMethod(folderPath);
+      final String folderPath = "ExtraNoise/HLNormNoiseNominal/";
+      hybridMethod(folderPath);
       singleClassifier(folderPath);
 //      system();
    }
    private static void hybridMethod(String folderPath) throws IOException, Exception{
       ArrayList<Train> trainNormalOrAttack = new ArrayList<>();
-      trainNormalOrAttack.add(new TrainNoise(3000));
-      trainNormalOrAttack.add(new TrainNormal(3000));
+      trainNormalOrAttack.add(new TrainNoise(2000));
+      trainNormalOrAttack.add(new TrainNormal(2000));
+      trainNormalOrAttack.add(new TrainExtraNoise(2000));
+      
       trainNormalOrAttack.add(new TrainHighrate(3000));
       trainNormalOrAttack.add(new TrainLowrate(3000));
      
@@ -74,35 +77,36 @@ public class Driver{
      new SystemTrain(
          folderPath+"HL/", 
          trainHL,
-         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
+//         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
+//         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
 
-         replaceAttribute("isAttack", "highrate", "lowrate")
-//         replaceAttribute(
-//            "isAttack",
-//            "tcpFlood", "udpFlood", "httpFlood",
-//            "slowBody", "slowHeaders", "slowRead")
+//         replaceAttribute("isAttack", "highrate", "lowrate")
+         replaceAttribute(
+            "isAttack",
+            "tcpFlood", "udpFlood", "httpFlood",
+            "slowBody", "slowHeaders", "slowRead")
      );
    }
 
    public static void singleClassifier(String folderPath) throws IOException, Exception{
       ArrayList<Train> train = new ArrayList<>();
-      train.add(new TrainNoise(1500));
-      train.add(new TrainNormal(1500));
+      train.add(new TrainNoise(1000));
+      train.add(new TrainNormal(1000));
+      train.add(new TrainExtraNoise(1000));
       train.add(new TrainHighrate(3000));
       train.add(new TrainLowrate(3000));
 
       new SystemTrain(
          folderPath + "Single/",
          train,
-         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-         replaceAttribute("isAttack", "normal", "highrate", "lowrate")
-//         replaceAttribute(
-//            "isAttack", 
-//            "normal", 
-//            "tcpFlood", "udpFlood", "httpFlood", 
-//            "slowBody", "slowHeaders", "slowRead")
+//         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
+//         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
+//         replaceAttribute("isAttack", "normal", "highrate", "lowrate")
+         replaceAttribute(
+            "isAttack", 
+            "normal", 
+            "tcpFlood", "udpFlood", "httpFlood", 
+            "slowBody", "slowHeaders", "slowRead")
       );
    }
    public static void system() throws IOException, Exception{

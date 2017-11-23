@@ -21,14 +21,14 @@ public abstract class Train {
    
    protected Train(int instancesCount, String fileName, String[] attackTypes) throws IOException{
       this.instancesCount = instancesCount;
+      this.attackTypes = attackTypes;
+      
       faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
       faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
-//      ...
       fat = new FormatAsText(faa.getSavePath());
-      this.attackTypes = attackTypes;
    }
 
-   public void setup() throws IOException, Exception{
+   public final void setup() throws IOException, Exception{
       removeNonMatchingClasses();
 
       this.faa.removeAttributes(FormatConstants.FEATURES_TO_REMOVE);
@@ -56,12 +56,13 @@ public abstract class Train {
       return fat;
    }
    
-   protected void removeNonMatchingClasses() {
+   private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses("isAttack", this.attackTypes);
-      this.faa.removeNonMatchingClasses("service", "http");
+      this.faa.removeNonMatchingClasses("service", "http", "http_443");
+//      this.faa.removeNonMatchingClasses("service", "http");
    }
    
-   protected void keepXInstances() {
+   private void keepXInstances() {
       for (String attackType : this.attackTypes) {
          this.faa.keepXInstances("isAttack", attackType, getDivider());
       }
