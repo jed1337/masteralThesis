@@ -42,7 +42,7 @@ public abstract class Train {
    }
 
    public void writeFile() throws IOException{
-      Utils.writeFile(
+      Utils.writeStringFile(
         faa.getSavePath(),
         faa.getInstances().toString()
       );

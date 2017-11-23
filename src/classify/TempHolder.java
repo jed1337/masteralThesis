@@ -76,7 +76,7 @@ public class TempHolder {
 
    private void writeFiles() throws IOException {
       for (Map.Entry<String, Instances> entry : this.newInstances.entrySet()) {
-         Utils.writeFile(entry.getKey(), entry.getValue().toString());
+         Utils.writeStringFile(entry.getKey(), entry.getValue().toString());
          FormatAsText fat = new FormatAsText(entry.getKey());
          fat.addClassCount(this.isAttack);
       }

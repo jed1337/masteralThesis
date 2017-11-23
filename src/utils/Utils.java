@@ -1,14 +1,17 @@
 package utils;
 
-import constants.PathConstants;
 import format.FormatAsText;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -46,8 +49,7 @@ public class Utils {
    
    /**
     * Copies all the files in sourceDir to destinationDir
-    * Doesn't work with non txt readable files
-    * From https://stackoverflow.com/questions/19190584/
+    * Loop through folders code from https://stackoverflow.com/questions/19190584/
     * @param sourceDir
     * @param destinationDir
     * @throws IOException
@@ -58,17 +60,32 @@ public class Utils {
          duplicateFile(file.getAbsolutePath(), destinationDir+file.getName());
       }
    }
-      
+   
+   /**
+    * Copies files form the source to the destination.
+    * Copy code from https://www.journaldev.com/861/java-copy-file
+    * @param source
+    * @param destination
+    * @throws IOException 
+    */
    public static void duplicateFile(String source, String destination) throws IOException{
-      String sourceContents = getFileContents(source);
-      writeFile(destination, sourceContents);
+      try (
+         InputStream is = new FileInputStream(source);
+         OutputStream os = new FileOutputStream(destination);
+      )      {
+         byte[] buffer = new byte[1024];
+         int length;
+         while ((length = is.read(buffer)) > 0) {
+            os.write(buffer, 0, length);
+         }
+      }
+   }
+
+   public static void writeStringFile(String destination, String allLines) throws IOException {
+      writeStringFile(destination, allLines, false);
    }
    
-   public static void writeFile(String destination, String allLines) throws IOException {
-      writeFile(destination, allLines, false);
-   }
-   
-   public static void writeFile(String destination, String allLines, boolean append) throws IOException {
+   public static void writeStringFile(String destination, String allLines, boolean append) throws IOException {
       try (BufferedWriter bw = new BufferedWriter(new FileWriter(destination, append))) {
          bw.write(allLines);
       }

@@ -6,7 +6,8 @@ import java.util.Random;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Instances;
-import static utils.Utils.writeFile;
+import static utils.Utils.writeStringFile;
+import static utils.Utils.writeStringFile;
 
 public class UtilsClssifiers extends Utils {
    private UtilsClssifiers() {}
@@ -47,6 +48,6 @@ public class UtilsClssifiers extends Utils {
 
       System.out.println(sb);
 
-      writeFile(ch.getResultName(), sb.toString());
+      writeStringFile(ch.getResultName(), sb.toString());
    }
 }

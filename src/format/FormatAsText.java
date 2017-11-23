@@ -43,7 +43,7 @@ public class FormatAsText {
       String fileContents = Utils.getFileContents(addToPath);
       int afterDataIndex=fileContents.indexOf("@data")+6; //The +6 is because of "@data\n"
       
-      Utils.writeFile(
+      Utils.writeStringFile(
          PATH, 
          hasHeader()? fileContents.substring(afterDataIndex) : fileContents, 
          true);
@@ -54,7 +54,7 @@ public class FormatAsText {
     * @throws IOException
     */
    public void clearFile() throws IOException{
-      Utils.writeFile(PATH, "");
+      Utils.writeStringFile(PATH, "");
    }
    
    public void insertString(String toAdd, int position) throws IOException{
@@ -63,7 +63,7 @@ public class FormatAsText {
          + toAdd 
          + pathContents.substring(position, pathContents.length());
       
-      Utils.writeFile(this.PATH, pathContents);
+      Utils.writeStringFile(this.PATH, pathContents);
    }
    
    public void addClassCount(String attributeName) throws IOException{
@@ -110,6 +110,6 @@ public class FormatAsText {
             allLines = allLines.replaceAll(entry.getKey(), entry.getValue());
          }
       }
-      Utils.writeFile(PATH, allLines);
+      Utils.writeStringFile(PATH, allLines);
    }
 }

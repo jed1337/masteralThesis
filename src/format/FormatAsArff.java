@@ -188,7 +188,7 @@ public class FormatAsArff {
          }
          Instances slicedInstances = new Instances(this.instances, sliceFrom, sliceHowMany);
          
-         UtilsInstances.writeFile(
+         UtilsInstances.writeStringFile(
             entry.getKey()+" ",
             slicedInstances.toString()
          );
