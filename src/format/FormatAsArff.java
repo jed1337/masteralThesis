@@ -137,7 +137,7 @@ public class FormatAsArff {
       for (int i = instances.numInstances() - 1; i >= 0; i--) {
          Instance inst = instances.get(i);
 
-         if(inst.stringValue(attributeIndex).equals(attributeValue)){ 
+         if(inst.stringValue(attributeIndex).equalsIgnoreCase(attributeValue)){ 
             cur++;
             if(cur > toKeep){
                instances.delete(i);

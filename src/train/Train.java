@@ -59,7 +59,6 @@ public abstract class Train {
    private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses("isAttack", this.attackTypes);
       this.faa.removeNonMatchingClasses("service", "http", "http_443");
-//      this.faa.removeNonMatchingClasses("service", "http");
    }
    
    private void keepXInstances() {

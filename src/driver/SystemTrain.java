@@ -5,7 +5,7 @@ import classify.TempHolder;
 import classify.TrainTestValidation;
 import constants.FileNameConstants;
 import constants.PathConstants;
-import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
@@ -14,7 +14,8 @@ import utils.Utils;
 
 public class SystemTrain {
    public SystemTrain
-        (String folderPath, ArrayList<Train> trainList, HashMap<String, String>... modifications) throws Exception {
+         (String folderPath, ArrayList<Train> trainList, HashMap<String, String>... modifications) 
+         throws IOException, Exception {
       
       for (Train train : trainList) {
          train.setup();
@@ -47,9 +48,5 @@ public class SystemTrain {
       classify.evaluateModel();
       
       Utils.duplicateFolder(PathConstants.FORMATTED_DIR, classify.getFullFolderPath());
-//      final File directory = new File(PathConstants.FORMATTED_DIR);
-//      for (final File file : directory.listFiles()) {
-//         Utils.duplicateFile(file.getAbsolutePath(), classify.getFullFolderPath()+file.getName());
-//      }
    }
 }
