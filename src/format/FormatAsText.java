@@ -112,4 +112,20 @@ public class FormatAsText {
       }
       Utils.writeStringFile(PATH, allLines);
    }
+   
+   private class MutableInt {
+   int value;
+   
+   public MutableInt() {
+      this.value = 1;
+   }
+   
+   public void increment() {
+      ++value;
+   }
+
+   public int get() {
+      return value;
+   }
+}
 }
