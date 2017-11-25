@@ -146,58 +146,7 @@ public class FormatAsArff {
       }
    }
    
-   public void toNominal(String rangeList) throws Exception {
-      StringToNominal stn = new StringToNominal();
-      stn.setAttributeRange(rangeList);
-      
-      useFilter(instances, stn);
-   }
-   
-   /**
-    * @param denominator how many slices
-    * @param splitParam vararg containing how much of the instances file to be placed in each new file and its new filename
-    * @throws java.io.IOException
-    */
-//   public void splitFile(int denominator, String filename, int... numerators) throws IllegalArgumentException, IOException{
-   public void splitFile(int denominator, HashMap<String, Float> splitParam) throws IllegalArgumentException, IOException{
-      int sum=0;
-      for (Float numerator : splitParam.values()) {
-         sum+=numerator;
-         if(numerator<0){
-            throw new IllegalArgumentException("Can't have a negative numerator");
-         }
-         if(numerator==0){
-            throw new IllegalArgumentException("Having a numerator of 0 creates an empty file");
-         }
-      }
-      
-      if(sum<denominator){
-         System.err.println(
-              "Some instances won't be copied "
-              + "because of the value of the numerators");
-      } else if(sum>denominator){
-         throw new IllegalArgumentException("The total sum can't be greater than the denominator");
-      }
-      
-      int sliceFrom=0;
-//      for (int numerator : numerators) {
-      for (Map.Entry<String, Float> entry : splitParam.entrySet()) {
-         int sliceHowMany = Math.round(this.instances.numInstances() * (entry.getValue()/denominator)); //0.8 = 80%
-         while((sliceFrom+sliceHowMany) > this.instances.numInstances()){
-            sliceHowMany--;
-         }
-         Instances slicedInstances = new Instances(this.instances, sliceFrom, sliceHowMany);
-         
-         UtilsInstances.writeStringFile(
-            entry.getKey()+" ",
-            slicedInstances.toString()
-         );
-         
-         sliceFrom+=sliceHowMany;
-      }
-   }
-   
-   private void useFilter(Instances instances, Filter filter) throws Exception{
+  private void useFilter(Instances instances, Filter filter) throws Exception{
       filter.setInputFormat(instances);
       this.instances = Filter.useFilter(instances, filter);
    }

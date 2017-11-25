@@ -3,6 +3,7 @@ package format;
 import format.testConstants.FileNameConstants;
 import format.testConstants.PathConstants;
 import java.io.IOException;
+import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -139,9 +140,9 @@ public class FormatAsArffTest {
       }
    }
 
-//   /**
-//    * Test of keepXInstances method, of class FormatAsArff.
-//    */
+   /**
+    * Test of keepXInstances method, of class FormatAsArff.
+    */
    @Test
    public void testKeepXInstances_3args_1() {
       System.out.println("keepXInstances");
@@ -156,37 +157,4 @@ public class FormatAsArffTest {
       }
       assertEquals(retainCount, actual);
    }
-//
-//   /**
-//    * Test of keepXInstances method, of class FormatAsArff.
-//    */
-//   @Test
-//   public void testKeepXInstances_3args_2() {
-//      System.out.println("keepXInstances");
-//      int attributeIndex = 0;
-//      String attributeValue = "";
-//      int toKeep = 0;
-//      faa.keepXInstances(attributeIndex, attributeValue, toKeep);
-//   }
-//
-//   /**
-//    * Test of toNominal method, of class FormatAsArff.
-//    */
-//   @Test
-//   public void testToNominal() throws Exception {
-//      System.out.println("toNominal");
-//      String rangeList = "";
-//      faa.toNominal(rangeList);
-//   }
-//
-//   /**
-//    * Test of splitFile method, of class FormatAsArff.
-//    */
-//   @Test
-//   public void testSplitFile() throws Exception {
-//      System.out.println("splitFile");
-//      int denominator = 0;
-//      HashMap<String, Float> splitParam = null;
-//      faa.splitFile(denominator, splitParam);
-//   }
 }
