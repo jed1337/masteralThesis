@@ -3,17 +3,20 @@ package setupFiles;
 import constants.FormatConstants;
 import constants.PathConstants;
 import formatFiles.FormatAsArff;
-import formatFiles.FormatAsText;
 import utils.Utils;
 import java.io.IOException;
-import java.util.HashMap;
 
+/**
+ * An abstract class That setups the files to be used by the classifier<p>
+ * This class doesn't classify<p>
+ * This class keeps X instances, and certain attack types as stated by its sub classes
+ */
 public abstract class SetupFile {
 //   private final String[] FEATURES_TO_REMOVE = {"service","land","hot","num_failed_logins","logged_in","num_compromised","root_shell","su_attempted","num_root","num_file_creations","num_shells","num_access_files","num_outbound_cmds","is_host_login","is_guest_login","difficulty"};
    private final int RANDOM_SEED = 11;
 
    protected final FormatAsArff faa;
-   protected final FormatAsText fat;
+//   protected final FormatAsText fat;
    
    protected final int instancesCount;
    
@@ -25,7 +28,7 @@ public abstract class SetupFile {
       
       faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
       faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
-      fat = new FormatAsText(faa.getSavePath());
+//      fat = new FormatAsText(faa.getSavePath());
    }
 
    public final void setup() throws IOException, Exception{
@@ -37,9 +40,14 @@ public abstract class SetupFile {
       keepXInstances();
    }
 
-   public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {
-      fat.replaceAllStrings(hashMaps);
+   public void testRename(String attributes, String toReplace) throws Exception {
+      this.faa.renameNominalValues(attributes, toReplace);
+      System.out.println("");
    }
+   
+//   public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {
+//      fat.replaceAllStrings(hashMaps);
+//   }
 
    public void writeFile() throws IOException{
       Utils.writeStringFile(
@@ -52,10 +60,6 @@ public abstract class SetupFile {
       return faa;
    }
 
-   public FormatAsText getFat() {
-      return fat;
-   }
-   
    private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses("isAttack", this.attackTypes);
       this.faa.removeNonMatchingClasses("service", "http", "http_443");

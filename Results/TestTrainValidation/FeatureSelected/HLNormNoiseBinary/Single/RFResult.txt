@@ -1,0 +1,24 @@
+=== Dedicated test set ===
+=== Summary of RF===
+
+Correctly Classified Instances         974               68.3029 %
+Incorrectly Classified Instances       452               31.6971 %
+Kappa statistic                          0.5324
+Mean absolute error                      0.217 
+Root mean squared error                  0.4162
+Relative absolute error                 48.9475 %
+Root relative squared error             88.4132 %
+Total Number of Instances             1426     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.124    0.010    0.873      0.124    0.217      0.251    0.750     0.613     normal
+                 0.969    0.370    0.527      0.969    0.683      0.551    0.926     0.789     highrate
+                 0.998    0.079    0.872      0.998    0.931      0.895    1.000     0.999     lowrate
+Weighted Avg.    0.683    0.142    0.770      0.683    0.607      0.566    0.890     0.801     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  62 369  69 |   a = normal
+   9 413   4 |   b = highrate
+   0   1 499 |   c = lowrate

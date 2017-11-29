@@ -16,13 +16,6 @@ public class UtilsInstances extends Utils{
       return instances;
    }
    
-   public static Instances getHeader(String... featuresToRemove) throws IOException, Exception{
-      return getHeader(
-         PathConstants.UNFORMATTED_DIR+FileNameConstants.HEADER,
-         featuresToRemove
-      );
-   }
-   
    public static Instances getHeader(String path, String... featuresToRemove) throws IOException, Exception{
       FormatAsArff faa = new FormatAsArff(path);
       faa.removeAllInstances();

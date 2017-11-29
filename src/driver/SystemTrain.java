@@ -8,6 +8,7 @@ import constants.PathConstants;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.stream.Collectors;
 import setupFiles.SetupFile;
 import utils.Utils;
@@ -15,20 +16,23 @@ import utils.UtilsARFF;
 
 public class SystemTrain {
    public SystemTrain
-         (String folderPath, ArrayList<SetupFile> setupList, HashMap<String, String>... modifications) 
+         (String folderPath, ArrayList<SetupFile> setupList, String toReplace, HashMap<String, String>... modifications) 
          throws IOException, Exception {
       
-      for (SetupFile sf: setupList) {
-         sf.setup();
-         sf.writeFile();
-         sf.replaceAllStrings(modifications);
+      for (SetupFile sfl: setupList) {
+         sfl.setup();
+         sfl.testRename("isAttack", toReplace);
+         sfl.writeFile();
       }
+      
       final String combinedPath = PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED;
       
-      UtilsARFF.createArff(combinedPath,
+      UtilsARFF.createArff(
+         combinedPath,
          setupList.stream()
             .map(tl->tl.getFaa().getSavePath())
-            .collect(Collectors.toList())
+            .collect(Collectors.toList()),
+         modifications
       );
       
       //Feature selection
