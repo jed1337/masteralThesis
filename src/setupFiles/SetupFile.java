@@ -1,14 +1,14 @@
-package train;
+package setupFiles;
 
 import constants.FormatConstants;
 import constants.PathConstants;
-import format.FormatAsArff;
-import format.FormatAsText;
+import formatFiles.FormatAsArff;
+import formatFiles.FormatAsText;
 import utils.Utils;
 import java.io.IOException;
 import java.util.HashMap;
 
-public abstract class Train {
+public abstract class SetupFile {
 //   private final String[] FEATURES_TO_REMOVE = {"service","land","hot","num_failed_logins","logged_in","num_compromised","root_shell","su_attempted","num_root","num_file_creations","num_shells","num_access_files","num_outbound_cmds","is_host_login","is_guest_login","difficulty"};
    private final int RANDOM_SEED = 11;
 
@@ -19,7 +19,7 @@ public abstract class Train {
    
    private final String[] attackTypes;
    
-   protected Train(int instancesCount, String fileName, String[] attackTypes) throws IOException{
+   protected SetupFile(int instancesCount, String fileName, String[] attackTypes) throws IOException{
       this.instancesCount = instancesCount;
       this.attackTypes = attackTypes;
       
@@ -62,8 +62,9 @@ public abstract class Train {
    }
    
    private void keepXInstances() {
+      int lastIndex = this.faa.getInstances().numAttributes()-1;
       for (String attackType : this.attackTypes) {
-         this.faa.keepXInstances("isAttack", attackType, getDivider());
+         this.faa.keepXInstances(lastIndex, attackType, getDivider());
       }
    }
    

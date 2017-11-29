@@ -1,14 +1,10 @@
-package classify;
+package evaluate;
 
-import constants.FileNameConstants;
-import driver.ClassifierHolder;
+import classifier.ClassifierHolder;
 import java.io.IOException;
-import utils.Utils;
 import utils.UtilsClssifiers;
 
-public class TrainTest extends Classify{
-//   protected final Instances testSet;
-   
+public class TrainTest extends Evaluate{
    private final String testPath;
    public TrainTest(String subFolderPath, String trainPath, String testPath) throws IOException, Exception {
       this("results/TestTrain/", subFolderPath, trainPath, testPath);
@@ -19,23 +15,12 @@ public class TrainTest extends Classify{
       this.testPath = testPath;
 
       super.addInstance(this.testPath);
-//      this.testSet =  UtilsInstances.getInstances(testPath);
-//      Utils.writeFile(
-//         super.fullFolderPath+FileNameConstants.TEST,
-//         Utils.getFileContents(testPath)
-//      );
    }
    
-//   @Override
-//   protected String getPath(){
-//      return this.testPath;
-//   }
-
    @Override
    public void evaluateModel() throws Exception{
       for (ClassifierHolder ch : super.classifiers) {
          UtilsClssifiers.saveTestEvaluationToFile(ch, super.instancesHM.get(this.testPath));
-//         UtilsClssifiers.saveTestEvaluationToFile(ch, this.testSet);
       }
    }
 }

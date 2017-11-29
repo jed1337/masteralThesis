@@ -1,12 +1,11 @@
 package utils;
 
-import driver.ClassifierHolder;
+import classifier.ClassifierHolder;
 import java.io.IOException;
 import java.util.Random;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Instances;
-import static utils.Utils.writeStringFile;
 import static utils.Utils.writeStringFile;
 
 public class UtilsClssifiers extends Utils {

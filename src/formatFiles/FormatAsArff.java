@@ -1,16 +1,15 @@
-package format;
+package formatFiles;
 
 import utils.UtilsInstances;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import utils.Utils;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
-import weka.filters.unsupervised.attribute.StringToNominal;
+import weka.filters.unsupervised.attribute.RenameNominalValues;
 import weka.filters.unsupervised.instance.Randomize;
 
 public class FormatAsArff {
@@ -34,24 +33,6 @@ public class FormatAsArff {
       return instances;
    }
 
-   public <T> boolean arrayContains(final T[] array, final T v) {
-      if (v == null) {
-         for (final T e : array) {
-            if (e == null) {
-               return true;
-            }
-         }
-      } else {
-         for (final T e : array) {
-            if (e == v || v.equals(e) || ((String) e).equalsIgnoreCase(((String)v)) ) {
-               return true;
-            }
-         }
-      }
-
-      return false;
-   }
-   
    public void randomise(int seed) throws Exception{
       Randomize rand = new Randomize();
       rand.setRandomSeed(seed);
@@ -99,6 +80,28 @@ public class FormatAsArff {
       
       useFilter(instances, remove);
    }
+   
+   /**
+    * 
+    * For example <br>
+    * <i>{@literal @}attribute myAttribute {first, second, third}<br><br></i>
+    * {@code 
+    *    renameNominalValues("myAttribute", "first:uno, second:dos, third:tres")
+    * }
+    * <br><br>
+    * becomes:<br>
+    * <i>{@literal @}attribute myAttribute {uno, dos, tres}</i>
+    * 
+    * @param attributes Attributes to replace
+    * @param replacement in the format <b>CurrentValue:NewValue</b>
+    * @throws Exception 
+    */
+   public void renameNominalValues(String attributes, String replacement) throws Exception{
+      RenameNominalValues rnv = new RenameNominalValues();
+      rnv.setSelectedAttributes(attributes);
+      rnv.setValueReplacements(replacement);
+      useFilter(instances, rnv);
+   }
 
    public void removeNonMatchingClasses(String attributeName, String... classesToRetain) {
       removeNonMatchingClasses(
@@ -110,7 +113,7 @@ public class FormatAsArff {
       // Iterate from last to first because when we remove an instance, the rest shifts by one position.
       for (int i = instances.numInstances() - 1; i >= 0; i--) {
          Instance inst = instances.get(i);
-         if(!arrayContains(classesToRetain, inst.stringValue(attributeIndex))){
+         if(!Utils.arrayContains(classesToRetain, inst.stringValue(attributeIndex))){
             instances.delete(i);
          }
       }
@@ -146,7 +149,7 @@ public class FormatAsArff {
       }
    }
    
-  private void useFilter(Instances instances, Filter filter) throws Exception{
+   private void useFilter(Instances instances, Filter filter) throws Exception{
       filter.setInputFormat(instances);
       this.instances = Filter.useFilter(instances, filter);
    }

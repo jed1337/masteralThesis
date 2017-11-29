@@ -1,4 +1,4 @@
-package driver;
+package classifier;
 
 import utils.Utils;
 import weka.classifiers.Classifier;

@@ -1,6 +1,5 @@
 package utils;
 
-import format.FormatAsText;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,7 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
@@ -20,6 +18,24 @@ public class Utils {
    private static final String NEW_LINE = "\n";
 
    protected Utils() {}
+   
+   public static <T> boolean arrayContains(final T[] array, final T v) {
+      if (v == null) {
+         for (final T e : array) {
+            if (e == null) {
+               return true;
+            }
+         }
+      } else {
+         for (final T e : array) {
+            if (e == v || v.equals(e) || ((String) e).equalsIgnoreCase(((String)v)) ) {
+               return true;
+            }
+         }
+      }
+
+      return false;
+   }
    
    public static BufferedReader getBufferedReader(String path) throws FileNotFoundException {
       return new BufferedReader(new FileReader(path));
@@ -99,21 +115,6 @@ public class Utils {
       else{
          System.err.println("'"+folderPath+"' already exists.");
       }
-   }
-
-   public static void createArff(String filename, List<String> paths) throws IOException{
-      createArff(filename, paths, "isAttack");
-   }
-      
-   public static void createArff(String filename, List<String> paths, String attributeName) throws IOException{
-      FormatAsText fat = new FormatAsText(filename);
-      fat.clearFile();
-      
-      for (String path : paths) {
-         fat.addInstances(path);
-      }
-      
-      fat.addClassCount(attributeName);
    }
    
    public static <K extends Object, V extends Object> void addToMap(Map map, K key, V value) throws IllegalArgumentException{

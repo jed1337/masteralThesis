@@ -1,8 +1,7 @@
-package format;
+package formatFiles;
 
 import utils.Utils;
 import utils.UtilsInstances;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,14 +15,11 @@ public class FormatAsText {
    public FormatAsText(String PATH) {
       this.PATH = PATH;
    }
-   
-   public String getArffHeader() throws FileNotFoundException, IOException{
-      return Utils.getFileContents(
-         this.PATH, 
-         s->s.startsWith("@data")
-      );
+
+   public String getPATH() {
+      return PATH;
    }
-   
+
    /**
     * @return true if the text in the path has an ARFF header (@relation)
     * @throws IOException
@@ -38,14 +34,22 @@ public class FormatAsText {
     * Will only append the header from addToPath if there's no header in this.PATH
     * @param addToPath
     * @throws IOException
+    * @throws IllegalArgumentException if @data was not found in addToPath
     */
-   public void addInstances(String addToPath) throws IOException {
-      String fileContents = Utils.getFileContents(addToPath);
-      int afterDataIndex=fileContents.indexOf("@data")+6; //The +6 is because of "@data\n"
+   public void addInstances(String addToPath) throws IOException, IllegalArgumentException{
+      String addContent = Utils.getFileContents(addToPath);
+      
+      // The +6 is because of "@data\n"
+      // We lowercased addContent since .indexOf() is case sensitive
+      int afterDataIndex=addContent.toLowerCase().indexOf("@data")+6; 
+      
+      if(afterDataIndex == 5){
+         throw new IllegalArgumentException("@data not found in addToPath");
+      }
       
       Utils.writeStringFile(
          PATH, 
-         hasHeader()? fileContents.substring(afterDataIndex) : fileContents, 
+         hasHeader()? addContent.substring(afterDataIndex) : addContent, 
          true);
    }
    
@@ -74,7 +78,7 @@ public class FormatAsText {
       
       if(attributeIndex == -1){
          throw new IOException
-            ("Attribute "+attributeName+" not found. The classcount can't continue");
+            ("Attribute "+attributeName+" not found. The class count can't continue");
       }
       
       for (int i = instances.numInstances() - 1; i >= 0; i--) {
@@ -114,18 +118,18 @@ public class FormatAsText {
    }
    
    private class MutableInt {
-   int value;
-   
-   public MutableInt() {
-      this.value = 1;
-   }
-   
-   public void increment() {
-      ++value;
-   }
+      int value;
 
-   public int get() {
-      return value;
+      public MutableInt() {
+         this.value = 1;
+      }
+
+      public void increment() {
+         ++value;
+      }
+
+      public int get() {
+         return value;
+      }
    }
-}
 }

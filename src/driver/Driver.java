@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import train.Train;
-import train.TrainExtraNoise;
-import train.TrainHighrate;
-import train.TrainLowrate;
-import train.TrainNoise;
-import train.TrainNormal;
+import setupFiles.SetupFile;
+import setupFiles.SetupExtraNoise;
+import setupFiles.SetupHighrate;
+import setupFiles.SetupLowrate;
+import setupFiles.SetupNoise;
+import setupFiles.SetupNormal;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
@@ -46,23 +46,31 @@ public class Driver{
 //</editor-fold>
 
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
-      final String folderPath = "ExtraNoise/HLNormNoiseNominal/";
-      hybridMethod(folderPath);
-      singleClassifier(folderPath);
+//      Instances reduced = FeatureSelection.wrapperSelection(
+//         UtilsInstances.getInstances(
+//            PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN
+//         )
+//      );
+//      
+//      System.out.println("");
+      
+//      final String folderPath = "ExtraNoise/HLNormNoiseNominal (Allah)/";
+//      hybridMethod(folderPath);
+//      singleClassifier(folderPath);
 //      system();
    }
    private static void hybridMethod(String folderPath) throws IOException, Exception{
-      ArrayList<Train> trainNormalOrAttack = new ArrayList<>();
-      trainNormalOrAttack.add(new TrainNoise(2000));
-      trainNormalOrAttack.add(new TrainNormal(2000));
-      trainNormalOrAttack.add(new TrainExtraNoise(2000));
+      ArrayList<SetupFile> setupNormalOrAttack = new ArrayList<>();
+      setupNormalOrAttack.add(new SetupNoise(2000));
+      setupNormalOrAttack.add(new SetupNormal(2000));
+      setupNormalOrAttack.add(new SetupExtraNoise(2000));
       
-      trainNormalOrAttack.add(new TrainHighrate(3000));
-      trainNormalOrAttack.add(new TrainLowrate(3000));
+      setupNormalOrAttack.add(new SetupHighrate(3000));
+      setupNormalOrAttack.add(new SetupLowrate(3000));
      
       new SystemTrain(
          folderPath+"NormalOrAttack/", 
-         trainNormalOrAttack,
+         setupNormalOrAttack,
          getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
          getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
          getHashMap("attack", "highrate", "lowrate"),
@@ -70,13 +78,13 @@ public class Driver{
          replaceAttribute("isAttack", "normal", "attack")
      );
       
-     ArrayList<Train> trainHL = new ArrayList<>();
-     trainHL.add(new TrainHighrate(3000));
-     trainHL.add(new TrainLowrate(3000));
+     ArrayList<SetupFile> setupHL = new ArrayList<>();
+     setupHL.add(new SetupHighrate(3000));
+     setupHL.add(new SetupLowrate(3000));
      
      new SystemTrain(
          folderPath+"HL/", 
-         trainHL,
+         setupHL,
 //         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
 //         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
 
@@ -89,16 +97,16 @@ public class Driver{
    }
 
    public static void singleClassifier(String folderPath) throws IOException, Exception{
-      ArrayList<Train> train = new ArrayList<>();
-      train.add(new TrainNoise(1000));
-      train.add(new TrainNormal(1000));
-      train.add(new TrainExtraNoise(1000));
-      train.add(new TrainHighrate(3000));
-      train.add(new TrainLowrate(3000));
+      ArrayList<SetupFile> setups = new ArrayList<>();
+      setups.add(new SetupNoise(1000));
+      setups.add(new SetupNormal(1000));
+      setups.add(new SetupExtraNoise(1000));
+      setups.add(new SetupHighrate(3000));
+      setups.add(new SetupLowrate(3000));
 
       new SystemTrain(
          folderPath + "Single/",
-         train,
+         setups,
 //         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
 //         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
 //         replaceAttribute("isAttack", "normal", "highrate", "lowrate")
@@ -109,6 +117,7 @@ public class Driver{
             "slowBody", "slowHeaders", "slowRead")
       );
    }
+   
    public static void system() throws IOException, Exception{
       Instances validation   = UtilsInstances.getInstances("Results/TestTrainValidation/NormalOrAttack/Validation.arff");
       Instances hlValidation = UtilsInstances.getInstances("Results/TestTrainValidation/HL/Validation.arff");

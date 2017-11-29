@@ -1,52 +1,56 @@
 package driver;
 
-import classify.Classify;
-import classify.TempHolder;
-import classify.TrainTestValidation;
+import evaluate.Evaluate;
+import setupFiles.SetupTestTrainValidation;
+import evaluate.TrainTestValidation;
 import constants.FileNameConstants;
 import constants.PathConstants;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
-import train.Train;
+import setupFiles.SetupFile;
 import utils.Utils;
+import utils.UtilsARFF;
 
 public class SystemTrain {
    public SystemTrain
-         (String folderPath, ArrayList<Train> trainList, HashMap<String, String>... modifications) 
+         (String folderPath, ArrayList<SetupFile> setupList, HashMap<String, String>... modifications) 
          throws IOException, Exception {
       
-      for (Train train : trainList) {
-         train.setup();
-         train.writeFile();
-         train.replaceAllStrings(modifications);
+      for (SetupFile sf: setupList) {
+         sf.setup();
+         sf.writeFile();
+         sf.replaceAllStrings(modifications);
       }
-
-      Utils.createArff(
-         PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED,
-         trainList.stream().
-            map(tl->tl.getFaa().getSavePath())
+      final String combinedPath = PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED;
+      
+      UtilsARFF.createArff(combinedPath,
+         setupList.stream()
+            .map(tl->tl.getFaa().getSavePath())
             .collect(Collectors.toList())
       );
+      
+      //Feature selection
+//      FeatureSelection.wrapperSelection(UtilsInstances.getInstances(combinedPath));
 
-      TempHolder th = new TempHolder(PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED);
-      th.setTrainTestValidation(
+      SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
+      sttv.setTrainTestValidationPaths(
          PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN,
          PathConstants.FORMATTED_DIR+FileNameConstants.TEST,
          PathConstants.FORMATTED_DIR+FileNameConstants.VALIDATION
       );
 
-      Classify classify = new TrainTestValidation(
+      Evaluate evaluate = new TrainTestValidation(
          folderPath,
          PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN,
          PathConstants.FORMATTED_DIR+FileNameConstants.TEST,
          PathConstants.FORMATTED_DIR+FileNameConstants.VALIDATION
       );
-      classify.buildModel();
-      classify.writeModel();
-      classify.evaluateModel();
+      evaluate.buildModel();
+      evaluate.writeModel();
+      evaluate.evaluateModel();
       
-      Utils.duplicateFolder(PathConstants.FORMATTED_DIR, classify.getFullFolderPath());
+      Utils.duplicateFolder(PathConstants.FORMATTED_DIR, evaluate.getFullFolderPath());
    }
 }

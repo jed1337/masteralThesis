@@ -2,7 +2,7 @@ package utils;
 
 import constants.FileNameConstants;
 import constants.PathConstants;
-import format.FormatAsArff;
+import formatFiles.FormatAsArff;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import weka.core.Instances;

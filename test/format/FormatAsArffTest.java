@@ -1,9 +1,9 @@
 package format;
 
+import formatFiles.FormatAsArff;
 import format.testConstants.FileNameConstants;
 import format.testConstants.PathConstants;
 import java.io.IOException;
-import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

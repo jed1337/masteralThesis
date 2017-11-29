@@ -1,8 +1,8 @@
-package classify;
+package setupFiles;
 
 import constants.FormatConstants;
-import format.FormatAsArff;
-import format.FormatAsText;
+import formatFiles.FormatAsArff;
+import formatFiles.FormatAsText;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import utils.*;
 import weka.core.Instance;
 import weka.core.Instances;
 
-public class TempHolder {
+public class SetupTestTrainValidation {
    final HashMap<String, Instances> newInstances;
 
    final String isAttack = "isAttack";
@@ -20,7 +20,7 @@ public class TempHolder {
 
    final ArrayList<SplitFileCounter> counters;
 
-	public TempHolder(String combinedPath) throws IOException{
+	public SetupTestTrainValidation(String combinedPath) throws IOException{
 		this.combinePath    = combinedPath;
 		this.combinedInstances        = UtilsInstances.getInstances(combinedPath);
 		this.counters     = new ArrayList<>();
@@ -37,23 +37,19 @@ public class TempHolder {
     * @throws IOException
     * @throws Exception
     */
-	public void setTrainTestValidation(String trainPath, String testPath, String validationPath) throws IOException, Exception{
+	public void setTrainTestValidationPaths(String trainPath, String testPath, String validationPath) throws IOException, Exception{
       int isAttackIndex = UtilsInstances.getAttributeIndex(this.combinedInstances, this.isAttack);
 		HashMap<String, FormatAsArff> singleClass = new HashMap<>();
 
       for (int i = 0; i < this.combinedInstances.attribute(isAttackIndex).numValues(); i++) {
          String attName = this.combinedInstances.attribute(isAttackIndex).value(i);
          Utils.addToMap(singleClass,attName, new FormatAsArff(this.combinePath));
-//         singleClass.put(attName, new FormatAsArff(this.combinePath));
       }
 
       HashMap<String, Float> splitParam = new HashMap<>();
       Utils.addToMap(splitParam, trainPath,      new Float(4.0));
       Utils.addToMap(splitParam, testPath,       new Float(1.0));
       Utils.addToMap(splitParam, validationPath, new Float(1.0));
-      // splitParam.put(trainPath,      new Float(4.0));
-      // splitParam.put(testPath,       new Float(1.0));
-      // splitParam.put(validationPath, new Float(1.0));
 
       addHeaders(splitParam, this.combinePath);
 
@@ -82,15 +78,19 @@ public class TempHolder {
       }
    }
 
-   // The reason is because they use the same header variable as the HM's value
-//    If 1 value is edited, all the others are as well.
-//       They aren't technically edited, but since they point to the same object, 1 edit reflects to all
+ 
+   /**
+    * The reason is because they use the same header variable as the HM's value
+    * If 1 value is edited, all the others are as well.
+    * They aren't technically edited, but since they point to the same object, 1 edit reflects to all
+    * 
+    * @param splitParam
+    * @param source Source to get the headers from
+    * @throws Exception 
+    */
    private void addHeaders(HashMap<String, Float> splitParam, String source) throws Exception {
-//      Instances header = UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE);
       for (String path : splitParam.keySet()) {
-//         this.newInstances.put(path, header);
           Utils.addToMap(this.newInstances, path, UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
-          // this.newInstances.put(path, UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
       }
       System.out.println("");
    }

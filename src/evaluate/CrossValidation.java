@@ -1,10 +1,10 @@
-package classify;
+package evaluate;
 
-import driver.ClassifierHolder;
+import classifier.ClassifierHolder;
 import utils.UtilsClssifiers;
 import java.io.IOException;
 
-public class CrossValidation extends Classify{
+public class CrossValidation extends Evaluate{
    public CrossValidation(String subFolderPath, String CrossValidationPath) throws IOException, Exception {
       this("results/CrossValidation/",subFolderPath, CrossValidationPath);
    }

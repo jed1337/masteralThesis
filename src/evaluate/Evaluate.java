@@ -1,7 +1,6 @@
-package classify;
+package evaluate;
 
-import constants.FileNameConstants;
-import driver.ClassifierHolder;
+import classifier.ClassifierHolder;
 import utils.UtilsClssifiers;
 import utils.Utils;
 import java.io.IOException;
@@ -9,23 +8,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import utils.UtilsInstances;
 import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.bayes.net.search.global.SimulatedAnnealing;
 import weka.classifiers.functions.SMO;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 
-public abstract class Classify {
+public abstract class Evaluate {
    protected final String fullFolderPath;
    protected final ArrayList<ClassifierHolder> classifiers;
    
    protected final HashMap<String, Instances> instancesHM;
    
-//   private final Instances trainSet;
    private final String trainPath;
    
-   protected Classify(String folderPath, String subFolderPath, String trainPath) throws IOException, Exception {
+   protected Evaluate(String folderPath, String subFolderPath, String trainPath) throws IOException, Exception {
       this.fullFolderPath = folderPath+subFolderPath;
       Utils.makeFolders(this.fullFolderPath);
       
@@ -33,15 +30,6 @@ public abstract class Classify {
       this.trainPath = trainPath;
       addInstance(trainPath);
 
-//Put this function outside      
-      Utils.duplicateFile(trainPath, this.fullFolderPath+FileNameConstants.TRAIN);
-      
-//      this.trainSet = UtilsInstances.getInstances(trainPath);
-//      Utils.duplicateFile(
-//         this.fullFolderPath + FileNameConstants.TRAIN,
-//         Utils.getFileContents(trainPath)
-//      );
-      
       this.classifiers = new ArrayList<>();
    }
 

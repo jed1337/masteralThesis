@@ -1,125 +1,133 @@
 package format;
 
+import formatFiles.FormatAsText;
+import formatFiles.FormatAsArff;
+import format.testConstants.FileNameConstants;
+import format.testConstants.PathConstants;
+import java.io.IOException;
 import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import utils.Utils;
+import utils.UtilsTest;
 import static org.junit.Assert.*;
 
 public class FormatAsTextTest {
+   private FormatAsText fat;
+   public FormatAsTextTest() {
+   }
 
-    public FormatAsTextTest() {
-    }
+   @BeforeClass
+   public static void setUpClass() {
+   }
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
+   @AfterClass
+   public static void tearDownClass() {
+   }
 
-    @AfterClass
-    public static void tearDownClass() {
-    }
+   @Before
+   public void setUp() throws IOException {
+      Utils.duplicateFile(PathConstants.UNFORMATTED_DIR + FileNameConstants.TEST,
+         PathConstants.UNFORMATTED_DIR + FileNameConstants.OUTPUT
+      );
+      
+      fat = new FormatAsText(PathConstants.UNFORMATTED_DIR + FileNameConstants.OUTPUT);
+   }
+   
+   private String getContents() throws IOException{
+      return Utils.getFileContents(fat.getPATH());
+   }
 
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
-   /**
-    * Test of getArffHeader method, of class FormatAsText.
-    */
-   @Test
-   public void testGetArffHeader() throws Exception {
-      System.out.println("getArffHeader");
-      FormatAsText instance = null;
-      String expResult = "";
-      String result = instance.getArffHeader();
-      assertEquals(expResult, result);
-      // TODO review the generated test code and remove the default call to fail.
-      fail("The test case is a prototype.");
+   @After
+   public void tearDown() throws IOException {
+      fat.clearFile();
+      fat = null;
    }
 
    /**
     * Test of hasHeader method, of class FormatAsText.
+    * @throws java.lang.Exception
     */
    @Test
    public void testHasHeader() throws Exception {
       System.out.println("hasHeader");
-      FormatAsText instance = null;
-      boolean expResult = false;
-      boolean result = instance.hasHeader();
+      boolean expResult = true;
+      boolean result = fat.hasHeader();
       assertEquals(expResult, result);
-      // TODO review the generated test code and remove the default call to fail.
-      fail("The test case is a prototype.");
    }
 
    /**
     * Test of addInstances method, of class FormatAsText.
+    * @throws java.lang.Exception
     */
    @Test
    public void testAddInstances() throws Exception {
       System.out.println("addInstances");
-      String addToPath = "";
-      FormatAsText instance = null;
-      instance.addInstances(addToPath);
-      // TODO review the generated test code and remove the default call to fail.
-      fail("The test case is a prototype.");
+      
+      fat.addInstances(PathConstants.UNFORMATTED_DIR + FileNameConstants.ADD);
+      
+      FormatAsArff faa = new FormatAsArff(PathConstants.UNFORMATTED_DIR + FileNameConstants.OUTPUT);
+      assertEquals(24, faa.getInstances().numInstances());
    }
 
    /**
     * Test of clearFile method, of class FormatAsText.
+    * @throws java.lang.Exception
     */
    @Test
    public void testClearFile() throws Exception {
       System.out.println("clearFile");
-      FormatAsText instance = null;
-      instance.clearFile();
-      // TODO review the generated test code and remove the default call to fail.
-      fail("The test case is a prototype.");
+      fat.clearFile();
+      assertEquals(Utils.getFileContents(fat.getPATH()), "");
    }
 
    /**
     * Test of insertString method, of class FormatAsText.
+    * @throws java.lang.Exception
     */
    @Test
    public void testInsertString() throws Exception {
       System.out.println("insertString");
-      String toAdd = "";
-      int position = 0;
-      FormatAsText instance = null;
-      instance.insertString(toAdd, position);
-      // TODO review the generated test code and remove the default call to fail.
-      fail("The test case is a prototype.");
+      String toAdd = "blah blah";
+      String before = getContents();
+      
+      fat.insertString(toAdd, 0);
+      
+      assertEquals(toAdd+before, getContents());
    }
 
    /**
     * Test of addClassCount method, of class FormatAsText.
+    * @throws java.lang.Exception
     */
    @Test
    public void testAddClassCount() throws Exception {
       System.out.println("addClassCount");
-      String attributeName = "";
-      FormatAsText instance = null;
-      instance.addClassCount(attributeName);
-      // TODO review the generated test code and remove the default call to fail.
-      fail("The test case is a prototype.");
+      String attributeName = "isAttack";
+      fat.addClassCount(attributeName);
+      assertEquals(
+         UtilsTest.getChecksumFromFile(fat.getPATH()),
+         UtilsTest.getChecksumFromFile(
+            PathConstants.FORMATTED_DIR+FileNameConstants.TEST_WITH_CLASS_COUNT)
+      );
    }
 
    /**
     * Test of replaceAllStrings method, of class FormatAsText.
+    * @throws java.lang.Exception
     */
    @Test
    public void testReplaceAllStrings() throws Exception {
       System.out.println("replaceAllStrings");
-      HashMap[] hashMaps = null;
-      FormatAsText instance = null;
-      instance.replaceAllStrings(hashMaps);
-      // TODO review the generated test code and remove the default call to fail.
-      fail("The test case is a prototype.");
+      HashMap<String, String> hm = new HashMap<>();
+      hm.put("tcpFlood", "flood_of_tcp_packets");
+      hm.put("httpFlood", "flood_of_http_packets");
+      fat.replaceAllStrings(hm);
+      
+      assertEquals(-1, getContents().indexOf("tcpFlood"));
+      assertEquals(-1, getContents().indexOf("httpFlood"));
    }
-
 }
