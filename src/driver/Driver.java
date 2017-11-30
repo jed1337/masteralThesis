@@ -3,9 +3,7 @@ package driver;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import setupFiles.SetupFile;
 import setupFiles.SetupExtraNoise;
 import setupFiles.SetupHighrate;
@@ -18,33 +16,6 @@ import weka.classifiers.Classifier;
 import weka.core.Instances;
 
 public class Driver{
-//<editor-fold defaultstate="collapsed" desc="Functions">
-   private static HashMap<String, String> replaceAttribute(String attribute, String... toReplace){
-      return replaceAttribute(attribute, String.join(",",toReplace));
-   }
-
-   private static HashMap<String, String> replaceAttribute(String attribute, String toReplace){
-      final HashMap<String, String> OTHER_REPLACEMENTS = new HashMap<>();
-      OTHER_REPLACEMENTS.put(
-              "(?m)^@attribute "+attribute+".*",
-         "@attribute "+attribute+" {"+toReplace+"}");
-
-      return OTHER_REPLACEMENTS;
-   }
-
-   private static HashMap<String, String> getHashMap(String value, String... keys) {
-      return getHashMap(value, Arrays.asList(keys));
-   }
-
-   private static HashMap<String, String> getHashMap(String value, List<String> keys) {
-      HashMap<String, String> hm = new HashMap();
-      keys.forEach((key)->{
-         hm.put(key, value);
-      });
-      return hm;
-   }
-//</editor-fold>
-
    public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
 //      Instances reduced = FeatureSelection.wrapperSelection(
 //         UtilsInstances.getInstances(
@@ -103,20 +74,12 @@ public class Driver{
       setups.add(new SetupExtraNoise(1000));
       setups.add(new SetupHighrate(3000));
       setups.add(new SetupLowrate(3000));
-
+      
       new SystemTrain(
          folderPath + "Single/",
          setups,
-         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate",
-
-         // getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-         // getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-         replaceAttribute("isAttack", "normal", "highrate", "lowrate")
-//         replaceAttribute(
-//            "isAttack",
-//            "normal",
-//            "tcpFlood", "udpFlood", "httpFlood",
-//            "slowBody", "slowHeaders", "slowRead")
+         "isAttack",
+         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
       );
    }
 

@@ -1,5 +1,6 @@
 package utils;
 
+import constants.CharConstants;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,13 +12,25 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
 public class Utils {
-   private static final String NEW_LINE = "\n";
-
    protected Utils() {}
+   
+   public static HashMap<String, String> replaceAttribute(String attribute, String... toReplace){
+      return replaceAttribute(attribute, String.join(",",toReplace));
+   }
+
+   public static HashMap<String, String> replaceAttribute(String attribute, String toReplace){
+      final HashMap<String, String> OTHER_REPLACEMENTS = new HashMap<>();
+      OTHER_REPLACEMENTS.put(
+              "(?m)^@attribute "+attribute+".*",
+         "@attribute "+attribute+" {"+toReplace+"}");
+
+      return OTHER_REPLACEMENTS;
+   }
    
    public static <T> boolean arrayContains(final T[] array, final T v) {
       if (v == null) {
@@ -53,7 +66,7 @@ public class Utils {
          String line;
          while ((line = br.readLine()) != null) {
             sb.append(line);
-            sb.append(NEW_LINE);
+            sb.append(CharConstants.NEW_LINE);
             
             if(breakCondition.test(line)){
                break;

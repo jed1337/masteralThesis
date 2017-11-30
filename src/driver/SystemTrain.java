@@ -7,8 +7,6 @@ import constants.FileNameConstants;
 import constants.PathConstants;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.stream.Collectors;
 import setupFiles.SetupFile;
 import utils.Utils;
@@ -16,12 +14,12 @@ import utils.UtilsARFF;
 
 public class SystemTrain {
    public SystemTrain
-         (String folderPath, ArrayList<SetupFile> setupList, String toReplace, HashMap<String, String>... modifications) 
+         (String folderPath, ArrayList<SetupFile> setupList, String attributeName, String toReplace) 
          throws IOException, Exception {
       
       for (SetupFile sfl: setupList) {
          sfl.setup();
-         sfl.testRename("isAttack", toReplace);
+         sfl.testRename(attributeName, toReplace);
          sfl.writeFile();
       }
       
@@ -32,7 +30,7 @@ public class SystemTrain {
          setupList.stream()
             .map(tl->tl.getFaa().getSavePath())
             .collect(Collectors.toList()),
-         modifications
+         attributeName
       );
       
       //Feature selection

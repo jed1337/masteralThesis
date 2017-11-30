@@ -1,7 +1,5 @@
 package utils;
 
-import constants.FileNameConstants;
-import constants.PathConstants;
 import formatFiles.FormatAsArff;
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,26 +1,61 @@
 package utils;
 
+import constants.CharConstants;
 import formatFiles.FormatAsText;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import weka.core.Instances;
 
 public class UtilsARFF extends Utils{
    private UtilsARFF(){}
    
-   public static void createArff(String filename, List<String> paths, HashMap<String, String>... hashMaps) throws IOException, Exception{
+   public static FormatAsText createArff(String filename, List<String> paths) 
+           throws IOException, IllegalArgumentException{
+      if(paths== null){
+         throw new IllegalArgumentException("The paths is null!");
+      } else if (paths.isEmpty()){
+         throw new IllegalArgumentException("The paths is empty!");
+      }
+      
       FormatAsText fat = new FormatAsText(filename);
       fat.clearFile();
       for (String path : paths) {
          fat.addInstances(path);
       }
+      return fat;
+   }
+   
+   public static FormatAsText createArff(String filename, List<String> paths, String attributeName) 
+           throws IOException, IllegalArgumentException{
+      FormatAsText fat = createArff(filename, paths);
       
-      fat.replaceAllStrings(hashMaps);
+      int index = UtilsInstances.getAttributeIndex(
+              UtilsInstances.getInstances(paths.get(0)), 
+              attributeName
+      );
       
-      Instances tempHeader = UtilsInstances.getHeader(filename);
-      String att = tempHeader.attribute(tempHeader.numAttributes()-1).name();
+      String[] lines = Utils.getFileContents(fat.getPATH()).split(CharConstants.NEW_LINE);
+      boolean passedData = false;
+      Set<String> indexValues = new HashSet<>();   //A Set is used so that all its values are unique
       
-      fat.addClassCount(att);
+      for (String line : lines) {
+         if(line.contains("@data")){
+            passedData = true;
+            continue;
+         }
+         if(passedData){
+            indexValues.add(line.split(CharConstants.COMMA)[index]);
+         }
+      }
+      
+      fat.replaceAllStrings(
+         Utils.replaceAttribute(attributeName, indexValues.toArray(new String[0]))
+      );
+      
+      fat.addClassCount(attributeName);
+      
+      return fat;
    }
 }
