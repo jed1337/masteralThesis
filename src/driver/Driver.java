@@ -26,46 +26,38 @@ public class Driver{
 //      System.out.println("");
 
          final String folderPath = "FeatureSelected/HLNormNoiseBinary (Allah)/";
-//      hybridMethod(folderPath);
-      singleClassifier(folderPath);
+      hybridMethod(folderPath);
+//      singleClassifier(folderPath);
 //      system();
    }
-//   private static void hybridMethod(String folderPath) throws IOException, Exception{
-//      ArrayList<SetupFile> setupNormalOrAttack = new ArrayList<>();
-////      setupNormalOrAttack.add(new SetupNoise(2000));
-////      setupNormalOrAttack.add(new SetupNormal(2000));
-////      setupNormalOrAttack.add(new SetupExtraNoise(2000));
-//
-//      setupNormalOrAttack.add(new SetupHighrate(3000));
-//      setupNormalOrAttack.add(new SetupLowrate(3000));
-//
-//      new SystemTrain(
-//         folderPath+"NormalOrAttack/",
-//         setupNormalOrAttack,
-//         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-//         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-//         getHashMap("attack", "highrate", "lowrate"),
-//
-//         replaceAttribute("isAttack", "normal", "attack")
-//     );
-//
-//     ArrayList<SetupFile> setupHL = new ArrayList<>();
-//     setupHL.add(new SetupHighrate(3000));
-//     setupHL.add(new SetupLowrate(3000));
-//
-//     new SystemTrain(
-//         folderPath+"HL/",
-//         setupHL,
-//         getHashMap("highrate", "tcpFlood", "udpFlood", "httpFlood"),
-//         getHashMap("lowrate", "slowBody", "slowHeaders", "slowRead"),
-//
-//         replaceAttribute("isAttack", "highrate", "lowrate")
-////         replaceAttribute(
-////            "isAttack",
-////            "tcpFlood", "udpFlood", "httpFlood",
-////            "slowBody", "slowHeaders", "slowRead")
-//     );
-//   }
+   private static void hybridMethod(String folderPath) throws IOException, Exception{
+      ArrayList<SetupFile> setupFiles;
+
+      setupFiles= new ArrayList<>();
+      setupFiles.add(new SetupNoise(2000));
+      setupFiles.add(new SetupNormal(2000));
+      setupFiles.add(new SetupExtraNoise(2000));
+      setupFiles.add(new SetupHighrate(3000));
+      setupFiles.add(new SetupLowrate(3000));
+
+      new SystemTrain(
+         folderPath+"NormalOrAttack/",
+         setupFiles,
+         "isAttack",
+         "tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack"
+     );
+
+     setupFiles = new ArrayList<>();
+     setupFiles.add(new SetupHighrate(3000));
+     setupFiles.add(new SetupLowrate(3000));
+
+     new SystemTrain(
+         folderPath+"HL/",
+         setupFiles,
+         "isAttack",
+         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
+     );
+   }
 
    public static void singleClassifier(String folderPath) throws IOException, Exception{
       ArrayList<SetupFile> setups = new ArrayList<>();
@@ -74,7 +66,7 @@ public class Driver{
       setups.add(new SetupExtraNoise(1000));
       setups.add(new SetupHighrate(3000));
       setups.add(new SetupLowrate(3000));
-      
+
       new SystemTrain(
          folderPath + "Single/",
          setups,
