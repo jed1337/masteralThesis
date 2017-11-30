@@ -1,5 +1,6 @@
 package driver;
 
+import classifier.FeatureSelection;
 import evaluate.Evaluate;
 import setupFiles.SetupTestTrainValidation;
 import evaluate.TrainTestValidation;
@@ -11,11 +12,13 @@ import java.util.stream.Collectors;
 import setupFiles.SetupFile;
 import utils.Utils;
 import utils.UtilsARFF;
+import utils.UtilsInstances;
 
 public class SystemTrain {
    public SystemTrain
          (String folderPath, ArrayList<SetupFile> setupList, String attributeName, String toReplace) 
          throws IOException, Exception {
+      final String combinedPath = PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED;
       
       for (SetupFile sfl: setupList) {
          sfl.setup();
@@ -23,7 +26,6 @@ public class SystemTrain {
          sfl.writeFile();
       }
       
-      final String combinedPath = PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED;
       
       UtilsARFF.createArff(
          combinedPath,
@@ -34,8 +36,12 @@ public class SystemTrain {
       );
       
       //Feature selection
-//      FeatureSelection.wrapperSelection(UtilsInstances.getInstances(combinedPath));
-
+      //Write it to a file
+      Utils.writeStringFile(
+         combinedPath,
+         FeatureSelection.wrapperSelection(UtilsInstances.getInstances(combinedPath)).toString()
+      );
+      
       SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
       sttv.setTrainTestValidationPaths(
          PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN,

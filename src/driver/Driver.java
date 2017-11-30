@@ -3,9 +3,7 @@ package driver;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import setupFiles.SetupFile;
-import setupFiles.SetupExtraNoise;
 import setupFiles.SetupHighrate;
 import setupFiles.SetupLowrate;
 import setupFiles.SetupNoise;
@@ -16,27 +14,19 @@ import weka.classifiers.Classifier;
 import weka.core.Instances;
 
 public class Driver{
-   public static void main(String[] a1rgs) throws FileNotFoundException, IOException, Exception {
-//      Instances reduced = FeatureSelection.wrapperSelection(
-//         UtilsInstances.getInstances(
-//            PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN
-//         )
-//      );
-//
-//      System.out.println("");
-
-         final String folderPath = "FeatureSelected/HLNormNoiseBinary (Allah)/";
-      hybridMethod(folderPath);
-//      singleClassifier(folderPath);
+   public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
+      final String folderPath = "FeatureSelected (J48)/HLNormNoiseBinary/";
+//      hybridMethod(folderPath);
+      singleClassifier(folderPath);
 //      system();
    }
    private static void hybridMethod(String folderPath) throws IOException, Exception{
       ArrayList<SetupFile> setupFiles;
 
       setupFiles= new ArrayList<>();
-      setupFiles.add(new SetupNoise(2000));
-      setupFiles.add(new SetupNormal(2000));
-      setupFiles.add(new SetupExtraNoise(2000));
+      setupFiles.add(new SetupNoise(3000));
+      setupFiles.add(new SetupNormal(3000));
+//      setupFiles.add(new SetupExtraNoise(2000));
       setupFiles.add(new SetupHighrate(3000));
       setupFiles.add(new SetupLowrate(3000));
 
@@ -61,9 +51,8 @@ public class Driver{
 
    public static void singleClassifier(String folderPath) throws IOException, Exception{
       ArrayList<SetupFile> setups = new ArrayList<>();
-      setups.add(new SetupNoise(1000));
-      setups.add(new SetupNormal(1000));
-      setups.add(new SetupExtraNoise(1000));
+      setups.add(new SetupNoise(2000));
+      setups.add(new SetupNormal(2000));
       setups.add(new SetupHighrate(3000));
       setups.add(new SetupLowrate(3000));
 

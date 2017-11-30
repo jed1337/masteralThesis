@@ -17,8 +17,8 @@ public class FeatureSelection {
     * Classifier = J48
     * Evaluation = BestFirst
     * 
-    * @param data         The instances to classifier
-    * @return Instances with reduced features
+    * @param data   The instances to classifier
+    * @return       Instances with reduced features
     *
     * @throws Exception
     */
@@ -39,6 +39,7 @@ public class FeatureSelection {
     */
 
    public static Instances wrapperSelection(Instances data, Classifier classifier, ASSearch searchMethod) throws Exception {
+      System.out.println("Starting wrapper method for feature selection");
       data.setClassIndex(data.numAttributes() - 1);
 
       AttributeSelection as = new AttributeSelection();
@@ -54,8 +55,10 @@ public class FeatureSelection {
       
       System.out.println(as.toResultsString());
 
+//      This remove code is similar to the one in FormatAsArff
       Remove remove = new Remove();
       remove.setAttributeIndicesArray(as.selectedAttributes());
+      remove.setInvertSelection(true);
       remove.setInputFormat(data);
       return Filter.useFilter(data, remove);
    }
