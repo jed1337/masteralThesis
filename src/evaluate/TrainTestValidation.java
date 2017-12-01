@@ -18,7 +18,7 @@ public class TrainTestValidation extends TrainTest{
    }
 
    public void evaluateValidation() throws Exception{
-      for (ClassifierHolder ch : super.classifiers) {
+      for (ClassifierHolder ch : super.classifierHolders) {
          UtilsClssifiers.saveTestEvaluationToFile(ch, super.instancesHM.get(validationPath));
       }
    }

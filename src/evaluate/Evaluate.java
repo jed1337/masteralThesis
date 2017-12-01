@@ -16,21 +16,18 @@ import weka.core.Instances;
 
 public abstract class Evaluate {
    protected final String fullFolderPath;
-   protected final ArrayList<ClassifierHolder> classifiers;
-   
+   protected final ArrayList<ClassifierHolder> classifierHolders;
    protected final HashMap<String, Instances> instancesHM;
    
    private final String trainPath;
    
    protected Evaluate(String folderPath, String subFolderPath, String trainPath) throws IOException, Exception {
       this.fullFolderPath = folderPath+subFolderPath;
-      Utils.makeFolders(this.fullFolderPath);
-      
       this.instancesHM = new HashMap<>();
       this.trainPath = trainPath;
       addInstance(trainPath);
 
-      this.classifiers = new ArrayList<>();
+      this.classifierHolders = new ArrayList<>();
    }
 
    public String getFullFolderPath() {
@@ -43,20 +40,18 @@ public abstract class Evaluate {
    }
    
    public final void buildModel() throws Exception{
-      buildModel(this.trainPath);
-   };
-   
-   protected final void buildModel(String key) throws Exception{
-      Instances instances = this.instancesHM.get(key);
-      this.classifiers.add(new ClassifierHolder(new NaiveBayes(),    instances, "NB",  this.fullFolderPath));
-      this.classifiers.add(new ClassifierHolder(new IBk(),           instances, "KNN", this.fullFolderPath));
-      this.classifiers.add(new ClassifierHolder(new J48(),           instances, "J48", this.fullFolderPath));
-      this.classifiers.add(new ClassifierHolder(new SMO(),           instances, "SMO", this.fullFolderPath));
-      this.classifiers.add(new ClassifierHolder(new RandomForest(),  instances, "RF", this.fullFolderPath));
+      Instances instances = this.instancesHM.get(this.trainPath);
+      this.classifierHolders.add(new ClassifierHolder(new J48(),           instances, "J48", this.fullFolderPath));
+      this.classifierHolders.add(new ClassifierHolder(new IBk(),           instances, "KNN", this.fullFolderPath));
+      this.classifierHolders.add(new ClassifierHolder(new NaiveBayes(),    instances, "NB",  this.fullFolderPath));
+      this.classifierHolders.add(new ClassifierHolder(new RandomForest(),  instances, "RF", this.fullFolderPath));
+      this.classifierHolders.add(new ClassifierHolder(new SMO(),           instances, "SMO", this.fullFolderPath));
    }
    
    public final void writeModel() throws Exception{
-      for (ClassifierHolder ch : this.classifiers) {
+      Utils.makeFolders(this.fullFolderPath);
+      
+      for (ClassifierHolder ch : this.classifierHolders) {
          UtilsClssifiers.writeModel(ch);
       }
    };

@@ -1,6 +1,5 @@
 package evaluate;
 
-import classifier.ClassifierHolder;
 import java.io.IOException;
 import utils.UtilsClssifiers;
 
@@ -19,8 +18,9 @@ public class TrainTest extends Evaluate{
    
    @Override
    public void evaluateModel() throws Exception{
-      for (ClassifierHolder ch : super.classifiers) {
-         UtilsClssifiers.saveTestEvaluationToFile(ch, super.instancesHM.get(this.testPath));
-      }
+      UtilsClssifiers.saveTestEvaluationToFile(
+         super.classifierHolders, 
+         super.instancesHM.get(this.testPath)
+      );
    }
 }

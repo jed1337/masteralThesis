@@ -15,8 +15,9 @@ import weka.core.Instances;
 
 public class Driver{
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-      final String folderPath = "FeatureSelected (J48)/HLNormNoiseBinary/";
-//      hybridMethod(folderPath);
+//      final String folderPath = "FeatureSelected (NB)/Halved/HL normalNoise binary/";
+      final String folderPath = "Test/";
+      hybridMethod(folderPath);
       singleClassifier(folderPath);
 //      system();
    }
@@ -24,42 +25,46 @@ public class Driver{
       ArrayList<SetupFile> setupFiles;
 
       setupFiles= new ArrayList<>();
-      setupFiles.add(new SetupNoise(3000));
-      setupFiles.add(new SetupNormal(3000));
-//      setupFiles.add(new SetupExtraNoise(2000));
-      setupFiles.add(new SetupHighrate(3000));
-      setupFiles.add(new SetupLowrate(3000));
+      setupFiles.add(new SetupNoise(1500));
+      setupFiles.add(new SetupNormal(1500));
+//      setupFiles.add(new SetupExtraNoise(1000));
+      setupFiles.add(new SetupHighrate(1500));
+      setupFiles.add(new SetupLowrate(1500));
 
       new SystemTrain(
          folderPath+"NormalOrAttack/",
          setupFiles,
          "isAttack",
+//              ""
          "tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack"
      );
 
      setupFiles = new ArrayList<>();
-     setupFiles.add(new SetupHighrate(3000));
-     setupFiles.add(new SetupLowrate(3000));
+     setupFiles.add(new SetupHighrate(1500));
+     setupFiles.add(new SetupLowrate(1500));
 
      new SystemTrain(
          folderPath+"HL/",
          setupFiles,
          "isAttack",
+//             ""
          "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
      );
    }
 
    public static void singleClassifier(String folderPath) throws IOException, Exception{
       ArrayList<SetupFile> setups = new ArrayList<>();
-      setups.add(new SetupNoise(2000));
-      setups.add(new SetupNormal(2000));
-      setups.add(new SetupHighrate(3000));
-      setups.add(new SetupLowrate(3000));
+      setups.add(new SetupNoise(1500));
+      setups.add(new SetupNormal(1500));
+//      setups.add(new SetupExtraNoise(1000));
+      setups.add(new SetupHighrate(1500));
+      setups.add(new SetupLowrate(1500));
 
       new SystemTrain(
          folderPath + "Single/",
          setups,
          "isAttack",
+//              ""
          "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
       );
    }

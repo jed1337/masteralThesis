@@ -13,6 +13,7 @@ import setupFiles.SetupFile;
 import utils.Utils;
 import utils.UtilsARFF;
 import utils.UtilsInstances;
+import weka.classifiers.bayes.NaiveBayes;
 
 public class SystemTrain {
    public SystemTrain
@@ -25,23 +26,25 @@ public class SystemTrain {
          sfl.testRename(attributeName, toReplace);
          sfl.writeFile();
       }
-      
-      
-      UtilsARFF.createArff(
-         combinedPath,
-         setupList.stream()
-            .map(tl->tl.getFaa().getSavePath())
-            .collect(Collectors.toList()),
-         attributeName
-      );
+//      
+//      UtilsARFF.createArff(
+//         combinedPath,
+//         setupList.stream()
+//            .map(tl->tl.getFaa().getSavePath())
+//            .collect(Collectors.toList()),
+//         attributeName
+//      );
       
       //Feature selection
       //Write it to a file
       Utils.writeStringFile(
          combinedPath,
-         FeatureSelection.wrapperSelection(UtilsInstances.getInstances(combinedPath)).toString()
+         FeatureSelection.wrapperSelection(
+            UtilsInstances.getInstances(combinedPath),
+            new NaiveBayes()
+         ).toString()
       );
-      
+//      
       SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
       sttv.setTrainTestValidationPaths(
          PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN,

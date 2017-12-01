@@ -1,6 +1,5 @@
 package evaluate;
 
-import classifier.ClassifierHolder;
 import utils.UtilsClssifiers;
 import java.io.IOException;
 
@@ -15,8 +14,9 @@ public class CrossValidation extends Evaluate{
 
    @Override
    public void evaluateModel() throws Exception{
-      for (ClassifierHolder ch : super.classifiers) {
-         UtilsClssifiers.saveCrossValidationToFile(ch, 10);
-      }
+      UtilsClssifiers.saveCrossValidationToFile(
+         super.classifierHolders,
+         10
+      );
    }
 }

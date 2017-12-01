@@ -17,13 +17,26 @@ public class FeatureSelection {
     * Classifier = J48
     * Evaluation = BestFirst
     * 
-    * @param data   The instances to classifier
+    * @param data   The instances to classify
     * @return       Instances with reduced features
     *
     * @throws Exception
     */
    public static Instances wrapperSelection(Instances data) throws Exception {
-      return wrapperSelection(data, new J48(), new BestFirst());
+      return wrapperSelection(data, new J48());
+   }
+   /**
+    * Uses wrapper method.
+    * Evaluation = BestFirst
+    * 
+    * @param data   The instances to classify
+    * @param classifier
+    * @return       Instances with reduced features
+    *
+    * @throws Exception
+    */   
+   public static Instances wrapperSelection(Instances data, Classifier classifier) throws Exception {
+      return wrapperSelection(data, classifier, new BestFirst());
    }
    
    /**
@@ -53,6 +66,7 @@ public class FeatureSelection {
       as.setSearch(searchMethod);
       as.SelectAttributes(data);
       
+      System.out.println("Results:");
       System.out.println(as.toResultsString());
 
 //      This remove code is similar to the one in FormatAsArff

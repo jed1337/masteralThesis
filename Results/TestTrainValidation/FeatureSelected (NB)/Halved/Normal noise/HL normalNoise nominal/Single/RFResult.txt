@@ -1,0 +1,32 @@
+=== Dedicated test set ===
+=== Summary of RF===
+
+Correctly Classified Instances         852               85.3707 %
+Incorrectly Classified Instances       146               14.6293 %
+Kappa statistic                          0.7929
+Mean absolute error                      0.0441
+Root mean squared error                  0.1712
+Relative absolute error                 21.7883 %
+Root relative squared error             53.8656 %
+Total Number of Instances              998     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.916    0.000    1.000      0.916    0.956      0.953    0.988     0.978     tcpFlood
+                 0.998    0.008    0.992      0.998    0.995      0.990    0.999     0.998     normal
+                 0.940    0.008    0.918      0.940    0.929      0.922    0.998     0.985     httpFlood
+                 0.410    0.038    0.493      0.410    0.447      0.404    0.866     0.445     slowRead
+                 0.542    0.056    0.469      0.542    0.503      0.456    0.897     0.488     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.446    0.054    0.430      0.446    0.438      0.386    0.912     0.473     slowBody
+Weighted Avg.    0.854    0.017    0.855      0.854    0.854      0.839    0.971     0.863     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+  76   4   1   0   2   0   0 |   a = tcpFlood
+   0 499   0   0   1   0   0 |   b = normal
+   0   0  78   3   0   0   2 |   c = httpFlood
+   0   0   4  34  25   0  20 |   d = slowRead
+   0   0   0  11  45   0  27 |   e = slowHeaders
+   0   0   0   0   0  83   0 |   f = udpFlood
+   0   0   2  21  23   0  37 |   g = slowBody

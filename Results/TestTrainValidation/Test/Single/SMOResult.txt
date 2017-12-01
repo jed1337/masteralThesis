@@ -1,0 +1,24 @@
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         773               77.3    %
+Incorrectly Classified Instances       227               22.7    %
+Kappa statistic                          0.6028
+Mean absolute error                      0.2818
+Root mean squared error                  0.3656
+Relative absolute error                 67.6233 %
+Root relative squared error             80.0888 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.432    0.697      0.996    0.820      0.624    0.782     0.697     normal
+                 0.100    0.001    0.962      0.100    0.181      0.268    0.868     0.661     highrate
+                 1.000    0.013    0.962      1.000    0.980      0.974    0.993     0.962     lowrate
+Weighted Avg.    0.773    0.220    0.830      0.773    0.701      0.623    0.856     0.754     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 498   1   1 |   a = normal
+ 216  25   9 |   b = highrate
+   0   0 250 |   c = lowrate
