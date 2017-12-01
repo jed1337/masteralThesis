@@ -4,6 +4,7 @@ import classifier.ClassifierHolder;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.function.Function;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 import weka.classifiers.evaluation.Evaluation;
@@ -33,10 +34,10 @@ public class UtilsClssifiers extends Utils {
 
    public static Evaluation saveCrossValidationToFile(ClassifierHolder ch, int folds) throws Exception {
       Instances ins = ch.getInstances();
-      
+
       Evaluation eval = new Evaluation(ins);
       eval.crossValidateModel(ch.getClassifier(), ins, folds, new Random(1));
-      
+
       saveStatistics(eval, ch, folds+" fold Cross validation");
       return eval;
    }
@@ -50,7 +51,7 @@ public class UtilsClssifiers extends Utils {
    public static Evaluation saveTestEvaluationToFile(ClassifierHolder ch, Instances testSet) throws Exception{
       Evaluation eval = new Evaluation(ch.getInstances());
       eval.evaluateModel(ch.getClassifier(), testSet);
-      
+
       saveStatistics(eval, ch, "Dedicated test set");
       return eval;
    }
@@ -58,14 +59,32 @@ public class UtilsClssifiers extends Utils {
    //Put add collated files here
    private static void saveStatistics(Evaluation eval, ClassifierHolder ch, String message) throws IOException, Exception {
       StringBuilder sb = new StringBuilder();
-      
+
       sb.append("=== ").append(message).append(" ===\n");
       sb.append(eval.toSummaryString("=== Summary of "+ch.getClassifierName()+"===\n", false));
       sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
       sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));
 
       System.out.println(sb);
-
+      
       writeStringFile(ch.getResultName(), sb.toString());
+      
+      saveAccuracyToFile(eval, ch, "Accuracy.txt");
+   }
+   private static void saveAccuracyToFile(Evaluation eval, ClassifierHolder ch, String fileName) throws IOException, Exception {
+      Function<Evaluation, String> func = (fEval)->{
+         StringBuilder text = new StringBuilder();
+         text.append("Correctly Classified Instances     ");
+         text.append(Utils.doubleToString(fEval.correct(), 12, 4));
+         text.append("     ");
+         text.append(Utils.doubleToString(fEval.pctCorrect(), 12, 4));
+         text.append(" %\n");
+         return text.toString();
+      };
+      Utils.writeStringFile(
+         ch.getFolderPath()+fileName, 
+         ch.getClassifierName()+"\n\t"+func.apply(eval), 
+         true
+      );
    }
 }

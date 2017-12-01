@@ -1,0 +1,5 @@
+J48	Correctly Classified Instances         949               94.9    %
+KNN	Correctly Classified Instances         939               93.9    %
+NB	Correctly Classified Instances         873               87.3    %
+RF	Correctly Classified Instances         940               94      %
+SMO	Correctly Classified Instances         773               77.3    %

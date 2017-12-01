@@ -30,9 +30,6 @@ public class Utils {
         "(?m)^@attribute "+attribute+".*",
         "@attribute "+attribute+" {"+toReplace+"}"
       );
-      // OTHER_REPLACEMENTS.put(
-      //         "(?m)^@attribute "+attribute+".*",
-      //    "@attribute "+attribute+" {"+toReplace+"}");
 
       return OTHER_REPLACEMENTS;
    }
@@ -146,5 +143,9 @@ public class Utils {
       } else{
          throw new IllegalArgumentException(key+" already exists");
       }
+   }
+   
+   public static String doubleToString(double value, int width, int afterDecimalPoint) {
+      return weka.core.Utils.doubleToString(value, width, afterDecimalPoint);
    }
 }
