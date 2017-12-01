@@ -18,20 +18,25 @@ import java.util.function.Predicate;
 
 public class Utils {
    protected Utils() {}
-   
+
    public static HashMap<String, String> replaceAttribute(String attribute, String... toReplace){
       return replaceAttribute(attribute, String.join(",",toReplace));
    }
 
    public static HashMap<String, String> replaceAttribute(String attribute, String toReplace){
       final HashMap<String, String> OTHER_REPLACEMENTS = new HashMap<>();
-      OTHER_REPLACEMENTS.put(
-              "(?m)^@attribute "+attribute+".*",
-         "@attribute "+attribute+" {"+toReplace+"}");
+      Utils.addToMap(
+        OTHER_REPLACEMENTS,
+        "(?m)^@attribute "+attribute+".*",
+        "@attribute "+attribute+" {"+toReplace+"}"
+      );
+      // OTHER_REPLACEMENTS.put(
+      //         "(?m)^@attribute "+attribute+".*",
+      //    "@attribute "+attribute+" {"+toReplace+"}");
 
       return OTHER_REPLACEMENTS;
    }
-   
+
    public static <T> boolean arrayContains(final T[] array, final T v) {
       if (v == null) {
          for (final T e : array) {
@@ -41,33 +46,37 @@ public class Utils {
          }
       } else {
          for (final T e : array) {
-            if (e == v || v.equals(e) || ((String) e).equalsIgnoreCase(((String)v)) ) {
+            if (e == v || e.equals(v)){
                return true;
+            }
+            if(e instanceof String && v instanceof String){
+               if( ((String) e).equalsIgnoreCase( ((String)v)) ){
+                  return true;
+               }
             }
          }
       }
-
       return false;
    }
-   
+
    public static BufferedReader getBufferedReader(String path) throws FileNotFoundException {
       return new BufferedReader(new FileReader(path));
    }
-   
+
    public static String getFileContents(String filename) throws IOException{
       return getFileContents(filename, s->false);
    }
 
    public static String getFileContents(
       String filename, Predicate<String> breakCondition) throws IOException{
-      
+
       StringBuilder sb = new StringBuilder();
       try (BufferedReader br = Utils.getBufferedReader(filename)) {
          String line;
          while ((line = br.readLine()) != null) {
             sb.append(line);
             sb.append(CharConstants.NEW_LINE);
-            
+
             if(breakCondition.test(line)){
                break;
             }
@@ -75,7 +84,7 @@ public class Utils {
          return sb.toString();
       }
    }
-   
+
    /**
     * Copies all the files in sourceDir to destinationDir
     * Loop through folders code from https://stackoverflow.com/questions/19190584/
@@ -89,13 +98,13 @@ public class Utils {
          duplicateFile(file.getAbsolutePath(), destinationDir+file.getName());
       }
    }
-   
+
    /**
     * Copies files form the source to the destination.
     * Copy code from https://www.journaldev.com/861/java-copy-file
     * @param source
     * @param destination
-    * @throws IOException 
+    * @throws IOException
     */
    public static void duplicateFile(String source, String destination) throws IOException{
       try (
@@ -113,14 +122,14 @@ public class Utils {
    public static void writeStringFile(String destination, String allLines) throws IOException {
       writeStringFile(destination, allLines, false);
    }
-   
+
    public static void writeStringFile(String destination, String allLines, boolean append) throws IOException {
       try (BufferedWriter bw = new BufferedWriter(new FileWriter(destination, append))) {
          bw.write(allLines);
       }
       System.out.println("Created '"+destination+"'");
    }
-   
+
    public static void makeFolders(String folderPath){
       if(!folderPath.isEmpty()){
          new File(folderPath).mkdirs();
@@ -129,7 +138,7 @@ public class Utils {
          System.err.println("'"+folderPath+"' already exists.");
       }
    }
-   
+
    public static <K extends Object, V extends Object> void addToMap(Map map, K key, V value) throws IllegalArgumentException{
       if(!map.containsKey(key)){
          map.put(key, value);

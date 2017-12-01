@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import utils.Utils;
-import utils.UtilsTest;
+import testUtils.TestUtils;
 import static org.junit.Assert.*;
 
 public class FormatAsTextTest {
@@ -33,10 +33,10 @@ public class FormatAsTextTest {
       Utils.duplicateFile(PathConstants.UNFORMATTED_DIR + FileNameConstants.TEST,
          PathConstants.UNFORMATTED_DIR + FileNameConstants.OUTPUT
       );
-      
+
       fat = new FormatAsText(PathConstants.UNFORMATTED_DIR + FileNameConstants.OUTPUT);
    }
-   
+
    private String getContents() throws IOException{
       return Utils.getFileContents(fat.getPATH());
    }
@@ -66,9 +66,9 @@ public class FormatAsTextTest {
    @Test
    public void testAddInstances() throws Exception {
       System.out.println("addInstances");
-      
+
       fat.addInstances(PathConstants.UNFORMATTED_DIR + FileNameConstants.ADD);
-      
+
       FormatAsArff faa = new FormatAsArff(PathConstants.UNFORMATTED_DIR + FileNameConstants.OUTPUT);
       assertEquals(24, faa.getInstances().numInstances());
    }
@@ -93,9 +93,9 @@ public class FormatAsTextTest {
       System.out.println("insertString");
       String toAdd = "blah blah";
       String before = getContents();
-      
+
       fat.insertString(toAdd, 0);
-      
+
       assertEquals(toAdd+before, getContents());
    }
 
@@ -108,9 +108,8 @@ public class FormatAsTextTest {
       System.out.println("addClassCount");
       String attributeName = "isAttack";
       fat.addClassCount(attributeName);
-      assertEquals(
-         UtilsTest.getChecksumFromFile(fat.getPATH()),
-         UtilsTest.getChecksumFromFile(
+      assertEquals(TestUtils.getChecksumFromFile(fat.getPATH()),
+         TestUtils.getChecksumFromFile(
             PathConstants.FORMATTED_DIR+FileNameConstants.TEST_WITH_CLASS_COUNT)
       );
    }
@@ -123,10 +122,12 @@ public class FormatAsTextTest {
    public void testReplaceAllStrings() throws Exception {
       System.out.println("replaceAllStrings");
       HashMap<String, String> hm = new HashMap<>();
-      hm.put("tcpFlood", "flood_of_tcp_packets");
-      hm.put("httpFlood", "flood_of_http_packets");
+      Utils.addToMap(hm,"tcpFlood", "flood_of_tcp_packets");
+      Utils.addToMap(hm,"httpFlood", "flood_of_http_packets");
+      // hm.put("tcpFlood", "flood_of_tcp_packets");
+      // hm.put("httpFlood", "flood_of_http_packets");
       fat.replaceAllStrings(hm);
-      
+
       assertEquals(-1, getContents().indexOf("tcpFlood"));
       assertEquals(-1, getContents().indexOf("httpFlood"));
    }

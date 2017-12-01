@@ -1,17 +1,16 @@
 package utils;
 
 import classifier.ClassifierHolder;
-import editedWekaClasses.EditedEvaluation;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
-import static utils.Utils.writeStringFile;
+import weka.classifiers.evaluation.Evaluation;
 
 public class UtilsClssifiers extends Utils {
    private UtilsClssifiers() {}
-   
+
    public static Classifier readModel(String filename) throws Exception {
       return (Classifier) weka.core.SerializationHelper.read(filename);
    }
@@ -30,14 +29,14 @@ public class UtilsClssifiers extends Utils {
          saveCrossValidationToFile(ch, folds);
       }
    }
-   
+
    public static void saveCrossValidationToFile(ClassifierHolder ch, int folds) throws Exception {
-      EditedEvaluation eval = new EditedEvaluation(ch.getInstances());
+      Evaluation eval = new Evaluation(ch.getInstances());
       eval.crossValidateModel(ch.getClassifier(), ch.getInstances(), folds, new Random(1));
 
       saveStatistics(eval, ch, folds+" fold Cross validation");
    }
-   
+
    public static void saveTestEvaluationToFile(ArrayList<ClassifierHolder> chAL, Instances testSet) throws Exception{
       for (ClassifierHolder ch : chAL) {
          saveTestEvaluationToFile(ch, testSet);
@@ -45,14 +44,14 @@ public class UtilsClssifiers extends Utils {
    }
 
    public static void saveTestEvaluationToFile(ClassifierHolder ch, Instances testSet) throws Exception{
-      EditedEvaluation eval = new EditedEvaluation(ch.getInstances());
-      eval.evaluateModel(ch.getClassifier(), testSet);
-
-      saveStatistics(eval, ch, "Dedicated test set");
+      Evaluation delegate = new Evaluation(ch.getInstances());
+      delegate.evaluateModel(ch.getClassifier(), testSet);
+      saveStatistics(delegate, ch, "Dedicated test set");
    }
 
-   private static void saveStatistics(EditedEvaluation eval, ClassifierHolder ch, String message) throws IOException, Exception{
+   private static void saveStatistics(Evaluation eval, ClassifierHolder ch, String message) throws IOException, Exception {
       StringBuilder sb = new StringBuilder();
+
       sb.append("=== ").append(message).append(" ===\n");
       sb.append(eval.toSummaryString("=== Summary of "+ch.getClassifierName()+"===\n", false));
       sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));

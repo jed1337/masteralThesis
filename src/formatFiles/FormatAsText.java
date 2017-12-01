@@ -87,7 +87,8 @@ public class FormatAsText {
 
          count = freq.get(attributeValue);
          if (count == null) {
-            freq.put(attributeValue, new MutableInt());
+            Utils.addToMap(freq, attributeValue, new MutableInt());
+            // freq.put(attributeValue, new MutableInt());
          } else {
             count.increment();
          }

@@ -1,0 +1,24 @@
+=== Delegate test set ===
+=== Summary of RF===
+
+Correctly Classified Instances         940               94      %
+Incorrectly Classified Instances        60                6      %
+Kappa statistic                          0.9024
+Mean absolute error                      0.0404
+Root mean squared error                  0.1883
+Relative absolute error                  9.6877 %
+Root relative squared error             41.2507 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.082    0.924      1.000    0.961      0.921    0.974     0.950     normal
+                 0.812    0.017    0.940      0.812    0.871      0.836    0.937     0.905     highrate
+                 0.948    0.008    0.975      0.948    0.961      0.949    0.998     0.988     lowrate
+Weighted Avg.    0.940    0.047    0.941      0.940    0.938      0.907    0.970     0.948     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 500   0   0 |   a = normal
+  41 203   6 |   b = highrate
+   0  13 237 |   c = lowrate
