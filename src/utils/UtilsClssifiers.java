@@ -20,6 +20,7 @@ public class UtilsClssifiers extends Utils {
    }
 
    public static void writeModel(ClassifierHolder ch) throws Exception {
+      Utils.makeFolders(ch.getFolderPath());
       weka.core.SerializationHelper.write(ch.getModelName(), ch.getClassifier());
       System.out.println("Created the model of "+ch.getModelName());
    }
@@ -30,11 +31,14 @@ public class UtilsClssifiers extends Utils {
       }
    }
 
-   public static void saveCrossValidationToFile(ClassifierHolder ch, int folds) throws Exception {
-      Evaluation eval = new Evaluation(ch.getInstances());
-      eval.crossValidateModel(ch.getClassifier(), ch.getInstances(), folds, new Random(1));
-
+   public static Evaluation saveCrossValidationToFile(ClassifierHolder ch, int folds) throws Exception {
+      Instances ins = ch.getInstances();
+      
+      Evaluation eval = new Evaluation(ins);
+      eval.crossValidateModel(ch.getClassifier(), ins, folds, new Random(1));
+      
       saveStatistics(eval, ch, folds+" fold Cross validation");
+      return eval;
    }
 
    public static void saveTestEvaluationToFile(ArrayList<ClassifierHolder> chAL, Instances testSet) throws Exception{
@@ -43,15 +47,18 @@ public class UtilsClssifiers extends Utils {
       }
    }
 
-   public static void saveTestEvaluationToFile(ClassifierHolder ch, Instances testSet) throws Exception{
-      Evaluation delegate = new Evaluation(ch.getInstances());
-      delegate.evaluateModel(ch.getClassifier(), testSet);
-      saveStatistics(delegate, ch, "Dedicated test set");
+   public static Evaluation saveTestEvaluationToFile(ClassifierHolder ch, Instances testSet) throws Exception{
+      Evaluation eval = new Evaluation(ch.getInstances());
+      eval.evaluateModel(ch.getClassifier(), testSet);
+      
+      saveStatistics(eval, ch, "Dedicated test set");
+      return eval;
    }
 
+   //Put add collated files here
    private static void saveStatistics(Evaluation eval, ClassifierHolder ch, String message) throws IOException, Exception {
       StringBuilder sb = new StringBuilder();
-
+      
       sb.append("=== ").append(message).append(" ===\n");
       sb.append(eval.toSummaryString("=== Summary of "+ch.getClassifierName()+"===\n", false));
       sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));

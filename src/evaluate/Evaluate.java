@@ -49,8 +49,6 @@ public abstract class Evaluate {
    }
    
    public final void writeModel() throws Exception{
-      Utils.makeFolders(this.fullFolderPath);
-      
       for (ClassifierHolder ch : this.classifierHolders) {
          UtilsClssifiers.writeModel(ch);
       }

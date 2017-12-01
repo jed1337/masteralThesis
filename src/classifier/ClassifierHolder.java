@@ -10,6 +10,7 @@ public class ClassifierHolder {
    private final String classifierName;
    private final String resultName;
    private final String modelName;
+   private final String folderPath;
 
    public ClassifierHolder(Classifier classifier,
                            Instances instances,
@@ -28,10 +29,10 @@ public class ClassifierHolder {
       
       this.instances      = instances;
       this.classifierName = classifierName;
-      this.resultName     = folderPath+classifierName+"Result.txt";
-      this.modelName      = folderPath+classifierName+".model";
       
-      Utils.makeFolders(folderPath);
+      this.folderPath = folderPath;
+      this.resultName = this.folderPath+classifierName+"Result.txt";
+      this.modelName  = this.folderPath+classifierName+".model";
       
       classifier.buildClassifier(instances);
    }
@@ -54,5 +55,9 @@ public class ClassifierHolder {
 
    public String getModelName() {
       return modelName;
+   }
+
+   public String getFolderPath() {
+      return folderPath;
    }
 }
