@@ -129,8 +129,11 @@ public class Utils {
 
    public static void makeFolders(String folderPath){
       if(!folderPath.isEmpty()){
-         new File(folderPath).mkdirs();
-         System.out.println("Created the folder: '"+folderPath+"'");
+         if(new File(folderPath).mkdirs()){
+            System.out.println("Created the folder: '"+folderPath+"'");
+         }else{
+            System.err.println("Some or all folders of '"+folderPath+"' was not created");
+         }
       }
       else{
          System.err.println("The folder '"+folderPath+"' already exists.");

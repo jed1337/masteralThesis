@@ -31,7 +31,7 @@ public abstract class SetupFile {
 //      fat = new FormatAsText(faa.getSavePath());
    }
 
-   public final void setup() throws IOException, Exception{
+   public final void setUp() throws IOException, Exception{
       removeNonMatchingClasses();
 
       this.faa.removeAttributes(FormatConstants.FEATURES_TO_REMOVE);

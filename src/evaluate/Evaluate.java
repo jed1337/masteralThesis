@@ -43,8 +43,8 @@ public abstract class Evaluate {
       Instances instances = this.instancesHM.get(this.trainPath);
       this.classifierHolders.add(new ClassifierHolder(new J48(),           instances, "J48", this.fullFolderPath));
       this.classifierHolders.add(new ClassifierHolder(new IBk(),           instances, "KNN", this.fullFolderPath));
-      this.classifierHolders.add(new ClassifierHolder(new NaiveBayes(),    instances, "NB",  this.fullFolderPath));
-      this.classifierHolders.add(new ClassifierHolder(new RandomForest(),  instances, "RF", this.fullFolderPath));
+      this.classifierHolders.add(new ClassifierHolder(new NaiveBayes(),    instances, "NB ", this.fullFolderPath));
+      this.classifierHolders.add(new ClassifierHolder(new RandomForest(),  instances, "RF ", this.fullFolderPath));
       this.classifierHolders.add(new ClassifierHolder(new SMO(),           instances, "SMO", this.fullFolderPath));
    }
    

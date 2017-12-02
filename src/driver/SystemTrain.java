@@ -22,18 +22,18 @@ public class SystemTrain {
       final String combinedPath = PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED;
       
       for (SetupFile sfl: setupList) {
-         sfl.setup();
+         sfl.setUp();
          sfl.testRename(attributeName, toReplace);
          sfl.writeFile();
       }
-//      
-//      UtilsARFF.createArff(
-//         combinedPath,
-//         setupList.stream()
-//            .map(tl->tl.getFaa().getSavePath())
-//            .collect(Collectors.toList()),
-//         attributeName
-//      );
+      
+      UtilsARFF.createArff(
+         combinedPath,
+         setupList.stream()
+            .map(tl->tl.getFaa().getSavePath())
+            .collect(Collectors.toList()),
+         attributeName
+      );
       
       //Feature selection
       //Write it to a file

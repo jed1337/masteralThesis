@@ -52,14 +52,14 @@ public class UtilsTest {
       array = new Integer[]{1, 2, 3, 4, 5};
       assertEquals(true, Utils.arrayContains(array, 3));
       assertEquals(true, Utils.arrayContains(array, 1));
-      assertEquals(false, Utils.arrayContains(array, 3.14));
+      assertEquals(false, Utils.arrayContains(array, 1.2345));
       assertEquals(false, Utils.arrayContains(array, 6));
       assertEquals(false, Utils.arrayContains(array, "5"));
 
       array = new String[]{"1", "2", "3", "4", "5"};
       assertEquals(true, Utils.arrayContains(array, "3"));
       assertEquals(true, Utils.arrayContains(array, "1"));
-      assertEquals(false, Utils.arrayContains(array, 3.14));
+      assertEquals(false, Utils.arrayContains(array, 1.2345));
       assertEquals(false, Utils.arrayContains(array, "6"));
       assertEquals(false, Utils.arrayContains(array, 5));
    }

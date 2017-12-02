@@ -1,6 +1,7 @@
 package utils;
 
 import classifier.ClassifierHolder;
+import constants.CharConstants;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -74,16 +75,15 @@ public class UtilsClssifiers extends Utils {
    private static void saveAccuracyToFile(Evaluation eval, ClassifierHolder ch, String fileName) throws IOException, Exception {
       Function<Evaluation, String> func = (fEval)->{
          StringBuilder text = new StringBuilder();
-         text.append("Correctly Classified Instances     ");
-         text.append(Utils.doubleToString(fEval.correct(), 12, 4));
-         text.append("     ");
+         text.append(ch.getClassifierName());
+         text.append(" = ");
          text.append(Utils.doubleToString(fEval.pctCorrect(), 12, 4));
-         text.append(" %\n");
+         text.append(CharConstants.NEW_LINE);
          return text.toString();
       };
       Utils.writeStringFile(
          ch.getFolderPath()+fileName, 
-         ch.getClassifierName()+"\n\t"+func.apply(eval), 
+         func.apply(eval), 
          true
       );
    }

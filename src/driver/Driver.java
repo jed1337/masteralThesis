@@ -15,8 +15,7 @@ import weka.core.Instances;
 
 public class Driver{
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-//      final String folderPath = "FeatureSelected (NB)/Halved/HL normalNoise binary/";
-      final String folderPath = "Test/";
+      final String folderPath = "FeatureSelected (NB)/Halved/HL normalNoise binary/";
       hybridMethod(folderPath);
       singleClassifier(folderPath);
 //      system();
