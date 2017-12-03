@@ -1,0 +1,24 @@
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         564               56.4    %
+Incorrectly Classified Instances       436               43.6    %
+Kappa statistic                          0.3861
+Mean absolute error                      0.2939
+Root mean squared error                  0.5311
+Relative absolute error                 70.5398 %
+Root relative squared error            116.3554 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.258    0.060    0.811      0.258    0.392      0.271    0.354     0.563     normal
+                 0.748    0.489    0.338      0.748    0.465      0.225    0.601     0.314     highrate
+                 0.992    0.052    0.864      0.992    0.924      0.900    0.991     0.940     lowrate
+Weighted Avg.    0.564    0.165    0.706      0.564    0.543      0.417    0.575     0.595     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 129 366   5 |   a = normal
+  29 187  34 |   b = highrate
+   1   1 248 |   c = lowrate

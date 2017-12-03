@@ -1,0 +1,22 @@
+=== Dedicated test set ===
+=== Summary of KNN===
+
+Correctly Classified Instances         241               96.4    %
+Incorrectly Classified Instances         9                3.6    %
+Kappa statistic                          0.928 
+Mean absolute error                      0.0369
+Root mean squared error                  0.1895
+Relative absolute error                  7.3816 %
+Root relative squared error             37.91   %
+Total Number of Instances              250     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.944    0.016    0.983      0.944    0.963      0.929    0.965     0.957     highrate
+                 0.984    0.056    0.946      0.984    0.965      0.929    0.965     0.941     lowrate
+Weighted Avg.    0.964    0.036    0.965      0.964    0.964      0.929    0.965     0.949     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 118   7 |   a = highrate
+   2 123 |   b = lowrate

@@ -13,7 +13,7 @@ import setupFiles.SetupFile;
 import utils.Utils;
 import utils.UtilsARFF;
 import utils.UtilsInstances;
-import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.trees.J48;
 
 public class SystemTrain {
    public SystemTrain
@@ -41,7 +41,8 @@ public class SystemTrain {
          combinedPath,
          FeatureSelection.wrapperSelection(
             UtilsInstances.getInstances(combinedPath),
-            new NaiveBayes()
+            new J48()
+//            new NaiveBayes()
          ).toString()
       );
 //      

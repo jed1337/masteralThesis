@@ -9,18 +9,16 @@ import java.io.IOException;
 /**
  * An abstract class That setups the files to be used by the classifier<p>
  * This class doesn't classify<p>
- * This class keeps X instances, and certain attack types as stated by its sub classes
+ * This class keeps X instances, and certain attack types as stated by its sub classes<p>
+ * This is sort of like the Template method wherein the subclasses supply the parameters
  */
 public abstract class SetupFile {
 //   private final String[] FEATURES_TO_REMOVE = {"service","land","hot","num_failed_logins","logged_in","num_compromised","root_shell","su_attempted","num_root","num_file_creations","num_shells","num_access_files","num_outbound_cmds","is_host_login","is_guest_login","difficulty"};
    private final int RANDOM_SEED = 11;
+   private final String[] attackTypes;
 
    protected final FormatAsArff faa;
-//   protected final FormatAsText fat;
-   
    protected final int instancesCount;
-   
-   private final String[] attackTypes;
    
    protected SetupFile(int instancesCount, String fileName, String[] attackTypes) throws IOException{
       this.instancesCount = instancesCount;
@@ -28,7 +26,6 @@ public abstract class SetupFile {
       
       faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
       faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
-//      fat = new FormatAsText(faa.getSavePath());
    }
 
    public final void setUp() throws IOException, Exception{
@@ -45,10 +42,6 @@ public abstract class SetupFile {
       System.out.println("");
    }
    
-//   public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {
-//      fat.replaceAllStrings(hashMaps);
-//   }
-
    public void writeFile() throws IOException{
       Utils.writeStringFile(
         faa.getSavePath(),

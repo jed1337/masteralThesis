@@ -1,8 +1,13 @@
 package driver;
 
+import constants.ArffInstanceCount;
+import driver.systemConfiguration.ExtraNoise;
+import driver.systemConfiguration.Hybrid;
+import driver.systemConfiguration.Single;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import setupFiles.SetupExtraNoise;
 import setupFiles.SetupFile;
 import setupFiles.SetupHighrate;
 import setupFiles.SetupLowrate;
@@ -15,18 +20,20 @@ import weka.core.Instances;
 
 public class Driver{
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-      final String folderPath = "FeatureSelected (NB)/Halved/HL normalNoise binary/";
-      hybridMethod(folderPath);
-      singleClassifier(folderPath);
+      final String folderPath = "FeatureSelected (J48)/Halved/HL ExtraNoise Binary (test)/";
+      new Hybrid(new ExtraNoise(), ArffInstanceCount.HALVED).execute(folderPath);
+      new Single(new ExtraNoise(), ArffInstanceCount.HALVED).execute(folderPath);
+      
 //      system();
    }
+
    private static void hybridMethod(String folderPath) throws IOException, Exception{
       ArrayList<SetupFile> setupFiles;
 
       setupFiles= new ArrayList<>();
-      setupFiles.add(new SetupNoise(1500));
-      setupFiles.add(new SetupNormal(1500));
-//      setupFiles.add(new SetupExtraNoise(1000));
+      setupFiles.add(new SetupNoise(1000));
+      setupFiles.add(new SetupNormal(1000));
+      setupFiles.add(new SetupExtraNoise(1000));
       setupFiles.add(new SetupHighrate(1500));
       setupFiles.add(new SetupLowrate(1500));
 
@@ -34,7 +41,6 @@ public class Driver{
          folderPath+"NormalOrAttack/",
          setupFiles,
          "isAttack",
-//              ""
          "tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack"
      );
 
@@ -51,17 +57,17 @@ public class Driver{
      );
    }
 
-   public static void singleClassifier(String folderPath) throws IOException, Exception{
-      ArrayList<SetupFile> setups = new ArrayList<>();
-      setups.add(new SetupNoise(1500));
-      setups.add(new SetupNormal(1500));
-//      setups.add(new SetupExtraNoise(1000));
-      setups.add(new SetupHighrate(1500));
-      setups.add(new SetupLowrate(1500));
+   public static void singleMethod(String folderPath) throws IOException, Exception{
+      ArrayList<SetupFile> setupFiles = new ArrayList<>();
+      setupFiles.add(new SetupNoise(1000));
+      setupFiles.add(new SetupNormal(1000));
+      setupFiles.add(new SetupExtraNoise(1000));
+      setupFiles.add(new SetupHighrate(1500));
+      setupFiles.add(new SetupLowrate(1500));
 
       new SystemTrain(
          folderPath + "Single/",
-         setups,
+         setupFiles,
          "isAttack",
 //              ""
          "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
