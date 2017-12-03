@@ -1,5 +1,6 @@
 package setupFiles;
 
+import constants.AttributeTypeConstants;
 import constants.FormatConstants;
 import constants.PathConstants;
 import formatFiles.FormatAsArff;
@@ -19,11 +20,11 @@ public abstract class SetupFile {
 
    protected final FormatAsArff faa;
    protected final int instancesCount;
-   
+
    protected SetupFile(int instancesCount, String fileName, String[] attackTypes) throws IOException{
       this.instancesCount = instancesCount;
       this.attackTypes = attackTypes;
-      
+
       faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
       faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
    }
@@ -41,7 +42,7 @@ public abstract class SetupFile {
       this.faa.renameNominalValues(attributes, toReplace);
       System.out.println("");
    }
-   
+
    public void writeFile() throws IOException{
       Utils.writeStringFile(
         faa.getSavePath(),
@@ -54,17 +55,17 @@ public abstract class SetupFile {
    }
 
    private void removeNonMatchingClasses() {
-      this.faa.removeNonMatchingClasses("isAttack", this.attackTypes);
+      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.attackTypes);
       this.faa.removeNonMatchingClasses("service", "http", "http_443");
    }
-   
+
    private void keepXInstances() {
       int lastIndex = this.faa.getInstances().numAttributes()-1;
       for (String attackType : this.attackTypes) {
          this.faa.keepXInstances(lastIndex, attackType, getDivider());
       }
    }
-   
+
    private int getDivider(){
       return Math.round(this.instancesCount/this.attackTypes.length);
    }

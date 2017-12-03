@@ -1,5 +1,6 @@
 package format;
 
+import constants.AttributeTypeConstants;
 import formatFiles.FormatAsText;
 import formatFiles.FormatAsArff;
 import format.testConstants.FileNameConstants;
@@ -106,8 +107,8 @@ public class FormatAsTextTest {
    @Test
    public void testAddClassCount() throws Exception {
       System.out.println("addClassCount");
-      String attributeName = "isAttack";
-      fat.addClassCount(attributeName);
+      fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
+
       assertEquals(TestUtils.getChecksumFromFile(fat.getPATH()),
          TestUtils.getChecksumFromFile(
             PathConstants.FORMATTED_DIR+FileNameConstants.TEST_WITH_CLASS_COUNT)

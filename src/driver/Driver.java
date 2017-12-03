@@ -6,13 +6,6 @@ import driver.systemConfiguration.Hybrid;
 import driver.systemConfiguration.Single;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import setupFiles.SetupExtraNoise;
-import setupFiles.SetupFile;
-import setupFiles.SetupHighrate;
-import setupFiles.SetupLowrate;
-import setupFiles.SetupNoise;
-import setupFiles.SetupNormal;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
@@ -25,53 +18,6 @@ public class Driver{
       new Single(new ExtraNoise(), ArffInstanceCount.HALVED).execute(folderPath);
       
 //      system();
-   }
-
-   private static void hybridMethod(String folderPath) throws IOException, Exception{
-      ArrayList<SetupFile> setupFiles;
-
-      setupFiles= new ArrayList<>();
-      setupFiles.add(new SetupNoise(1000));
-      setupFiles.add(new SetupNormal(1000));
-      setupFiles.add(new SetupExtraNoise(1000));
-      setupFiles.add(new SetupHighrate(1500));
-      setupFiles.add(new SetupLowrate(1500));
-
-      new SystemTrain(
-         folderPath+"NormalOrAttack/",
-         setupFiles,
-         "isAttack",
-         "tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack"
-     );
-
-     setupFiles = new ArrayList<>();
-     setupFiles.add(new SetupHighrate(1500));
-     setupFiles.add(new SetupLowrate(1500));
-
-     new SystemTrain(
-         folderPath+"HL/",
-         setupFiles,
-         "isAttack",
-//             ""
-         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
-     );
-   }
-
-   public static void singleMethod(String folderPath) throws IOException, Exception{
-      ArrayList<SetupFile> setupFiles = new ArrayList<>();
-      setupFiles.add(new SetupNoise(1000));
-      setupFiles.add(new SetupNormal(1000));
-      setupFiles.add(new SetupExtraNoise(1000));
-      setupFiles.add(new SetupHighrate(1500));
-      setupFiles.add(new SetupLowrate(1500));
-
-      new SystemTrain(
-         folderPath + "Single/",
-         setupFiles,
-         "isAttack",
-//              ""
-         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
-      );
    }
 
    public static void system() throws IOException, Exception{

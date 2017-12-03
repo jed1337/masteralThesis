@@ -1,5 +1,6 @@
 package driver.systemConfiguration;
 
+import constants.AttributeTypeConstants;
 import driver.SystemTrain;
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ public class Single extends SystemConfiguration {
       new SystemTrain(
          folderPath + "Single/",
          super.setupFiles,
-         super.attributeName,
+         AttributeTypeConstants.ATTRIBUTE_CLASS,
          "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
       );
    }

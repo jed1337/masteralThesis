@@ -1,5 +1,6 @@
 package driver.systemConfiguration;
 
+import constants.AttributeTypeConstants;
 import driver.SystemTrain;
 import java.io.IOException;
 
@@ -13,14 +14,14 @@ public class Hybrid extends SystemConfiguration {
       new SystemTrain(
          folderPath + "NormalOrAttack/",
          super.setupFiles,
-         super.attributeName,
+         AttributeTypeConstants.ATTRIBUTE_CLASS,
          "tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack"
       );
 
       new SystemTrain(
          folderPath + "HL/",
          super.getHL(),
-         super.attributeName,
+         AttributeTypeConstants.ATTRIBUTE_CLASS,
          "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
       );
    }

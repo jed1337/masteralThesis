@@ -1,5 +1,6 @@
 package format;
 
+import constants.AttributeTypeConstants;
 import formatFiles.FormatAsArff;
 import format.testConstants.FileNameConstants;
 import format.testConstants.PathConstants;
@@ -17,8 +18,7 @@ import weka.core.Instances;
 public class FormatAsArffTest {
    private FormatAsArff faa;
    private int isAttackIndex;
-   
-   private final String isAttack = "isAttack";
+
    private final String tcpFlood = "tcpflood";
 
    @BeforeClass
@@ -30,7 +30,10 @@ public class FormatAsArffTest {
    @Before
    public void setUp() throws IOException {
       faa = new FormatAsArff(PathConstants.UNFORMATTED_DIR+FileNameConstants.TEST);
-      isAttackIndex = UtilsInstances.getAttributeIndex(faa.getInstances(), isAttack);
+      isAttackIndex = UtilsInstances.getAttributeIndex(
+         faa.getInstances(), 
+         AttributeTypeConstants.ATTRIBUTE_CLASS
+      );
    }
 
    @After
@@ -50,13 +53,13 @@ public class FormatAsArffTest {
       String result = faa.getSavePath();
       assertEquals(expResult, result);
    }
-   
+
    @Test(expected=IOException.class)
    public void testGetSavePathError() throws IOException {
       System.out.println("getSavePath error");
       new FormatAsArff("badpath");
    }
-   
+
    /**
     * Test of setSavePath method, of class FormatAsArff.
     */
@@ -112,12 +115,12 @@ public class FormatAsArffTest {
       System.out.println("removeAttributes");
       String land = "land";
       String service = "SERVICE";
-      
+
       assertNotEquals(UtilsInstances.getAttributeIndex(faa.getInstances(), land), -1);
       assertNotEquals(UtilsInstances.getAttributeIndex(faa.getInstances(), service), -1);
-      
+
       faa.removeAttributes(new String[]{land, service});
-      
+
       assertEquals(UtilsInstances.getAttributeIndex(faa.getInstances(), land), -1);
       assertEquals(UtilsInstances.getAttributeIndex(faa.getInstances(), service), -1);
    }
@@ -129,13 +132,11 @@ public class FormatAsArffTest {
    @Test
    public void testRemoveNonMatchingClasses_String_StringArr() {
       System.out.println("removeNonMatchingClasses");
-      String attributeName = isAttack;
-      
-      faa.removeNonMatchingClasses(attributeName, tcpFlood);
-      
+      faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, tcpFlood);
+
       for (Instance instance : faa.getInstances()) {
          String actual = instance.stringValue(isAttackIndex).toLowerCase();
-         
+
          assertEquals(actual, tcpFlood);
       }
    }
@@ -147,8 +148,8 @@ public class FormatAsArffTest {
    public void testKeepXInstances_3args_1() {
       System.out.println("keepXInstances");
       int retainCount = 3;
-      faa.keepXInstances(isAttack, tcpFlood, retainCount);
-      
+      faa.keepXInstances(AttributeTypeConstants.ATTRIBUTE_CLASS, tcpFlood, retainCount);
+
       int actual = 0;
       for (Instance instance : faa.getInstances()) {
          if(instance.stringValue(isAttackIndex).equalsIgnoreCase(tcpFlood)){

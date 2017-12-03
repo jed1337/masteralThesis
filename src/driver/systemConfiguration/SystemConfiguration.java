@@ -7,8 +7,6 @@ import setupFiles.SetupHighrate;
 import setupFiles.SetupLowrate;
 
 public abstract class SystemConfiguration {
-   protected final String attributeName = "isAttack";
-   
    protected final ArrayList<SetupFile> setupFiles;
    
    private final int count;
