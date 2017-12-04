@@ -13,7 +13,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 
 public class SetupTestTrainValidation {
-   private final HashMap<String, Instances> newInstances;
+   private final HashMap<String, Instances> newInstancesHM;
 
    private final Instances combinedInstances;
    private final String combinePath;
@@ -26,9 +26,9 @@ public class SetupTestTrainValidation {
 
 	public SetupTestTrainValidation(String combinedPath) throws IOException{
 		this.combinePath    = combinedPath;
-		this.combinedInstances        = UtilsInstances.getInstances(combinedPath);
+		this.combinedInstances= UtilsInstances.getInstances(combinedPath);
 		this.counters     = new ArrayList<>();
-		this.newInstances = new HashMap<>();
+		this.newInstancesHM = new HashMap<>();
 	}
 
    /**
@@ -53,7 +53,6 @@ public class SetupTestTrainValidation {
          Utils.addToMap(singleClass,attName, new FormatAsArff(this.combinePath));
       }
 
-
       HashMap<String, Float> splitParam = new HashMap<>();
       Utils.addToMap(splitParam, trainPath,      new Float(this.trainSplit));
       Utils.addToMap(splitParam, testPath,       new Float(this.testSplit));
@@ -68,7 +67,7 @@ public class SetupTestTrainValidation {
             if(instance.stringValue(isAttackIndex).equalsIgnoreCase(counter.getAttackType())){
                if(!counter.isFull()){
                   counter.increment();
-                  this.newInstances.get(counter.getFileType()).add(instance);
+                  this.newInstancesHM.get(counter.getFileType()).add(instance);
                   break; // To ensure that only 1 counter gets incremented
                }
             }
@@ -79,7 +78,7 @@ public class SetupTestTrainValidation {
 	}
 
    private void writeFiles() throws IOException {
-      for (Map.Entry<String, Instances> entry : this.newInstances.entrySet()) {
+      for (Map.Entry<String, Instances> entry : this.newInstancesHM.entrySet()) {
          Utils.writeStringFile(entry.getKey(), entry.getValue().toString());
          FormatAsText fat = new FormatAsText(entry.getKey());
          fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
@@ -98,7 +97,7 @@ public class SetupTestTrainValidation {
     */
    private void addHeaders(HashMap<String, Float> splitParam, String source) throws Exception {
       for (String path : splitParam.keySet()) {
-          Utils.addToMap(this.newInstances, path, UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
+          Utils.addToMap(this.newInstancesHM, path, UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
       }
    }
 

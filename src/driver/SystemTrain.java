@@ -43,10 +43,9 @@ public class SystemTrain {
          FeatureSelection.wrapperSelection(
             UtilsInstances.getInstances(combinedPath),
             featureSelector
-//            new NaiveBayes()
          ).toString()
       );
-//      
+      
       SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
       sttv.setTrainTestValidationPaths(
          PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN,
