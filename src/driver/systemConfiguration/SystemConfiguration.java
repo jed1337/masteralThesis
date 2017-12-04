@@ -2,26 +2,30 @@ package driver.systemConfiguration;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import setupFiles.SetupFile;
-import setupFiles.SetupHighrate;
-import setupFiles.SetupLowrate;
+import preprocessFiles.PreprocessFile;
+import preprocessFiles.PreprocessHighrate;
+import preprocessFiles.PreprocessLowrate;
+import weka.classifiers.Classifier;
 
 public abstract class SystemConfiguration {
-   protected final ArrayList<SetupFile> setupFiles;
+   protected final ArrayList<PreprocessFile> setupFiles;
+   protected final Classifier featureSelector;
    
    private final int count;
    
-   protected SystemConfiguration(NoiseLevel nl, int count) throws IOException{
+   protected SystemConfiguration(int count, NoiseLevel nl, Classifier featureSelector) throws IOException{
       this.count = count;
       
-      setupFiles = nl.getNoiseLevel(this.count);
-      setupFiles.addAll(getHL());
+      this.setupFiles = nl.getNoiseLevel(this.count);
+      this.setupFiles.addAll(getHL());
+      
+      this.featureSelector = featureSelector;
    }
 
-   protected final ArrayList<SetupFile> getHL() throws IOException {
-      ArrayList<SetupFile> sf = new ArrayList<>();
-      sf.add(new SetupHighrate(this.count/4));
-      sf.add(new SetupLowrate (this.count/4));
+   protected final ArrayList<PreprocessFile> getHL() throws IOException {
+      ArrayList<PreprocessFile> sf = new ArrayList<>();
+      sf.add(new PreprocessHighrate(this.count/4));
+      sf.add(new PreprocessLowrate (this.count/4));
       return sf;
    }
    

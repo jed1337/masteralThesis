@@ -72,6 +72,7 @@ public class UtilsClssifiers extends Utils {
       
       saveAccuracyToFile(eval, ch, "Accuracy.txt");
    }
+
    private static void saveAccuracyToFile(Evaluation eval, ClassifierHolder ch, String fileName) throws IOException, Exception {
       Function<Evaluation, String> func = (fEval)->{
          StringBuilder text = new StringBuilder();

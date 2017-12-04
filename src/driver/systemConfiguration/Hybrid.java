@@ -3,10 +3,11 @@ package driver.systemConfiguration;
 import constants.AttributeTypeConstants;
 import driver.SystemTrain;
 import java.io.IOException;
+import weka.classifiers.Classifier;
 
 public class Hybrid extends SystemConfiguration {
-   public Hybrid(NoiseLevel nl, int count) throws IOException {
-      super(nl, count);
+   public Hybrid(int count, NoiseLevel nl, Classifier featureSelector) throws IOException {
+      super(count, nl, featureSelector);
    }
 
    @Override
@@ -15,14 +16,16 @@ public class Hybrid extends SystemConfiguration {
          folderPath + "NormalOrAttack/",
          super.setupFiles,
          AttributeTypeConstants.ATTRIBUTE_CLASS,
-         "tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack"
+         "tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack",
+         super.featureSelector
       );
 
       new SystemTrain(
          folderPath + "HL/",
          super.getHL(),
          AttributeTypeConstants.ATTRIBUTE_CLASS,
-         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
+         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate",
+         super.featureSelector
       );
    }
 }

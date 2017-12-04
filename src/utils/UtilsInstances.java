@@ -1,6 +1,6 @@
 package utils;
 
-import formatFiles.FormatAsArff;
+import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import weka.core.Instances;

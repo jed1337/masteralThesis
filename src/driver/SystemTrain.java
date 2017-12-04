@@ -1,27 +1,28 @@
 package driver;
 
-import classifier.FeatureSelection;
+import featureSelection.FeatureSelection;
 import evaluate.Evaluate;
-import setupFiles.SetupTestTrainValidation;
+import preprocessFiles.SetupTestTrainValidation;
 import evaluate.TrainTestValidation;
 import constants.FileNameConstants;
 import constants.PathConstants;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
-import setupFiles.SetupFile;
+import preprocessFiles.PreprocessFile;
 import utils.Utils;
 import utils.UtilsARFF;
 import utils.UtilsInstances;
+import weka.classifiers.Classifier;
 import weka.classifiers.trees.J48;
 
 public class SystemTrain {
    public SystemTrain
-         (String folderPath, ArrayList<SetupFile> setupList, String attributeName, String toReplace) 
+         (String folderPath, ArrayList<PreprocessFile> setupList, String attributeName, String toReplace, Classifier featureSelector) 
          throws IOException, Exception {
       final String combinedPath = PathConstants.FORMATTED_DIR+FileNameConstants.COMBINED;
       
-      for (SetupFile sfl: setupList) {
+      for (PreprocessFile sfl: setupList) {
          sfl.setUp();
          sfl.testRename(attributeName, toReplace);
          sfl.writeFile();
@@ -41,7 +42,7 @@ public class SystemTrain {
          combinedPath,
          FeatureSelection.wrapperSelection(
             UtilsInstances.getInstances(combinedPath),
-            new J48()
+            featureSelector
 //            new NaiveBayes()
          ).toString()
       );

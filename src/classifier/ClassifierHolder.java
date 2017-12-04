@@ -1,6 +1,5 @@
 package classifier;
 
-import utils.Utils;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 

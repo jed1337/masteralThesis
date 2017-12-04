@@ -9,13 +9,16 @@ import java.io.IOException;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
+import weka.classifiers.functions.Logistic;
 import weka.core.Instances;
 
 public class Driver{
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-      final String folderPath = "FeatureSelected (J48)/Halved/HL ExtraNoise Binary (test)/";
-      new Hybrid(new ExtraNoise(), ArffInstanceCount.HALVED).execute(folderPath);
-      new Single(new ExtraNoise(), ArffInstanceCount.HALVED).execute(folderPath);
+      final String folderPath = "FeatureSelected (LR)/Halved/ExtraNoise/";
+      new Hybrid(ArffInstanceCount.HALVED, new ExtraNoise(), new Logistic())
+         .execute(folderPath);
+      new Single(ArffInstanceCount.HALVED, new ExtraNoise(), new Logistic())
+         .execute(folderPath);
       
 //      system();
    }

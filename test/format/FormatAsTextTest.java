@@ -1,8 +1,8 @@
 package format;
 
 import constants.AttributeTypeConstants;
-import formatFiles.FormatAsText;
-import formatFiles.FormatAsArff;
+import preprocessFiles.preprocessAs.FormatAsText;
+import preprocessFiles.preprocessAs.FormatAsArff;
 import format.testConstants.FileNameConstants;
 import format.testConstants.PathConstants;
 import java.io.IOException;

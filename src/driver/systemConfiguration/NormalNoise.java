@@ -2,18 +2,18 @@ package driver.systemConfiguration;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import setupFiles.SetupFile;
-import setupFiles.SetupNoise;
-import setupFiles.SetupNormal;
+import preprocessFiles.PreprocessFile;
+import preprocessFiles.PreprocessNoise;
+import preprocessFiles.PreprocessNormal;
 
 public class NormalNoise implements NoiseLevel{
    @Override
-   public ArrayList<SetupFile> getNoiseLevel(final int count) throws IOException{
-      ArrayList<SetupFile> setupFiles;
+   public ArrayList<PreprocessFile> getNoiseLevel(final int count) throws IOException{
+      ArrayList<PreprocessFile> setupFiles;
 
       setupFiles = new ArrayList<>();
-      setupFiles.add(new SetupNoise(count/4));
-      setupFiles.add(new SetupNormal(count/4));
+      setupFiles.add(new PreprocessNoise(count/4));
+      setupFiles.add(new PreprocessNormal(count/4));
       
       return setupFiles;
    }

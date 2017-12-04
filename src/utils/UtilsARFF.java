@@ -1,7 +1,7 @@
 package utils;
 
 import constants.CharConstants;
-import formatFiles.FormatAsText;
+import preprocessFiles.preprocessAs.FormatAsText;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;

@@ -1,6 +1,6 @@
 package utils;
 
-import formatFiles.FormatAsText;
+import preprocessFiles.preprocessAs.FormatAsText;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;

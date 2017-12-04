@@ -3,10 +3,11 @@ package driver.systemConfiguration;
 import constants.AttributeTypeConstants;
 import driver.SystemTrain;
 import java.io.IOException;
+import weka.classifiers.Classifier;
 
 public class Single extends SystemConfiguration {
-   public Single(NoiseLevel nl, int count) throws IOException {
-      super(nl, count);
+   public Single(int count, NoiseLevel nl, Classifier featureSelector) throws IOException {
+      super(count, nl, featureSelector);
    }
    
    @Override
@@ -15,7 +16,8 @@ public class Single extends SystemConfiguration {
          folderPath + "Single/",
          super.setupFiles,
          AttributeTypeConstants.ATTRIBUTE_CLASS,
-         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
+         "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate", 
+         super.featureSelector
       );
    }
 
