@@ -1,27 +1,27 @@
-##What it does
+## What it does
 It uses a hybrid approach: it first identifies if the traffic is normal or an attack, if it is an attack, it identifies if it is part of a high rate or low rate DDoS attack
 
-##Input
+## Input
 Normal, high rate, and low rate data whose features were extracted using [KDD99 Feature extractor](https://github.com/AI-IDS/kdd99_feature_extractor)
 
-##Output
+## Output
 Classification
 
-##Specifics
-###Tools used:
+## Specifics
+### Tools used:
 * [Weka](https://www.cs.waikato.ac.nz/ml/weka/)
 * [Low Orbit Ion Cannon](https://github.com/NewEraCracker/LOIC)
 * [Wireshark](wireshark.org/)
 * [Apache Benchmark](https://httpd.apache.org/docs/2.4/programs/ab.html)
 
-###Uses 5 machine learning algorithms:
+### Uses 5 machine learning algorithms:
 * J48
 * IBk
 * NaiveBayes
 * RandomForest
 * SMO
 
-#Things to do
+# Things to do
 * Miscellaneous
 	* Show warning if file already exists
 
