@@ -124,14 +124,14 @@ public class UtilsTest {
    }
 //
 //   /**
-//    * Test of duplicateFolder method, of class Utils.
+//    * Test of duplicateDirectory method, of class Utils.
 //    */
 //   @Test
 //   public void testDuplicateFolder() throws Exception {
-//      System.out.println("duplicateFolder");
+//      System.out.println("duplicateDirectory");
 //      String sourceDir = "";
 //      String destinationDir = "";
-//      Utils.duplicateFolder(sourceDir, destinationDir);
+//      Utils.duplicateDirectory(sourceDir, destinationDir);
 //      // TODO review the generated test code and remove the default call to fail.
 //      fail("The test case is a prototype.");
 //   }

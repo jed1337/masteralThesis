@@ -24,6 +24,7 @@ Classification
 # Things to do
 * Miscellaneous
 	* Show warning if file already exists
+	* Automate setting folder path based on configuration
 
 * Feature selection, only select features from the train set
 	* During testing, apply that to the test set.
@@ -46,6 +47,8 @@ Classification
 		* Record results
 	* Abstract structure
 		* Preprocess
-		* Feature selection
-		* Classify
+			* Format files
+			* Setup train test validation
+		* Feature selection (Give only trianing data)
+		* Classifiers
 		* Evaluate

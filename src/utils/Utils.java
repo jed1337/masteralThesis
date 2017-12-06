@@ -15,6 +15,7 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
+import preprocessFiles.PreprocessFile;
 
 public class Utils {
    protected Utils() {}
@@ -89,11 +90,30 @@ public class Utils {
     * @param destinationDir
     * @throws IOException
     */
-   public static void duplicateFolder(String sourceDir, String destinationDir) throws IOException{
+   public static void duplicateDirectory(String sourceDir, String destinationDir) throws IOException{
       final File directory = new File(sourceDir);
+         makeFolders(destinationDir);
       for (final File file : directory.listFiles()) {
          duplicateFile(file.getAbsolutePath(), destinationDir+file.getName());
       }
+   }
+   
+   public static void deleteDirectory(String path){
+      deleteDirectory(new File(path));
+   }
+   
+   public static void deleteDirectory(File directory) {
+      File[] files = directory.listFiles();
+      if (files != null) { //some JVMs return null for empty dirs
+         for (File f : files) {
+            if (f.isDirectory()) {
+               Utils.deleteDirectory(f);
+            } else {
+               f.delete();
+            }
+         }
+      }
+      directory.delete();
    }
 
    /**
@@ -115,6 +135,13 @@ public class Utils {
          }
       }
    }
+   
+   public static void writePreprocessFile(PreprocessFile p) throws IOException{
+      Utils.writeStringFile(
+         p.getFaa().getSavePath(),
+         p.getFaa().getInstances().toString()
+      );
+   }
 
    public static void writeStringFile(String destination, String allLines) throws IOException {
       writeStringFile(destination, allLines, false);
@@ -127,16 +154,19 @@ public class Utils {
       System.out.println("Created '"+destination+"'");
    }
 
-   public static void makeFolders(String folderPath){
+   public static boolean makeFolders(String folderPath){
       if(!folderPath.isEmpty()){
-         if(new File(folderPath).mkdirs()){
+         boolean wasCreated = new File(folderPath).mkdirs();
+         if(wasCreated){
             System.out.println("Created the folder: '"+folderPath+"'");
          }else{
             System.err.println("Some or all folders of '"+folderPath+"' was not created");
          }
+         return wasCreated;
       }
       else{
          System.err.println("The folder '"+folderPath+"' already exists.");
+         return false;
       }
    }
 

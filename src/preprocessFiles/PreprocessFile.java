@@ -4,7 +4,6 @@ import constants.AttributeTypeConstants;
 import constants.FormatConstants;
 import constants.PathConstants;
 import preprocessFiles.preprocessAs.FormatAsArff;
-import utils.Utils;
 import java.io.IOException;
 
 /**
@@ -25,8 +24,8 @@ public abstract class PreprocessFile {
       this.instancesCount = instancesCount;
       this.attackTypes = attackTypes;
 
-      faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
-      faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
+      this.faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
+      this.faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
    }
 
    public final void setUp() throws IOException, Exception{
@@ -38,16 +37,9 @@ public abstract class PreprocessFile {
       keepXInstances();
    }
 
-   public void testRename(String attributes, String toReplace) throws Exception {
+   public void rename(String attributes, String toReplace) throws Exception {
       this.faa.renameNominalValues(attributes, toReplace);
       System.out.println("");
-   }
-
-   public void writeFile() throws IOException{
-      Utils.writeStringFile(
-        faa.getSavePath(),
-        faa.getInstances().toString()
-      );
    }
 
    public FormatAsArff getFaa() {

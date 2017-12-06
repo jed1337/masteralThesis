@@ -5,57 +5,55 @@ import weka.core.Instances;
 
 public class ClassifierHolder {
    private final Classifier classifier;
-   private final Instances instances;
+//   private final Instances instances;
    private final String classifierName;
-   private final String resultName;
-   private final String modelName;
    private final String folderPath;
 
    public ClassifierHolder(Classifier classifier,
-                           Instances instances,
+//                           Instances trainSet,
                            String classifierName) throws Exception {
-      this(classifier, instances, classifierName, "");
+      this(
+         classifier, 
+//         trainSet, 
+         classifierName, 
+         ""
+      );
    }
 
    public ClassifierHolder(Classifier classifier,
-                           Instances instances,
+//                           Instances trainSet,
                            String classifierName,
                            String folderPath) throws Exception {
       this.classifier     = classifier;
       
       // The classifier isn't built yet
-      this.classifier.buildClassifier(instances);
+//      this.classifier.buildClassifier(trainSet);
       
-      this.instances      = instances;
+//      this.instances      = trainSet;
       this.classifierName = classifierName;
-      
       this.folderPath = folderPath;
-      this.resultName = this.folderPath+classifierName+"Result.txt";
-      this.modelName  = this.folderPath+classifierName+".model";
-      
-      classifier.buildClassifier(instances);
    }
    
    public Classifier getClassifier() {
       return classifier;
    }
 
-   public Instances getInstances() {
-      return instances;
-   }
+//   public Instances getInstances() {
+//      return instances;
+//   }
 
    public String getClassifierName() {
       return classifierName;
    }
-
-   public String getResultName() {
-      return resultName;
+   
+   public String getResultName(){
+      return this.folderPath+classifierName+"Result.txt";
    }
-
-   public String getModelName() {
-      return modelName;
+   
+   public String getModelName(){
+      return this.folderPath+classifierName+".model";
    }
-
+   
    public String getFolderPath() {
       return folderPath;
    }
