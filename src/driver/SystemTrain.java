@@ -52,17 +52,11 @@ public final class SystemTrain {
    
    private ArrayList<PreprocessFile> setupPreprocessFiles(final ArrayList<PreprocessFile> preprocessFiles, String replacement) 
            throws IOException, Exception {
-//      final ArrayList<PreprocessFile> preprocessFiles = new ArrayList<>();
-//      preprocessFiles.add(new PreprocessNormal(1500));
-//      preprocessFiles.add(new PreprocessNoise(1500));
-//      preprocessFiles.add(new PreprocessHighrate(1500));
-//      preprocessFiles.add(new PreprocessLowrate(1500));
       for (PreprocessFile pf : preprocessFiles) {
          pf.setUp();
          pf.rename(
             AttributeTypeConstants.ATTRIBUTE_CLASS,
             replacement
-//            "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate"
          );
          Utils.writePreprocessFile(pf);
       }
@@ -97,8 +91,6 @@ public final class SystemTrain {
       FeatureSelection.applyFeatureSelection(trainSet, selectedAttributes);
       FeatureSelection.applyFeatureSelection(trainSet, selectedAttributes);
       FeatureSelection.applyFeatureSelection(validationSet, selectedAttributes);
-      
-      writeTestTrainValidation();
    }
    
    /**
@@ -120,12 +112,10 @@ public final class SystemTrain {
       this.testSet =         nfs.applyFeatureSelection(this.testSet);
       this.validationSet =   nfs.applyFeatureSelection(this.validationSet);
 
-      writeTestTrainValidation();
-      
       return nfs.selectedAttributes;
    }
 
-   private void writeTestTrainValidation() throws IOException {
+   public void writeTestTrainValidation() throws IOException {
       Utils.writeStringFile(PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN, trainSet.toString());
       Utils.writeStringFile(PathConstants.FORMATTED_DIR+FileNameConstants.TEST, testSet.toString());
       Utils.writeStringFile(PathConstants.FORMATTED_DIR+FileNameConstants.VALIDATION, validationSet.toString());
@@ -134,6 +124,11 @@ public final class SystemTrain {
 //TODO turn into single responsibiitys   
    public void testClassifier() throws Exception{
 //      Test classifier
+
+      final String accuracyPath = PathConstants.FORMATTED_DIR+"Accuracy.txt";
+      Utils.writeStringFile(
+              accuracyPath,
+              ""      );
       for (ClassifierHolder ch : classifierHolders) {
          ch.getClassifier().buildClassifier(trainSet);
          UtilsClssifiers.writeModel(PathConstants.FORMATTED_DIR, ch);
@@ -150,7 +145,7 @@ public final class SystemTrain {
          System.out.println(sb);
          Utils.writeStringFile(PathConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
          
-         addToAccuracy(PathConstants.FORMATTED_DIR+"Accuracy.txt", eval, ch);
+         addToAccuracy(accuracyPath, eval, ch);
       }
    }
    

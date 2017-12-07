@@ -1,6 +1,7 @@
 package utils;
 
 import constants.CharConstants;
+import constants.PathConstants;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -96,24 +97,6 @@ public class Utils {
       for (final File file : directory.listFiles()) {
          duplicateFile(file.getAbsolutePath(), destinationDir+file.getName());
       }
-   }
-   
-   public static void deleteDirectory(String path){
-      deleteDirectory(new File(path));
-   }
-   
-   public static void deleteDirectory(File directory) {
-      File[] files = directory.listFiles();
-      if (files != null) { //some JVMs return null for empty dirs
-         for (File f : files) {
-            if (f.isDirectory()) {
-               Utils.deleteDirectory(f);
-            } else {
-               f.delete();
-            }
-         }
-      }
-      directory.delete();
    }
 
    /**

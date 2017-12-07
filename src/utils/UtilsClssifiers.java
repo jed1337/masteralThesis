@@ -1,14 +1,7 @@
 package utils;
 
 import classifier.ClassifierHolder;
-import constants.CharConstants;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.function.Function;
 import weka.classifiers.Classifier;
-import weka.core.Instances;
-import weka.classifiers.evaluation.Evaluation;
 
 public class UtilsClssifiers extends Utils {
    private UtilsClssifiers() {}
