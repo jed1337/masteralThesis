@@ -82,15 +82,15 @@ public final class SystemTrain {
       );
       
 //Setup train test validation
-      trainSet = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR + FileNameConstants.TRAIN);
-      testSet = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR + FileNameConstants.TEST);
-      validationSet = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR + FileNameConstants.VALIDATION);
+      this.trainSet = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR + FileNameConstants.TRAIN);
+      this.testSet = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR + FileNameConstants.TEST);
+      this.validationSet = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR + FileNameConstants.VALIDATION);
    }
    
    public void applyFeatureSelection(int[] selectedAttributes) throws Exception{
-      FeatureSelection.applyFeatureSelection(trainSet, selectedAttributes);
-      FeatureSelection.applyFeatureSelection(trainSet, selectedAttributes);
-      FeatureSelection.applyFeatureSelection(validationSet, selectedAttributes);
+      FeatureSelection.applyFeatureSelection(this.trainSet, selectedAttributes);
+      FeatureSelection.applyFeatureSelection(this.trainSet, selectedAttributes);
+      FeatureSelection.applyFeatureSelection(this.validationSet, selectedAttributes);
    }
    
    /**
@@ -128,7 +128,8 @@ public final class SystemTrain {
       final String accuracyPath = PathConstants.FORMATTED_DIR+"Accuracy.txt";
       Utils.writeStringFile(
               accuracyPath,
-              ""      );
+              ""
+      );
       for (ClassifierHolder ch : classifierHolders) {
          ch.getClassifier().buildClassifier(trainSet);
          UtilsClssifiers.writeModel(PathConstants.FORMATTED_DIR, ch);

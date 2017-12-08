@@ -20,9 +20,9 @@ public class SetupTestTrainValidation {
 
    private final ArrayList<SplitFileCounter> counters;
 
-   private final double trainSplit      = 4.0;
-   private final double testSplit       = 1.0;
-   private final double validationSplit = 1.0;
+   private final float trainSplit      = 4.0f;
+   private final float testSplit       = 1.0f;
+   private final float validationSplit = 1.0f;
 
 	public SetupTestTrainValidation(String combinedPath) throws IOException{
 		this.combinePath    = combinedPath;
@@ -48,9 +48,10 @@ public class SetupTestTrainValidation {
       );
 		HashMap<String, FormatAsArff> singleClass = new HashMap<>();
 
+      //To find out what values @isAttack can have
       for (int i = 0; i < this.combinedInstances.attribute(isAttackIndex).numValues(); i++) {
-         String attName = this.combinedInstances.attribute(isAttackIndex).value(i);
-         Utils.addToMap(singleClass,attName, new FormatAsArff(this.combinePath));
+         String nominalValue = this.combinedInstances.attribute(isAttackIndex).value(i);
+         Utils.addToMap(singleClass,nominalValue, new FormatAsArff(this.combinePath));
       }
 
       HashMap<String, Float> splitParam = new HashMap<>();
@@ -97,7 +98,11 @@ public class SetupTestTrainValidation {
     */
    private void addHeaders(HashMap<String, Float> splitParam, String source) throws Exception {
       for (String path : splitParam.keySet()) {
-          Utils.addToMap(this.newInstancesHM, path, UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
+          Utils.addToMap(
+            this.newInstancesHM, 
+            path, 
+            UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE)
+          );
       }
    }
 
@@ -111,9 +116,11 @@ public class SetupTestTrainValidation {
             attackType
          );
          
+         float totalSplitValue = trainSplit+testSplit+validationSplit;
+         
          splitParam.entrySet().forEach((spEntry)->{
             int limit = Math.round(
-                    faa.getInstances().numInstances() * ((float)spEntry.getValue()/6)// The 6 is from 4+1+1
+                    faa.getInstances().numInstances() * ((float)spEntry.getValue()/totalSplitValue)
             );
             this.counters.add(new SplitFileCounter(attackType, spEntry.getKey(), limit));
          });

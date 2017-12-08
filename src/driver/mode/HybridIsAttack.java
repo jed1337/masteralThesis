@@ -18,6 +18,7 @@ public class HybridIsAttack extends Mode{
       ArrayList<PreprocessFile> pfAL = new ArrayList<>();
       pfAL.add(new PreprocessNoise(super.totalCount / 4));
       pfAL.add(new PreprocessNormal(super.totalCount / 4));
+      
       pfAL.add(new PreprocessHighrate(super.totalCount / 4));
       pfAL.add(new PreprocessLowrate(super.totalCount / 4));
       return pfAL;

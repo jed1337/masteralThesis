@@ -18,7 +18,7 @@ public abstract class PreprocessFile {
    private final String[] attackTypes;
 
    protected final FormatAsArff faa;
-   protected final int instancesCount;
+   protected int instancesCount;
 
    protected PreprocessFile(int instancesCount, String fileName, String[] attackTypes) throws IOException{
       this.instancesCount = instancesCount;
