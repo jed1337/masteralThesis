@@ -67,10 +67,6 @@ public final class SystemTrain {
          AttributeTypeConstants.ATTRIBUTE_CLASS
       );
 
-//      this.evaluationSets.add((PathConstants.FORMATTED_DIR + FileNameConstants.TRAIN));
-//      this.evaluationSets.add((PathConstants.FORMATTED_DIR + FileNameConstants.TEST));
-//      this.evaluationSets.add((PathConstants.FORMATTED_DIR + FileNameConstants.VALIDATION));
-
 //      Split into test train validation
       SetupTestTrainValidation sttv = new SetupTestTrainValidation(this.combinedPath);
       ArrayList<EvaluationSet> evaluationSets = new ArrayList<>();
@@ -78,13 +74,6 @@ public final class SystemTrain {
       evaluationSets.add(new EvaluationSet("1/4", 1));
       evaluationSets.add(new EvaluationSet("zero", 0));
       sttv.setTrainTestValidationPaths(evaluationSets);
-      System.out.println("");
-//      sttv.setTrainTestValidationPaths(
-//         PathConstants.FORMATTED_DIR + FileNameConstants.TRAIN,
-//         PathConstants.FORMATTED_DIR + FileNameConstants.TEST,
-//         PathConstants.FORMATTED_DIR + FileNameConstants.VALIDATION
-//      );
-
 //Setup train test validation
 //      this.trainSet = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR + FileNameConstants.TRAIN);
 //      this.testSet = UtilsInstances.getInstances(PathConstants.FORMATTED_DIR + FileNameConstants.TEST);
