@@ -5,9 +5,10 @@ import constants.ArffInstanceCount;
 import constants.PathConstants;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
+import driver.mode.noiseLevel.NoiseLevel;
+import driver.mode.noiseLevel.NormalNoise;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Arrays;
 import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
@@ -61,20 +62,22 @@ public class Driver {
 //         .setupTestTrainValidation(folderPath);
 //      new Single(ArffInstanceCount.HALVED, new ExtraNoise(), new NaiveBayes())
 
-//      final String folderPath = "Results/FeatureSelected (NB)/Halved/ExtraNoise (Allah)/";
-      final String folderPath = "Results/FeatureSelection/hybrid to single/J48/";
+      final String folderPath = "Allah/";
+//      final String folderPath = "Results/FeatureSelection/hybrid to single/J48/";
 
       WrapperSubsetEval wse = new WrapperSubsetEval();
       wse.setClassifier(new J48());
       wse.setFolds(5);
+      
+      NoiseLevel noiseLevel = new NormalNoise();
 
-      hybrid(ArffInstanceCount.HALVED, wse, new BestFirst(), folderPath);
-      single(ArffInstanceCount.HALVED, wse, new BestFirst(), folderPath);
+      hybrid(ArffInstanceCount.HALVED, noiseLevel, wse, new BestFirst(), folderPath);
+      single(ArffInstanceCount.HALVED, noiseLevel, wse, new BestFirst(), folderPath);
    }
    
-   private static void hybrid(int count, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
+   private static void hybrid(int instanceCount, NoiseLevel noiseLevel, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
         throws IOException, Exception {
-      SystemTrain isAttack = new SystemTrain(new HybridIsAttack(count));
+      SystemTrain isAttack = new SystemTrain(new HybridIsAttack(instanceCount, noiseLevel));
       isAttack.setupTestTrainValidation();
       if(Driver.selectedAttributes == null){
          isAttack.applyFeatureSelection(attributeEvaluation, searchMethod);
@@ -86,7 +89,7 @@ public class Driver {
 
       Utils.duplicateDirectory(PathConstants.FORMATTED_DIR, folderPath+"isAttack/");
       
-      SystemTrain attackType = new SystemTrain(new HybridDDoSType(count));
+      SystemTrain attackType = new SystemTrain(new HybridDDoSType(instanceCount, noiseLevel));
       attackType.setupTestTrainValidation();
       if(Driver.selectedAttributes == null){
          attackType.applyFeatureSelection(attributeEvaluation, searchMethod);
@@ -99,10 +102,10 @@ public class Driver {
       Utils.duplicateDirectory(PathConstants.FORMATTED_DIR, folderPath+"DDoS type/");
    }
 
-   private static void single(int count, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
+   private static void single(int instanceCount, NoiseLevel noiseLevel, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
            throws IOException, Exception {
 //
-      SystemTrain single = new SystemTrain(new Single(count));
+      SystemTrain single = new SystemTrain(new Single(instanceCount, noiseLevel));
       single.setupTestTrainValidation();
 //      Driver.selectedAttributes =  single.applyFeatureSelection(attributeEvaluation, searchMethod);
       if (Driver.selectedAttributes == null) {

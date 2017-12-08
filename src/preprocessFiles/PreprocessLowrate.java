@@ -4,11 +4,11 @@ import constants.FileNameConstants;
 import java.io.IOException;
 
 public class PreprocessLowrate extends PreprocessFile{
-   public PreprocessLowrate(int instancesCount) throws IOException{
-      this(instancesCount, FileNameConstants.CNIS_LOWRATE);
-   }
-
-   public PreprocessLowrate(int instancesCount, String fileName) throws IOException {
-      super(instancesCount, fileName, new String[]{"slowBody", "slowHeaders", "slowRead"});
+   public PreprocessLowrate() throws IOException {
+      super(
+         FileNameConstants.CNIS_LOWRATE, 
+         AttackType.LOW_RATE, 
+         new String[]{"slowBody", "slowHeaders", "slowRead"}
+      );
    }
 }

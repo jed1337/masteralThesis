@@ -1,27 +1,31 @@
 package driver.mode;
 
+import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import java.util.ArrayList;
 import preprocessFiles.PreprocessFile;
 import preprocessFiles.PreprocessHighrate;
 import preprocessFiles.PreprocessLowrate;
-import preprocessFiles.PreprocessNoise;
-import preprocessFiles.PreprocessNormal;
 
 public final class Single extends Mode{
-   public Single(int totalCount) {
-      super(totalCount);
+   public Single(int totalCount, NoiseLevel nl) throws IOException {
+      super(totalCount, nl);
    }
    
    @Override
    public ArrayList<PreprocessFile> getPreprocessFiles() throws IOException{
-      ArrayList<PreprocessFile> pfAL = new ArrayList<>();
-      pfAL.add(new PreprocessNoise(super.totalCount / 6));
-      pfAL.add(new PreprocessNormal(super.totalCount / 6));
-
-      pfAL.add(new PreprocessHighrate(super.totalCount / 3));
-      pfAL.add(new PreprocessLowrate(super.totalCount / 3));
-      return pfAL;
+//      super.pfAL.add(new PreprocessNoise());
+//      super.pfAL.add(new PreprocessNormal());
+      super.pfAL.add(new PreprocessHighrate());
+      super.pfAL.add(new PreprocessLowrate());
+      
+      super.setPreprocessFileCount();
+      
+//      pfAL.add(new PreprocessNoise(super.totalCount / 6));
+//      pfAL.add(new PreprocessNormal(super.totalCount / 6));
+//      pfAL.add(new PreprocessHighrate(super.totalCount / 3));
+//      pfAL.add(new PreprocessLowrate(super.totalCount / 3));
+      return super.pfAL;
    }
 
    @Override
