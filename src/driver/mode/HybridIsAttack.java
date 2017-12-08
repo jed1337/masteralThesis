@@ -14,16 +14,10 @@ public class HybridIsAttack extends Mode{
    
    @Override
    public ArrayList<PreprocessFile> getPreprocessFiles() throws IOException {
-//      super.pfAL.add(new PreprocessNoise());
-//      super.pfAL.add(new PreprocessNormal());
       super.pfAL.add(new PreprocessHighrate());
       super.pfAL.add(new PreprocessLowrate());
       
       super.setPreprocessFileCount();
-//      pfAL.add(new PreprocessNoise(super.totalCount / 4));
-//      pfAL.add(new PreprocessNormal(super.totalCount / 4));
-//      pfAL.add(new PreprocessHighrate(super.totalCount / 4));
-//      pfAL.add(new PreprocessLowrate(super.totalCount / 4));
       return super.pfAL;
    }
 

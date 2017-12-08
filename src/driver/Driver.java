@@ -71,53 +71,53 @@ public class Driver {
       
       NoiseLevel noiseLevel = new NormalNoise();
 
-      hybrid(ArffInstanceCount.HALVED, noiseLevel, wse, new BestFirst(), folderPath);
+//      hybrid(ArffInstanceCount.HALVED, noiseLevel, wse, new BestFirst(), folderPath);
       single(ArffInstanceCount.HALVED, noiseLevel, wse, new BestFirst(), folderPath);
    }
    
-   private static void hybrid(int instanceCount, NoiseLevel noiseLevel, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
-        throws IOException, Exception {
-      SystemTrain isAttack = new SystemTrain(new HybridIsAttack(instanceCount, noiseLevel));
-      isAttack.setupTestTrainValidation();
-      if(Driver.selectedAttributes == null){
-         isAttack.applyFeatureSelection(attributeEvaluation, searchMethod);
-      } else{
-         isAttack.applyFeatureSelection(Driver.selectedAttributes);
-      }
-      isAttack.writeTestTrainValidation();
-      isAttack.testClassifier();
-
-      Utils.duplicateDirectory(PathConstants.FORMATTED_DIR, folderPath+"isAttack/");
-      
-      SystemTrain attackType = new SystemTrain(new HybridDDoSType(instanceCount, noiseLevel));
-      attackType.setupTestTrainValidation();
-      if(Driver.selectedAttributes == null){
-         attackType.applyFeatureSelection(attributeEvaluation, searchMethod);
-      } else{
-         attackType.applyFeatureSelection(Driver.selectedAttributes);
-      }
-      attackType.writeTestTrainValidation();
-      attackType.testClassifier();
-
-      Utils.duplicateDirectory(PathConstants.FORMATTED_DIR, folderPath+"DDoS type/");
-   }
+//   private static void hybrid(int instanceCount, NoiseLevel noiseLevel, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
+//        throws IOException, Exception {
+//      SystemTrain isAttack = new SystemTrain(new HybridIsAttack(instanceCount, noiseLevel));
+//      isAttack.setupTestTrainValidation();
+//      if(Driver.selectedAttributes == null){
+//         isAttack.applyFeatureSelection(attributeEvaluation, searchMethod);
+//      } else{
+//         isAttack.applyFeatureSelection(Driver.selectedAttributes);
+//      }
+//      isAttack.writeTestTrainValidation();
+//      isAttack.testClassifier();
+//
+//      Utils.duplicateDirectory(PathConstants.FORMATTED_DIR, folderPath+"isAttack/");
+//      
+//      SystemTrain attackType = new SystemTrain(new HybridDDoSType(instanceCount, noiseLevel));
+//      attackType.setupTestTrainValidation();
+//      if(Driver.selectedAttributes == null){
+//         attackType.applyFeatureSelection(attributeEvaluation, searchMethod);
+//      } else{
+//         attackType.applyFeatureSelection(Driver.selectedAttributes);
+//      }
+//      attackType.writeTestTrainValidation();
+//      attackType.testClassifier();
+//
+//      Utils.duplicateDirectory(PathConstants.FORMATTED_DIR, folderPath+"DDoS type/");
+//   }
 
    private static void single(int instanceCount, NoiseLevel noiseLevel, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
            throws IOException, Exception {
 //
       SystemTrain single = new SystemTrain(new Single(instanceCount, noiseLevel));
       single.setupTestTrainValidation();
-//      Driver.selectedAttributes =  single.applyFeatureSelection(attributeEvaluation, searchMethod);
-      if (Driver.selectedAttributes == null) {
-         Driver.selectedAttributes = single.applyFeatureSelection(
-                 attributeEvaluation, searchMethod);
-      } else {
-         single.applyFeatureSelection(Driver.selectedAttributes);
-      }
-      single.writeTestTrainValidation();
-      single.testClassifier();
-
-      Utils.duplicateDirectory(PathConstants.FORMATTED_DIR, folderPath+"Single/");
-      System.out.println("");
+////      Driver.selectedAttributes =  single.applyFeatureSelection(attributeEvaluation, searchMethod);
+//      if (Driver.selectedAttributes == null) {
+//         Driver.selectedAttributes = single.applyFeatureSelection(
+//                 attributeEvaluation, searchMethod);
+//      } else {
+//         single.applyFeatureSelection(Driver.selectedAttributes);
+//      }
+//      single.writeTestTrainValidation();
+//      single.testClassifier();
+//
+//      Utils.duplicateDirectory(PathConstants.FORMATTED_DIR, folderPath+"Single/");
+//      System.out.println("");
    }
 }

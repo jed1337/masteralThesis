@@ -14,17 +14,10 @@ public final class Single extends Mode{
    
    @Override
    public ArrayList<PreprocessFile> getPreprocessFiles() throws IOException{
-//      super.pfAL.add(new PreprocessNoise());
-//      super.pfAL.add(new PreprocessNormal());
       super.pfAL.add(new PreprocessHighrate());
       super.pfAL.add(new PreprocessLowrate());
       
       super.setPreprocessFileCount();
-      
-//      pfAL.add(new PreprocessNoise(super.totalCount / 6));
-//      pfAL.add(new PreprocessNormal(super.totalCount / 6));
-//      pfAL.add(new PreprocessHighrate(super.totalCount / 3));
-//      pfAL.add(new PreprocessLowrate(super.totalCount / 3));
       return super.pfAL;
    }
 

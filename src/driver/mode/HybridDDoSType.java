@@ -18,8 +18,6 @@ public class HybridDDoSType extends Mode{
       super.pfAL.add(new PreprocessLowrate());
       
       super.setPreprocessFileCount();
-//      pfAL.add(new PreprocessHighrate(super.totalCount / 4));
-//      pfAL.add(new PreprocessLowrate(super.totalCount / 4));
       return super.pfAL;
    }
 

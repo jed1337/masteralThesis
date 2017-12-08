@@ -6,6 +6,7 @@ import utils.UtilsInstances;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import preprocessFiles.utils.MutableInt;
 import weka.core.Instance;
 import weka.core.Instances;
 
@@ -72,27 +73,28 @@ public class FormatAsText {
 
    public void addClassCount(String attributeName) throws IOException{
       Instances instances = UtilsInstances.getInstances(this.PATH);
-      int attributeIndex = UtilsInstances.getAttributeIndex(instances, attributeName);
-      Map<String, MutableInt> freq = new HashMap<>();
-      MutableInt count;
+//      int attributeIndex = UtilsInstances.getAttributeIndex(instances, attributeName);
+//      Map<String, MutableInt> freq = new HashMap<>();
+//      MutableInt count;
+//
+//      if(attributeIndex == -1){
+//         throw new IOException
+//            ("Attribute "+attributeName+" not found. The class count can't continue");
+//      }
+//
+//      for (int i = instances.numInstances() - 1; i >= 0; i--) {
+//         Instance inst = instances.get(i);
+//         String attributeValue = inst.stringValue(attributeIndex);
+//
+//         count = freq.get(attributeValue);
+//         if (count == null) {
+//            Utils.addToMap(freq, attributeValue, new MutableInt());
+//            } else {
+//            count.increment();
+//         }
+//      }
 
-      if(attributeIndex == -1){
-         throw new IOException
-            ("Attribute "+attributeName+" not found. The class count can't continue");
-      }
-
-      for (int i = instances.numInstances() - 1; i >= 0; i--) {
-         Instance inst = instances.get(i);
-         String attributeValue = inst.stringValue(attributeIndex);
-
-         count = freq.get(attributeValue);
-         if (count == null) {
-            Utils.addToMap(freq, attributeValue, new MutableInt());
-            // freq.put(attributeValue, new MutableInt());
-         } else {
-            count.increment();
-         }
-      }
+   HashMap<String, MutableInt> freq = UtilsInstances.getClassCount(attributeName, instances);
 
       StringBuilder sbHeader = new StringBuilder();
       freq.forEach((name, amount)->{
@@ -116,21 +118,5 @@ public class FormatAsText {
          }
       }
       Utils.writeStringFile(PATH, allLines);
-   }
-
-   private class MutableInt {
-      int value;
-
-      public MutableInt() {
-         this.value = 1;
-      }
-
-      public void increment() {
-         ++value;
-      }
-
-      public int get() {
-         return value;
-      }
    }
 }

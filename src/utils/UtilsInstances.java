@@ -3,6 +3,10 @@ package utils;
 import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import preprocessFiles.utils.MutableInt;
+import weka.core.Instance;
 import weka.core.Instances;
 
 public class UtilsInstances extends Utils{
@@ -37,5 +41,30 @@ public class UtilsInstances extends Utils{
       }
       System.err.println("Attribute '"+attributeName+"' Not found");
       return -1;
+   }
+   
+   public static HashMap<String, MutableInt> getClassCount(String attributeName, Instances instances) throws IOException{
+      final int attributeIndex = UtilsInstances.getAttributeIndex(instances, attributeName);
+      final HashMap<String, MutableInt> classCount = new HashMap<>();
+      MutableInt count;
+
+      if(attributeIndex == -1){
+         throw new IOException
+            ("Attribute "+attributeName+" not found. The class count can't continue");
+      }
+
+      for (int i = instances.numInstances() - 1; i >= 0; i--) {
+         Instance inst = instances.get(i);
+         String attributeValue = inst.stringValue(attributeIndex);
+
+         count = classCount.get(attributeValue);
+         if (count == null) {
+            Utils.addToMap(classCount, attributeValue, new MutableInt());
+         } else {
+            count.increment();
+         }
+      }
+      
+      return classCount;
    }
 }
