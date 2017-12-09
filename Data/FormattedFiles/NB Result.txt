@@ -1,24 +1,24 @@
 === Dedicated test set ===
 === Summary of NB ===
 
-Correctly Classified Instances         823               83.894  %
-Incorrectly Classified Instances       158               16.106  %
-Kappa statistic                          0.7575
-Mean absolute error                      0.106 
-Root mean squared error                  0.3083
-Relative absolute error                 23.8493 %
-Root relative squared error             65.4216 %
+Correctly Classified Instances         877               89.3986 %
+Incorrectly Classified Instances       104               10.6014 %
+Kappa statistic                          0.8408
+Mean absolute error                      0.0933
+Root mean squared error                  0.264 
+Relative absolute error                 20.9982 %
+Root relative squared error             56.0195 %
 Total Number of Instances              981     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.982    0.201    0.716      0.982    0.828      0.742    0.988     0.989     normal
-                 0.600    0.008    0.974      0.600    0.743      0.695    0.981     0.946     highrate
-                 0.922    0.035    0.930      0.922    0.926      0.888    0.986     0.969     lowrate
-Weighted Avg.    0.839    0.083    0.872      0.839    0.834      0.776    0.985     0.968     
+                 0.808    0.022    0.951      0.808    0.873      0.822    0.976     0.954     normal
+                 0.879    0.030    0.933      0.879    0.905      0.863    0.949     0.935     highrate
+                 0.994    0.108    0.825      0.994    0.902      0.853    0.985     0.970     lowrate
+Weighted Avg.    0.894    0.054    0.902      0.894    0.893      0.846    0.971     0.954     
 === Confusion Matrix ===
 
    a   b   c   <-- classified as
- 327   4   2 |   a = normal
- 105 189  21 |   b = highrate
-  25   1 307 |   c = lowrate
+ 269  20  44 |   a = normal
+  12 277  26 |   b = highrate
+   2   0 331 |   c = lowrate
