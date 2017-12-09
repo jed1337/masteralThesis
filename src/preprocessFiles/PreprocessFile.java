@@ -2,7 +2,7 @@ package preprocessFiles;
 
 import constants.AttributeTypeConstants;
 import constants.FormatConstants;
-import constants.PathConstants;
+import constants.DirectoryConstants;
 import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.IOException;
 
@@ -13,7 +13,6 @@ import java.io.IOException;
  * This is sort of like the Template method wherein the subclasses supply the parameters
  */
 public abstract class PreprocessFile {
-//   private final String[] FEATURES_TO_REMOVE = {"service","land","hot","num_failed_logins","logged_in","num_compromised","root_shell","su_attempted","num_root","num_file_creations","num_shells","num_access_files","num_outbound_cmds","is_host_login","is_guest_login","difficulty"};
    private final int RANDOM_SEED = 11;
    private final Enum<AttackType> specificAttackType;
    private final String[] attackTypes;
@@ -25,8 +24,8 @@ public abstract class PreprocessFile {
       this.specificAttackType = specificAttackType;
       this.attackTypes = attackTypes;
 
-      this.faa = new FormatAsArff (PathConstants.UNFORMATTED_DIR+""+fileName);
-      this.faa.setSavePath(PathConstants.FORMATTED_DIR+  ""+fileName);
+      this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+""+fileName);
+      this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+  ""+fileName);
    }
 
    public final void setUp() throws IOException, Exception{
@@ -47,7 +46,7 @@ public abstract class PreprocessFile {
       this.instancesCount = instancesCount;
    }
 
-   public Enum<AttackType> getSpecificAttackType() {
+   public final Enum<AttackType> getSpecificAttackType() {
       return specificAttackType;
    }
    

@@ -3,7 +3,9 @@ package driver.mode;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 import preprocessFiles.AttackType;
@@ -11,7 +13,7 @@ import preprocessFiles.PreprocessFile;
 
 public abstract class Mode {
    protected final int totalCount;
-   protected ArrayList<PreprocessFile> pfAL;
+   protected List<PreprocessFile> pfAL;
 
    public Mode(int totalCount, NoiseLevel nl) throws IOException {
       this.totalCount = totalCount;
@@ -39,6 +41,9 @@ public abstract class Mode {
       }
    }
 
-   public abstract ArrayList<PreprocessFile> getPreprocessFiles() throws IOException;
    public abstract String getReplacement();
+   
+   public final List<PreprocessFile> getPreprocessFiles() throws IOException{
+      return Collections.unmodifiableList(this.pfAL);
+   }
 }

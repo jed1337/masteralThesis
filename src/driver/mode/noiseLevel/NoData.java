@@ -1,11 +1,12 @@
 package driver.mode.noiseLevel;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import preprocessFiles.PreprocessFile;
 
-public class NoData extends NoiseLevel{
+public final class NoData implements NoiseLevel{
    private static NoData instance =null;
-   
    private NoData(){}
    
    public static NoData getInstance(){
@@ -16,7 +17,8 @@ public class NoData extends NoiseLevel{
    }
    
    @Override
-   public ArrayList<PreprocessFile> getPreprocessedFiles() {
-      return super.pfAL;
+   public List<PreprocessFile> getPreprocessedFiles() {
+      final ArrayList<PreprocessFile> pfAL = new ArrayList<>();
+      return Collections.unmodifiableList(pfAL);
    }
 }

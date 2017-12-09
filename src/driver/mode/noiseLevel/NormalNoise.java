@@ -1,17 +1,19 @@
 package driver.mode.noiseLevel;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import preprocessFiles.PreprocessFile;
 import preprocessFiles.PreprocessNoise;
 import preprocessFiles.PreprocessNormal;
 
-public class NormalNoise extends NoiseLevel{
+public final class NormalNoise implements NoiseLevel{
    @Override
-   public ArrayList<PreprocessFile> getPreprocessedFiles() throws IOException {
-      super.pfAL.add(new PreprocessNoise());
-      super.pfAL.add(new PreprocessNormal());
-      return super.pfAL;
+   public List<PreprocessFile> getPreprocessedFiles() throws IOException {
+      return Collections.unmodifiableList(Arrays.asList(
+         new PreprocessNoise(),
+         new PreprocessNormal()
+      ));
    }
-
 }

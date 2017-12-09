@@ -4,20 +4,22 @@ import classifier.ClassifierHolder;
 import constants.AttributeTypeConstants;
 import constants.CharConstants;
 import constants.FileNameConstants;
-import constants.PathConstants;
+import constants.DirectoryConstants;
 import driver.mode.Mode;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import preprocessFiles.PreprocessFile;
+import preprocessFiles.preprocessAs.FormatAsText;
 import preprocessFiles.preprocessEvaluationSet.EvaluationSet;
 import preprocessFiles.preprocessEvaluationSet.SetupTestTrainValidation;
 import utils.Utils;
 import utils.UtilsARFF;
 import utils.UtilsClssifiers;
-import utils.UtilsInstances;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.classifiers.bayes.NaiveBayes;
@@ -29,15 +31,18 @@ import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 
 public final class SystemTrain {
-	private final String combinedPath = PathConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
+	private final String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
+   private final String trainPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
+   private final String testPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
+   private final String validationPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
+   
+	private final ArrayList<ClassifierHolder> classifierHolders;
+	private final ArrayList<EvaluationSet> evaluationSets;
+	private final List<PreprocessFile> preprocessFiles;
 
-	private final ArrayList<PreprocessFile> preprocessFiles;
-	private final ArrayList<ClassifierHolder> classifierHolders = new ArrayList<>();
-	private final ArrayList<EvaluationSet> evaluationSets = new ArrayList<>();
-
-	public SystemTrain(Mode mode)
-		throws IOException, Exception {
-
+	public SystemTrain(Mode mode) throws IOException, Exception {
+      this.classifierHolders = new ArrayList<>();
+      this.evaluationSets = new ArrayList<>();
 		this.preprocessFiles = setupPreprocessFiles(mode.getPreprocessFiles(), mode.getReplacement());
 
 		this.classifierHolders.add(new ClassifierHolder(new J48(), "J48"));
@@ -46,13 +51,12 @@ public final class SystemTrain {
 		this.classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
 		this.classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
 
-      //      Split into test train validation
-		this.evaluationSets.add(new EvaluationSet(PathConstants.FORMATTED_DIR + FileNameConstants.TRAIN       , 4));
-		this.evaluationSets.add(new EvaluationSet(PathConstants.FORMATTED_DIR + FileNameConstants.TEST        , 1));
-		this.evaluationSets.add(new EvaluationSet(PathConstants.FORMATTED_DIR + FileNameConstants.VALIDATION  , 1));
+		this.evaluationSets.add(new EvaluationSet(this.trainPath       , 4));
+		this.evaluationSets.add(new EvaluationSet(this.testPath        , 1));
+		this.evaluationSets.add(new EvaluationSet(this.validationPath  , 1));
 	}
 
-	private ArrayList<PreprocessFile> setupPreprocessFiles(final ArrayList<PreprocessFile> preprocessFiles, String replacement)
+	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> preprocessFiles, String replacement)
 			  throws IOException, Exception {
 		for (PreprocessFile pf : preprocessFiles) {
 			pf.setUp();
@@ -81,14 +85,6 @@ public final class SystemTrain {
       writeTestTrainValidation();
 	}
 
-   private Instances getTrainSet() throws NoSuchElementException{
-      return getEvaluationSet(PathConstants.FORMATTED_DIR + FileNameConstants.TRAIN);
-   }
-   
-   private Instances getTestSet() throws NoSuchElementException{
-      return getEvaluationSet(PathConstants.FORMATTED_DIR + FileNameConstants.TEST);
-   }
-   
    /**
     * Loops through the evaluationSets and finds the evaluation set matching the name and returns it if found
     * @return
@@ -116,14 +112,10 @@ public final class SystemTrain {
       FeatureSelection nfs = new FeatureSelection(
          attributeEvaluator,
          searchMethod,
-         getTrainSet()
+         getEvaluationSet(this.trainPath)
       );
 
       applyFeatureSelection(nfs.getSelectedAttributes());
-
-//      this.trainSet =        nfs.applyFeatureSelection(this.trainSet);
-//      this.testSet =         nfs.applyFeatureSelection(this.testSet);
-//      this.validationSet =   nfs.applyFeatureSelection(this.validationSet);
 
       return nfs.getSelectedAttributes();
    }
@@ -137,61 +129,109 @@ public final class SystemTrain {
             )
          );
       }
-      
-      writeTestTrainValidation();
 
-//      FeatureSelection.applyFeatureSelection(this.trainSet, selectedAttributes);
-//      FeatureSelection.applyFeatureSelection(this.trainSet, selectedAttributes);
-//      FeatureSelection.applyFeatureSelection(this.validationSet, selectedAttributes);
+      writeTestTrainValidation();
 	}
 
    public void writeTestTrainValidation() throws IOException {
-//      Utils.writeStringFile(PathConstants.FORMATTED_DIR+FileNameConstants.TRAIN, trainSet.toString());
-//      Utils.writeStringFile(PathConstants.FORMATTED_DIR+FileNameConstants.TEST, testSet.toString());
-//      Utils.writeStringFile(PathConstants.FORMATTED_DIR+FileNameConstants.VALIDATION, validationSet.toString());
       for (EvaluationSet evaluationSet : this.evaluationSets) {
-         Utils.writeStringFile(evaluationSet.getName(), evaluationSet.getInstances().toString());
+         final String path = evaluationSet.getName();
+         Utils.writeStringFile(path, evaluationSet.getInstances().toString());
+
+         FormatAsText fat = new FormatAsText(path);
+         fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
       }
    }
+//
+////TODO turn into single responsibiitys
+//   public void customEvaluateClassifiers() throws Exception{
+//      final String accuracyPath = DirectoryConstants.FORMATTED_DIR+"Accuracy.txt";
+//      Utils.writeStringFile(
+//              accuracyPath,
+//              ""
+//      );
+//      for (ClassifierHolder ch : this.classifierHolders) {
+//         ch.getClassifier().buildClassifier(getEvaluationSet(this.trainPath));
+//         UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
+//
+//         Evaluation eval = new Evaluation(getEvaluationSet(this.trainPath));
+//         eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.testPath));
+//
+//         StringBuilder sb = new StringBuilder();
+//         sb.append("=== ").append("Dedicated test set").append(" ===\n");
+//         sb.append(eval.toSummaryString("=== Summary of " + ch.getClassifierName() + "===\n", false));
+//         sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
+//         sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));
+//
+//         System.out.println(sb);
+//         Utils.writeStringFile(DirectoryConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
+//
+//         addToAccuracy(accuracyPath, eval, ch);
+//      }
+//   }
 
-//TODO turn into single responsibiitys
-   public void testClassifier() throws Exception{
-      final String accuracyPath = PathConstants.FORMATTED_DIR+"Accuracy.txt";
-      Utils.writeStringFile(
-              accuracyPath,
-              ""
-      );
-      for (ClassifierHolder ch : classifierHolders) {
-         ch.getClassifier().buildClassifier(getTrainSet());
-         UtilsClssifiers.writeModel(PathConstants.FORMATTED_DIR, ch);
-
-         Evaluation eval = new Evaluation(getTrainSet());
-         eval.evaluateModel(ch.getClassifier(), getTestSet());
-
-         StringBuilder sb = new StringBuilder();
-         sb.append("=== ").append("Dedicated test set").append(" ===\n");
-         sb.append(eval.toSummaryString("=== Summary of " + ch.getClassifierName() + "===\n", false));
-         sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
-         sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));
-
-         System.out.println(sb);
-         Utils.writeStringFile(PathConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
-
-         addToAccuracy(accuracyPath, eval, ch);
+   public ArrayList<Evaluation> evaluateClassifiers() throws Exception{
+      final ArrayList<Evaluation> evaluations = new ArrayList<>();
+      
+      for (ClassifierHolder ch : this.classifierHolders) {
+         Evaluation eval = evaluateIndividualClassifier(ch);
+         evaluations.add(eval);
       }
+      return evaluations;
    }
-
-   private void addToAccuracy(String fileName, Evaluation eval, ClassifierHolder ch) throws IOException, Exception {
-      StringBuilder text = new StringBuilder();
-      text.append(ch.getClassifierName());
-      text.append(" = ");
-      text.append(Utils.doubleToString(eval.pctCorrect(), 12, 4));
-      text.append(CharConstants.NEW_LINE);
-
+   
+   /**
+    * Collates the evaluations getting the data specified in customFunction
+    * @param customFunction 
+    * @param path The path to place the collated files at
+    * @param testName The name used for the current test (Appended inside the file and not used as a file name)
+    * @return
+    * @throws Exception 
+    */
+   public ArrayList<Evaluation> customEvaluateClassifiers(
+           BiFunction<Evaluation, ClassifierHolder, String> customFunction, 
+           String path,
+           String testName)
+           throws Exception{
+      final ArrayList<Evaluation> evaluations = new ArrayList<>();
+      
+      //Append
       Utils.writeStringFile(
-         fileName,
-         text.toString(),
+         path, 
+         CharConstants.NEW_LINE+ testName +CharConstants.NEW_LINE, 
          true
       );
+      
+      for (ClassifierHolder ch : this.classifierHolders) {
+         Evaluation eval = evaluateIndividualClassifier(ch);
+         evaluations.add(eval);
+
+         //Append
+         Utils.writeStringFile(
+            path,
+            customFunction.apply(eval, ch),
+            true
+         ); 
+      }
+      return evaluations;
+   }
+   
+   private Evaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
+      ch.getClassifier().buildClassifier(getEvaluationSet(this.trainPath));
+      UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
+
+      Evaluation eval = new Evaluation(getEvaluationSet(this.trainPath));
+      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.testPath));
+
+      StringBuilder sb = new StringBuilder();
+      sb.append("=== ").append("Dedicated test set").append(" ===\n");
+      sb.append(eval.toSummaryString("=== Summary of " + ch.getClassifierName() + "===\n", false));
+      sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
+      sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));
+
+      System.out.println(sb);
+      Utils.writeStringFile(DirectoryConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
+      
+      return eval;
    }
 }

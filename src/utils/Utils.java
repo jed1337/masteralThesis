@@ -84,7 +84,7 @@ public final class Utils {
    }
 
    /**
-    * Copies all the files in sourceDir to destinationDir
+    * Copies all the files in sourceDir to destinationDir<br>
     * Loop through folders code from https://stackoverflow.com/questions/19190584/
     * @param sourceDir
     * @param destinationDir
@@ -99,7 +99,7 @@ public final class Utils {
    }
 
    /**
-    * Copies files form the source to the destination.
+    * Copies files form the source to the destination.<br>
     * Copy code from https://www.journaldev.com/861/java-copy-file
     * @param source
     * @param destination
@@ -132,6 +132,11 @@ public final class Utils {
    public static void writeStringFile(String destination, String allLines, boolean append) throws IOException {
       try (BufferedWriter bw = new BufferedWriter(new FileWriter(destination, append))) {
          bw.write(allLines);
+      }
+      if(append){
+         System.out.println("Appended to '"+destination+"'");
+      }else{
+         System.out.println("Overwritten '"+destination+"'");
       }
       System.out.println("Created '"+destination+"'");
    }

@@ -12,7 +12,7 @@ import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.RenameNominalValues;
 import weka.filters.unsupervised.instance.Randomize;
 
-public class FormatAsArff {
+public final class FormatAsArff {
    private Instances instances;
    private String savePath;
    

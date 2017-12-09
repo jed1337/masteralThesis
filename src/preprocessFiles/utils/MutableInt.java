@@ -1,6 +1,6 @@
 package preprocessFiles.utils;
 
-public class MutableInt {
+public final class MutableInt {
    int value;
 
    public MutableInt() {

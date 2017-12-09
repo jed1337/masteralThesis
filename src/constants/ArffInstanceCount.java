@@ -1,6 +1,6 @@
 package constants;
 
-public class ArffInstanceCount {
+public final class ArffInstanceCount {
    public static final int NORMAL = 12000;
    
    public static final int DOUBLED = ArffInstanceCount.NORMAL*2;

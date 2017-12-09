@@ -7,10 +7,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import preprocessFiles.utils.MutableInt;
-import weka.core.Instance;
 import weka.core.Instances;
 
-public class FormatAsText {
+public final class FormatAsText {
    private final String PATH;
 
    public FormatAsText(String PATH) {

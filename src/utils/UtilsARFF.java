@@ -10,6 +10,14 @@ import java.util.Set;
 public final class UtilsARFF{
    private UtilsARFF(){}
    
+   /**
+    * Creates an Arff file containing the combined instances from paths
+    * @param filename
+    * @param paths
+    * @return
+    * @throws IOException
+    * @throws IllegalArgumentException 
+    */
    public static FormatAsText createArff(String filename, List<String> paths) 
            throws IOException, IllegalArgumentException{
       if(paths== null){
@@ -26,6 +34,35 @@ public final class UtilsARFF{
       return fat;
    }
    
+   /**
+    * Creates an Arff file containing the combined instances from paths.<br>
+    * Automatically changes the header of @param attributeName to remove values that doesn't exist. <p>
+    * Ex. <br>
+    * ... <br>
+    * {@ @}attribute fruitName{apple, banana, kiwi, durian, grape}<br>
+    * {@ @}data<br>
+    * ... apple<br>
+    * ... apple<br>
+    * ... kiwi<br>
+    * ... durian<br>
+    * ... kiwi<br>
+    * <p>
+    * {@code createArff(filename, paths, "fruitName") }<p>
+    * Output:<br>
+    * ...<br>
+    * {@ @}attribute fruitName{apple, kiwi, durian}<br>
+    * {@ @}data<br>
+    * ... 
+    * 
+    * @param filename
+    * @param paths
+    * @param attributeName
+    *
+    * @return a FormatAsText instance set to the created Arff file
+    *
+    * @throws IOException
+    * @throws IllegalArgumentException
+    */
    public static FormatAsText createArff(String filename, List<String> paths, String attributeName) 
            throws IOException, IllegalArgumentException{
       FormatAsText fat = createArff(filename, paths);

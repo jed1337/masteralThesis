@@ -2,23 +2,18 @@ package driver.mode;
 
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
-import java.util.ArrayList;
-import preprocessFiles.PreprocessFile;
 import preprocessFiles.PreprocessHighrate;
 import preprocessFiles.PreprocessLowrate;
 
-public class HybridDDoSType extends Mode{
+public final class HybridDDoSType extends Mode{
    public HybridDDoSType(int totalCount, NoiseLevel nl) throws IOException {
       super(totalCount, nl);
-   }
-   
-   @Override
-   public ArrayList<PreprocessFile> getPreprocessFiles() throws IOException {
+
+//TODO make this part in all of the other subclasses not repeaet code      
       super.pfAL.add(new PreprocessHighrate());
       super.pfAL.add(new PreprocessLowrate());
       
       super.setPreprocessFileCount();
-      return super.pfAL;
    }
 
    @Override

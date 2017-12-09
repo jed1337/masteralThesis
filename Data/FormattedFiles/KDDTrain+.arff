@@ -1,4 +1,4 @@
-@relation 'UnformattedKDDTrain+-weka.filters.unsupervised.attribute.Remove-R3,7,10,11,12,13,14,15,16,17,18,19,20,21,22,43-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack-NtcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate'
+@relation 'UnformattedKDDTrain+-weka.filters.unsupervised.attribute.Remove-R3,7,10,11,12,13,14,15,16,17,18,19,20,21,22,43-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack-NtcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack'
 
 @attribute duration numeric
 @attribute protocol_type {tcp,icmp,udp}
