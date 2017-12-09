@@ -95,11 +95,12 @@ public final class SetupTestTrainValidation {
    }
 
    /**
-    * The reason is because they use the same header variable as the HM's value
-    * If 1 value is edited, all the others are as well.
-    * They aren't technically edited, but since they point to the same object, 1 edit reflects to all
+    * The reason we repeatedly call UtilsInstances.getHeader(...) <p> 
+    * is because if not, they use the same header variable as the AL's value <p>
+    * Since they're the same, if 1 value is edited, all the others are as well. <p>
+    * They aren't technically edited, but since they point to the same object, it's just that 1 edit reflects to all
     *
-    * @param splitParam
+    * @param evaluationSets
     * @param source Source to get the headers from
     * @throws Exception
     */

@@ -4,12 +4,11 @@ import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 import preprocessFiles.utils.MutableInt;
 import weka.core.Instance;
 import weka.core.Instances;
 
-public class UtilsInstances extends Utils{
+public final class UtilsInstances{
    private UtilsInstances() {}
    
    public static Instances getInstances(String path) throws FileNotFoundException, IOException {

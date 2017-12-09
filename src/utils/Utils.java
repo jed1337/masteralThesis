@@ -1,7 +1,6 @@
 package utils;
 
 import constants.CharConstants;
-import constants.PathConstants;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,7 +17,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import preprocessFiles.PreprocessFile;
 
-public class Utils {
+public final class Utils {
    protected Utils() {}
 
    public static HashMap<String, String> replaceAttribute(String attribute, String... toReplace){

@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class UtilsARFF extends Utils{
+public final class UtilsARFF{
    private UtilsARFF(){}
    
    public static FormatAsText createArff(String filename, List<String> paths) 

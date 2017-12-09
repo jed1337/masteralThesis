@@ -3,7 +3,7 @@ package utils;
 import classifier.ClassifierHolder;
 import weka.classifiers.Classifier;
 
-public class UtilsClssifiers extends Utils {
+public final class UtilsClssifiers{
    private UtilsClssifiers() {}
 
    public static Classifier readModel(String filename) throws Exception {
@@ -16,8 +16,10 @@ public class UtilsClssifiers extends Utils {
 
    public static void writeModel(String directory, ClassifierHolder ch) throws Exception {
       Utils.makeFolders(ch.getFolderPath());
-      weka.core.SerializationHelper.write(directory+ch.getModelName(), ch.getClassifier());
-      System.out.println("Created the model of "+ch.getModelName());
+      
+      final String path = directory+ch.getModelName();
+      weka.core.SerializationHelper.write(path, ch.getClassifier());
+      System.out.println("Created the model of "+ch.getModelName()+" at '"+path+"'");
    }
 
 //   public static void saveCrossValidationToFile(ArrayList<ClassifierHolder> chAL, int folds) throws Exception {
