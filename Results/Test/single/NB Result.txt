@@ -1,0 +1,196 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                                  Class
+Attribute                        normal  highrate   lowrate
+                                 (0.34)    (0.32)    (0.34)
+============================================================
+duration
+  mean                            3.4888    0.1488    8.5551
+  std. dev.                      20.4908    0.7915   10.0108
+  weight sum                        1332      1260      1332
+  precision                       4.3594    4.3594    4.3594
+
+protocol_type
+  tcp                             1333.0     714.0    1333.0
+  icmp                               1.0       1.0       1.0
+  udp                                1.0     548.0       1.0
+  [total]                         1335.0    1263.0    1335.0
+
+flag
+  OTH                              819.0     809.0     498.0
+  REJ                                1.0       1.0       1.0
+  RSTO                              23.0      63.0     159.0
+  RSTOS0                             1.0       1.0       1.0
+  RSTR                              15.0       1.0       1.0
+  S0                                 1.0       1.0       1.0
+  S1                                27.0      20.0     665.0
+  S2                                12.0       1.0      13.0
+  S3                                14.0     372.0       1.0
+  SF                               429.0       1.0       2.0
+  SH                                 1.0       1.0       1.0
+  [total]                         1343.0    1271.0    1343.0
+
+src_bytes
+  mean                          591.9913  158.5792  392.1903
+  std. dev.                    2100.5807  193.2623  531.5268
+  weight sum                        1332      1260      1332
+  precision                     139.0465  139.0465  139.0465
+
+dst_bytes
+  mean                         5572.0765         0   51.9783
+  std. dev.                   31167.5009 1153.9188 1153.9188
+  weight sum                        1332      1260      1332
+  precision                     6923.513  6923.513  6923.513
+
+wrong_fragment
+  mean                                 0         0         0
+  std. dev.                       0.0017    0.0017    0.0017
+  weight sum                        1332      1260      1332
+  precision                         0.01      0.01      0.01
+
+urgent
+  mean                                 0         0         0
+  std. dev.                       0.0017    0.0017    0.0017
+  weight sum                        1332      1260      1332
+  precision                         0.01      0.01      0.01
+
+count
+  mean                         1577.6085 1185.1624  378.3536
+  std. dev.                    1738.4875 3972.9146  282.9533
+  weight sum                        1332      1260      1332
+  precision                      17.9674   17.9674   17.9674
+
+srv_count
+  mean                         1587.4977 1172.9357  378.1646
+  std. dev.                    1730.5599 3974.8949  282.8569
+  weight sum                        1332      1260      1332
+  precision                      18.0394   18.0394   18.0394
+
+serror_rate
+  mean                            0.0157    0.2465    0.4492
+  std. dev.                        0.093    0.4064    0.4635
+  weight sum                        1332      1260      1332
+  precision                       0.0106    0.0106    0.0106
+
+srv_serror_rate
+  mean                            0.0183    0.2579      0.45
+  std. dev.                       0.0837    0.4154    0.4643
+  weight sum                        1332      1260      1332
+  precision                       0.0105    0.0105    0.0105
+
+rerror_rate
+  mean                                 0         0         0
+  std. dev.                       0.0017    0.0017    0.0017
+  weight sum                        1332      1260      1332
+  precision                         0.01      0.01      0.01
+
+srv_rerror_rate
+  mean                                 0         0         0
+  std. dev.                       0.0017    0.0017    0.0017
+  weight sum                        1332      1260      1332
+  precision                         0.01      0.01      0.01
+
+same_srv_rate
+  mean                              0.93    0.9553    0.9973
+  std. dev.                       0.2548    0.1621    0.0392
+  weight sum                        1332      1260      1332
+  precision                       0.0149    0.0149    0.0149
+
+diff_srv_rate
+  mean                            0.0002    0.0431    0.0019
+  std. dev.                       0.0049    0.1576    0.0281
+  weight sum                        1332      1260      1332
+  precision                       0.0149    0.0149    0.0149
+
+srv_diff_host_rate
+  mean                            0.1637    0.0346         0
+  std. dev.                       0.3238    0.1265    0.0017
+  weight sum                        1332      1260      1332
+  precision                       0.0103    0.0103    0.0103
+
+dst_host_count
+  mean                           49.8874   59.7714   81.7207
+  std. dev.                      34.7037   32.1795   24.7543
+  weight sum                        1332      1260      1332
+  precision                            1         1         1
+
+dst_host_srv_count
+  mean                           57.6689   59.5563   81.6869
+  std. dev.                      27.9927   32.0964   24.7561
+  weight sum                        1332      1260      1332
+  precision                            1         1         1
+
+dst_host_same_srv_rate
+  mean                            0.9441    0.9899     0.999
+  std. dev.                       0.2287    0.0842    0.0276
+  weight sum                        1332      1260      1332
+  precision                       0.0357    0.0357    0.0357
+
+dst_host_diff_srv_rate
+  mean                            0.0011    0.0085    0.0003
+  std. dev.                       0.0241    0.0746    0.0061
+  weight sum                        1332      1260      1332
+  precision                       0.0367    0.0367    0.0367
+
+dst_host_same_src_port_rate
+  mean                            0.3111    0.4895    0.0032
+  std. dev.                       0.4128    0.4803    0.0204
+  weight sum                        1332      1260      1332
+  precision                        0.011     0.011     0.011
+
+dst_host_srv_diff_host_rate
+  mean                            0.1832    0.0087         0
+  std. dev.                       0.3478    0.0713    0.0019
+  weight sum                        1332      1260      1332
+  precision                       0.0112    0.0112    0.0112
+
+dst_host_serror_rate
+  mean                            0.0326    0.2939     0.482
+  std. dev.                       0.1703    0.4503    0.4745
+  weight sum                        1332      1260      1332
+  precision                       0.0119    0.0119    0.0119
+
+dst_host_srv_serror_rate
+  mean                            0.0363    0.2952    0.4823
+  std. dev.                        0.168     0.451    0.4748
+  weight sum                        1332      1260      1332
+  precision                       0.0115    0.0115    0.0115
+
+dst_host_rerror_rate
+  mean                                 0         0         0
+  std. dev.                       0.0017    0.0017    0.0017
+  weight sum                        1332      1260      1332
+  precision                         0.01      0.01      0.01
+
+dst_host_srv_rerror_rate
+  mean                                 0         0         0
+  std. dev.                       0.0017    0.0017    0.0017
+  weight sum                        1332      1260      1332
+  precision                         0.01      0.01      0.01
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         877               89.3986 %
+Incorrectly Classified Instances       104               10.6014 %
+Kappa statistic                          0.8408
+Mean absolute error                      0.0933
+Root mean squared error                  0.264 
+Relative absolute error                 20.9982 %
+Root relative squared error             56.0195 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.808    0.022    0.951      0.808    0.873      0.822    0.976     0.954     normal
+                 0.879    0.030    0.933      0.879    0.905      0.863    0.949     0.935     highrate
+                 0.994    0.108    0.825      0.994    0.902      0.853    0.985     0.970     lowrate
+Weighted Avg.    0.894    0.054    0.902      0.894    0.893      0.846    0.971     0.954     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 269  20  44 |   a = normal
+  12 277  26 |   b = highrate
+   2   0 331 |   c = lowrate

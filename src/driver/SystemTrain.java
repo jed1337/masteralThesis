@@ -5,6 +5,7 @@ import constants.AttributeTypeConstants;
 import constants.CharConstants;
 import constants.FileNameConstants;
 import constants.DirectoryConstants;
+import customWeka.CustomEvaluation;
 import driver.mode.Mode;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
@@ -23,7 +24,6 @@ import utils.UtilsClssifiers;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.functions.SMO;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
@@ -142,39 +142,12 @@ public final class SystemTrain {
          fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
       }
    }
-//
-////TODO turn into single responsibiitys
-//   public void customEvaluateClassifiers() throws Exception{
-//      final String accuracyPath = DirectoryConstants.FORMATTED_DIR+"Accuracy.txt";
-//      Utils.writeStringFile(
-//              accuracyPath,
-//              ""
-//      );
-//      for (ClassifierHolder ch : this.classifierHolders) {
-//         ch.getClassifier().buildClassifier(getEvaluationSet(this.trainPath));
-//         UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
-//
-//         Evaluation eval = new Evaluation(getEvaluationSet(this.trainPath));
-//         eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.testPath));
-//
-//         StringBuilder sb = new StringBuilder();
-//         sb.append("=== ").append("Dedicated test set").append(" ===\n");
-//         sb.append(eval.toSummaryString("=== Summary of " + ch.getClassifierName() + "===\n", false));
-//         sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
-//         sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));
-//
-//         System.out.println(sb);
-//         Utils.writeStringFile(DirectoryConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
-//
-//         addToAccuracy(accuracyPath, eval, ch);
-//      }
-//   }
 
-   public ArrayList<Evaluation> evaluateClassifiers() throws Exception{
-      final ArrayList<Evaluation> evaluations = new ArrayList<>();
+   public ArrayList<CustomEvaluation> evaluateClassifiers() throws Exception{
+      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
       
       for (ClassifierHolder ch : this.classifierHolders) {
-         Evaluation eval = evaluateIndividualClassifier(ch);
+         CustomEvaluation eval = evaluateIndividualClassifier(ch);
          evaluations.add(eval);
       }
       return evaluations;
@@ -188,22 +161,19 @@ public final class SystemTrain {
     * @return
     * @throws Exception 
     */
-   public ArrayList<Evaluation> customEvaluateClassifiers(
-           BiFunction<Evaluation, ClassifierHolder, String> customFunction, 
-           String path,
-           String testName)
+   public ArrayList<CustomEvaluation> customEvaluateClassifiers(
+           BiFunction<CustomEvaluation, ClassifierHolder, String> customFunction, String path, String testName)
            throws Exception{
-      final ArrayList<Evaluation> evaluations = new ArrayList<>();
+      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
       
       //Append
-      Utils.writeStringFile(
-         path, 
+      Utils.writeStringFile(path, 
          CharConstants.NEW_LINE+ testName +CharConstants.NEW_LINE, 
          true
       );
       
       for (ClassifierHolder ch : this.classifierHolders) {
-         Evaluation eval = evaluateIndividualClassifier(ch);
+         CustomEvaluation eval = evaluateIndividualClassifier(ch);
          evaluations.add(eval);
 
          //Append
@@ -216,15 +186,17 @@ public final class SystemTrain {
       return evaluations;
    }
    
-   private Evaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
+   private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
       ch.getClassifier().buildClassifier(getEvaluationSet(this.trainPath));
       UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
 
-      Evaluation eval = new Evaluation(getEvaluationSet(this.trainPath));
+      CustomEvaluation eval = new CustomEvaluation(getEvaluationSet(this.trainPath));
       eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.testPath));
 
       StringBuilder sb = new StringBuilder();
-      sb.append("=== ").append("Dedicated test set").append(" ===\n");
+      sb.append("=== Classifier ===\n");
+      sb.append(ch.getClassifier().toString()).append(CharConstants.NEW_LINE);
+      sb.append("=== Dedicated test set ===\n");
       sb.append(eval.toSummaryString("=== Summary of " + ch.getClassifierName() + "===\n", false));
       sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
       sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));

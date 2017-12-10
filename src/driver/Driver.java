@@ -5,6 +5,7 @@ import driver.mode.Single;
 import constants.ArffInstanceCount;
 import constants.CharConstants;
 import constants.DirectoryConstants;
+import customWeka.CustomEvaluation;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.noiseLevel.ExtraNoise;
@@ -20,7 +21,6 @@ import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
-import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
 
@@ -60,27 +60,48 @@ public final class Driver {
 //</editor-fold>
    private static int[] selectedAttributes = null;
 
-   public static void main(String[] args) throws 
+   public static void main(String[] args) throws
          FileNotFoundException, IOException, Exception {
 //      final String folderPath = "Results/FeatureSelection/hybrid to single/J48/";
+      final String folderPath = "Results/Test/";
 
       final int instanceCount = ArffInstanceCount.HALVED;
       final WrapperSubsetEval wse = new WrapperSubsetEval();
       wse.setClassifier(new J48());
       wse.setFolds(5);
-      
+
       final NoiseLevel noiseLevel = new ExtraNoise();
-      
-      final BiFunction<Evaluation, ClassifierHolder, String> customEvaluation = (eval, ch)->{
+
+      //Temporary until we cana put the data in a database then custom get what we want
+      final BiFunction<CustomEvaluation, ClassifierHolder, String> customEvaluation = (eval, ch)->{
          StringBuilder sb = new StringBuilder();
-         sb.append(ch.getClassifierName());
-         sb.append(" = ");
-         sb.append(Utils.doubleToString(eval.pctCorrect(), 12, 4));
+         sb.append(ch.getClassifierName()).append(": ");
+         sb.append("Weighted Avg.");
+         sb.append("(%TP: ");
+         sb.append(Utils.doubleToString(eval.weightedTruePositiveRate(), 6, 4));
+         sb.append("\tPrec: ");
+         sb.append(Utils.doubleToString(eval.weightedPrecision(), 6, 4));
+         sb.append("\tRecall: ");
+         sb.append(Utils.doubleToString(eval.weightedRecall(), 6, 4));
+         sb.append(")\t");
+
+         final String[] classNames = eval.getClassNames();
+         for (int i = 0; i < classNames.length; i++) {
+            sb.append(classNames[i]);
+            sb.append("(%TP: ");
+            sb.append(Utils.doubleToString(eval.truePositiveRate(i), 6, 4));
+            sb.append("\tPrec: ");
+            sb.append(Utils.doubleToString(eval.precision(i), 6, 4));
+            sb.append("\tRecall: ");
+            sb.append(Utils.doubleToString(eval.recall(i), 6, 4));
+            sb.append(")\t");
+         }
+
          sb.append(CharConstants.NEW_LINE);
-         
-         return sb.toString(); 
+
+         return sb.toString();
       };
-      
+
 
       SystemTrain single = new SystemTrain(new Single(instanceCount, noiseLevel));
       single.setupTestTrainValidation();
@@ -89,59 +110,18 @@ public final class Driver {
          DirectoryConstants.RESULTS_DIR + "collated.txt",
          "single"
       );
-      System.out.println("Beginning hybrid");
-      SystemTrain hybridIsAttack = new SystemTrain(new HybridIsAttack(instanceCount, noiseLevel));
       
+      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath+"single/");
+      
+      SystemTrain hybridIsAttack = new SystemTrain(new HybridIsAttack(instanceCount, noiseLevel));
       hybridIsAttack.setupTestTrainValidation();
       hybridIsAttack.customEvaluateClassifiers(
          customEvaluation,
          DirectoryConstants.RESULTS_DIR + "collated.txt",
          "isAttack"
-      );      
-
-//      hybrid(ArffInstanceCount.HALVED, noiseLevel, wse, new BestFirst(), folderPath);
-//      single(ArffInstanceCount.HALVED, noiseLevel, wse, new BestFirst(), folderPath);
-   }
-   
-   private static void hybrid(int instanceCount, NoiseLevel noiseLevel, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
-        throws IOException, Exception {
-      SystemTrain isAttack = new SystemTrain(new HybridIsAttack(instanceCount, noiseLevel));
-      isAttack.setupTestTrainValidation();
-      if(Driver.selectedAttributes == null){
-         isAttack.applyFeatureSelection(attributeEvaluation, searchMethod);
-      } else{
-         isAttack.applyFeatureSelection(Driver.selectedAttributes);
-      }
-      isAttack.evaluateClassifiers();
-
+      );
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath+"isAttack/");
-      
-      SystemTrain attackType = new SystemTrain(new HybridDDoSType(instanceCount, NoData.getInstance()));
-      attackType.setupTestTrainValidation();
-      if(Driver.selectedAttributes == null){
-         attackType.applyFeatureSelection(attributeEvaluation, searchMethod);
-      } else{
-         attackType.applyFeatureSelection(Driver.selectedAttributes);
-      }
-      attackType.evaluateClassifiers();
 
-      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath+"DDoS type/");
    }
 
-   private static void single(int instanceCount, NoiseLevel noiseLevel, ASEvaluation attributeEvaluation, ASSearch searchMethod, String folderPath)
-           throws IOException, Exception {
-//
-      SystemTrain single = new SystemTrain(new Single(instanceCount, noiseLevel));
-      single.setupTestTrainValidation();
-//      Driver.selectedAttributes =  single.applyFeatureSelection(attributeEvaluation, searchMethod);
-      if (Driver.selectedAttributes == null) {
-         Driver.selectedAttributes = single.applyFeatureSelection(
-                 attributeEvaluation, searchMethod);
-      } else {
-         single.applyFeatureSelection(Driver.selectedAttributes);
-      }
-      single.evaluateClassifiers();
-
-      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath+"Single/");
-   }
 }
