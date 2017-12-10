@@ -5,11 +5,12 @@ import driver.mode.Single;
 import constants.ArffInstanceCount;
 import constants.CharConstants;
 import constants.DirectoryConstants;
+import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
+import driver.mode.Mode;
 import driver.mode.noiseLevel.ExtraNoise;
-import driver.mode.noiseLevel.NoData;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,8 +18,6 @@ import java.util.function.BiFunction;
 import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
-import weka.attributeSelection.ASEvaluation;
-import weka.attributeSelection.ASSearch;
 import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
 import weka.classifiers.trees.J48;
@@ -59,11 +58,39 @@ public final class Driver {
    }
 //</editor-fold>
    private static int[] selectedAttributes = null;
+   
+   //Temporary until we cana put the data in a database then custom get what we want
+   private static final BiFunction<CustomEvaluation, ClassifierHolder, String> customEvaluation = (eval, ch)->{
+      StringBuilder sb = new StringBuilder();
+      sb.append(ch.getClassifierName()).append(": ");
+      sb.append("Weighted Avg.");
+      sb.append("(%TP: ");
+      sb.append(Utils.doubleToString(eval.weightedTruePositiveRate(), 6, 4));
+      sb.append("\tPrec: ");
+      sb.append(Utils.doubleToString(eval.weightedPrecision(), 6, 4));
+      sb.append("\tRecall: ");
+      sb.append(Utils.doubleToString(eval.weightedRecall(), 6, 4));
+      sb.append(")\t");
 
-   public static void main(String[] args) throws
-         FileNotFoundException, IOException, Exception {
-//      final String folderPath = "Results/FeatureSelection/hybrid to single/J48/";
-      final String folderPath = "Results/Test/";
+      final String[] classNames = eval.getClassNames();
+      for (int i = 0; i < classNames.length; i++) {
+      sb.append(classNames[i]);
+      sb.append("(%TP: ");
+      sb.append(Utils.doubleToString(eval.truePositiveRate(i), 6, 4));
+      sb.append("\tPrec: ");
+      sb.append(Utils.doubleToString(eval.precision(i), 6, 4));
+      sb.append("\tRecall: ");
+      sb.append(Utils.doubleToString(eval.recall(i), 6, 4));
+      sb.append(")\t");
+      }
+
+      sb.append(CharConstants.NEW_LINE);
+
+      return sb.toString();
+   };
+
+   public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
+      final String folderPath = "Results/Binary/Feature selection/Individual selection/J48/";
 
       final int instanceCount = ArffInstanceCount.HALVED;
       final WrapperSubsetEval wse = new WrapperSubsetEval();
@@ -72,56 +99,21 @@ public final class Driver {
 
       final NoiseLevel noiseLevel = new ExtraNoise();
 
-      //Temporary until we cana put the data in a database then custom get what we want
-      final BiFunction<CustomEvaluation, ClassifierHolder, String> customEvaluation = (eval, ch)->{
-         StringBuilder sb = new StringBuilder();
-         sb.append(ch.getClassifierName()).append(": ");
-         sb.append("Weighted Avg.");
-         sb.append("(%TP: ");
-         sb.append(Utils.doubleToString(eval.weightedTruePositiveRate(), 6, 4));
-         sb.append("\tPrec: ");
-         sb.append(Utils.doubleToString(eval.weightedPrecision(), 6, 4));
-         sb.append("\tRecall: ");
-         sb.append(Utils.doubleToString(eval.weightedRecall(), 6, 4));
-         sb.append(")\t");
+      systemTrain(new Single(instanceCount, noiseLevel), folderPath+"single/");
+      systemTrain(new HybridIsAttack(instanceCount, noiseLevel), folderPath+"isAttack/");
+      systemTrain(new HybridDDoSType(instanceCount, noiseLevel), folderPath+"DDoS type/");
+   }
 
-         final String[] classNames = eval.getClassNames();
-         for (int i = 0; i < classNames.length; i++) {
-            sb.append(classNames[i]);
-            sb.append("(%TP: ");
-            sb.append(Utils.doubleToString(eval.truePositiveRate(i), 6, 4));
-            sb.append("\tPrec: ");
-            sb.append(Utils.doubleToString(eval.precision(i), 6, 4));
-            sb.append("\tRecall: ");
-            sb.append(Utils.doubleToString(eval.recall(i), 6, 4));
-            sb.append(")\t");
-         }
-
-         sb.append(CharConstants.NEW_LINE);
-
-         return sb.toString();
-      };
-
-
-      SystemTrain single = new SystemTrain(new Single(instanceCount, noiseLevel));
-      single.setupTestTrainValidation();
-      single.customEvaluateClassifiers(
-         customEvaluation,
-         DirectoryConstants.RESULTS_DIR + "collated.txt",
-         "single"
-      );
-      
-      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath+"single/");
-      
-      SystemTrain hybridIsAttack = new SystemTrain(new HybridIsAttack(instanceCount, noiseLevel));
+   private static void systemTrain(Mode mode, final String folderPath)
+           throws IOException, Exception {
+      SystemTrain hybridIsAttack = new SystemTrain(mode);
       hybridIsAttack.setupTestTrainValidation();
       hybridIsAttack.customEvaluateClassifiers(
-         customEvaluation,
-         DirectoryConstants.RESULTS_DIR + "collated.txt",
-         "isAttack"
+         Driver.customEvaluation,
+         DirectoryConstants.RESULTS_DIR + FileNameConstants.COLLATED,
+         folderPath //Doubles as the name inserted in collated (But this has no bearing on the path)
       );
-      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath+"isAttack/");
-
+      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath);
    }
 
 }

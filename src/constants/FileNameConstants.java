@@ -1,7 +1,9 @@
 package constants;
 
 public final class FileNameConstants{
-	public static final String CROSSFOLD_NAME       = "Crossfold.arff";
+	public static final String COLLATED             = "collated.txt";
+	
+   public static final String CROSSFOLD_NAME       = "Crossfold.arff";
 
 	public static final String HEADER               = "Header.arff";
 
