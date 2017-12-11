@@ -1,0 +1,108 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_bytes <= 1886
+|   srv_diff_host_rate <= 0
+|   |   count <= 1401
+|   |   |   dst_host_count <= 32
+|   |   |   |   protocol_type = tcp
+|   |   |   |   |   srv_serror_rate <= 0.5
+|   |   |   |   |   |   count <= 442
+|   |   |   |   |   |   |   flag = OTH
+|   |   |   |   |   |   |   |   dst_host_same_src_port_rate <= 0.01: attack (17.0)
+|   |   |   |   |   |   |   |   dst_host_same_src_port_rate > 0.01
+|   |   |   |   |   |   |   |   |   src_bytes <= 60
+|   |   |   |   |   |   |   |   |   |   count <= 153
+|   |   |   |   |   |   |   |   |   |   |   count <= 113
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 54: attack (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 54
+|   |   |   |   |   |   |   |   |   |   |   |   |   count <= 29
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate <= 0.68: normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate > 0.68: attack (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   count > 29: normal (16.0)
+|   |   |   |   |   |   |   |   |   |   |   count > 113: attack (19.0)
+|   |   |   |   |   |   |   |   |   |   count > 153: normal (21.0)
+|   |   |   |   |   |   |   |   |   src_bytes > 60: normal (23.0)
+|   |   |   |   |   |   |   flag = REJ: normal (0.0)
+|   |   |   |   |   |   |   flag = RSTO: attack (3.0)
+|   |   |   |   |   |   |   flag = RSTOS0: normal (0.0)
+|   |   |   |   |   |   |   flag = RSTR: normal (0.0)
+|   |   |   |   |   |   |   flag = S0: normal (0.0)
+|   |   |   |   |   |   |   flag = S1: normal (0.0)
+|   |   |   |   |   |   |   flag = S2: normal (0.0)
+|   |   |   |   |   |   |   flag = S3: normal (0.0)
+|   |   |   |   |   |   |   flag = SF: normal (8.0)
+|   |   |   |   |   |   |   flag = SH: normal (0.0)
+|   |   |   |   |   |   count > 442: attack (15.0)
+|   |   |   |   |   srv_serror_rate > 0.5: attack (10.0)
+|   |   |   |   protocol_type = icmp: attack (0.0)
+|   |   |   |   protocol_type = udp: attack (113.0)
+|   |   |   dst_host_count > 32
+|   |   |   |   dst_host_same_src_port_rate <= 0.38: attack (1119.0)
+|   |   |   |   dst_host_same_src_port_rate > 0.38
+|   |   |   |   |   count <= 179
+|   |   |   |   |   |   count <= 79
+|   |   |   |   |   |   |   protocol_type = tcp
+|   |   |   |   |   |   |   |   dst_host_count <= 34: attack (4.0)
+|   |   |   |   |   |   |   |   dst_host_count > 34: normal (9.0)
+|   |   |   |   |   |   |   protocol_type = icmp: attack (0.0)
+|   |   |   |   |   |   |   protocol_type = udp: attack (14.0)
+|   |   |   |   |   |   count > 79: attack (481.0)
+|   |   |   |   |   count > 179
+|   |   |   |   |   |   count <= 190: attack (8.0)
+|   |   |   |   |   |   count > 190: normal (21.0)
+|   |   count > 1401
+|   |   |   src_bytes <= 66: normal (246.0)
+|   |   |   src_bytes > 66
+|   |   |   |   src_bytes <= 108
+|   |   |   |   |   dst_host_count <= 76
+|   |   |   |   |   |   count <= 5993
+|   |   |   |   |   |   |   dst_host_count <= 59
+|   |   |   |   |   |   |   |   count <= 5192: attack (3.0/1.0)
+|   |   |   |   |   |   |   |   count > 5192: normal (4.0)
+|   |   |   |   |   |   |   dst_host_count > 59: attack (90.0/4.0)
+|   |   |   |   |   |   count > 5993: attack (540.0)
+|   |   |   |   |   dst_host_count > 76
+|   |   |   |   |   |   dst_host_count <= 83: attack (18.0)
+|   |   |   |   |   |   dst_host_count > 83: normal (8.0)
+|   |   |   |   src_bytes > 108: normal (45.0/2.0)
+|   srv_diff_host_rate > 0
+|   |   diff_srv_rate <= 0.17
+|   |   |   srv_diff_host_rate <= 0.21: normal (289.0)
+|   |   |   srv_diff_host_rate > 0.21
+|   |   |   |   count <= 54: normal (166.0)
+|   |   |   |   count > 54
+|   |   |   |   |   srv_diff_host_rate <= 0.22: attack (9.0)
+|   |   |   |   |   srv_diff_host_rate > 0.22
+|   |   |   |   |   |   dst_host_same_src_port_rate <= 0.41: attack (4.0)
+|   |   |   |   |   |   dst_host_same_src_port_rate > 0.41: normal (30.0/5.0)
+|   |   diff_srv_rate > 0.17: attack (110.0)
+dst_bytes > 1886: normal (448.0/4.0)
+
+Number of Leaves  : 	45
+
+Size of the tree : 	78
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         919               93.6799 %
+Incorrectly Classified Instances        62                6.3201 %
+Kappa statistic                          0.8531
+Mean absolute error                      0.0704
+Root mean squared error                  0.2555
+Relative absolute error                 15.6929 %
+Root relative squared error             53.9546 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.823    0.005    0.989      0.823    0.898      0.861    0.910     0.876     normal
+                 0.995    0.177    0.916      0.995    0.954      0.861    0.910     0.916     attack
+Weighted Avg.    0.937    0.119    0.941      0.937    0.935      0.861    0.910     0.902     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 274  59 |   a = normal
+   3 645 |   b = attack

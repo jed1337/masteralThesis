@@ -1,0 +1,66 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+flag = OTH
+|   count <= 1401: attack (1032.0)
+|   count > 1401
+|   |   src_bytes <= 66: normal (367.0)
+|   |   src_bytes > 66
+|   |   |   src_bytes <= 112
+|   |   |   |   count <= 5993
+|   |   |   |   |   dst_host_count <= 74
+|   |   |   |   |   |   dst_host_count <= 59
+|   |   |   |   |   |   |   count <= 4742: attack (3.0/1.0)
+|   |   |   |   |   |   |   count > 4742: normal (8.0)
+|   |   |   |   |   |   dst_host_count > 59: attack (89.0/4.0)
+|   |   |   |   |   dst_host_count > 74: normal (15.0/1.0)
+|   |   |   |   count > 5993: attack (558.0)
+|   |   |   src_bytes > 112
+|   |   |   |   src_bytes <= 148: normal (30.0)
+|   |   |   |   src_bytes > 148: attack (2.0)
+flag = REJ: normal (25.0)
+flag = RSTO: attack (154.0/1.0)
+flag = RSTOS0: attack (0.0)
+flag = RSTR: normal (7.0)
+flag = S0: normal (1.0)
+flag = S1
+|   count <= 1030: attack (348.0/1.0)
+|   count > 1030: normal (19.0/1.0)
+flag = S2
+|   src_bytes <= 1256: normal (11.0)
+|   src_bytes > 1256: attack (5.0)
+flag = S3
+|   count <= 992: attack (399.0)
+|   count > 992
+|   |   count <= 1344: attack (6.0)
+|   |   count > 1344: normal (16.0)
+flag = SF: normal (830.0/1.0)
+flag = SH: attack (0.0)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	36
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         980               99.8981 %
+Incorrectly Classified Instances         1                0.1019 %
+Kappa statistic                          0.9977
+Mean absolute error                      0.0029
+Root mean squared error                  0.0319
+Relative absolute error                  0.6418 %
+Root relative squared error              6.7447 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.997    0.000    1.000      0.997    0.998      0.998    0.999     0.998     normal
+                 1.000    0.003    0.998      1.000    0.999      0.998    0.999     0.999     attack
+Weighted Avg.    0.999    0.002    0.999      0.999    0.999      0.998    0.999     0.999     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 332   1 |   a = normal
+   0 648 |   b = attack

@@ -1,0 +1,56 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.008  * (normalized) protocol_type=tcp
+ +       1.008  * (normalized) protocol_type=udp
+ +       0.8776 * (normalized) flag=OTH
+ +       0.8852 * (normalized) flag=RSTO
+ +      -1.1689 * (normalized) flag=RSTR
+ +       0.845  * (normalized) flag=S1
+ +      -1.1683 * (normalized) flag=S2
+ +       0.9011 * (normalized) flag=S3
+ +      -1.1717 * (normalized) flag=SF
+ +       0.0009 * (normalized) src_bytes
+ +       0.116  * (normalized) count
+ +      -0.5479 * (normalized) same_srv_rate
+ +      -0.1421 * (normalized) srv_diff_host_rate
+ +       0.0657 * (normalized) dst_host_srv_count
+ +      -0.1087 * (normalized) dst_host_same_srv_rate
+ +      -2.0097 * (normalized) dst_host_same_src_port_rate
+ +      -2.5127 * (normalized) dst_host_srv_diff_host_rate
+ +       1.754 
+
+Number of kernel evaluations: 6079645 (75.447% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         967               98.5729 %
+Incorrectly Classified Instances        14                1.4271 %
+Kappa statistic                          0.9682
+Mean absolute error                      0.0143
+Root mean squared error                  0.1195
+Relative absolute error                  3.1822 %
+Root relative squared error             25.2284 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.979    0.011    0.979      0.979    0.979      0.968    0.984     0.966     normal
+                 0.989    0.021    0.989      0.989    0.989      0.968    0.984     0.986     attack
+Weighted Avg.    0.986    0.018    0.986      0.986    0.986      0.968    0.984     0.979     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 326   7 |   a = normal
+   7 641 |   b = attack

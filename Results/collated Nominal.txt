@@ -1,0 +1,294 @@
+
+Results/Nominal/Normal noise/Individual selection/NB/isAttack/
+J48: Weighted Avg.(Prec: 0.9959	Recall: 0.9959)	normal(Prec: 0.997 	Recall: 0.991 )	attack(Prec: 0.9954	Recall: 0.9985)
+KNN: Weighted Avg.(Prec: 0.999 	Recall: 0.999 )	normal(Prec: 0.997 	Recall: 1     )	attack(Prec: 1     	Recall: 0.9985)
+NB : Weighted Avg.(Prec: 0.9759	Recall: 0.9755)	normal(Prec: 0.9504	Recall: 0.979 )	attack(Prec: 0.989 	Recall: 0.9738)
+RF : Weighted Avg.(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	attack(Prec: 1     	Recall: 1     )
+SMO: Weighted Avg.(Prec: 0.9969	Recall: 0.9969)	normal(Prec: 0.997 	Recall: 0.994 )	attack(Prec: 0.9969	Recall: 0.9985)
+
+Results/Nominal/Normal noise/Individual selection/NB/DDoS type/
+J48: Weighted Avg.(Prec: 0.7665	Recall: 0.7608)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.6338	Recall: 0.5389)	slowHeaders(Prec: 0.5064	Recall: 0.7066)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.568 	Recall: 0.4251)
+KNN: Weighted Avg.(Prec: 0.7212	Recall: 0.7198)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9697	Recall: 0.9581)	slowRead(Prec: 0.4878	Recall: 0.479 )	slowHeaders(Prec: 0.5673	Recall: 0.5808)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.426 	Recall: 0.4311)
+NB : Weighted Avg.(Prec: 0.5912	Recall: 0.5884)	tcpFlood(Prec: 0.994 	Recall: 0.994 )	httpFlood(Prec: 0.7568	Recall: 0.6707)	slowRead(Prec: 0.3958	Recall: 0.1138)	slowHeaders(Prec: 0.3762	Recall: 0.2275)	udpFlood(Prec: 0.744 	Recall: 1     )	slowBody(Prec: 0.3481	Recall: 0.7066)
+RF : Weighted Avg.(Prec: 0.7566	Recall: 0.7554)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.5987	Recall: 0.5449)	slowHeaders(Prec: 0.5747	Recall: 0.5988)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.48  	Recall: 0.503 )
+SMO: Weighted Avg.(Prec: 0.6204	Recall: 0.5884)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8358	Recall: 0.6707)	slowRead(Prec: 0.3824	Recall: 0.0778)	slowHeaders(Prec: 0.2927	Recall: 0.4311)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3797	Recall: 0.6048)
+
+Results/Nominal/Normal noise/Individual selection/NB/single/
+J48: Weighted Avg.(Prec: 0.8388	Recall: 0.8359)	tcpFlood(Prec: 0.9908	Recall: 0.973 )	normal(Prec: 0.997 	Recall: 1     )	httpFlood(Prec: 0.9817	Recall: 0.964 )	slowRead(Prec: 0.5714	Recall: 0.3964)	slowHeaders(Prec: 0.5263	Recall: 0.7207)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.514 	Recall: 0.4955)
+KNN: Weighted Avg.(Prec: 0.8332	Recall: 0.8328)	tcpFlood(Prec: 0.982 	Recall: 0.982 )	normal(Prec: 0.994 	Recall: 1     )	httpFlood(Prec: 0.9815	Recall: 0.955 )	slowRead(Prec: 0.5524	Recall: 0.5225)	slowHeaders(Prec: 0.5812	Recall: 0.6126)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4464	Recall: 0.4505)
+NB : Weighted Avg.(Prec: 0.7563	Recall: 0.7554)	tcpFlood(Prec: 0.9098	Recall: 1     )	normal(Prec: 0.9737	Recall: 1     )	httpFlood(Prec: 0.9459	Recall: 0.6306)	slowRead(Prec: 0.4177	Recall: 0.2973)	slowHeaders(Prec: 0.3962	Recall: 0.3784)	udpFlood(Prec: 0.8158	Recall: 1     )	slowBody(Prec: 0.4097	Recall: 0.5315)
+RF : Weighted Avg.(Prec: 0.842 	Recall: 0.841 )	tcpFlood(Prec: 0.9911	Recall: 1     )	normal(Prec: 1     	Recall: 0.997 )	httpFlood(Prec: 0.982 	Recall: 0.982 )	slowRead(Prec: 0.5729	Recall: 0.4955)	slowHeaders(Prec: 0.5739	Recall: 0.5946)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4836	Recall: 0.5315)
+SMO: Weighted Avg.(Prec: 0.7728	Recall: 0.739 )	tcpFlood(Prec: 1     	Recall: 0.8649)	normal(Prec: 0.9706	Recall: 0.991 )	httpFlood(Prec: 1     	Recall: 0.5766)	slowRead(Prec: 0.3443	Recall: 0.1892)	slowHeaders(Prec: 0.3421	Recall: 0.4685)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3943	Recall: 0.6216)
+
+Results/Nominal/Normal noise/Individual selection/J48/isAttack/
+J48: Weighted Avg.(Prec: 0.999 	Recall: 0.999 )	normal(Prec: 1     	Recall: 0.997 )	attack(Prec: 0.9985	Recall: 1     )
+KNN: Weighted Avg.(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	attack(Prec: 1     	Recall: 1     )
+NB : Weighted Avg.(Prec: 0.9745	Recall: 0.9725)	normal(Prec: 0.925 	Recall: 1     )	attack(Prec: 1     	Recall: 0.9583)
+RF : Weighted Avg.(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	attack(Prec: 1     	Recall: 1     )
+SMO: Weighted Avg.(Prec: 0.992 	Recall: 0.9918)	normal(Prec: 0.9794	Recall: 0.997 )	attack(Prec: 0.9984	Recall: 0.9892)
+
+Results/Nominal/Normal noise/Individual selection/J48/DDoS type/
+J48: Weighted Avg.(Prec: 0.8081	Recall: 0.8006)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6467	Recall: 0.6467)	slowHeaders(Prec: 0.5867	Recall: 0.7904)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.7064	Recall: 0.4611)
+KNN: Weighted Avg.(Prec: 0.7669	Recall: 0.7662)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9583	Recall: 0.9641)	slowRead(Prec: 0.5793	Recall: 0.5689)	slowHeaders(Prec: 0.6524	Recall: 0.6407)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5145	Recall: 0.5329)
+NB : Weighted Avg.(Prec: 0.5485	Recall: 0.4688)	tcpFlood(Prec: 0.7696	Recall: 1     )	httpFlood(Prec: 1     	Recall: 0.1677)	slowRead(Prec: 0.2665	Recall: 0.8204)	slowHeaders(Prec: 0.2   	Recall: 0.012 )	udpFlood(Prec: 0.6596	Recall: 1     )	slowBody(Prec: 0.4444	Recall: 0.0479)
+RF : Weighted Avg.(Prec: 0.8075	Recall: 0.8071)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6732	Recall: 0.6168)	slowHeaders(Prec: 0.6536	Recall: 0.7006)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.6095	Recall: 0.6168)
+SMO: Weighted Avg.(Prec: 0.5643	Recall: 0.5754)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8952	Recall: 0.5629)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.3022	Recall: 0.5808)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3815	Recall: 0.5689)
+
+Results/Nominal/Normal noise/Individual selection/J48/single/
+J48: Weighted Avg.(Prec: 0.8602	Recall: 0.8573)	tcpFlood(Prec: 0.9908	Recall: 0.973 )	normal(Prec: 0.997 	Recall: 0.997 )	httpFlood(Prec: 0.9817	Recall: 0.964 )	slowRead(Prec: 0.6522	Recall: 0.5405)	slowHeaders(Prec: 0.5804	Recall: 0.7477)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5686	Recall: 0.5225)
+KNN: Weighted Avg.(Prec: 0.8585	Recall: 0.8542)	tcpFlood(Prec: 0.982 	Recall: 0.982 )	normal(Prec: 0.9939	Recall: 0.976 )	httpFlood(Prec: 0.9636	Recall: 0.955 )	slowRead(Prec: 0.6465	Recall: 0.5766)	slowHeaders(Prec: 0.6404	Recall: 0.6577)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5354	Recall: 0.6126)
+NB : Weighted Avg.(Prec: 0.6335	Recall: 0.6534)	tcpFlood(Prec: 0.8102	Recall: 1     )	normal(Prec: 0.8601	Recall: 0.997 )	httpFlood(Prec: 0.9091	Recall: 0.1802)	slowRead(Prec: 0.264 	Recall: 0.7207)	slowHeaders(Prec: 0     	Recall: 0     )	udpFlood(Prec: 0.8087	Recall: 1     )	slowBody(Prec: 0.3571	Recall: 0.045 )
+RF : Weighted Avg.(Prec: 0.8804	Recall: 0.8787)	tcpFlood(Prec: 0.9911	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9821	Recall: 0.991 )	slowRead(Prec: 0.7222	Recall: 0.5856)	slowHeaders(Prec: 0.6552	Recall: 0.6847)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.592 	Recall: 0.6667)
+SMO: Weighted Avg.(Prec: 0.6065	Recall: 0.6544)	tcpFlood(Prec: 1     	Recall: 0.8198)	normal(Prec: 0.7477	Recall: 0.97  )	httpFlood(Prec: 0.4658	Recall: 0.6126)	slowRead(Prec: 0.1026	Recall: 0.036 )	slowHeaders(Prec: 0.375 	Recall: 0.2162)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3362	Recall: 0.3514)
+
+Results/Nominal/Extra noise/Individual selection/J48/isAttack/
+J48: Weighted Avg.(Prec: 0.8749	Recall: 0.8512)	normal(Prec: 0.9845	Recall: 0.5706)	attack(Prec: 0.8185	Recall: 0.9954)
+KNN: Weighted Avg.(Prec: 0.7363	Recall: 0.6667)	normal(Prec: 0.875 	Recall: 0.021 )	attack(Prec: 0.665 	Recall: 0.9985)
+NB : Weighted Avg.(Prec: 0.5499	Recall: 0.6137)	normal(Prec: 0.3357	Recall: 0.1411)	attack(Prec: 0.6599	Recall: 0.8565)
+RF : Weighted Avg.(Prec: 0.854 	Recall: 0.8155)	normal(Prec: 0.9935	Recall: 0.4595)	attack(Prec: 0.7823	Recall: 0.9985)
+SMO: Weighted Avg.(Prec: 0.4065	Recall: 0.4954)	normal(Prec: 0.0398	Recall: 0.021 )	attack(Prec: 0.595 	Recall: 0.7392)
+
+Results/Nominal/Extra noise/Individual selection/J48/DDoS type/
+J48: Weighted Avg.(Prec: 0.8081	Recall: 0.8006)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6467	Recall: 0.6467)	slowHeaders(Prec: 0.5867	Recall: 0.7904)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.7064	Recall: 0.4611)
+KNN: Weighted Avg.(Prec: 0.7669	Recall: 0.7662)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9583	Recall: 0.9641)	slowRead(Prec: 0.5793	Recall: 0.5689)	slowHeaders(Prec: 0.6524	Recall: 0.6407)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5145	Recall: 0.5329)
+NB : Weighted Avg.(Prec: 0.5485	Recall: 0.4688)	tcpFlood(Prec: 0.7696	Recall: 1     )	httpFlood(Prec: 1     	Recall: 0.1677)	slowRead(Prec: 0.2665	Recall: 0.8204)	slowHeaders(Prec: 0.2   	Recall: 0.012 )	udpFlood(Prec: 0.6596	Recall: 1     )	slowBody(Prec: 0.4444	Recall: 0.0479)
+RF : Weighted Avg.(Prec: 0.8075	Recall: 0.8071)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6732	Recall: 0.6168)	slowHeaders(Prec: 0.6536	Recall: 0.7006)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.6095	Recall: 0.6168)
+SMO: Weighted Avg.(Prec: 0.5643	Recall: 0.5754)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8952	Recall: 0.5629)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.3022	Recall: 0.5808)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3815	Recall: 0.5689)
+
+Results/Nominal/Extra noise/Individual selection/J48/single/
+J48: Weighted Avg.(Prec: 0.7721	Recall: 0.7085)	tcpFlood(Prec: 0.8926	Recall: 0.973 )	normal(Prec: 0.9521	Recall: 0.5375)	httpFlood(Prec: 0.5   	Recall: 0.9459)	slowRead(Prec: 0.6559	Recall: 0.5495)	slowHeaders(Prec: 0.5329	Recall: 0.7297)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5484	Recall: 0.6126)
+KNN: Weighted Avg.(Prec: 0.8321	Recall: 0.8135)	tcpFlood(Prec: 0.9732	Recall: 0.982 )	normal(Prec: 0.9767	Recall: 0.8799)	httpFlood(Prec: 0.9352	Recall: 0.9099)	slowRead(Prec: 0.6413	Recall: 0.5315)	slowHeaders(Prec: 0.5139	Recall: 0.6667)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5227	Recall: 0.6216)
+NB : Weighted Avg.(Prec: 0.6524	Recall: 0.6157)	tcpFlood(Prec: 0.8473	Recall: 1     )	normal(Prec: 0.9785	Recall: 0.8198)	httpFlood(Prec: 0.7917	Recall: 0.1712)	slowRead(Prec: 0.2541	Recall: 0.8288)	slowHeaders(Prec: 0     	Recall: 0     )	udpFlood(Prec: 0.8378	Recall: 1     )	slowBody(Prec: 0.2353	Recall: 0.1441)
+RF : Weighted Avg.(Prec: 0.8651	Recall: 0.8614)	tcpFlood(Prec: 1     	Recall: 1     )	normal(Prec: 0.979 	Recall: 0.982 )	httpFlood(Prec: 0.9813	Recall: 0.9459)	slowRead(Prec: 0.7065	Recall: 0.5856)	slowHeaders(Prec: 0.6356	Recall: 0.6757)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5476	Recall: 0.6216)
+SMO: Weighted Avg.(Prec: 0.6771	Recall: 0.6402)	tcpFlood(Prec: 0.9901	Recall: 0.9009)	normal(Prec: 0.9059	Recall: 0.6937)	httpFlood(Prec: 0.7111	Recall: 0.5766)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.3287	Recall: 0.6396)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3988	Recall: 0.6216)
+
+Results/Nominal/Extra noise/Individual selection/NB/isAttack/
+J48: Weighted Avg.(Prec: 0.9888	Recall: 0.9888)	normal(Prec: 0.9792	Recall: 0.988 )	attack(Prec: 0.9938	Recall: 0.9892)
+KNN: Weighted Avg.(Prec: 0.9878	Recall: 0.9878)	normal(Prec: 0.9763	Recall: 0.988 )	attack(Prec: 0.9938	Recall: 0.9877)
+NB : Weighted Avg.(Prec: 0.9919	Recall: 0.9918)	normal(Prec: 0.9969	Recall: 0.979 )	attack(Prec: 0.9893	Recall: 0.9985)
+RF : Weighted Avg.(Prec: 0.9609	Recall: 0.9602)	normal(Prec: 0.9773	Recall: 0.9039)	attack(Prec: 0.9525	Recall: 0.9892)
+SMO: Weighted Avg.(Prec: 0.9878	Recall: 0.9878)	normal(Prec: 0.9791	Recall: 0.985 )	attack(Prec: 0.9923	Recall: 0.9892)
+
+Results/Nominal/Extra noise/Individual selection/NB/DDoS type/
+J48: Weighted Avg.(Prec: 0.7665	Recall: 0.7608)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.6338	Recall: 0.5389)	slowHeaders(Prec: 0.5064	Recall: 0.7066)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.568 	Recall: 0.4251)
+KNN: Weighted Avg.(Prec: 0.7212	Recall: 0.7198)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9697	Recall: 0.9581)	slowRead(Prec: 0.4878	Recall: 0.479 )	slowHeaders(Prec: 0.5673	Recall: 0.5808)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.426 	Recall: 0.4311)
+NB : Weighted Avg.(Prec: 0.5912	Recall: 0.5884)	tcpFlood(Prec: 0.994 	Recall: 0.994 )	httpFlood(Prec: 0.7568	Recall: 0.6707)	slowRead(Prec: 0.3958	Recall: 0.1138)	slowHeaders(Prec: 0.3762	Recall: 0.2275)	udpFlood(Prec: 0.744 	Recall: 1     )	slowBody(Prec: 0.3481	Recall: 0.7066)
+RF : Weighted Avg.(Prec: 0.7566	Recall: 0.7554)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.5987	Recall: 0.5449)	slowHeaders(Prec: 0.5747	Recall: 0.5988)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.48  	Recall: 0.503 )
+SMO: Weighted Avg.(Prec: 0.6204	Recall: 0.5884)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8358	Recall: 0.6707)	slowRead(Prec: 0.3824	Recall: 0.0778)	slowHeaders(Prec: 0.2927	Recall: 0.4311)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3797	Recall: 0.6048)
+
+Results/Nominal/Extra noise/Individual selection/NB/single/
+J48: Weighted Avg.(Prec: 0.7767	Recall: 0.7768)	tcpFlood(Prec: 1     	Recall: 0.9459)	normal(Prec: 0.9167	Recall: 0.991 )	httpFlood(Prec: 0.8654	Recall: 0.8108)	slowRead(Prec: 0.5   	Recall: 0.2703)	slowHeaders(Prec: 0.5248	Recall: 0.4775)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3861	Recall: 0.5495)
+KNN: Weighted Avg.(Prec: 0.7717	Recall: 0.7543)	tcpFlood(Prec: 0.9909	Recall: 0.982 )	normal(Prec: 0.9425	Recall: 0.8859)	httpFlood(Prec: 0.9091	Recall: 0.8108)	slowRead(Prec: 0.4375	Recall: 0.4414)	slowHeaders(Prec: 0.4173	Recall: 0.5225)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4   	Recall: 0.4144)
+NB : Weighted Avg.(Prec: 0.7083	Recall: 0.7125)	tcpFlood(Prec: 1     	Recall: 0.9099)	normal(Prec: 0.7709	Recall: 0.97  )	httpFlood(Prec: 0.8889	Recall: 0.5766)	slowRead(Prec: 0.4921	Recall: 0.2793)	slowHeaders(Prec: 0.3258	Recall: 0.2613)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4028	Recall: 0.5225)
+RF : Weighted Avg.(Prec: 0.7824	Recall: 0.7778)	tcpFlood(Prec: 1     	Recall: 0.973 )	normal(Prec: 0.9327	Recall: 0.958 )	httpFlood(Prec: 0.9271	Recall: 0.8018)	slowRead(Prec: 0.4526	Recall: 0.3874)	slowHeaders(Prec: 0.4634	Recall: 0.5135)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4355	Recall: 0.4865)
+SMO: Weighted Avg.(Prec: 0.5789	Recall: 0.5596)	tcpFlood(Prec: 1     	Recall: 0.8919)	normal(Prec: 0.5816	Recall: 0.5886)	httpFlood(Prec: 1     	Recall: 0.5676)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.1382	Recall: 0.2703)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3953	Recall: 0.6126)
+
+Results/Nominal/Normal noise/Single to Hybrid/NB/single/
+J48: Weighted Avg.(Prec: 0.8388	Recall: 0.8359)	tcpFlood(Prec: 0.9908	Recall: 0.973 )	normal(Prec: 0.997 	Recall: 1     )	httpFlood(Prec: 0.9817	Recall: 0.964 )	slowRead(Prec: 0.5714	Recall: 0.3964)	slowHeaders(Prec: 0.5263	Recall: 0.7207)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.514 	Recall: 0.4955)
+KNN: Weighted Avg.(Prec: 0.8332	Recall: 0.8328)	tcpFlood(Prec: 0.982 	Recall: 0.982 )	normal(Prec: 0.994 	Recall: 1     )	httpFlood(Prec: 0.9815	Recall: 0.955 )	slowRead(Prec: 0.5524	Recall: 0.5225)	slowHeaders(Prec: 0.5812	Recall: 0.6126)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4464	Recall: 0.4505)
+NB : Weighted Avg.(Prec: 0.7563	Recall: 0.7554)	tcpFlood(Prec: 0.9098	Recall: 1     )	normal(Prec: 0.9737	Recall: 1     )	httpFlood(Prec: 0.9459	Recall: 0.6306)	slowRead(Prec: 0.4177	Recall: 0.2973)	slowHeaders(Prec: 0.3962	Recall: 0.3784)	udpFlood(Prec: 0.8158	Recall: 1     )	slowBody(Prec: 0.4097	Recall: 0.5315)
+RF : Weighted Avg.(Prec: 0.842 	Recall: 0.841 )	tcpFlood(Prec: 0.9911	Recall: 1     )	normal(Prec: 1     	Recall: 0.997 )	httpFlood(Prec: 0.982 	Recall: 0.982 )	slowRead(Prec: 0.5729	Recall: 0.4955)	slowHeaders(Prec: 0.5739	Recall: 0.5946)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4836	Recall: 0.5315)
+SMO: Weighted Avg.(Prec: 0.7728	Recall: 0.739 )	tcpFlood(Prec: 1     	Recall: 0.8649)	normal(Prec: 0.9706	Recall: 0.991 )	httpFlood(Prec: 1     	Recall: 0.5766)	slowRead(Prec: 0.3443	Recall: 0.1892)	slowHeaders(Prec: 0.3421	Recall: 0.4685)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3943	Recall: 0.6216)
+
+Results/Nominal/Normal noise/Single to Hybrid/NB/isAttack/
+J48: Weighted Avg.(Prec: 0.999 	Recall: 0.999 )	normal(Prec: 1     	Recall: 0.997 )	attack(Prec: 0.9985	Recall: 1     )
+KNN: Weighted Avg.(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	attack(Prec: 1     	Recall: 1     )
+NB : Weighted Avg.(Prec: 0.9835	Recall: 0.9827)	normal(Prec: 0.9514	Recall: 1     )	attack(Prec: 1     	Recall: 0.9738)
+RF : Weighted Avg.(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	attack(Prec: 1     	Recall: 1     )
+SMO: Weighted Avg.(Prec: 0.992 	Recall: 0.9918)	normal(Prec: 0.9794	Recall: 0.997 )	attack(Prec: 0.9984	Recall: 0.9892)
+
+Results/Nominal/Normal noise/Single to Hybrid/NB/DDoS type/
+J48: Weighted Avg.(Prec: 0.7665	Recall: 0.7619)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6291	Recall: 0.5689)	slowHeaders(Prec: 0.5111	Recall: 0.6886)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.568 	Recall: 0.4251)
+KNN: Weighted Avg.(Prec: 0.7166	Recall: 0.7144)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9693	Recall: 0.9461)	slowRead(Prec: 0.4788	Recall: 0.4731)	slowHeaders(Prec: 0.5517	Recall: 0.5749)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4251	Recall: 0.4251)
+NB : Weighted Avg.(Prec: 0.6036	Recall: 0.5916)	tcpFlood(Prec: 0.994 	Recall: 0.994 )	httpFlood(Prec: 0.881 	Recall: 0.6647)	slowRead(Prec: 0.3684	Recall: 0.1257)	slowHeaders(Prec: 0.3509	Recall: 0.2395)	udpFlood(Prec: 0.7381	Recall: 1     )	slowBody(Prec: 0.3491	Recall: 0.7066)
+RF : Weighted Avg.(Prec: 0.7542	Recall: 0.7543)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.5833	Recall: 0.5449)	slowHeaders(Prec: 0.5805	Recall: 0.6048)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4765	Recall: 0.485 )
+SMO: Weighted Avg.(Prec: 0.6204	Recall: 0.5884)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8358	Recall: 0.6707)	slowRead(Prec: 0.3824	Recall: 0.0778)	slowHeaders(Prec: 0.2927	Recall: 0.4311)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3797	Recall: 0.6048)
+
+Results/Nominal/Normal noise/Single to Hybrid/J48/single/
+J48: Weighted Avg.(Prec: 0.8602	Recall: 0.8573)	tcpFlood(Prec: 0.9908	Recall: 0.973 )	normal(Prec: 0.997 	Recall: 0.997 )	httpFlood(Prec: 0.9817	Recall: 0.964 )	slowRead(Prec: 0.6522	Recall: 0.5405)	slowHeaders(Prec: 0.5804	Recall: 0.7477)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5686	Recall: 0.5225)
+KNN: Weighted Avg.(Prec: 0.8585	Recall: 0.8542)	tcpFlood(Prec: 0.982 	Recall: 0.982 )	normal(Prec: 0.9939	Recall: 0.976 )	httpFlood(Prec: 0.9636	Recall: 0.955 )	slowRead(Prec: 0.6465	Recall: 0.5766)	slowHeaders(Prec: 0.6404	Recall: 0.6577)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5354	Recall: 0.6126)
+NB : Weighted Avg.(Prec: 0.6335	Recall: 0.6534)	tcpFlood(Prec: 0.8102	Recall: 1     )	normal(Prec: 0.8601	Recall: 0.997 )	httpFlood(Prec: 0.9091	Recall: 0.1802)	slowRead(Prec: 0.264 	Recall: 0.7207)	slowHeaders(Prec: 0     	Recall: 0     )	udpFlood(Prec: 0.8087	Recall: 1     )	slowBody(Prec: 0.3571	Recall: 0.045 )
+RF : Weighted Avg.(Prec: 0.8804	Recall: 0.8787)	tcpFlood(Prec: 0.9911	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9821	Recall: 0.991 )	slowRead(Prec: 0.7222	Recall: 0.5856)	slowHeaders(Prec: 0.6552	Recall: 0.6847)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.592 	Recall: 0.6667)
+SMO: Weighted Avg.(Prec: 0.6065	Recall: 0.6544)	tcpFlood(Prec: 1     	Recall: 0.8198)	normal(Prec: 0.7477	Recall: 0.97  )	httpFlood(Prec: 0.4658	Recall: 0.6126)	slowRead(Prec: 0.1026	Recall: 0.036 )	slowHeaders(Prec: 0.375 	Recall: 0.2162)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3362	Recall: 0.3514)
+
+Results/Nominal/Normal noise/Single to Hybrid/J48/isAttack/
+J48: Weighted Avg.(Prec: 0.9959	Recall: 0.9959)	normal(Prec: 1     	Recall: 0.988 )	attack(Prec: 0.9939	Recall: 1     )
+KNN: Weighted Avg.(Prec: 0.99  	Recall: 0.9898)	normal(Prec: 1     	Recall: 0.97  )	attack(Prec: 0.9848	Recall: 1     )
+NB : Weighted Avg.(Prec: 0.8621	Recall: 0.7717)	normal(Prec: 0.5982	Recall: 0.997 )	attack(Prec: 0.9977	Recall: 0.6559)
+RF : Weighted Avg.(Prec: 0.999 	Recall: 0.999 )	normal(Prec: 1     	Recall: 0.997 )	attack(Prec: 0.9985	Recall: 1     )
+SMO: Weighted Avg.(Prec: 0.9694	Recall: 0.9694)	normal(Prec: 0.9577	Recall: 0.952 )	attack(Prec: 0.9754	Recall: 0.9784)
+
+Results/Nominal/Normal noise/Single to Hybrid/J48/DDoS type/
+J48: Weighted Avg.(Prec: 0.796 	Recall: 0.7909)	tcpFlood(Prec: 0.994 	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.6503	Recall: 0.6347)	slowHeaders(Prec: 0.5745	Recall: 0.8084)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.6535	Recall: 0.3952)
+KNN: Weighted Avg.(Prec: 0.7646	Recall: 0.7629)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9576	Recall: 0.9461)	slowRead(Prec: 0.5875	Recall: 0.5629)	slowHeaders(Prec: 0.6294	Recall: 0.6407)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5172	Recall: 0.5389)
+NB : Weighted Avg.(Prec: 0.5866	Recall: 0.4817)	tcpFlood(Prec: 0.9071	Recall: 0.994 )	httpFlood(Prec: 0.9655	Recall: 0.1677)	slowRead(Prec: 0.268 	Recall: 0.8922)	slowHeaders(Prec: 0.2   	Recall: 0.012 )	udpFlood(Prec: 0.6992	Recall: 1     )	slowBody(Prec: 0.5294	Recall: 0.0539)
+RF : Weighted Avg.(Prec: 0.8006	Recall: 0.8006)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9882	Recall: 1     )	slowRead(Prec: 0.6711	Recall: 0.6108)	slowHeaders(Prec: 0.6457	Recall: 0.6766)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5872	Recall: 0.6048)
+SMO: Weighted Avg.(Prec: 0.6987	Recall: 0.5841)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.6368	Recall: 0.7665)	slowRead(Prec: 1     	Recall: 0.024 )	slowHeaders(Prec: 0.3236	Recall: 0.5329)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.365 	Recall: 0.4371)
+
+Results/Nominal/Extra noise/Single to Hybrid/J48/single/
+J48: Weighted Avg.(Prec: 0.7721	Recall: 0.7085)	tcpFlood(Prec: 0.8926	Recall: 0.973 )	normal(Prec: 0.9521	Recall: 0.5375)	httpFlood(Prec: 0.5   	Recall: 0.9459)	slowRead(Prec: 0.6559	Recall: 0.5495)	slowHeaders(Prec: 0.5329	Recall: 0.7297)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5484	Recall: 0.6126)
+KNN: Weighted Avg.(Prec: 0.8321	Recall: 0.8135)	tcpFlood(Prec: 0.9732	Recall: 0.982 )	normal(Prec: 0.9767	Recall: 0.8799)	httpFlood(Prec: 0.9352	Recall: 0.9099)	slowRead(Prec: 0.6413	Recall: 0.5315)	slowHeaders(Prec: 0.5139	Recall: 0.6667)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5227	Recall: 0.6216)
+NB : Weighted Avg.(Prec: 0.6524	Recall: 0.6157)	tcpFlood(Prec: 0.8473	Recall: 1     )	normal(Prec: 0.9785	Recall: 0.8198)	httpFlood(Prec: 0.7917	Recall: 0.1712)	slowRead(Prec: 0.2541	Recall: 0.8288)	slowHeaders(Prec: 0     	Recall: 0     )	udpFlood(Prec: 0.8378	Recall: 1     )	slowBody(Prec: 0.2353	Recall: 0.1441)
+RF : Weighted Avg.(Prec: 0.8651	Recall: 0.8614)	tcpFlood(Prec: 1     	Recall: 1     )	normal(Prec: 0.979 	Recall: 0.982 )	httpFlood(Prec: 0.9813	Recall: 0.9459)	slowRead(Prec: 0.7065	Recall: 0.5856)	slowHeaders(Prec: 0.6356	Recall: 0.6757)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5476	Recall: 0.6216)
+SMO: Weighted Avg.(Prec: 0.6771	Recall: 0.6402)	tcpFlood(Prec: 0.9901	Recall: 0.9009)	normal(Prec: 0.9059	Recall: 0.6937)	httpFlood(Prec: 0.7111	Recall: 0.5766)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.3287	Recall: 0.6396)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3988	Recall: 0.6216)
+
+Results/Nominal/Extra noise/Single to Hybrid/J48/isAttack/
+J48: Weighted Avg.(Prec: 0.941 	Recall: 0.9368)	normal(Prec: 0.9892	Recall: 0.8228)	attack(Prec: 0.9162	Recall: 0.9954)
+KNN: Weighted Avg.(Prec: 0.9598	Recall: 0.9582)	normal(Prec: 0.9899	Recall: 0.8859)	attack(Prec: 0.9444	Recall: 0.9954)
+NB : Weighted Avg.(Prec: 0.9312	Recall: 0.9225)	normal(Prec: 0.8303	Recall: 0.97  )	attack(Prec: 0.9831	Recall: 0.8981)
+RF : Weighted Avg.(Prec: 0.9742	Recall: 0.9735)	normal(Prec: 0.9936	Recall: 0.9279)	attack(Prec: 0.9642	Recall: 0.9969)
+SMO: Weighted Avg.(Prec: 0.9857	Recall: 0.9857)	normal(Prec: 0.979 	Recall: 0.979 )	attack(Prec: 0.9892	Recall: 0.9892)
+
+Results/Nominal/Extra noise/Single to Hybrid/J48/DDoS type/
+J48: Weighted Avg.(Prec: 0.7856	Recall: 0.7813)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9879	Recall: 0.976 )	slowRead(Prec: 0.6554	Recall: 0.5808)	slowHeaders(Prec: 0.5652	Recall: 0.7784)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.6   	Recall: 0.4491)
+KNN: Weighted Avg.(Prec: 0.7696	Recall: 0.7672)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9756	Recall: 0.9581)	slowRead(Prec: 0.5935	Recall: 0.5509)	slowHeaders(Prec: 0.6287	Recall: 0.6287)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.522 	Recall: 0.5689)
+NB : Weighted Avg.(Prec: 0.5821	Recall: 0.5453)	tcpFlood(Prec: 0.7422	Recall: 1     )	httpFlood(Prec: 1     	Recall: 0.5928)	slowRead(Prec: 0.3035	Recall: 0.8323)	slowHeaders(Prec: 0.5   	Recall: 0.012 )	udpFlood(Prec: 0.7881	Recall: 1     )	slowBody(Prec: 0.25  	Recall: 0.0359)
+RF : Weighted Avg.(Prec: 0.7905	Recall: 0.7899)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.6434	Recall: 0.5509)	slowHeaders(Prec: 0.6278	Recall: 0.6766)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5706	Recall: 0.6048)
+SMO: Weighted Avg.(Prec: 0.7814	Recall: 0.6519)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.9931	Recall: 0.8563)	slowRead(Prec: 1     	Recall: 0.0359)	slowHeaders(Prec: 0.3863	Recall: 0.8443)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4061	Recall: 0.4012)
+
+Results/Nominal/Extra noise/Single to Hybrid/NB/single/
+J48: Weighted Avg.(Prec: 0.7767	Recall: 0.7768)	tcpFlood(Prec: 1     	Recall: 0.9459)	normal(Prec: 0.9167	Recall: 0.991 )	httpFlood(Prec: 0.8654	Recall: 0.8108)	slowRead(Prec: 0.5   	Recall: 0.2703)	slowHeaders(Prec: 0.5248	Recall: 0.4775)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3861	Recall: 0.5495)
+KNN: Weighted Avg.(Prec: 0.7717	Recall: 0.7543)	tcpFlood(Prec: 0.9909	Recall: 0.982 )	normal(Prec: 0.9425	Recall: 0.8859)	httpFlood(Prec: 0.9091	Recall: 0.8108)	slowRead(Prec: 0.4375	Recall: 0.4414)	slowHeaders(Prec: 0.4173	Recall: 0.5225)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4   	Recall: 0.4144)
+NB : Weighted Avg.(Prec: 0.7083	Recall: 0.7125)	tcpFlood(Prec: 1     	Recall: 0.9099)	normal(Prec: 0.7709	Recall: 0.97  )	httpFlood(Prec: 0.8889	Recall: 0.5766)	slowRead(Prec: 0.4921	Recall: 0.2793)	slowHeaders(Prec: 0.3258	Recall: 0.2613)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4028	Recall: 0.5225)
+RF : Weighted Avg.(Prec: 0.7824	Recall: 0.7778)	tcpFlood(Prec: 1     	Recall: 0.973 )	normal(Prec: 0.9327	Recall: 0.958 )	httpFlood(Prec: 0.9271	Recall: 0.8018)	slowRead(Prec: 0.4526	Recall: 0.3874)	slowHeaders(Prec: 0.4634	Recall: 0.5135)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4355	Recall: 0.4865)
+SMO: Weighted Avg.(Prec: 0.5789	Recall: 0.5596)	tcpFlood(Prec: 1     	Recall: 0.8919)	normal(Prec: 0.5816	Recall: 0.5886)	httpFlood(Prec: 1     	Recall: 0.5676)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.1382	Recall: 0.2703)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3953	Recall: 0.6126)
+
+Results/Nominal/Extra noise/Single to Hybrid/NB/isAttack/
+J48: Weighted Avg.(Prec: 0.9469	Recall: 0.947 )	normal(Prec: 0.9404	Recall: 0.9009)	attack(Prec: 0.9502	Recall: 0.9707)
+KNN: Weighted Avg.(Prec: 0.9462	Recall: 0.946 )	normal(Prec: 0.9516	Recall: 0.8859)	attack(Prec: 0.9434	Recall: 0.9769)
+NB : Weighted Avg.(Prec: 0.8595	Recall: 0.7645)	normal(Prec: 0.5907	Recall: 0.997 )	attack(Prec: 0.9976	Recall: 0.6451)
+RF : Weighted Avg.(Prec: 0.9521	Recall: 0.9521)	normal(Prec: 0.9525	Recall: 0.9039)	attack(Prec: 0.9519	Recall: 0.9769)
+SMO: Weighted Avg.(Prec: 0.6967	Recall: 0.6932)	normal(Prec: 0.546 	Recall: 0.5706)	attack(Prec: 0.7741	Recall: 0.7562)
+
+Results/Nominal/Extra noise/Single to Hybrid/NB/DDoS type/
+J48: Weighted Avg.(Prec: 0.6848	Recall: 0.6832)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.8947	Recall: 0.9162)	slowRead(Prec: 0.4554	Recall: 0.2754)	slowHeaders(Prec: 0.5   	Recall: 0.509 )	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3982	Recall: 0.5389)
+KNN: Weighted Avg.(Prec: 0.6477	Recall: 0.6433)	tcpFlood(Prec: 0.994 	Recall: 0.994 )	httpFlood(Prec: 0.8758	Recall: 0.8443)	slowRead(Prec: 0.3194	Recall: 0.3653)	slowHeaders(Prec: 0.4709	Recall: 0.485 )	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3819	Recall: 0.3293)
+NB : Weighted Avg.(Prec: 0.6569	Recall: 0.6067)	tcpFlood(Prec: 1     	Recall: 0.988 )	httpFlood(Prec: 0.98  	Recall: 0.5868)	slowRead(Prec: 0.4261	Recall: 0.2934)	slowHeaders(Prec: 0.3134	Recall: 0.3772)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.374 	Recall: 0.5689)
+RF : Weighted Avg.(Prec: 0.6827	Recall: 0.681 )	tcpFlood(Prec: 0.994 	Recall: 1     )	httpFlood(Prec: 0.9068	Recall: 0.8743)	slowRead(Prec: 0.3889	Recall: 0.3772)	slowHeaders(Prec: 0.4914	Recall: 0.515 )	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4556	Recall: 0.4611)
+SMO: Weighted Avg.(Prec: 0.623 	Recall: 0.5744)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 1     	Recall: 0.5689)	slowRead(Prec: 0.2329	Recall: 0.1018)	slowHeaders(Prec: 0.2927	Recall: 0.4311)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3797	Recall: 0.6048)
+
+Results/Nominal/Normal noise/No feature selection/isAttack/
+J48: Weighted Avg.(Prec: 0.9949	Recall: 0.9949)	normal(Prec: 0.997 	Recall: 0.988 )	attack(Prec: 0.9939	Recall: 0.9985)
+KNN: Weighted Avg.(Prec: 0.998 	Recall: 0.998 )	normal(Prec: 0.997 	Recall: 0.997 )	attack(Prec: 0.9985	Recall: 0.9985)
+NB : Weighted Avg.(Prec: 0.8536	Recall: 0.7676)	normal(Prec: 0.5956	Recall: 0.982 )	attack(Prec: 0.9861	Recall: 0.6574)
+RF : Weighted Avg.(Prec: 0.999 	Recall: 0.999 )	normal(Prec: 1     	Recall: 0.997 )	attack(Prec: 0.9985	Recall: 1     )
+SMO: Weighted Avg.(Prec: 0.9969	Recall: 0.9969)	normal(Prec: 0.997 	Recall: 0.994 )	attack(Prec: 0.9969	Recall: 0.9985)
+
+Results/Nominal/Normal noise/No feature selection/DDoS type/
+J48: Weighted Avg.(Prec: 0.7908	Recall: 0.7856)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9881	Recall: 0.994 )	slowRead(Prec: 0.6622	Recall: 0.5868)	slowHeaders(Prec: 0.5625	Recall: 0.8084)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.625 	Recall: 0.4192)
+KNN: Weighted Avg.(Prec: 0.7669	Recall: 0.7651)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9697	Recall: 0.9581)	slowRead(Prec: 0.5882	Recall: 0.5389)	slowHeaders(Prec: 0.6272	Recall: 0.6347)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5193	Recall: 0.5629)
+NB : Weighted Avg.(Prec: 0.5544	Recall: 0.4698)	tcpFlood(Prec: 0.6901	Recall: 1     )	httpFlood(Prec: 0.9714	Recall: 0.2036)	slowRead(Prec: 0.2598	Recall: 0.7904)	slowHeaders(Prec: 0.25  	Recall: 0.012 )	udpFlood(Prec: 0.7881	Recall: 1     )	slowBody(Prec: 0.4706	Recall: 0.0479)
+RF : Weighted Avg.(Prec: 0.8128	Recall: 0.8125)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.6781	Recall: 0.5928)	slowHeaders(Prec: 0.6611	Recall: 0.7126)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.6264	Recall: 0.6527)
+SMO: Weighted Avg.(Prec: 0.6739	Recall: 0.6379)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.9863	Recall: 0.8623)	slowRead(Prec: 0.4545	Recall: 0.0299)	slowHeaders(Prec: 0.3686	Recall: 0.6467)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3783	Recall: 0.521 )
+
+Results/Nominal/Normal noise/No feature selection/single/
+J48: Weighted Avg.(Prec: 0.8605	Recall: 0.8542)	tcpFlood(Prec: 0.9908	Recall: 0.973 )	normal(Prec: 0.997 	Recall: 1     )	httpFlood(Prec: 0.9907	Recall: 0.955 )	slowRead(Prec: 0.6667	Recall: 0.4324)	slowHeaders(Prec: 0.5662	Recall: 0.6937)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5615	Recall: 0.6577)
+KNN: Weighted Avg.(Prec: 0.8608	Recall: 0.8583)	tcpFlood(Prec: 0.9732	Recall: 0.982 )	normal(Prec: 0.994 	Recall: 0.997 )	httpFlood(Prec: 0.9907	Recall: 0.964 )	slowRead(Prec: 0.6383	Recall: 0.5405)	slowHeaders(Prec: 0.6545	Recall: 0.6486)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5308	Recall: 0.6216)
+NB : Weighted Avg.(Prec: 0.647 	Recall: 0.6493)	tcpFlood(Prec: 0.5812	Recall: 1     )	normal(Prec: 0.9849	Recall: 0.979 )	httpFlood(Prec: 0.8214	Recall: 0.2072)	slowRead(Prec: 0.2567	Recall: 0.6937)	slowHeaders(Prec: 0     	Recall: 0     )	udpFlood(Prec: 0.8532	Recall: 1     )	slowBody(Prec: 0.3889	Recall: 0.0631)
+RF : Weighted Avg.(Prec: 0.8753	Recall: 0.8736)	tcpFlood(Prec: 1     	Recall: 0.991 )	normal(Prec: 0.997 	Recall: 1     )	httpFlood(Prec: 0.9909	Recall: 0.982 )	slowRead(Prec: 0.6842	Recall: 0.5856)	slowHeaders(Prec: 0.6435	Recall: 0.6667)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5887	Recall: 0.6577)
+SMO: Weighted Avg.(Prec: 0.7747	Recall: 0.7635)	tcpFlood(Prec: 1     	Recall: 0.8649)	normal(Prec: 0.9704	Recall: 0.985 )	httpFlood(Prec: 0.9785	Recall: 0.8198)	slowRead(Prec: 0.3333	Recall: 0.027 )	slowHeaders(Prec: 0.3866	Recall: 0.6757)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3987	Recall: 0.5676)
+
+Results/Nominal/Extra noise/No feature selection/single/
+J48: Weighted Avg.(Prec: 0.7635	Recall: 0.6952)	tcpFlood(Prec: 0.9558	Recall: 0.973 )	normal(Prec: 0.9521	Recall: 0.5375)	httpFlood(Prec: 0.486 	Recall: 0.9369)	slowRead(Prec: 0.6117	Recall: 0.5676)	slowHeaders(Prec: 0.4962	Recall: 0.5856)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5036	Recall: 0.6306)
+KNN: Weighted Avg.(Prec: 0.8286	Recall: 0.8236)	tcpFlood(Prec: 0.9732	Recall: 0.982 )	normal(Prec: 0.975 	Recall: 0.9369)	httpFlood(Prec: 0.8487	Recall: 0.9099)	slowRead(Prec: 0.6277	Recall: 0.5315)	slowHeaders(Prec: 0.6071	Recall: 0.6126)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5038	Recall: 0.5946)
+NB : Weighted Avg.(Prec: 0.5515	Recall: 0.4913)	tcpFlood(Prec: 0.7161	Recall: 1     )	normal(Prec: 0.9643	Recall: 0.4865)	httpFlood(Prec: 0.1462	Recall: 0.1712)	slowRead(Prec: 0.2576	Recall: 0.7658)	slowHeaders(Prec: 0     	Recall: 0     )	udpFlood(Prec: 0.8532	Recall: 1     )	slowBody(Prec: 0.1463	Recall: 0.1081)
+RF : Weighted Avg.(Prec: 0.8685	Recall: 0.8665)	tcpFlood(Prec: 1     	Recall: 0.991 )	normal(Prec: 0.982 	Recall: 0.982 )	httpFlood(Prec: 0.9545	Recall: 0.9459)	slowRead(Prec: 0.6882	Recall: 0.5766)	slowHeaders(Prec: 0.6555	Recall: 0.7027)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5935	Recall: 0.6577)
+SMO: Weighted Avg.(Prec: 0.68  	Recall: 0.6422)	tcpFlood(Prec: 1     	Recall: 0.8919)	normal(Prec: 0.8981	Recall: 0.7147)	httpFlood(Prec: 0.8205	Recall: 0.5766)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.2554	Recall: 0.6396)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4012	Recall: 0.5856)
+
+Results/Nominal/Extra noise/No feature selection/isAttack/
+J48: Weighted Avg.(Prec: 0.9604	Recall: 0.9582)	normal(Prec: 0.9966	Recall: 0.8799)	attack(Prec: 0.9418	Recall: 0.9985)
+KNN: Weighted Avg.(Prec: 0.9791	Recall: 0.9786)	normal(Prec: 0.9968	Recall: 0.9399)	attack(Prec: 0.97  	Recall: 0.9985)
+NB : Weighted Avg.(Prec: 0.8574	Recall: 0.7839)	normal(Prec: 0.6144	Recall: 0.976 )	attack(Prec: 0.9823	Recall: 0.6852)
+RF : Weighted Avg.(Prec: 0.989 	Recall: 0.9888)	normal(Prec: 1     	Recall: 0.967 )	attack(Prec: 0.9833	Recall: 1     )
+SMO: Weighted Avg.(Prec: 0.9899	Recall: 0.9898)	normal(Prec: 0.9792	Recall: 0.991 )	attack(Prec: 0.9953	Recall: 0.9892)
+
+Results/Nominal/Extra noise/No feature selection/DDoS type/
+J48: Weighted Avg.(Prec: 0.7908	Recall: 0.7856)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9881	Recall: 0.994 )	slowRead(Prec: 0.6622	Recall: 0.5868)	slowHeaders(Prec: 0.5625	Recall: 0.8084)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.625 	Recall: 0.4192)
+KNN: Weighted Avg.(Prec: 0.7669	Recall: 0.7651)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.9697	Recall: 0.9581)	slowRead(Prec: 0.5882	Recall: 0.5389)	slowHeaders(Prec: 0.6272	Recall: 0.6347)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5193	Recall: 0.5629)
+NB : Weighted Avg.(Prec: 0.5544	Recall: 0.4698)	tcpFlood(Prec: 0.6901	Recall: 1     )	httpFlood(Prec: 0.9714	Recall: 0.2036)	slowRead(Prec: 0.2598	Recall: 0.7904)	slowHeaders(Prec: 0.25  	Recall: 0.012 )	udpFlood(Prec: 0.7881	Recall: 1     )	slowBody(Prec: 0.4706	Recall: 0.0479)
+RF : Weighted Avg.(Prec: 0.8128	Recall: 0.8125)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.6781	Recall: 0.5928)	slowHeaders(Prec: 0.6611	Recall: 0.7126)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.6264	Recall: 0.6527)
+SMO: Weighted Avg.(Prec: 0.6739	Recall: 0.6379)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.9863	Recall: 0.8623)	slowRead(Prec: 0.4545	Recall: 0.0299)	slowHeaders(Prec: 0.3686	Recall: 0.6467)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3783	Recall: 0.521 )
+
+Results/Nominal/Normal noise/Hybrid to Single/NB/isAttack/
+J48: Weighted Avg.(Prec: 0.9959	Recall: 0.9959)	normal(Prec: 0.997 	Recall: 0.991 )	attack(Prec: 0.9954	Recall: 0.9985)
+KNN: Weighted Avg.(Prec: 0.999 	Recall: 0.999 )	normal(Prec: 0.997 	Recall: 1     )	attack(Prec: 1     	Recall: 0.9985)
+NB : Weighted Avg.(Prec: 0.9759	Recall: 0.9755)	normal(Prec: 0.9504	Recall: 0.979 )	attack(Prec: 0.989 	Recall: 0.9738)
+RF : Weighted Avg.(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	attack(Prec: 1     	Recall: 1     )
+SMO: Weighted Avg.(Prec: 0.9969	Recall: 0.9969)	normal(Prec: 0.997 	Recall: 0.994 )	attack(Prec: 0.9969	Recall: 0.9985)
+
+Results/Nominal/Normal noise/Hybrid to Single/NB/DDoS type/
+J48: Weighted Avg.(Prec: 0.7665	Recall: 0.7608)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.6338	Recall: 0.5389)	slowHeaders(Prec: 0.5064	Recall: 0.7066)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.568 	Recall: 0.4251)
+KNN: Weighted Avg.(Prec: 0.7212	Recall: 0.7198)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9697	Recall: 0.9581)	slowRead(Prec: 0.4878	Recall: 0.479 )	slowHeaders(Prec: 0.5673	Recall: 0.5808)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.426 	Recall: 0.4311)
+NB : Weighted Avg.(Prec: 0.5912	Recall: 0.5884)	tcpFlood(Prec: 0.994 	Recall: 0.994 )	httpFlood(Prec: 0.7568	Recall: 0.6707)	slowRead(Prec: 0.3958	Recall: 0.1138)	slowHeaders(Prec: 0.3762	Recall: 0.2275)	udpFlood(Prec: 0.744 	Recall: 1     )	slowBody(Prec: 0.3481	Recall: 0.7066)
+RF : Weighted Avg.(Prec: 0.7566	Recall: 0.7554)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.5987	Recall: 0.5449)	slowHeaders(Prec: 0.5747	Recall: 0.5988)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.48  	Recall: 0.503 )
+SMO: Weighted Avg.(Prec: 0.6204	Recall: 0.5884)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8358	Recall: 0.6707)	slowRead(Prec: 0.3824	Recall: 0.0778)	slowHeaders(Prec: 0.2927	Recall: 0.4311)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3797	Recall: 0.6048)
+
+Results/Nominal/Normal noise/Hybrid to Single/NB/single/
+J48: Weighted Avg.(Prec: 0.8351	Recall: 0.8338)	tcpFlood(Prec: 1     	Recall: 0.9369)	normal(Prec: 0.9852	Recall: 1     )	httpFlood(Prec: 0.9279	Recall: 0.9279)	slowRead(Prec: 0.6111	Recall: 0.4955)	slowHeaders(Prec: 0.5478	Recall: 0.7748)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5   	Recall: 0.3964)
+KNN: Weighted Avg.(Prec: 0.8318	Recall: 0.8298)	tcpFlood(Prec: 0.9907	Recall: 0.964 )	normal(Prec: 0.9881	Recall: 0.994 )	httpFlood(Prec: 0.945 	Recall: 0.9279)	slowRead(Prec: 0.578 	Recall: 0.5676)	slowHeaders(Prec: 0.6   	Recall: 0.5946)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4359	Recall: 0.4595)
+NB : Weighted Avg.(Prec: 0.7442	Recall: 0.7166)	tcpFlood(Prec: 1     	Recall: 0.982 )	normal(Prec: 1     	Recall: 0.958 )	httpFlood(Prec: 0.8193	Recall: 0.6126)	slowRead(Prec: 0.3174	Recall: 0.4775)	slowHeaders(Prec: 0.4583	Recall: 0.0991)	udpFlood(Prec: 0.8087	Recall: 1     )	slowBody(Prec: 0.3049	Recall: 0.4505)
+RF : Weighted Avg.(Prec: 0.8366	Recall: 0.8338)	tcpFlood(Prec: 1     	Recall: 0.964 )	normal(Prec: 0.9911	Recall: 1     )	httpFlood(Prec: 0.9444	Recall: 0.9189)	slowRead(Prec: 0.5676	Recall: 0.5676)	slowHeaders(Prec: 0.6038	Recall: 0.5766)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.4667	Recall: 0.5045)
+SMO: Weighted Avg.(Prec: 0.7334	Recall: 0.7472)	tcpFlood(Prec: 1     	Recall: 0.8649)	normal(Prec: 0.9705	Recall: 0.988 )	httpFlood(Prec: 0.9868	Recall: 0.6757)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.3515	Recall: 0.6396)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3943	Recall: 0.6216)
+
+Results/Nominal/Normal noise/Hybrid to Single/J48/isAttack/
+J48: Weighted Avg.(Prec: 0.999 	Recall: 0.999 )	normal(Prec: 1     	Recall: 0.997 )	attack(Prec: 0.9985	Recall: 1     )
+KNN: Weighted Avg.(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	attack(Prec: 1     	Recall: 1     )
+NB : Weighted Avg.(Prec: 0.9745	Recall: 0.9725)	normal(Prec: 0.925 	Recall: 1     )	attack(Prec: 1     	Recall: 0.9583)
+RF : Weighted Avg.(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	attack(Prec: 1     	Recall: 1     )
+SMO: Weighted Avg.(Prec: 0.992 	Recall: 0.9918)	normal(Prec: 0.9794	Recall: 0.997 )	attack(Prec: 0.9984	Recall: 0.9892)
+
+Results/Nominal/Normal noise/Hybrid to Single/J48/DDoS type/
+J48: Weighted Avg.(Prec: 0.8081	Recall: 0.8006)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6467	Recall: 0.6467)	slowHeaders(Prec: 0.5867	Recall: 0.7904)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.7064	Recall: 0.4611)
+KNN: Weighted Avg.(Prec: 0.7669	Recall: 0.7662)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9583	Recall: 0.9641)	slowRead(Prec: 0.5793	Recall: 0.5689)	slowHeaders(Prec: 0.6524	Recall: 0.6407)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5145	Recall: 0.5329)
+NB : Weighted Avg.(Prec: 0.5485	Recall: 0.4688)	tcpFlood(Prec: 0.7696	Recall: 1     )	httpFlood(Prec: 1     	Recall: 0.1677)	slowRead(Prec: 0.2665	Recall: 0.8204)	slowHeaders(Prec: 0.2   	Recall: 0.012 )	udpFlood(Prec: 0.6596	Recall: 1     )	slowBody(Prec: 0.4444	Recall: 0.0479)
+RF : Weighted Avg.(Prec: 0.8075	Recall: 0.8071)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6732	Recall: 0.6168)	slowHeaders(Prec: 0.6536	Recall: 0.7006)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.6095	Recall: 0.6168)
+SMO: Weighted Avg.(Prec: 0.5643	Recall: 0.5754)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8952	Recall: 0.5629)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.3022	Recall: 0.5808)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3815	Recall: 0.5689)
+
+Results/Nominal/Normal noise/Hybrid to Single/J48/single/
+J48: Weighted Avg.(Prec: 0.8279	Recall: 0.8257)	tcpFlood(Prec: 0.9908	Recall: 0.973 )	normal(Prec: 0.991 	Recall: 0.991 )	httpFlood(Prec: 0.9806	Recall: 0.9099)	slowRead(Prec: 0.5584	Recall: 0.3874)	slowHeaders(Prec: 0.5369	Recall: 0.7207)	udpFlood(Prec: 0.9109	Recall: 0.9892)	slowBody(Prec: 0.5138	Recall: 0.5045)
+KNN: Weighted Avg.(Prec: 0.8199	Recall: 0.8216)	tcpFlood(Prec: 0.9908	Recall: 0.973 )	normal(Prec: 0.9911	Recall: 1     )	httpFlood(Prec: 0.9279	Recall: 0.9279)	slowRead(Prec: 0.5556	Recall: 0.5405)	slowHeaders(Prec: 0.5913	Recall: 0.6126)	udpFlood(Prec: 0.8947	Recall: 0.914 )	slowBody(Prec: 0.4579	Recall: 0.4414)
+NB : Weighted Avg.(Prec: 0.7489	Recall: 0.7554)	tcpFlood(Prec: 0.9098	Recall: 1     )	normal(Prec: 0.9354	Recall: 1     )	httpFlood(Prec: 0.9211	Recall: 0.6306)	slowRead(Prec: 0.4627	Recall: 0.2793)	slowHeaders(Prec: 0.4388	Recall: 0.3874)	udpFlood(Prec: 0.7949	Recall: 1     )	slowBody(Prec: 0.4138	Recall: 0.5405)
+RF : Weighted Avg.(Prec: 0.8392	Recall: 0.8379)	tcpFlood(Prec: 1     	Recall: 1     )	normal(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.972 	Recall: 0.9369)	slowRead(Prec: 0.5833	Recall: 0.5045)	slowHeaders(Prec: 0.6036	Recall: 0.6036)	udpFlood(Prec: 0.9286	Recall: 0.9785)	slowBody(Prec: 0.48  	Recall: 0.5405)
+SMO: Weighted Avg.(Prec: 0.7588	Recall: 0.7023)	tcpFlood(Prec: 1     	Recall: 0.8559)	normal(Prec: 0.9677	Recall: 0.991 )	httpFlood(Prec: 1     	Recall: 0.5766)	slowRead(Prec: 0.6667	Recall: 0.018 )	slowHeaders(Prec: 0.3564	Recall: 0.3243)	udpFlood(Prec: 0.4604	Recall: 1     )	slowBody(Prec: 0.3943	Recall: 0.6216)
+
+Results/Nominal/Extra noise/Hybrid to Single/J48/isAttack/
+J48: Weighted Avg.(Prec: 0.8749	Recall: 0.8512)	normal(Prec: 0.9845	Recall: 0.5706)	attack(Prec: 0.8185	Recall: 0.9954)
+KNN: Weighted Avg.(Prec: 0.7363	Recall: 0.6667)	normal(Prec: 0.875 	Recall: 0.021 )	attack(Prec: 0.665 	Recall: 0.9985)
+NB : Weighted Avg.(Prec: 0.5499	Recall: 0.6137)	normal(Prec: 0.3357	Recall: 0.1411)	attack(Prec: 0.6599	Recall: 0.8565)
+RF : Weighted Avg.(Prec: 0.854 	Recall: 0.8155)	normal(Prec: 0.9935	Recall: 0.4595)	attack(Prec: 0.7823	Recall: 0.9985)
+SMO: Weighted Avg.(Prec: 0.4065	Recall: 0.4954)	normal(Prec: 0.0398	Recall: 0.021 )	attack(Prec: 0.595 	Recall: 0.7392)
+
+Results/Nominal/Extra noise/Hybrid to Single/J48/DDoS type/
+J48: Weighted Avg.(Prec: 0.8081	Recall: 0.8006)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6467	Recall: 0.6467)	slowHeaders(Prec: 0.5867	Recall: 0.7904)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.7064	Recall: 0.4611)
+KNN: Weighted Avg.(Prec: 0.7669	Recall: 0.7662)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9583	Recall: 0.9641)	slowRead(Prec: 0.5793	Recall: 0.5689)	slowHeaders(Prec: 0.6524	Recall: 0.6407)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.5145	Recall: 0.5329)
+NB : Weighted Avg.(Prec: 0.5485	Recall: 0.4688)	tcpFlood(Prec: 0.7696	Recall: 1     )	httpFlood(Prec: 1     	Recall: 0.1677)	slowRead(Prec: 0.2665	Recall: 0.8204)	slowHeaders(Prec: 0.2   	Recall: 0.012 )	udpFlood(Prec: 0.6596	Recall: 1     )	slowBody(Prec: 0.4444	Recall: 0.0479)
+RF : Weighted Avg.(Prec: 0.8075	Recall: 0.8071)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.6732	Recall: 0.6168)	slowHeaders(Prec: 0.6536	Recall: 0.7006)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.6095	Recall: 0.6168)
+SMO: Weighted Avg.(Prec: 0.5643	Recall: 0.5754)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8952	Recall: 0.5629)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.3022	Recall: 0.5808)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3815	Recall: 0.5689)
+
+Results/Nominal/Extra noise/Hybrid to Single/J48/single/
+J48: Weighted Avg.(Prec: 0.7186	Recall: 0.58  )	tcpFlood(Prec: 0.9643	Recall: 0.973 )	normal(Prec: 0.8875	Recall: 0.2132)	httpFlood(Prec: 0.3376	Recall: 0.9459)	slowRead(Prec: 0.625 	Recall: 0.4955)	slowHeaders(Prec: 0.5743	Recall: 0.7658)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.349 	Recall: 0.4685)
+KNN: Weighted Avg.(Prec: 0.5155	Recall: 0.4862)	tcpFlood(Prec: 0.9908	Recall: 0.973 )	normal(Prec: 0.3529	Recall: 0.018 )	httpFlood(Prec: 0.2669	Recall: 0.8559)	slowRead(Prec: 0.5631	Recall: 0.5225)	slowHeaders(Prec: 0.5641	Recall: 0.5946)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.2742	Recall: 0.4595)
+NB : Weighted Avg.(Prec: 0.4641	Recall: 0.3588)	tcpFlood(Prec: 1     	Recall: 0.982 )	normal(Prec: 0.4615	Recall: 0.018 )	httpFlood(Prec: 0.0534	Recall: 0.1622)	slowRead(Prec: 0.3396	Recall: 0.3243)	slowHeaders(Prec: 0.384 	Recall: 0.4324)	udpFlood(Prec: 0.8455	Recall: 1     )	slowBody(Prec: 0.232 	Recall: 0.3784)
+RF : Weighted Avg.(Prec: 0.7192	Recall: 0.5637)	tcpFlood(Prec: 1     	Recall: 0.991 )	normal(Prec: 0.9211	Recall: 0.2102)	httpFlood(Prec: 0.3455	Recall: 0.9369)	slowRead(Prec: 0.5429	Recall: 0.5135)	slowHeaders(Prec: 0.5625	Recall: 0.5676)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3043	Recall: 0.5045)
+SMO: Weighted Avg.(Prec: 0.3567	Recall: 0.3048)	tcpFlood(Prec: 1     	Recall: 0.8468)	normal(Prec: 0.047 	Recall: 0.021 )	httpFlood(Prec: 0.0504	Recall: 0.1532)	slowRead(Prec: 0.3559	Recall: 0.1892)	slowHeaders(Prec: 0.5   	Recall: 0.009 )	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.2672	Recall: 0.5946)
+
+Results/Nominal/Extra noise/Hybrid to Single/NB/isAttack/
+J48: Weighted Avg.(Prec: 0.9888	Recall: 0.9888)	normal(Prec: 0.9792	Recall: 0.988 )	attack(Prec: 0.9938	Recall: 0.9892)
+KNN: Weighted Avg.(Prec: 0.9878	Recall: 0.9878)	normal(Prec: 0.9763	Recall: 0.988 )	attack(Prec: 0.9938	Recall: 0.9877)
+NB : Weighted Avg.(Prec: 0.9919	Recall: 0.9918)	normal(Prec: 0.9969	Recall: 0.979 )	attack(Prec: 0.9893	Recall: 0.9985)
+RF : Weighted Avg.(Prec: 0.9609	Recall: 0.9602)	normal(Prec: 0.9773	Recall: 0.9039)	attack(Prec: 0.9525	Recall: 0.9892)
+SMO: Weighted Avg.(Prec: 0.9878	Recall: 0.9878)	normal(Prec: 0.9791	Recall: 0.985 )	attack(Prec: 0.9923	Recall: 0.9892)
+
+Results/Nominal/Extra noise/Hybrid to Single/NB/DDoS type/
+J48: Weighted Avg.(Prec: 0.7665	Recall: 0.7608)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 1     )	slowRead(Prec: 0.6338	Recall: 0.5389)	slowHeaders(Prec: 0.5064	Recall: 0.7066)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.568 	Recall: 0.4251)
+KNN: Weighted Avg.(Prec: 0.7212	Recall: 0.7198)	tcpFlood(Prec: 1     	Recall: 0.994 )	httpFlood(Prec: 0.9697	Recall: 0.9581)	slowRead(Prec: 0.4878	Recall: 0.479 )	slowHeaders(Prec: 0.5673	Recall: 0.5808)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.426 	Recall: 0.4311)
+NB : Weighted Avg.(Prec: 0.5912	Recall: 0.5884)	tcpFlood(Prec: 0.994 	Recall: 0.994 )	httpFlood(Prec: 0.7568	Recall: 0.6707)	slowRead(Prec: 0.3958	Recall: 0.1138)	slowHeaders(Prec: 0.3762	Recall: 0.2275)	udpFlood(Prec: 0.744 	Recall: 1     )	slowBody(Prec: 0.3481	Recall: 0.7066)
+RF : Weighted Avg.(Prec: 0.7566	Recall: 0.7554)	tcpFlood(Prec: 1     	Recall: 1     )	httpFlood(Prec: 0.994 	Recall: 0.994 )	slowRead(Prec: 0.5987	Recall: 0.5449)	slowHeaders(Prec: 0.5747	Recall: 0.5988)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.48  	Recall: 0.503 )
+SMO: Weighted Avg.(Prec: 0.6204	Recall: 0.5884)	tcpFlood(Prec: 1     	Recall: 0.9281)	httpFlood(Prec: 0.8358	Recall: 0.6707)	slowRead(Prec: 0.3824	Recall: 0.0778)	slowHeaders(Prec: 0.2927	Recall: 0.4311)	udpFlood(Prec: 1     	Recall: 1     )	slowBody(Prec: 0.3797	Recall: 0.6048)
+
+Results/Nominal/Extra noise/Hybrid to Single/NB/single/
+J48: Weighted Avg.(Prec: 0.3952	Recall: 0.4883)	tcpFlood(Prec: 0     	Recall: 0     )	normal(Prec: 0.4722	Recall: 0.994 )	httpFlood(Prec: 0.7245	Recall: 0.6396)	slowRead(Prec: 0.3333	Recall: 0.0811)	slowHeaders(Prec: 0.6154	Recall: 0.1441)	udpFlood(Prec: 0     	Recall: 0     )	slowBody(Prec: 0.4031	Recall: 0.4685)
+KNN: Weighted Avg.(Prec: 0.3981	Recall: 0.4873)	tcpFlood(Prec: 0     	Recall: 0     )	normal(Prec: 0.4687	Recall: 0.988 )	httpFlood(Prec: 0.69  	Recall: 0.6216)	slowRead(Prec: 0.3793	Recall: 0.0991)	slowHeaders(Prec: 0.6154	Recall: 0.1441)	udpFlood(Prec: 0     	Recall: 0     )	slowBody(Prec: 0.4274	Recall: 0.4775)
+NB : Weighted Avg.(Prec: 0.5841	Recall: 0.4852)	tcpFlood(Prec: 0.2211	Recall: 1     )	normal(Prec: 0.9828	Recall: 0.6847)	httpFlood(Prec: 0.9692	Recall: 0.5676)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.625 	Recall: 0.045 )	udpFlood(Prec: 0     	Recall: 0     )	slowBody(Prec: 0.3988	Recall: 0.6216)
+RF : Weighted Avg.(Prec: 0.399 	Recall: 0.4893)	tcpFlood(Prec: 0     	Recall: 0     )	normal(Prec: 0.4708	Recall: 0.994 )	httpFlood(Prec: 0.697 	Recall: 0.6216)	slowRead(Prec: 0.4091	Recall: 0.0811)	slowHeaders(Prec: 0.5862	Recall: 0.1532)	udpFlood(Prec: 0     	Recall: 0     )	slowBody(Prec: 0.4219	Recall: 0.4865)
+SMO: Weighted Avg.(Prec: 0.3659	Recall: 0.4913)	tcpFlood(Prec: 0     	Recall: 0     )	normal(Prec: 0.4722	Recall: 0.994 )	httpFlood(Prec: 1     	Recall: 0.5766)	slowRead(Prec: 0     	Recall: 0     )	slowHeaders(Prec: 0.4186	Recall: 0.1622)	udpFlood(Prec: 0     	Recall: 0     )	slowBody(Prec: 0.3988	Recall: 0.6216)

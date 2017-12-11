@@ -1,0 +1,87 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, highrate
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0111 * (normalized) duration
+ +      -1.5956 * (normalized) protocol_type=tcp
+ +       1.5956 * (normalized) protocol_type=udp
+ +      -3.7434 * (normalized) src_bytes
+ +      -1.0193 * (normalized) count
+ +      -1.2878 * (normalized) srv_count
+ +       0.712  * (normalized) srv_diff_host_rate
+ +       3.1775 * (normalized) dst_host_srv_count
+ +      -1.5836 * (normalized) dst_host_srv_diff_host_rate
+ -       0.626 
+
+Number of kernel evaluations: 357262 (65.637% cached)
+
+Classifier for classes: normal, lowrate
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         3.1946 * (normalized) duration
+ +      -0      * (normalized) protocol_type=tcp
+ +      -2.9793 * (normalized) src_bytes
+ +     -11.0222 * (normalized) count
+ +     -11.065  * (normalized) srv_count
+ +      -8.5    * (normalized) srv_diff_host_rate
+ +       1.0527 * (normalized) dst_host_srv_count
+ +      -4.8    * (normalized) dst_host_srv_diff_host_rate
+ +       0.382 
+
+Number of kernel evaluations: 98513 (61.969% cached)
+
+Classifier for classes: highrate, lowrate
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         4.2504 * (normalized) duration
+ +       1.0864 * (normalized) protocol_type=tcp
+ +      -1.0864 * (normalized) protocol_type=udp
+ +      -0.6721 * (normalized) src_bytes
+ +      -2.9422 * (normalized) count
+ +      -2.7692 * (normalized) srv_count
+ +      -8.07   * (normalized) srv_diff_host_rate
+ +      -0.235  * (normalized) dst_host_srv_count
+ +      -0      * (normalized) dst_host_srv_diff_host_rate
+ +       0.0906
+
+Number of kernel evaluations: 445758 (67.533% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         341               34.7604 %
+Incorrectly Classified Instances       640               65.2396 %
+Kappa statistic                          0.0164
+Mean absolute error                      0.4381
+Root mean squared error                  0.5384
+Relative absolute error                 98.6061 %
+Root relative squared error            114.2318 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.015    0.443    0.017      0.015    0.016      -0.443   0.239     0.306     normal
+                 0.035    0.203    0.075      0.035    0.048      -0.220   0.458     0.328     highrate
+                 0.976    0.336    0.599      0.976    0.742      0.609    0.826     0.596     lowrate
+Weighted Avg.    0.348    0.330    0.233      0.348    0.273      -0.014   0.508     0.412     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   5 135 193 |   a = normal
+ 279  11  25 |   b = highrate
+   8   0 325 |   c = lowrate

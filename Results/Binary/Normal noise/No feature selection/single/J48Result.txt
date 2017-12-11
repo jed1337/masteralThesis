@@ -1,0 +1,102 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+srv_count <= 1187
+|   dst_host_srv_count <= 100
+|   |   dst_host_same_src_port_rate <= 0.5
+|   |   |   dst_bytes <= 718
+|   |   |   |   duration <= 0
+|   |   |   |   |   flag = OTH
+|   |   |   |   |   |   dst_host_srv_count <= 93
+|   |   |   |   |   |   |   srv_count <= 103
+|   |   |   |   |   |   |   |   src_bytes <= 78
+|   |   |   |   |   |   |   |   |   src_bytes <= 60
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate <= 0.31
+|   |   |   |   |   |   |   |   |   |   |   protocol_type = tcp: lowrate (17.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   protocol_type = icmp: lowrate (0.0)
+|   |   |   |   |   |   |   |   |   |   |   protocol_type = udp: highrate (2.0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate > 0.31: highrate (3.0)
+|   |   |   |   |   |   |   |   |   src_bytes > 60: highrate (40.0/4.0)
+|   |   |   |   |   |   |   |   src_bytes > 78: lowrate (85.0)
+|   |   |   |   |   |   |   srv_count > 103: lowrate (373.0/2.0)
+|   |   |   |   |   |   dst_host_srv_count > 93
+|   |   |   |   |   |   |   count <= 351
+|   |   |   |   |   |   |   |   src_bytes <= 116: highrate (32.0)
+|   |   |   |   |   |   |   |   src_bytes > 116: lowrate (4.0)
+|   |   |   |   |   |   |   count > 351: lowrate (17.0)
+|   |   |   |   |   flag = REJ: normal (4.0)
+|   |   |   |   |   flag = RSTO: lowrate (0.0)
+|   |   |   |   |   flag = RSTOS0: lowrate (0.0)
+|   |   |   |   |   flag = RSTR: lowrate (0.0)
+|   |   |   |   |   flag = S0: lowrate (0.0)
+|   |   |   |   |   flag = S1
+|   |   |   |   |   |   serror_rate <= 0.99: lowrate (60.0/1.0)
+|   |   |   |   |   |   serror_rate > 0.99
+|   |   |   |   |   |   |   dst_bytes <= 66: lowrate (9.0)
+|   |   |   |   |   |   |   dst_bytes > 66
+|   |   |   |   |   |   |   |   src_bytes <= 324: highrate (18.0)
+|   |   |   |   |   |   |   |   src_bytes > 324: lowrate (5.0)
+|   |   |   |   |   flag = S2: lowrate (0.0)
+|   |   |   |   |   flag = S3: lowrate (0.0)
+|   |   |   |   |   flag = SF: lowrate (0.0)
+|   |   |   |   |   flag = SH: lowrate (0.0)
+|   |   |   |   duration > 0: lowrate (597.0)
+|   |   |   dst_bytes > 718
+|   |   |   |   dst_bytes <= 821: highrate (431.0)
+|   |   |   |   dst_bytes > 821
+|   |   |   |   |   duration <= 4
+|   |   |   |   |   |   flag = OTH: normal (0.0)
+|   |   |   |   |   |   flag = REJ: normal (0.0)
+|   |   |   |   |   |   flag = RSTO: lowrate (2.0)
+|   |   |   |   |   |   flag = RSTOS0: normal (0.0)
+|   |   |   |   |   |   flag = RSTR: normal (0.0)
+|   |   |   |   |   |   flag = S0: normal (0.0)
+|   |   |   |   |   |   flag = S1: normal (0.0)
+|   |   |   |   |   |   flag = S2: normal (0.0)
+|   |   |   |   |   |   flag = S3: highrate (2.0)
+|   |   |   |   |   |   flag = SF: normal (54.0/1.0)
+|   |   |   |   |   |   flag = SH: normal (0.0)
+|   |   |   |   |   duration > 4: lowrate (162.0)
+|   |   dst_host_same_src_port_rate > 0.5: highrate (637.0/1.0)
+|   dst_host_srv_count > 100: normal (323.0)
+srv_count > 1187
+|   count <= 6368
+|   |   src_bytes <= 109
+|   |   |   src_bytes <= 75: normal (370.0)
+|   |   |   src_bytes > 75
+|   |   |   |   dst_host_count <= 74
+|   |   |   |   |   dst_host_count <= 61: normal (10.0/1.0)
+|   |   |   |   |   dst_host_count > 61: highrate (20.0/4.0)
+|   |   |   |   dst_host_count > 74: normal (14.0)
+|   |   src_bytes > 109: normal (555.0)
+|   count > 6368: highrate (79.0)
+
+Number of Leaves  : 	45
+
+Size of the tree : 	70
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         973               99.1845 %
+Incorrectly Classified Instances         8                0.8155 %
+Kappa statistic                          0.9878
+Mean absolute error                      0.0122
+Root mean squared error                  0.0806
+Relative absolute error                  2.7405 %
+Root relative squared error             17.1007 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.003    0.994      0.994    0.994      0.991    0.999     0.996     normal
+                 0.981    0.003    0.994      0.981    0.987      0.981    0.996     0.993     highrate
+                 1.000    0.006    0.988      1.000    0.994      0.991    0.999     0.996     lowrate
+Weighted Avg.    0.992    0.004    0.992      0.992    0.992      0.988    0.998     0.995     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 331   2   0 |   a = normal
+   2 309   4 |   b = highrate
+   0   0 333 |   c = lowrate

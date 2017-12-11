@@ -1,0 +1,36 @@
+=== Classifier ===
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+=== Dedicated test set ===
+=== Summary of KNN===
+
+Correctly Classified Instances         842               85.8308 %
+Incorrectly Classified Instances       139               14.1692 %
+Kappa statistic                          0.8254
+Mean absolute error                      0.0407
+Root mean squared error                  0.2001
+Relative absolute error                 17.5361 %
+Root relative squared error             58.766  %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.982    0.003    0.973      0.982    0.978      0.975    0.990     0.958     tcpFlood
+                 0.997    0.003    0.994      0.997    0.996      0.993    0.997     0.992     normal
+                 0.964    0.001    0.991      0.964    0.977      0.974    0.983     0.961     httpFlood
+                 0.541    0.039    0.638      0.541    0.585      0.540    0.774     0.414     slowRead
+                 0.649    0.044    0.655      0.649    0.652      0.607    0.821     0.468     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.622    0.070    0.531      0.622    0.573      0.515    0.802     0.393     slowBody
+Weighted Avg.    0.858    0.019    0.861      0.858    0.859      0.841    0.928     0.793     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 109   2   0   0   0   0   0 |   a = tcpFlood
+   0 332   0   0   1   0   0 |   b = normal
+   1   0 107   1   1   0   1 |   c = httpFlood
+   1   0   1  60  15   0  34 |   d = slowRead
+   1   0   0  12  72   0  26 |   e = slowHeaders
+   0   0   0   0   0  93   0 |   f = udpFlood
+   0   0   0  21  21   0  69 |   g = slowBody

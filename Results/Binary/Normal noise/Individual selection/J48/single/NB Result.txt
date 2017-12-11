@@ -1,0 +1,88 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                         Class
+Attribute               normal  highrate   lowrate
+                        (0.34)    (0.32)    (0.34)
+===================================================
+protocol_type
+  tcp                    1334.0     714.0    1333.0
+  icmp                      1.0       1.0       1.0
+  udp                       1.0     548.0       1.0
+  [total]                1336.0    1263.0    1335.0
+
+flag
+  OTH                     425.0     809.0     498.0
+  REJ                      26.0       1.0       1.0
+  RSTO                      2.0      63.0     159.0
+  RSTOS0                    1.0       1.0       1.0
+  RSTR                      8.0       1.0       1.0
+  S0                        2.0       1.0       1.0
+  S1                       20.0      20.0     665.0
+  S2                       12.0       1.0      13.0
+  S3                       17.0     372.0       1.0
+  SF                      830.0       1.0       2.0
+  SH                        1.0       1.0       1.0
+  [total]                1344.0    1271.0    1343.0
+
+src_bytes
+  mean                 478.1464  176.4067  391.1018
+  std. dev.            398.6106  152.7108  526.2133
+  weight sum               1333      1260      1332
+  precision             11.9175   11.9175   11.9175
+
+count
+  mean                2294.7197 1184.4895  378.3044
+  std. dev.           1715.2229 3973.1971  282.8041
+  weight sum               1333      1260      1332
+  precision             15.4476   15.4476   15.4476
+
+srv_count
+  mean                2295.3281 1172.5972  378.0567
+  std. dev.            1714.305 3974.7717  282.7083
+  weight sum               1333      1260      1332
+  precision             15.4831   15.4831   15.4831
+
+srv_diff_host_rate
+  mean                   0.0311    0.0348         0
+  std. dev.              0.1305    0.1269    0.0025
+  weight sum               1333      1260      1332
+  precision              0.0149    0.0149    0.0149
+
+dst_host_count
+  mean                  89.3846   59.7466   82.0407
+  std. dev.             60.6077   32.5695    24.919
+  weight sum               1333      1260      1332
+  precision              1.7958    1.7958    1.7958
+
+dst_host_srv_count
+  mean                 118.9689   59.5113   81.8374
+  std. dev.             78.5916    32.152   24.6335
+  weight sum               1333      1260      1332
+  precision                2.04      2.04      2.04
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         946               96.4322 %
+Incorrectly Classified Instances        35                3.5678 %
+Kappa statistic                          0.9464
+Mean absolute error                      0.0297
+Root mean squared error                  0.1412
+Relative absolute error                  6.6742 %
+Root relative squared error             29.957  %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.982    0.000    1.000      0.982    0.991      0.986    0.999     0.999     normal
+                 0.927    0.009    0.980      0.927    0.953      0.932    0.994     0.989     highrate
+                 0.982    0.045    0.919      0.982    0.949      0.923    0.994     0.987     lowrate
+Weighted Avg.    0.964    0.018    0.966      0.964    0.964      0.947    0.996     0.992     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 327   0   6 |   a = normal
+   0 292  23 |   b = highrate
+   0   6 327 |   c = lowrate

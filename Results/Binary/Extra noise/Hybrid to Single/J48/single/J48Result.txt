@@ -1,0 +1,132 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+protocol_type = tcp
+|   duration <= 6
+|   |   src_bytes <= 691
+|   |   |   src_bytes <= 370
+|   |   |   |   srv_diff_host_rate <= 0
+|   |   |   |   |   srv_count <= 1192
+|   |   |   |   |   |   dst_host_srv_count <= 43
+|   |   |   |   |   |   |   count <= 442
+|   |   |   |   |   |   |   |   src_bytes <= 78
+|   |   |   |   |   |   |   |   |   count <= 191
+|   |   |   |   |   |   |   |   |   |   count <= 113
+|   |   |   |   |   |   |   |   |   |   |   src_bytes <= 54: lowrate (5.0)
+|   |   |   |   |   |   |   |   |   |   |   src_bytes > 54
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate <= 0.02
+|   |   |   |   |   |   |   |   |   |   |   |   |   count <= 63
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 34: highrate (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 34
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count <= 30: normal (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count > 30
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count <= 34: highrate (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count > 34: normal (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 60: highrate (20.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   count > 63: normal (15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate > 0.02: normal (13.0)
+|   |   |   |   |   |   |   |   |   |   count > 113
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count <= 24: normal (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count > 24: highrate (69.0)
+|   |   |   |   |   |   |   |   |   count > 191: normal (41.0)
+|   |   |   |   |   |   |   |   src_bytes > 78
+|   |   |   |   |   |   |   |   |   src_bytes <= 110: lowrate (12.0)
+|   |   |   |   |   |   |   |   |   src_bytes > 110: normal (11.0/3.0)
+|   |   |   |   |   |   |   count > 442: lowrate (35.0)
+|   |   |   |   |   |   dst_host_srv_count > 43
+|   |   |   |   |   |   |   src_bytes <= 222
+|   |   |   |   |   |   |   |   count <= 320
+|   |   |   |   |   |   |   |   |   src_bytes <= 66
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate <= 0.17
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count <= 64
+|   |   |   |   |   |   |   |   |   |   |   |   count <= 184
+|   |   |   |   |   |   |   |   |   |   |   |   |   count <= 40: lowrate (12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   count > 40: highrate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   count > 184: lowrate (15.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count > 64: highrate (40.0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate > 0.17: normal (6.0)
+|   |   |   |   |   |   |   |   |   src_bytes > 66
+|   |   |   |   |   |   |   |   |   |   count <= 25
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate <= 0.15: lowrate (5.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate > 0.15: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   count > 25: lowrate (196.0/2.0)
+|   |   |   |   |   |   |   |   count > 320: lowrate (294.0/1.0)
+|   |   |   |   |   |   |   src_bytes > 222
+|   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate <= 0.33: highrate (19.0/1.0)
+|   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate > 0.33: normal (2.0)
+|   |   |   |   |   srv_count > 1192
+|   |   |   |   |   |   count <= 6368
+|   |   |   |   |   |   |   src_bytes <= 71: normal (246.0)
+|   |   |   |   |   |   |   src_bytes > 71
+|   |   |   |   |   |   |   |   src_bytes <= 109
+|   |   |   |   |   |   |   |   |   dst_host_srv_count <= 74
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_count <= 61: normal (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_count > 61: highrate (18.0/2.0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count > 74: normal (10.0)
+|   |   |   |   |   |   |   |   src_bytes > 109: normal (38.0)
+|   |   |   |   |   |   count > 6368: highrate (79.0)
+|   |   |   |   srv_diff_host_rate > 0
+|   |   |   |   |   srv_diff_host_rate <= 0.15: normal (262.0)
+|   |   |   |   |   srv_diff_host_rate > 0.15
+|   |   |   |   |   |   count <= 54: normal (146.0)
+|   |   |   |   |   |   count > 54
+|   |   |   |   |   |   |   dst_host_srv_diff_host_rate <= 0.51
+|   |   |   |   |   |   |   |   count <= 127
+|   |   |   |   |   |   |   |   |   srv_diff_host_rate <= 0.3: normal (20.0)
+|   |   |   |   |   |   |   |   |   srv_diff_host_rate > 0.3
+|   |   |   |   |   |   |   |   |   |   srv_count <= 122
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count <= 30: highrate (4.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count > 30: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   srv_count > 122: normal (8.0)
+|   |   |   |   |   |   |   |   count > 127
+|   |   |   |   |   |   |   |   |   srv_diff_host_rate <= 0.21: normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   srv_diff_host_rate > 0.21: highrate (13.0/1.0)
+|   |   |   |   |   |   |   dst_host_srv_diff_host_rate > 0.51: highrate (6.0)
+|   |   |   src_bytes > 370
+|   |   |   |   src_bytes <= 464
+|   |   |   |   |   src_bytes <= 380: highrate (354.0/1.0)
+|   |   |   |   |   src_bytes > 380
+|   |   |   |   |   |   dst_host_srv_count <= 99
+|   |   |   |   |   |   |   srv_diff_host_rate <= 0.5
+|   |   |   |   |   |   |   |   count <= 1912: lowrate (11.0)
+|   |   |   |   |   |   |   |   count > 1912: normal (2.0)
+|   |   |   |   |   |   |   srv_diff_host_rate > 0.5: normal (2.0)
+|   |   |   |   |   |   dst_host_srv_count > 99: highrate (82.0/2.0)
+|   |   |   |   src_bytes > 464: lowrate (33.0/1.0)
+|   |   src_bytes > 691: normal (402.0/3.0)
+|   duration > 6
+|   |   dst_host_srv_diff_host_rate <= 0.24: lowrate (708.0/1.0)
+|   |   dst_host_srv_diff_host_rate > 0.24: normal (84.0)
+protocol_type = icmp: normal (0.0)
+protocol_type = udp: highrate (547.0)
+
+Number of Leaves  : 	51
+
+Size of the tree : 	100
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         801               81.6514 %
+Incorrectly Classified Instances       180               18.3486 %
+Kappa statistic                          0.7255
+Mean absolute error                      0.1267
+Root mean squared error                  0.345 
+Relative absolute error                 28.5205 %
+Root relative squared error             73.1893 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.483    0.005    0.982      0.483    0.648      0.608    0.656     0.664     normal
+                 0.981    0.174    0.727      0.981    0.835      0.760    0.955     0.892     highrate
+                 0.994    0.094    0.844      0.994    0.913      0.870    0.921     0.775     lowrate
+Weighted Avg.    0.817    0.089    0.853      0.817    0.798      0.746    0.842     0.775     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 161 115  57 |   a = normal
+   2 309   4 |   b = highrate
+   1   1 331 |   c = lowrate

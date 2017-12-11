@@ -1,0 +1,57 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_bytes <= 1886
+|   dst_host_srv_count <= 100
+|   |   srv_count <= 1401
+|   |   |   srv_count <= 5
+|   |   |   |   dst_host_srv_diff_host_rate <= 0.01: attack (25.0/3.0)
+|   |   |   |   dst_host_srv_diff_host_rate > 0.01: normal (3.0)
+|   |   |   srv_count > 5: attack (1918.0)
+|   |   srv_count > 1401
+|   |   |   count <= 6368
+|   |   |   |   dst_host_srv_count <= 59: normal (337.0/3.0)
+|   |   |   |   dst_host_srv_count > 59
+|   |   |   |   |   dst_host_srv_count <= 77
+|   |   |   |   |   |   count <= 4102
+|   |   |   |   |   |   |   count <= 2818
+|   |   |   |   |   |   |   |   dst_host_srv_count <= 69
+|   |   |   |   |   |   |   |   |   dst_host_srv_count <= 67: attack (10.0/1.0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count > 67
+|   |   |   |   |   |   |   |   |   |   count <= 1911: attack (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   count > 1911: normal (5.0)
+|   |   |   |   |   |   |   |   dst_host_srv_count > 69: attack (10.0)
+|   |   |   |   |   |   |   count > 2818: normal (36.0/11.0)
+|   |   |   |   |   |   count > 4102: attack (84.0/10.0)
+|   |   |   |   |   dst_host_srv_count > 77: normal (79.0)
+|   |   |   count > 6368: attack (538.0)
+|   dst_host_srv_count > 100: normal (180.0)
+dst_bytes > 1886: normal (696.0/4.0)
+
+Number of Leaves  : 	14
+
+Size of the tree : 	27
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         977               99.5923 %
+Incorrectly Classified Instances         4                0.4077 %
+Kappa statistic                          0.9909
+Mean absolute error                      0.0059
+Root mean squared error                  0.063 
+Relative absolute error                  1.3075 %
+Root relative squared error             13.3106 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.991    0.002    0.997      0.991    0.994      0.991    0.997     0.995     normal
+                 0.998    0.009    0.995      0.998    0.997      0.991    0.997     0.997     attack
+Weighted Avg.    0.996    0.006    0.996      0.996    0.996      0.991    0.997     0.996     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 330   3 |   a = normal
+   1 647 |   b = attack

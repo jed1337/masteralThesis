@@ -1,0 +1,89 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+srv_count <= 1187
+|   dst_host_srv_count <= 100
+|   |   protocol_type = tcp
+|   |   |   flag = OTH
+|   |   |   |   dst_host_srv_count <= 33
+|   |   |   |   |   srv_count <= 382
+|   |   |   |   |   |   src_bytes <= 74
+|   |   |   |   |   |   |   src_bytes <= 54: lowrate (5.0)
+|   |   |   |   |   |   |   src_bytes > 54: highrate (111.0/3.0)
+|   |   |   |   |   |   src_bytes > 74: lowrate (15.0)
+|   |   |   |   |   srv_count > 382: lowrate (20.0)
+|   |   |   |   dst_host_srv_count > 33
+|   |   |   |   |   dst_host_count <= 93
+|   |   |   |   |   |   srv_count <= 96
+|   |   |   |   |   |   |   src_bytes <= 78
+|   |   |   |   |   |   |   |   count <= 33
+|   |   |   |   |   |   |   |   |   dst_host_count <= 66: lowrate (12.0)
+|   |   |   |   |   |   |   |   |   dst_host_count > 66: highrate (3.0)
+|   |   |   |   |   |   |   |   count > 33: highrate (20.0)
+|   |   |   |   |   |   |   src_bytes > 78: lowrate (68.0)
+|   |   |   |   |   |   srv_count > 96: lowrate (355.0/2.0)
+|   |   |   |   |   dst_host_count > 93
+|   |   |   |   |   |   count <= 351
+|   |   |   |   |   |   |   src_bytes <= 116: highrate (32.0)
+|   |   |   |   |   |   |   src_bytes > 116: lowrate (4.0)
+|   |   |   |   |   |   count > 351: lowrate (17.0)
+|   |   |   flag = REJ: normal (5.0)
+|   |   |   flag = RSTO
+|   |   |   |   src_bytes <= 624: highrate (62.0)
+|   |   |   |   src_bytes > 624: lowrate (158.0)
+|   |   |   flag = RSTOS0: lowrate (0.0)
+|   |   |   flag = RSTR: lowrate (0.0)
+|   |   |   flag = S0: lowrate (0.0)
+|   |   |   flag = S1
+|   |   |   |   src_bytes <= 272
+|   |   |   |   |   src_bytes <= 232: lowrate (139.0)
+|   |   |   |   |   src_bytes > 232: highrate (19.0)
+|   |   |   |   src_bytes > 272: lowrate (525.0)
+|   |   |   flag = S2: lowrate (12.0)
+|   |   |   flag = S3: highrate (371.0)
+|   |   |   flag = SF: normal (54.0/1.0)
+|   |   |   flag = SH: lowrate (0.0)
+|   |   protocol_type = icmp: lowrate (0.0)
+|   |   protocol_type = udp: highrate (547.0)
+|   dst_host_srv_count > 100: normal (323.0)
+srv_count > 1187
+|   count <= 6368
+|   |   src_bytes <= 109
+|   |   |   src_bytes <= 75: normal (370.0)
+|   |   |   src_bytes > 75
+|   |   |   |   dst_host_count <= 74
+|   |   |   |   |   dst_host_count <= 61: normal (10.0/1.0)
+|   |   |   |   |   dst_host_count > 61: highrate (20.0/4.0)
+|   |   |   |   dst_host_count > 74: normal (14.0)
+|   |   src_bytes > 109: normal (555.0)
+|   count > 6368: highrate (79.0)
+
+Number of Leaves  : 	34
+
+Size of the tree : 	57
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         975               99.3884 %
+Incorrectly Classified Instances         6                0.6116 %
+Kappa statistic                          0.9908
+Mean absolute error                      0.0105
+Root mean squared error                  0.0715
+Relative absolute error                  2.3615 %
+Root relative squared error             15.1799 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.003    0.994      1.000    0.997      0.995    0.999     0.997     normal
+                 0.981    0.000    1.000      0.981    0.990      0.986    0.997     0.995     highrate
+                 1.000    0.006    0.988      1.000    0.994      0.991    0.999     0.996     lowrate
+Weighted Avg.    0.994    0.003    0.994      0.994    0.994      0.991    0.999     0.996     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 333   0   0 |   a = normal
+   2 309   4 |   b = highrate
+   0   0 333 |   c = lowrate

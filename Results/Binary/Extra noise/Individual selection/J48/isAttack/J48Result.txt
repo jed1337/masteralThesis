@@ -1,0 +1,96 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_host_srv_diff_host_rate <= 0.01
+|   src_bytes <= 878
+|   |   srv_diff_host_rate <= 0
+|   |   |   count <= 1401
+|   |   |   |   dst_host_srv_count <= 43
+|   |   |   |   |   count <= 190
+|   |   |   |   |   |   protocol_type = tcp
+|   |   |   |   |   |   |   dst_host_srv_count <= 28
+|   |   |   |   |   |   |   |   count <= 34
+|   |   |   |   |   |   |   |   |   duration <= 3: attack (34.0/3.0)
+|   |   |   |   |   |   |   |   |   duration > 3: normal (2.0)
+|   |   |   |   |   |   |   |   count > 34
+|   |   |   |   |   |   |   |   |   count <= 134: normal (18.0)
+|   |   |   |   |   |   |   |   |   count > 134
+|   |   |   |   |   |   |   |   |   |   count <= 148: attack (2.0)
+|   |   |   |   |   |   |   |   |   |   count > 148: normal (2.0)
+|   |   |   |   |   |   |   dst_host_srv_count > 28
+|   |   |   |   |   |   |   |   dst_host_srv_count <= 34: attack (89.0)
+|   |   |   |   |   |   |   |   dst_host_srv_count > 34
+|   |   |   |   |   |   |   |   |   src_bytes <= 60: normal (5.0)
+|   |   |   |   |   |   |   |   |   src_bytes > 60
+|   |   |   |   |   |   |   |   |   |   src_bytes <= 129: attack (7.0)
+|   |   |   |   |   |   |   |   |   |   src_bytes > 129: normal (3.0/1.0)
+|   |   |   |   |   |   protocol_type = icmp: attack (0.0)
+|   |   |   |   |   |   protocol_type = udp: attack (558.0)
+|   |   |   |   |   count > 190
+|   |   |   |   |   |   count <= 442: normal (40.0)
+|   |   |   |   |   |   count > 442: attack (23.0)
+|   |   |   |   dst_host_srv_count > 43: attack (1009.0)
+|   |   |   count > 1401
+|   |   |   |   src_bytes <= 66: normal (246.0)
+|   |   |   |   src_bytes > 66
+|   |   |   |   |   src_bytes <= 108
+|   |   |   |   |   |   count <= 5993
+|   |   |   |   |   |   |   dst_host_srv_count <= 75
+|   |   |   |   |   |   |   |   dst_host_srv_count <= 59
+|   |   |   |   |   |   |   |   |   count <= 5192: attack (3.0/1.0)
+|   |   |   |   |   |   |   |   |   count > 5192: normal (4.0)
+|   |   |   |   |   |   |   |   dst_host_srv_count > 59: attack (89.0/3.0)
+|   |   |   |   |   |   |   dst_host_srv_count > 75: normal (9.0)
+|   |   |   |   |   |   count > 5993: attack (558.0)
+|   |   |   |   |   src_bytes > 108
+|   |   |   |   |   |   count <= 4472: normal (44.0)
+|   |   |   |   |   |   count > 4472
+|   |   |   |   |   |   |   src_bytes <= 154: normal (4.0)
+|   |   |   |   |   |   |   src_bytes > 154: attack (2.0)
+|   |   srv_diff_host_rate > 0
+|   |   |   src_bytes <= 198
+|   |   |   |   srv_diff_host_rate <= 0.21: normal (186.0)
+|   |   |   |   srv_diff_host_rate > 0.21
+|   |   |   |   |   srv_diff_host_rate <= 0.23: attack (10.0)
+|   |   |   |   |   srv_diff_host_rate > 0.23: normal (20.0/2.0)
+|   |   |   src_bytes > 198: attack (86.0)
+|   src_bytes > 878
+|   |   duration <= 4: normal (356.0/2.0)
+|   |   duration > 4: attack (95.0/1.0)
+dst_host_srv_diff_host_rate > 0.01
+|   count <= 55: normal (320.0)
+|   count > 55
+|   |   srv_diff_host_rate <= 0.32: normal (63.0)
+|   |   srv_diff_host_rate > 0.32
+|   |   |   srv_diff_host_rate <= 0.52
+|   |   |   |   srv_count <= 117: attack (6.0)
+|   |   |   |   srv_count > 117: normal (7.0)
+|   |   |   srv_diff_host_rate > 0.52: attack (24.0)
+
+Number of Leaves  : 	34
+
+Size of the tree : 	66
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         835               85.1172 %
+Incorrectly Classified Instances       146               14.8828 %
+Kappa statistic                          0.6304
+Mean absolute error                      0.1505
+Root mean squared error                  0.385 
+Relative absolute error                 33.5497 %
+Root relative squared error             81.2954 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.571    0.005    0.984      0.571    0.722      0.674    0.752     0.715     normal
+                 0.995    0.429    0.819      0.995    0.898      0.674    0.752     0.797     attack
+Weighted Avg.    0.851    0.285    0.875      0.851    0.839      0.674    0.752     0.769     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 190 143 |   a = normal
+   3 645 |   b = attack

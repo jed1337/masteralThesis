@@ -1,0 +1,339 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+protocol_type = tcp
+|   count <= 1187
+|   |   srv_diff_host_rate <= 0
+|   |   |   dst_host_same_src_port_rate <= 0.1
+|   |   |   |   dst_bytes <= 719
+|   |   |   |   |   dst_host_count <= 11
+|   |   |   |   |   |   src_bytes <= 338
+|   |   |   |   |   |   |   count <= 4: normal (12.0)
+|   |   |   |   |   |   |   count > 4: httpFlood (2.0/1.0)
+|   |   |   |   |   |   src_bytes > 338: slowHeaders (4.0/1.0)
+|   |   |   |   |   dst_host_count > 11
+|   |   |   |   |   |   duration <= 0
+|   |   |   |   |   |   |   srv_serror_rate <= 0.99
+|   |   |   |   |   |   |   |   src_bytes <= 66
+|   |   |   |   |   |   |   |   |   count <= 280
+|   |   |   |   |   |   |   |   |   |   src_bytes <= 60
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 38: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count > 38
+|   |   |   |   |   |   |   |   |   |   |   |   count <= 10
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 59: slowRead (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 59: slowHeaders (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   count > 10: slowRead (4.0)
+|   |   |   |   |   |   |   |   |   |   src_bytes > 60: httpFlood (42.0/3.0)
+|   |   |   |   |   |   |   |   |   count > 280
+|   |   |   |   |   |   |   |   |   |   dst_host_count <= 96
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate <= 0.04
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 66
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 669: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 669
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 40
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 914: slowBody (22.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 914: slowRead (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 40: slowRead (10.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 1016
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 56
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 704
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 48: slowHeaders (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 48: slowBody (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 704
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 49
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 46
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 936: slowRead (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 936: slowHeaders (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 46: slowHeaders (21.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 49
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate <= 0.01: slowRead (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate > 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 911: slowRead (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 911: slowHeaders (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 50: slowHeaders (15.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 56: slowRead (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 60: slowHeaders (15.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 1016
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate <= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 49: slowRead (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 49: slowHeaders (11.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate > 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 49: slowBody (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 49
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 1044: slowRead (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 1044
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 1062: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 1062
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 1099: slowBody (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 1099: slowRead (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 66
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 90
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 83: slowRead (13.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 83
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 87: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 87: slowRead (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 60
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 601
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 546
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 80: slowBody (14.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 80
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 370: slowBody (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 370: slowRead (33.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 546: slowBody (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 601: slowRead (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 90: slowHeaders (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate > 0.04: slowHeaders (5.0)
+|   |   |   |   |   |   |   |   |   |   dst_host_count > 96
+|   |   |   |   |   |   |   |   |   |   |   count <= 351: httpFlood (2.0)
+|   |   |   |   |   |   |   |   |   |   |   count > 351: slowHeaders (12.0)
+|   |   |   |   |   |   |   |   src_bytes > 66
+|   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate <= 0
+|   |   |   |   |   |   |   |   |   |   diff_srv_rate <= 0
+|   |   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.98
+|   |   |   |   |   |   |   |   |   |   |   |   flag = OTH
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 44
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 16: slowBody (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 16
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 38: slowRead (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 38
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 30: slowBody (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 30: tcpFlood (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 44
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 481
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 159
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 224
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 58
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 52
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 51: slowHeaders (103.0/53.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 51: slowRead (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 52
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 110: slowHeaders (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 110: slowBody (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 58: slowRead (6.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 224
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 88: slowRead (40.0/19.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 88: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 159
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 306: slowBody (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 306: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 481
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 144: slowRead (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 144: slowBody (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = REJ: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = RSTO: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = RSTOS0: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = RSTR: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = S0: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = S1: slowHeaders (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = S2: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = S3: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = SF: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flag = SH: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.98
+|   |   |   |   |   |   |   |   |   |   |   |   count <= 384: slowBody (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   count > 384: slowRead (26.0/3.0)
+|   |   |   |   |   |   |   |   |   |   diff_srv_rate > 0
+|   |   |   |   |   |   |   |   |   |   |   src_bytes <= 366: slowBody (10.0)
+|   |   |   |   |   |   |   |   |   |   |   src_bytes > 366: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate > 0: tcpFlood (9.0/1.0)
+|   |   |   |   |   |   |   srv_serror_rate > 0.99
+|   |   |   |   |   |   |   |   dst_bytes <= 66
+|   |   |   |   |   |   |   |   |   count <= 572: slowHeaders (7.0)
+|   |   |   |   |   |   |   |   |   count > 572: slowBody (2.0)
+|   |   |   |   |   |   |   |   dst_bytes > 66
+|   |   |   |   |   |   |   |   |   src_bytes <= 306: httpFlood (11.0)
+|   |   |   |   |   |   |   |   |   src_bytes > 306: slowHeaders (9.0/1.0)
+|   |   |   |   |   |   duration > 0
+|   |   |   |   |   |   |   duration <= 9
+|   |   |   |   |   |   |   |   srv_serror_rate <= 0.8: slowBody (20.0/1.0)
+|   |   |   |   |   |   |   |   srv_serror_rate > 0.8
+|   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.99
+|   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.95
+|   |   |   |   |   |   |   |   |   |   |   count <= 61: slowRead (3.0)
+|   |   |   |   |   |   |   |   |   |   |   count > 61: slowHeaders (4.0)
+|   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.95: slowRead (23.0)
+|   |   |   |   |   |   |   |   |   srv_serror_rate > 0.99
+|   |   |   |   |   |   |   |   |   |   src_bytes <= 173: slowBody (22.0/1.0)
+|   |   |   |   |   |   |   |   |   |   src_bytes > 173
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 99
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 94: slowRead (9.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 94: slowHeaders (9.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count > 99
+|   |   |   |   |   |   |   |   |   |   |   |   duration <= 5
+|   |   |   |   |   |   |   |   |   |   |   |   |   count <= 626
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 532: slowHeaders (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 532: slowBody (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   count > 626: slowBody (22.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration > 5
+|   |   |   |   |   |   |   |   |   |   |   |   |   count <= 399: slowBody (82.0/38.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   count > 399
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 699
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 7: slowRead (67.0/29.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 7: slowHeaders (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 699: slowBody (11.0/1.0)
+|   |   |   |   |   |   |   duration > 9
+|   |   |   |   |   |   |   |   dst_bytes <= 280
+|   |   |   |   |   |   |   |   |   count <= 772
+|   |   |   |   |   |   |   |   |   |   src_bytes <= 296: slowRead (4.0)
+|   |   |   |   |   |   |   |   |   |   src_bytes > 296
+|   |   |   |   |   |   |   |   |   |   |   flag = OTH: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = REJ: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = RSTO: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = RSTOS0: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = RSTR: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = S0: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = S1
+|   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.14
+|   |   |   |   |   |   |   |   |   |   |   |   |   count <= 445: slowBody (9.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   count > 445: slowRead (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.14
+|   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 1332
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 12
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.99: slowBody (14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.99
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes <= 744: slowRead (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 744: slowHeaders (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 12
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.99
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 99: slowBody (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 99
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.64: slowHeaders (76.0/33.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.64
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.91
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 348: slowHeaders (22.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 348: slowBody (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.91
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 135
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.98
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 45: slowBody (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 45: slowHeaders (12.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.98: slowBody (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 135: slowHeaders (18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.99
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 99: slowHeaders (15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 99: slowBody (59.0/34.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes > 1332
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count <= 438: slowRead (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count > 438: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = S2
+|   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate <= 0.63: slowHeaders (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   srv_serror_rate > 0.63: slowBody (8.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = S3: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = SF: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   |   |   flag = SH: slowHeaders (0.0)
+|   |   |   |   |   |   |   |   |   count > 772: slowRead (20.0)
+|   |   |   |   |   |   |   |   dst_bytes > 280: slowRead (9.0)
+|   |   |   |   dst_bytes > 719
+|   |   |   |   |   src_bytes <= 628: httpFlood (262.0)
+|   |   |   |   |   src_bytes > 628
+|   |   |   |   |   |   flag = OTH: slowHeaders (0.0)
+|   |   |   |   |   |   flag = REJ: slowHeaders (0.0)
+|   |   |   |   |   |   flag = RSTO
+|   |   |   |   |   |   |   dst_bytes <= 1197
+|   |   |   |   |   |   |   |   diff_srv_rate <= 0
+|   |   |   |   |   |   |   |   |   src_bytes <= 1086
+|   |   |   |   |   |   |   |   |   |   count <= 576: slowHeaders (57.0/2.0)
+|   |   |   |   |   |   |   |   |   |   count > 576: slowRead (2.0)
+|   |   |   |   |   |   |   |   |   src_bytes > 1086
+|   |   |   |   |   |   |   |   |   |   dst_bytes <= 976
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 99
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 86: slowBody (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 86: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count > 99: slowBody (7.0)
+|   |   |   |   |   |   |   |   |   |   dst_bytes > 976
+|   |   |   |   |   |   |   |   |   |   |   dst_bytes <= 1019: slowHeaders (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   dst_bytes > 1019
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count <= 99: slowHeaders (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count > 99: slowBody (12.0/2.0)
+|   |   |   |   |   |   |   |   diff_srv_rate > 0
+|   |   |   |   |   |   |   |   |   duration <= 30
+|   |   |   |   |   |   |   |   |   |   src_bytes <= 905: slowBody (3.0)
+|   |   |   |   |   |   |   |   |   |   src_bytes > 905: slowRead (6.0/1.0)
+|   |   |   |   |   |   |   |   |   duration > 30: slowBody (3.0/1.0)
+|   |   |   |   |   |   |   dst_bytes > 1197
+|   |   |   |   |   |   |   |   duration <= 23: slowBody (4.0/1.0)
+|   |   |   |   |   |   |   |   duration > 23: slowRead (47.0)
+|   |   |   |   |   |   flag = RSTOS0: slowHeaders (0.0)
+|   |   |   |   |   |   flag = RSTR: normal (1.0)
+|   |   |   |   |   |   flag = S0: slowHeaders (0.0)
+|   |   |   |   |   |   flag = S1: slowRead (7.0)
+|   |   |   |   |   |   flag = S2: slowHeaders (0.0)
+|   |   |   |   |   |   flag = S3: slowHeaders (0.0)
+|   |   |   |   |   |   flag = SF: normal (43.0/1.0)
+|   |   |   |   |   |   flag = SH: slowHeaders (0.0)
+|   |   |   dst_host_same_src_port_rate > 0.1
+|   |   |   |   dst_host_same_src_port_rate <= 0.96
+|   |   |   |   |   src_bytes <= 54: slowBody (4.0/1.0)
+|   |   |   |   |   src_bytes > 54: normal (44.0/2.0)
+|   |   |   |   dst_host_same_src_port_rate > 0.96
+|   |   |   |   |   count <= 191
+|   |   |   |   |   |   dst_host_count <= 34
+|   |   |   |   |   |   |   dst_host_count <= 28: normal (4.0/1.0)
+|   |   |   |   |   |   |   dst_host_count > 28: httpFlood (47.0)
+|   |   |   |   |   |   dst_host_count > 34: normal (7.0)
+|   |   |   |   |   count > 191: normal (36.0)
+|   |   srv_diff_host_rate > 0
+|   |   |   diff_srv_rate <= 0.17
+|   |   |   |   count <= 68: normal (321.0)
+|   |   |   |   count > 68
+|   |   |   |   |   srv_diff_host_rate <= 0.21: normal (214.0)
+|   |   |   |   |   srv_diff_host_rate > 0.21
+|   |   |   |   |   |   srv_diff_host_rate <= 0.22: httpFlood (7.0)
+|   |   |   |   |   |   srv_diff_host_rate > 0.22: normal (25.0/4.0)
+|   |   |   diff_srv_rate > 0.17: httpFlood (69.0)
+|   count > 1187
+|   |   count <= 6368
+|   |   |   dst_host_count <= 75
+|   |   |   |   dst_host_count <= 61: normal (236.0/3.0)
+|   |   |   |   dst_host_count > 61
+|   |   |   |   |   src_bytes <= 112
+|   |   |   |   |   |   src_bytes <= 71: normal (14.0)
+|   |   |   |   |   |   src_bytes > 71: tcpFlood (79.0/3.0)
+|   |   |   |   |   src_bytes > 112: normal (22.0)
+|   |   |   dst_host_count > 75: normal (361.0)
+|   |   count > 6368: tcpFlood (356.0)
+protocol_type = icmp: normal (0.0)
+protocol_type = udp: udpFlood (372.0)
+
+Number of Leaves  : 	164
+
+Size of the tree : 	299
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         695               70.8461 %
+Incorrectly Classified Instances       286               29.1539 %
+Kappa statistic                          0.6551
+Mean absolute error                      0.0895
+Root mean squared error                  0.2634
+Relative absolute error                 38.6053 %
+Root relative squared error             77.3539 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.973    0.015    0.893      0.973    0.931      0.923    0.995     0.987     tcpFlood
+                 0.538    0.014    0.952      0.538    0.687      0.630    0.758     0.677     normal
+                 0.946    0.121    0.500      0.946    0.654      0.637    0.915     0.466     httpFlood
+                 0.550    0.037    0.656      0.550    0.598      0.554    0.907     0.617     slowRead
+                 0.730    0.082    0.533      0.730    0.616      0.567    0.923     0.632     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.613    0.064    0.548      0.613    0.579      0.523    0.895     0.556     slowBody
+Weighted Avg.    0.708    0.041    0.772      0.708    0.710      0.671    0.877     0.693     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 108   3   0   0   0   0   0 |   a = tcpFlood
+  13 179 103   1  28   0   9 |   b = normal
+   0   6 105   0   0   0   0 |   c = httpFlood
+   0   0   1  61  17   0  32 |   d = slowRead
+   0   0   1  14  81   0  15 |   e = slowHeaders
+   0   0   0   0   0  93   0 |   f = udpFlood
+   0   0   0  17  26   0  68 |   g = slowBody

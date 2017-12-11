@@ -23,32 +23,16 @@ Classification
 
 # Things to do
 * Miscellaneous
-	* Show warning if file already exists
 	* Automate setting folder path based on configuration
-
-* Feature selection, only select features from the train set
-	* During testing, apply that to the test set.
+	* Clean up driver code
 
 * Classify
 		* Create a train model function
 
 * Add JUnit tests
 	* Use checksum to verify that the files are the same
+	* Add more tests in general
 
-* Make the code more OO
-	* Structure
-		* Preprocess data
-		* Combine data
-		* Split into test train validation
-		* Feature selection on train set
-		* //Apply the selected features to train and validation
-		* Train classifier
-		* Test classifier
-		* Record results
-	* Abstract structure
-		* Preprocess
-			* Format files
-			* Setup train test validation
-		* Feature selection (Give only trianing data)
-		* Classifiers
-		* Evaluate
+* Database
+	* Add stuff to the database
+	* Define a database controller

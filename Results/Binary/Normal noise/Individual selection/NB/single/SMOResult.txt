@@ -1,0 +1,95 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, highrate
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.3539 * (normalized) duration
+ +      -0.432  * (normalized) flag=OTH
+ +      -1.0846 * (normalized) flag=REJ
+ +       2.1209 * (normalized) flag=RSTO
+ +      -0.1632 * (normalized) flag=RSTR
+ +       0.1515 * (normalized) flag=S1
+ +      -0.1957 * (normalized) flag=S2
+ +       2.2022 * (normalized) flag=S3
+ +      -2.5991 * (normalized) flag=SF
+ +       2.9982 * (normalized) count
+ +      -1.5146 * (normalized) rerror_rate
+ +       2.8062 * (normalized) dst_host_same_src_port_rate
+ -       1.208 
+
+Number of kernel evaluations: 647499 (77.043% cached)
+
+Classifier for classes: normal, lowrate
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.043  * (normalized) duration
+ +       1.12   * (normalized) flag=OTH
+ +      -0.3681 * (normalized) flag=REJ
+ +       0.7977 * (normalized) flag=RSTO
+ +      -0.6182 * (normalized) flag=RSTR
+ +      -1      * (normalized) flag=S0
+ +       1.2118 * (normalized) flag=S1
+ +       0.2791 * (normalized) flag=S2
+ +      -0.2177 * (normalized) flag=S3
+ +      -1.2046 * (normalized) flag=SF
+ +     -15.9268 * (normalized) count
+ +      -0.7981 * (normalized) rerror_rate
+ +      -3.8577 * (normalized) dst_host_same_src_port_rate
+ +       0.2061
+
+Number of kernel evaluations: 412004 (72.367% cached)
+
+Classifier for classes: highrate, lowrate
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         3.8214 * (normalized) duration
+ +       0.9626 * (normalized) flag=OTH
+ +      -1.6747 * (normalized) flag=RSTO
+ +       0.9078 * (normalized) flag=S1
+ +       0.3257 * (normalized) flag=S2
+ +      -1.2953 * (normalized) flag=S3
+ +       0.7739 * (normalized) flag=SF
+ +      -5.9782 * (normalized) count
+ +      -2.6371 * (normalized) dst_host_same_src_port_rate
+ +       0.2282
+
+Number of kernel evaluations: 432537 (73.122% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         780               79.5107 %
+Incorrectly Classified Instances       201               20.4893 %
+Kappa statistic                          0.6909
+Mean absolute error                      0.2745
+Root mean squared error                  0.3555
+Relative absolute error                 61.7946 %
+Root relative squared error             75.432  %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.985    0.282    0.642      0.985    0.777      0.666    0.852     0.638     normal
+                 0.378    0.002    0.992      0.378    0.547      0.536    0.922     0.836     highrate
+                 1.000    0.026    0.951      1.000    0.975      0.963    0.987     0.951     lowrate
+Weighted Avg.    0.795    0.105    0.859      0.795    0.771      0.725    0.920     0.808     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 328   1   4 |   a = normal
+ 183 119  13 |   b = highrate
+   0   0 333 |   c = lowrate

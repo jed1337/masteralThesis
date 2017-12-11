@@ -1,0 +1,91 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+flag = OTH
+|   protocol_type = tcp
+|   |   dst_host_count <= 49
+|   |   |   count <= 1505
+|   |   |   |   count <= 536
+|   |   |   |   |   count <= 180
+|   |   |   |   |   |   count <= 113: normal (366.0/52.0)
+|   |   |   |   |   |   count > 113
+|   |   |   |   |   |   |   dst_host_count <= 33
+|   |   |   |   |   |   |   |   dst_host_count <= 30: normal (27.0/3.0)
+|   |   |   |   |   |   |   |   dst_host_count > 30: attack (106.0/22.0)
+|   |   |   |   |   |   |   dst_host_count > 33
+|   |   |   |   |   |   |   |   dst_host_count <= 44: normal (32.0)
+|   |   |   |   |   |   |   |   dst_host_count > 44: attack (2.0)
+|   |   |   |   |   count > 180: normal (136.0)
+|   |   |   |   count > 536: attack (48.0)
+|   |   |   count > 1505: normal (157.0/1.0)
+|   |   dst_host_count > 49
+|   |   |   count <= 6323
+|   |   |   |   count <= 1401: attack (293.0/8.0)
+|   |   |   |   count > 1401
+|   |   |   |   |   dst_host_count <= 59: normal (63.0/2.0)
+|   |   |   |   |   dst_host_count > 59
+|   |   |   |   |   |   dst_host_count <= 77
+|   |   |   |   |   |   |   dst_host_count <= 63
+|   |   |   |   |   |   |   |   count <= 2770: attack (2.0)
+|   |   |   |   |   |   |   |   count > 2770
+|   |   |   |   |   |   |   |   |   count <= 3692: normal (6.0)
+|   |   |   |   |   |   |   |   |   count > 3692: attack (4.0/1.0)
+|   |   |   |   |   |   |   dst_host_count > 63: attack (117.0/17.0)
+|   |   |   |   |   |   dst_host_count > 77: normal (41.0)
+|   |   |   count > 6323: attack (540.0)
+|   protocol_type = icmp: attack (0.0)
+|   protocol_type = udp: attack (558.0)
+flag = REJ: attack (0.0)
+flag = RSTO
+|   dst_host_count <= 19: normal (24.0/2.0)
+|   dst_host_count > 19: attack (151.0)
+flag = RSTOS0: attack (0.0)
+flag = RSTR: normal (14.0)
+flag = S0: attack (0.0)
+flag = S1
+|   dst_host_count <= 65
+|   |   dst_host_count <= 16: normal (14.0)
+|   |   dst_host_count > 16: attack (5.0)
+|   dst_host_count > 65
+|   |   count <= 947: attack (337.0)
+|   |   count > 947
+|   |   |   count <= 1336: attack (6.0)
+|   |   |   count > 1336: normal (12.0)
+flag = S2
+|   count <= 1192: attack (6.0/1.0)
+|   count > 1192: normal (10.0)
+flag = S3
+|   count <= 979: attack (397.0)
+|   count > 979
+|   |   count <= 1336: attack (8.0)
+|   |   count > 1336: normal (13.0)
+flag = SF: normal (429.0/1.0)
+flag = SH: attack (0.0)
+
+Number of Leaves  : 	36
+
+Size of the tree : 	61
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         929               94.6993 %
+Incorrectly Classified Instances        52                5.3007 %
+Kappa statistic                          0.8806
+Mean absolute error                      0.0458
+Root mean squared error                  0.1742
+Relative absolute error                 10.2201 %
+Root relative squared error             36.7931 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.901    0.029    0.940      0.901    0.920      0.881    0.995     0.993     normal
+                 0.971    0.099    0.950      0.971    0.960      0.881    0.995     0.997     attack
+Weighted Avg.    0.947    0.075    0.947      0.947    0.947      0.881    0.995     0.995     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 300  33 |   a = normal
+  19 629 |   b = attack

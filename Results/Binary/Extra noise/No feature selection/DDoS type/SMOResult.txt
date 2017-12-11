@@ -1,0 +1,64 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: highrate, lowrate
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.5371 * (normalized) duration
+ +       0.6044 * (normalized) protocol_type=tcp
+ +      -0.6044 * (normalized) protocol_type=udp
+ +       1.3649 * (normalized) flag=OTH
+ +      -1.2495 * (normalized) flag=RSTO
+ +       1.0974 * (normalized) flag=S1
+ +       0.3971 * (normalized) flag=S2
+ +      -1.6099 * (normalized) flag=S3
+ +       0.8047 * (normalized) src_bytes
+ +       1.5759 * (normalized) dst_bytes
+ +      -4.4438 * (normalized) count
+ +      -4.4323 * (normalized) srv_count
+ +       0.3316 * (normalized) serror_rate
+ +       0.0716 * (normalized) srv_serror_rate
+ +       0.8748 * (normalized) same_srv_rate
+ +       0.4484 * (normalized) diff_srv_rate
+ +      -1.5601 * (normalized) srv_diff_host_rate
+ +      -0.0524 * (normalized) dst_host_count
+ +      -0.3921 * (normalized) dst_host_srv_count
+ +       1.6721 * (normalized) dst_host_same_srv_rate
+ +      -0.3524 * (normalized) dst_host_diff_srv_rate
+ +      -2.6116 * (normalized) dst_host_same_src_port_rate
+ +      -1.3535 * (normalized) dst_host_srv_diff_host_rate
+ +      -0.0449 * (normalized) dst_host_serror_rate
+ +      -0.0449 * (normalized) dst_host_srv_serror_rate
+ -       2.9718
+
+Number of kernel evaluations: 1264180 (75.149% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         895               96.6523 %
+Incorrectly Classified Instances        31                3.3477 %
+Kappa statistic                          0.9323
+Mean absolute error                      0.0335
+Root mean squared error                  0.183 
+Relative absolute error                  6.7383 %
+Root relative squared error             36.711  %
+Total Number of Instances              926     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.930    0.002    0.997      0.930    0.962      0.934    0.964     0.960     highrate
+                 0.998    0.070    0.943      0.998    0.970      0.934    0.964     0.942     lowrate
+Weighted Avg.    0.967    0.039    0.968      0.967    0.966      0.934    0.964     0.950     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 396  30 |   a = highrate
+   1 499 |   b = lowrate

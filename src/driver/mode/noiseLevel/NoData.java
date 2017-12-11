@@ -13,6 +13,7 @@ public final class NoData implements NoiseLevel{
       if(NoData.instance == null){
          NoData.instance = new NoData();
       }
+      System.err.println("Warning, getting 'No data' for NoiseLevel");
       return NoData.instance;
    }
    

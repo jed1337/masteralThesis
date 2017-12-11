@@ -11,6 +11,7 @@ import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Mode;
 import driver.mode.noiseLevel.ExtraNoise;
+import driver.mode.noiseLevel.NoData;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,9 +19,11 @@ import java.util.function.BiFunction;
 import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
+import weka.attributeSelection.ASEvaluation;
+import weka.attributeSelection.BestFirst;
 import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
-import weka.classifiers.trees.J48;
+import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Instances;
 
 public final class Driver {
@@ -57,16 +60,12 @@ public final class Driver {
       }
    }
 //</editor-fold>
-   private static int[] selectedAttributes = null;
-   
    //Temporary until we cana put the data in a database then custom get what we want
    private static final BiFunction<CustomEvaluation, ClassifierHolder, String> customEvaluation = (eval, ch)->{
       StringBuilder sb = new StringBuilder();
       sb.append(ch.getClassifierName()).append(": ");
       sb.append("Weighted Avg.");
-      sb.append("(%TP: ");
-      sb.append(Utils.doubleToString(eval.weightedTruePositiveRate(), 6, 4));
-      sb.append("\tPrec: ");
+      sb.append("(Prec: ");
       sb.append(Utils.doubleToString(eval.weightedPrecision(), 6, 4));
       sb.append("\tRecall: ");
       sb.append(Utils.doubleToString(eval.weightedRecall(), 6, 4));
@@ -75,9 +74,7 @@ public final class Driver {
       final String[] classNames = eval.getClassNames();
       for (int i = 0; i < classNames.length; i++) {
       sb.append(classNames[i]);
-      sb.append("(%TP: ");
-      sb.append(Utils.doubleToString(eval.truePositiveRate(i), 6, 4));
-      sb.append("\tPrec: ");
+      sb.append("(Prec: ");
       sb.append(Utils.doubleToString(eval.precision(i), 6, 4));
       sb.append("\tRecall: ");
       sb.append(Utils.doubleToString(eval.recall(i), 6, 4));
@@ -90,30 +87,46 @@ public final class Driver {
    };
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-      final String folderPath = "Results/Binary/Feature selection/Individual selection/J48/";
-
+      final String folderPath = "Results/Nominal/Extra noise/Hybrid to Single/NB/";
       final int instanceCount = ArffInstanceCount.HALVED;
-      final WrapperSubsetEval wse = new WrapperSubsetEval();
-      wse.setClassifier(new J48());
-      wse.setFolds(5);
 
       final NoiseLevel noiseLevel = new ExtraNoise();
+      
+      final WrapperSubsetEval wse = new WrapperSubsetEval();
+      wse.setClassifier(new NaiveBayes());
+      wse.setFolds(5);
 
-      systemTrain(new Single(instanceCount, noiseLevel), folderPath+"single/");
-      systemTrain(new HybridIsAttack(instanceCount, noiseLevel), folderPath+"isAttack/");
-      systemTrain(new HybridDDoSType(instanceCount, noiseLevel), folderPath+"DDoS type/");
+      final int[] results = 
+      systemTrain(new HybridIsAttack(instanceCount, noiseLevel), wse, folderPath+"isAttack/");
+      systemTrain(new HybridDDoSType(instanceCount, NoData.getInstance()), wse, folderPath+"DDoS type/");
+      
+      systemTrain(new Single        (instanceCount, noiseLevel), results, folderPath+"single/");
    }
 
-   private static void systemTrain(Mode mode, final String folderPath)
+   private static int[] systemTrain(final Mode mode, final ASEvaluation attributeEvaluator, final String folderPath)
            throws IOException, Exception {
-      SystemTrain hybridIsAttack = new SystemTrain(mode);
-      hybridIsAttack.setupTestTrainValidation();
-      hybridIsAttack.customEvaluateClassifiers(
+      SystemTrain st = new SystemTrain(mode);
+      st.setupTestTrainValidation();
+      int[] result = st.applyFeatureSelection(attributeEvaluator, new BestFirst());
+      st.customEvaluateClassifiers(
          Driver.customEvaluation,
          DirectoryConstants.RESULTS_DIR + FileNameConstants.COLLATED,
          folderPath //Doubles as the name inserted in collated (But this has no bearing on the path)
       );
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath);
+      return result;
    }
-
+   
+   private static void systemTrain(final Mode mode, final int[] selectedAttribtues, final String folderPath)
+           throws IOException, Exception {
+      SystemTrain st = new SystemTrain(mode);
+      st.setupTestTrainValidation();
+      st.applyFeatureSelection(selectedAttribtues);
+      st.customEvaluateClassifiers(
+              Driver.customEvaluation,
+              DirectoryConstants.RESULTS_DIR + FileNameConstants.COLLATED,
+              folderPath //Doubles as the name inserted in collated (But this has no bearing on the path)
+      );
+      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath);
+   }
 }

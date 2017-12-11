@@ -1,0 +1,52 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_host_same_src_port_rate <= 0.53
+|   flag = OTH
+|   |   dst_host_same_src_port_rate <= 0: lowrate (729.0/127.0)
+|   |   dst_host_same_src_port_rate > 0
+|   |   |   dst_host_same_src_port_rate <= 0.01: highrate (84.0/10.0)
+|   |   |   dst_host_same_src_port_rate > 0.01
+|   |   |   |   dst_host_same_src_port_rate <= 0.02: lowrate (113.0/27.0)
+|   |   |   |   dst_host_same_src_port_rate > 0.02
+|   |   |   |   |   dst_host_same_src_port_rate <= 0.06: highrate (144.0/36.0)
+|   |   |   |   |   dst_host_same_src_port_rate > 0.06: lowrate (23.0/8.0)
+|   flag = REJ: lowrate (0.0)
+|   flag = RSTO: lowrate (341.0/95.0)
+|   flag = RSTOS0: lowrate (0.0)
+|   flag = RSTR: lowrate (0.0)
+|   flag = S0: lowrate (0.0)
+|   flag = S1: lowrate (1016.0/30.0)
+|   flag = S2: lowrate (18.0)
+|   flag = S3: highrate (558.0)
+|   flag = SF: lowrate (1.0)
+|   flag = SH: lowrate (0.0)
+dst_host_same_src_port_rate > 0.53: highrate (678.0)
+
+Number of Leaves  : 	16
+
+Size of the tree : 	22
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         811               87.581  %
+Incorrectly Classified Instances       115               12.419  %
+Kappa statistic                          0.7461
+Mean absolute error                      0.2153
+Root mean squared error                  0.3215
+Relative absolute error                 43.3295 %
+Root relative squared error             64.5139 %
+Total Number of Instances              926     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.761    0.026    0.961      0.761    0.849      0.761    0.926     0.905     highrate
+                 0.974    0.239    0.827      0.974    0.894      0.761    0.926     0.917     lowrate
+Weighted Avg.    0.876    0.141    0.889      0.876    0.874      0.761    0.926     0.912     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 324 102 |   a = highrate
+  13 487 |   b = lowrate

@@ -1,0 +1,62 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                                Class
+Attribute                      normal  attack
+                               (0.34)  (0.66)
+==============================================
+flag
+  OTH                            819.0  1681.0
+  REJ                              1.0     1.0
+  RSTO                            23.0   154.0
+  RSTOS0                           1.0     1.0
+  RSTR                            15.0     1.0
+  S0                               1.0     1.0
+  S1                              27.0   349.0
+  S2                              12.0     6.0
+  S3                              14.0   406.0
+  SF                             429.0     2.0
+  SH                               1.0     1.0
+  [total]                       1343.0  2603.0
+
+srv_serror_rate
+  mean                          0.0183  0.2509
+  std. dev.                     0.0833  0.4123
+  weight sum                      1332    2592
+  precision                     0.0108  0.0108
+
+dst_host_diff_srv_rate
+  mean                          0.0011  0.0045
+  std. dev.                     0.0246  0.0526
+  weight sum                      1332    2592
+  precision                     0.0354  0.0354
+
+dst_host_srv_diff_host_rate
+  mean                          0.1832  0.0047
+  std. dev.                     0.3478  0.0527
+  weight sum                      1332    2592
+  precision                     0.0112  0.0112
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         973               99.1845 %
+Incorrectly Classified Instances         8                0.8155 %
+Kappa statistic                          0.9817
+Mean absolute error                      0.1202
+Root mean squared error                  0.2262
+Relative absolute error                 26.8047 %
+Root relative squared error             47.7617 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.979    0.002    0.997      0.979    0.988      0.982    0.991     0.991     normal
+                 0.998    0.021    0.989      0.998    0.994      0.982    0.990     0.991     attack
+Weighted Avg.    0.992    0.014    0.992      0.992    0.992      0.982    0.990     0.991     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 326   7 |   a = normal
+   1 647 |   b = attack

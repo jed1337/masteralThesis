@@ -1,0 +1,54 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: highrate, lowrate
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.5911 * (normalized) protocol_type=tcp
+ +      -0.5911 * (normalized) protocol_type=udp
+ +       1.095  * (normalized) flag=OTH
+ +      -0.3734 * (normalized) flag=RSTO
+ +       1.131  * (normalized) flag=S1
+ +       0      * (normalized) flag=S2
+ +      -1.8526 * (normalized) flag=S3
+ +       7.6327 * (normalized) src_bytes
+ +      -7.9618 * (normalized) count
+ +       1.0403 * (normalized) same_srv_rate
+ +      -1.1826 * (normalized) srv_diff_host_rate
+ +      -0.4532 * (normalized) dst_host_srv_count
+ +       1.4906 * (normalized) dst_host_same_srv_rate
+ +      -2.6197 * (normalized) dst_host_same_src_port_rate
+ +      -1.5265 * (normalized) dst_host_srv_diff_host_rate
+ -       2.7024
+
+Number of kernel evaluations: 1164273 (72.932% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         892               96.3283 %
+Incorrectly Classified Instances        34                3.6717 %
+Kappa statistic                          0.9257
+Mean absolute error                      0.0367
+Root mean squared error                  0.1916
+Relative absolute error                  7.3904 %
+Root relative squared error             38.4464 %
+Total Number of Instances              926     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.923    0.002    0.997      0.923    0.959      0.928    0.960     0.956     highrate
+                 0.998    0.077    0.938      0.998    0.967      0.928    0.960     0.937     lowrate
+Weighted Avg.    0.963    0.043    0.965      0.963    0.963      0.928    0.960     0.946     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 393  33 |   a = highrate
+   1 499 |   b = lowrate
