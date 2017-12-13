@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
-import preprocessFiles.AttackType;
+import preprocessFiles.GeneralAttackType;
 import preprocessFiles.PreprocessFile;
 
 public abstract class Mode {
@@ -22,13 +22,13 @@ public abstract class Mode {
    }
 
    protected final void setPreprocessFileCount(){
-      Set<Enum<AttackType>> attackTypes = new HashSet(); // Unique values
+      Set<Enum<GeneralAttackType>> attackTypes = new HashSet(); // Unique values
       this.pfAL.forEach((pf)->{
-         attackTypes.add(pf.getSpecificAttackType());
+         attackTypes.add(pf.getGeneralAttackType());
       });
 
-      for (Enum<AttackType> attackType : attackTypes) {
-         Predicate<PreprocessFile> sameAttackType = (pf)->pf.getSpecificAttackType() == attackType;
+      for (Enum<GeneralAttackType> attackType : attackTypes) {
+         Predicate<PreprocessFile> sameAttackType = (pf)->pf.getGeneralAttackType() == attackType;
 
          int attackTypeCount = (int) this.pfAL.stream()
             .filter(sameAttackType)

@@ -11,7 +11,7 @@ import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Mode;
 import driver.mode.noiseLevel.ExtraNoise;
-import driver.mode.noiseLevel.NoData;
+import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -98,7 +98,7 @@ public final class Driver {
 
       final int[] results = 
       systemTrain(new HybridIsAttack(instanceCount, noiseLevel), wse, folderPath+"isAttack/");
-      systemTrain(new HybridDDoSType(instanceCount, NoData.getInstance()), wse, folderPath+"DDoS type/");
+      systemTrain(new HybridDDoSType(instanceCount, NoNoise.getInstance()), wse, folderPath+"DDoS type/");
       
       systemTrain(new Single        (instanceCount, noiseLevel), results, folderPath+"single/");
    }

@@ -7,7 +7,7 @@ public final class PreprocessNeptune extends PreprocessFile{
    public PreprocessNeptune() throws IOException {
       super(
          FileNameConstants.KDD_TRAIN, 
-         AttackType.HIGH_RATE, 
+         GeneralAttackType.HIGH_RATE, 
          new String[]{"neptune"}
       );
    }

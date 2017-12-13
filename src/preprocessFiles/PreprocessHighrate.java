@@ -7,7 +7,7 @@ public final class PreprocessHighrate extends PreprocessFile{
    public PreprocessHighrate() throws IOException {
       super(
          FileNameConstants.CNIS_HIGHRATE, 
-         AttackType.HIGH_RATE, 
+         GeneralAttackType.HIGH_RATE, 
          new String[]{"tcpFlood", "udpFlood", "httpFlood"}
       );
    }

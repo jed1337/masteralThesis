@@ -5,14 +5,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import preprocessFiles.PreprocessFile;
-import preprocessFiles.PreprocessNoise;
+import preprocessFiles.PreprocessNoiseApacheBenchmark;
 import preprocessFiles.PreprocessNormal;
 
 public final class NormalNoise implements NoiseLevel{
    @Override
    public List<PreprocessFile> getPreprocessedFiles() throws IOException {
       return Collections.unmodifiableList(Arrays.asList(
-         new PreprocessNoise(),
+         new PreprocessNoiseApacheBenchmark(),
          new PreprocessNormal()
       ));
    }

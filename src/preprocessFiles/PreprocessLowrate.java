@@ -7,7 +7,7 @@ public final class PreprocessLowrate extends PreprocessFile{
    public PreprocessLowrate() throws IOException {
       super(
          FileNameConstants.CNIS_LOWRATE, 
-         AttackType.LOW_RATE, 
+         GeneralAttackType.LOW_RATE, 
          new String[]{"slowBody", "slowHeaders", "slowRead"}
       );
    }

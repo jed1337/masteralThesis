@@ -14,15 +14,15 @@ import java.io.IOException;
  */
 public abstract class PreprocessFile {
    private final int RANDOM_SEED = 11;
-   private final Enum<AttackType> specificAttackType;
+   private final Enum<GeneralAttackType> generalAttackType;
    private final String[] attackTypes;
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
    
-   protected PreprocessFile(String fileName, Enum<AttackType> specificAttackType, String[] attackTypes) throws IOException{
-      this.specificAttackType = specificAttackType;
-      this.attackTypes = attackTypes;
+   protected PreprocessFile(String fileName, Enum<GeneralAttackType> generalAttackType, String[] specificAttackTypes) throws IOException{
+      this.generalAttackType = generalAttackType;
+      this.attackTypes = specificAttackTypes;
 
       this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+""+fileName);
       this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+  ""+fileName);
@@ -46,8 +46,8 @@ public abstract class PreprocessFile {
       this.instancesCount = instancesCount;
    }
 
-   public final Enum<AttackType> getSpecificAttackType() {
-      return specificAttackType;
+   public final Enum<GeneralAttackType> getGeneralAttackType() {
+      return generalAttackType;
    }
    
    public final FormatAsArff getFaa() {

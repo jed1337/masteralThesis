@@ -6,8 +6,8 @@ import java.io.IOException;
 public final class PreprocessNormal extends PreprocessFile{
    public PreprocessNormal() throws IOException {
       super(
-         FileNameConstants.KDD_TRAIN, 
-         AttackType.NORMAL, 
+         FileNameConstants.KDD_TRAIN,
+         GeneralAttackType.NORMAL,
          new String[]{"normal"}
       );
    }
