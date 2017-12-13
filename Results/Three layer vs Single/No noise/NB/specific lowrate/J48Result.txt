@@ -1,0 +1,103 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_bytes <= 1024
+|   dst_bytes <= 892
+|   |   dst_bytes <= 206
+|   |   |   dst_host_srv_serror_rate <= 0.98
+|   |   |   |   dst_bytes <= 0
+|   |   |   |   |   dst_host_same_srv_rate <= 0.99
+|   |   |   |   |   |   dst_host_srv_serror_rate <= 0.91: slowBody (15.0/1.0)
+|   |   |   |   |   |   dst_host_srv_serror_rate > 0.91: slowRead (21.0/5.0)
+|   |   |   |   |   dst_host_same_srv_rate > 0.99
+|   |   |   |   |   |   dst_host_srv_serror_rate <= 0: slowHeaders (1478.0/936.0)
+|   |   |   |   |   |   dst_host_srv_serror_rate > 0
+|   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.51: slowHeaders (96.0/36.0)
+|   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.51
+|   |   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.56
+|   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.54
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.52: slowBody (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.52: slowRead (6.0/3.0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.54: slowBody (16.0/3.0)
+|   |   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.56: slowHeaders (310.0/157.0)
+|   |   |   |   dst_bytes > 0
+|   |   |   |   |   dst_host_srv_serror_rate <= 0.94
+|   |   |   |   |   |   dst_host_same_srv_rate <= 0.99
+|   |   |   |   |   |   |   dst_host_same_srv_rate <= 0.98
+|   |   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.21: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.21: slowRead (2.0)
+|   |   |   |   |   |   |   dst_host_same_srv_rate > 0.98
+|   |   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.8
+|   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.64: slowBody (5.0/1.0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.64: slowRead (4.0/1.0)
+|   |   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.8
+|   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.86: slowHeaders (3.0/1.0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.86: slowBody (3.0)
+|   |   |   |   |   |   dst_host_same_srv_rate > 0.99
+|   |   |   |   |   |   |   dst_host_srv_serror_rate <= 0.07: slowHeaders (2.0)
+|   |   |   |   |   |   |   dst_host_srv_serror_rate > 0.07: slowBody (12.0/2.0)
+|   |   |   |   |   dst_host_srv_serror_rate > 0.94: slowHeaders (17.0/2.0)
+|   |   |   dst_host_srv_serror_rate > 0.98
+|   |   |   |   dst_host_srv_serror_rate <= 0.99: slowRead (68.0/38.0)
+|   |   |   |   dst_host_srv_serror_rate > 0.99: slowBody (1390.0/813.0)
+|   |   dst_bytes > 206
+|   |   |   dst_bytes <= 272: slowHeaders (14.0)
+|   |   |   dst_bytes > 272
+|   |   |   |   dst_bytes <= 628: slowRead (19.0)
+|   |   |   |   dst_bytes > 628
+|   |   |   |   |   dst_host_same_srv_rate <= 0.99: slowRead (10.0/2.0)
+|   |   |   |   |   dst_host_same_srv_rate > 0.99
+|   |   |   |   |   |   dst_bytes <= 838
+|   |   |   |   |   |   |   dst_bytes <= 760
+|   |   |   |   |   |   |   |   dst_bytes <= 689: slowHeaders (5.0/2.0)
+|   |   |   |   |   |   |   |   dst_bytes > 689: slowRead (4.0)
+|   |   |   |   |   |   |   dst_bytes > 760: slowHeaders (2.0/1.0)
+|   |   |   |   |   |   dst_bytes > 838: slowHeaders (24.0/10.0)
+|   dst_bytes > 892
+|   |   dst_bytes <= 1019
+|   |   |   dst_bytes <= 958
+|   |   |   |   dst_bytes <= 953
+|   |   |   |   |   dst_host_same_srv_rate <= 0.99: slowBody (3.0)
+|   |   |   |   |   dst_host_same_srv_rate > 0.99: slowHeaders (86.0/11.0)
+|   |   |   |   dst_bytes > 953
+|   |   |   |   |   dst_host_same_srv_rate <= 0.99: slowHeaders (13.0/4.0)
+|   |   |   |   |   dst_host_same_srv_rate > 0.99: slowBody (49.0/11.0)
+|   |   |   dst_bytes > 958
+|   |   |   |   dst_host_srv_serror_rate <= 0.89: slowHeaders (89.0/6.0)
+|   |   |   |   dst_host_srv_serror_rate > 0.89: slowBody (5.0/1.0)
+|   |   dst_bytes > 1019: slowBody (52.0/14.0)
+dst_bytes > 1024
+|   dst_bytes <= 1886: slowRead (159.0)
+|   dst_bytes > 1886
+|   |   dst_bytes <= 12112: slowHeaders (7.0/3.0)
+|   |   dst_bytes > 12112: slowBody (5.0/1.0)
+
+Number of Leaves  : 	36
+
+Size of the tree : 	71
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         487               48.7487 %
+Incorrectly Classified Instances       512               51.2513 %
+Kappa statistic                          0.2312
+Mean absolute error                      0.3841
+Root mean squared error                  0.4412
+Relative absolute error                 86.4212 %
+Root relative squared error             93.5913 %
+Total Number of Instances              999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.195    0.020    0.833      0.195    0.316      0.309    0.662     0.517     slowRead
+                 0.730    0.452    0.447      0.730    0.554      0.263    0.697     0.530     slowHeaders
+                 0.538    0.297    0.475      0.538    0.504      0.234    0.660     0.454     slowBody
+Weighted Avg.    0.487    0.256    0.585      0.487    0.458      0.268    0.673     0.500     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  65 152 116 |   a = slowRead
+   8 243  82 |   b = slowHeaders
+   5 149 179 |   c = slowBody

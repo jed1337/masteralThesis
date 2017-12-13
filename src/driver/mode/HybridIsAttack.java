@@ -4,6 +4,7 @@ import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import preprocessFiles.PreprocessHighrate;
 import preprocessFiles.PreprocessLowrate;
+import preprocessFiles.PreprocessNormal;
 
 public final class HybridIsAttack extends Mode{
    public HybridIsAttack(int totalCount, NoiseLevel nl) throws IOException {
@@ -11,6 +12,7 @@ public final class HybridIsAttack extends Mode{
 
       super.pfAL.add(new PreprocessHighrate());
       super.pfAL.add(new PreprocessLowrate());
+      super.pfAL.add(new PreprocessNormal());
       
       super.setPreprocessFileCount();
    }

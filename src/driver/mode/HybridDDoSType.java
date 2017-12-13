@@ -26,7 +26,7 @@ public final class HybridDDoSType extends Mode{
 
    @Override
    public String getReplacement() {
-      return "";
-//      return "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate";
+//      return "";
+      return "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate";
    }
 }

@@ -1,0 +1,72 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: tcpFlood, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) protocol_type=tcp
+ +       2.2033 * (normalized) src_bytes
+ +     -11.7436 * (normalized) count
+ +       1.2959
+
+Number of kernel evaluations: 5140 (52.731% cached)
+
+Classifier for classes: tcpFlood, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.9993 * (normalized) protocol_type=tcp
+ +       0.9993 * (normalized) protocol_type=udp
+ +      -0.0009 * (normalized) src_bytes
+ +      -0.0192 * (normalized) count
+ +       0.0001
+
+Number of kernel evaluations: 99 (44.693% cached)
+
+Classifier for classes: httpFlood, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.9998 * (normalized) protocol_type=tcp
+ +       0.9998 * (normalized) protocol_type=udp
+ +      -0.0149 * (normalized) src_bytes
+ +      -0.0131 * (normalized) count
+ +       0     
+
+Number of kernel evaluations: 3 (0% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         742               97.7602 %
+Incorrectly Classified Instances        17                2.2398 %
+Kappa statistic                          0.9627
+Mean absolute error                      0.2272
+Root mean squared error                  0.2812
+Relative absolute error                 56.7952 %
+Root relative squared error             62.869  %
+Total Number of Instances              759     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.949    0.000    1.000      0.949    0.974      0.955    0.980     0.974     tcpFlood
+                 1.000    0.040    0.951      1.000    0.975      0.956    0.980     0.951     httpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+Weighted Avg.    0.978    0.018    0.979      0.978    0.978      0.961    0.982     0.967     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 316  17   0 |   a = tcpFlood
+   0 333   0 |   b = httpFlood
+   0   0  93 |   c = udpFlood

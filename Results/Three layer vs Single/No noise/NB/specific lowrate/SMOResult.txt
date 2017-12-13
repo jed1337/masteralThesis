@@ -1,0 +1,73 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: slowRead, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.2885 * (normalized) dst_bytes
+ +       1.02   * (normalized) dst_host_same_srv_rate
+ +      -0.5    * (normalized) dst_host_diff_srv_rate
+ +      -2      * (normalized) dst_host_srv_serror_rate
+ -       0.02  
+
+Number of kernel evaluations: 219099 (59.26% cached)
+
+Classifier for classes: slowRead, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -3.2932 * (normalized) dst_bytes
+ +      -0.9596 * (normalized) dst_host_same_srv_rate
+ +      -1.0097 * (normalized) dst_host_diff_srv_rate
+ +       1.5177 * (normalized) dst_host_srv_serror_rate
+ +       0.4429
+
+Number of kernel evaluations: 133354 (64.401% cached)
+
+Classifier for classes: slowHeaders, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0001 * (normalized) dst_bytes
+ +      -2      * (normalized) dst_host_same_srv_rate
+ +       0.0794 * (normalized) dst_host_diff_srv_rate
+ +       2      * (normalized) dst_host_srv_serror_rate
+ +       1     
+
+Number of kernel evaluations: 268491 (52.859% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         381               38.1381 %
+Incorrectly Classified Instances       618               61.8619 %
+Kappa statistic                          0.0721
+Mean absolute error                      0.422 
+Root mean squared error                  0.5233
+Relative absolute error                 94.9449 %
+Root relative squared error            111.006  %
+Total Number of Instances              999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.009    0.000      0.000    0.000      -0.055   0.499     0.335     slowRead
+                 0.553    0.467    0.372      0.553    0.444      0.081    0.545     0.355     slowHeaders
+                 0.592    0.452    0.396      0.592    0.474      0.132    0.570     0.371     slowBody
+Weighted Avg.    0.381    0.309    0.256      0.381    0.306      0.052    0.538     0.354     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   0 177 156 |   a = slowRead
+   4 184 145 |   b = slowHeaders
+   2 134 197 |   c = slowBody

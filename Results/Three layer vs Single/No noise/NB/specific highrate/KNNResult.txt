@@ -1,0 +1,28 @@
+=== Classifier ===
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+=== Dedicated test set ===
+=== Summary of KNN===
+
+Correctly Classified Instances         755               99.473  %
+Incorrectly Classified Instances         4                0.527  %
+Kappa statistic                          0.9912
+Mean absolute error                      0.0034
+Root mean squared error                  0.0534
+Relative absolute error                  0.8531 %
+Root relative squared error             11.9418 %
+Total Number of Instances              759     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.991    0.002    0.997      0.991    0.994      0.989    0.998     0.997     tcpFlood
+                 0.997    0.007    0.991      0.997    0.994      0.989    0.998     0.996     httpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+Weighted Avg.    0.995    0.004    0.995      0.995    0.995      0.991    0.998     0.997     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 330   3   0 |   a = tcpFlood
+   1 332   0 |   b = httpFlood
+   0   0  93 |   c = udpFlood

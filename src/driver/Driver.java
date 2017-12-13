@@ -1,7 +1,6 @@
 package driver;
 
 import classifier.ClassifierHolder;
-import driver.mode.Single;
 import constants.ArffInstanceCount;
 import constants.CharConstants;
 import constants.DirectoryConstants;
@@ -10,7 +9,9 @@ import customWeka.CustomEvaluation;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Mode;
-import driver.mode.noiseLevel.ExtraNoise;
+import driver.mode.Single;
+import driver.mode.SpecificHighrate;
+import driver.mode.SpecificLowrate;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.FileNotFoundException;
@@ -23,7 +24,7 @@ import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.BestFirst;
 import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
-import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.trees.J48;
 import weka.core.Instances;
 
 public final class Driver {
@@ -87,20 +88,22 @@ public final class Driver {
    };
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-      final String folderPath = "Results/Nominal/Extra noise/Hybrid to Single/NB/";
+      final String folderPath = "Results/Three layer vs Single/No noise/J48/";
       final int instanceCount = ArffInstanceCount.HALVED;
 
-      final NoiseLevel noiseLevel = new ExtraNoise();
+      final NoiseLevel noiseLevel = NoNoise.getInstance();
       
       final WrapperSubsetEval wse = new WrapperSubsetEval();
-      wse.setClassifier(new NaiveBayes());
+      wse.setClassifier(new J48());
       wse.setFolds(5);
-
-      final int[] results = 
+      
+      systemTrain(new Single        (instanceCount, noiseLevel), wse, folderPath+"single/");
+      
       systemTrain(new HybridIsAttack(instanceCount, noiseLevel), wse, folderPath+"isAttack/");
       systemTrain(new HybridDDoSType(instanceCount, NoNoise.getInstance()), wse, folderPath+"DDoS type/");
-      
-      systemTrain(new Single        (instanceCount, noiseLevel), results, folderPath+"single/");
+      systemTrain(new SpecificHighrate(instanceCount, NoNoise.getInstance()), wse, folderPath+"specific highrate/");
+      systemTrain(new SpecificLowrate(instanceCount, NoNoise.getInstance()), wse, folderPath+"specific lowrate/");
+      System.out.println("");
    }
 
    private static int[] systemTrain(final Mode mode, final ASEvaluation attributeEvaluator, final String folderPath)
