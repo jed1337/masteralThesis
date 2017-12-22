@@ -13,12 +13,16 @@ import preprocessFiles.PreprocessFile;
 
 public abstract class Mode {
    protected final int totalCount;
-   protected List<PreprocessFile> pfAL;
+   protected final List<PreprocessFile> pfAL;
+   
+   private final NoiseLevel nl;
 
    public Mode(int totalCount, NoiseLevel nl) throws IOException {
       this.totalCount = totalCount;
       this.pfAL = new ArrayList<>();
-      this.pfAL.addAll(nl.getPreprocessedFiles());
+      this.nl = nl;
+      
+      this.pfAL.addAll(this.nl.getPreprocessedFiles());
    }
 
    protected final void setPreprocessFileCount(){
@@ -33,6 +37,7 @@ public abstract class Mode {
          int attackTypeCount = (int) this.pfAL.stream()
             .filter(sameAttackType)
             .count();
+         
          this.pfAL.stream()
             .filter(sameAttackType)
             .forEach((pf)->{
@@ -40,12 +45,19 @@ public abstract class Mode {
             });
       }
    }
-
-   public abstract String getReplacement();
    
    public final List<PreprocessFile> getPreprocessFiles() throws IOException{
       return Collections.unmodifiableList(this.pfAL);
    }
    
+   public final float getNoiseLevelFloat(){
+      return this.nl.getNoiseLevelFloat();
+   }
+   
+   public final String getNoiseLevelString(){
+      return this.nl.getNoiseLevelString();
+   }
+
+   public abstract String getReplacement();
    public abstract String getSystemType();
 }

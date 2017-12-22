@@ -6,12 +6,8 @@ import constants.CharConstants;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
-import driver.mode.HybridDDoSType;
-import driver.mode.HybridIsAttack;
 import driver.mode.Mode;
 import driver.mode.Single;
-import driver.mode.SpecificHighrate;
-import driver.mode.SpecificLowrate;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.FileNotFoundException;
@@ -61,10 +57,12 @@ public final class Driver {
       }
    }
 //</editor-fold>
+   
    //Temporary until we cana put the data in a database then custom get what we want
    private static final BiFunction<CustomEvaluation, ClassifierHolder, String> customEvaluation = (eval, ch)->{
       StringBuilder sb = new StringBuilder();
       sb.append(ch.getClassifierName()).append(": ");
+      
       sb.append("Weighted Avg.");
       sb.append("(Prec: ");
       sb.append(Utils.doubleToString(eval.weightedPrecision(), 6, 4));
@@ -74,12 +72,12 @@ public final class Driver {
 
       final String[] classNames = eval.getClassNames();
       for (int i = 0; i < classNames.length; i++) {
-      sb.append(classNames[i]);
-      sb.append("(Prec: ");
-      sb.append(Utils.doubleToString(eval.precision(i), 6, 4));
-      sb.append("\tRecall: ");
-      sb.append(Utils.doubleToString(eval.recall(i), 6, 4));
-      sb.append(")\t");
+         sb.append(classNames[i]);
+         sb.append("(Prec: ");
+         sb.append(Utils.doubleToString(eval.precision(i), 6, 4));
+         sb.append("\tRecall: ");
+         sb.append(Utils.doubleToString(eval.recall(i), 6, 4));
+         sb.append(")\t");
       }
 
       sb.append(CharConstants.NEW_LINE);
@@ -99,10 +97,10 @@ public final class Driver {
       
       systemTrain(new Single        (instanceCount, noiseLevel), wse, folderPath+"single/");
       
-      systemTrain(new HybridIsAttack(instanceCount, noiseLevel), wse, folderPath+"isAttack/");
-      systemTrain(new HybridDDoSType(instanceCount, NoNoise.getInstance()), wse, folderPath+"DDoS type/");
-      systemTrain(new SpecificHighrate(instanceCount, NoNoise.getInstance()), wse, folderPath+"specific highrate/");
-      systemTrain(new SpecificLowrate(instanceCount, NoNoise.getInstance()), wse, folderPath+"specific lowrate/");
+//      systemTrain(new HybridIsAttack(instanceCount, noiseLevel), wse, folderPath+"isAttack/");
+//      systemTrain(new HybridDDoSType(instanceCount, NoNoise.getInstance()), wse, folderPath+"DDoS type/");
+//      systemTrain(new SpecificHighrate(instanceCount, NoNoise.getInstance()), wse, folderPath+"specific highrate/");
+//      systemTrain(new SpecificLowrate(instanceCount, NoNoise.getInstance()), wse, folderPath+"specific lowrate/");
       System.out.println("");
    }
 

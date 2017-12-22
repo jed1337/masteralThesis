@@ -16,7 +16,12 @@ public final class NoiseNormal implements NoiseLevel{
    }
    
    @Override
-   public String getNoiseLevel() {
+   public float getNoiseLevelFloat(){
+      return 50.0f;
+   }
+   
+   @Override
+   public String getNoiseLevelString() {
       return "Random websites";
    }
 }
