@@ -12,4 +12,9 @@ public final class SpecificLowrate extends SpecificAttack{
 
       super.setPreprocessFileCount();
    }
+      
+   @Override
+   public String getSystemType() {
+      return "Specific Highrate";
+   }
 }

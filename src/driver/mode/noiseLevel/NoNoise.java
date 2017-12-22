@@ -22,4 +22,9 @@ public final class NoNoise implements NoiseLevel{
       final ArrayList<PreprocessFile> pfAL = new ArrayList<>();
       return Collections.unmodifiableList(pfAL);
    }
+
+   @Override
+   public String getNoiseLevel() {
+      return "No noise";
+   }
 }

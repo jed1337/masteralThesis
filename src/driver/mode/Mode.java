@@ -46,4 +46,6 @@ public abstract class Mode {
    public final List<PreprocessFile> getPreprocessFiles() throws IOException{
       return Collections.unmodifiableList(this.pfAL);
    }
+   
+   public abstract String getSystemType();
 }

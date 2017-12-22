@@ -3,12 +3,16 @@ package driver;
 import classifier.ClassifierHolder;
 import constants.AttributeTypeConstants;
 import constants.CharConstants;
+import constants.DAOConstants;
 import constants.FileNameConstants;
 import constants.DirectoryConstants;
 import customWeka.CustomEvaluation;
 import driver.mode.Mode;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -39,6 +43,8 @@ public final class SystemTrain {
 	private final ArrayList<ClassifierHolder> classifierHolders;
 	private final ArrayList<EvaluationSet> evaluationSets;
 	private final List<PreprocessFile> preprocessFiles;
+   
+   private final Connection connection;
 
 	public SystemTrain(Mode mode) throws IOException, Exception {
       this.classifierHolders = new ArrayList<>();
@@ -54,7 +60,22 @@ public final class SystemTrain {
 		this.evaluationSets.add(new EvaluationSet(this.trainPath       , 4));
 		this.evaluationSets.add(new EvaluationSet(this.testPath        , 1));
 		this.evaluationSets.add(new EvaluationSet(this.validationPath  , 1));
+      
+      this.connection = setupConnection();
+      System.out.println("");
 	}
+   
+   private Connection setupConnection() throws SQLException, ClassNotFoundException{
+      Class.forName(DAOConstants.DRIVER_CLASS);
+      System.out.println("MySQL JDBC Driver Registered!");
+      
+      Connection con = DriverManager.getConnection(
+         DAOConstants.CONNECTION_URL+DAOConstants.DATABASE_NAME,
+         DAOConstants.USERNAME,
+         DAOConstants.PASSWORD
+      );
+      return con;
+   }
 
 	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> preprocessFiles, String replacement)
 			  throws IOException, Exception {

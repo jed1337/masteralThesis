@@ -14,4 +14,9 @@ public final class NoiseNormal implements NoiseLevel{
          new PreprocessNoiseRandomWebsites()
       ));
    }
+   
+   @Override
+   public String getNoiseLevel() {
+      return "Random websites";
+   }
 }

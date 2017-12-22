@@ -21,4 +21,9 @@ public final class HybridIsAttack extends Mode{
    public String getReplacement() {
       return "tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack";
    }
+   
+   @Override
+   public String getSystemType() {
+      return "Hybrid isAttack";
+   }
 }

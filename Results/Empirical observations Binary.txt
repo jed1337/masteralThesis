@@ -1,0 +1,119 @@
+Accuracy metrics
+	Precision, recall
+	Average recall = 91.324%
+	Average precision = 92.527%
+
+Best algo
+	Single
+		J48: Prec: 95.061 Recall: 94.103
+		KNN: Prec: 92.900 Recall: 92.788
+		NB : Prec: 87.509 Recall: 85.257
+		RF : Prec: 94.954 Recall: 94.357
+		SMO: Prec: 81.385 Recall: 77.741
+	IsAttack
+		J48: Prec: 96.452 Recall: 95.923
+		KNN: Prec: 95.593 Recall: 94.592
+		NB : Prec: 86.126 Recall: 84.338
+		RF : Prec: 96.887 Recall: 96.323
+		SMO: Prec: 90.767 Recall: 92.032
+	DDoS Type
+		J48: Prec: 98.578 Recall: 98.481
+		KNN: Prec: 97.523 Recall: 97.417
+		NB : Prec: 94.234 Recall: 93.016
+		RF : Prec: 98.471 Recall: 98.365
+		SMO: Prec: 91.846 Recall: 89.478
+
+Binary
+No feature selection
+	Worst classifier
+		NB: Low recall, especially in Extra Noise
+	Best classifier
+		RF: 95%+
+		SMO: 92%+
+
+		J48
+			Lower normal recall, highrate prec
+
+	Normal noise
+		Hybrid ~= Single
+
+	Extra noise gives
+		Hybrid is better by ~5-20%
+		Lower normal recall by ~5-10% on average
+
+Individual feature selection (NB)
+	Normal noise
+		Hybrid is better by ~5%
+		Single highrate dropped to ~85%
+
+		SMO, ~37%, single, highrate
+
+		Worst classifier
+			NB - ~5% (~85-90%) on average
+		Best classifier
+
+	Extra noise
+		Hybrid is better by ~10%
+		Single highrate dropped to ~65%, ~10%(for some)
+
+Individual feature selection (J48)
+	Normal noise
+		Hybrid ~= Single
+
+		SMO, single, highrate recall = 8%
+		SMO, DDoS type, lowrate recall = 70%
+		Worst classifier
+			SMO ~15-25% (70-80%)
+
+	Extra noise
+		Single is better by ~5-15%
+
+		NB, single, Normal recall 		= 11%
+		NB, single, Highrate prec	= 55%
+
+		KNN, SMO, hybrid, normal = ~1-8%
+
+Single to Hybrid (NB)
+	Normal noise
+		Hybrid is better ~5%
+		SMO, single, normal, prec -~20% (64%)
+
+	Extra noise
+		isAttack is better than Single by 10%
+		Hybrid's result drops on DDoS Type
+
+		NB, isAttack, normal, prec -~40% (54%)
+		NB, DDoS Type, lowrate, prec -~30% (55%)
+
+		Worst classifier
+			NB: -~10% (75-85%)
+
+Single to Hybrid (J48)
+	Normal noise
+		Hybrid ~= Single
+		SMO, Single, normal, prec -~30% (54%)
+
+	Extra noise
+		Single is better by ~10%
+		SMO, Single, highrate, prec -~85% (8%)
+		SMO, isAttack, normal, prec -~10% (89%)
+
+Hybrid to single (NB)
+	Normal noise
+		Hybrid is better by ~5%
+		SMO, single, normal,    prec -~45% (54%)
+		SMO, single, high rate, recall -~80%(8%)
+
+	Extra noise
+		Hybrid is better by ~10%
+		SMO, single, high rate, recall -~90%(6%)
+
+Hybrid to single (J48)
+	Normal noise
+		Hybrid ~= single
+		SMO, single, high rate, recall -~85%(10%)
+		SMO, single, high rate, prec   -~65%(27%)
+	Extra noise
+		Hybrid is better by ~10%
+		Almost all, single, normal, recall ~5-50%
+		SMO, single, high rate ~10
