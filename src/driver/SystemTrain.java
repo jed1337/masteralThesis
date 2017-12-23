@@ -23,7 +23,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import preprocessFiles.PreprocessFile;
 import preprocessFiles.preprocessAs.FormatAsText;
@@ -229,16 +228,6 @@ public final class SystemTrain {
          fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
       }
    }
-
-   public ArrayList<CustomEvaluation> evaluateClassifiers() throws Exception{
-      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
-
-      for (ClassifierHolder ch : this.classifierHolders) {
-         CustomEvaluation eval = evaluateIndividualClassifier(ch);
-         evaluations.add(eval);
-      }
-      return evaluations;
-   }
    
    public static void checkUpdateCounts(int[] updateCounts) {
       for (int i = 0; i < updateCounts.length; i++) {
@@ -252,20 +241,10 @@ public final class SystemTrain {
       }
    }
 
-   /**
-    * Collates the evaluations getting the data specified in customFunction
-    * @param customFunction
-    * @param path The path to place the collated files at
-    * @param testName The name used for the current test (Appended inside the file and not used as a file name)
-    * @return
-    * @throws Exception
-    */
-   public ArrayList<CustomEvaluation> customEvaluateClassifiers(
-           BiFunction<CustomEvaluation, ClassifierHolder, String> customFunction, String path, String testName)
-           throws Exception{
+   public ArrayList<CustomEvaluation> evaluateClassifiers() throws Exception{
       final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
-
-      //Insert Feature table
+      
+            //Insert Feature table
       {
          String query = String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
            DBConnectionConstants.DATABASE_NAME,
@@ -291,24 +270,11 @@ public final class SystemTrain {
          }
       }
 
-      //Append
-      Utils.writeStringFile(path,
-         CharConstants.NEW_LINE+ testName +CharConstants.NEW_LINE,
-         true
-      );
-
       for (ClassifierHolder ch : this.classifierHolders) {
          CustomEvaluation eval = evaluateIndividualClassifier(ch);
          evaluations.add(eval);
-
-         //Append
-         Utils.writeStringFile(
-            path,
-            customFunction.apply(eval, ch),
-            true
-         );
-
-         //Insert to evaluation table
+         
+          //Insert to evaluation table
          {
             String query = String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?,?,?);",
                DBConnectionConstants.DATABASE_NAME,

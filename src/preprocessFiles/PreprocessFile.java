@@ -20,7 +20,8 @@ public abstract class PreprocessFile {
 
    private int instancesCount = -1;
    
-   protected PreprocessFile(String fileName, Enum<GeneralAttackType> generalAttackType, String[] specificAttackTypes) throws IOException{
+   protected PreprocessFile(String fileName, Enum<GeneralAttackType> generalAttackType, String[] specificAttackTypes)
+           throws IOException {
       this.generalAttackType = generalAttackType;
       this.attackTypes = specificAttackTypes;
 
@@ -60,9 +61,9 @@ public abstract class PreprocessFile {
    }
    
    /**
-    * For example there are 10000 instances
+    * For example there are 5000 instances
     * <p>
-    * {@ Literal @} attributeName{val1, val2}
+    * {@Literal @}attributeName{val1, val2}
     * <p>
     * Output: 2500 instances val1, 2500 instances val2
     * <p>

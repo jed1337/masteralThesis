@@ -1,18 +1,14 @@
 package driver;
 
-import classifier.ClassifierHolder;
 import constants.ArffInstanceCount;
-import constants.CharConstants;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
-import customWeka.CustomEvaluation;
 import driver.mode.Mode;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.function.BiFunction;
 import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
@@ -58,33 +54,6 @@ public final class Driver {
    }
 //</editor-fold>
    
-   //Temporary until we cana put the data in a database then custom get what we want
-   private static final BiFunction<CustomEvaluation, ClassifierHolder, String> customEvaluation = (eval, ch)->{
-      StringBuilder sb = new StringBuilder();
-      sb.append(ch.getClassifierName()).append(": ");
-      
-      sb.append("Weighted Avg.");
-      sb.append("(Prec: ");
-      sb.append(Utils.doubleToString(eval.weightedPrecision(), 6, 4));
-      sb.append("\tRecall: ");
-      sb.append(Utils.doubleToString(eval.weightedRecall(), 6, 4));
-      sb.append(")\t");
-
-      final String[] classNames = eval.getClassNames();
-      for (int i = 0; i < classNames.length; i++) {
-         sb.append(classNames[i]);
-         sb.append("(Prec: ");
-         sb.append(Utils.doubleToString(eval.precision(i), 6, 4));
-         sb.append("\tRecall: ");
-         sb.append(Utils.doubleToString(eval.recall(i), 6, 4));
-         sb.append(")\t");
-      }
-
-      sb.append(CharConstants.NEW_LINE);
-
-      return sb.toString();
-   };
-
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
       final String folderPath = "Results/Three layer vs Single/No noise/J48/";
       final int instanceCount = ArffInstanceCount.HALVED;
@@ -109,11 +78,7 @@ public final class Driver {
       SystemTrain st = new SystemTrain(mode);
       st.setupTestTrainValidation();
       int[] result = st.applyFeatureSelection(attributeEvaluator, new BestFirst());
-      st.customEvaluateClassifiers(
-         Driver.customEvaluation,
-         DirectoryConstants.RESULTS_DIR + FileNameConstants.COLLATED,
-         folderPath //Doubles as the name inserted in collated (But this has no bearing on the path)
-      );
+      st.evaluateClassifiers();
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath);
       return result;
    }
@@ -123,11 +88,7 @@ public final class Driver {
       SystemTrain st = new SystemTrain(mode);
       st.setupTestTrainValidation();
       st.applyFeatureSelection(selectedAttribtues);
-      st.customEvaluateClassifiers(
-              Driver.customEvaluation,
-              DirectoryConstants.RESULTS_DIR + FileNameConstants.COLLATED,
-              folderPath //Doubles as the name inserted in collated (But this has no bearing on the path)
-      );
+      st.evaluateClassifiers();
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath);
    }
 }
