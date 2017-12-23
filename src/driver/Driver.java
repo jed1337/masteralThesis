@@ -3,6 +3,8 @@ package driver;
 import constants.ArffInstanceCount;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
+import driver.categoricalType.Binary;
+import driver.categoricalType.CategoricalType;
 import driver.mode.Mode;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
@@ -64,7 +66,9 @@ public final class Driver {
       wse.setClassifier(new J48());
       wse.setFolds(5);
       
-      systemTrain(new Single        (instanceCount, noiseLevel), wse, folderPath+"single/");
+      final CategoricalType categoricalType = new Binary();
+      
+      systemTrain(new Single        (instanceCount, noiseLevel, categoricalType), wse, folderPath+"single/");
       
 //      systemTrain(new HybridIsAttack(instanceCount, noiseLevel), wse, folderPath+"isAttack/");
 //      systemTrain(new HybridDDoSType(instanceCount, NoNoise.getInstance()), wse, folderPath+"DDoS type/");

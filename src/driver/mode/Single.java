@@ -1,26 +1,29 @@
 package driver.mode;
 
+import driver.categoricalType.CategoricalType;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import preprocessFiles.PreprocessHighrate;
 import preprocessFiles.PreprocessLowrate;
 import preprocessFiles.PreprocessNormal;
 
+import driver.categoricalType.*;
+
 public final class Single extends Mode{
-   public Single(int totalCount, NoiseLevel nl) throws IOException {
-      super(totalCount, nl);
+   public Single(int totalCount, NoiseLevel nl, CategoricalType categoricalType) throws IOException {
+      super(totalCount, nl, categoricalType);
       
-      super.pfAL.add(new PreprocessHighrate());
-      super.pfAL.add(new PreprocessLowrate());
-      super.pfAL.add(new PreprocessNormal());
+      super.pfL.add(new PreprocessHighrate());
+      super.pfL.add(new PreprocessLowrate());
+      super.pfL.add(new PreprocessNormal());
       
       super.setPreprocessFileCount();
    }
 
-   @Override
-   public String getReplacement() {
-      return "";
-   }
+//   @Override
+//   public String getRelabel() {
+//      return "";
+//   }
       
    @Override
    public String getSystemType() {

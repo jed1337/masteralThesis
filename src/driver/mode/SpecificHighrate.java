@@ -1,14 +1,15 @@
 package driver.mode;
 
+import driver.categoricalType.CategoricalType;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import preprocessFiles.PreprocessHighrate;
 
 public final class SpecificHighrate extends SpecificAttack{
-   public SpecificHighrate(int totalCount, NoiseLevel nl) throws IOException {
-      super(totalCount, nl);
+   public SpecificHighrate(int totalCount, NoiseLevel nl, CategoricalType categoricalType) throws IOException {
+      super(totalCount, nl, categoricalType);
       
-      super.pfAL.add(new PreprocessHighrate());
+      super.pfL.add(new PreprocessHighrate());
 
       super.setPreprocessFileCount();
    }

@@ -1,5 +1,6 @@
 package preprocessFiles;
 
+import constants.GeneralAttackType;
 import constants.AttributeTypeConstants;
 import constants.FormatConstants;
 import constants.DirectoryConstants;
@@ -15,7 +16,7 @@ import java.io.IOException;
 public abstract class PreprocessFile {
    private final int RANDOM_SEED = 11;
    private final Enum<GeneralAttackType> generalAttackType;
-   private final String[] attackTypes;
+   private final String[] specificAttackTypes;
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
@@ -23,7 +24,7 @@ public abstract class PreprocessFile {
    protected PreprocessFile(String fileName, Enum<GeneralAttackType> generalAttackType, String[] specificAttackTypes)
            throws IOException {
       this.generalAttackType = generalAttackType;
-      this.attackTypes = specificAttackTypes;
+      this.specificAttackTypes = specificAttackTypes;
 
       this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+""+fileName);
       this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+  ""+fileName);
@@ -50,13 +51,17 @@ public abstract class PreprocessFile {
    public final Enum<GeneralAttackType> getGeneralAttackType() {
       return generalAttackType;
    }
+
+   public final String[] getSpecificAttackTypes() {
+      return specificAttackTypes;
+   }
    
    public final FormatAsArff getFaa() {
       return faa;
    }
 
    private void removeNonMatchingClasses() {
-      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.attackTypes);
+      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackTypes);
       this.faa.removeNonMatchingClasses("service", "http", "http_443");
    }
    
@@ -75,12 +80,12 @@ public abstract class PreprocessFile {
       }
       
       int lastIndex = this.faa.getInstances().numAttributes()-1;
-      for (String attackType : this.attackTypes) {
+      for (String attackType : this.specificAttackTypes) {
          this.faa.keepXInstances(lastIndex, attackType, getDivider());
       }
    }
 
    private int getDivider(){
-      return Math.round(this.instancesCount/this.attackTypes.length);
+      return Math.round(this.instancesCount/this.specificAttackTypes.length);
    }
 }

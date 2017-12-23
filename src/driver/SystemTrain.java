@@ -60,7 +60,7 @@ public final class SystemTrain {
       this.evaluationSets = new ArrayList<>();
       this.mode = mode;
       
-      this.preprocessFiles = setupPreprocessFiles(mode.getPreprocessFiles(), mode.getReplacement());
+      this.preprocessFiles = setupPreprocessFiles(mode.getPreprocessFiles(), mode.getRelabel());
 
       this.classifierHolders.add(new ClassifierHolder(new J48(), "J48"));
       this.classifierHolders.add(new ClassifierHolder(new IBk(), "KNN"));
@@ -80,8 +80,9 @@ public final class SystemTrain {
          String query = String.format("INSERT INTO %s.%s (%s, %s, %s) VALUES (?,?,?);",
            DBConnectionConstants.DATABASE_NAME,
            MainTableConstants.TABLE_NAME,
+           
            MainTableConstants.SYSTEM_TYPE,
-           MainTableConstants.IS_NOMINAL,
+           MainTableConstants.CATEGORICAL_TYPE,
            MainTableConstants.NOISE_LEVEL
          );
 

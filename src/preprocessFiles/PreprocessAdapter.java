@@ -1,5 +1,6 @@
 package preprocessFiles;
 
+import constants.GeneralAttackType;
 import java.io.IOException;
 
 public class PreprocessAdapter extends PreprocessFile{
