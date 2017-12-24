@@ -1,6 +1,5 @@
 package driver.mode;
 
-import driver.categoricalType.CategoricalType;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import preprocessFiles.PreprocessHighrate;
@@ -8,9 +7,10 @@ import preprocessFiles.PreprocessLowrate;
 import preprocessFiles.PreprocessNormal;
 
 import driver.categoricalType.*;
+import driver.categoricalType.AttackType;
 
 public final class Single extends Mode{
-   public Single(int totalCount, NoiseLevel nl, CategoricalType categoricalType) throws IOException {
+   public Single(int totalCount, NoiseLevel nl, AttackType categoricalType) throws IOException {
       super(totalCount, nl, categoricalType);
       
       super.pfL.add(new PreprocessHighrate());

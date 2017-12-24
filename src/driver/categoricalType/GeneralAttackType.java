@@ -5,13 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import preprocessFiles.PreprocessFile;
 
-public final class Binary implements CategoricalType{
+public final class GeneralAttackType implements AttackType{
    
-   /**
-    * //Todo, make not return the magic number 2
-    * @param pfL
-    * @return 
-    */
    @Override
    public int getClassCount(List<PreprocessFile> pfL) {
       return (int) pfL.stream()

@@ -1,6 +1,6 @@
 package driver.mode;
 
-import driver.categoricalType.BinaryIsAttack;
+import driver.categoricalType.HybridStage;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import preprocessFiles.PreprocessHighrate;
@@ -9,7 +9,7 @@ import preprocessFiles.PreprocessNormal;
 
 public final class HybridIsAttack extends Mode{
    public HybridIsAttack(int totalCount, NoiseLevel nl) throws IOException {
-      super(totalCount, nl, new  BinaryIsAttack());
+      super(totalCount, nl, new  HybridStage());
 
       super.pfL.add(new PreprocessHighrate());
       super.pfL.add(new PreprocessLowrate());

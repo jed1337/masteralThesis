@@ -39,7 +39,7 @@ public abstract class PreprocessFile {
       balanceInstances();
    }
 
-   public final void rename(String attributes, String toReplace) throws Exception {
+   public final void relabel(String attributes, String toReplace) throws Exception {
       this.faa.renameNominalValues(attributes, toReplace);
       System.out.println("");
    }
@@ -62,7 +62,7 @@ public abstract class PreprocessFile {
 
    private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackTypes);
-      this.faa.removeNonMatchingClasses("service", "http", "http_443");
+//      this.faa.removeNonMatchingClasses("service", "http", "http_443");
    }
    
    /**

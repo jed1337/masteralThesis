@@ -9,17 +9,17 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 import constants.GeneralAttackType;
-import driver.categoricalType.CategoricalType;
 import preprocessFiles.PreprocessFile;
+import driver.categoricalType.AttackType;
 
 public abstract class Mode {
    protected final int totalCount;
    protected final List<PreprocessFile> pfL;
    
    private final NoiseLevel nl;
-   private final CategoricalType categoricalType;
+   private final AttackType categoricalType;
 
-   public Mode(int totalCount, NoiseLevel nl, CategoricalType categoricalType) throws IOException {
+   public Mode(int totalCount, NoiseLevel nl, AttackType categoricalType) throws IOException {
       this.totalCount = totalCount;
       this.pfL = new ArrayList<>();
       this.nl = nl;
@@ -29,22 +29,22 @@ public abstract class Mode {
    }
 
    protected final void setPreprocessFileCount(){
-      Set<Enum<GeneralAttackType>> attackTypes = new HashSet(); // Unique values
+      Set<Enum<GeneralAttackType>> gats = new HashSet(); // Unique values
       this.pfL.forEach((pf)->{
-         attackTypes.add(pf.getGeneralAttackType());
+         gats.add(pf.getGeneralAttackType());
       });
 
-      for (Enum<GeneralAttackType> attackType : attackTypes) {
-         Predicate<PreprocessFile> sameAttackType = (pf)->pf.getGeneralAttackType() == attackType;
+      for (Enum<GeneralAttackType> gat : gats) {
+         Predicate<PreprocessFile> sameGAT = (pf)->pf.getGeneralAttackType() == gat;
 
          int attackTypeCount = (int) this.pfL.stream()
-            .filter(sameAttackType)
+            .filter(sameGAT)
             .count();
          
          this.pfL.stream()
-            .filter(sameAttackType)
+            .filter(sameGAT)
             .forEach((pf)->{
-               pf.setInstancesCount(this.totalCount/(attackTypes.size()*attackTypeCount));
+               pf.setInstancesCount(this.totalCount/(gats.size()*attackTypeCount));
             }
          );
       }

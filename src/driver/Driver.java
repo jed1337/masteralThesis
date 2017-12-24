@@ -3,8 +3,7 @@ package driver;
 import constants.ArffInstanceCount;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
-import driver.categoricalType.Binary;
-import driver.categoricalType.CategoricalType;
+import driver.categoricalType.GeneralAttackType;
 import driver.mode.Mode;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
@@ -20,6 +19,7 @@ import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
+import driver.categoricalType.AttackType;
 
 public final class Driver {
 //<editor-fold defaultstate="collapsed" desc="System">
@@ -66,7 +66,7 @@ public final class Driver {
       wse.setClassifier(new J48());
       wse.setFolds(5);
       
-      final CategoricalType categoricalType = new Binary();
+      final AttackType categoricalType = new GeneralAttackType();
       
       systemTrain(new Single        (instanceCount, noiseLevel, categoricalType), wse, folderPath+"single/");
       

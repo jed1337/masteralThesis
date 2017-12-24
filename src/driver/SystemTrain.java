@@ -117,13 +117,13 @@ public final class SystemTrain {
       return con;
    }
 
-	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> preprocessFiles, String replacement)
+	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> preprocessFiles, String relabel)
 			  throws IOException, Exception {
 		for (PreprocessFile pf : preprocessFiles) {
 			pf.setUp();
-			pf.rename(
+			pf.relabel(
 				AttributeTypeConstants.ATTRIBUTE_CLASS,
-				replacement
+				relabel
 			);
 			Utils.writePreprocessFile(pf);
 		}
