@@ -16,15 +16,15 @@ import java.io.IOException;
 public abstract class PreprocessFile {
    private final int RANDOM_SEED = 11;
    private final Enum<GeneralAttackType> generalAttackType;
-   private final String[] specificAttackTypes;
+   private final String specificAttackType;
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
    
-   protected PreprocessFile(String fileName, Enum<GeneralAttackType> generalAttackType, String[] specificAttackTypes)
+   protected PreprocessFile(String fileName, Enum<GeneralAttackType> generalAttackType, String specificAttackTypes)
            throws IOException {
       this.generalAttackType = generalAttackType;
-      this.specificAttackTypes = specificAttackTypes;
+      this.specificAttackType = specificAttackTypes;
 
       this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+""+fileName);
       this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+  ""+fileName);
@@ -52,8 +52,8 @@ public abstract class PreprocessFile {
       return generalAttackType;
    }
 
-   public final String[] getSpecificAttackTypes() {
-      return specificAttackTypes;
+   public final String getSpecificAttackType() {
+      return specificAttackType;
    }
    
    public final FormatAsArff getFaa() {
@@ -61,7 +61,7 @@ public abstract class PreprocessFile {
    }
 
    private void removeNonMatchingClasses() {
-      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackTypes);
+      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType);
 //      this.faa.removeNonMatchingClasses("service", "http", "http_443");
    }
    
@@ -79,13 +79,8 @@ public abstract class PreprocessFile {
          return;
       }
       
+      //Todo, make not directly the last index
       int lastIndex = this.faa.getInstances().numAttributes()-1;
-      for (String attackType : this.specificAttackTypes) {
-         this.faa.keepXInstances(lastIndex, attackType, getDivider());
-      }
-   }
-
-   private int getDivider(){
-      return Math.round(this.instancesCount/this.specificAttackTypes.length);
+      this.faa.keepXInstances(lastIndex, this.specificAttackType, this.instancesCount);
    }
 }

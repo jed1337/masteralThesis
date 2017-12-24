@@ -2,7 +2,6 @@ package driver;
 
 import constants.ArffInstanceCount;
 import constants.DirectoryConstants;
-import constants.FileNameConstants;
 import driver.categoricalType.GeneralAttackType;
 import driver.mode.Mode;
 import driver.mode.Single;
@@ -19,7 +18,9 @@ import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
-import driver.categoricalType.AttackType;
+import driver.categoricalType.CategoricalType;
+import driver.mode.HybridIsAttack;
+import driver.mode.noiseLevel.NoiseNormal;
 
 public final class Driver {
 //<editor-fold defaultstate="collapsed" desc="System">
@@ -66,11 +67,11 @@ public final class Driver {
       wse.setClassifier(new J48());
       wse.setFolds(5);
       
-      final AttackType categoricalType = new GeneralAttackType();
+      final CategoricalType categoricalType = new GeneralAttackType();
       
-      systemTrain(new Single        (instanceCount, noiseLevel, categoricalType), wse, folderPath+"single/");
+//      systemTrain(new Single        (instanceCount, noiseLevel, categoricalType), wse, folderPath+"single/");
+      systemTrain(new HybridIsAttack(7000, new NoiseNormal()), wse, folderPath+"isAttack/");
       
-//      systemTrain(new HybridIsAttack(instanceCount, noiseLevel), wse, folderPath+"isAttack/");
 //      systemTrain(new HybridDDoSType(instanceCount, NoNoise.getInstance()), wse, folderPath+"DDoS type/");
 //      systemTrain(new SpecificHighrate(instanceCount, NoNoise.getInstance()), wse, folderPath+"specific highrate/");
 //      systemTrain(new SpecificLowrate(instanceCount, NoNoise.getInstance()), wse, folderPath+"specific lowrate/");

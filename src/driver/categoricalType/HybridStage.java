@@ -4,7 +4,7 @@ import constants.CategoricalTypeConstants;
 import java.util.List;
 import preprocessFiles.PreprocessFile;
 
-public abstract class HybridStage implements AttackType{
+public abstract class HybridStage implements CategoricalType{
    /**
     * Returns 2 since a hybrid stage should have 2 classes. Ex:
     * (Normal, Attack), (Highrate, Lowrate), ...

@@ -9,7 +9,7 @@ public final class PreprocessNeptune extends PreprocessFile{
       super(
          FileNameConstants.KDD_TRAIN, 
          GeneralAttackType.HIGH_RATE, 
-         new String[]{"neptune"}
+         "neptune"
       );
    }
 }

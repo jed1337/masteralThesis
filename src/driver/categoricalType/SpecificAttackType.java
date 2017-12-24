@@ -5,14 +5,15 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 import preprocessFiles.PreprocessFile;
 
-public final class SpecificAttackType implements AttackType{
+public final class SpecificAttackType implements CategoricalType{
    @Override
    public int getClassCount(List<PreprocessFile> pfL) {
       Set<String> specificTypes = new HashSet<>();
       for (PreprocessFile pf : pfL) {
-         specificTypes.addAll(Arrays.asList(pf.getSpecificAttackTypes()));
+         specificTypes.addAll(Arrays.asList(pf.getSpecificAttackType()));
       }
       
       return specificTypes.size();
@@ -31,5 +32,29 @@ public final class SpecificAttackType implements AttackType{
    @Override
    public CategoricalTypeConstants getCategoricalType() {
       return CategoricalTypeConstants.NOMINAL;
+   }
+   
+   @Override
+   public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
+      Set<String> sats = new HashSet(); // Unique values
+      pfL.forEach((pf)->{
+         sats.add(pf.getSpecificAttackType());
+      });
+
+      for (String sat : sats) {
+         Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType().equals(sat);
+
+         int sameSATCount = (int) pfL.stream()
+            .filter(sameSAT)
+            .count();
+
+         pfL.stream()
+            .filter(sameSAT)
+            .forEach((pf)->{
+               pf.setInstancesCount(
+               totalInstanceCount / (sats.size() * sameSATCount));
+            }
+         );
+      }
    }
 }

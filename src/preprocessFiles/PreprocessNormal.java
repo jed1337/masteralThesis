@@ -9,7 +9,7 @@ public final class PreprocessNormal extends PreprocessFile{
       super(
          FileNameConstants.KDD_TRAIN,
          GeneralAttackType.NORMAL,
-         new String[]{"normal"}
+         "normal"
       );
    }
 }

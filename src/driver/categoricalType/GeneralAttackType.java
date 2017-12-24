@@ -2,11 +2,13 @@ package driver.categoricalType;
 
 import constants.CategoricalTypeConstants;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Predicate;
 import preprocessFiles.PreprocessFile;
 
-public final class GeneralAttackType implements AttackType{
-   
+public final class GeneralAttackType implements CategoricalType{
    @Override
    public int getClassCount(List<PreprocessFile> pfL) {
       return (int) pfL.stream()
@@ -20,13 +22,9 @@ public final class GeneralAttackType implements AttackType{
       ArrayList<String> relabels = new ArrayList<>();
       
       for (PreprocessFile pf : pfL) {
-         String generalAttackType = pf.getGeneralAttackType().name();
-         
-         for (String specificAttackType : pf.getSpecificAttackTypes()) {
-            relabels.add(
-               String.format("%s:%s", specificAttackType, generalAttackType)
-            );
-         }
+         relabels.add(
+            String.format("%s:%s", pf.getSpecificAttackType(), pf.getGeneralAttackType())
+         );
       }
       
       return String.join(", ", relabels);
@@ -35,5 +33,29 @@ public final class GeneralAttackType implements AttackType{
    @Override
    public CategoricalTypeConstants getCategoricalType(){
       return CategoricalTypeConstants.BINARY;
+   }
+   
+   @Override
+   public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
+      Set<Enum<constants.GeneralAttackType>> gats = new HashSet(); // Unique values
+      pfL.forEach((pf)->{
+         gats.add(pf.getGeneralAttackType());
+      });
+
+      for (Enum<constants.GeneralAttackType> gat : gats) {
+         Predicate<PreprocessFile> sameGAT = (pf)->pf.getGeneralAttackType() == gat;
+
+         int sameAttackTypeCount = (int) pfL.stream()
+            .filter(sameGAT)
+            .count();
+
+         pfL.stream()
+            .filter(sameGAT)
+            .forEach((pf)->{
+               pf.setInstancesCount(
+               totalInstanceCount / (gats.size() * sameAttackTypeCount));
+            }
+         );
+      }
    }
 }

@@ -1,28 +1,31 @@
 package driver.mode;
 
 import driver.mode.noiseLevel.NoNoise;
-import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
-import preprocessFiles.PreprocessHighrate;
-import preprocessFiles.PreprocessLowrate;
-import driver.categoricalType.AttackType;
+import preprocessFiles.PreprocessHTTPFlood;
+import preprocessFiles.PreprocessSlowBody;
+import preprocessFiles.PreprocessSlowHeaders;
+import preprocessFiles.PreprocessSlowRead;
+import preprocessFiles.PreprocessTCPFlood;
+import preprocessFiles.PreprocessUDPFlood;
+import driver.categoricalType.CategoricalType;
 
 public final class HybridDDoSType extends Mode{
    
-   public HybridDDoSType(int totalCount, NoiseLevel nl, AttackType categoricalType) throws IOException {
-      super(totalCount, NoNoise.getInstance(), categoricalType);
+   public HybridDDoSType(int totalInstancesCount, CategoricalType categoricalType) throws IOException {
+      super(totalInstancesCount, NoNoise.getInstance(), categoricalType);
 
 //TODO make this part in all of the other subclasses not repeaet code      
-      super.pfL.add(new PreprocessHighrate());
-      super.pfL.add(new PreprocessLowrate());
+      super.pfL.add(new PreprocessTCPFlood());
+      super.pfL.add(new PreprocessUDPFlood());
+      super.pfL.add(new PreprocessHTTPFlood());
       
-      super.setPreprocessFileCount();
+      super.pfL.add(new PreprocessSlowBody());
+      super.pfL.add(new PreprocessSlowHeaders());
+      super.pfL.add(new PreprocessSlowRead());
+      
+      categoricalType.setPreprocessFileCount(super.pfL, totalInstanceCount);
    }
-
-//   @Override
-//   public String getRelabel() {
-//      return "tcpFlood:highrate, udpFlood:highrate, httpFlood:highrate, slowBody:lowrate, slowHeaders:lowrate, slowRead:lowrate";
-//   }
 
    @Override
    public String getSystemType() {
