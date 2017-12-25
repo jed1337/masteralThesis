@@ -3,6 +3,9 @@ package featureSelection;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.attributeSelection.AttributeSelection;
+import weka.attributeSelection.BestFirst;
+import weka.attributeSelection.Ranker;
+import weka.attributeSelection.WrapperSubsetEval;
 import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
@@ -17,12 +20,15 @@ public final class FeatureSelection {
     * @param trainSet
     * @throws Exception 
     */
-   public FeatureSelection(ASEvaluation attributeEvaluator, ASSearch searchMethod, Instances trainSet) throws Exception{
+   public FeatureSelection(ASEvaluation attributeEvaluator, Instances trainSet) throws Exception{
       attributeEvaluator.buildEvaluator(trainSet);
       
       AttributeSelection as = new AttributeSelection();
       as.setEvaluator(attributeEvaluator);
-      as.setSearch(searchMethod);
+      
+      as.setSearch(
+         getSearchMethod(attributeEvaluator)
+      );
       as.SelectAttributes(trainSet);
       
       this.selectedAttributes = as.selectedAttributes();
@@ -32,8 +38,8 @@ public final class FeatureSelection {
    }
    
    /**
-    * Since we have set selectedAttributes via constructor, (instances, selectedAttributes) can be passed <p>
-    * to the static version of this method
+    * Since we have set selectedAttributes via constructor, (instances, selectedAttributes) 
+    * can be passed to the static version of this method
     * 
     * @param instances
     * @return
@@ -62,5 +68,12 @@ public final class FeatureSelection {
       remove.setInputFormat(instances);
 
       return Filter.useFilter(instances, remove);
+   }
+
+   private ASSearch getSearchMethod(ASEvaluation attributeEvaluator) {
+      if(attributeEvaluator instanceof WrapperSubsetEval){
+         return new BestFirst();
+      }
+      return new Ranker();
    }
 }

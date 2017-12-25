@@ -1,0 +1,54 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.0113 * (normalized) protocol_type=tcp
+ +       1.0113 * (normalized) protocol_type=udp
+ +       0.4476 * (normalized) flag=OTH
+ +      -1.343  * (normalized) flag=REJ
+ +       0.1992 * (normalized) flag=RSTO
+ +       0.203  * (normalized) flag=S1
+ +       0.1998 * (normalized) flag=S2
+ +       2.0934 * (normalized) flag=S3
+ +      -1.8    * (normalized) flag=SF
+ +      -0.138  * (normalized) dst_bytes
+ +       0.1192 * (normalized) count
+ +      -0.0005 * (normalized) serror_rate
+ +      -0.0489 * (normalized) srv_diff_host_rate
+ +      -2.3168 * (normalized) dst_host_same_src_port_rate
+ +      -2.2818 * (normalized) dst_host_srv_diff_host_rate
+ +       1.8117
+
+Number of kernel evaluations: 1283224 (81.476% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         949               99.8947 %
+Incorrectly Classified Instances         1                0.1053 %
+Kappa statistic                          0.9959
+Mean absolute error                      0.0011
+Root mean squared error                  0.0324
+Relative absolute error                  0.4117 %
+Root relative squared error              9.0731 %
+Total Number of Instances              950     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.001    0.993      1.000    0.997      0.996    0.999     0.993     normal
+                 0.999    0.000    1.000      0.999    0.999      0.996    0.999     1.000     attack
+Weighted Avg.    0.999    0.000    0.999      0.999    0.999      0.996    0.999     0.999     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 143   0 |   a = normal
+   1 806 |   b = attack

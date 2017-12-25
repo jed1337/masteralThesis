@@ -62,7 +62,7 @@ public abstract class PreprocessFile {
 
    private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType);
-//      this.faa.removeNonMatchingClasses("service", "http", "http_443");
+      this.faa.removeNonMatchingClasses("service", "http", "http_443");
    }
    
    /**

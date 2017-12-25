@@ -32,7 +32,6 @@ import utils.Utils;
 import utils.UtilsARFF;
 import utils.UtilsClssifiers;
 import weka.attributeSelection.ASEvaluation;
-import weka.attributeSelection.ASSearch;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.SMO;
 import weka.classifiers.lazy.IBk;
@@ -93,7 +92,7 @@ public final class SystemTrain {
          
          int i=1;
          ps.setString(i++, mode.getSystemType());
-         ps.setBoolean(i++, false);
+         ps.setString(i++, mode.getCategoricalType().name());
          ps.setFloat(i++, mode.getNoiseLevelFloat());
 
          ps.executeUpdate();
@@ -163,16 +162,14 @@ public final class SystemTrain {
 	/**
 	 * Breaks single responsibility (Apply and return int[])
 	 * @param attributeEvaluator
-	 * @param searchMethod
 	 * @return
 	 * @throws IOException
 	 * @throws Exception
 	 */
-   public int[] applyFeatureSelection(ASEvaluation attributeEvaluator, ASSearch searchMethod)
+   public int[] applyFeatureSelection(ASEvaluation attributeEvaluator)
            throws IOException, NoSuchElementException, Exception {
       FeatureSelection nfs = new FeatureSelection(
          attributeEvaluator,
-         searchMethod,
          getEvaluationSet(this.trainPath)
       );
 
@@ -297,7 +294,8 @@ public final class SystemTrain {
             ps.setString(avgClassIndex++, ch.getClassifierName());
             ps.setString(avgClassIndex++, "Average");
 
-            ps.setDouble(avgClassIndex++, eval.pctCorrect());
+//            ps.setDouble(avgClassIndex++, eval.pctCorrect());
+            ps.setDouble(avgClassIndex++, eval.correct()/eval.withClass());
             ps.setDouble(avgClassIndex++, eval.weightedPrecision());
             ps.setDouble(avgClassIndex++, eval.weightedRecall());
             ps.setDouble(avgClassIndex++, eval.weightedFMeasure());

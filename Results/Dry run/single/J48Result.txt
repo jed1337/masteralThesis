@@ -1,0 +1,61 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_host_srv_count <= 100
+|   dst_host_same_src_port_rate <= 0
+|   |   src_bytes <= 78
+|   |   |   src_bytes <= 74: LOW_RATE (224.0/4.0)
+|   |   |   src_bytes > 74: HIGH_RATE (115.0/1.0)
+|   |   src_bytes > 78
+|   |   |   dst_bytes <= 720: LOW_RATE (822.0/2.0)
+|   |   |   dst_bytes > 720
+|   |   |   |   dst_bytes <= 821: HIGH_RATE (27.0)
+|   |   |   |   dst_bytes > 821: LOW_RATE (171.0)
+|   dst_host_same_src_port_rate > 0
+|   |   dst_bytes <= 74
+|   |   |   dst_host_same_src_port_rate <= 0.5
+|   |   |   |   src_bytes <= 70
+|   |   |   |   |   src_bytes <= 0: NORMAL (10.0)
+|   |   |   |   |   src_bytes > 0: LOW_RATE (118.0/2.0)
+|   |   |   |   src_bytes > 70
+|   |   |   |   |   dst_host_count <= 62
+|   |   |   |   |   |   src_bytes <= 170: HIGH_RATE (24.0)
+|   |   |   |   |   |   src_bytes > 170: LOW_RATE (3.0)
+|   |   |   |   |   dst_host_count > 62: HIGH_RATE (528.0/1.0)
+|   |   |   dst_host_same_src_port_rate > 0.5
+|   |   |   |   dst_host_count <= 12
+|   |   |   |   |   src_bytes <= 0: NORMAL (3.0)
+|   |   |   |   |   src_bytes > 0: HIGH_RATE (17.0)
+|   |   |   |   dst_host_count > 12: HIGH_RATE (543.0)
+|   |   dst_bytes > 74: NORMAL (25.0)
+dst_host_srv_count > 100: NORMAL (1295.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	29
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         935               95.3109 %
+Incorrectly Classified Instances        46                4.6891 %
+Kappa statistic                          0.9296
+Mean absolute error                      0.032 
+Root mean squared error                  0.1744
+Relative absolute error                  7.1924 %
+Root relative squared error             36.9934 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.860    0.003    0.993      0.860    0.922      0.893    0.986     0.967     HIGH_RATE
+                 0.994    0.068    0.883      0.994    0.935      0.902    0.986     0.955     LOW_RATE
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     NORMAL
+Weighted Avg.    0.953    0.024    0.958      0.953    0.953      0.933    0.991     0.974     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 271  44   0 |   a = HIGH_RATE
+   2 331   0 |   b = LOW_RATE
+   0   0 333 |   c = NORMAL
