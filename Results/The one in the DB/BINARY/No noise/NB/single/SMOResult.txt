@@ -1,0 +1,89 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.2008 * (normalized) flag=OTH
+ +       0.8001 * (normalized) flag=RSTO
+ +       0.8004 * (normalized) flag=S1
+ +       0.8004 * (normalized) flag=S2
+ +      -1.2    * (normalized) flag=S3
+ +      -0.0025 * (normalized) dst_host_count
+ +      -0      * (normalized) dst_host_diff_srv_rate
+ +       0.2009
+
+Number of kernel evaluations: 420932 (52.018% cached)
+
+Classifier for classes: HIGH_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.282  * (normalized) flag=OTH
+ +       0.7051 * (normalized) flag=REJ
+ +      -1.0176 * (normalized) flag=RSTO
+ +       0.7254 * (normalized) flag=S0
+ +       0.7227 * (normalized) flag=S1
+ +       0.7037 * (normalized) flag=S2
+ +      -1.2822 * (normalized) flag=S3
+ +       0.7249 * (normalized) flag=SF
+ +       1.7424 * (normalized) rerror_rate
+ +       0.0218 * (normalized) dst_host_count
+ +       0.0017 * (normalized) dst_host_diff_srv_rate
+ +       0.2744
+
+Number of kernel evaluations: 33686 (70.089% cached)
+
+Classifier for classes: LOW_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.8783 * (normalized) flag=OTH
+ +       0.7972 * (normalized) flag=REJ
+ +      -0.8787 * (normalized) flag=RSTO
+ +       1.3567 * (normalized) flag=S0
+ +      -0.8788 * (normalized) flag=S1
+ +      -0.8789 * (normalized) flag=S2
+ +       1.3608 * (normalized) flag=SF
+ +       2.0762 * (normalized) rerror_rate
+ +       0.6172 * (normalized) dst_host_count
+ +       0.0104 * (normalized) dst_host_diff_srv_rate
+ -       0.363 
+
+Number of kernel evaluations: 127402 (69.226% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         815               83.0785 %
+Incorrectly Classified Instances       166               16.9215 %
+Kappa statistic                          0.7466
+Mean absolute error                      0.2616
+Root mean squared error                  0.3369
+Relative absolute error                 58.8884 %
+Root relative squared error             71.4755 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.857    0.177    0.696      0.857    0.768      0.649    0.885     0.683     HIGH_RATE
+                 0.646    0.074    0.817      0.646    0.721      0.611    0.786     0.648     LOW_RATE
+                 0.991    0.000    1.000      0.991    0.995      0.993    0.999     0.997     NORMAL
+Weighted Avg.    0.831    0.082    0.840      0.831    0.829      0.753    0.890     0.778     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 270  45   0 |   a = HIGH_RATE
+ 118 215   0 |   b = LOW_RATE
+   0   3 330 |   c = NORMAL

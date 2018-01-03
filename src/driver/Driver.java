@@ -17,9 +17,12 @@ import weka.classifiers.Classifier;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
 import driver.categoricalType.CategoricalType;
+import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
+import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseNormal;
+import weka.classifiers.bayes.NaiveBayes;
 
 public final class Driver {
 //<editor-fold defaultstate="collapsed" desc="System">
@@ -58,22 +61,24 @@ public final class Driver {
    
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
       final int instanceCount = ArffInstanceCount.HALVED;
-
-      final NoiseLevel noiseLevel = new NoiseNormal();
       
-      final WrapperSubsetEval asEval = new WrapperSubsetEval();
-      asEval.setClassifier(new J48());
-      asEval.setFolds(5);
+      final WrapperSubsetEval asEval = null;
+//      final WrapperSubsetEval asEval = new WrapperSubsetEval();
+//      asEval.setClassifier(new NaiveBayes());
+//      asEval.setFolds(5);
+      final String fs = "No feature selection/";
       
-      String fs = "J48/";
+      final CategoricalType[] categoricalTypes = new CategoricalType[]{new GeneralAttackType(),new SpecificAttackType()};
+      final NoiseLevel[] noiseLevels = new NoiseLevel[]{NoNoise.getInstance(), new NoiseNormal()};
       
-      final CategoricalType categoricalType = new GeneralAttackType();
-      
-      systemTrain(new Single        (instanceCount, noiseLevel, categoricalType), asEval, fs+"single/");
-      systemTrain(new HybridIsAttack(instanceCount, new NoiseNormal()), asEval, fs+"isAttack/");
-      systemTrain(new HybridDDoSType(instanceCount, categoricalType), asEval, fs+"DDoS type/");
-      
-      System.out.println("");
+      for (CategoricalType categoricalType : categoricalTypes) {
+         for (NoiseLevel noiseLevel : noiseLevels) {
+            
+            systemTrain(new Single        (instanceCount, noiseLevel, categoricalType), asEval, fs+"single/");
+            systemTrain(new HybridIsAttack(instanceCount, noiseLevel), asEval, fs+"isAttack/");
+            systemTrain(new HybridDDoSType(instanceCount, categoricalType), asEval, fs+"DDoS type/");
+         }
+      }
    }
 
    private static int[] systemTrain(final Mode mode, final ASEvaluation attributeEvaluator, final String folderPath)
@@ -81,6 +86,7 @@ public final class Driver {
       String fullFolderPath = 
          String.join("/", 
             "Results",
+            "Dry run",
             mode.getCategoricalType().name(),
             mode.getNoiseLevelString(),
             folderPath
@@ -88,11 +94,11 @@ public final class Driver {
       
       SystemTrain st = new SystemTrain(mode);
       st.setupTestTrainValidation();
-      int[] result = st.applyFeatureSelection(attributeEvaluator);
+//      int[] result = st.applyFeatureSelection(attributeEvaluator);
       st.evaluateClassifiers();
       
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
-      return result;
+      return null;
    }
    
    private static void systemTrain(final Mode mode, final int[] selectedAttribtues, final String folderPath)

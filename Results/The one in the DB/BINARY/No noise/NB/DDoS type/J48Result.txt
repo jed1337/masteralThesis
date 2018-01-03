@@ -1,0 +1,57 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_host_same_src_port_rate <= 0
+|   count <= 1138
+|   |   src_bytes <= 370
+|   |   |   src_bytes <= 78
+|   |   |   |   count <= 270
+|   |   |   |   |   src_bytes <= 66: HIGH_RATE (11.0)
+|   |   |   |   |   src_bytes > 66: LOW_RATE (40.0/1.0)
+|   |   |   |   count > 270: LOW_RATE (307.0/2.0)
+|   |   |   src_bytes > 78: LOW_RATE (1039.0/2.0)
+|   |   src_bytes > 370
+|   |   |   src_bytes <= 464
+|   |   |   |   src_bytes <= 392: HIGH_RATE (79.0)
+|   |   |   |   src_bytes > 392
+|   |   |   |   |   src_bytes <= 410: LOW_RATE (26.0)
+|   |   |   |   |   src_bytes > 410: HIGH_RATE (23.0)
+|   |   |   src_bytes > 464: LOW_RATE (409.0)
+|   count > 1138: HIGH_RATE (165.0)
+dst_host_same_src_port_rate > 0
+|   count <= 1138
+|   |   dst_host_same_src_port_rate <= 0.33
+|   |   |   src_bytes <= 60: LOW_RATE (179.0)
+|   |   |   src_bytes > 60
+|   |   |   |   src_bytes <= 168: HIGH_RATE (30.0/1.0)
+|   |   |   |   src_bytes > 168: LOW_RATE (4.0)
+|   |   dst_host_same_src_port_rate > 0.33: HIGH_RATE (585.0)
+|   count > 1138: HIGH_RATE (808.0)
+
+Number of Leaves  : 	14
+
+Size of the tree : 	27
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         903               97.5162 %
+Incorrectly Classified Instances        23                2.4838 %
+Kappa statistic                          0.9499
+Mean absolute error                      0.026 
+Root mean squared error                  0.1568
+Relative absolute error                  5.2407 %
+Root relative squared error             31.4673 %
+Total Number of Instances              926     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.965    0.016    0.981      0.965    0.973      0.950    0.983     0.973     HIGH_RATE
+                 0.984    0.035    0.970      0.984    0.977      0.950    0.983     0.977     LOW_RATE
+Weighted Avg.    0.975    0.026    0.975      0.975    0.975      0.950    0.983     0.975     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 411  15 |   a = HIGH_RATE
+   8 492 |   b = LOW_RATE

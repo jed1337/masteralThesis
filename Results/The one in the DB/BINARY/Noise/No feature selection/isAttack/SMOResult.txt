@@ -1,0 +1,70 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.1002 * (normalized) duration
+ +      -1.0094 * (normalized) protocol_type=tcp
+ +       1.0094 * (normalized) protocol_type=udp
+ +       0.4003 * (normalized) flag=OTH
+ +      -0.3847 * (normalized) flag=REJ
+ +       0.2806 * (normalized) flag=RSTO
+ +       0.4203 * (normalized) flag=S1
+ +       0.2219 * (normalized) flag=S2
+ +       0.7709 * (normalized) flag=S3
+ +      -1.7092 * (normalized) flag=SF
+ +      -0.0308 * (normalized) src_bytes
+ +      -0.1347 * (normalized) dst_bytes
+ +       0.1004 * (normalized) count
+ +       0.1079 * (normalized) srv_count
+ +      -0.1884 * (normalized) serror_rate
+ +      -0.0957 * (normalized) srv_serror_rate
+ +      -0.3847 * (normalized) rerror_rate
+ +      -0.3847 * (normalized) srv_rerror_rate
+ +      -0.1342 * (normalized) same_srv_rate
+ +       0.7709 * (normalized) diff_srv_rate
+ +      -0.2622 * (normalized) srv_diff_host_rate
+ +       0.4094 * (normalized) dst_host_count
+ +      -0.5919 * (normalized) dst_host_srv_count
+ +      -0.0539 * (normalized) dst_host_same_srv_rate
+ +       0.7464 * (normalized) dst_host_diff_srv_rate
+ +      -2.2197 * (normalized) dst_host_same_src_port_rate
+ +      -2.1061 * (normalized) dst_host_srv_diff_host_rate
+ +       0.2027 * (normalized) dst_host_serror_rate
+ +       0.181  * (normalized) dst_host_srv_serror_rate
+ +      -0.0769 * (normalized) dst_host_rerror_rate
+ +      -0.1346 * (normalized) dst_host_srv_rerror_rate
+ +       1.9838
+
+Number of kernel evaluations: 856960 (77.945% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         949               99.8947 %
+Incorrectly Classified Instances         1                0.1053 %
+Kappa statistic                          0.9959
+Mean absolute error                      0.0011
+Root mean squared error                  0.0324
+Relative absolute error                  0.4117 %
+Root relative squared error              9.0731 %
+Total Number of Instances              950     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.001    0.993      1.000    0.997      0.996    0.999     0.993     normal
+                 0.999    0.000    1.000      0.999    0.999      0.996    0.999     1.000     attack
+Weighted Avg.    0.999    0.000    0.999      0.999    0.999      0.996    0.999     0.999     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 143   0 |   a = normal
+   1 806 |   b = attack

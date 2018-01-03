@@ -1,0 +1,95 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1      * (normalized) protocol_type=tcp
+ +      -1      * (normalized) protocol_type=udp
+ +       0.3764 * (normalized) flag=OTH
+ +       0.4264 * (normalized) flag=RSTO
+ +       0.6193 * (normalized) flag=S1
+ +       0.5123 * (normalized) flag=S2
+ +      -1.9343 * (normalized) flag=S3
+ +     -10.3676 * (normalized) count
+ +      -1.0795 * (normalized) dst_host_count
+ +      -2.4387 * (normalized) dst_host_same_src_port_rate
+ +       0.1923
+
+Number of kernel evaluations: 187498 (70.904% cached)
+
+Classifier for classes: HIGH_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.491  * (normalized) protocol_type=tcp
+ +      -1.491  * (normalized) protocol_type=udp
+ +      -1.8924 * (normalized) flag=OTH
+ +       1      * (normalized) flag=REJ
+ +      -1.4054 * (normalized) flag=RSTO
+ +       1      * (normalized) flag=S0
+ +      -0.8787 * (normalized) flag=S1
+ +      -2.0913 * (normalized) flag=S3
+ +       4.2678 * (normalized) flag=SF
+ +      -3.1678 * (normalized) count
+ +      -6.156  * (normalized) dst_host_count
+ +       1.3125 * (normalized) dst_host_same_src_port_rate
+ +       1.4004
+
+Number of kernel evaluations: 138419 (81.534% cached)
+
+Classifier for classes: LOW_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) protocol_type=tcp
+ +      -2.8419 * (normalized) flag=OTH
+ +       1.2436 * (normalized) flag=REJ
+ +      -2.5889 * (normalized) flag=RSTO
+ +       0      * (normalized) flag=RSTR
+ +       1      * (normalized) flag=S0
+ +      -2.2455 * (normalized) flag=S1
+ +      -1.0288 * (normalized) flag=S2
+ +       6.4616 * (normalized) flag=SF
+ +      -2.4672 * (normalized) count
+ +      -9.0486 * (normalized) dst_host_count
+ +       3.5624 * (normalized) dst_host_same_src_port_rate
+ +       3.5888
+
+Number of kernel evaluations: 252024 (75.803% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         840               85.6269 %
+Incorrectly Classified Instances       141               14.3731 %
+Kappa statistic                          0.7835
+Mean absolute error                      0.2582
+Root mean squared error                  0.3318
+Relative absolute error                 58.1237 %
+Root relative squared error             70.3974 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.584    0.000    1.000      0.584    0.737      0.699    0.876     0.776     HIGH_RATE
+                 0.985    0.116    0.814      0.985    0.891      0.837    0.937     0.808     LOW_RATE
+                 0.985    0.102    0.832      0.985    0.902      0.853    0.940     0.825     NORMAL
+Weighted Avg.    0.856    0.074    0.880      0.856    0.846      0.798    0.918     0.804     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 184  70  61 |   a = HIGH_RATE
+   0 328   5 |   b = LOW_RATE
+   0   5 328 |   c = NORMAL

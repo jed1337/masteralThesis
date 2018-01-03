@@ -1,0 +1,111 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+flag = OTH
+|   protocol_type = tcp
+|   |   dst_host_count <= 56
+|   |   |   dst_host_count <= 42
+|   |   |   |   dst_host_srv_count <= 33
+|   |   |   |   |   dst_host_srv_count <= 30
+|   |   |   |   |   |   dst_host_srv_count <= 21
+|   |   |   |   |   |   |   dst_host_srv_count <= 10
+|   |   |   |   |   |   |   |   dst_host_count <= 2: normal (4.0/1.0)
+|   |   |   |   |   |   |   |   dst_host_count > 2
+|   |   |   |   |   |   |   |   |   dst_host_srv_count <= 3: httpFlood (3.0/1.0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count > 3
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_count <= 5: slowHeaders (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_count > 5: slowBody (13.0/7.0)
+|   |   |   |   |   |   |   dst_host_srv_count > 10
+|   |   |   |   |   |   |   |   dst_host_count <= 13
+|   |   |   |   |   |   |   |   |   dst_host_srv_count <= 11: slowRead (3.0/1.0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count > 11: normal (8.0/3.0)
+|   |   |   |   |   |   |   |   dst_host_count > 13
+|   |   |   |   |   |   |   |   |   dst_host_count <= 19
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_count <= 15: httpFlood (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_count > 15: normal (18.0/7.0)
+|   |   |   |   |   |   |   |   |   dst_host_count > 19: httpFlood (10.0/5.0)
+|   |   |   |   |   |   dst_host_srv_count > 21
+|   |   |   |   |   |   |   dst_host_srv_count <= 22: slowRead (5.0/2.0)
+|   |   |   |   |   |   |   dst_host_srv_count > 22: normal (58.0/22.0)
+|   |   |   |   |   dst_host_srv_count > 30: httpFlood (113.0/41.0)
+|   |   |   |   dst_host_srv_count > 33: normal (240.0/25.0)
+|   |   |   dst_host_count > 42
+|   |   |   |   dst_host_count <= 52: slowHeaders (370.0/237.0)
+|   |   |   |   dst_host_count > 52
+|   |   |   |   |   dst_host_count <= 55: slowBody (30.0/15.0)
+|   |   |   |   |   dst_host_count > 55: slowRead (8.0/3.0)
+|   |   dst_host_count > 56
+|   |   |   dst_host_count <= 78
+|   |   |   |   dst_host_count <= 61: slowRead (28.0/15.0)
+|   |   |   |   dst_host_count > 61: tcpFlood (594.0/37.0)
+|   |   |   dst_host_count > 78
+|   |   |   |   dst_host_count <= 93
+|   |   |   |   |   dst_host_count <= 81: slowRead (18.0/11.0)
+|   |   |   |   |   dst_host_count > 81
+|   |   |   |   |   |   dst_host_count <= 84: slowHeaders (17.0/6.0)
+|   |   |   |   |   |   dst_host_count > 84
+|   |   |   |   |   |   |   dst_host_count <= 91: slowBody (38.0/21.0)
+|   |   |   |   |   |   |   dst_host_count > 91: slowHeaders (13.0/6.0)
+|   |   |   |   dst_host_count > 93: httpFlood (62.0/22.0)
+|   protocol_type = icmp: tcpFlood (0.0)
+|   protocol_type = udp: udpFlood (372.0)
+flag = REJ: normal (10.0)
+flag = RSTO
+|   dst_host_count <= 7
+|   |   dst_host_srv_count <= 12: slowHeaders (2.0)
+|   |   dst_host_srv_count > 12: normal (15.0)
+|   dst_host_count > 7: slowHeaders (274.0/177.0)
+flag = RSTOS0: tcpFlood (0.0)
+flag = RSTR: normal (5.0)
+flag = S0: tcpFlood (0.0)
+flag = S1
+|   dst_host_count <= 30
+|   |   dst_host_count <= 12: normal (10.0/1.0)
+|   |   dst_host_count > 12: slowRead (3.0/1.0)
+|   dst_host_count > 30
+|   |   dst_host_count <= 99
+|   |   |   dst_host_srv_count <= 98: slowRead (66.0/31.0)
+|   |   |   dst_host_srv_count > 98: slowHeaders (55.0/20.0)
+|   |   dst_host_count > 99: slowBody (774.0/470.0)
+flag = S2: slowBody (19.0/6.0)
+flag = S3: httpFlood (342.0)
+flag = SF: normal (187.0/1.0)
+flag = SH: tcpFlood (0.0)
+
+Number of Leaves  : 	41
+
+Size of the tree : 	71
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         634               66.6667 %
+Incorrectly Classified Instances       317               33.3333 %
+Kappa statistic                          0.61  
+Mean absolute error                      0.106 
+Root mean squared error                  0.2377
+Relative absolute error                 43.4165 %
+Root relative squared error             68.0188 %
+Total Number of Instances              951     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.944    0.025    0.871      0.944    0.906      0.890    0.982     0.865     tcpFlood
+                 0.993    0.024    0.882      0.993    0.934      0.924    1.000     0.999     normal
+                 0.790    0.011    0.926      0.790    0.853      0.833    0.970     0.898     httpFlood
+                 0.091    0.033    0.325      0.091    0.142      0.102    0.799     0.317     slowRead
+                 0.399    0.129    0.354      0.399    0.375      0.257    0.817     0.356     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.566    0.171    0.370      0.566    0.448      0.336    0.824     0.348     slowBody
+Weighted Avg.    0.667    0.059    0.658      0.667    0.648      0.600    0.909     0.667     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 135   0   0   5   3   0   0 |   a = tcpFlood
+   1 142   0   0   0   0   0 |   b = normal
+   1   4 113   2  14   0   9 |   c = httpFlood
+   6   6   1  13  47   0  70 |   d = slowRead
+   7   4   5  11  57   0  59 |   e = slowHeaders
+   0   0   0   0   0  93   0 |   f = udpFlood
+   5   5   3   9  40   0  81 |   g = slowBody

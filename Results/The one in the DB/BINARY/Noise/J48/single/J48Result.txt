@@ -1,0 +1,87 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_host_srv_diff_host_rate <= 0
+|   dst_host_same_src_port_rate <= 0
+|   |   count <= 1138
+|   |   |   flag = OTH: LOW_RATE (363.0/8.0)
+|   |   |   flag = REJ: LOW_RATE (0.0)
+|   |   |   flag = RSTO
+|   |   |   |   dst_bytes <= 833
+|   |   |   |   |   src_bytes <= 2196: HIGH_RATE (4.0)
+|   |   |   |   |   src_bytes > 2196: LOW_RATE (2.0)
+|   |   |   |   dst_bytes > 833: LOW_RATE (170.0)
+|   |   |   flag = RSTOS0: LOW_RATE (0.0)
+|   |   |   flag = RSTR: LOW_RATE (0.0)
+|   |   |   flag = S0: LOW_RATE (0.0)
+|   |   |   flag = S1: LOW_RATE (669.0/1.0)
+|   |   |   flag = S2: LOW_RATE (17.0)
+|   |   |   flag = S3: HIGH_RATE (22.0)
+|   |   |   flag = SF: NORMAL (110.0)
+|   |   |   flag = SH: LOW_RATE (0.0)
+|   |   count > 1138: HIGH_RATE (113.0)
+|   dst_host_same_src_port_rate > 0
+|   |   protocol_type = tcp
+|   |   |   dst_host_same_src_port_rate <= 0.41
+|   |   |   |   src_bytes <= 60
+|   |   |   |   |   flag = OTH: LOW_RATE (115.0)
+|   |   |   |   |   flag = REJ: NORMAL (2.0)
+|   |   |   |   |   flag = RSTO: LOW_RATE (0.0)
+|   |   |   |   |   flag = RSTOS0: LOW_RATE (0.0)
+|   |   |   |   |   flag = RSTR: LOW_RATE (0.0)
+|   |   |   |   |   flag = S0: LOW_RATE (0.0)
+|   |   |   |   |   flag = S1: LOW_RATE (0.0)
+|   |   |   |   |   flag = S2: LOW_RATE (0.0)
+|   |   |   |   |   flag = S3: LOW_RATE (0.0)
+|   |   |   |   |   flag = SF: LOW_RATE (0.0)
+|   |   |   |   |   flag = SH: LOW_RATE (0.0)
+|   |   |   |   src_bytes > 60
+|   |   |   |   |   flag = OTH
+|   |   |   |   |   |   count <= 800
+|   |   |   |   |   |   |   src_bytes <= 170: HIGH_RATE (15.0/1.0)
+|   |   |   |   |   |   |   src_bytes > 170: LOW_RATE (4.0)
+|   |   |   |   |   |   count > 800: HIGH_RATE (538.0)
+|   |   |   |   |   flag = REJ: HIGH_RATE (0.0)
+|   |   |   |   |   flag = RSTO: HIGH_RATE (0.0)
+|   |   |   |   |   flag = RSTOS0: HIGH_RATE (0.0)
+|   |   |   |   |   flag = RSTR: HIGH_RATE (0.0)
+|   |   |   |   |   flag = S0: HIGH_RATE (0.0)
+|   |   |   |   |   flag = S1: HIGH_RATE (0.0)
+|   |   |   |   |   flag = S2: HIGH_RATE (0.0)
+|   |   |   |   |   flag = S3: HIGH_RATE (0.0)
+|   |   |   |   |   flag = SF: NORMAL (12.0)
+|   |   |   |   |   flag = SH: HIGH_RATE (0.0)
+|   |   |   dst_host_same_src_port_rate > 0.41: NORMAL (404.0/4.0)
+|   |   protocol_type = icmp: HIGH_RATE (0.0)
+|   |   protocol_type = udp: HIGH_RATE (557.0)
+dst_host_srv_diff_host_rate > 0: NORMAL (808.0/1.0)
+
+Number of Leaves  : 	42
+
+Size of the tree : 	55
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         883               90.0102 %
+Incorrectly Classified Instances        98                9.9898 %
+Kappa statistic                          0.8497
+Mean absolute error                      0.0677
+Root mean squared error                  0.2551
+Relative absolute error                 15.2401 %
+Root relative squared error             54.1192 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.702    0.005    0.987      0.702    0.820      0.775    0.944     0.902     HIGH_RATE
+                 0.991    0.057    0.899      0.991    0.943      0.914    0.984     0.947     LOW_RATE
+                 0.997    0.090    0.851      0.997    0.918      0.878    0.992     0.975     NORMAL
+Weighted Avg.    0.900    0.051    0.911      0.900    0.895      0.857    0.974     0.942     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 221  36  58 |   a = HIGH_RATE
+   3 330   0 |   b = LOW_RATE
+   0   1 332 |   c = NORMAL

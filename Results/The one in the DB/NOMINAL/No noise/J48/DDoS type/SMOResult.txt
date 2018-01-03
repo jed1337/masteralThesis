@@ -1,0 +1,394 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: tcpFlood, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0      * (normalized) duration
+ +       0      * (normalized) protocol_type=tcp
+ +      -0.264  * (normalized) flag=OTH
+ +       0.1214 * (normalized) flag=RSTO
+ +       0.026  * (normalized) flag=S1
+ +       0.1166 * (normalized) flag=S3
+ +      -0.2865 * (normalized) src_bytes
+ +       0.0149 * (normalized) dst_bytes
+ +      -9.8348 * (normalized) srv_count
+ +       0.023  * (normalized) srv_serror_rate
+ +      -0.0075 * (normalized) same_srv_rate
+ +       0.0076 * (normalized) diff_srv_rate
+ +      -0.1798 * (normalized) dst_host_srv_count
+ +       0      * (normalized) dst_host_same_srv_rate
+ +       0.0365 * (normalized) dst_host_serror_rate
+ +       0.0365 * (normalized) dst_host_srv_serror_rate
+ +       1.3943
+
+Number of kernel evaluations: 33958 (74.951% cached)
+
+Classifier for classes: tcpFlood, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0905 * (normalized) duration
+ +      -0      * (normalized) protocol_type=tcp
+ +      -0.1531 * (normalized) flag=OTH
+ +       0.0938 * (normalized) flag=RSTO
+ +       0.0593 * (normalized) flag=S1
+ +      -0.1263 * (normalized) src_bytes
+ +       0.0108 * (normalized) dst_bytes
+ +     -10.5857 * (normalized) srv_count
+ +       0.0593 * (normalized) srv_serror_rate
+ +      -0      * (normalized) same_srv_rate
+ +      -0.6213 * (normalized) dst_host_srv_count
+ +      -0      * (normalized) dst_host_same_srv_rate
+ +       0.0593 * (normalized) dst_host_serror_rate
+ +       0.0593 * (normalized) dst_host_srv_serror_rate
+ +       1.77  
+
+Number of kernel evaluations: 36646 (69.346% cached)
+
+Classifier for classes: tcpFlood, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0677 * (normalized) duration
+ +      -0      * (normalized) protocol_type=tcp
+ +      -0.0904 * (normalized) flag=OTH
+ +       0.0035 * (normalized) flag=RSTO
+ +       0.0284 * (normalized) flag=S1
+ +       0.0584 * (normalized) flag=S2
+ +      -0.2445 * (normalized) src_bytes
+ +       0.0008 * (normalized) dst_bytes
+ +     -10.7502 * (normalized) srv_count
+ +       0.0563 * (normalized) srv_serror_rate
+ +      -0      * (normalized) same_srv_rate
+ +      -0      * (normalized) diff_srv_rate
+ +      -0.4333 * (normalized) dst_host_srv_count
+ +      -0      * (normalized) dst_host_same_srv_rate
+ +       0.057  * (normalized) dst_host_serror_rate
+ +       0.057  * (normalized) dst_host_srv_serror_rate
+ +       1.6185
+
+Number of kernel evaluations: 47076 (69.137% cached)
+
+Classifier for classes: tcpFlood, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.0001 * (normalized) protocol_type=tcp
+ +       1.0001 * (normalized) protocol_type=udp
+ +       0      * (normalized) flag=OTH
+ +      -0.0035 * (normalized) src_bytes
+ +      -0.0111 * (normalized) srv_count
+ +       0      * (normalized) same_srv_rate
+ +      -0.0003 * (normalized) dst_host_srv_count
+ +       0      * (normalized) dst_host_same_srv_rate
+ +       0.0006
+
+Number of kernel evaluations: 985 (63.747% cached)
+
+Classifier for classes: tcpFlood, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0689 * (normalized) duration
+ +       0      * (normalized) protocol_type=tcp
+ +      -0.1268 * (normalized) flag=OTH
+ +       0.0347 * (normalized) flag=RSTO
+ +       0.0564 * (normalized) flag=S1
+ +       0.0358 * (normalized) flag=S2
+ +      -0.2051 * (normalized) src_bytes
+ +       0.0029 * (normalized) dst_bytes
+ +     -10.4043 * (normalized) srv_count
+ +       0.0781 * (normalized) srv_serror_rate
+ +       0      * (normalized) same_srv_rate
+ +      -0      * (normalized) diff_srv_rate
+ +      -0.583  * (normalized) dst_host_srv_count
+ +       0      * (normalized) dst_host_same_srv_rate
+ +       0.0941 * (normalized) dst_host_serror_rate
+ +       0.0941 * (normalized) dst_host_srv_serror_rate
+ +       1.6752
+
+Number of kernel evaluations: 40460 (70.941% cached)
+
+Classifier for classes: httpFlood, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.5587 * (normalized) duration
+ +      -0      * (normalized) protocol_type=tcp
+ +       1.5988 * (normalized) flag=OTH
+ +      -1.0893 * (normalized) flag=RSTO
+ +       0.8935 * (normalized) flag=S1
+ +      -1.403  * (normalized) flag=S3
+ +       1.0265 * (normalized) src_bytes
+ +       1.623  * (normalized) dst_bytes
+ +       1.9853 * (normalized) srv_count
+ +      -0.0502 * (normalized) srv_serror_rate
+ +       1.0111 * (normalized) same_srv_rate
+ +      -1.0213 * (normalized) diff_srv_rate
+ +       0.1649 * (normalized) dst_host_srv_count
+ +       0.3189 * (normalized) dst_host_same_srv_rate
+ +       0.3505 * (normalized) dst_host_serror_rate
+ +       0.3505 * (normalized) dst_host_srv_serror_rate
+ -       2.0925
+
+Number of kernel evaluations: 256149 (78.053% cached)
+
+Classifier for classes: httpFlood, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.5922 * (normalized) duration
+ +      -0      * (normalized) protocol_type=tcp
+ +       1.2246 * (normalized) flag=OTH
+ +      -1.4075 * (normalized) flag=RSTO
+ +       1.0834 * (normalized) flag=S1
+ +      -1.1506 * (normalized) flag=S3
+ +       0.2501 * (normalized) flag=SF
+ +       1.0696 * (normalized) src_bytes
+ +       0.8405 * (normalized) dst_bytes
+ +       1.6957 * (normalized) srv_count
+ +       0.2361 * (normalized) srv_serror_rate
+ +       0.9995 * (normalized) same_srv_rate
+ +      -1.0096 * (normalized) diff_srv_rate
+ +       0.1008 * (normalized) dst_host_srv_count
+ +       0.4001 * (normalized) dst_host_same_srv_rate
+ +      -0.0722 * (normalized) dst_host_serror_rate
+ +      -0.0422 * (normalized) dst_host_srv_serror_rate
+ -       1.7373
+
+Number of kernel evaluations: 216908 (82.222% cached)
+
+Classifier for classes: httpFlood, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1      * (normalized) protocol_type=tcp
+ +       1      * (normalized) protocol_type=udp
+ +      -0      * (normalized) flag=OTH
+ +      -0.0003 * (normalized) src_bytes
+ +      -0.0016 * (normalized) srv_count
+ +       0      * (normalized) same_srv_rate
+ +      -0      * (normalized) diff_srv_rate
+ +      -0.0005 * (normalized) dst_host_srv_count
+ +       0      * (normalized) dst_host_same_srv_rate
+ +       0.0001
+
+Number of kernel evaluations: 31 (53.03% cached)
+
+Classifier for classes: httpFlood, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.6891 * (normalized) duration
+ +      -0      * (normalized) protocol_type=tcp
+ +       1.2371 * (normalized) flag=OTH
+ +      -1.3398 * (normalized) flag=RSTO
+ +       1.1124 * (normalized) flag=S1
+ +      -1.0097 * (normalized) flag=S3
+ +       0.9825 * (normalized) src_bytes
+ +      -0.2461 * (normalized) dst_bytes
+ +       1.8972 * (normalized) srv_count
+ +       0.3429 * (normalized) srv_serror_rate
+ +       0.5785 * (normalized) same_srv_rate
+ +      -1.5944 * (normalized) diff_srv_rate
+ +       0.1235 * (normalized) dst_host_srv_count
+ +       0.0792 * (normalized) dst_host_same_srv_rate
+ +      -0.1309 * (normalized) dst_host_serror_rate
+ +      -0.1009 * (normalized) dst_host_srv_serror_rate
+ -       1.0339
+
+Number of kernel evaluations: 241257 (77.591% cached)
+
+Classifier for classes: slowRead, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.6072 * (normalized) duration
+ +       0      * (normalized) protocol_type=tcp
+ +       0.3053 * (normalized) flag=OTH
+ +      -1.5081 * (normalized) flag=RSTO
+ +      -0.5669 * (normalized) flag=S1
+ +       0.7698 * (normalized) flag=S2
+ +       1      * (normalized) flag=SF
+ +      -2.9476 * (normalized) src_bytes
+ +      -1.3314 * (normalized) dst_bytes
+ +      -0.2678 * (normalized) srv_count
+ +      -0.058  * (normalized) srv_serror_rate
+ +      -0.16   * (normalized) same_srv_rate
+ +       0.1616 * (normalized) diff_srv_rate
+ +       0.0357 * (normalized) dst_host_srv_count
+ +      -0.0054 * (normalized) dst_host_same_srv_rate
+ +      -0.7505 * (normalized) dst_host_serror_rate
+ +      -0.7205 * (normalized) dst_host_srv_serror_rate
+ +       0.8458
+
+Number of kernel evaluations: 271960 (75.959% cached)
+
+Classifier for classes: slowRead, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.9999 * (normalized) protocol_type=tcp
+ +       0.9999 * (normalized) protocol_type=udp
+ +       0      * (normalized) flag=OTH
+ +      -0.006  * (normalized) src_bytes
+ +      -0.0141 * (normalized) srv_count
+ +       0      * (normalized) same_srv_rate
+ +      -0.002  * (normalized) dst_host_srv_count
+ +       0      * (normalized) dst_host_same_srv_rate
+ +       0.0006
+
+Number of kernel evaluations: 116 (47.982% cached)
+
+Classifier for classes: slowRead, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.6787 * (normalized) duration
+ +       0      * (normalized) protocol_type=tcp
+ +      -1.8898 * (normalized) flag=OTH
+ +       0.123  * (normalized) flag=RSTO
+ +      -0.1634 * (normalized) flag=S1
+ +       1.9302 * (normalized) flag=S2
+ +      -1.4616 * (normalized) src_bytes
+ +      -6.3216 * (normalized) dst_bytes
+ +      -0.6977 * (normalized) srv_count
+ +      -0.7179 * (normalized) srv_serror_rate
+ +      -1.2837 * (normalized) same_srv_rate
+ +       0.7097 * (normalized) diff_srv_rate
+ +      -0.2356 * (normalized) dst_host_srv_count
+ +      -0.6536 * (normalized) dst_host_same_srv_rate
+ +       0.5171 * (normalized) dst_host_serror_rate
+ +       0.4696 * (normalized) dst_host_srv_serror_rate
+ +       3.0517
+
+Number of kernel evaluations: 302286 (75.47% cached)
+
+Classifier for classes: slowHeaders, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0006 * (normalized) duration
+ +      -0.9996 * (normalized) protocol_type=tcp
+ +       0.9996 * (normalized) protocol_type=udp
+ +       0.0006 * (normalized) flag=OTH
+ +      -0.0006 * (normalized) flag=RSTO
+ +      -0.0001 * (normalized) src_bytes
+ +      -0.0001 * (normalized) dst_bytes
+ +      -0.0304 * (normalized) srv_count
+ +      -0      * (normalized) same_srv_rate
+ +       0.0014 * (normalized) dst_host_srv_count
+ +      -0      * (normalized) dst_host_same_srv_rate
+ -       0.0011
+
+Number of kernel evaluations: 41 (50.602% cached)
+
+Classifier for classes: slowHeaders, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.681  * (normalized) duration
+ +      -0      * (normalized) protocol_type=tcp
+ +      -0.4419 * (normalized) flag=OTH
+ +       0.2651 * (normalized) flag=RSTO
+ +      -0.193  * (normalized) flag=S1
+ +       0.3698 * (normalized) flag=S2
+ +       0.2063 * (normalized) src_bytes
+ +      -1.335  * (normalized) dst_bytes
+ +      -0.0437 * (normalized) srv_count
+ +      -0.4224 * (normalized) srv_serror_rate
+ +      -1.227  * (normalized) same_srv_rate
+ +       0.5354 * (normalized) diff_srv_rate
+ +      -0.0038 * (normalized) dst_host_srv_count
+ +      -0.747  * (normalized) dst_host_same_srv_rate
+ +       1.1564 * (normalized) dst_host_serror_rate
+ +       1.0764 * (normalized) dst_host_srv_serror_rate
+ +       1.4192
+
+Number of kernel evaluations: 291035 (92.211% cached)
+
+Classifier for classes: udpFlood, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) duration
+ +       0.9995 * (normalized) protocol_type=tcp
+ +      -0.9995 * (normalized) protocol_type=udp
+ +       0      * (normalized) flag=OTH
+ +       0.0004 * (normalized) src_bytes
+ +      -0      * (normalized) dst_bytes
+ +       0.0283 * (normalized) srv_count
+ +       0      * (normalized) same_srv_rate
+ +      -0      * (normalized) diff_srv_rate
+ +       0.0001 * (normalized) dst_host_srv_count
+ +      -0      * (normalized) dst_host_same_srv_rate
+ -       0.0001
+
+Number of kernel evaluations: 400 (59.184% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         560               60.3448 %
+Incorrectly Classified Instances       368               39.6552 %
+Kappa statistic                          0.5211
+Mean absolute error                      0.2375
+Root mean squared error                  0.334 
+Relative absolute error                 86.0538 %
+Root relative squared error             89.9113 %
+Total Number of Instances              928     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.964    0.000    1.000      0.964    0.982      0.978    0.984     0.971     tcpFlood
+                 0.683    0.000    1.000      0.683    0.811      0.799    0.894     0.761     httpFlood
+                 0.042    0.009    0.500      0.042    0.077      0.103    0.736     0.300     slowRead
+                 0.575    0.283    0.309      0.575    0.402      0.238    0.608     0.261     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.533    0.192    0.379      0.533    0.443      0.301    0.720     0.318     slowBody
+Weighted Avg.    0.603    0.087    0.674      0.603    0.589      0.536    0.810     0.570     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 161   0   0   6   0   0 |   a = tcpFlood
+   0 114   0  47   0   6 |   b = httpFlood
+   0   0   7  87   0  73 |   c = slowRead
+   0   0   4  96   0  67 |   d = slowHeaders
+   0   0   0   0  93   0 |   e = udpFlood
+   0   0   3  75   0  89 |   f = slowBody

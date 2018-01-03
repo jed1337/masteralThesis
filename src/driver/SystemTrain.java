@@ -242,7 +242,7 @@ public final class SystemTrain {
    public ArrayList<CustomEvaluation> evaluateClassifiers() throws Exception{
       final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
       
-            //Insert Feature table
+      //Insert Feature table. 
       {
          String query = String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
            DBConnectionConstants.DATABASE_NAME,
