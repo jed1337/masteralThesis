@@ -1,15 +1,15 @@
 package preprocessFiles;
 
-import constants.FileNameConstants;
-import constants.GeneralAttackType;
-import java.io.IOException;
+import constants.GeneralAttackTypeEnum;
+import constants.SpecificAttackTypeEnum;
 
-public class PreprocessSlowRead extends PreprocessFile {
-   public PreprocessSlowRead() throws IOException{
-      super(
-         FileNameConstants.CNIS_SLOW_READ,
-         GeneralAttackType.LOW_RATE,
-         "slowRead"
+public class PreprocessSlowRead implements PreprocessFileBuilderStrategy{
+   @Override
+   public PreprocessFile.PreprocessFileBuilder getBuilder() {
+      return new PreprocessFile.PreprocessFileBuilder(
+         f->f.getSlowReadPath(),
+         GeneralAttackTypeEnum.LOW_RATE,
+         SpecificAttackTypeEnum.SLOW_READ
       );
    }
 }

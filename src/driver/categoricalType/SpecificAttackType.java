@@ -33,24 +33,23 @@ public final class SpecificAttackType implements CategoricalType{
    }
    
    @Override
-   public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
+   public final void setPreprocessFileCount(List<PreprocessFile.PreprocessFileBuilder> pfBL, int totalInstanceCount) {
       Set<String> sats = new HashSet(); // Unique values
-      pfL.forEach((pf)->{
+      pfBL.forEach((pf)->{
          sats.add(pf.getSpecificAttackType());
       });
 
       for (String sat : sats) {
          Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType().equals(sat);
 
-         int sameSATCount = (int) pfL.stream()
+         int sameSATCount = (int) pfBL.stream()
             .filter(sameSAT)
             .count();
 
-         pfL.stream()
+         pfBL.stream()
             .filter(sameSAT)
             .forEach((pf)->{
-               pf.setInstancesCount(
-               totalInstanceCount / (sats.size() * sameSATCount));
+               pf.setInstancesCount(totalInstanceCount / (sats.size() * sameSATCount));
             }
          );
       }

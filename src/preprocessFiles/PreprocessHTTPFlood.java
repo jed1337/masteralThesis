@@ -1,15 +1,15 @@
 package preprocessFiles;
 
-import constants.FileNameConstants;
-import constants.GeneralAttackType;
-import java.io.IOException;
+import constants.GeneralAttackTypeEnum;
+import constants.SpecificAttackTypeEnum;
 
-public class PreprocessHTTPFlood extends PreprocessFile{
-   public PreprocessHTTPFlood() throws IOException {
-      super(
-         FileNameConstants.CNIS_HTTP_FLOOD,
-         GeneralAttackType.HIGH_RATE,
-         "httpFlood"
+public class PreprocessHTTPFlood implements PreprocessFileBuilderStrategy{
+   @Override
+   public PreprocessFile.PreprocessFileBuilder getBuilder() {
+      return new PreprocessFile.PreprocessFileBuilder(
+         f->f.getHTTPFloodPath(),
+         GeneralAttackTypeEnum.HIGH_RATE,
+         SpecificAttackTypeEnum.HTTP_FLOOD
       );
    }
 }

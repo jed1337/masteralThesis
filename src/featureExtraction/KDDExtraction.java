@@ -46,6 +46,11 @@ public class KDDExtraction extends FeatureExtraction{
    }
 
    @Override
+   public String getKDDTrainPath() {
+      return "KDDTrain+.arff";
+   }
+
+   @Override
    public List<String> getFeaturesToRemove() {
       ArrayList<String> al = new ArrayList<>();
       al.add("service");

@@ -1,15 +1,15 @@
 package preprocessFiles;
 
-import constants.FileNameConstants;
-import constants.GeneralAttackType;
-import java.io.IOException;
+import constants.GeneralAttackTypeEnum;
+import constants.SpecificAttackTypeEnum;
 
-public class PreprocessTCPFlood extends PreprocessFile {
-   public PreprocessTCPFlood() throws IOException {
-      super(
-         FileNameConstants.CNIS_TCP_FLOOD,
-         GeneralAttackType.HIGH_RATE,
-         "tcpFlood"
+public class PreprocessTCPFlood implements PreprocessFileBuilderStrategy{
+   @Override
+   public PreprocessFile.PreprocessFileBuilder getBuilder() {
+      return new PreprocessFile.PreprocessFileBuilder(
+         f->f.getTCPFloodPath(),
+         GeneralAttackTypeEnum.HIGH_RATE,
+         SpecificAttackTypeEnum.TCP_FLOOD
       );
    }
 }

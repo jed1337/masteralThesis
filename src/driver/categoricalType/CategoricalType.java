@@ -8,5 +8,5 @@ public interface CategoricalType {
    public int getClassCount(List<PreprocessFile> pfL);
    public String getRelabel(List<PreprocessFile> pfL);
    public CategoricalTypeConstants getCategoricalType();
-   public void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) ;
+   public void setPreprocessFileCount(List<PreprocessFile.PreprocessFileBuilder> pfBL, int totalInstanceCount);
 }

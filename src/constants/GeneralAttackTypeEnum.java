@@ -1,5 +1,5 @@
 package constants;
 
-public enum GeneralAttackType {
+public enum GeneralAttackTypeEnum {
    NORMAL, HIGH_RATE, LOW_RATE;
 }

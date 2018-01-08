@@ -7,9 +7,9 @@ import preprocessFiles.PreprocessUDPFlood;
 
 public final class SpecificHighrate extends SpecificAttack{
    public SpecificHighrate() throws IOException {
-      super.pfL.add(new PreprocessTCPFlood());
-      super.pfL.add(new PreprocessUDPFlood());
-      super.pfL.add(new PreprocessHTTPFlood());
+      super.pfBS.add(new PreprocessTCPFlood());
+      super.pfBS.add(new PreprocessUDPFlood());
+      super.pfBS.add(new PreprocessHTTPFlood());
    }
       
    @Override

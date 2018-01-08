@@ -26,9 +26,9 @@ public final class HybridStageIsAttack extends HybridStage{
    }
    
    @Override
-   public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
+   public final void setPreprocessFileCount(List<PreprocessFile.PreprocessFileBuilder> pfBL, int totalInstanceCount) {
       Set<String> sats = new HashSet(); // Unique values
-      pfL.forEach((pf)->{
+      pfBL.forEach((pf)->{
          sats.add(pf.getSpecificAttackType());
       });
 
@@ -49,15 +49,14 @@ public final class HybridStageIsAttack extends HybridStage{
             
          Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType().equals(sat);
 
-         int sameSATCount = (int) pfL.stream()
+         int sameSATCount = (int) pfBL.stream()
             .filter(sameSAT)
             .count();
 
-         pfL.stream()
+         pfBL.stream()
             .filter(sameCategory)
             .forEach((pf)->{
-               pf.setInstancesCount(
-                 totalInstanceCount / (sats.size() * sameSATCount)
+               pf.setInstancesCount(totalInstanceCount / (sats.size() * sameSATCount)
                );
             }
          );

@@ -1,15 +1,15 @@
 package preprocessFiles;
 
-import constants.GeneralAttackType;
-import constants.FileNameConstants;
-import java.io.IOException;
+import constants.GeneralAttackTypeEnum;
+import constants.SpecificAttackTypeEnum;
 
-public final class PreprocessNeptune extends PreprocessFile{
-   public PreprocessNeptune() throws IOException {
-      super(
-         FileNameConstants.KDD_TRAIN, 
-         GeneralAttackType.HIGH_RATE, 
-         "neptune"
+public final class PreprocessNeptune implements PreprocessFileBuilderStrategy{
+   @Override
+   public PreprocessFile.PreprocessFileBuilder getBuilder() {
+      return new PreprocessFile.PreprocessFileBuilder(
+         f->f.getKDDTrainPath(),
+         GeneralAttackTypeEnum.HIGH_RATE,
+         SpecificAttackTypeEnum.NEPTUNE
       );
    }
 }

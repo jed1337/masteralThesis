@@ -8,4 +8,5 @@ public interface FeatureExtractionPaths {
    public abstract String getTCPFloodPath();
    public abstract String getUDPFloodPath();
    public abstract String getHTTPFloodPath();
+   public abstract String getKDDTrainPath();
 }

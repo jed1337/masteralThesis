@@ -7,9 +7,9 @@ import preprocessFiles.PreprocessSlowRead;
 
 public final class SpecificLowrate extends SpecificAttack{
    public SpecificLowrate() throws IOException {
-      super.pfL.add(new PreprocessSlowBody());
-      super.pfL.add(new PreprocessSlowHeaders());
-      super.pfL.add(new PreprocessSlowRead());
+      super.pfBS.add(new PreprocessSlowBody());
+      super.pfBS.add(new PreprocessSlowHeaders());
+      super.pfBS.add(new PreprocessSlowRead());
    }
       
    @Override

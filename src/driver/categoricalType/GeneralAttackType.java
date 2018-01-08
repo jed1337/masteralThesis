@@ -36,24 +36,23 @@ public final class GeneralAttackType implements CategoricalType{
    }
    
    @Override
-   public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
-      Set<Enum<constants.GeneralAttackType>> gats = new HashSet(); // Unique values
-      pfL.forEach((pf)->{
+   public final void setPreprocessFileCount(List<PreprocessFile.PreprocessFileBuilder> pfBL, int totalInstanceCount) {
+      Set<Enum<constants.GeneralAttackTypeEnum>> gats = new HashSet(); // Unique values
+      pfBL.forEach((pf)->{
          gats.add(pf.getGeneralAttackType());
       });
 
-      for (Enum<constants.GeneralAttackType> gat : gats) {
+      for (Enum<constants.GeneralAttackTypeEnum> gat : gats) {
          Predicate<PreprocessFile> sameGAT = (pf)->pf.getGeneralAttackType() == gat;
 
-         int sameAttackTypeCount = (int) pfL.stream()
+         int sameAttackTypeCount = (int) pfBL.stream()
             .filter(sameGAT)
             .count();
 
-         pfL.stream()
+         pfBL.stream()
             .filter(sameGAT)
             .forEach((pf)->{
-               pf.setInstancesCount(
-               totalInstanceCount / (gats.size() * sameAttackTypeCount));
+               pf.setInstancesCount(totalInstanceCount / (gats.size() * sameAttackTypeCount));
             }
          );
       }

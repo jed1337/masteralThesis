@@ -15,15 +15,15 @@ public final class HybridIsAttack extends SystemType{
    public HybridIsAttack(NoiseLevel nl) throws IOException {
       super(nl, new HybridStageIsAttack());
       
-      super.pfL.add(new PreprocessNormal());
+      super.pfBS.add(new PreprocessNormal());
       
-      super.pfL.add(new PreprocessTCPFlood());
-      super.pfL.add(new PreprocessUDPFlood());
-      super.pfL.add(new PreprocessHTTPFlood());
+      super.pfBS.add(new PreprocessTCPFlood());
+      super.pfBS.add(new PreprocessUDPFlood());
+      super.pfBS.add(new PreprocessHTTPFlood());
       
-      super.pfL.add(new PreprocessSlowBody());
-      super.pfL.add(new PreprocessSlowHeaders());
-      super.pfL.add(new PreprocessSlowRead());
+      super.pfBS.add(new PreprocessSlowBody());
+      super.pfBS.add(new PreprocessSlowHeaders());
+      super.pfBS.add(new PreprocessSlowRead());
    }
    
    @Override

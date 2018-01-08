@@ -118,17 +118,23 @@ public final class SystemTrain {
       return con;
    }
 
-	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> preprocessFiles, String relabel)
+	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile.PreprocessFileBuilder> pfBuilder, String relabel)
 			  throws IOException, Exception {
-		for (PreprocessFile pf : preprocessFiles) {
-			pf.setUp();
-			pf.relabel(
-				AttributeTypeConstants.ATTRIBUTE_CLASS,
-				relabel
-			);
-			Utils.writePreprocessFile(pf);
+		for (PreprocessFile.PreprocessFileBuilder pfb : pfBuilder) {
+//			pf.setUp();
+         pfb = pfb.relabel(relabel);
+//			pfb.relabel(
+//				AttributeTypeConstants.ATTRIBUTE_CLASS,
+//				relabel
+//			);
+//			Utils.writePreprocessFile(pfb);
 		}
-		return preprocessFiles;
+      
+      ArrayList<PreprocessFile> pfAL = new ArrayList<>();
+      for (PreprocessFile.PreprocessFileBuilder pfB : pfBuilder) {
+         pfAL.add(pfB.build(fExtractionPath));
+      }
+		return pfAL;
 	}
 
 	public void setupTestTrainValidation() throws IOException, Exception{
