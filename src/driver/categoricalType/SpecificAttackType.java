@@ -11,10 +11,12 @@ import preprocessFiles.PreprocessFile;
 public final class SpecificAttackType implements CategoricalType{
    @Override
    public int getClassCount(List<PreprocessFile> pfL) {
-      return (int) pfL.stream()
-         .map(pf->pf.getSpecificAttackType())
-         .distinct()
-         .count();
+      Set<String> specificTypes = new HashSet<>();
+      for (PreprocessFile pf : pfL) {
+         specificTypes.addAll(Arrays.asList(pf.getSpecificAttackType()));
+      }
+      
+      return specificTypes.size();
    }
 
    /**
@@ -29,7 +31,7 @@ public final class SpecificAttackType implements CategoricalType{
    
    @Override
    public CategoricalTypeConstants getCategoricalType() {
-      return CategoricalTypeConstants.SPECIFIC;
+      return CategoricalTypeConstants.NOMINAL;
    }
    
    @Override

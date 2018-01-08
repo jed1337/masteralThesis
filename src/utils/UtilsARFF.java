@@ -21,9 +21,9 @@ public final class UtilsARFF{
    public static FormatAsText createArff(String filename, List<String> paths) 
            throws IOException, IllegalArgumentException{
       if(paths== null){
-         throw new IllegalArgumentException("The paths are null!");
+         throw new IllegalArgumentException("The paths is null!");
       } else if (paths.isEmpty()){
-         throw new IllegalArgumentException("The paths are empty!");
+         throw new IllegalArgumentException("The paths is empty!");
       }
       
       FormatAsText fat = new FormatAsText(filename);

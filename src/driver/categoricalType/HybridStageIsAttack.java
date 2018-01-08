@@ -56,8 +56,14 @@ public final class HybridStageIsAttack extends HybridStage{
          pfBL.stream()
             .filter(sameCategory)
             .forEach((pf)->{
+<<<<<<< HEAD
                pf.setInstancesCount(totalInstanceCount / (sats.size() * sameSATCount)
                );
+=======
+               pf.setInstancesCount(
+                 totalInstanceCount / (sats.size() * sameSATCount));
+//               totalInstanceCount / (sats.size() * sameCategoryCount));
+>>>>>>> parent of f698a90... Before trying NetMate featuers
             }
          );
       }

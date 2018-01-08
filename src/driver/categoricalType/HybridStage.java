@@ -17,10 +17,10 @@ public abstract class HybridStage implements CategoricalType{
    }
 
    @Override
-   public CategoricalTypeConstants getCategoricalType() {
-      return CategoricalTypeConstants.GENERAL;
-   }
+   public abstract String getRelabel(List<PreprocessFile> pfL);
 
    @Override
-   public abstract String getRelabel(List<PreprocessFile> pfL);
+   public CategoricalTypeConstants getCategoricalType() {
+      return CategoricalTypeConstants.BINARY;
+   }
 }

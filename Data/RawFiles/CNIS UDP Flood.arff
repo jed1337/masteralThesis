@@ -30,6 +30,7 @@
 @attribute isAttack {neptune,smurf,pod,back,land,slowBody,slowHeaders,slowRead,tcpFlood,udpFlood,httpFlood}
 @DATA
 %Filename: /root/Documents/loic/highratePcap/U/UDPFlood100Threads.pcapng,udpFlood
+%Filename: /root/Documents/loic/highratePcap/U/UDPFlood100Threads.pcapng,udpFlood
 0,udp,other,OTH,1464,0,0,0,0,0,0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0,0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,udpFlood
 0,udp,http,OTH,60,0,0,0,0,0,0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0,0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,udpFlood
 0,udp,other,OTH,1464,0,0,0,0,1,1,0.00,0.00,0.00,0.00,1.00,0.00,0.00,1,1,1.00,0.00,0.50,0.00,0.00,0.00,0.00,0.00,udpFlood

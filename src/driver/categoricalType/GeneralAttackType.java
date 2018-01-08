@@ -32,7 +32,7 @@ public final class GeneralAttackType implements CategoricalType{
    
    @Override
    public CategoricalTypeConstants getCategoricalType(){
-      return CategoricalTypeConstants.GENERAL;
+      return CategoricalTypeConstants.BINARY;
    }
    
    @Override

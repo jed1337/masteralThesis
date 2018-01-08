@@ -14,6 +14,7 @@ import utils.UtilsInstances;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
+import weka.classifiers.trees.J48;
 import weka.core.Instances;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.SpecificAttackType;
@@ -21,6 +22,7 @@ import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseNormal;
+import weka.classifiers.bayes.NaiveBayes;
 
 public final class Driver {
 //<editor-fold defaultstate="collapsed" desc="System">
@@ -71,12 +73,14 @@ public final class Driver {
       
       for (CategoricalType categoricalType : categoricalTypes) {
          for (NoiseLevel noiseLevel : noiseLevels) {
-            systemTrain(new Mode(instanceCount, new Single        (noiseLevel, categoricalType)), asEval, fs+"single/");
-            systemTrain(new Mode(instanceCount, new HybridIsAttack(noiseLevel))                 , asEval, fs+"isAttack/");
-            systemTrain(new Mode(instanceCount, new HybridDDoSType(categoricalType))            , asEval, fs+"DDoS type/");
+            
+            systemTrain(new Single        (instanceCount, noiseLevel, categoricalType), asEval, fs+"single/");
+            systemTrain(new HybridIsAttack(instanceCount, noiseLevel), asEval, fs+"isAttack/");
+            systemTrain(new HybridDDoSType(instanceCount, categoricalType), asEval, fs+"DDoS type/");
          }
       }
    }
+
    private static int[] systemTrain(final Mode mode, final ASEvaluation attributeEvaluator, final String folderPath)
            throws IOException, Exception {
       String fullFolderPath = 
