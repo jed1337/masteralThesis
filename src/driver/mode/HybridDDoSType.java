@@ -1,6 +1,5 @@
 package driver.mode;
 
-import driver.mode.noiseLevel.NoNoise;
 import java.io.IOException;
 import preprocessFiles.PreprocessHTTPFlood;
 import preprocessFiles.PreprocessSlowBody;
@@ -9,13 +8,12 @@ import preprocessFiles.PreprocessSlowRead;
 import preprocessFiles.PreprocessTCPFlood;
 import preprocessFiles.PreprocessUDPFlood;
 import driver.categoricalType.CategoricalType;
+import driver.mode.noiseLevel.NoNoise;
 
-public final class HybridDDoSType extends Mode{
-   
-   public HybridDDoSType(int totalInstancesCount, CategoricalType categoricalType) throws IOException {
-      super(totalInstancesCount, NoNoise.getInstance(), categoricalType);
-
-//TODO make this part in all of the other subclasses not repeaet code      
+public final class HybridDDoSType extends SystemType{
+   public HybridDDoSType(CategoricalType categoricalType) throws IOException {
+      super(NoNoise.getInstance(), categoricalType);
+      
       super.pfL.add(new PreprocessTCPFlood());
       super.pfL.add(new PreprocessUDPFlood());
       super.pfL.add(new PreprocessHTTPFlood());
@@ -23,8 +21,6 @@ public final class HybridDDoSType extends Mode{
       super.pfL.add(new PreprocessSlowBody());
       super.pfL.add(new PreprocessSlowHeaders());
       super.pfL.add(new PreprocessSlowRead());
-      
-      categoricalType.setPreprocessFileCount(super.pfL, totalInstanceCount);
    }
 
    @Override

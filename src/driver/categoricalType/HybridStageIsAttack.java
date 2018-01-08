@@ -57,8 +57,8 @@ public final class HybridStageIsAttack extends HybridStage{
             .filter(sameCategory)
             .forEach((pf)->{
                pf.setInstancesCount(
-                 totalInstanceCount / (sats.size() * sameSATCount));
-//               totalInstanceCount / (sats.size() * sameCategoryCount));
+                 totalInstanceCount / (sats.size() * sameSATCount)
+               );
             }
          );
       }

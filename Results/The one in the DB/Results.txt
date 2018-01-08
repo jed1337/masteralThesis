@@ -1,0 +1,268 @@
+# avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa)
+
+#All permutations
+Single, binary, no noise, nb
+'86.9520009', '87.3596001', '86.9520009', '86.8892014', '80.4295993'
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "binary") and (main.noiseLevel = 0) and (feature_selection.Method like "%naive%")
+
+Single, binary, no noise, j48
+84.1795993 86.1793995 84.1795993 82.5986004 76.1464006
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "binary") and (main.noiseLevel = 0) and (feature_selection.Method like "%j48%")
+
+Single, binary, no noise, none
+90.2548003 90.7182002 90.2548003 89.8506010 85.3321993
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "binary") and (main.noiseLevel = 0) and (feature_selection.Method like "%no f%")
+
+Single, binary, noise, nb
+83.4454012 80.6727999 83.4454012 80.4431987 75.0262010
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "binary") and (main.noiseLevel > 0) and (feature_selection.Method like "%naive%")
+
+Single, binary, noise, j48
+86.7277992 89.5711994 86.7277992 85.1126003 79.9909997
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "binary") and (main.noiseLevel > 0) and (feature_selection.Method like "%j48%")
+
+Single, binary, noise, none
+87.8693986 89.1344023 87.8693986 86.8709993 81.7268002
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "binary") and (main.noiseLevel > 0) and (feature_selection.Method like "%no f%")
+
+Single, nominal, no noise, nb
+69.0432000 69.5868003 69.0432000 68.5335994 63.7844014
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%naive%")
+
+Single, nominal, no noise, j48
+74.9945998 75.8069992 74.9945998 74.2406011 70.7580006
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%j48%")
+
+Single, nominal, no noise, none
+73.7117982 74.5897996 73.7117982 72.3308003 69.2576003
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%no f%")
+
+Single, nominal, noise, nb
+65.0262010 62.2617984 65.0262010 61.7015994 59.0843987
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "nominal") and (main.noiseLevel > 0) and (feature_selection.Method like "%naive%")
+
+Single, nominal, noise, j48
+71.9874001 74.6853995 71.9874001 70.3743994 67.2391999
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "nominal") and (main.noiseLevel > 0) and (feature_selection.Method like "%j48%")
+
+Single, nominal, noise, none
+72.9548001 74.3535995 72.9548001 71.5210009 68.3718002
+#and (evaluation.Class = "Average") and (main.systemType = "single") and (main.CategoricalType = "nominal") and (main.noiseLevel > 0) and (feature_selection.Method like "%no f%")
+
+Hybrid isAttack, binary, no noise, nb
+99.7889996 99.7889996 99.7889996 99.7889996 99.1770029
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%naive%")
+
+Hybrid isAttack, binary, no noise, j48
+99.7474003 99.7486007 99.7474003 99.7460008 99.0013993
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%j48%")
+
+Hybrid isAttack, binary, no noise, none
+99.7474003 99.7490001 99.7474003 99.7477996 99.0157998
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%no f%")
+
+Hybrid isAttack, binary, noise, nb
+99.8104000 99.8104000 99.8104000 99.8104000 99.2592001
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") and (main.CategoricalType = "binary") and (main.noiseLevel > 0) and (feature_selection.Method like "%naive%")
+
+Hybrid isAttack, binary, noise, j48
+99.5578003 99.5600009 99.5578003 99.5563996 98.2612002
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") and (main.CategoricalType = "binary") and (main.noiseLevel > 0) and (feature_selection.Method like "%j48%")
+
+Hybrid isAttack, binary, noise, none
+97.4526000 98.4800005 97.4526000 97.6971996 92.2883987
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") and (main.CategoricalType = "binary") and (main.noiseLevel > 0) and (feature_selection.Method like "%no f%")
+
+Hybrid DDoS Type, binary, no noise, nb
+85.1404011 89.8759997 85.1404011 83.1795990 68.6828005
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") and (main.noiseLevel = 0) and (feature_selection.Method like "%naive%")
+
+Hybrid DDoS Type, binary, no noise, j48
+88.1426001 88.1343997 88.1426001 86.7273998 75.0993996
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") and (main.noiseLevel = 0) and (feature_selection.Method like "%j48%")
+
+Hybrid DDoS Type, binary, no noise, none
+87.8833997 87.9178011 87.8833997 87.5381994 75.1220001
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") and (main.noiseLevel = 0) and (feature_selection.Method like "%no f%")
+
+Hybrid DDoS Type, nominal, no noise, nb
+68.9442003 74.6992004 68.9442003 67.3266006 62.5252008
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%naive%")
+
+Hybrid DDoS Type, nominal, no noise, j48
+69.8494011 71.5557992 69.8494011 68.4805995 63.6275995
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%j48%")
+
+Hybrid DDoS Type, nominal, no noise, none
+68.8148004 70.8410001 68.8148004 67.1785998 62.3671985
+#and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) and (feature_selection.Method like "%no f%")
+
+#Per feature selection algorithm
+nb
+  82.2688505 83.0069498 82.2688505 80.9591497 75.9961006
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") #and (main.systemType = "hybrid ddos type") #and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) and (feature_selection.Method like "%naive%")
+
+j48
+  84.3983250 85.6552248 84.3983250 83.3545751 78.7655249
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") #and (main.systemType = "hybrid ddos type") #and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) and (feature_selection.Method like "%j48%")
+
+none
+  84.8361247 85.7229754 84.8361247 84.0919000 79.1852246
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") #and (main.systemType = "hybrid ddos type") #and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) and (feature_selection.Method like "%no f%")
+
+#Binary vs nominal
+binary
+  91.7800001 92.4467202 91.7800001 91.0371466 85.6372934
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") #and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+nominal
+  70.5918223 72.0422663 70.5918223 69.0764223 65.2239333
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") #and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+#Noise vs no noise in terms of system type
+hybrid isAttack, no noise
+  99.7612667 99.7622001 99.7612667 99.7609333 99.0647340
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+hybrid isAttack, noise
+  98.9402668 99.2834671 98.9402668 99.0213331 96.6029330
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+
+hybrid ddos type
+  78.1291338 80.5040334 78.1291338 76.7384997 67.9040332
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") #and (main.CategoricalType = "nominal") #and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+
+hybrid, no noise (hybrid isAttack, no noise * hybrid ddos type)
+  77.9426135 80.3125949 77.9426135 76.5550435 67.2689499
+  #Checked
+
+hybrid, noise    (hybrid isAttack, noise * hybrid ddos type)
+  77.3011734 79.9271955 77.3011734 75.9874854 65.5972877
+  #Checked
+
+single, no noise
+  79.8559997 80.7067998 79.8559997 79.0739006 74.2847003
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "single") #and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+single, noise
+  78.0018334 78.4465332 78.0018334 76.0039663 71.9065666
+  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "single") #and (main.CategoricalType = "nominal") and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+
+#Per classifier
+J48
+  89.1022921 89.5112914 89.1022921 88.8143333 85.8740839
+  #and (evaluation.Classifier = "j48") and (evaluation.Class = "Average")
+
+KNN
+  89.0799584 89.0486245 89.0799584 88.8955836 85.9995417
+  #and (evaluation.Classifier = "knn") and (evaluation.Class = "Average")
+
+NB
+  70.7108743 72.6304587 70.7108743 67.6819582 57.1756250
+  #and (evaluation.Classifier = "nb") and (evaluation.Class = "Average")
+
+RF
+  90.3697918 90.3960834 90.3697918 90.1992080 87.7548330
+  #and (evaluation.Classifier = "rf") and (evaluation.Class = "Average")
+
+SMO
+  79.9092504 82.3887919 79.9092504 78.4182916 73.1073334
+  #and (evaluation.Classifier = "smo") and (evaluation.Class = "Average")
+
+#single vs hybrid
+single
+  78.9289166 79.5766665 78.9289166 77.5389335 73.0956334
+  ##and (evaluation.Classifier = "smo") and (evaluation.Class = "Average") and (main.systemType = "single") #and (main.CategoricalType = "nominal") #and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+
+hybrid isAttack
+  99.3507667 99.5228336 99.3507667 99.3911332 97.8338335
+  ##and (evaluation.Classifier = "smo") and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") #and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+
+hybrid ddos type
+  78.1291338 80.5040334 78.1291338 76.7384997 67.9040332
+  ##and (evaluation.Classifier = "smo") and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") #and (main.CategoricalType = "nominal") #and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+
+hybrid (isAttack * ddosType)
+  77.6218934 80.1198952 77.6218934 76.2712645 66.4331188
+
+#Per class, binary
+Single, binary, Normal
+  0.974515998 0.941830999 0.990790661 0.964599665
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "normal") and (main.systemType = "single") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+Single, binary, High_Rate
+  0.869656672 0.878396665 0.655556000 0.730871997
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "high_rate") and (main.systemType = "single") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+Single, binary, Low_Rate
+  0.887258337 0.798259001 0.939439336 0.856753671
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "low_rate") and (main.systemType = "single") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+Hybrid isAttack, binary, normal
+  0.993507667 0.977421653 0.990909996 0.982087324
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "normal") and (main.systemType = "hybrid isattack") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+Hybrid isAttack, binary, attack
+  0.993507667 0.998387331 0.993968320 0.996007321
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "attack") and (main.systemType = "hybrid isattack") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+Hybrid DDoS Type, binary, High_Rate
+  0.870554670 0.923010667 0.762285992 0.809405998
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "high_rate") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+Hybrid DDoS Type, binary, Low_Rate
+  0.870554670 0.855258667 0.962800010 0.899681993
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "low_rate") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+#Per class, nominal
+  Single, Nominal, normal
+  0.988679338 0.952056668 0.990442665 0.967953004
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "normal") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Single, Nominal, tcpFlood
+  0.977884012 0.913160328 0.984149673 0.940459329
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "tcpflood") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Single, Nominal, httpFlood
+  0.959342007 0.954405665 0.769695998 0.818077330
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "httpflood") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Single, Nominal, udpFlood
+  0.997440998 0.977943667 1.000000000 0.988034999
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "udpflood") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Single, Nominal, slowRead
+  0.843042664 0.421800332 0.372959662 0.373375666
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowread") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Single, Nominal, slowHeaders
+  0.828566007 0.439053003 0.493472334 0.455771999
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowheaders") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Single, Nominal, slowBody
+  0.830774331 0.463830003 0.479720334 0.442649664
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowbody") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Hybrid DDoS Type, Nominal, tcpFlood
+  0.972915332 0.922024004 0.992414669 0.946195336
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "tcpflood") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Hybrid DDoS Type, Nominal, httpFlood
+  0.966952670 0.983630006 0.830338000 0.879270667
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "httpflood") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Hybrid DDoS Type, Nominal, udpFlood
+  0.994037338 0.954392668 1.000000000 0.974191328
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "udpflood") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Hybrid DDoS Type, Nominal, slowRead
+  83.4914672 62.3086001 44.8303332 44.9393993
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowread") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Hybrid DDoS Type, Nominal, slowHeaders
+  0.8067526700.4786633340.5369253390.490327336
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowheaders") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+
+  Hybrid DDoS Type, Nominal, slowBody
+  0.808476007 0.482364001 0.480637336 0.452198668
+  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowbody") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")

@@ -11,9 +11,9 @@ import preprocessFiles.PreprocessSlowRead;
 import preprocessFiles.PreprocessTCPFlood;
 import preprocessFiles.PreprocessUDPFlood;
 
-public final class Single extends Mode{
-   public Single(int totalInstancesCount, NoiseLevel nl, CategoricalType categoricalType) throws IOException {
-      super(totalInstancesCount, nl, categoricalType);
+public final class Single extends SystemType{
+   public Single(NoiseLevel nl, CategoricalType categoricalType) throws IOException {
+      super(nl, categoricalType);
       
       super.pfL.add(new PreprocessNormal());
       
@@ -24,9 +24,6 @@ public final class Single extends Mode{
       super.pfL.add(new PreprocessSlowBody());
       super.pfL.add(new PreprocessSlowHeaders());
       super.pfL.add(new PreprocessSlowRead());
-      
-      categoricalType.setPreprocessFileCount(super.pfL, totalInstancesCount);
-      System.out.println("");
    }
 
    @Override

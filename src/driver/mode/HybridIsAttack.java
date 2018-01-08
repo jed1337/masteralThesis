@@ -11,11 +11,10 @@ import preprocessFiles.PreprocessSlowRead;
 import preprocessFiles.PreprocessTCPFlood;
 import preprocessFiles.PreprocessUDPFlood;
 
-public final class HybridIsAttack extends Mode{
-   public HybridIsAttack(int totalInstancesCount, NoiseLevel nl)
-         throws IOException {
-      super(totalInstancesCount, nl, new HybridStageIsAttack());
-
+public final class HybridIsAttack extends SystemType{
+   public HybridIsAttack(NoiseLevel nl) throws IOException {
+      super(nl, new HybridStageIsAttack());
+      
       super.pfL.add(new PreprocessNormal());
       
       super.pfL.add(new PreprocessTCPFlood());
@@ -25,9 +24,6 @@ public final class HybridIsAttack extends Mode{
       super.pfL.add(new PreprocessSlowBody());
       super.pfL.add(new PreprocessSlowHeaders());
       super.pfL.add(new PreprocessSlowRead());
-      
-      new HybridStageIsAttack().setPreprocessFileCount(super.pfL, totalInstancesCount);
-      System.out.println("");
    }
    
    @Override

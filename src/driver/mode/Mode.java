@@ -1,49 +1,47 @@
 package driver.mode;
 
 import constants.CategoricalTypeConstants;
-import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import preprocessFiles.PreprocessFile;
-import driver.categoricalType.CategoricalType;
 
-public abstract class Mode {
-   protected final int totalInstanceCount;
-   protected final List<PreprocessFile> pfL;
-   
-   private final NoiseLevel nl;
-   private final CategoricalType categoricalType;
+public final class Mode {
+   private final List<PreprocessFile> pfL;
+   private final SystemType st;
 
-   public Mode(int totalCount, NoiseLevel nl, CategoricalType categoricalType) throws IOException {
-      this.totalInstanceCount = totalCount;
+   public Mode(int totalInstanceCount, SystemType st) throws IOException {
       this.pfL = new ArrayList<>();
-      this.nl = nl;
-      this.categoricalType = categoricalType;
+      this.st = st;
       
-      this.pfL.addAll(this.nl.getPreprocessedFiles());
+      this.pfL.addAll(this.st.getPreprocessedFiles());
+      this.pfL.addAll(this.st.getNoiseLevel().getPreprocessedFiles());
+      
+      this.st.getCategoricalType().setPreprocessFileCount(this.pfL, totalInstanceCount);
    }
-
-   public final List<PreprocessFile> getPreprocessFiles() throws IOException{
+   
+   public List<PreprocessFile> getPreprocessFiles() throws IOException{
       return Collections.unmodifiableList(this.pfL);
    }
    
-   public final float getNoiseLevelFloat(){
-      return this.nl.getNoiseLevelFloat();
+   public float getNoiseLevelFloat(){
+      return this.st.getNoiseLevel().getNoiseLevelFloat();
    }
    
-   public final String getNoiseLevelString(){
-      return this.nl.getNoiseLevelString();
+   public String getNoiseLevelString(){
+      return this.st.getNoiseLevel().getNoiseLevelString();
    }
    
-   public final String getRelabel(){
-      return this.categoricalType.getRelabel(this.pfL);
+   public String getRelabel(){
+      return this.st.getCategoricalType().getRelabel(this.pfL);
    }
    
-   public final CategoricalTypeConstants getCategoricalType(){
-      return this.categoricalType.getCategoricalType();
+   public CategoricalTypeConstants getCategoricalType(){
+      return this.st.getCategoricalType().getCategoricalType();
    }
 
-   public abstract String getSystemType();
+   public String getSystemType() {
+      return this.st.getSystemType();
+   }
 }
