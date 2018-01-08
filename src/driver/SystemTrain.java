@@ -76,13 +76,14 @@ public final class SystemTrain {
 
       //Insert into main table
       {
-         String query = String.format("INSERT INTO %s.%s (%s, %s, %s) VALUES (?,?,?);",
+         String query = String.format("INSERT INTO %s.%s (%s, %s, %s, %s) VALUES (?,?,?,?);",
            DBConnectionConstants.DATABASE_NAME,
            MainTableConstants.TABLE_NAME,
            
            MainTableConstants.SYSTEM_TYPE,
            MainTableConstants.CATEGORICAL_TYPE,
-           MainTableConstants.NOISE_LEVEL
+           MainTableConstants.NOISE_LEVEL,
+           MainTableConstants.DATASET
          );
 
          PreparedStatement ps = this.connection.prepareStatement(
@@ -94,6 +95,7 @@ public final class SystemTrain {
          ps.setString(i++, mode.getSystemType());
          ps.setString(i++, mode.getCategoricalType().name());
          ps.setFloat(i++, mode.getNoiseLevelFloat());
+         ps.setString(i++, MainTableConstants.DATASET_VALUE);
 
          ps.executeUpdate();
          
@@ -183,7 +185,8 @@ public final class SystemTrain {
 
            FeatureSelectionTableConstants.MAIN_ID,
            FeatureSelectionTableConstants.METHOD,
-           FeatureSelectionTableConstants.ORIGIN
+           FeatureSelectionTableConstants.ORIGIN,
+           FeatureSelectionTableConstants.EXTRACTION_TOOL
          );
 
          PreparedStatement ps = this.connection.prepareStatement(query);
@@ -192,6 +195,7 @@ public final class SystemTrain {
          ps.setInt   (i++, this.mainID);
          ps.setString(i++, attributeEvaluator.toString());
          ps.setString(i++, this.mode.getSystemType());
+         ps.setString(i++, FeatureSelectionTableConstants.EXTRACTION_TOOL_VALUE);
 
          ps.executeUpdate();
       }
