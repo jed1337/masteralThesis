@@ -82,8 +82,7 @@ public final class Driver {
       String fullFolderPath = 
          String.join("/", 
             "Results",
-//            "Dry run",
-            "Edited mode",
+            "Dry run",
             mode.getCategoricalType().name(),
             mode.getNoiseLevelString(),
             folderPath
