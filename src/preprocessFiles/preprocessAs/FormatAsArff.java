@@ -4,8 +4,6 @@ import utils.UtilsInstances;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import utils.Utils;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -49,44 +47,25 @@ public final class FormatAsArff {
    
    /**
     * Removes all the attributes whose name is in attributeNames from instances
-    * Calls removeAttributes(List<String>)
+    * Also sets the class index as the last index
     * @param attributeNames
     * @throws Exception
     */
    public void removeAttributes (String... attributeNames) throws Exception{
-      removeAttributes(Arrays.asList(attributeNames));
-//      for (String attributeName : attributeNames) {
-//         int index = UtilsInstances.getAttributeIndex(this.instances, attributeName);
-//         if(index!=-1){
-//            attributeIndeces.add((index+1)+"");
-//         }
-//      }
-//      removeAttributes(String.join(",", attributeIndeces));
-      
-//      this.instances.setClassIndex(this.instances.numAttributes()-1);
-   }
-   
-   /**
-    * Removes all the attributes whose name is in attributeNames from instances
-    * Calls removeAttributes(String)
-    * @param attributeNames
-    * @throws Exception
-    */
-   public void removeAttributes (List<String> attributeNames) throws Exception{
       ArrayList<String> attributeIndeces = new ArrayList<>();
-      attributeNames.stream()
-         .map((attributeName)->UtilsInstances.getAttributeIndex(this.instances, attributeName))
-         .filter((index)->(index!=-1))
-         .forEachOrdered((index)->{
+      for (String attributeName : attributeNames) {
+         int index = UtilsInstances.getAttributeIndex(this.instances, attributeName);
+         if(index!=-1){
             attributeIndeces.add((index+1)+"");
-      });
+         }
+      }
       removeAttributes(String.join(",", attributeIndeces));
       
+      this.instances.setClassIndex(this.instances.numAttributes()-1);
    }
 
    /**
     * Removes attributes (Starting at 1) from the instances
-    * Also sets the class index as the last index
     * @param attributeIndeces
     * @throws FileNotFoundException
     * @throws IOException
@@ -100,7 +79,6 @@ public final class FormatAsArff {
       remove.setAttributeIndices(attributeIndeces);
       
       useFilter(instances, remove);
-      this.instances.setClassIndex(this.instances.numAttributes()-1);
    }
    
    /**
