@@ -1,31 +1,33 @@
 package preprocessFiles;
 
-import constants.GeneralAttackType;
+import constants.GeneralAttackTypeEnum;
 import constants.AttributeTypeConstants;
 import constants.FormatConstants;
 import constants.DirectoryConstants;
+import constants.SpecificAttackTypeEnum;
 import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.IOException;
 
 /**
- * An abstract class That setups the files to be used by the classifier<p>
+ * A class That setups the files to be used by the classifier<p>
  * This class doesn't classify<p>
  * This class keeps X instances, and certain attack types as stated by its sub classes<p>
  * This is sort of like the Template method wherein the subclasses supply the parameters
  */
 public abstract class PreprocessFile {
    private final int RANDOM_SEED = 11;
-   private final Enum<GeneralAttackType> generalAttackType;
-   private final String specificAttackType;
+
+   private final GeneralAttackTypeEnum  generalAttackType;
+   private final SpecificAttackTypeEnum specificAttackType;
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
-   
-   protected PreprocessFile(String fileName, Enum<GeneralAttackType> generalAttackType, String specificAttackTypes)
+      
+   protected PreprocessFile(String fileName, GeneralAttackTypeEnum generalAttackType, SpecificAttackTypeEnum specificAttackTypes)
            throws IOException {
       this.generalAttackType = generalAttackType;
       this.specificAttackType = specificAttackTypes;
-
+      
       this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+""+fileName);
       this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+  ""+fileName);
    }
@@ -37,34 +39,35 @@ public abstract class PreprocessFile {
       this.faa.randomise(this.RANDOM_SEED);
 
       balanceInstances();
-   }
+      }
 
    public final void relabel(String attributes, String toReplace) throws Exception {
       this.faa.renameNominalValues(attributes, toReplace);
       System.out.println("");
    }
-
+   
+   
    public final void setInstancesCount(int instancesCount) {
       this.instancesCount = instancesCount;
    }
 
-   public final Enum<GeneralAttackType> getGeneralAttackType() {
+   public final GeneralAttackTypeEnum getGeneralAttackType() {
       return generalAttackType;
    }
 
-   public final String getSpecificAttackType() {
+   public final SpecificAttackTypeEnum getSpecificAttackType() {
       return specificAttackType;
    }
-   
+
    public final FormatAsArff getFaa() {
       return faa;
    }
 
    private void removeNonMatchingClasses() {
-      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType);
+      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType.getValue());
       this.faa.removeNonMatchingClasses("service", "http", "http_443");
    }
-   
+
    /**
     * For example there are 5000 instances
     * <p>
@@ -81,6 +84,6 @@ public abstract class PreprocessFile {
       
       //Todo, make not directly the last index
       int lastIndex = this.faa.getInstances().numAttributes()-1;
-      this.faa.keepXInstances(lastIndex, this.specificAttackType, this.instancesCount);
+      this.faa.keepXInstances(lastIndex, this.specificAttackType.getValue(), this.instancesCount);
    }
 }

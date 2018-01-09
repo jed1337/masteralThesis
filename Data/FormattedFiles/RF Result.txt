@@ -7,24 +7,32 @@ weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabi
 === Dedicated test set ===
 === Summary of RF ===
 
-Correctly Classified Instances         951               96.9419 %
-Incorrectly Classified Instances        30                3.0581 %
-Kappa statistic                          0.9541
-Mean absolute error                      0.0306
-Root mean squared error                  0.1179
-Relative absolute error                  6.8789 %
-Root relative squared error             25.0135 %
+Correctly Classified Instances         843               85.9327 %
+Incorrectly Classified Instances       138               14.0673 %
+Kappa statistic                          0.8267
+Mean absolute error                      0.0473
+Root mean squared error                  0.1657
+Relative absolute error                 20.3787 %
+Root relative squared error             48.6522 %
 Total Number of Instances              981     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.905    0.000    1.000      0.905    0.950      0.930    0.999     0.998     HIGH_RATE
-                 1.000    0.046    0.917      1.000    0.957      0.935    0.999     0.998     LOW_RATE
-                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     NORMAL
-Weighted Avg.    0.969    0.016    0.972      0.969    0.969      0.956    0.999     0.999     
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 1.000    0.001    0.991      1.000    0.996      0.995    1.000     1.000     httpFlood
+                 0.568    0.040    0.643      0.568    0.603      0.557    0.940     0.649     slowRead
+                 0.658    0.057    0.593      0.658    0.624      0.574    0.948     0.678     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.532    0.060    0.532      0.532    0.532      0.472    0.915     0.543     slowBody
+Weighted Avg.    0.859    0.018    0.860      0.859    0.859      0.841    0.978     0.872     
 === Confusion Matrix ===
 
-   a   b   c   <-- classified as
- 285  30   0 |   a = HIGH_RATE
-   0 333   0 |   b = LOW_RATE
-   0   0 333 |   c = NORMAL
+   a   b   c   d   e   f   g   <-- classified as
+ 111   0   0   0   0   0   0 |   a = tcpFlood
+   0 333   0   0   0   0   0 |   b = normal
+   0   0 111   0   0   0   0 |   c = httpFlood
+   0   0   1  63  22   0  25 |   d = slowRead
+   0   0   0  11  73   0  27 |   e = slowHeaders
+   0   0   0   0   0  93   0 |   f = udpFlood
+   0   0   0  24  28   0  59 |   g = slowBody

@@ -1,16 +1,15 @@
 package preprocessFiles;
 
-import constants.FileNameConstants;
-import constants.GeneralAttackType;
+import constants.GeneralAttackTypeEnum;
+import constants.SpecificAttackTypeEnum;
 import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 
 public class PreprocessUDPFlood extends PreprocessFile {
    public PreprocessUDPFlood() throws IOException {
-      super(
-         GlobalFeatureExtraction.getInstance().getUDPFloodPath(),
-         GeneralAttackType.HIGH_RATE,
-         "udpFlood"
+      super(GlobalFeatureExtraction.getInstance().getUDPFloodPath(),
+         GeneralAttackTypeEnum.HIGH_RATE,
+         SpecificAttackTypeEnum.UDP_FLOOD
       );
    }
 }

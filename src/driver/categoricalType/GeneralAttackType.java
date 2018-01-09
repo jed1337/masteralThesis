@@ -1,6 +1,7 @@
 package driver.categoricalType;
 
 import constants.CategoricalTypeConstants;
+import constants.GeneralAttackTypeEnum;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -51,12 +52,12 @@ public final class GeneralAttackType implements CategoricalType{
    
    @Override
    public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
-      Set<Enum<constants.GeneralAttackType>> gats = new HashSet(); // Unique values
+      Set<GeneralAttackTypeEnum> gats = new HashSet(); // Unique values
       pfL.forEach((pf)->{
          gats.add(pf.getGeneralAttackType());
       });
 
-      for (Enum<constants.GeneralAttackType> gat : gats) {
+      for (GeneralAttackTypeEnum gat : gats) {
          Predicate<PreprocessFile> sameGAT = (pf)->pf.getGeneralAttackType() == gat;
 
          int sameAttackTypeCount = (int) pfL.stream()
@@ -67,7 +68,8 @@ public final class GeneralAttackType implements CategoricalType{
             .filter(sameGAT)
             .forEach((pf)->{
                pf.setInstancesCount(
-               totalInstanceCount / (gats.size() * sameAttackTypeCount));
+                  totalInstanceCount / (gats.size() * sameAttackTypeCount)
+               );
             }
          );
       }

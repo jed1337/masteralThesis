@@ -1,16 +1,15 @@
 package preprocessFiles;
 
-import constants.GeneralAttackType;
-import constants.FileNameConstants;
+import constants.GeneralAttackTypeEnum;
+import constants.SpecificAttackTypeEnum;
 import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 
 public final class PreprocessNeptune extends PreprocessFile{
    public PreprocessNeptune() throws IOException {
-      super(
-         GlobalFeatureExtraction.getInstance().getKDDTrainPath(),
-         GeneralAttackType.HIGH_RATE, 
-         "neptune"
+      super(GlobalFeatureExtraction.getInstance().getKDDTrainPath(),
+         GeneralAttackTypeEnum.HIGH_RATE, 
+         SpecificAttackTypeEnum.NEPTUNE
       );
    }
 }

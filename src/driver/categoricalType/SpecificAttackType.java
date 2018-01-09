@@ -1,6 +1,7 @@
 package driver.categoricalType;
 
 import constants.CategoricalTypeConstants;
+import constants.SpecificAttackTypeEnum;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -16,7 +17,7 @@ public final class SpecificAttackType implements CategoricalType{
     */
    @Override
    public int getClassCount(List<PreprocessFile> pfL) {
-      Set<String> specificTypes = new HashSet<>();
+      Set<SpecificAttackTypeEnum> specificTypes = new HashSet<>();
       for (PreprocessFile pf : pfL) {
          specificTypes.addAll(Arrays.asList(pf.getSpecificAttackType()));
       }
@@ -50,13 +51,13 @@ public final class SpecificAttackType implements CategoricalType{
     */
    @Override
    public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
-      Set<String> sats = new HashSet(); // Unique values
+      Set<SpecificAttackTypeEnum> sats = new HashSet(); // Unique values
       pfL.forEach((pf)->{
          sats.add(pf.getSpecificAttackType());
       });
 
-      for (String sat : sats) {
-         Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType().equals(sat);
+      for (SpecificAttackTypeEnum sat : sats) {
+         Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType() == sat;
 
          int sameSATCount = (int) pfL.stream()
             .filter(sameSAT)

@@ -1,16 +1,15 @@
 package preprocessFiles;
 
-import constants.FileNameConstants;
-import constants.GeneralAttackType;
+import constants.GeneralAttackTypeEnum;
+import constants.SpecificAttackTypeEnum;
 import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 
 public class PreprocessTCPFlood extends PreprocessFile {
    public PreprocessTCPFlood() throws IOException {
-      super(
-         GlobalFeatureExtraction.getInstance().getTCPFloodPath(),
-         GeneralAttackType.HIGH_RATE,
-         "tcpFlood"
+      super(GlobalFeatureExtraction.getInstance().getTCPFloodPath(),
+         GeneralAttackTypeEnum.HIGH_RATE,
+         SpecificAttackTypeEnum.TCP_FLOOD
       );
    }
 }

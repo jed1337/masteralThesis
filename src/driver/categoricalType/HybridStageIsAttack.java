@@ -18,7 +18,7 @@ public final class HybridStageIsAttack extends HybridStage{
       for (PreprocessFile pf : pfL) {
          relabels.add(
             String.format("%s:%s", pf.getSpecificAttackType(),
-               pf.getSpecificAttackType().equalsIgnoreCase(NORMAL)? NORMAL: ATTACK)
+               pf.getSpecificAttackType().getValue().equalsIgnoreCase(NORMAL)? NORMAL: ATTACK)
          );
       }
       
@@ -29,7 +29,7 @@ public final class HybridStageIsAttack extends HybridStage{
    public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
       Set<String> sats = new HashSet(); // Unique values
       pfL.forEach((pf)->{
-         sats.add(pf.getSpecificAttackType());
+         sats.add(pf.getSpecificAttackType().getValue());
       });
 
       /**
@@ -41,9 +41,9 @@ public final class HybridStageIsAttack extends HybridStage{
          
          Predicate<PreprocessFile> sameCategory = (pf)->{
             if(sat.equalsIgnoreCase(NORMAL)){
-               return pf.getSpecificAttackType().equalsIgnoreCase(NORMAL);
+               return pf.getSpecificAttackType().getValue().equalsIgnoreCase(NORMAL);
             } else{ //Assumes anything != normal is an attack
-               return !pf.getSpecificAttackType().equalsIgnoreCase(NORMAL);
+               return !pf.getSpecificAttackType().getValue().equalsIgnoreCase(NORMAL);
             }
          };
             
