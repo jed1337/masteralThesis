@@ -34,5 +34,4 @@ Classification
 	* Add more tests in general
 
 * Database
-	* Add stuff to the database
-	* Define a database controller
+	* Clean DB code
