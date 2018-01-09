@@ -1,13 +1,13 @@
 package preprocessFiles;
 
 import constants.GeneralAttackType;
-import constants.FileNameConstants;
+import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 
 public final class PreprocessNormal extends PreprocessFile{
    public PreprocessNormal() throws IOException {
       super(
-         FileNameConstants.KDD_TRAIN,
+         GlobalFeatureExtraction.getInstance().getKDDTrainPath(),
          GeneralAttackType.NORMAL,
          "normal"
       );

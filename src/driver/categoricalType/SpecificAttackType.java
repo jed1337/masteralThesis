@@ -9,6 +9,11 @@ import java.util.function.Predicate;
 import preprocessFiles.PreprocessFile;
 
 public final class SpecificAttackType implements CategoricalType{
+   /**
+    * Returns how many unique specificAttackTypes there are
+    * @param pfL
+    * @return 
+    */
    @Override
    public int getClassCount(List<PreprocessFile> pfL) {
       Set<String> specificTypes = new HashSet<>();
@@ -29,11 +34,20 @@ public final class SpecificAttackType implements CategoricalType{
       return "";
    }
    
+   /**
+    * Returns a Specific attack type
+    * @return 
+    */
    @Override
    public CategoricalTypeConstants getCategoricalType() {
-      return CategoricalTypeConstants.NOMINAL;
+      return CategoricalTypeConstants.SPECIFIC;
    }
    
+   /**
+    * Sets the preprocessFileCount based on the specific attack type
+    * @param pfL
+    * @param totalInstanceCount 
+    */
    @Override
    public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
       Set<String> sats = new HashSet(); // Unique values

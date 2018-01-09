@@ -13,6 +13,7 @@ import constants.DirectoryConstants;
 import customWeka.CustomEvaluation;
 import driver.mode.Mode;
 import featureSelection.FeatureSelection;
+import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -76,13 +77,15 @@ public final class SystemTrain {
 
       //Insert into main table
       {
-         String query = String.format("INSERT INTO %s.%s (%s, %s, %s) VALUES (?,?,?);",
+         String query = String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s) VALUES (?,?,?,?,?);",
            DBConnectionConstants.DATABASE_NAME,
            MainTableConstants.TABLE_NAME,
            
            MainTableConstants.SYSTEM_TYPE,
            MainTableConstants.CATEGORICAL_TYPE,
-           MainTableConstants.NOISE_LEVEL
+           MainTableConstants.NOISE_LEVEL,
+           MainTableConstants.DATASET,
+           MainTableConstants.EXTRACTION_TOOL
          );
 
          PreparedStatement ps = this.connection.prepareStatement(
@@ -94,6 +97,8 @@ public final class SystemTrain {
          ps.setString(i++, mode.getSystemType());
          ps.setString(i++, mode.getCategoricalType().name());
          ps.setFloat(i++, mode.getNoiseLevelFloat());
+         ps.setString(i++, "Initial");
+         ps.setString(i++, GlobalFeatureExtraction.getInstance().getName());
 
          ps.executeUpdate();
          

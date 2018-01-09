@@ -16,7 +16,6 @@ public final class FeatureSelection {
    /**
     * Sets selectedAttributes.
     * @param attributeEvaluator (Wrappers, filters, etc)
-    * @param searchMethod (Best first, greedy stepwise, etc)
     * @param trainSet
     * @throws Exception 
     */
@@ -70,6 +69,11 @@ public final class FeatureSelection {
       return Filter.useFilter(instances, remove);
    }
 
+   /**
+    * @param attributeEvaluator
+    * @return BestFirst if @param attributeEvaluator is an instanceof WrapperSubsetEval.<br>
+    * Ranker otherwise
+    */
    private ASSearch getSearchMethod(ASEvaluation attributeEvaluator) {
       if(attributeEvaluator instanceof WrapperSubsetEval){
          return new BestFirst();

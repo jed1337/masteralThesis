@@ -2,12 +2,13 @@ package preprocessFiles;
 
 import constants.FileNameConstants;
 import constants.GeneralAttackType;
+import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 
 public class PreprocessSlowRead extends PreprocessFile {
    public PreprocessSlowRead() throws IOException{
       super(
-         FileNameConstants.CNIS_SLOW_READ,
+         GlobalFeatureExtraction.getInstance().getSlowReadPath(),
          GeneralAttackType.LOW_RATE,
          "slowRead"
       );

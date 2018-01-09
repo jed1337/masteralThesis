@@ -14,7 +14,6 @@ import utils.UtilsInstances;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
-import weka.classifiers.trees.J48;
 import weka.core.Instances;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.SpecificAttackType;
@@ -22,7 +21,8 @@ import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseNormal;
-import weka.classifiers.bayes.NaiveBayes;
+import featureExtraction.KDDExtraction;
+import globalClasses.GlobalFeatureExtraction;
 
 public final class Driver {
 //<editor-fold defaultstate="collapsed" desc="System">
@@ -71,6 +71,8 @@ public final class Driver {
       final CategoricalType[] categoricalTypes = new CategoricalType[]{new GeneralAttackType(),new SpecificAttackType()};
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{NoNoise.getInstance(), new NoiseNormal()};
       
+      GlobalFeatureExtraction.setInstance(new KDDExtraction());
+      
       for (CategoricalType categoricalType : categoricalTypes) {
          for (NoiseLevel noiseLevel : noiseLevels) {
             
@@ -83,19 +85,18 @@ public final class Driver {
 
    private static int[] systemTrain(final Mode mode, final ASEvaluation attributeEvaluator, final String folderPath)
            throws IOException, Exception {
-      String fullFolderPath = 
-         String.join("/", 
-            "Results",
-//            "Dry run",
-            "Edited mode",
-            mode.getCategoricalType().name(),
-            mode.getNoiseLevelString(),
-            folderPath
-         );
+      String fullFolderPath = String.join("/", 
+//         "Results",
+         "Dry run",
+         "Edited mode",
+         mode.getCategoricalType().name(),
+         mode.getNoiseLevelString(),
+         folderPath
+      );
       
       SystemTrain st = new SystemTrain(mode);
       st.setupTestTrainValidation();
-//      int[] result = st.applyFeatureSelection(attributeEvaluator);
+      int[] result = st.applyFeatureSelection(attributeEvaluator);
       st.evaluateClassifiers();
       
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);

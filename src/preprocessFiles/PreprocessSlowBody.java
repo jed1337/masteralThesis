@@ -1,13 +1,13 @@
 package preprocessFiles;
 
-import constants.FileNameConstants;
 import constants.GeneralAttackType;
+import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 
 public class PreprocessSlowBody extends PreprocessFile {
    public PreprocessSlowBody() throws IOException{
       super(
-         FileNameConstants.CNIS_SLOW_BODY,
+         GlobalFeatureExtraction.getInstance().getSlowBodyPath(),
          GeneralAttackType.LOW_RATE,
          "slowBody"
       );

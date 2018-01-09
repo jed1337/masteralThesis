@@ -1,13 +1,13 @@
 package preprocessFiles;
 
-import constants.FileNameConstants;
 import constants.GeneralAttackType;
+import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 
 public class PreprocessHTTPFlood extends PreprocessFile{
    public PreprocessHTTPFlood() throws IOException {
       super(
-         FileNameConstants.CNIS_HTTP_FLOOD,
+         GlobalFeatureExtraction.getInstance().getHTTPFloodPath(),
          GeneralAttackType.HIGH_RATE,
          "httpFlood"
       );
