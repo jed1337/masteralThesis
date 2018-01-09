@@ -1,4 +1,4 @@
-package globalClasses;
+package globalParameters;
 
 import featureExtraction.FeatureExtraction;
 

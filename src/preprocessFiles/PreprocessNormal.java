@@ -2,7 +2,7 @@ package preprocessFiles;
 
 import constants.GeneralAttackTypeEnum;
 import constants.SpecificAttackTypeEnum;
-import globalClasses.GlobalFeatureExtraction;
+import globalParameters.GlobalFeatureExtraction;
 import java.io.IOException;
 
 public final class PreprocessNormal extends PreprocessFile{

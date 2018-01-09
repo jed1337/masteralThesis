@@ -64,11 +64,6 @@ public final class SpecificAttackType implements CategoricalType{
     */
    @Override
    public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
-      Set<String> satsString = new HashSet(); // Unique values
-      pfL.forEach((pf)->{
-         satsString.add(pf.getSpecificAttackType().getValue());
-      });
-      
       Set<SpecificAttackTypeEnum> sats = new HashSet(); // Unique values
       pfL.forEach((pf)->{
          sats.add(pf.getSpecificAttackType());

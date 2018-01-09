@@ -22,7 +22,7 @@ import driver.mode.noiseLevel.NoiseNormal;
 import featureExtraction.KDDExtraction;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
-import globalClasses.GlobalFeatureExtraction;
+import globalParameters.GlobalFeatureExtraction;
 
 public final class Driver {
 //<editor-fold defaultstate="collapsed" desc="System">
@@ -90,7 +90,7 @@ public final class Driver {
       }
    }
 
-   private static int[] systemTrain(FeatureSelection fs, Mode mode)
+   private static void systemTrain(FeatureSelection fs, Mode mode)
            throws IOException, Exception {
       String fullFolderPath = String.join("/",
          "Results",
@@ -103,20 +103,7 @@ public final class Driver {
       )+"/";
 
       new SystemTrain(mode, fs);
-//      st.setupTestTrainValidation();
-////      int[] result = st.applyFeatureSelection(attributeEvaluator);
-//      st.evaluateClassifiers();
 
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
-      return null;
    }
-//
-//   private static void systemTrain(final Mode mode, final int[] selectedAttribtues, final String folderPath)
-//           throws IOException, Exception {
-//      SystemTrain st = new SystemTrain(mode);
-//      st.setupTestTrainValidation();
-//      st.applyFeatureSelection(selectedAttribtues);
-//      st.evaluateClassifiers();
-//      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath);
-//   }
 }
