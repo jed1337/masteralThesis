@@ -1,6 +1,7 @@
 package driver.categoricalType;
 
 import constants.CategoricalTypeConstants;
+import constants.GeneralAttackTypeEnum;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -12,7 +13,7 @@ public final class GeneralAttackType implements CategoricalType{
    /**
     * Returns how many unique generalAttackTypes there are
     * @param pfL
-    * @return 
+    * @return
     */
    @Override
    public int getClassCount(List<PreprocessFile> pfL) {
@@ -25,38 +26,38 @@ public final class GeneralAttackType implements CategoricalType{
    /**
     * Relables the specific attack type to become the general attack type
     * @param pfL
-    * @return 
+    * @return
     */
    @Override
    public String getRelabel(List<PreprocessFile> pfL) {
       ArrayList<String> relabels = new ArrayList<>();
-      
+
       for (PreprocessFile pf : pfL) {
          relabels.add(
             String.format("%s:%s", pf.getSpecificAttackType(), pf.getGeneralAttackType())
          );
       }
-      
+
       return String.join(", ", relabels);
    }
-   
+
    /**
     * Return general
-    * @return 
+    * @return
     */
    @Override
    public CategoricalTypeConstants getCategoricalType(){
       return CategoricalTypeConstants.GENERAL;
    }
-   
+
    @Override
    public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
-      Set<Enum<constants.GeneralAttackTypeEnum>> gats = new HashSet(); // Unique values
+      Set<GeneralAttackTypeEnum> gats = new HashSet(); // Unique values
       pfL.forEach((pf)->{
          gats.add(pf.getGeneralAttackType());
       });
 
-      for (Enum<constants.GeneralAttackTypeEnum> gat : gats) {
+      for (GeneralAttackTypeEnum gat : gats) {
          Predicate<PreprocessFile> sameGAT = (pf)->pf.getGeneralAttackType() == gat;
 
          int sameAttackTypeCount = (int) pfL.stream()

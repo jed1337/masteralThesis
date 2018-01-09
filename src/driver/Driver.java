@@ -12,7 +12,6 @@ import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.attributeSelection.ASEvaluation;
-import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 import driver.categoricalType.CategoricalType;
@@ -22,6 +21,8 @@ import driver.mode.HybridIsAttack;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseNormal;
 import featureExtraction.KDDExtraction;
+import featureSelection.FeatureSelection;
+import featureSelection.NoFeatureSelection;
 import globalClasses.GlobalFeatureExtraction;
 
 public final class Driver {
@@ -58,51 +59,51 @@ public final class Driver {
       }
    }
 //</editor-fold>
-   
+
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
+      GlobalFeatureExtraction.setInstance(new KDDExtraction());
       final int instanceCount = ArffInstanceCount.HALVED;
-      
-      final WrapperSubsetEval asEval = null;
+
+//      final WrapperSubsetEval asEval = null;
 //      final WrapperSubsetEval asEval = new WrapperSubsetEval();
 //      asEval.setClassifier(new NaiveBayes());
 //      asEval.setFolds(5);
-      final String fs = "No feature selection/";
-      
+//      final String fs = "No feature selection/";
+      final FeatureSelection fs = NoFeatureSelection.getInstance();
       final CategoricalType[] categoricalTypes = new CategoricalType[]{new GeneralAttackType(),new SpecificAttackType()};
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{NoNoise.getInstance(), new NoiseNormal()};
-      
-      GlobalFeatureExtraction.setInstance(new KDDExtraction());
-      
+
       for (CategoricalType categoricalType : categoricalTypes) {
          for (NoiseLevel noiseLevel : noiseLevels) {
-            
-            systemTrain(new Single        (instanceCount, noiseLevel, categoricalType), asEval, fs+"single/");
-            systemTrain(new HybridIsAttack(instanceCount, noiseLevel), asEval, fs+"isAttack/");
-            systemTrain(new HybridDDoSType(instanceCount, categoricalType), asEval, fs+"DDoS type/");
+
+            systemTrain(fs, "single/",    new Single        (instanceCount, noiseLevel, categoricalType));
+            systemTrain(fs, "isAttack/",  new HybridIsAttack(instanceCount, noiseLevel));
+            systemTrain(fs, "DDoS type/", new HybridDDoSType(instanceCount, categoricalType));
          }
       }
    }
 
-   private static int[] systemTrain(final Mode mode, final ASEvaluation attributeEvaluator, final String folderPath)
+   private static int[] systemTrain(FeatureSelection fs, String folderPath, Mode mode)
            throws IOException, Exception {
-      String fullFolderPath = String.join("/", 
+      String fullFolderPath = String.join("/",
          "Results",
          "Dry run",
          "Edited mode",
          mode.getCategoricalType().name(),
          mode.getNoiseLevelString(),
+         fs.getFSMethodName(),
          folderPath
       );
-      
+
       SystemTrain st = new SystemTrain(mode);
       st.setupTestTrainValidation();
 //      int[] result = st.applyFeatureSelection(attributeEvaluator);
       st.evaluateClassifiers();
-      
+
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
       return null;
    }
-   
+
    private static void systemTrain(final Mode mode, final int[] selectedAttribtues, final String folderPath)
            throws IOException, Exception {
       SystemTrain st = new SystemTrain(mode);

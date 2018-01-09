@@ -12,7 +12,7 @@ import constants.FileNameConstants;
 import constants.DirectoryConstants;
 import customWeka.CustomEvaluation;
 import driver.mode.Mode;
-import featureSelection.FeatureSelection;
+import featureSelection.OldFeatureSelection;
 import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 import java.sql.Connection;
@@ -173,7 +173,7 @@ public final class SystemTrain {
 	 */
    public int[] applyFeatureSelection(ASEvaluation attributeEvaluator)
            throws IOException, NoSuchElementException, Exception {
-      FeatureSelection nfs = new FeatureSelection(
+      OldFeatureSelection nfs = new OldFeatureSelection(
          attributeEvaluator,
          getEvaluationSet(this.trainPath)
       );
@@ -207,7 +207,7 @@ public final class SystemTrain {
 	public void applyFeatureSelection(int[] selectedAttributes) throws Exception{
       for (EvaluationSet evaluationSet : this.evaluationSets) {
          evaluationSet.setInstances(
-            FeatureSelection.applyFeatureSelection(
+            OldFeatureSelection.applyFeatureSelection(
                evaluationSet.getInstances(),
                selectedAttributes
             )
@@ -218,8 +218,8 @@ public final class SystemTrain {
 	}
 
    /**
-    * Writes the test, train, and validation files to a folder <p>
-    * also adds the class count
+    * Writes the test, train, and validation files to a folder
+    * and also adds the class count
     * @throws IOException
     */
    public void writeTestTrainValidation() throws IOException {
