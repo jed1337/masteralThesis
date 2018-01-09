@@ -36,17 +36,17 @@ public final class OldFeatureSelection {
       System.out.println(as.toResultsString());
    }
    
-   /**
-    * Since we have set selectedAttributes via constructor, (instances, selectedAttributes) 
-    * can be passed to the static version of this method
-    * 
-    * @param instances
-    * @return
-    * @throws Exception 
-    */
-   public Instances applyFeatureSelection(Instances instances) throws Exception{
-      return OldFeatureSelection.applyFeatureSelection(instances, this.selectedAttributes);
-   }
+//   /**
+//    * Since we have set selectedAttributes via constructor, (instances, selectedAttributes) 
+//    * can be passed to the static version of this method
+//    * 
+//    * @param instances
+//    * @return
+//    * @throws Exception 
+//    */
+//   public Instances applyFeatureSelection(Instances instances) throws Exception{
+//      return OldFeatureSelection.applyFeatureSelection(instances, this.selectedAttributes);
+//   }
 
    public int[] getSelectedAttributes() {
       return selectedAttributes;

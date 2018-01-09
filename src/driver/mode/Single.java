@@ -26,7 +26,6 @@ public final class Single extends Mode{
       super.pfL.add(new PreprocessSlowRead());
       
       categoricalType.setPreprocessFileCount(super.pfL, totalInstancesCount);
-      System.out.println("");
    }
 
    @Override

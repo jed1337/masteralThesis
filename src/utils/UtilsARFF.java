@@ -67,9 +67,9 @@ public final class UtilsARFF{
            throws IOException, IllegalArgumentException{
       FormatAsText fat = createArff(filename, paths);
       
-      int index = UtilsInstances.getAttributeIndex(
-              UtilsInstances.getInstances(paths.get(0)), 
-              attributeName
+      int attributeIndex = UtilsInstances.getAttributeIndex(
+         UtilsInstances.getInstances(paths.get(0)), 
+         attributeName
       );
       
       String[] lines = Utils.getFileContents(fat.getPATH()).split(CharConstants.NEW_LINE);
@@ -82,7 +82,7 @@ public final class UtilsARFF{
             continue;
          }
          if(passedData){
-            indexValues.add(line.split(CharConstants.COMMA)[index]);
+            indexValues.add(line.split(CharConstants.COMMA)[attributeIndex]);
          }
       }
       

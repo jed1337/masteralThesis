@@ -11,7 +11,6 @@ import java.io.IOException;
 import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
-import weka.attributeSelection.ASEvaluation;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 import driver.categoricalType.CategoricalType;
@@ -64,26 +63,34 @@ public final class Driver {
       GlobalFeatureExtraction.setInstance(new KDDExtraction());
       final int instanceCount = ArffInstanceCount.HALVED;
 
-//      final WrapperSubsetEval asEval = null;
-//      final WrapperSubsetEval asEval = new WrapperSubsetEval();
-//      asEval.setClassifier(new NaiveBayes());
-//      asEval.setFolds(5);
-//      final String fs = "No feature selection/";
-      final FeatureSelection fs = NoFeatureSelection.getInstance();
-      final CategoricalType[] categoricalTypes = new CategoricalType[]{new GeneralAttackType(),new SpecificAttackType()};
-      final NoiseLevel[] noiseLevels = new NoiseLevel[]{NoNoise.getInstance(), new NoiseNormal()};
+      final FeatureSelection[] featureSelections = new FeatureSelection[]{
+         NoFeatureSelection.getInstance()
+      };
+      final CategoricalType[] categoricalTypes = new CategoricalType[]{
+         new GeneralAttackType(),
+         new SpecificAttackType()
+      };
+      final NoiseLevel[] noiseLevels = new NoiseLevel[]{
+         NoNoise.getInstance(), 
+         new NoiseNormal()
+      };
 
-      for (CategoricalType categoricalType : categoricalTypes) {
+      for (FeatureSelection fs : featureSelections) {
+         for (CategoricalType categoricalType : categoricalTypes) {
+            for (NoiseLevel noiseLevel : noiseLevels) {
+               systemTrain(fs, new Single (instanceCount, noiseLevel, categoricalType));
+            }
+         }
          for (NoiseLevel noiseLevel : noiseLevels) {
-
-            systemTrain(fs, "single/",    new Single        (instanceCount, noiseLevel, categoricalType));
-            systemTrain(fs, "isAttack/",  new HybridIsAttack(instanceCount, noiseLevel));
-            systemTrain(fs, "DDoS type/", new HybridDDoSType(instanceCount, categoricalType));
+            systemTrain(fs, new HybridIsAttack(instanceCount, noiseLevel));
+         }
+         for (CategoricalType categoricalType : categoricalTypes) {
+            systemTrain(fs, new HybridDDoSType(instanceCount, categoricalType));
          }
       }
    }
 
-   private static int[] systemTrain(FeatureSelection fs, String folderPath, Mode mode)
+   private static int[] systemTrain(FeatureSelection fs, Mode mode)
            throws IOException, Exception {
       String fullFolderPath = String.join("/",
          "Results",
@@ -92,24 +99,24 @@ public final class Driver {
          mode.getCategoricalType().name(),
          mode.getNoiseLevelString(),
          fs.getFSMethodName(),
-         folderPath
-      );
+         mode.getSystemType()
+      )+"/";
 
-      SystemTrain st = new SystemTrain(mode);
-      st.setupTestTrainValidation();
-//      int[] result = st.applyFeatureSelection(attributeEvaluator);
-      st.evaluateClassifiers();
+      new SystemTrain(mode, fs);
+//      st.setupTestTrainValidation();
+////      int[] result = st.applyFeatureSelection(attributeEvaluator);
+//      st.evaluateClassifiers();
 
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
       return null;
    }
-
-   private static void systemTrain(final Mode mode, final int[] selectedAttribtues, final String folderPath)
-           throws IOException, Exception {
-      SystemTrain st = new SystemTrain(mode);
-      st.setupTestTrainValidation();
-      st.applyFeatureSelection(selectedAttribtues);
-      st.evaluateClassifiers();
-      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath);
-   }
+//
+//   private static void systemTrain(final Mode mode, final int[] selectedAttribtues, final String folderPath)
+//           throws IOException, Exception {
+//      SystemTrain st = new SystemTrain(mode);
+//      st.setupTestTrainValidation();
+//      st.applyFeatureSelection(selectedAttribtues);
+//      st.evaluateClassifiers();
+//      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, folderPath);
+//   }
 }

@@ -1,5 +1,7 @@
 package featureSelection;
 
+import java.util.ArrayList;
+import preprocessFiles.preprocessEvaluationSet.EvaluationSet;
 import weka.core.Instances;
 
 public class NoFeatureSelection implements FeatureSelection{
@@ -15,7 +17,7 @@ public class NoFeatureSelection implements FeatureSelection{
    }
 
    @Override
-   public void featureSelection(Instances trainSet) throws Exception {
+   public void applyFeatureSelection(Instances trainSet, ArrayList<EvaluationSet> evaluationSets) throws Exception {
       System.out.println("Not doing feature selection");
    }
 

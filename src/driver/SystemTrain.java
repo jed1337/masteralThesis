@@ -12,7 +12,7 @@ import constants.FileNameConstants;
 import constants.DirectoryConstants;
 import customWeka.CustomEvaluation;
 import driver.mode.Mode;
-import featureSelection.OldFeatureSelection;
+import featureSelection.FeatureSelection;
 import globalClasses.GlobalFeatureExtraction;
 import java.io.IOException;
 import java.sql.Connection;
@@ -32,7 +32,6 @@ import preprocessFiles.preprocessEvaluationSet.SetupTestTrainValidation;
 import utils.Utils;
 import utils.UtilsARFF;
 import utils.UtilsClssifiers;
-import weka.attributeSelection.ASEvaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.SMO;
 import weka.classifiers.lazy.IBk;
@@ -41,24 +40,24 @@ import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 
 public final class SystemTrain {
+	private final ArrayList<EvaluationSet> evaluationSets;
 	private final String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
    private final String trainPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
    private final String testPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
    private final String validationPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
 
 	private final ArrayList<ClassifierHolder> classifierHolders;
-	private final ArrayList<EvaluationSet> evaluationSets;
 	private final List<PreprocessFile> preprocessFiles;
 
    private final Connection connection;
-   
    private final int mainID;
-   private final Mode mode;
+   
+   private final FeatureSelection fs;
 
-	public SystemTrain(Mode mode) throws IOException, Exception {
+	public SystemTrain(Mode mode, FeatureSelection fs) throws IOException, Exception {
       this.classifierHolders = new ArrayList<>();
       this.evaluationSets = new ArrayList<>();
-      this.mode = mode;
+      this.fs = fs;
       
       this.preprocessFiles = setupPreprocessFiles(mode.getPreprocessFiles(), mode.getRelabel());
 
@@ -107,7 +106,9 @@ public final class SystemTrain {
          this.mainID = rs.getInt(1);
          System.out.println("Generated primary key: "+this.mainID);
       }
-      System.out.println("");
+      setupTestTrainValidation();
+      applyFeatureSelection();
+      evaluateClassifiers();
 	}
 
    private Connection setupConnection() throws SQLException, ClassNotFoundException{
@@ -171,81 +172,36 @@ public final class SystemTrain {
 	 * @throws IOException
 	 * @throws Exception
 	 */
-   public int[] applyFeatureSelection(ASEvaluation attributeEvaluator)
+//   public int[] applyFeatureSelection(ASEvaluation attributeEvaluator)
+   public void applyFeatureSelection()
            throws IOException, NoSuchElementException, Exception {
-      OldFeatureSelection nfs = new OldFeatureSelection(
-         attributeEvaluator,
-         getEvaluationSet(this.trainPath)
-      );
+//      OldFeatureSelection nfs = new OldFeatureSelection(
+//         attributeEvaluator,
+//         getEvaluationSet(this.trainPath)
+//      );
+      fs.applyFeatureSelection(getEvaluationSet(this.trainPath), this.evaluationSets);
+      writeTestTrainValidation();
 
-      applyFeatureSelection(nfs.getSelectedAttributes());
+//      applyFeatureSelection(nfs.getSelectedAttributes());
 
       //Insert Feature_selection table
       {
-         String query = String.format("INSERT INTO %s.%s (%s, %s, %s) VALUES (?,?,?);",
+         String query = String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
            DBConnectionConstants.DATABASE_NAME,
            FeatureSelectionTableConstants.TABLE_NAME,
 
            FeatureSelectionTableConstants.MAIN_ID,
-           FeatureSelectionTableConstants.METHOD,
-           FeatureSelectionTableConstants.ORIGIN
+           FeatureSelectionTableConstants.METHOD
          );
 
          PreparedStatement ps = this.connection.prepareStatement(query);
          
          int i=1;
          ps.setInt   (i++, this.mainID);
-         ps.setString(i++, attributeEvaluator.toString());
-         ps.setString(i++, this.mode.getSystemType());
+         ps.setString(i++, fs.getFSMethodName());
 
          ps.executeUpdate();
       }
-
-      return nfs.getSelectedAttributes();
-   }
-
-	public void applyFeatureSelection(int[] selectedAttributes) throws Exception{
-      for (EvaluationSet evaluationSet : this.evaluationSets) {
-         evaluationSet.setInstances(
-            OldFeatureSelection.applyFeatureSelection(
-               evaluationSet.getInstances(),
-               selectedAttributes
-            )
-         );
-      }
-
-      writeTestTrainValidation();
-	}
-
-   /**
-    * Writes the test, train, and validation files to a folder
-    * and also adds the class count
-    * @throws IOException
-    */
-   public void writeTestTrainValidation() throws IOException {
-      for (EvaluationSet evaluationSet : this.evaluationSets) {
-         final String path = evaluationSet.getName();
-         Utils.writeStringFile(path, evaluationSet.getInstances().toString());
-
-         FormatAsText fat = new FormatAsText(path);
-         fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
-      }
-   }
-   
-   public static void checkUpdateCounts(int[] updateCounts) {
-      for (int i = 0; i < updateCounts.length; i++) {
-         if (updateCounts[i] >= 0) {
-            System.out.println("OK; updateCount=" + updateCounts[i]);
-         } else if (updateCounts[i] == Statement.SUCCESS_NO_INFO) {
-            System.out.println("OK; updateCount=Statement.SUCCESS_NO_INFO");
-         } else if (updateCounts[i] == Statement.EXECUTE_FAILED) {
-            System.out.println("Failure; updateCount=Statement.EXECUTE_FAILED");
-         }
-      }
-   }
-
-   public ArrayList<CustomEvaluation> evaluateClassifiers() throws Exception{
-      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
       
       //Insert Feature table. 
       {
@@ -272,6 +228,56 @@ public final class SystemTrain {
          checkUpdateCounts(updateCounts);
          }
       }
+//      return nfs.getSelectedAttributes();
+   }
+
+//	public void applyFeatureSelection(int[] selectedAttributes) throws Exception{
+//      for (EvaluationSet evaluationSet : this.evaluationSets) {
+//         evaluationSet.setInstances(
+//            OldFeatureSelection.applyFeatureSelection(
+//               evaluationSet.getInstances(),
+//               selectedAttributes
+//            )
+//         );
+//      }
+//
+//      writeTestTrainValidation();
+//	}
+
+   /**
+    * Writes the test, train, and validation files to a folder
+    * and also adds the class count
+    * @throws IOException
+    */
+   public void writeTestTrainValidation() throws IOException {
+      for (EvaluationSet evaluationSet : this.evaluationSets) {
+         final String path = evaluationSet.getName();
+         Utils.writeStringFile(path, evaluationSet.getInstances().toString());
+
+         FormatAsText fat = new FormatAsText(path);
+         fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
+      }
+   }
+   
+   /**
+    * Prints the status when multiple DB updates are made. Ideally, the output
+    * should all be: "OK"
+    * @param updateCounts 
+    */
+   public static void checkUpdateCounts(int[] updateCounts) {
+      for (int i = 0; i < updateCounts.length; i++) {
+         if (updateCounts[i] >= 0) {
+            System.out.println("OK; updateCount=" + updateCounts[i]);
+         } else if (updateCounts[i] == Statement.SUCCESS_NO_INFO) {
+            System.out.println("OK; updateCount=Statement.SUCCESS_NO_INFO");
+         } else if (updateCounts[i] == Statement.EXECUTE_FAILED) {
+            System.out.println("Failure; updateCount=Statement.EXECUTE_FAILED");
+         }
+      }
+   }
+
+   public ArrayList<CustomEvaluation> evaluateClassifiers() throws Exception{
+      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
 
       for (ClassifierHolder ch : this.classifierHolders) {
          CustomEvaluation eval = evaluateIndividualClassifier(ch);
