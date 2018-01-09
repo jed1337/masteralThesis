@@ -49,12 +49,12 @@ public abstract class PreprocessFile {
       this.instancesCount = instancesCount;
    }
 
-   public final Enum<GeneralAttackTypeEnum> getGeneralAttackType() {
+   public final GeneralAttackTypeEnum getGeneralAttackType() {
       return generalAttackType;
    }
 
-   public final String getSpecificAttackType() {
-      return specificAttackType.getValue();
+   public final SpecificAttackTypeEnum getSpecificAttackType() {
+      return specificAttackType;
    }
    
    public final FormatAsArff getFaa() {

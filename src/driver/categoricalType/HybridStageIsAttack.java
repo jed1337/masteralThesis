@@ -1,5 +1,6 @@
 package driver.categoricalType;
 
+import constants.SpecificAttackTypeEnum;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -8,17 +9,17 @@ import java.util.function.Predicate;
 import preprocessFiles.PreprocessFile;
 
 public final class HybridStageIsAttack extends HybridStage{
-   private final String NORMAL = "normal";
-   private final String ATTACK = "attack";
+//   private final String NORMAL = "normal";
+//   private final String ATTACK = "attack";
    
    @Override
    public String getRelabel(List<PreprocessFile> pfL) {
       ArrayList<String> relabels = new ArrayList<>();
       
       for (PreprocessFile pf : pfL) {
-         relabels.add(
-            String.format("%s:%s", pf.getSpecificAttackType(),
-               pf.getSpecificAttackType().equalsIgnoreCase(NORMAL)? NORMAL: ATTACK)
+         final SpecificAttackTypeEnum sat = pf.getSpecificAttackType();
+         relabels.add(String.format("%s:%s", sat,
+            sat == SpecificAttackTypeEnum.NORMAL? "normal": "attack")
          );
       }
       
@@ -27,7 +28,7 @@ public final class HybridStageIsAttack extends HybridStage{
    
    @Override
    public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
-      Set<String> sats = new HashSet(); // Unique values
+      Set<SpecificAttackTypeEnum> sats = new HashSet(); // Unique values
       pfL.forEach((pf)->{
          sats.add(pf.getSpecificAttackType());
       });
@@ -37,13 +38,12 @@ public final class HybridStageIsAttack extends HybridStage{
        * The loop repeats for an unnecessary amount of times, initialising the 
        * same value to total instance count
        */
-      for (String sat : sats) {
-         
+      for (SpecificAttackTypeEnum sat : sats) {
          Predicate<PreprocessFile> sameCategory = (pf)->{
-            if(sat.equalsIgnoreCase(NORMAL)){
-               return pf.getSpecificAttackType().equalsIgnoreCase(NORMAL);
+            if(sat == SpecificAttackTypeEnum.NORMAL){
+               return pf.getSpecificAttackType() == SpecificAttackTypeEnum.NORMAL;
             } else{ //Assumes anything != normal is an attack
-               return !pf.getSpecificAttackType().equalsIgnoreCase(NORMAL);
+               return pf.getSpecificAttackType() != SpecificAttackTypeEnum.NORMAL;
             }
          };
             
@@ -57,8 +57,8 @@ public final class HybridStageIsAttack extends HybridStage{
             .filter(sameCategory)
             .forEach((pf)->{
                pf.setInstancesCount(
-                 totalInstanceCount / (sats.size() * sameSATCount));
-//               totalInstanceCount / (sats.size() * sameCategoryCount));
+                 totalInstanceCount / (sats.size() * sameSATCount)
+               );
             }
          );
       }

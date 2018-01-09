@@ -1,6 +1,7 @@
 package driver.categoricalType;
 
 import constants.CategoricalTypeConstants;
+import constants.SpecificAttackTypeEnum;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -16,12 +17,25 @@ public final class SpecificAttackType implements CategoricalType{
     */
    @Override
    public int getClassCount(List<PreprocessFile> pfL) {
-      Set<String> specificTypes = new HashSet<>();
+      Set<SpecificAttackTypeEnum> specificTypes = new HashSet<>();
+      int specEnumSize = 0;
       for (PreprocessFile pf : pfL) {
          specificTypes.addAll(Arrays.asList(pf.getSpecificAttackType()));
       }
       
-      return specificTypes.size();
+      specEnumSize = specificTypes.size();
+      
+      Set<String> specificTypesString = new HashSet<>();
+      int specStringSize = 0;
+      for (PreprocessFile pf : pfL) {
+         specificTypesString.addAll(Arrays.asList(pf.getSpecificAttackType().getValue()));
+      }
+      
+      specStringSize = specificTypesString.size();
+      
+
+      return specEnumSize;
+//      return specificTypes.size();
    }
 
    /**
@@ -50,12 +64,18 @@ public final class SpecificAttackType implements CategoricalType{
     */
    @Override
    public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
-      Set<String> sats = new HashSet(); // Unique values
+      Set<String> satsString = new HashSet(); // Unique values
+      pfL.forEach((pf)->{
+         satsString.add(pf.getSpecificAttackType().getValue());
+      });
+      
+      Set<SpecificAttackTypeEnum> sats = new HashSet(); // Unique values
       pfL.forEach((pf)->{
          sats.add(pf.getSpecificAttackType());
       });
+      
 
-      for (String sat : sats) {
+      for (SpecificAttackTypeEnum sat : sats) {
          Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType().equals(sat);
 
          int sameSATCount = (int) pfL.stream()

@@ -15,6 +15,11 @@ public enum SpecificAttackTypeEnum {
    private SpecificAttackTypeEnum(String value) {
       this.value = value;
    }
+   
+   @Override
+   public String toString(){
+      return getValue();
+   }
 
    public String getValue() {
       return value;
