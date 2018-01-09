@@ -1,6 +1,6 @@
 package preprocessFiles;
 
-import constants.GeneralAttackType;
+import constants.GeneralAttackTypeEnum;
 import constants.AttributeTypeConstants;
 import constants.FormatConstants;
 import constants.DirectoryConstants;
@@ -15,13 +15,13 @@ import java.io.IOException;
  */
 public abstract class PreprocessFile {
    private final int RANDOM_SEED = 11;
-   private final Enum<GeneralAttackType> generalAttackType;
+   private final GeneralAttackTypeEnum generalAttackType;
    private final String specificAttackType;
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
    
-   protected PreprocessFile(String fileName, Enum<GeneralAttackType> generalAttackType, String specificAttackTypes)
+   protected PreprocessFile(String fileName, GeneralAttackTypeEnum generalAttackType, String specificAttackTypes)
            throws IOException {
       this.generalAttackType = generalAttackType;
       this.specificAttackType = specificAttackTypes;
@@ -48,7 +48,7 @@ public abstract class PreprocessFile {
       this.instancesCount = instancesCount;
    }
 
-   public final Enum<GeneralAttackType> getGeneralAttackType() {
+   public final Enum<GeneralAttackTypeEnum> getGeneralAttackType() {
       return generalAttackType;
    }
 
