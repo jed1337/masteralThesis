@@ -48,7 +48,6 @@
 @attribute isAttack {normal,slowBody,slowHeaders,slowRead,tcpFlood,udpFlood,httpFlood}
 
 @DATA
-
 %Filename: HTTPFlood150ThreadsAppendRandom.pcapng,InvalidAttack
 %Filename: HTTPFlood50ThreadsAppendRandom.pcapng,InvalidAttack
 %Filename: HTTPFlood75ThreadsAppendRandom.pcapng,InvalidAttack

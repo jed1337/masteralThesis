@@ -86,7 +86,7 @@ public final class Driver {
    private static int[] systemTrain(final Mode mode, final ASEvaluation attributeEvaluator, final String folderPath)
            throws IOException, Exception {
       String fullFolderPath = String.join("/", 
-//         "Results",
+         "Results",
          "Dry run",
          "Edited mode",
          mode.getCategoricalType().name(),
@@ -96,7 +96,7 @@ public final class Driver {
       
       SystemTrain st = new SystemTrain(mode);
       st.setupTestTrainValidation();
-      int[] result = st.applyFeatureSelection(attributeEvaluator);
+//      int[] result = st.applyFeatureSelection(attributeEvaluator);
       st.evaluateClassifiers();
       
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
