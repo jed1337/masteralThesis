@@ -4,6 +4,7 @@ import constants.GeneralAttackTypeEnum;
 import constants.AttributeTypeConstants;
 import constants.FormatConstants;
 import constants.DirectoryConstants;
+import constants.SpecificAttackTypeEnum;
 import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.IOException;
 
@@ -15,16 +16,16 @@ import java.io.IOException;
  */
 public abstract class PreprocessFile {
    private final int RANDOM_SEED = 11;
-   private final GeneralAttackTypeEnum generalAttackType;
-   private final String specificAttackType;
+   private final GeneralAttackTypeEnum  generalAttackType;
+   private final SpecificAttackTypeEnum specificAttackType;
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
    
-   protected PreprocessFile(String fileName, GeneralAttackTypeEnum generalAttackType, String specificAttackTypes)
+   protected PreprocessFile(String fileName, GeneralAttackTypeEnum generalAttackType, SpecificAttackTypeEnum specificAttackType)
            throws IOException {
       this.generalAttackType = generalAttackType;
-      this.specificAttackType = specificAttackTypes;
+      this.specificAttackType = specificAttackType;
 
       this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+""+fileName);
       this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+  ""+fileName);
@@ -53,7 +54,7 @@ public abstract class PreprocessFile {
    }
 
    public final String getSpecificAttackType() {
-      return specificAttackType;
+      return specificAttackType.getValue();
    }
    
    public final FormatAsArff getFaa() {
@@ -61,7 +62,7 @@ public abstract class PreprocessFile {
    }
 
    private void removeNonMatchingClasses() {
-      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType);
+      this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType.getValue());
       this.faa.removeNonMatchingClasses("service", "http", "http_443");
    }
    
@@ -81,6 +82,6 @@ public abstract class PreprocessFile {
       
       //Todo, make not directly the last index
       int lastIndex = this.faa.getInstances().numAttributes()-1;
-      this.faa.keepXInstances(lastIndex, this.specificAttackType, this.instancesCount);
+      this.faa.keepXInstances(lastIndex, this.specificAttackType.getValue(), this.instancesCount);
    }
 }

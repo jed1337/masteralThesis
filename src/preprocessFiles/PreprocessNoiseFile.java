@@ -1,6 +1,7 @@
 package preprocessFiles;
 
 import constants.GeneralAttackTypeEnum;
+import constants.SpecificAttackTypeEnum;
 import java.io.IOException;
 
 public abstract class PreprocessNoiseFile extends PreprocessFile{
@@ -8,7 +9,7 @@ public abstract class PreprocessNoiseFile extends PreprocessFile{
       super(
          fileName, 
          GeneralAttackTypeEnum.NORMAL,
-         "normal"
+         SpecificAttackTypeEnum.NORMAL
       );
    }
 }
