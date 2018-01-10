@@ -38,7 +38,7 @@ public abstract class Mode {
    }
    
    public final String getRelabel(){
-      return this.categoricalType.getRelabel(this.pfL);
+      return this.categoricalType.getRelabelSpecificAttack(this.pfL);
    }
    
    public final CategoricalTypeConstants getCategoricalType(){

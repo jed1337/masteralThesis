@@ -7,7 +7,8 @@ import java.io.IOException;
 
 public class PreprocessSlowRead extends PreprocessFile {
    public PreprocessSlowRead() throws IOException{
-      super(GlobalFeatureExtraction.getInstance().getSlowReadPath(),
+      super(
+         GlobalFeatureExtraction.getInstance().getSlowReadPath(),
          GeneralAttackTypeEnum.LOW_RATE,
          SpecificAttackTypeEnum.SLOW_READ
       );

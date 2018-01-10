@@ -8,5 +8,5 @@ interface ARFFPaths {
    public abstract String getTCPFloodPath();
    public abstract String getUDPFloodPath();
    public abstract String getHTTPFloodPath();
-   public abstract String getKDDTrainPath();
+   public abstract String getKDDTrainPath() throws UnsupportedOperationException;
 }

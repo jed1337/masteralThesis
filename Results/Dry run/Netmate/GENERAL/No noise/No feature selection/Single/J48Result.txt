@@ -1,0 +1,67 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+std_fpktl <= 57
+|   total_fhlen <= 256
+|   |   min_idle <= 6154744
+|   |   |   sflow_fpackets <= 1: NORMAL (1179.0/12.0)
+|   |   |   sflow_fpackets > 1
+|   |   |   |   duration <= 3172
+|   |   |   |   |   total_fpackets <= 2
+|   |   |   |   |   |   total_fvolume <= 212: LOW_RATE (4.0)
+|   |   |   |   |   |   total_fvolume > 212: NORMAL (2.0)
+|   |   |   |   |   total_fpackets > 2: HIGH_RATE (3.0)
+|   |   |   |   duration > 3172
+|   |   |   |   |   min_fiat <= 388019
+|   |   |   |   |   |   mean_fiat <= 2927
+|   |   |   |   |   |   |   total_fpackets <= 6: HIGH_RATE (2.0)
+|   |   |   |   |   |   |   total_fpackets > 6: NORMAL (7.0)
+|   |   |   |   |   |   mean_fiat > 2927: NORMAL (87.0)
+|   |   |   |   |   min_fiat > 388019
+|   |   |   |   |   |   min_fiat <= 409603: HIGH_RATE (4.0)
+|   |   |   |   |   |   min_fiat > 409603: NORMAL (13.0/2.0)
+|   |   min_idle > 6154744
+|   |   |   max_idle <= 11824551: NORMAL (13.0)
+|   |   |   max_idle > 11824551: LOW_RATE (12.0)
+|   total_fhlen > 256
+|   |   mean_fiat <= 31807: HIGH_RATE (1012.0/2.0)
+|   |   mean_fiat > 31807
+|   |   |   min_bpktl <= -1: NORMAL (14.0/1.0)
+|   |   |   min_bpktl > -1: HIGH_RATE (48.0)
+std_fpktl > 57
+|   min_bpktl <= -1: NORMAL (31.0)
+|   min_bpktl > -1
+|   |   sflow_fpackets <= 5: LOW_RATE (1296.0)
+|   |   sflow_fpackets > 5
+|   |   |   max_fpktl <= 964: LOW_RATE (13.0)
+|   |   |   max_fpktl > 964: HIGH_RATE (12.0)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	35
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         895               95.4158 %
+Incorrectly Classified Instances        43                4.5842 %
+Kappa statistic                          0.9312
+Mean absolute error                      0.0336
+Root mean squared error                  0.175 
+Relative absolute error                  7.5815 %
+Root relative squared error             37.21   %
+Total Number of Instances              938     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.060    0.872      1.000    0.932      0.905    0.953     0.818     HIGH_RATE
+                 0.883    0.002    0.997      0.883    0.936      0.908    0.915     0.922     LOW_RATE
+                 0.988    0.003    0.994      0.988    0.991      0.986    0.995     0.989     NORMAL
+Weighted Avg.    0.954    0.019    0.959      0.954    0.954      0.935    0.955     0.916     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 272   0   0 |   a = HIGH_RATE
+  37 294   2 |   b = LOW_RATE
+   3   1 329 |   c = NORMAL

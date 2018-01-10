@@ -17,19 +17,18 @@ public final class HybridIsAttack extends Mode{
       super(totalInstancesCount, nl, new HybridStageIsAttack());
 
       super.pfL.add(new PreprocessNormal());
-      
+
       super.pfL.add(new PreprocessTCPFlood());
       super.pfL.add(new PreprocessUDPFlood());
       super.pfL.add(new PreprocessHTTPFlood());
-      
+
       super.pfL.add(new PreprocessSlowBody());
       super.pfL.add(new PreprocessSlowHeaders());
       super.pfL.add(new PreprocessSlowRead());
-      
+
       new HybridStageIsAttack().setPreprocessFileCount(super.pfL, totalInstancesCount);
-      System.out.println("");
    }
-   
+
    @Override
    public String getSystemType() {
       return "Hybrid isAttack";

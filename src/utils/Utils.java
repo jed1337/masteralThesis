@@ -15,6 +15,7 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
+import org.apache.commons.io.FileUtils;
 import preprocessFiles.PreprocessFile;
 
 public final class Utils {
@@ -84,18 +85,21 @@ public final class Utils {
    }
 
    /**
-    * Copies all the files in sourceDir to destinationDir<br>
-    * Loop through folders code from https://stackoverflow.com/questions/19190584/
-    * @param sourceDir
-    * @param destinationDir
+    * Uses FileUtils.copyDirectory
+    * @param sourceDirPath
+    * @param destinationDirPath
     * @throws IOException
     */
-   public static void duplicateDirectory(String sourceDir, String destinationDir) throws IOException{
-      final File directory = new File(sourceDir);
-         makeFolders(destinationDir);
-      for (final File file : directory.listFiles()) {
-         duplicateFile(file.getAbsolutePath(), destinationDir+file.getName());
-      }
+   public static void duplicateDirectory(String sourceDirPath, String destinationDirPath) throws IOException{
+//      final File sourceDir = new File(sourceDirPath);
+//      makeFolders(destinationDirPath);
+      FileUtils.copyDirectory(
+         new File(sourceDirPath), 
+         new File(destinationDirPath)
+      );
+//      for (final File file : sourceDir.listFiles()) {
+//         duplicateFile(file.getAbsolutePath(), destinationDirPath+file.getName());
+//      }
    }
 
    /**
@@ -109,7 +113,7 @@ public final class Utils {
       try (
          InputStream is = new FileInputStream(source);
          OutputStream os = new FileOutputStream(destination);
-      )      {
+      ) {
          byte[] buffer = new byte[1024];
          int length;
          while ((length = is.read(buffer)) > 0) {
@@ -130,6 +134,11 @@ public final class Utils {
    }
 
    public static void writeStringFile(String destination, String allLines, boolean append) throws IOException {
+      //FileWriter just creates the file if it doesn't exist.
+      //It won't create the possible parent directories of that file.
+      //This folder creates the parent directories if needed
+      makeParentFolder(destination); 
+      
       try (BufferedWriter bw = new BufferedWriter(new FileWriter(destination, append))) {
          bw.write(allLines);
       }
@@ -140,21 +149,47 @@ public final class Utils {
       }
       System.out.println("Created '"+destination+"'");
    }
+   
+   /**
+    * Assume that only the Data/ folder exists
+    * {@code
+    * makeParentFolder(Data/subdir1/subdir2/file.txt)
+    * }
+    * Creates subdir1 and subdir2. File.txt, however, isn't created<br>
+    * @see <a href="https://stackoverflow.com/questions/2833853/create-whole-path-automatically-when-writing-to-a-new-file">
+    * Source: stackoverflow.com</a>
+    * @param filePath The path towards the file
+    * @return 
+    */
+   public static boolean makeParentFolder(String filePath){
+      return makeFolders(new File(filePath).getParentFile());
+   }
 
-   public static boolean makeFolders(String folderPath){
-      if(!folderPath.isEmpty()){
-         boolean wasCreated = new File(folderPath).mkdirs();
-         if(wasCreated){
-            System.out.println("Created the folder: '"+folderPath+"'");
-         }else{
-            System.err.println("Some or all folders of '"+folderPath+"' was not created");
-         }
-         return wasCreated;
+//   public static boolean makeFolders(String folderPath){
+//      return makeFolders(new File(folderPath));
+//   }
+//      if(!folderPath.isEmpty()){
+//      boolean wasCreated = new File(folderPath).mkdirs();
+//      if(wasCreated){
+//         System.out.println("Created the folder: '"+folderPath+"'");
+//      }else{
+//         System.err.println("Some or all folders of '"+folderPath+"' was not created");
+//      }
+//      return wasCreated;
+//      else{
+//         System.err.println("The folder '"+folderPath+"' already exists.");
+//         return false;
+//      }
+//   }
+   
+   public static boolean makeFolders(File file){
+      boolean wasCreated = file.mkdirs();
+      if (wasCreated) {
+         System.out.println("Created the folder: '" + file.getAbsolutePath() + "'");
+      } else {
+         System.err.println("Some or all folders of '" + file.getAbsolutePath() + "' was not created");
       }
-      else{
-         System.err.println("The folder '"+folderPath+"' already exists.");
-         return false;
-      }
+      return wasCreated;
    }
 
    public static <K extends Object, V extends Object> void addToMap(Map map, K key, V value) throws IllegalArgumentException{

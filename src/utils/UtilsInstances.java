@@ -4,6 +4,7 @@ import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import preprocessFiles.utils.MutableInt;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -17,7 +18,7 @@ public final class UtilsInstances{
       return instances;
    }
    
-   public static Instances getHeader(String path, String... featuresToRemove) throws IOException, Exception{
+   public static Instances getHeader(String path, List<String> featuresToRemove) throws IOException, Exception{
       FormatAsArff faa = new FormatAsArff(path);
       faa.removeAllInstances();
       faa.removeAttributes(featuresToRemove);

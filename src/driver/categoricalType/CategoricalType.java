@@ -14,13 +14,14 @@ public interface CategoricalType {
    public int getClassCount(List<PreprocessFile> pfL);
    
    /**
-    * Relables the specific attack.<br>
-    * For general TCPFlood, the specific attack type turns into "High rate"<br>
-    * For HybridStageIsAttack Slowread, the specific attack type turns into "Attack"
+    * Relabels the specific attack type depending on the implementation.<p>
+    * For example, the specific attack is "tcpFlood"<br>
+    * Implementation = GeneralAttackType. tcpFlood turns into HIGH_RATE<br>
+    * Implementation = SpecificAttackType. tcpFlood turns into tcpFlood (no change)<br>
     * @param pfL
-    * @return 
+    * @return "{@code <specific_attack_1>:<relabel_1>, <specific_attack_2>:<relabel_2>, ..., <specific_attack_N>:<relabel_N>}"
     */
-   public String getRelabel(List<PreprocessFile> pfL);
+   public String getRelabelSpecificAttack(List<PreprocessFile> pfL);
    
    /**
     * General or nominal

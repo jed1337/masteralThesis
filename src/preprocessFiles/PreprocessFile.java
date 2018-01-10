@@ -1,10 +1,10 @@
 package preprocessFiles;
 
-import constants.GeneralAttackTypeEnum;
 import constants.AttributeTypeConstants;
-import constants.FormatConstants;
+import constants.GeneralAttackTypeEnum;
 import constants.DirectoryConstants;
 import constants.SpecificAttackTypeEnum;
+import globalParameters.GlobalFeatureExtraction;
 import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.IOException;
 
@@ -21,20 +21,22 @@ public abstract class PreprocessFile {
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
-   
+
    protected PreprocessFile(String fileName, GeneralAttackTypeEnum generalAttackType, SpecificAttackTypeEnum specificAttackType)
            throws IOException {
       this.generalAttackType = generalAttackType;
       this.specificAttackType = specificAttackType;
 
-      this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+""+fileName);
-      this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+  ""+fileName);
+      this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+fileName);
+      this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+fileName);
    }
 
    public final void setUp() throws IOException, Exception{
       removeNonMatchingClasses();
 
-      this.faa.removeAttributes(FormatConstants.FEATURES_TO_REMOVE);
+      this.faa.removeAttributes(
+         GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
+      );
       this.faa.randomise(this.RANDOM_SEED);
 
       balanceInstances();
@@ -42,7 +44,6 @@ public abstract class PreprocessFile {
 
    public final void relabel(String attributes, String toReplace) throws Exception {
       this.faa.renameNominalValues(attributes, toReplace);
-      System.out.println("");
    }
 
    public final void setInstancesCount(int instancesCount) {
@@ -56,16 +57,18 @@ public abstract class PreprocessFile {
    public final SpecificAttackTypeEnum getSpecificAttackType() {
       return specificAttackType;
    }
-   
+
    public final FormatAsArff getFaa() {
       return faa;
    }
 
    private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType.getValue());
-      this.faa.removeNonMatchingClasses("service", "http", "http_443");
+//      this.faa.removeNonMatchingClasses("service", "http", "http_443");
+      GlobalFeatureExtraction.getInstance()
+         .removeNonMatchingClasses().accept(this.faa);
    }
-   
+
    /**
     * For example there are 5000 instances
     * <p>
@@ -76,10 +79,10 @@ public abstract class PreprocessFile {
     * If setInstanceCount(int) isn't called beforehand, this function doesn't do anything
     */
    private void balanceInstances() {
-      if(instancesCount == -1){
+      if(this.instancesCount == -1){
          return;
       }
-      
+
       //Todo, make not directly the last index
       int lastIndex = this.faa.getInstances().numAttributes()-1;
       this.faa.keepXInstances(lastIndex, this.specificAttackType.getValue(), this.instancesCount);

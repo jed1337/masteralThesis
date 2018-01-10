@@ -7,7 +7,8 @@ import java.io.IOException;
 
 public class PreprocessSlowBody extends PreprocessFile {
    public PreprocessSlowBody() throws IOException{
-      super(GlobalFeatureExtraction.getInstance().getSlowBodyPath(),
+      super(
+         GlobalFeatureExtraction.getInstance().getSlowBodyPath(),
          GeneralAttackTypeEnum.LOW_RATE,
          SpecificAttackTypeEnum.SLOW_BODY
       );

@@ -1,7 +1,7 @@
 package preprocessFiles.preprocessEvaluationSet;
 
 import constants.AttributeTypeConstants;
-import constants.FormatConstants;
+import globalParameters.GlobalFeatureExtraction;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -106,7 +106,11 @@ public final class SetupTestTrainValidation {
     */
    private void addHeaders(ArrayList<EvaluationSet> evaluationSets, String source) throws Exception {
       for (EvaluationSet evaluationSet : evaluationSets) {
-         evaluationSet.setInstances(UtilsInstances.getHeader(source, FormatConstants.FEATURES_TO_REMOVE));
+         evaluationSet.setInstances(
+            UtilsInstances.getHeader(
+               source, GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
+            )
+         );
       }
    }
 

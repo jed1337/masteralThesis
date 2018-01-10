@@ -3,6 +3,8 @@ package featureExtraction;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
+import preprocessFiles.preprocessAs.FormatAsArff;
 
 public class KDDExtraction extends FeatureExtraction{
    @Override
@@ -12,7 +14,7 @@ public class KDDExtraction extends FeatureExtraction{
 
    @Override
    public String getNormalPath() {
-      return "KDDTrain+.arff";
+      return getKDDTrainPath();
    }
 
    @Override
@@ -70,5 +72,10 @@ public class KDDExtraction extends FeatureExtraction{
       al.add("is_guest_login");
       al.add("difficulty");
       return Collections.unmodifiableList(al);
+   }
+
+   @Override
+   public Consumer<FormatAsArff> removeNonMatchingClasses() {
+      return (faa)->faa.removeNonMatchingClasses("service", "http", "http_443");
    }
 }

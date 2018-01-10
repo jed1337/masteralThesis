@@ -1,0 +1,266 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                         Class
+Attribute            HIGH_RATE      LOW_RATE        NORMAL
+                        (0.29)        (0.35)        (0.36)
+===========================================================
+total_fpackets
+  mean                4285.7321        2.3073        2.8162
+  std. dev.            4202.954        6.5014       33.7041
+  weight sum               1087          1332          1333
+  precision             20.6265       20.6265       20.6265
+
+total_fvolume
+  mean              185230.2263      961.4699     2030.3143
+  std. dev.         171799.2224      831.9412    38469.0381
+  weight sum               1087          1332          1333
+  precision            751.5715      751.5715      751.5715
+
+total_bpackets
+  mean                 286.3766        1.7185             0
+  std. dev.            768.2293        4.8422        2.5604
+  weight sum               1087          1332          1333
+  precision             15.3625       15.3625       15.3625
+
+total_bvolume
+  mean               15079.9505      457.8042             0
+  std. dev.          40111.1958       872.894      110.9525
+  weight sum               1087          1332          1333
+  precision            665.7152      665.7152      665.7152
+
+min_fpktl
+  mean                  46.9038       47.6618      173.6502
+  std. dev.             10.9237       18.0314      240.5934
+  weight sum               1087          1332          1333
+  precision              5.9388        5.9388        5.9388
+
+mean_fpktl
+  mean                  50.2977      136.8967      183.0222
+  std. dev.             14.3514       55.7659      249.7672
+  weight sum               1087          1332          1333
+  precision              4.5327        4.5327        4.5327
+
+max_fpktl
+  mean                 170.7797      401.8436      193.4737
+  std. dev.            306.1635      102.5531      270.8387
+  weight sum               1087          1332          1333
+  precision              4.4848        4.4848        4.4848
+
+std_fpktl
+  mean                   6.5552       140.643        7.6746
+  std. dev.              13.483       56.9391       55.6788
+  weight sum               1087          1332          1333
+  precision              4.1452        4.1452        4.1452
+
+min_bpktl
+  mean                  23.4572       59.9467             0
+  std. dev.             29.6757        7.9462        5.0833
+  weight sum               1087          1332          1333
+  precision                30.5          30.5          30.5
+
+mean_bpktl
+  mean                  42.6894      119.0331             0
+  std. dev.              59.159      169.6069       14.4559
+  weight sum               1087          1332          1333
+  precision             86.7353       86.7353       86.7353
+
+max_bpktl
+  mean                 178.7111      416.6149             0
+  std. dev.            294.1901      466.3583         110.5
+  weight sum               1087          1332          1333
+  precision                 663           663           663
+
+std_bpktl
+  mean                  25.4029      122.5247             0
+  std. dev.             69.7737       205.823         9.373
+  weight sum               1087          1332          1333
+  precision             56.2381       56.2381       56.2381
+
+min_fiat
+  mean                3070.5256     1005.4086    17109.4036
+  std. dev.          42605.2114      397.9247    97872.0857
+  weight sum               1087          1332          1333
+  precision           1034.9337     1034.9337     1034.9337
+
+mean_fiat
+  mean               15960.7625    61485.5042     26289.139
+  std. dev.          52922.9594   104456.0024   113312.1625
+  weight sum               1087          1332          1333
+  precision            447.1136      447.1136      447.1136
+
+max_fiat
+  mean              581309.0471   198720.3292    44679.4897
+  std. dev.         342356.4312   350591.2109   173220.1686
+  weight sum               1087          1332          1333
+  precision            515.9867      515.9867      515.9867
+
+std_fiat
+  mean                38673.218    86417.6548    11285.6475
+  std. dev.          56667.2611   150634.9182    57255.2932
+  weight sum               1087          1332          1333
+  precision            265.8802      265.8802      265.8802
+
+min_biat
+  mean                 203.4117     6346.6332             0
+  std. dev.           2330.9841    83687.6956      409.4602
+  weight sum               1087          1332          1333
+  precision           2456.7613     2456.7613     2456.7613
+
+mean_biat
+  mean               15557.9534    34804.2924             0
+  std. dev.           42461.759    124811.084      231.0503
+  weight sum               1087          1332          1333
+  precision           1386.3018     1386.3018     1386.3018
+
+max_biat
+  mean               175799.905    91663.5137             0
+  std. dev.         326631.7469   291424.1237      240.2997
+  weight sum               1087          1332          1333
+  precision           1441.7982     1441.7982     1441.7982
+
+std_biat
+  mean               28987.7338    47380.7659             0
+  std. dev.          75420.2735   155215.4885      206.8622
+  weight sum               1087          1332          1333
+  precision           1241.1733     1241.1733     1241.1733
+
+duration
+  mean             19064188.026 22443194.8431   688516.4191
+  std. dev.       11420599.0018 11974201.7246  2104880.5338
+  weight sum               1087          1332          1333
+  precision          12928.2921    12928.2921    12928.2921
+
+min_active
+  mean            11957339.3378    14279.4485   140456.3396
+  std. dev.       12190981.5794   133584.5827   982310.6805
+  weight sum               1087          1332          1333
+  precision          16340.3998    16340.3998    16340.3998
+
+mean_active
+  mean            13600702.5533    68361.6207   146230.5901
+  std. dev.       11170605.3768   157020.4338   986222.6769
+  weight sum               1087          1332          1333
+  precision          12388.7998    12388.7998    12388.7998
+
+max_active
+  mean            15374937.5929   307851.3068     173618.06
+  std. dev.       10782110.3331   585219.9685  1047094.0005
+  weight sum               1087          1332          1333
+  precision           12657.672     12657.672     12657.672
+
+std_active
+  mean             1886266.8049   126297.6238    28082.1314
+  std. dev.        3170555.0922   243317.6021   233009.6027
+  weight sum               1087          1332          1333
+  precision           12346.135     12346.135     12346.135
+
+min_idle
+  mean              516284.8806  2805086.8832   329393.0238
+  std. dev.          798529.653  3760776.6206  1220793.7169
+  weight sum               1087          1332          1333
+  precision            8547.086      8547.086      8547.086
+
+mean_idle
+  mean              567047.4265  6706418.4387   350948.0524
+  std. dev.          854339.682  3392536.0529  1255120.2691
+  weight sum               1087          1332          1333
+  precision           9011.1481     9011.1481     9011.1481
+
+max_idle
+  mean              628986.6389  9124871.4979   376111.2937
+  std. dev.         956936.0975  4522032.3763  1318388.4096
+  weight sum               1087          1332          1333
+  precision          11787.4675    11787.4675    11787.4675
+
+std_idle
+  mean               66681.0871  2969892.7244    29131.8002
+  std. dev.         193172.0768  2449987.0199   234701.3215
+  weight sum               1087          1332          1333
+  precision           7289.7859     7289.7859     7289.7859
+
+sflow_fpackets
+  mean                 3563.683             0        2.3375
+  std. dev.           4253.4321        3.6315       32.2913
+  weight sum               1087          1332          1333
+  precision             21.7892       21.7892       21.7892
+
+sflow_fbytes
+  mean              155703.8919      158.3209     1886.3112
+  std. dev.          176452.817      370.8391    38361.6725
+  weight sum               1087          1332          1333
+  precision            949.9255      949.9255      949.9255
+
+sflow_bpackets
+  mean                 280.3684             0             0
+  std. dev.            769.8828        2.8437        2.8437
+  weight sum               1087          1332          1333
+  precision             17.0619       17.0619       17.0619
+
+sflow_bbytes
+  mean               14745.8537       54.8457             0
+  std. dev.          40174.1187      701.1751        97.406
+  weight sum               1087          1332          1333
+  precision             584.436       584.436       584.436
+
+fpsh_cnt
+  mean                 546.8505             0             0
+  std. dev.           1437.6799        5.7456        5.7456
+  weight sum               1087          1332          1333
+  precision             34.4735       34.4735       34.4735
+
+bpsh_cnt
+  mean                   0.2714        0.5856             0
+  std. dev.              0.4488        0.4926        0.1667
+  weight sum               1087          1332          1333
+  precision                   1             1             1
+
+furg_cnt
+  mean                        0             0             0
+  std. dev.              0.0017        0.0017        0.0017
+  weight sum               1087          1332          1333
+  precision                0.01          0.01          0.01
+
+burg_cnt
+  mean                        0             0             0
+  std. dev.              0.0017        0.0017        0.0017
+  weight sum               1087          1332          1333
+  precision                0.01          0.01          0.01
+
+total_fhlen
+  mean              103303.7355      385.2351       54.5532
+  std. dev.          95939.0479       245.552      664.8698
+  weight sum               1087          1332          1333
+  precision             512.109       512.109       512.109
+
+total_bhlen
+  mean                14920.883      262.2648             0
+  std. dev.          39995.3619       342.135      118.0989
+  weight sum               1087          1332          1333
+  precision            708.5936      708.5936      708.5936
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         660               70.3625 %
+Incorrectly Classified Instances       278               29.6375 %
+Kappa statistic                          0.5408
+Mean absolute error                      0.198 
+Root mean squared error                  0.4446
+Relative absolute error                 44.7322 %
+Root relative squared error             94.5168 %
+Total Number of Instances              938     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.011    0.006    0.429      0.011    0.022      0.026    0.957     0.881     HIGH_RATE
+                 0.985    0.446    0.548      0.985    0.705      0.536    0.770     0.547     LOW_RATE
+                 0.988    0.007    0.988      0.988    0.988      0.981    0.994     0.985     NORMAL
+Weighted Avg.    0.704    0.163    0.670      0.704    0.607      0.546    0.904     0.799     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   3 269   0 |   a = HIGH_RATE
+   1 328   4 |   b = LOW_RATE
+   3   1 329 |   c = NORMAL

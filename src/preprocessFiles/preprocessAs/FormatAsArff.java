@@ -4,6 +4,7 @@ import utils.UtilsInstances;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import utils.Utils;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -51,7 +52,7 @@ public final class FormatAsArff {
     * @param attributeNames
     * @throws Exception
     */
-   public void removeAttributes (String... attributeNames) throws Exception{
+   public void removeAttributes (List<String> attributeNames) throws Exception{
       ArrayList<String> attributeIndeces = new ArrayList<>();
       for (String attributeName : attributeNames) {
          int index = UtilsInstances.getAttributeIndex(this.instances, attributeName);
@@ -73,9 +74,7 @@ public final class FormatAsArff {
     */
    public void removeAttributes(String attributeIndeces)
            throws FileNotFoundException, IOException, Exception {
-      Remove remove;
-
-      remove = new Remove();
+      Remove remove = new Remove();
       remove.setAttributeIndices(attributeIndeces);
       
       useFilter(instances, remove);
@@ -100,7 +99,7 @@ public final class FormatAsArff {
       RenameNominalValues rnv = new RenameNominalValues();
       rnv.setSelectedAttributes(attributes);
       rnv.setValueReplacements(replacement);
-      useFilter(instances, rnv);
+      useFilter(this.instances, rnv);
    }
 
    public void removeNonMatchingClasses(String attributeName, String... classesToRetain) {

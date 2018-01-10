@@ -72,7 +72,6 @@ public final class SystemTrain {
       this.evaluationSets.add(new EvaluationSet(this.validationPath  , 1));
 
       this.connection = setupConnection();
-      System.out.println("");
 
       this.mainID = insertMain(mode);
       setupTestTrainValidation();
@@ -231,9 +230,9 @@ public final class SystemTrain {
       checkUpdateCounts(updateCounts);
    }
 
-	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> preprocessFiles, String relabel)
+	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> pfL, String relabel)
 			  throws IOException, Exception {
-		for (PreprocessFile pf : preprocessFiles) {
+		for (PreprocessFile pf : pfL) {
 			pf.setUp();
 			pf.relabel(
 				AttributeTypeConstants.ATTRIBUTE_CLASS,
@@ -241,7 +240,7 @@ public final class SystemTrain {
 			);
 			Utils.writePreprocessFile(pf);
 		}
-		return preprocessFiles;
+		return pfL;
 	}
 
 	public void setupTestTrainValidation() throws IOException, Exception{

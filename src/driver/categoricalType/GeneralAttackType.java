@@ -23,13 +23,8 @@ public final class GeneralAttackType implements CategoricalType{
          .count();
    }
 
-   /**
-    * Relables the specific attack type to become the general attack type
-    * @param pfL
-    * @return
-    */
    @Override
-   public String getRelabel(List<PreprocessFile> pfL) {
+   public String getRelabelSpecificAttack(List<PreprocessFile> pfL) {
       ArrayList<String> relabels = new ArrayList<>();
 
       for (PreprocessFile pf : pfL) {

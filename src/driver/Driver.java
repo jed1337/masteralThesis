@@ -61,6 +61,7 @@ public final class Driver {
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
       GlobalFeatureExtraction.setInstance(new KDDExtraction());
+//      GlobalFeatureExtraction.setInstance(new NetmateExtraction());
       final int instanceCount = ArffInstanceCount.HALVED;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
@@ -71,7 +72,7 @@ public final class Driver {
          new SpecificAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-         NoNoise.getInstance(), 
+         NoNoise.getInstance(),
          new NoiseNormal()
       };
 
@@ -79,6 +80,7 @@ public final class Driver {
          for (CategoricalType categoricalType : categoricalTypes) {
             for (NoiseLevel noiseLevel : noiseLevels) {
                systemTrain(fs, new Single (instanceCount, noiseLevel, categoricalType));
+               System.out.println("");
             }
          }
          for (NoiseLevel noiseLevel : noiseLevels) {
@@ -95,7 +97,7 @@ public final class Driver {
       String fullFolderPath = String.join("/",
          "Results",
          "Dry run",
-         "Edited mode",
+         GlobalFeatureExtraction.getInstance().getName(),
          mode.getCategoricalType().name(),
          mode.getNoiseLevelString(),
          fs.getFSMethodName(),

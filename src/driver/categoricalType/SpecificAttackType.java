@@ -44,7 +44,7 @@ public final class SpecificAttackType implements CategoricalType{
     * @return 
     */
    @Override
-   public String getRelabel(List<PreprocessFile> pfL) {
+   public String getRelabelSpecificAttack(List<PreprocessFile> pfL) {
       return "";
    }
    

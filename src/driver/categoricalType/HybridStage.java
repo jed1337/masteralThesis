@@ -17,7 +17,7 @@ public abstract class HybridStage implements CategoricalType{
    }
 
    @Override
-   public abstract String getRelabel(List<PreprocessFile> pfL);
+   public abstract String getRelabelSpecificAttack(List<PreprocessFile> pfL);
 
    /**
     * Returns a general attack type since no specific categories are present here

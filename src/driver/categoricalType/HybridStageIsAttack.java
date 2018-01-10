@@ -13,7 +13,7 @@ public final class HybridStageIsAttack extends HybridStage{
 //   private final String ATTACK = "attack";
    
    @Override
-   public String getRelabel(List<PreprocessFile> pfL) {
+   public String getRelabelSpecificAttack(List<PreprocessFile> pfL) {
       ArrayList<String> relabels = new ArrayList<>();
       
       for (PreprocessFile pf : pfL) {
