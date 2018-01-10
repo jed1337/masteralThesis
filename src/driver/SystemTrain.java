@@ -245,7 +245,7 @@ public final class SystemTrain {
 
 	public void setupTestTrainValidation() throws IOException, Exception{
 //      Combine data
-		UtilsARFF.createArff(
+		UtilsARFF.combineArffAndAddClassCount(
 			this.combinedPath,
 			this.preprocessFiles.stream()
 				.map(tl->tl.getFaa().getSavePath())

@@ -1,4 +1,4 @@
-@relation 'highrate-weka.filters.unsupervised.attribute.Remove-R3,7-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack'
+@relation 'highrate-weka.filters.unsupervised.attribute.Remove-R3,7-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack-Nnormal:normal, normal:normal, tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowBody:attack, slowHeaders:attack, slowRead:attack'
 
 @attribute duration numeric
 @attribute protocol_type {tcp,icmp,udp}
@@ -26,7 +26,7 @@
 @attribute dst_host_srv_serror_rate numeric
 @attribute dst_host_rerror_rate numeric
 @attribute dst_host_srv_rerror_rate numeric
-@attribute isAttack {normal,neptune,smurf,pod,back,land,slowBody,slowHeaders,slowRead,tcpFlood,udpFlood,httpFlood}
+@attribute isAttack {normal,neptune,smurf,pod,back,land,attack,slowHeaders,slowRead,tcpFlood,udpFlood,httpFlood}
 
 @data
 0,tcp,OTH,66,0,0,0,16,100,0,0,0,0,1,0,0.84,16,41,1,0,0.38,0.61,0,0,0,0,normal

@@ -5,6 +5,8 @@ import preprocessFiles.preprocessAs.FormatAsArff;
 import format.testConstants.FileNameConstants;
 import format.testConstants.PathConstants;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -115,11 +117,14 @@ public class FormatAsArffTest {
       System.out.println("removeAttributes");
       String land = "land";
       String service = "SERVICE";
+      List<String> al = new ArrayList<>();
+      al.add(land);
+      al.add(service);
 
       assertNotEquals(UtilsInstances.getAttributeIndex(faa.getInstances(), land), -1);
       assertNotEquals(UtilsInstances.getAttributeIndex(faa.getInstances(), service), -1);
 
-      faa.removeAttributes(new String[]{land, service});
+      faa.removeAttributes(al);
 
       assertEquals(UtilsInstances.getAttributeIndex(faa.getInstances(), land), -1);
       assertEquals(UtilsInstances.getAttributeIndex(faa.getInstances(), service), -1);

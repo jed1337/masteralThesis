@@ -21,36 +21,46 @@ public final class FormatAsText {
    }
 
    /**
-    * @return true if the text in the path has an ARFF header (@relation)
+    * @return {@code true} if {@code this.PATH} has an ARFF header 
+    * (contains the String {@code @relation})<br>
+    * {@code false} otherwise
     * @throws IOException
     */
    public boolean hasHeader() throws IOException{
-      String pathContents = Utils.getFileContents(this.PATH);
-      return pathContents.contains("@relation");
+      return Utils.getFileContents(this.PATH).contains("@relation");
    }
 
    /**
-    * Adds Arff instances to this.PATH
-    * Will only append the header from addToPath if there's no header in this.PATH
-    * @param addToPath
+    * Adds Arff instances from {@code addToPath} 
+    * to {@code this.PATH}
+    * <p>
+    * Will only append the header from {@code addToPath} if {@code @data} 
+    * doesn't exist in {@code this.PATH}<br>
+    * But the instances get copied regardless
+    * <p>
+    * Warning: This function doesn't check if the headers in {@code this.PATH}
+    * is the same in {@code addToPath}
+    * @param addToPath 
     * @throws IOException
-    * @throws IllegalArgumentException if @data was not found in addToPath
+    * @throws IllegalArgumentException if {@code @data} was not found in addToPath
     */
    public void addInstances(String addToPath) throws IOException, IllegalArgumentException{
-      String addContent = Utils.getFileContents(addToPath);
+      final String addContent = Utils.getFileContents(addToPath);
+      final String dataMarker = "@data";
 
       // The +6 is because of "@data\n"
       // We lowercased addContent since .indexOf() is case sensitive
-      int afterDataIndex=addContent.toLowerCase().indexOf("@data")+6;
+      final int afterDataIndex=addContent.toLowerCase().indexOf(dataMarker)+6;
 
-      if(afterDataIndex == 5){
-         throw new IllegalArgumentException("@data not found in addToPath");
+      if(afterDataIndex == dataMarker.length()){
+         throw new IllegalArgumentException(dataMarker+" not found in addToPath");
       }
 
       Utils.writeStringFile(
          PATH,
          hasHeader()? addContent.substring(afterDataIndex) : addContent,
-         true);
+         true
+      );
    }
 
    /**
