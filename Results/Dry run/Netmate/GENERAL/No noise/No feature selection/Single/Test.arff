@@ -1,7 +1,7 @@
 % isAttack HIGH_RATE:	272
 % isAttack LOW_RATE:	333
 % isAttack NORMAL:	333
-@relation 'highrate-weka.filters.unsupervised.attribute.Remove-R1,2,3,4,5-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack-Nnormal:NORMAL, tcpFlood:HIGH_RATE, udpFlood:HIGH_RATE, httpFlood:HIGH_RATE, slowBody:LOW_RATE, slowHeaders:LOW_RATE, slowRead:LOW_RATE-weka.filters.unsupervised.attribute.Remove'
+@relation 'normal-weka.filters.unsupervised.attribute.Remove-R1,2,3,4,5-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack-Nnormal:NORMAL, tcpFlood:HIGH_RATE, udpFlood:HIGH_RATE, httpFlood:HIGH_RATE, slowBody:LOW_RATE, slowHeaders:LOW_RATE, slowRead:LOW_RATE-weka.filters.unsupervised.attribute.Remove'
 
 @attribute total_fpackets numeric
 @attribute total_fvolume numeric

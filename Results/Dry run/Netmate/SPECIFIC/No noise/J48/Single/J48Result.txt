@@ -1,0 +1,145 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+sflow_bbytes <= 0
+|   max_fpktl <= 40
+|   |   max_fpktl <= 37: normal (15.0)
+|   |   max_fpktl > 37: udpFlood (567.0)
+|   max_fpktl > 40
+|   |   min_active <= 87: normal (506.0/11.0)
+|   |   min_active > 87
+|   |   |   mean_fiat <= 359
+|   |   |   |   max_fpktl <= 74: slowBody (14.0/5.0)
+|   |   |   |   max_fpktl > 74: normal (2.0/1.0)
+|   |   |   mean_fiat > 359
+|   |   |   |   mean_fiat <= 345226: normal (48.0)
+|   |   |   |   mean_fiat > 345226
+|   |   |   |   |   min_active <= 447630: udpFlood (3.0)
+|   |   |   |   |   min_active > 447630: normal (14.0/2.0)
+sflow_bbytes > 0
+|   max_fpktl <= 97
+|   |   mean_bpktl <= 54: tcpFlood (13.0)
+|   |   mean_bpktl > 54: httpFlood (570.0)
+|   max_fpktl > 97
+|   |   sflow_bbytes <= 751
+|   |   |   mean_bpktl <= 153
+|   |   |   |   mean_bpktl <= 53: slowRead (46.0)
+|   |   |   |   mean_bpktl > 53
+|   |   |   |   |   max_fpktl <= 351
+|   |   |   |   |   |   min_active <= 1410
+|   |   |   |   |   |   |   mean_bpktl <= 76: slowHeaders (50.0/1.0)
+|   |   |   |   |   |   |   mean_bpktl > 76
+|   |   |   |   |   |   |   |   min_active <= 359: slowBody (64.0)
+|   |   |   |   |   |   |   |   min_active > 359: slowHeaders (4.0)
+|   |   |   |   |   |   min_active > 1410: slowHeaders (174.0/1.0)
+|   |   |   |   |   max_fpktl > 351
+|   |   |   |   |   |   max_fpktl <= 484
+|   |   |   |   |   |   |   mean_bpktl <= 58
+|   |   |   |   |   |   |   |   max_fpktl <= 428
+|   |   |   |   |   |   |   |   |   max_fpktl <= 366: slowRead (5.0)
+|   |   |   |   |   |   |   |   |   max_fpktl > 366: slowBody (158.0)
+|   |   |   |   |   |   |   |   max_fpktl > 428: slowRead (87.0)
+|   |   |   |   |   |   |   mean_bpktl > 58
+|   |   |   |   |   |   |   |   max_fpktl <= 428
+|   |   |   |   |   |   |   |   |   min_active <= 15
+|   |   |   |   |   |   |   |   |   |   mean_fiat <= 21222: slowRead (46.0)
+|   |   |   |   |   |   |   |   |   |   mean_fiat > 21222
+|   |   |   |   |   |   |   |   |   |   |   mean_bpktl <= 76
+|   |   |   |   |   |   |   |   |   |   |   |   sflow_bbytes <= 7: slowHeaders (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   sflow_bbytes > 7
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_fpktl <= 366: slowRead (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_fpktl > 366: slowBody (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_bpktl > 76: slowHeaders (50.0)
+|   |   |   |   |   |   |   |   |   min_active > 15
+|   |   |   |   |   |   |   |   |   |   mean_bpktl <= 76
+|   |   |   |   |   |   |   |   |   |   |   sflow_bbytes <= 22: slowHeaders (4.0)
+|   |   |   |   |   |   |   |   |   |   |   sflow_bbytes > 22: slowBody (2.0)
+|   |   |   |   |   |   |   |   |   |   mean_bpktl > 76: slowHeaders (149.0)
+|   |   |   |   |   |   |   |   max_fpktl > 428
+|   |   |   |   |   |   |   |   |   min_active <= 15: slowHeaders (41.0/1.0)
+|   |   |   |   |   |   |   |   |   min_active > 15
+|   |   |   |   |   |   |   |   |   |   min_active <= 38731: slowBody (59.0)
+|   |   |   |   |   |   |   |   |   |   min_active > 38731: slowRead (2.0/1.0)
+|   |   |   |   |   |   max_fpktl > 484
+|   |   |   |   |   |   |   mean_bpktl <= 58
+|   |   |   |   |   |   |   |   min_active <= 9
+|   |   |   |   |   |   |   |   |   min_active <= 5
+|   |   |   |   |   |   |   |   |   |   mean_fiat <= 1624
+|   |   |   |   |   |   |   |   |   |   |   mean_fiat <= 1591: slowBody (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_fiat > 1591: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   |   |   mean_fiat > 1624: slowBody (5.0)
+|   |   |   |   |   |   |   |   |   min_active > 5: slowBody (37.0/1.0)
+|   |   |   |   |   |   |   |   min_active > 9
+|   |   |   |   |   |   |   |   |   min_active <= 3338
+|   |   |   |   |   |   |   |   |   |   mean_fiat <= 1776: slowHeaders (64.0/7.0)
+|   |   |   |   |   |   |   |   |   |   mean_fiat > 1776: slowBody (3.0/1.0)
+|   |   |   |   |   |   |   |   |   min_active > 3338: slowBody (34.0/11.0)
+|   |   |   |   |   |   |   mean_bpktl > 58
+|   |   |   |   |   |   |   |   mean_bpktl <= 76
+|   |   |   |   |   |   |   |   |   min_active <= 208973
+|   |   |   |   |   |   |   |   |   |   sflow_bbytes <= 10
+|   |   |   |   |   |   |   |   |   |   |   sflow_bbytes <= 7: slowBody (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   sflow_bbytes > 7: slowRead (15.0)
+|   |   |   |   |   |   |   |   |   |   sflow_bbytes > 10: slowBody (14.0/1.0)
+|   |   |   |   |   |   |   |   |   min_active > 208973: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   mean_bpktl > 76: slowBody (163.0)
+|   |   |   mean_bpktl > 153
+|   |   |   |   sflow_bbytes <= 134
+|   |   |   |   |   max_fpktl <= 546
+|   |   |   |   |   |   sflow_bbytes <= 88: slowHeaders (6.0/1.0)
+|   |   |   |   |   |   sflow_bbytes > 88
+|   |   |   |   |   |   |   mean_bpktl <= 215
+|   |   |   |   |   |   |   |   min_active <= 28605: slowRead (2.0)
+|   |   |   |   |   |   |   |   min_active > 28605: slowBody (4.0)
+|   |   |   |   |   |   |   mean_bpktl > 215: slowHeaders (2.0)
+|   |   |   |   |   max_fpktl > 546: slowRead (9.0)
+|   |   |   |   sflow_bbytes > 134: slowRead (338.0/3.0)
+|   |   sflow_bbytes > 751
+|   |   |   mean_bpktl <= 416: tcpFlood (184.0)
+|   |   |   mean_bpktl > 416
+|   |   |   |   mean_bpktl <= 780: slowHeaders (3.0)
+|   |   |   |   mean_bpktl > 780
+|   |   |   |   |   mean_fiat <= 1080
+|   |   |   |   |   |   mean_bpktl <= 922: slowRead (2.0)
+|   |   |   |   |   |   mean_bpktl > 922: slowHeaders (4.0/1.0)
+|   |   |   |   |   mean_fiat > 1080
+|   |   |   |   |   |   mean_fiat <= 267559: slowBody (5.0/1.0)
+|   |   |   |   |   |   mean_fiat > 267559: slowRead (2.0/1.0)
+
+Number of Leaves  : 	53
+
+Size of the tree : 	105
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         886               97.5771 %
+Incorrectly Classified Instances        22                2.4229 %
+Kappa statistic                          0.9714
+Mean absolute error                      0.0095
+Root mean squared error                  0.0793
+Relative absolute error                  3.9072 %
+Root relative squared error             22.7725 %
+Total Number of Instances              908     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 0.993    0.008    0.959      0.993    0.976      0.972    0.992     0.945     normal
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     httpFlood
+                 0.951    0.007    0.965      0.951    0.958      0.950    0.987     0.946     slowRead
+                 0.951    0.003    0.986      0.951    0.968      0.962    0.991     0.972     slowHeaders
+                 0.986    0.001    0.993      0.986    0.989      0.988    0.992     0.981     udpFlood
+                 0.965    0.010    0.945      0.965    0.955      0.947    0.983     0.966     slowBody
+Weighted Avg.    0.976    0.005    0.976      0.976    0.976      0.971    0.991     0.970     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+  50   0   0   0   0   0   0 |   a = tcpFlood
+   0 142   0   0   0   1   0 |   b = normal
+   0   0 143   0   0   0   0 |   c = httpFlood
+   0   2   0 136   1   0   4 |   d = slowRead
+   0   1   0   2 136   0   4 |   e = slowHeaders
+   0   2   0   0   0 141   0 |   f = udpFlood
+   0   1   0   3   1   0 138 |   g = slowBody

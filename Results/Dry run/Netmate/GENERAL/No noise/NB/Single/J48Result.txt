@@ -1,0 +1,75 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+std_fpktl <= 57
+|   total_fhlen <= 256
+|   |   mean_idle <= 6154744
+|   |   |   total_fhlen <= 28: NORMAL (1095.0/9.0)
+|   |   |   total_fhlen > 28
+|   |   |   |   max_fpktl <= 49: NORMAL (82.0)
+|   |   |   |   max_fpktl > 49
+|   |   |   |   |   mean_idle <= 1460958
+|   |   |   |   |   |   min_bpktl <= -1
+|   |   |   |   |   |   |   max_fpktl <= 73
+|   |   |   |   |   |   |   |   total_fhlen <= 48
+|   |   |   |   |   |   |   |   |   std_fpktl <= 3
+|   |   |   |   |   |   |   |   |   |   mean_fpktl <= 66
+|   |   |   |   |   |   |   |   |   |   |   mean_fpktl <= 56
+|   |   |   |   |   |   |   |   |   |   |   |   mean_fpktl <= 52: HIGH_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_fpktl > 52: LOW_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_fpktl > 56: HIGH_RATE (3.0)
+|   |   |   |   |   |   |   |   |   |   mean_fpktl > 66: LOW_RATE (2.0)
+|   |   |   |   |   |   |   |   |   std_fpktl > 3: NORMAL (2.0)
+|   |   |   |   |   |   |   |   total_fhlen > 48: NORMAL (5.0)
+|   |   |   |   |   |   |   max_fpktl > 73
+|   |   |   |   |   |   |   |   mean_idle <= 1000259: NORMAL (33.0/1.0)
+|   |   |   |   |   |   |   |   mean_idle > 1000259
+|   |   |   |   |   |   |   |   |   mean_fpktl <= 151: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   mean_fpktl > 151: HIGH_RATE (4.0/1.0)
+|   |   |   |   |   |   min_bpktl > -1: HIGH_RATE (4.0)
+|   |   |   |   |   mean_idle > 1460958: NORMAL (65.0/1.0)
+|   |   mean_idle > 6154744
+|   |   |   mean_idle <= 10799186: NORMAL (13.0)
+|   |   |   mean_idle > 10799186: LOW_RATE (12.0)
+|   total_fhlen > 256
+|   |   total_fhlen <= 5668
+|   |   |   min_bpktl <= -1: NORMAL (15.0/1.0)
+|   |   |   min_bpktl > -1: HIGH_RATE (126.0)
+|   |   total_fhlen > 5668: HIGH_RATE (933.0/1.0)
+std_fpktl > 57
+|   min_bpktl <= -1: NORMAL (31.0)
+|   min_bpktl > -1
+|   |   mean_fpktl <= 85
+|   |   |   max_fpktl <= 887: LOW_RATE (13.0)
+|   |   |   max_fpktl > 887: HIGH_RATE (12.0)
+|   |   mean_fpktl > 85: LOW_RATE (1296.0)
+
+Number of Leaves  : 	22
+
+Size of the tree : 	43
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         896               95.5224 %
+Incorrectly Classified Instances        42                4.4776 %
+Kappa statistic                          0.9328
+Mean absolute error                      0.032 
+Root mean squared error                  0.1728
+Relative absolute error                  7.2346 %
+Root relative squared error             36.7369 %
+Total Number of Instances              938     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.060    0.872      1.000    0.932      0.905    0.970     0.872     HIGH_RATE
+                 0.877    0.000    1.000      0.877    0.934      0.906    0.913     0.922     LOW_RATE
+                 0.997    0.003    0.994      0.997    0.996      0.993    0.997     0.992     NORMAL
+Weighted Avg.    0.955    0.019    0.961      0.955    0.955      0.937    0.959     0.932     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 272   0   0 |   a = HIGH_RATE
+  39 292   2 |   b = LOW_RATE
+   1   0 332 |   c = NORMAL

@@ -7,9 +7,11 @@ import java.util.function.Consumer;
 import preprocessFiles.preprocessAs.FormatAsArff;
 
 public class KDDExtraction extends FeatureExtraction{
+   private static final String KDD_PATH="KDD Feature Extraction/";
+
    @Override
    public String getName() {
-      return "KDD";
+      return KDD_PATH+"KDD";
    }
 
    @Override
@@ -19,37 +21,37 @@ public class KDDExtraction extends FeatureExtraction{
 
    @Override
    public String getSlowBodyPath() {
-      return "CNIS Slow Body.arff";
+      return KDD_PATH+"CNIS Slow Body.arff";
    }
 
    @Override
    public String getSlowHeadersPath() {
-      return "CNIS Slow Headers.arff";
+      return KDD_PATH+"CNIS Slow Headers.arff";
    }
 
    @Override
    public String getSlowReadPath() {
-      return "CNIS Slow Read.arff";
+      return KDD_PATH+"CNIS Slow Read.arff";
    }
 
    @Override
    public String getTCPFloodPath() {
-      return "CNIS TCP Flood.arff";
+      return KDD_PATH+"CNIS TCP Flood.arff";
    }
 
    @Override
    public String getUDPFloodPath() {
-      return "CNIS UDP Flood.arff";
+      return KDD_PATH+"CNIS UDP Flood.arff";
    }
 
    @Override
    public String getHTTPFloodPath() {
-      return "CNIS HTTP Flood.arff";
+      return KDD_PATH+"CNIS HTTP Flood.arff";
    }
 
    @Override
    public String getKDDTrainPath() {
-      return "KDDTrain+.arff";
+      return KDD_PATH+"KDDTrain+.arff";
    }
 
    @Override

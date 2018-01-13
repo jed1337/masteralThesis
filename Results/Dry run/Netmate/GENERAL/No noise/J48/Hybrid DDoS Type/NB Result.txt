@@ -1,0 +1,60 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                         Class
+Attribute            HIGH_RATE      LOW_RATE
+                        (0.43)        (0.57)
+=============================================
+total_fvolume
+  mean              186912.3993      982.5378
+  std. dev.         175489.3832      816.0721
+  weight sum               1533          2000
+  precision            407.5229      407.5229
+
+max_fpktl
+  mean                 141.1854      400.6613
+  std. dev.             263.088      101.0081
+  weight sum               1533          2000
+  precision             15.5319       15.5319
+
+duration
+  mean            19298000.5504   22173695.79
+  std. dev.       11738428.6346 12084610.9911
+  weight sum               1533          2000
+  precision           10082.007     10082.007
+
+min_idle
+  mean              519902.2996  2794451.4167
+  std. dev.         823088.8888  3762472.2104
+  weight sum               1533          2000
+  precision           6400.5575     6400.5575
+
+sflow_fpackets
+  mean                3671.3085        0.0752
+  std. dev.           4394.4448        2.7841
+  weight sum               1533          2000
+  precision             16.7044       16.7044
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         499               56.5119 %
+Incorrectly Classified Instances       384               43.4881 %
+Kappa statistic                         -0.0023
+Mean absolute error                      0.4365
+Root mean squared error                  0.6589
+Relative absolute error                 88.8539 %
+Root relative squared error            132.9528 %
+Total Number of Instances              883     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.002    0.000      0.000    0.000      -0.029   0.882     0.792     HIGH_RATE
+                 0.998    1.000    0.566      0.998    0.722      -0.029   0.882     0.884     LOW_RATE
+Weighted Avg.    0.565    0.567    0.320      0.565    0.409      -0.029   0.882     0.844     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+   0 383 |   a = HIGH_RATE
+   1 499 |   b = LOW_RATE

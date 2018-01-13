@@ -1,0 +1,51 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+mean_active <= 109: normal (513.0/9.0)
+mean_active > 109
+|   min_fiat <= 3623
+|   |   min_fpktl <= 57
+|   |   |   std_bpktl <= 0
+|   |   |   |   min_fpktl <= 40: attack (845.0)
+|   |   |   |   min_fpktl > 40
+|   |   |   |   |   min_fpktl <= 50: normal (6.0)
+|   |   |   |   |   min_fpktl > 50: attack (80.0)
+|   |   |   std_bpktl > 0: attack (2098.0)
+|   |   min_fpktl > 57
+|   |   |   min_fpktl <= 79: attack (14.0)
+|   |   |   min_fpktl > 79: normal (13.0)
+|   min_fiat > 3623
+|   |   min_fpktl <= 49: normal (36.0)
+|   |   min_fpktl > 49
+|   |   |   mean_fpktl <= 64: attack (8.0)
+|   |   |   mean_fpktl > 64
+|   |   |   |   min_fiat <= 620120: normal (12.0)
+|   |   |   |   min_fiat > 620120: attack (2.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	21
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         899               99.118  %
+Incorrectly Classified Instances         8                0.882  %
+Kappa statistic                          0.9673
+Mean absolute error                      0.0111
+Root mean squared error                  0.0927
+Relative absolute error                  4.1733 %
+Root relative squared error             25.4383 %
+Total Number of Instances              907     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.993    0.009    0.953      0.993    0.973      0.968    0.992     0.953     normal
+                 0.991    0.007    0.999      0.991    0.995      0.968    0.992     0.997     attack
+Weighted Avg.    0.991    0.007    0.991      0.991    0.991      0.968    0.992     0.990     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 142   1 |   a = normal
+   7 757 |   b = attack

@@ -1,0 +1,80 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                       Class
+Attribute           tcpFlood   httpFlood    slowRead slowHeaders    udpFlood    slowBody
+                      (0.06)      (0.19)      (0.19)      (0.19)      (0.19)      (0.19)
+=========================================================================================
+min_fpktl
+  mean                58.3719     57.6576     56.1607      45.654      38.803      48.878
+  std. dev.            9.5931         3.2     12.7092     19.2258      6.3825     18.0785
+  weight sum              199         667         667         667         667         667
+  precision              19.2        19.2        19.2        19.2        19.2        19.2
+
+max_fpktl
+  mean               479.7419     92.1644    379.6484    371.3075     46.4509     428.219
+  std. dev.          436.5696      2.5614     93.2781     89.3034      6.2031     99.7526
+  weight sum              199         667         667         667         667         667
+  precision           15.3684     15.3684     15.3684     15.3684     15.3684     15.3684
+
+std_fpktl
+  mean                17.1458     15.8544    125.9748    127.5912           0    154.7578
+  std. dev.           20.2859      1.5603      59.756     52.7887       0.251     57.4473
+  weight sum              199         667         667         667         667         667
+  precision            1.5057      1.5057      1.5057      1.5057      1.5057      1.5057
+
+std_fiat
+  mean             34401.6578 102719.6045  315293.958  87407.7352  28348.1029  87534.8517
+  std. dev.        31721.2472 139420.4704 244153.0403 156882.6728  19823.8095 144289.1298
+  weight sum              199         667         667         667         667         667
+  precision          184.7206    184.7206    184.7206    184.7206    184.7206    184.7206
+
+sflow_fpackets
+  mean              1862.8622           0           0           0   5171.3744           0
+  std. dev.         2232.2095      3.9915      3.9915      3.9915   4791.4844      3.9915
+  weight sum              199         667         667         667         667         667
+  precision           23.9492     23.9492     23.9492     23.9492     23.9492     23.9492
+
+total_fhlen
+  mean            101323.5533     88.8669    485.8055     414.712  125723.751    375.7799
+  std. dev.       113045.6672    205.5954    229.2846     269.512  85873.6689    275.1383
+  weight sum              199         667         667         667         667         667
+  precision          564.5161    564.5161    564.5161    564.5161    564.5161    564.5161
+
+total_bhlen
+  mean             54066.2963           0    321.3874           0           0           0
+  std. dev.         62630.692     162.398    458.1115     162.398     162.398     162.398
+  weight sum              199         667         667         667         667         667
+  precision          974.3881    974.3881    974.3881    974.3881    974.3881    974.3881
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         721               81.4689 %
+Incorrectly Classified Instances       164               18.5311 %
+Kappa statistic                          0.7737
+Mean absolute error                      0.0914
+Root mean squared error                  0.2285
+Relative absolute error                 33.4858 %
+Root relative squared error             61.855  %
+Total Number of Instances              885     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     httpFlood
+                 0.599    0.063    0.690      0.599    0.641      0.567    0.892     0.743     slowRead
+                 0.659    0.050    0.753      0.659    0.703      0.642    0.900     0.638     slowHeaders
+                 0.982    0.001    0.994      0.982    0.988      0.985    0.999     0.997     udpFlood
+                 0.778    0.114    0.613      0.778    0.686      0.609    0.868     0.490     slowBody
+Weighted Avg.    0.815    0.043    0.821      0.815    0.815      0.774    0.936     0.786     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+  50   0   0   0   0   0 |   a = tcpFlood
+   0 167   0   0   0   0 |   b = httpFlood
+   0   0 100  20   0  47 |   c = slowRead
+   0   0  22 110   0  35 |   d = slowHeaders
+   0   0   1   2 164   0 |   e = udpFlood
+   0   0  22  14   1 130 |   f = slowBody

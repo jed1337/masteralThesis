@@ -110,7 +110,7 @@ none
   84.8361247 85.7229754 84.8361247 84.0919000 79.1852246
   ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") #and (main.systemType = "hybrid ddos type") #and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) and (feature_selection.Method like "%no f%")
 
-#Binary vs nominal
+#Binary vs nominal (General vs specific)
 binary
   91.7800001 92.4467202 91.7800001 91.0371466 85.6372934
   ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") #and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
@@ -122,15 +122,12 @@ nominal
 #Noise vs no noise in terms of system type
 hybrid isAttack, no noise
   99.7612667 99.7622001 99.7612667 99.7609333 99.0647340
-  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
 
 hybrid isAttack, noise
   98.9402668 99.2834671 98.9402668 99.0213331 96.6029330
-  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
 
 hybrid ddos type
   78.1291338 80.5040334 78.1291338 76.7384997 67.9040332
-  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") #and (main.CategoricalType = "nominal") #and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
 
 hybrid, no noise (hybrid isAttack, no noise * hybrid ddos type)
   77.9426135 80.3125949 77.9426135 76.5550435 67.2689499
@@ -142,61 +139,53 @@ hybrid, noise    (hybrid isAttack, noise * hybrid ddos type)
 
 single, no noise
   79.8559997 80.7067998 79.8559997 79.0739006 74.2847003
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "single") #and (main.CategoricalType = "nominal") and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
 
 single, noise
   78.0018334 78.4465332 78.0018334 76.0039663 71.9065666
-  ##and (evaluation.Classifier = "j48") and (evaluation.Class = "Average") and (main.systemType = "single") #and (main.CategoricalType = "nominal") and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+  -- select \n#* \nmain.systemtype, main.noiselevel, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "j48")\n and (evaluation.Class = "Average")\n #and (main.systemType = "hybrid isattack") \n#and (main.CategoricalType = "nominal")\n #and (main.noiseLevel = 0) \n#and (feature_selection.Method like "%no f%")\n\nand (main.ExtractionTool="kdd") \n\ngroup by main.noiselevel, main.systemtype
 
 #Per classifier
 J48
   89.1022921 89.5112914 89.1022921 88.8143333 85.8740839
-  #and (evaluation.Classifier = "j48") and (evaluation.Class = "Average")
 
 KNN
   89.0799584 89.0486245 89.0799584 88.8955836 85.9995417
-  #and (evaluation.Classifier = "knn") and (evaluation.Class = "Average")
 
 NB
   70.7108743 72.6304587 70.7108743 67.6819582 57.1756250
-  #and (evaluation.Classifier = "nb") and (evaluation.Class = "Average")
 
 RF
   90.3697918 90.3960834 90.3697918 90.1992080 87.7548330
-  #and (evaluation.Classifier = "rf") and (evaluation.Class = "Average")
 
 SMO
   79.9092504 82.3887919 79.9092504 78.4182916 73.1073334
-  #and (evaluation.Classifier = "smo") and (evaluation.Class = "Average")
+  -- select \n#* \nevaluation.classifier, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "j48")\n and (evaluation.Class = "Average")\n #and (main.systemType = "hybrid isattack") \n#and (main.CategoricalType = "nominal")\n #and (main.noiseLevel = 0) \n#and (feature_selection.Method like "%no f%")\n\nand (main.ExtractionTool="kdd") \n\ngroup by evaluation.classifier
 
 #single vs hybrid
 single
   78.9289166 79.5766665 78.9289166 77.5389335 73.0956334
-  ##and (evaluation.Classifier = "smo") and (evaluation.Class = "Average") and (main.systemType = "single") #and (main.CategoricalType = "nominal") #and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+  -- select \n#* \ncount(main.id) as `Count`, main.CategoricalType, main.SystemType, evaluation.Classifier, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n and (evaluation.Class = "Average")\n and (main.systemType = "single") \n#and (main.CategoricalType = "nominal") \n#and (main.noiseLevel > 0) \n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd")
 
 hybrid isAttack
   99.3507667 99.5228336 99.3507667 99.3911332 97.8338335
-  ##and (evaluation.Classifier = "smo") and (evaluation.Class = "Average") and (main.systemType = "hybrid isattack") #and (main.CategoricalType = "nominal") #and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
-
+  -- select \n#* \ncount(main.id) as `Count`, main.CategoricalType, main.SystemType, evaluation.Classifier, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n and (evaluation.Class = "Average")\n and (main.systemType = "hybrid isattack") \n#and (main.CategoricalType = "nominal") \n#and (main.noiseLevel > 0) \n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd")
 hybrid ddos type
   78.1291338 80.5040334 78.1291338 76.7384997 67.9040332
-  ##and (evaluation.Classifier = "smo") and (evaluation.Class = "Average") and (main.systemType = "hybrid ddos type") #and (main.CategoricalType = "nominal") #and (main.noiseLevel > 0) #and (feature_selection.Method like "%no f%")
+  -- select \n#* \ncount(main.id) as `Count`, main.CategoricalType, main.SystemType, evaluation.Classifier, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n and (evaluation.Class = "Average")\n and (main.systemType = "hybrid ddos type") \n#and (main.CategoricalType = "nominal") \n#and (main.noiseLevel > 0) \n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd")
 
 hybrid (isAttack * ddosType)
   77.6218934 80.1198952 77.6218934 76.2712645 66.4331188
 
 #Per class, binary
 Single, binary, Normal
-  0.974515998 0.941830999 0.990790661 0.964599665
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "normal") and (main.systemType = "single") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  97.4515998 94.1830999 99.0790661 96.4599665
 
 Single, binary, High_Rate
-  0.869656672 0.878396665 0.655556000 0.730871997
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "high_rate") and (main.systemType = "single") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  86.9656672 87.8396665 65.5556000 73.0871997
 
 Single, binary, Low_Rate
-  0.887258337 0.798259001 0.939439336 0.856753671
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "low_rate") and (main.systemType = "single") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  88.7258337 79.8259001 93.9439336 85.6753671
+  -- select \n#*\nevaluation.class, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n#and (evaluation.Class = "normal")\nand (main.systemType = "single")\nand (main.CategoricalType = "general") \n#and (main.noiseLevel = 0) \nand (feature_selection.Method like "%no f%")\n\nand (main.ExtractionTool="kdd") \n\ngroup by evaluation.class
 
 Hybrid isAttack, binary, normal
   0.993507667 0.977421653 0.990909996 0.982087324
@@ -208,61 +197,145 @@ Hybrid isAttack, binary, attack
 
 Hybrid DDoS Type, binary, High_Rate
   0.870554670 0.923010667 0.762285992 0.809405998
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "high_rate") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
 
 Hybrid DDoS Type, binary, Low_Rate
   0.870554670 0.855258667 0.962800010 0.899681993
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "low_rate") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "binary") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  #select \n#* \nevaluation.class, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n#and (evaluation.Classifier = "smo")\n# and (evaluation.Class = "normal")\n and (main.systemType = "hybrid ddos type")\n and (main.CategoricalType = "general") \n#and (main.noiseLevel = 0) \nand (feature_selection.Method like "%no f%")\n\nand (main.ExtractionTool="kdd") \n\ngroup by evaluation.class
 
 #Per class, nominal
   Single, Nominal, normal
-  0.988679338 0.952056668 0.990442665 0.967953004
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "normal") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  98.8679338 95.2056668 99.0442665 96.7953004
 
   Single, Nominal, tcpFlood
-  0.977884012 0.913160328 0.984149673 0.940459329
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "tcpflood") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  97.7884012 91.3160328 98.4149673 94.0459329
 
   Single, Nominal, httpFlood
-  0.959342007 0.954405665 0.769695998 0.818077330
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "httpflood") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  95.9342007 95.4405665 76.9695998 81.8077330
 
   Single, Nominal, udpFlood
-  0.997440998 0.977943667 1.000000000 0.988034999
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "udpflood") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  99.7440998 97.7943667 1.000000000 98.8034999
 
   Single, Nominal, slowRead
-  0.843042664 0.421800332 0.372959662 0.373375666
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowread") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  84.3042664 42.1800332 37.2959662 37.3375666
 
   Single, Nominal, slowHeaders
-  0.828566007 0.439053003 0.493472334 0.455771999
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowheaders") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  82.8566007 43.9053003 49.3472334 45.5771999
 
   Single, Nominal, slowBody
-  0.830774331 0.463830003 0.479720334 0.442649664
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowbody") and (main.systemType = "single") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+  83.0774331 46.3830003 47.9720334 44.2649664
+  -- select \n#* \nevaluation.class, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\n\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n#and (evaluation.Class = "normal")\nand (main.systemType = "single")\nand (main.CategoricalType = "specific") \n#and (main.noiseLevel = 0) \nand (feature_selection.Method like "%no f%")\n\nand (main.ExtractionTool="kdd") \n\ngroup by evaluation.class
 
   Hybrid DDoS Type, Nominal, tcpFlood
-  0.972915332 0.922024004 0.992414669 0.946195336
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "tcpflood") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+   97.2915332  92.2024004  99.2414669  94.6195336
 
   Hybrid DDoS Type, Nominal, httpFlood
-  0.966952670 0.983630006 0.830338000 0.879270667
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "httpflood") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+   96.6952670  98.3630006  83.0338000  87.9270667
 
   Hybrid DDoS Type, Nominal, udpFlood
-  0.994037338 0.954392668 1.000000000 0.974191328
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "udpflood") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+   99.4037338  95.4392668 1.000000000  97.4191328
 
   Hybrid DDoS Type, Nominal, slowRead
-  0.8349146720.6230860010.4483033320.449393993
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowread") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+   83.4914672 62.3086001 44.8303332 44.9393993
 
   Hybrid DDoS Type, Nominal, slowHeaders
-  0.8067526700.4786633340.5369253390.490327336
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowheaders") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+   80.6752670 47.8663334 53.6925339 49.0327336
 
   Hybrid DDoS Type, Nominal, slowBody
-  0.808476007 0.482364001 0.480637336 0.452198668
-  #select #* avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "slowbody") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "nominal") #and (main.noiseLevel = 0) #and (feature_selection.Method like "%no f%")
+   80.8476007  48.2364001  48.0637336  45.2198668
+  -- select \n#* \nevaluation.class, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n#and (evaluation.Class = "tcpflood")\nand (main.systemType = "hybrid ddos type")\nand (main.CategoricalType = "specific") \n#and (main.noiseLevel = 0) \n#and (feature_selection.Method like "%no f%")\n\nand (main.ExtractionTool="kdd") \n\ngroup by evaluation.class
+
+#No feature selection
+#January 1, 2018
+#Per ML algorithm,
+Single, General, No noise
+  J48 0.955150008 0.959010005 0.955150008 0.954919994 0.932630002
+  KNN 0.978590012 0.979860008 0.978590012 0.978550017 0.967859983
+  NB  0.691129982 0.690840006 0.691129982 0.672860026 0.534690022
+  RF  0.969420016 0.971949995 0.969420016 0.969309986 0.954069972
+  SMO 0.918449998 0.934249997 0.918449998 0.916890025 0.877359986
+  select #* evaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "average") and (main.systemType = "single") and (main.CategoricalType = "general") and (main.noiseLevel =0) and (feature_selection.Method like "%no f%") and (main.ExtractionTool="kdd") group by evaluation.Classifier
+
+Single, General, noise
+  J48 0.901120007 0.911800027 0.901120007 0.896780014 0.851260006
+  KNN 0.944949985 0.947130024 0.944949985 0.944029987 0.917309999
+  NB  0.726809978 0.752290010 0.726809978 0.693369985 0.587769985
+  RF  0.953109980 0.956130028 0.953109980 0.952139974 0.929549992
+  SMO 0.867479980 0.889370024 0.867479980 0.857230008 0.800450027
+  select #* evaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "average") and (main.systemType = "single") and (main.CategoricalType = "general") and (main.noiseLevel >0) and (feature_selection.Method like "%no f%") and (main.ExtractionTool="kdd") group by evaluation.Classifier
+
+Single, General, averaged noise and no noise
+  J48 0.928135008 0.935405016 0.928135008 0.925850004 0.891945004
+  KNN 0.961769998 0.963495016 0.961769998 0.961290002 0.942584991
+  NB  0.708969980 0.721565008 0.708969980 0.683115005 0.561230004
+  RF  0.961264998 0.964040011 0.961264998 0.960724980 0.941809982
+  SMO 0.892964989 0.911810011 0.892964989 0.887060016 0.838905007
+  -- select \n#* \nevaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) \nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\nand (evaluation.Class = "average")\nand (main.systemType = "single")\nand (main.CategoricalType = "general")\n#   and (main.noiseLevel >0)\nand (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd") \n\ngroup by evaluation.Classifier\n
+
+Single, specific, noise and no noise
+  SPECIFIC  Single  0.00000 J48 0.826499999 0.831499994 0.826499999 0.826089978 0.797020018
+  SPECIFIC  Single  0.50000 J48 0.826499999 0.834699988 0.826499999 0.825789988 0.797020018
+  SPECIFIC  Single  0.00000 KNN 0.808619976 0.808629990 0.808619976 0.808130026 0.776109993
+  SPECIFIC  Single  0.50000 KNN 0.801259995 0.803089976 0.801259995 0.801630020 0.767499983
+  SPECIFIC  Single  0.00000 NB  0.533119977 0.578920007 0.533119977 0.484629989 0.454400003
+  SPECIFIC  Single  0.50000 NB  0.536279976 0.588789999 0.536279976 0.484939992 0.458090007
+  SPECIFIC  Single  0.00000 RF  0.835959971 0.835550010 0.835959971 0.835590005 0.808089972
+  SPECIFIC  Single  0.50000 RF  0.837010026 0.836300015 0.837010026 0.836350024 0.809319973
+  SPECIFIC  Single  0.00000 SMO 0.681389987 0.674889982 0.681389987 0.662100017 0.627260029
+  SPECIFIC  Single  0.50000 SMO 0.646690011 0.654799998 0.646690011 0.627340019 0.586660028
+  #select #* main.CategoricalType, main.systemType, main.noiseLevel, evaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "average") and (main.systemType = "single") and (main.CategoricalType = "specific") #and (main.noiseLevel =0) and (feature_selection.Method like "%no f%") and (main.ExtractionTool="kdd") group by evaluation.Classifier, main.noiseLevel
+
+Single, specific, averaged noise and no noise
+  SPECIFIC  J48 0.826499999 0.833099991 0.826499999 0.825939983 0.797020018
+  SPECIFIC  KNN 0.804939985 0.805859983 0.804939985 0.804880023 0.771804988
+  SPECIFIC  NB  0.534699976 0.583855003 0.534699976 0.484784991 0.456245005
+  SPECIFIC  RF  0.836484998 0.835925013 0.836484998 0.835970014 0.808704972
+  SPECIFIC  SMO 0.664039999 0.664844990 0.664039999 0.644720018 0.606960028
+  -- select \n#* \nmain.CategoricalType, evaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) \nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\nand (evaluation.Class = "average")\nand (main.systemType = "single")\nand (main.CategoricalType = "specific")\n#   and (main.noiseLevel >0)\nand (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd") \n\ngroup by evaluation.Classifier\n
+
+Hybrid isattack, General, noise and no noise
+    Hybrid isAttack 0.00000 J48 0.996840000 0.996840000 0.996840000 0.996840000 0.987619996
+    Hybrid isAttack 0.50000 J48 0.996840000 0.996850014 0.996840000 0.996829987 0.987540007
+    Hybrid isAttack 0.00000 KNN 0.997889996 0.997889996 0.997889996 0.997889996 0.991770029
+    Hybrid isAttack 0.50000 KNN 0.996840000 0.996840000 0.996840000 0.996840000 0.987619996
+    Hybrid isAttack 0.00000 NB  0.994740009 0.994819999 0.994740009 0.994759977 0.979600012
+    Hybrid isAttack 0.50000 NB  0.881049991 0.932410002 0.881049991 0.893289983 0.647459984
+    Hybrid isAttack 0.00000 RF  0.998950005 0.998950005 0.998950005 0.998950005 0.995899975
+    Hybrid isAttack 0.50000 RF  0.998950005 0.998950005 0.998950005 0.998950005 0.995899975
+    Hybrid isAttack 0.00000 SMO 0.998950005 0.998950005 0.998950005 0.998950005 0.995899975
+    Hybrid isAttack 0.50000 SMO 0.998950005 0.998950005 0.998950005 0.998950005 0.995899975
+    select #* main.systemType, main.noiseLevel, evaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "average") and (main.systemType = "hybrid isattack") and (main.CategoricalType = "general") #and (main.noiseLevel =0) and (feature_selection.Method like "%no f%") and (main.ExtractionTool="kdd") group by evaluation.Classifier, main.noiseLevel
+
+Hybrid isattack, General, averaged noise and no noise
+  GENERAL J48 0.996840000 0.996845007 0.996840000 0.996834993 0.987580001
+  GENERAL KNN 0.997364998 0.997364998 0.997364998 0.997364998 0.989695013
+  GENERAL NB  0.937895000 0.963615000 0.937895000 0.944024980 0.813529998
+  GENERAL RF  0.998950005 0.998950005 0.998950005 0.998950005 0.995899975
+  GENERAL SMO 0.998950005 0.998950005 0.998950005 0.998950005 0.995899975
+  -- select \n#* \nmain.CategoricalType, evaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) \nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\nand (evaluation.Class = "average")\n\nand (main.systemType = "hybrid isattack")\nand (main.CategoricalType = "general")\n#   and (main.noiseLevel >0)\nand (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd") \n\ngroup by evaluation.Classifier\n
+
+Hybrid ddos type, general, no noise
+  Hybrid DDoS Type  0.00000 J48 0.971920013 0.972180009 0.971920013 0.971889973 0.943369985
+  Hybrid DDoS Type  0.00000 KNN 0.961120009 0.962430000 0.961120009 0.961000025 0.921389997
+  Hybrid DDoS Type  0.00000 NB  0.549679995 0.542280018 0.549679995 0.533259988 0.071139999
+  Hybrid DDoS Type  0.00000 RF  0.978399992 0.979070008 0.978399992 0.978359997 0.956390023
+  Hybrid DDoS Type  0.00000 SMO 0.933049977 0.939930022 0.933049977 0.932399988 0.863810003
+  -- select #* \n  main.systemType, main.noiseLevel, evaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n  #and (evaluation.Classifier = "smo")\n   and (evaluation.Class = "average")\n   and (main.systemType = "hybrid ddos type")\n   and (main.CategoricalType = "general") \n  #and (main.noiseLevel =0)\n   and (feature_selection.Method like "%no f%")\n   and (main.ExtractionTool="kdd") group by evaluation.Classifier, main.noiseLevel\n
+Hybrid DDoS Type, specific, no noise
+SPECIFIC  Hybrid DDoS Type  0.00000 J48 0.783410013 0.786419988 0.783410013 0.778800011 0.738420010
+SPECIFIC  Hybrid DDoS Type  0.00000 KNN 0.779089987 0.779219985 0.779089987 0.778659999 0.733219981
+SPECIFIC  Hybrid DDoS Type  0.00000 NB  0.446119994 0.497420013 0.446119994 0.390060008 0.332549989
+SPECIFIC  Hybrid DDoS Type  0.00000 RF  0.800650001 0.801169991 0.800650001 0.800719976 0.759239972
+SPECIFIC  Hybrid DDoS Type  0.00000 SMO 0.631470025 0.677820027 0.631470025 0.610689998 0.554929972
+#select #* main.CategoricalType, main.systemType, main.noiseLevel, evaluation.Classifier, avg(evaluation.Accuracy), avg(evaluation.Prec), avg(evaluation.Recall), avg(evaluation.FScore), avg(evaluation.Kappa) from main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 #and (evaluation.Classifier = "smo") and (evaluation.Class = "average") and (main.systemType = "hybrid ddos type") and (main.CategoricalType = "specific") #and (main.noiseLevel =0) and (feature_selection.Method like "%no f%") and (main.ExtractionTool="kdd") group by evaluation.Classifier, main.noiseLevel
+
+#single vs hybrid, no feature selection
+single
+  78.9289166 79.5766665 78.9289166 77.5389335 73.0956334
+  -- select \n#* \ncount(main.id) as `Count`, main.CategoricalType, main.SystemType, evaluation.Classifier, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n and (evaluation.Class = "Average")\n and (main.systemType = "single") \n#and (main.CategoricalType = "nominal") \n#and (main.noiseLevel > 0) \n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd")
+
+hybrid isAttack
+  99.3507667 99.5228336 99.3507667 99.3911332 97.8338335
+  -- select \n#* \ncount(main.id) as `Count`, main.CategoricalType, main.SystemType, evaluation.Classifier, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n and (evaluation.Class = "Average")\n and (main.systemType = "hybrid isattack") \n#and (main.CategoricalType = "nominal") \n#and (main.noiseLevel > 0) \n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd")
+hybrid ddos type
+  78.1291338 80.5040334 78.1291338 76.7384997 67.9040332
+  -- select \n#* \ncount(main.id) as `Count`, main.CategoricalType, main.SystemType, evaluation.Classifier, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n and (evaluation.Class = "Average")\n and (main.systemType = "hybrid ddos type") \n#and (main.CategoricalType = "nominal") \n#and (main.noiseLevel > 0) \n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd")

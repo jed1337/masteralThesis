@@ -1,0 +1,80 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                        Class
+Attribute           HIGH_RATE      LOW_RATE        NORMAL
+                       (0.29)        (0.35)        (0.36)
+==========================================================
+total_fvolume
+  mean             185230.2263      961.4699     2030.3143
+  std. dev.        171799.2224      831.9412    38469.0381
+  weight sum              1087          1332          1333
+  precision           751.5715      751.5715      751.5715
+
+min_fpktl
+  mean                 46.9038       47.6618      173.6502
+  std. dev.            10.9237       18.0314      240.5934
+  weight sum              1087          1332          1333
+  precision             5.9388        5.9388        5.9388
+
+std_fpktl
+  mean                  6.5552       140.643        7.6746
+  std. dev.             13.483       56.9391       55.6788
+  weight sum              1087          1332          1333
+  precision             4.1452        4.1452        4.1452
+
+mean_active
+  mean           13600702.5533    68361.6207   146230.5901
+  std. dev.      11170605.3768   157020.4338   986222.6769
+  weight sum              1087          1332          1333
+  precision         12388.7998    12388.7998    12388.7998
+
+mean_idle
+  mean             567047.4265  6706418.4387   350948.0524
+  std. dev.         854339.682  3392536.0529  1255120.2691
+  weight sum              1087          1332          1333
+  precision          9011.1481     9011.1481     9011.1481
+
+std_idle
+  mean              66681.0871  2969892.7244    29131.8002
+  std. dev.        193172.0768  2449987.0199   234701.3215
+  weight sum              1087          1332          1333
+  precision          7289.7859     7289.7859     7289.7859
+
+sflow_bbytes
+  mean              14745.8537       54.8457             0
+  std. dev.         40174.1187      701.1751        97.406
+  weight sum              1087          1332          1333
+  precision            584.436       584.436       584.436
+
+total_fhlen
+  mean             103303.7355      385.2351       54.5532
+  std. dev.         95939.0479       245.552      664.8698
+  weight sum              1087          1332          1333
+  precision            512.109       512.109       512.109
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         640               68.2303 %
+Incorrectly Classified Instances       298               31.7697 %
+Kappa statistic                          0.5076
+Mean absolute error                      0.2163
+Root mean squared error                  0.4565
+Relative absolute error                 48.8793 %
+Root relative squared error             97.0493 %
+Total Number of Instances              938     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.006    0.000      0.000    0.000      -0.042   0.957     0.865     HIGH_RATE
+                 0.973    0.408    0.567      0.973    0.717      0.554    0.974     0.970     LOW_RATE
+                 0.949    0.078    0.871      0.949    0.908      0.856    0.960     0.942     NORMAL
+Weighted Avg.    0.682    0.174    0.510      0.682    0.577      0.488    0.964     0.930     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   0 233  39 |   a = HIGH_RATE
+   1 324   8 |   b = LOW_RATE
+   3  14 316 |   c = NORMAL

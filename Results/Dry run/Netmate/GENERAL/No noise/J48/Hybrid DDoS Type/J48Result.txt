@@ -1,0 +1,45 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+sflow_fpackets <= 4
+|   max_fpktl <= 208
+|   |   max_fpktl <= 78
+|   |   |   min_idle <= 6626859
+|   |   |   |   duration <= 123081: LOW_RATE (13.0/1.0)
+|   |   |   |   duration > 123081: HIGH_RATE (11.0)
+|   |   |   min_idle > 6626859: LOW_RATE (12.0)
+|   |   max_fpktl > 78: HIGH_RATE (72.0)
+|   max_fpktl > 208: LOW_RATE (1952.0)
+sflow_fpackets > 4
+|   sflow_fpackets <= 10
+|   |   max_fpktl <= 160: HIGH_RATE (166.0)
+|   |   max_fpktl > 160: LOW_RATE (24.0)
+|   sflow_fpackets > 10: HIGH_RATE (1283.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	15
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         883              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0003
+Root mean squared error                  0.0052
+Relative absolute error                  0.0709 %
+Root relative squared error              1.0447 %
+Total Number of Instances              883     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     HIGH_RATE
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     LOW_RATE
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 383   0 |   a = HIGH_RATE
+   0 500 |   b = LOW_RATE

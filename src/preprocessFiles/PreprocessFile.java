@@ -22,13 +22,13 @@ public abstract class PreprocessFile {
 
    private int instancesCount = -1;
 
-   protected PreprocessFile(String fileName, GeneralAttackTypeEnum generalAttackType, SpecificAttackTypeEnum specificAttackType)
+   protected PreprocessFile(String filename, GeneralAttackTypeEnum generalAttackType, SpecificAttackTypeEnum specificAttackType)
            throws IOException {
       this.generalAttackType = generalAttackType;
       this.specificAttackType = specificAttackType;
 
-      this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+fileName);
-      this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+fileName);
+      this.faa = new FormatAsArff(DirectoryConstants.UNFORMATTED_DIR+filename);
+      this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+filename);
    }
 
    public final void setUp() throws IOException, Exception{

@@ -1,0 +1,28 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances         883              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0089
+Root mean squared error                  0.0281
+Relative absolute error                  1.8108 %
+Root relative squared error              5.6678 %
+Total Number of Instances              883     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     HIGH_RATE
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     LOW_RATE
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 383   0 |   a = HIGH_RATE
+   0 500 |   b = LOW_RATE

@@ -18,9 +18,10 @@ import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.noiseLevel.NoNoise;
-import driver.mode.noiseLevel.Noise;
 import featureExtraction.NetmateExtraction;
 import featureSelection.FeatureSelection;
+import featureSelection.J48Wrapper;
+import featureSelection.NBWrapper;
 import featureSelection.NoFeatureSelection;
 import globalParameters.GlobalFeatureExtraction;
 
@@ -65,14 +66,16 @@ public final class Driver {
       final int instanceCount = ArffInstanceCount.HALVED;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
-         NoFeatureSelection.getInstance()
+//         NoFeatureSelection.getInstance(),
+         new NBWrapper(),
+         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
          new GeneralAttackType(),
          new SpecificAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-         new Noise(),
+//         new Noise(),
          NoNoise.getInstance()
       };
 
