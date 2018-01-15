@@ -9,26 +9,30 @@ import preprocessFiles.PreprocessSlowRead;
 import preprocessFiles.PreprocessTCPFlood;
 import preprocessFiles.PreprocessUDPFlood;
 import driver.categoricalType.CategoricalType;
+import java.util.ArrayList;
+import java.util.List;
+import preprocessFiles.PreprocessFile;
 
 public final class HybridDDoSType extends Mode{
-   
-   public HybridDDoSType(int totalInstancesCount, CategoricalType categoricalType) throws IOException {
-      super(totalInstancesCount, NoNoise.getInstance(), categoricalType);
-
-//TODO make this part in all of the other subclasses not repeaet code      
-      super.pfL.add(new PreprocessTCPFlood());
-      super.pfL.add(new PreprocessUDPFlood());
-      super.pfL.add(new PreprocessHTTPFlood());
-      
-      super.pfL.add(new PreprocessSlowBody());
-      super.pfL.add(new PreprocessSlowHeaders());
-      super.pfL.add(new PreprocessSlowRead());
-      
-      categoricalType.setPreprocessFileCount(super.pfL, totalInstanceCount);
+   public HybridDDoSType(CategoricalType categoricalType) throws IOException {
+      super(NoNoise.getInstance(), categoricalType);
    }
 
    @Override
    public String getSystemType() {
       return "Hybrid DDoS Type";
+   }
+
+   @Override
+   public List<PreprocessFile> getPreprocessFiles() throws IOException {
+      ArrayList<PreprocessFile> pfL = new ArrayList<>();
+      pfL.add(new PreprocessTCPFlood());
+      pfL.add(new PreprocessUDPFlood());
+      pfL.add(new PreprocessHTTPFlood());
+      
+      pfL.add(new PreprocessSlowBody());
+      pfL.add(new PreprocessSlowHeaders());
+      pfL.add(new PreprocessSlowRead());
+      return pfL;
    }
 }

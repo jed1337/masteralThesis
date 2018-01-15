@@ -11,7 +11,7 @@ public class KDDExtraction extends FeatureExtraction{
 
    @Override
    public String getName() {
-      return KDD_PATH+"KDD";
+      return "KDD";
    }
 
    @Override

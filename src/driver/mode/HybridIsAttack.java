@@ -3,6 +3,9 @@ package driver.mode;
 import driver.categoricalType.HybridStageIsAttack;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import preprocessFiles.PreprocessFile;
 import preprocessFiles.PreprocessHTTPFlood;
 import preprocessFiles.PreprocessNormal;
 import preprocessFiles.PreprocessSlowBody;
@@ -12,25 +15,30 @@ import preprocessFiles.PreprocessTCPFlood;
 import preprocessFiles.PreprocessUDPFlood;
 
 public final class HybridIsAttack extends Mode{
-   public HybridIsAttack(int totalInstancesCount, NoiseLevel nl)
+   public HybridIsAttack(NoiseLevel nl)
          throws IOException {
-      super(totalInstancesCount, nl, new HybridStageIsAttack());
-
-      super.pfL.add(new PreprocessNormal());
-
-      super.pfL.add(new PreprocessTCPFlood());
-      super.pfL.add(new PreprocessUDPFlood());
-      super.pfL.add(new PreprocessHTTPFlood());
-
-      super.pfL.add(new PreprocessSlowBody());
-      super.pfL.add(new PreprocessSlowHeaders());
-      super.pfL.add(new PreprocessSlowRead());
-
-      new HybridStageIsAttack().setPreprocessFileCount(super.pfL, totalInstancesCount);
+      super(nl, new HybridStageIsAttack());
    }
 
    @Override
    public String getSystemType() {
       return "Hybrid isAttack";
+   }
+
+   @Override
+   public List<PreprocessFile> getPreprocessFiles() throws IOException {
+      ArrayList<PreprocessFile> pfL = new ArrayList<>();
+
+      pfL.add(new PreprocessNormal());
+
+      pfL.add(new PreprocessTCPFlood());
+      pfL.add(new PreprocessUDPFlood());
+      pfL.add(new PreprocessHTTPFlood());
+
+      pfL.add(new PreprocessSlowBody());
+      pfL.add(new PreprocessSlowHeaders());
+      pfL.add(new PreprocessSlowRead());
+
+      return pfL;
    }
 }

@@ -1,25 +1,27 @@
 package driver.mode;
 
-import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import preprocessFiles.PreprocessSlowBody;
 import preprocessFiles.PreprocessSlowHeaders;
 import preprocessFiles.PreprocessSlowRead;
-import driver.categoricalType.CategoricalType;
+import java.util.ArrayList;
+import java.util.List;
+import preprocessFiles.PreprocessFile;
 
 public final class SpecificLowrate extends SpecificAttack{
-   public SpecificLowrate(int totalInstancesCount, NoiseLevel nl, CategoricalType categoricalType) throws IOException {
-      super(totalInstancesCount, nl, categoricalType);
-      
-      super.pfL.add(new PreprocessSlowBody());
-      super.pfL.add(new PreprocessSlowHeaders());
-      super.pfL.add(new PreprocessSlowRead());
-
-      categoricalType.setPreprocessFileCount(super.pfL, totalInstancesCount);
-   }
-      
+   public SpecificLowrate() throws IOException {}
+   
    @Override
    public String getSystemType() {
-      return "Specific Highrate";
+      return "Specific Lowrate";
+   }
+
+   @Override
+   public List<PreprocessFile> getPreprocessFiles() throws IOException {
+      ArrayList<PreprocessFile> pfL = new ArrayList<>();
+      pfL.add(new PreprocessSlowBody());
+      pfL.add(new PreprocessSlowHeaders());
+      pfL.add(new PreprocessSlowRead());
+      return pfL;
    }
 }

@@ -9,12 +9,17 @@ import preprocessFiles.PreprocessFile;
 
 public final class Noise implements NoiseLevel{
    @Override
-   public List<PreprocessFile> getPreprocessedFiles() throws IOException {
+   public List<PreprocessFile> getPreprocessFiles() throws IOException {
       return Collections.unmodifiableList(Arrays.asList(
          new PreprocessNoiseRandomWebsites()
       ));
    }
    
+   /**
+    * @return 0.5 since the amount of normal data and noise gets
+    * evenly distributed by categoricalType.setPreprocessFileCount(). I.E.
+    * 50% noise, 50% normal
+    */
    @Override
    public float getNoiseLevelFloat(){
       return 0.50f;

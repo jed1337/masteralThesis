@@ -6,10 +6,12 @@ import java.util.List;
 import preprocessFiles.PreprocessFile;
 
 public final class NoNoise implements NoiseLevel{
-   private static NoNoise instance =null;
+   private static NoNoise instance = null;
    private NoNoise(){}
    
    public static NoNoise getInstance(){
+      //Create the NoNoise.instance if it doesn't exist
+      //Use the existing NoNoise.instance otherwise
       if(NoNoise.instance == null){
          NoNoise.instance = new NoNoise();
       }
@@ -18,9 +20,8 @@ public final class NoNoise implements NoiseLevel{
    }
    
    @Override
-   public List<PreprocessFile> getPreprocessedFiles() {
-      final ArrayList<PreprocessFile> pfAL = new ArrayList<>();
-      return Collections.unmodifiableList(pfAL);
+   public List<PreprocessFile> getPreprocessFiles() {
+      return Collections.unmodifiableList(new ArrayList<>());
    }
    
    @Override

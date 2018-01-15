@@ -1,11 +1,8 @@
 package driver.mode.noiseLevel;
 
-import java.io.IOException;
-import java.util.List;
-import preprocessFiles.PreprocessFile;
+import generalInterfaces.GetPreprocessFiles;
 
-public interface NoiseLevel {
-   public abstract List<PreprocessFile> getPreprocessedFiles() throws IOException;
+public interface NoiseLevel extends GetPreprocessFiles{
    public abstract float getNoiseLevelFloat();
    public abstract String getNoiseLevelString();
 }

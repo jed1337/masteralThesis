@@ -1,25 +1,27 @@
 package driver.mode;
 
-import driver.mode.noiseLevel.NoiseLevel;
 import java.io.IOException;
 import preprocessFiles.PreprocessHTTPFlood;
 import preprocessFiles.PreprocessTCPFlood;
 import preprocessFiles.PreprocessUDPFlood;
-import driver.categoricalType.CategoricalType;
+import java.util.ArrayList;
+import java.util.List;
+import preprocessFiles.PreprocessFile;
 
 public final class SpecificHighrate extends SpecificAttack{
-   public SpecificHighrate(int totalInstancesCount, NoiseLevel nl, CategoricalType categoricalType) throws IOException {
-      super(totalInstancesCount, nl, categoricalType);
-      
-      super.pfL.add(new PreprocessTCPFlood());
-      super.pfL.add(new PreprocessUDPFlood());
-      super.pfL.add(new PreprocessHTTPFlood());
-
-      categoricalType.setPreprocessFileCount(super.pfL, totalInstancesCount);
-   }
-      
+   public SpecificHighrate() throws IOException {}
+   
    @Override
    public String getSystemType() {
       return "Specific Highrate";
+   }
+
+   @Override
+   public List<PreprocessFile> getPreprocessFiles() throws IOException {
+      ArrayList<PreprocessFile> pfL = new ArrayList<>();
+      pfL.add(new PreprocessTCPFlood());
+      pfL.add(new PreprocessUDPFlood());
+      pfL.add(new PreprocessHTTPFlood());
+      return pfL;
    }
 }

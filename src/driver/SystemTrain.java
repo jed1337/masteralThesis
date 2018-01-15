@@ -54,12 +54,12 @@ public final class SystemTrain {
 
    private final FeatureSelection fs;
 
-	public SystemTrain(Mode mode, FeatureSelection fs) throws IOException, Exception {
+	public SystemTrain(SystemParameters sp, FeatureSelection fs) throws IOException, Exception {
       this.classifierHolders = new ArrayList<>();
       this.evaluationSets = new ArrayList<>();
       this.fs = fs;
 
-      this.preprocessFiles = setupPreprocessFiles(mode.getPreprocessFiles(), mode.getRelabel());
+      this.preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
 
       this.classifierHolders.add(new ClassifierHolder(new J48(), "J48"));
       this.classifierHolders.add(new ClassifierHolder(new IBk(), "KNN"));
@@ -73,7 +73,7 @@ public final class SystemTrain {
 
       this.connection = setupConnection();
 
-      this.mainID = insertMain(mode);
+      this.mainID = insertMain(sp);
       setupTestTrainValidation();
       applyFeatureSelection();
       evaluateClassifiers();
@@ -90,7 +90,7 @@ public final class SystemTrain {
       return con;
    }
 
-   private int insertMain(Mode mode) throws SQLException {
+   private int insertMain(SystemParameters sp) throws SQLException {
       String query =
          String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s) VALUES (?,?,?,?,?);",
             DBConnectionConstants.DATABASE_NAME,
@@ -109,9 +109,9 @@ public final class SystemTrain {
       );
 
       int i=1;
-      ps.setString(i++, mode.getSystemType());
-      ps.setString(i++, mode.getCategoricalType().name());
-      ps.setFloat(i++, mode.getNoiseLevelFloat());
+      ps.setString(i++, sp.getSystemType());
+      ps.setString(i++, sp.getCategoricalType().name());
+      ps.setFloat(i++, sp.getNoiseLevelFloat());
       ps.setString(i++, "Initial");
       ps.setString(i++, GlobalFeatureExtraction.getInstance().getName());
 
@@ -122,7 +122,6 @@ public final class SystemTrain {
       int generatedID = rs.getInt(1);
       System.out.println("Generated primary key: "+generatedID);
       return generatedID;
-//      this.mainID = rs.getInt(1);
    }
 
    private void insertFeature() throws NoSuchElementException, SQLException {
