@@ -3,37 +3,39 @@ J48 pruned tree
 ------------------
 
 dst_host_srv_count <= 100
-|   count <= 6
-|   |   rerror_rate <= 0.43
-|   |   |   dst_bytes <= 1092: attack (33.0/1.0)
-|   |   |   dst_bytes > 1092: normal (7.0)
-|   |   rerror_rate > 0.43: normal (7.0)
-|   count > 6: attack (3198.0/1.0)
-dst_host_srv_count > 100: normal (555.0)
+|   dst_bytes <= 1046
+|   |   dst_host_srv_diff_host_rate <= 0.02: attack (1982.0/4.0)
+|   |   dst_host_srv_diff_host_rate > 0.02
+|   |   |   count <= 35: normal (23.0)
+|   |   |   count > 35: attack (18.0)
+|   dst_bytes > 1046
+|   |   duration <= 0: normal (29.0)
+|   |   duration > 0: attack (4.0)
+dst_host_srv_count > 100: normal (1944.0)
 
-Number of Leaves  : 	5
+Number of Leaves  : 	6
 
-Size of the tree : 	9
+Size of the tree : 	11
 
 === Dedicated test set ===
 === Summary of J48===
 
-Correctly Classified Instances         947               99.6842 %
-Incorrectly Classified Instances         3                0.3158 %
-Kappa statistic                          0.9876
-Mean absolute error                      0.0041
-Root mean squared error                  0.0558
-Relative absolute error                  1.6102 %
-Root relative squared error             15.6123 %
-Total Number of Instances              950     
+Correctly Classified Instances         998               99.8    %
+Incorrectly Classified Instances         2                0.2    %
+Kappa statistic                          0.996 
+Mean absolute error                      0.003 
+Root mean squared error                  0.0447
+Relative absolute error                  0.5994 %
+Root relative squared error              8.9307 %
+Total Number of Instances             1000     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.986    0.001    0.993      0.986    0.989      0.988    0.996     0.986     normal
-                 0.999    0.014    0.998      0.999    0.998      0.988    0.996     0.999     attack
-Weighted Avg.    0.997    0.012    0.997      0.997    0.997      0.988    0.996     0.997     
+                 0.996    0.000    1.000      0.996    0.998      0.996    0.998     0.998     normal
+                 1.000    0.004    0.996      1.000    0.998      0.996    0.998     0.996     attack
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    0.998     0.997     
 === Confusion Matrix ===
 
    a   b   <-- classified as
- 141   2 |   a = normal
-   1 806 |   b = attack
+ 498   2 |   a = normal
+   0 500 |   b = attack

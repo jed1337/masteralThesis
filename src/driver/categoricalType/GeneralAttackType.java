@@ -46,7 +46,7 @@ public final class GeneralAttackType implements CategoricalType{
    }
 
    @Override
-   public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
+   public void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
       Set<GeneralAttackTypeEnum> gats = new HashSet(); // Unique values
       pfL.forEach((pf)->{
          gats.add(pf.getGeneralAttackType());

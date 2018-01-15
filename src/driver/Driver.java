@@ -3,8 +3,6 @@ package driver;
 import constants.ArffInstanceCount;
 import constants.DirectoryConstants;
 import driver.categoricalType.GeneralAttackType;
-import driver.mode.Mode;
-import driver.mode.Single;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,6 +15,7 @@ import driver.categoricalType.CategoricalType;
 import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
+import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
 import featureExtraction.KDDExtraction;
 import featureSelection.FeatureSelection;
@@ -78,27 +77,27 @@ public final class Driver {
       };
 
       for (FeatureSelection fs : featureSelections) {
-//         for (CategoricalType categoricalType : categoricalTypes) {
-//            for (NoiseLevel noiseLevel : noiseLevels) {
-//               systemTrain(fs, new SystemParameters.Builder(
-//                  instanceCount,
-//                  new Single (noiseLevel, categoricalType)
-//               ).build());
-//               System.out.println("");
-//            }
-//         }
+         for (CategoricalType categoricalType : categoricalTypes) {
+            for (NoiseLevel noiseLevel : noiseLevels) {
+               systemTrain(fs, new SystemParameters.Builder(
+                  instanceCount,
+                  new Single (noiseLevel, categoricalType)
+               ).build());
+               System.out.println("");
+            }
+         }
          for (NoiseLevel noiseLevel : noiseLevels) {
             systemTrain(fs, new SystemParameters.Builder(
               instanceCount,
               new HybridIsAttack(noiseLevel)
             ).build());
          }
-//         for (CategoricalType categoricalType : categoricalTypes) {
-//            systemTrain(fs, new SystemParameters.Builder(
-//              instanceCount,
-//              new HybridDDoSType(categoricalType)
-//            ).build());
-//         }
+         for (CategoricalType categoricalType : categoricalTypes) {
+            systemTrain(fs, new SystemParameters.Builder(
+              instanceCount,
+              new HybridDDoSType(categoricalType)
+            ).build());
+         }
       }
    }
 

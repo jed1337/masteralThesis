@@ -28,6 +28,7 @@ public final class SystemParameters implements GetPreprocessFiles{
       this.pfL.addAll(spb.mode.getNoiseLevel().getPreprocessFiles());
       
       this.categoricalType.setPreprocessFileCount(this.pfL, spb.instanceCount);
+      System.out.println("");
    }
    
    @Override
