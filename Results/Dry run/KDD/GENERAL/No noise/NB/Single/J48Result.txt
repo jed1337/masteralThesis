@@ -1,0 +1,58 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+flag = OTH
+|   dst_host_count <= 79
+|   |   dst_host_count <= 42
+|   |   |   dst_host_count <= 30
+|   |   |   |   dst_host_count <= 10: LOW_RATE (29.0/12.0)
+|   |   |   |   dst_host_count > 10: HIGH_RATE (117.0/23.0)
+|   |   |   dst_host_count > 30: HIGH_RATE (469.0/17.0)
+|   |   dst_host_count > 42
+|   |   |   dst_host_count <= 55: LOW_RATE (293.0/9.0)
+|   |   |   dst_host_count > 55: HIGH_RATE (705.0/46.0)
+|   dst_host_count > 79: LOW_RATE (94.0/6.0)
+flag = REJ: NORMAL (97.0)
+flag = RSTO: LOW_RATE (180.0/8.0)
+flag = RSTOS0: NORMAL (0.0)
+flag = RSTR: NORMAL (0.0)
+flag = S0: NORMAL (9.0)
+flag = S1
+|   dst_host_count <= 88
+|   |   dst_host_count <= 52: NORMAL (5.0/1.0)
+|   |   dst_host_count > 52: LOW_RATE (19.0)
+|   dst_host_count > 88: LOW_RATE (652.0/4.0)
+flag = S2: LOW_RATE (18.0/1.0)
+flag = S3: HIGH_RATE (23.0)
+flag = SF: NORMAL (1215.0)
+flag = SH: NORMAL (0.0)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	26
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         871               88.787  %
+Incorrectly Classified Instances       110               11.213  %
+Kappa statistic                          0.8316
+Mean absolute error                      0.0761
+Root mean squared error                  0.2548
+Relative absolute error                 17.1317 %
+Root relative squared error             54.068  %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.781    0.053    0.875      0.781    0.826      0.752    0.959     0.926     HIGH_RATE
+                 0.886    0.111    0.804      0.886    0.843      0.758    0.969     0.917     LOW_RATE
+                 0.991    0.005    0.991      0.991    0.991      0.986    0.999     0.999     NORMAL
+Weighted Avg.    0.888    0.056    0.890      0.888    0.888      0.834    0.976     0.948     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 246  69   0 |   a = HIGH_RATE
+  35 295   3 |   b = LOW_RATE
+   0   3 330 |   c = NORMAL

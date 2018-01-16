@@ -1,0 +1,61 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_host_srv_diff_host_rate <= 0
+|   flag = OTH
+|   |   srv_diff_host_rate <= 0: attack (1324.0/50.0)
+|   |   srv_diff_host_rate > 0
+|   |   |   srv_diff_host_rate <= 0.21: normal (115.0/1.0)
+|   |   |   srv_diff_host_rate > 0.21
+|   |   |   |   srv_diff_host_rate <= 0.3: attack (19.0/8.0)
+|   |   |   |   srv_diff_host_rate > 0.3: normal (6.0)
+|   flag = REJ: normal (9.0)
+|   flag = RSTO: attack (102.0/1.0)
+|   flag = RSTOS0: attack (0.0)
+|   flag = RSTR: attack (0.0)
+|   flag = S0: normal (1.0)
+|   flag = S1: attack (295.0/1.0)
+|   flag = S2: attack (12.0/1.0)
+|   flag = S3: attack (290.0)
+|   flag = SF: normal (517.0)
+|   flag = SH: attack (0.0)
+dst_host_srv_diff_host_rate > 0
+|   flag = OTH: normal (202.0/7.0)
+|   flag = REJ: normal (106.0)
+|   flag = RSTO: normal (32.0)
+|   flag = RSTOS0: normal (0.0)
+|   flag = RSTR: normal (5.0)
+|   flag = S0: normal (11.0)
+|   flag = S1: normal (21.0)
+|   flag = S2: normal (2.0)
+|   flag = S3: attack (12.0/1.0)
+|   flag = SF: normal (919.0)
+|   flag = SH: normal (0.0)
+
+Number of Leaves  : 	25
+
+Size of the tree : 	31
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         940               94      %
+Incorrectly Classified Instances        60                6      %
+Kappa statistic                          0.88  
+Mean absolute error                      0.0718
+Root mean squared error                  0.2241
+Relative absolute error                 14.3681 %
+Root relative squared error             44.8252 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.880    0.000    1.000      0.880    0.936      0.886    0.980     0.971     normal
+                 1.000    0.120    0.893      1.000    0.943      0.886    0.980     0.963     attack
+Weighted Avg.    0.940    0.060    0.946      0.940    0.940      0.886    0.980     0.967     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 440  60 |   a = normal
+   0 500 |   b = attack

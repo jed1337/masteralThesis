@@ -2,50 +2,48 @@
 J48 pruned tree
 ------------------
 
-mean_active <= 109: normal (513.0/9.0)
-mean_active > 109
-|   min_fiat <= 3623
-|   |   min_fpktl <= 57
-|   |   |   std_bpktl <= 0
-|   |   |   |   min_fpktl <= 40: attack (845.0)
-|   |   |   |   min_fpktl > 40
-|   |   |   |   |   min_fpktl <= 50: normal (6.0)
-|   |   |   |   |   min_fpktl > 50: attack (80.0)
-|   |   |   std_bpktl > 0: attack (2098.0)
-|   |   min_fpktl > 57
-|   |   |   min_fpktl <= 79: attack (14.0)
-|   |   |   min_fpktl > 79: normal (13.0)
-|   min_fiat > 3623
-|   |   min_fpktl <= 49: normal (36.0)
-|   |   min_fpktl > 49
-|   |   |   mean_fpktl <= 64: attack (8.0)
-|   |   |   mean_fpktl > 64
-|   |   |   |   min_fiat <= 620120: normal (12.0)
-|   |   |   |   min_fiat > 620120: attack (2.0)
+duration <= 88: normal (1611.0/3.0)
+duration > 88
+|   min_fpktl <= 52
+|   |   total_fvolume <= 296
+|   |   |   total_bpackets <= 1: normal (144.0/2.0)
+|   |   |   total_bpackets > 1: attack (18.0)
+|   |   total_fvolume > 296
+|   |   |   total_bpackets <= 0
+|   |   |   |   mean_fpktl <= 41: attack (490.0)
+|   |   |   |   mean_fpktl > 41: normal (38.0)
+|   |   |   total_bpackets > 0: attack (1332.0)
+|   min_fpktl > 52
+|   |   duration <= 10696185
+|   |   |   total_fvolume <= 158
+|   |   |   |   mean_idle <= 0: attack (7.0/1.0)
+|   |   |   |   mean_idle > 0: normal (14.0)
+|   |   |   total_fvolume > 158: normal (200.0/3.0)
+|   |   duration > 10696185: attack (12.0)
 
-Number of Leaves  : 	11
+Number of Leaves  : 	10
 
-Size of the tree : 	21
+Size of the tree : 	19
 
 === Dedicated test set ===
 === Summary of J48===
 
-Correctly Classified Instances         899               99.118  %
-Incorrectly Classified Instances         8                0.882  %
-Kappa statistic                          0.9673
-Mean absolute error                      0.0111
-Root mean squared error                  0.0927
-Relative absolute error                  4.1733 %
-Root relative squared error             25.4383 %
-Total Number of Instances              907     
+Correctly Classified Instances         960               99.2761 %
+Incorrectly Classified Instances         7                0.7239 %
+Kappa statistic                          0.9855
+Mean absolute error                      0.0093
+Root mean squared error                  0.0837
+Relative absolute error                  1.8612 %
+Root relative squared error             16.7448 %
+Total Number of Instances              967     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.993    0.009    0.953      0.993    0.973      0.968    0.992     0.953     normal
-                 0.991    0.007    0.999      0.991    0.995      0.968    0.992     0.997     attack
-Weighted Avg.    0.991    0.007    0.991      0.991    0.991      0.968    0.992     0.990     
+                 0.998    0.013    0.988      0.998    0.993      0.986    0.993     0.987     normal
+                 0.987    0.002    0.998      0.987    0.992      0.986    0.993     0.993     attack
+Weighted Avg.    0.993    0.008    0.993      0.993    0.993      0.986    0.993     0.990     
 === Confusion Matrix ===
 
    a   b   <-- classified as
- 142   1 |   a = normal
-   7 757 |   b = attack
+ 499   1 |   a = normal
+   6 461 |   b = attack

@@ -8,10 +8,9 @@ import constants.DBConstants.EvaluationTableConstants;
 import constants.DBConstants.FeatureSelectionTableConstants;
 import constants.DBConstants.FeatureTableConstants;
 import constants.DBConstants.MainTableConstants;
-import constants.FileNameConstants;
 import constants.DirectoryConstants;
+import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
-import driver.mode.Mode;
 import featureSelection.FeatureSelection;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.IOException;
@@ -73,7 +72,7 @@ public final class SystemTrain {
 
       this.connection = setupConnection();
 
-      this.mainID = insertMain(sp);
+      this.mainID = insertMainTable(sp);
       setupTestTrainValidation();
       applyFeatureSelection();
       evaluateClassifiers();
@@ -88,145 +87,6 @@ public final class SystemTrain {
          DBConnectionConstants.PASSWORD
       );
       return con;
-   }
-
-   private int insertMain(SystemParameters sp) throws SQLException {
-      String query =
-         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s) VALUES (?,?,?,?,?);",
-            DBConnectionConstants.DATABASE_NAME,
-            MainTableConstants.TABLE_NAME,
-
-            MainTableConstants.SYSTEM_TYPE,
-            MainTableConstants.CATEGORICAL_TYPE,
-            MainTableConstants.NOISE_LEVEL,
-            MainTableConstants.DATASET,
-            MainTableConstants.EXTRACTION_TOOL
-      );
-
-      PreparedStatement ps = this.connection.prepareStatement(
-         query,
-         Statement.RETURN_GENERATED_KEYS
-      );
-
-      int i=1;
-      ps.setString(i++, sp.getSystemType());
-      ps.setString(i++, sp.getCategoricalType().name());
-      ps.setFloat(i++, sp.getNoiseLevelFloat());
-      ps.setString(i++, "Initial");
-      ps.setString(i++, GlobalFeatureExtraction.getInstance().getName());
-
-      ps.executeUpdate();
-
-      ResultSet rs = ps.getGeneratedKeys();
-      rs.next();
-      int generatedID = rs.getInt(1);
-      System.out.println("Generated primary key: "+generatedID);
-      return generatedID;
-   }
-
-   private void insertFeature() throws NoSuchElementException, SQLException {
-      String query =
-        String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
-          DBConnectionConstants.DATABASE_NAME,
-          FeatureTableConstants.TABLE_NAME,
-
-          FeatureTableConstants.MAIN_ID,
-          FeatureTableConstants.NAME
-      );
-
-      PreparedStatement ps = this.connection.prepareStatement(query);
-
-      Instances trainSet = getEvaluationSet(this.trainPath);
-
-      for(int i=0; i< trainSet.numAttributes(); i++){
-         int psIndex=1;
-         ps.setInt   (psIndex++, this.mainID);
-         ps.setString(psIndex++, trainSet.attribute(i).name());
-
-         ps.addBatch();
-
-         int[] updateCounts = ps.executeBatch();
-         checkUpdateCounts(updateCounts);
-      }
-   }
-
-   private void insertFeatureSelection() throws SQLException {
-      String query =
-        String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
-          DBConnectionConstants.DATABASE_NAME,
-          FeatureSelectionTableConstants.TABLE_NAME,
-
-          FeatureSelectionTableConstants.MAIN_ID,
-          FeatureSelectionTableConstants.METHOD
-      );
-
-      PreparedStatement ps = this.connection.prepareStatement(query);
-
-      int i=1;
-      ps.setInt   (i++, this.mainID);
-      ps.setString(i++, this.fs.getFSMethodName());
-
-      ps.executeUpdate();
-   }
-
-   private void insertEvaluation(ClassifierHolder ch, CustomEvaluation eval)
-           throws SQLException {
-      String query =
-        String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?,?,?);",
-          DBConnectionConstants.DATABASE_NAME,
-          EvaluationTableConstants.TABLE_NAME,
-
-          EvaluationTableConstants.MAIN_ID,
-          EvaluationTableConstants.CLASSIFIER,
-          EvaluationTableConstants.CLASS,
-          EvaluationTableConstants.ACCURACY,
-          EvaluationTableConstants.PREC,
-          EvaluationTableConstants.RECALL,
-          EvaluationTableConstants.FSCORE,
-          EvaluationTableConstants.KAPPA
-      );
-
-      PreparedStatement ps = this.connection.prepareStatement(query);
-      int avgClassIndex = 1;
-      ps.setInt(avgClassIndex++, this.mainID);
-      ps.setString(avgClassIndex++, ch.getClassifierName());
-      ps.setString(avgClassIndex++, "Average");
-
-      ps.setDouble(avgClassIndex++, eval.correct()/eval.withClass());
-      ps.setDouble(avgClassIndex++, eval.weightedPrecision());
-      ps.setDouble(avgClassIndex++, eval.weightedRecall());
-      ps.setDouble(avgClassIndex++, eval.weightedFMeasure());
-      ps.setDouble(avgClassIndex++, eval.kappa());
-
-      ps.addBatch();
-
-      final String[] classNames = eval.getClassNames();
-      for (int i = 0; i < classNames.length; i++) {
-         int psIndex=1;
-         ps.setInt   (psIndex++, this.mainID);
-         ps.setString(psIndex++, ch.getClassifierName());
-         ps.setString(psIndex++, classNames[i]);
-
-         double tp = eval.numTruePositives(i);
-         double fp = eval.numFalsePositives(i);
-         double tn = eval.numTrueNegatives(i);
-         double fn = eval.numFalseNegatives(i);
-         double total = tp+fp+tn+fn;
-         if(total== 0){
-            ps.setDouble(psIndex++, 0);
-         }else{
-            ps.setDouble(psIndex++, (tp+tn)/total);
-         }
-         ps.setDouble(psIndex++, eval.precision(i));
-         ps.setDouble(psIndex++, eval.recall(i));
-         ps.setDouble(psIndex++, eval.fMeasure(i));
-         ps.setNull  (psIndex++, java.sql.Types.FLOAT);
-
-         ps.addBatch();
-      }
-
-      int[] updateCounts = ps.executeBatch();
-      checkUpdateCounts(updateCounts);
    }
 
 	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> pfL, String relabel)
@@ -272,22 +132,16 @@ public final class SystemTrain {
       throw new NoSuchElementException("The evaluation set '"+name+"' wasn't found");
    }
 
-	/**
-	 * Breaks single responsibility (Apply and return int[])
-	 * @param attributeEvaluator
-	 * @return
-	 * @throws IOException
-	 * @throws Exception
-	 */
    public void applyFeatureSelection()
            throws IOException, NoSuchElementException, Exception {
-      fs.applyFeatureSelection(getEvaluationSet(this.trainPath), this.evaluationSets);
+      this.fs.applyFeatureSelection(
+         getEvaluationSet(this.trainPath), 
+         this.evaluationSets
+      );
       writeTestTrainValidation();
 
-      insertFeatureSelection();
-
-      //Insert Feature table.
-      insertFeature();
+      insertToFeatureSelectionTable();
+      insertToFeatureTable();
    }
 
    /**
@@ -330,7 +184,7 @@ public final class SystemTrain {
          evaluations.add(eval);
 
          //Insert to evaluation table
-         insertEvaluation(ch, eval);
+         insertToEvaluationTable(ch, eval);
       }
       return evaluations;
    }
@@ -354,5 +208,155 @@ public final class SystemTrain {
       Utils.writeStringFile(DirectoryConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
 
       return eval;
+   }
+   
+   private int insertMainTable(SystemParameters sp) throws SQLException {
+      String query =
+         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s) VALUES (?,?,?,?,?);",
+            DBConnectionConstants.DATABASE_NAME,
+            MainTableConstants.TABLE_NAME,
+
+            MainTableConstants.SYSTEM_TYPE,
+            MainTableConstants.CATEGORICAL_TYPE,
+            MainTableConstants.NOISE_LEVEL,
+            MainTableConstants.DATASET,
+            MainTableConstants.EXTRACTION_TOOL
+      );
+
+      PreparedStatement ps = this.connection.prepareStatement(
+         query,
+         Statement.RETURN_GENERATED_KEYS
+      );
+
+      int i=1;
+      ps.setString(i++, sp.getSystemType());
+      ps.setString(i++, sp.getCategoricalType().name());
+      ps.setFloat(i++, sp.getNoiseLevelFloat());
+      ps.setString(i++, "Initial");
+      ps.setString(i++, GlobalFeatureExtraction.getInstance().getName());
+
+      ps.executeUpdate();
+
+      ResultSet rs = ps.getGeneratedKeys();
+      rs.next();
+      int generatedID = rs.getInt(1);
+      System.out.println("Generated primary key: "+generatedID);
+      return generatedID;
+   }
+
+   private void insertToFeatureSelectionTable() throws SQLException {
+      String query =
+        String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
+          DBConnectionConstants.DATABASE_NAME,
+          FeatureSelectionTableConstants.TABLE_NAME,
+
+          FeatureSelectionTableConstants.MAIN_ID,
+          FeatureSelectionTableConstants.METHOD
+      );
+
+      PreparedStatement ps = this.connection.prepareStatement(query);
+
+      int i=1;
+      ps.setInt   (i++, this.mainID);
+      ps.setString(i++, this.fs.getFSMethodName());
+
+      ps.executeUpdate();
+   }
+   
+   private void insertToFeatureTable() throws NoSuchElementException, SQLException {
+      String query =
+        String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
+          DBConnectionConstants.DATABASE_NAME,
+          FeatureTableConstants.TABLE_NAME,
+
+          FeatureTableConstants.MAIN_ID,
+          FeatureTableConstants.NAME
+      );
+
+      PreparedStatement ps = this.connection.prepareStatement(query);
+
+      Instances trainSet = getEvaluationSet(this.trainPath);
+
+      for(int i=0; i< trainSet.numAttributes(); i++){
+         int psIndex=1;
+         ps.setInt   (psIndex++, this.mainID);
+         ps.setString(psIndex++, trainSet.attribute(i).name());
+
+         ps.addBatch();
+
+         int[] updateCounts = ps.executeBatch();
+         checkUpdateCounts(updateCounts);
+      }
+   }
+
+   private void insertToEvaluationTable(ClassifierHolder ch, CustomEvaluation eval)
+           throws SQLException, Exception{
+      String query =
+        String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?,?,?,?);",
+          DBConnectionConstants.DATABASE_NAME,
+          EvaluationTableConstants.TABLE_NAME,
+
+          EvaluationTableConstants.MAIN_ID,
+          EvaluationTableConstants.CLASSIFIER,
+          EvaluationTableConstants.CLASS,
+          EvaluationTableConstants.ACCURACY,
+          EvaluationTableConstants.PREC,
+          EvaluationTableConstants.RECALL,
+          EvaluationTableConstants.FSCORE,
+          EvaluationTableConstants.KAPPA,
+          EvaluationTableConstants.CONFUSION_MATRIX
+      );
+
+      //Average of the results
+      //This is on the separate area since some columns 
+      //like Kappa and the confusion matrix only exist with the average
+      PreparedStatement ps = this.connection.prepareStatement(query);
+      {
+         int avgClassIndex = 1;
+         ps.setInt(avgClassIndex++, this.mainID);
+         ps.setString(avgClassIndex++, ch.getClassifierName());
+         ps.setString(avgClassIndex++, "Average");
+
+         ps.setDouble(avgClassIndex++, eval.correct()/eval.withClass());
+         ps.setDouble(avgClassIndex++, eval.weightedPrecision());
+         ps.setDouble(avgClassIndex++, eval.weightedRecall());
+         ps.setDouble(avgClassIndex++, eval.weightedFMeasure());
+         ps.setDouble(avgClassIndex++, eval.kappa());
+         ps.setString(avgClassIndex++, eval.toMatrixString(""));
+
+         ps.addBatch();
+      }
+      
+      //Per class evaluation
+      {
+         final String[] classNames = eval.getClassNames();
+         for (int i = 0; i < classNames.length; i++) {
+            int psIndex=1;
+            ps.setInt   (psIndex++, this.mainID);
+            ps.setString(psIndex++, ch.getClassifierName());
+            ps.setString(psIndex++, classNames[i]);
+
+            double tp = eval.numTruePositives(i);
+            double fp = eval.numFalsePositives(i);
+            double tn = eval.numTrueNegatives(i);
+            double fn = eval.numFalseNegatives(i);
+            double total = tp+fp+tn+fn;
+            if(total== 0){
+               ps.setDouble(psIndex++, 0);
+            }else{
+               ps.setDouble(psIndex++, (tp+tn)/total);
+            }
+            ps.setDouble(psIndex++, eval.precision(i));
+            ps.setDouble(psIndex++, eval.recall(i));
+            ps.setDouble(psIndex++, eval.fMeasure(i));
+            ps.setNull  (psIndex++, java.sql.Types.FLOAT);
+            ps.setNull  (psIndex++, java.sql.Types.VARCHAR);
+
+            ps.addBatch();
+         }
+      }
+
+      int[] updateCounts = ps.executeBatch();
+      checkUpdateCounts(updateCounts);
    }
 }

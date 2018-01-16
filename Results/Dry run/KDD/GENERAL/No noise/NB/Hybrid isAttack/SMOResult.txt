@@ -1,0 +1,56 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0      * (normalized) protocol_type=tcp
+ +       0      * (normalized) protocol_type=udp
+ +       0.827  * (normalized) flag=OTH
+ +      -0.8028 * (normalized) flag=REJ
+ +       0.7466 * (normalized) flag=RSTO
+ +      -1.4071 * (normalized) flag=S0
+ +       0.8202 * (normalized) flag=S1
+ +       0.5399 * (normalized) flag=S2
+ +       0.7642 * (normalized) flag=S3
+ +      -1.488  * (normalized) flag=SF
+ +       1.0348 * (normalized) src_bytes
+ +      -1.0575 * (normalized) dst_bytes
+ +       0.2587 * (normalized) srv_count
+ +      -2.0184 * (normalized) rerror_rate
+ +      -0.6795 * (normalized) dst_host_count
+ +       0.1976 * (normalized) dst_host_diff_srv_rate
+ +      -0.2836 * (normalized) dst_host_srv_diff_host_rate
+ +       0.4243
+
+Number of kernel evaluations: 718496 (63.353% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         998               99.8    %
+Incorrectly Classified Instances         2                0.2    %
+Kappa statistic                          0.996 
+Mean absolute error                      0.002 
+Root mean squared error                  0.0447
+Relative absolute error                  0.4    %
+Root relative squared error              8.9443 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.000    1.000      0.996    0.998      0.996    0.998     0.998     normal
+                 1.000    0.004    0.996      1.000    0.998      0.996    0.998     0.996     attack
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    0.998     0.997     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 498   2 |   a = normal
+   0 500 |   b = attack

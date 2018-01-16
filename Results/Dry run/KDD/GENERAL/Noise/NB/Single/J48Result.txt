@@ -1,0 +1,72 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+flag = OTH
+|   dst_host_count <= 43
+|   |   dst_host_count <= 32
+|   |   |   dst_host_count <= 26
+|   |   |   |   dst_host_count <= 19: NORMAL (141.0/58.0)
+|   |   |   |   dst_host_count > 19: HIGH_RATE (74.0/26.0)
+|   |   |   dst_host_count > 26: NORMAL (87.0/39.0)
+|   |   dst_host_count > 32
+|   |   |   dst_host_count <= 33: HIGH_RATE (308.0/23.0)
+|   |   |   dst_host_count > 33
+|   |   |   |   dst_host_count <= 39
+|   |   |   |   |   dst_host_count <= 34: HIGH_RATE (84.0/20.0)
+|   |   |   |   |   dst_host_count > 34: NORMAL (90.0/33.0)
+|   |   |   |   dst_host_count > 39
+|   |   |   |   |   dst_host_count <= 42: HIGH_RATE (83.0/16.0)
+|   |   |   |   |   dst_host_count > 42: LOW_RATE (14.0/8.0)
+|   dst_host_count > 43
+|   |   dst_host_count <= 55: LOW_RATE (301.0/23.0)
+|   |   dst_host_count > 55
+|   |   |   dst_host_count <= 79: HIGH_RATE (705.0/46.0)
+|   |   |   dst_host_count > 79: LOW_RATE (94.0/6.0)
+flag = REJ: NORMAL (75.0)
+flag = RSTO
+|   dst_host_count <= 5: NORMAL (7.0/1.0)
+|   dst_host_count > 5: LOW_RATE (176.0/5.0)
+flag = RSTOS0: NORMAL (0.0)
+flag = RSTR: NORMAL (6.0)
+flag = S0: NORMAL (6.0)
+flag = S1
+|   dst_host_count <= 72
+|   |   dst_host_count <= 52: NORMAL (16.0/1.0)
+|   |   dst_host_count > 52: LOW_RATE (7.0)
+|   dst_host_count > 72: LOW_RATE (662.0/2.0)
+flag = S2
+|   dst_host_count <= 157: LOW_RATE (18.0/1.0)
+|   dst_host_count > 157: NORMAL (2.0)
+flag = S3: HIGH_RATE (23.0)
+flag = SF: NORMAL (946.0)
+flag = SH: NORMAL (0.0)
+
+Number of Leaves  : 	25
+
+Size of the tree : 	40
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         754               76.8603 %
+Incorrectly Classified Instances       227               23.1397 %
+Kappa statistic                          0.6528
+Mean absolute error                      0.1939
+Root mean squared error                  0.3657
+Relative absolute error                 43.6323 %
+Root relative squared error             77.5905 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.711    0.140    0.707      0.711    0.709      0.571    0.870     0.832     HIGH_RATE
+                 0.886    0.150    0.753      0.886    0.814      0.712    0.916     0.846     LOW_RATE
+                 0.706    0.057    0.864      0.706    0.777      0.686    0.955     0.888     NORMAL
+Weighted Avg.    0.769    0.115    0.776      0.769    0.768      0.658    0.914     0.856     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 224  64  27 |   a = HIGH_RATE
+  28 295  10 |   b = LOW_RATE
+  65  33 235 |   c = NORMAL

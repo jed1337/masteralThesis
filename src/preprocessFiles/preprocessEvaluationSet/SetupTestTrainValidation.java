@@ -32,7 +32,7 @@ public final class SetupTestTrainValidation {
    /**
     * Sets the SplitFileCounters dynamically based on the values of evaluationSets
     * <p>
-    * Assumes that the names in evaluatioSets is all unique
+    * Assumes that the names in evaluationSets are all unique
     * @param evaluationSets
     * @return
     * @throws IOException 
@@ -41,9 +41,9 @@ public final class SetupTestTrainValidation {
       final ArrayList<SplitFileCounter> splitFileCounters = new ArrayList<>();
       
       final double totalSplitValue = evaluationSets.stream()
-              .mapToDouble((es)->es.getSplitValue())
-              .sum();
-      
+         .mapToDouble((es)->es.getSplitValue())
+         .sum();
+
       final HashMap<String, MutableInt> nominalNames = UtilsInstances.getClassCount(
          AttributeTypeConstants.ATTRIBUTE_CLASS,
          this.combinedInstances
@@ -65,12 +65,34 @@ public final class SetupTestTrainValidation {
       return splitFileCounters;
    }
 
+   /**
+    * The reason we repeatedly call UtilsInstances.getHeader(...) <p> 
+    * is because if not, they use the same header variable as the AL's value <p>
+    * Since they're the same, if 1 value is edited, all the others are as well. <p>
+    * They aren't technically edited, but since they point to the same object, it's just that 1 edit reflects to all
+    *
+    * @param evaluationSets
+    * @param source Source to get the headers from
+    * @throws Exception
+    */
+   private void addHeaders(ArrayList<EvaluationSet> evaluationSets, String source) throws Exception {
+      for (EvaluationSet evaluationSet : evaluationSets) {
+         evaluationSet.setInstances(
+            UtilsInstances.getHeader(
+               source, 
+               GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
+            )
+         );
+      }
+   }
+
    //TODO cleanup
    private void setEvaluationSetInstances(final ArrayList<SplitFileCounter> splitFileCounters, ArrayList<EvaluationSet> evaluationSets) {
       int isAttackIndex = UtilsInstances.getAttributeIndex(
-              this.combinedInstances, 
+         this.combinedInstances, 
          AttributeTypeConstants.ATTRIBUTE_CLASS
       );
+      
       for (Instance instance : this.combinedInstances) {
          String isAttackValue = instance.stringValue(isAttackIndex);
          
@@ -78,7 +100,9 @@ public final class SetupTestTrainValidation {
             if(isAttackValue.equalsIgnoreCase(counter.getNominalName())){
                if(!counter.isFull()){
                   counter.increment();
-                  for (EvaluationSet evaluationSet : evaluationSets) {
+                  
+                  //Find which evaluationSet to increment
+                  for (EvaluationSet evaluationSet : evaluationSets) { 
                      if(evaluationSet.getName().equalsIgnoreCase(counter.getTestTrainOrValidation())){
                         evaluationSet.addInstance(instance);
                      }
@@ -95,26 +119,6 @@ public final class SetupTestTrainValidation {
    }
 
    /**
-    * The reason we repeatedly call UtilsInstances.getHeader(...) <p> 
-    * is because if not, they use the same header variable as the AL's value <p>
-    * Since they're the same, if 1 value is edited, all the others are as well. <p>
-    * They aren't technically edited, but since they point to the same object, it's just that 1 edit reflects to all
-    *
-    * @param evaluationSets
-    * @param source Source to get the headers from
-    * @throws Exception
-    */
-   private void addHeaders(ArrayList<EvaluationSet> evaluationSets, String source) throws Exception {
-      for (EvaluationSet evaluationSet : evaluationSets) {
-         evaluationSet.setInstances(
-            UtilsInstances.getHeader(
-               source, GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
-            )
-         );
-      }
-   }
-
-   /**
     * Doesn't get any instances.
     * <p>
     * Is literally just a counter
@@ -125,7 +129,7 @@ public final class SetupTestTrainValidation {
       private final int limit;
       private int cur;
 
-      public SplitFileCounter(String attackType, String fileType, int limit) {
+      private SplitFileCounter(String attackType, String fileType, int limit) {
          this.nominalName = attackType;
          this.testTrainOrValidation = fileType;
          this.limit = limit;

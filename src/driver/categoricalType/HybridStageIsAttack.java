@@ -22,46 +22,6 @@ public final class HybridStageIsAttack extends HybridStage{
    
    @Override
    public void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
-//<editor-fold defaultstate="collapsed" desc="Old Code">
-//      Set<SpecificAttackTypeEnum> sats = new HashSet(); // Unique values
-//      pfL.forEach((pf)->{
-//         sats.add(pf.getSpecificAttackType());
-//      });
-//
-//      /**
-//       * //Todo, fix
-//       * The loop repeats for an unnecessary amount of iterations,
-//       * initialising the same value to total instance count
-//       */
-//      for (SpecificAttackTypeEnum sat : sats) {
-//         Predicate<PreprocessFile> sameSpecificAttackTypeCategory = (pf)->{
-//            if(sat == SpecificAttackTypeEnum.NORMAL){
-//               return pf.getSpecificAttackType() == SpecificAttackTypeEnum.NORMAL;
-//            } else{ //Assumes anything != normal is an attack
-//               return pf.getSpecificAttackType() != SpecificAttackTypeEnum.NORMAL;
-//            }
-//         };
-//
-//         Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType().equals(sat);
-//         int sameSATCount = (int) pfL.stream()
-//            .filter(sameSAT)
-//            .count();
-//
-//         pfL.stream()
-//            .filter(sameSpecificAttackTypeCategory)
-//            .filter(sameSAT)
-//            .forEach((pf)->{
-//               // divided by 2 since we have categories: attack or not
-//               int attackTypeCategoryTotalInstanceCount = totalInstanceCount/2;
-//               pf.setInstancesCount(
-//                 attackTypeCategoryTotalInstanceCount / (sats.size() * sameSATCount)
-//               );
-//            }
-//         );
-//      }
-//</editor-fold>
-
-      //Divided by 2 since we have 2 attack type categories: normal, and attack
       int halfTotalInstancesCount = totalInstanceCount/2;
 
       int normalPFLs = (int) pfL.stream()

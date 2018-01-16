@@ -1,0 +1,76 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         4.7035 * (normalized) src_bytes
+ +      -0.0319 * (normalized) dst_bytes
+ +       0.2464 * (normalized) dst_host_count
+ +       0.3327 * (normalized) dst_host_srv_count
+ +      -8.46   * (normalized) dst_host_same_src_port_rate
+ +       0.497 
+
+Number of kernel evaluations: 36966 (51.64% cached)
+
+Classifier for classes: HIGH_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0557 * (normalized) src_bytes
+ +       0.2717 * (normalized) dst_bytes
+ +      -1.405  * (normalized) dst_host_count
+ +       5.0717 * (normalized) dst_host_srv_count
+ +       0.5046 * (normalized) dst_host_same_src_port_rate
+ -       2.1024
+
+Number of kernel evaluations: 96610 (72.143% cached)
+
+Classifier for classes: LOW_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0117 * (normalized) src_bytes
+ +       0.4347 * (normalized) dst_bytes
+ +      -0.837  * (normalized) dst_host_count
+ +       4.8783 * (normalized) dst_host_srv_count
+ +       3.566  * (normalized) dst_host_same_src_port_rate
+ -       2.5838
+
+Number of kernel evaluations: 90114 (74.339% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         702               71.5596 %
+Incorrectly Classified Instances       279               28.4404 %
+Kappa statistic                          0.5702
+Mean absolute error                      0.2881
+Root mean squared error                  0.3742
+Relative absolute error                 64.8538 %
+Root relative squared error             79.384  %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.162    0.011    0.879      0.162    0.273      0.300    0.750     0.517     HIGH_RATE
+                 0.997    0.420    0.550      0.997    0.709      0.562    0.789     0.549     LOW_RATE
+                 0.958    0.000    1.000      0.958    0.979      0.968    0.980     0.975     NORMAL
+Weighted Avg.    0.716    0.146    0.808      0.716    0.661      0.616    0.841     0.684     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  51 264   0 |   a = HIGH_RATE
+   1 332   0 |   b = LOW_RATE
+   6   8 319 |   c = NORMAL

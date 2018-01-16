@@ -3,192 +3,192 @@ Naive Bayes Classifier
 
                                   Class
 Attribute                        normal    attack
-                                 (0.15)    (0.85)
+                                  (0.5)     (0.5)
 ==================================================
 duration
-  mean                            4.9195    2.3722
-  std. dev.                       25.282    6.3518
-  weight sum                         571      3229
-  precision                       6.3409    6.3409
+  mean                            2.2959    2.1506
+  std. dev.                      15.7294    5.9948
+  weight sum                        2000      2000
+  precision                       4.6102    4.6102
 
 protocol_type
-  tcp                              572.0    2672.0
+  tcp                             2001.0    1501.0
   icmp                               1.0       1.0
-  udp                                1.0     559.0
-  [total]                          574.0    3232.0
+  udp                                1.0     501.0
+  [total]                         2003.0    2003.0
 
 flag
-  OTH                              345.0    1958.0
-  REJ                               11.0       1.0
-  RSTO                              16.0     183.0
+  OTH                              374.0    1294.0
+  REJ                              116.0       1.0
+  RSTO                              34.0     102.0
   RSTOS0                             1.0       1.0
   RSTR                               6.0       1.0
-  S0                                 1.0       1.0
-  S1                                11.0     556.0
-  S2                                 2.0      22.0
-  S3                                 1.0     515.0
-  SF                               187.0       1.0
+  S0                                13.0       1.0
+  S1                                23.0     295.0
+  S2                                 4.0      12.0
+  S3                                 2.0     302.0
+  SF                              1437.0       1.0
   SH                                 1.0       1.0
-  [total]                          582.0    3240.0
+  [total]                         2011.0    2011.0
 
 src_bytes
-  mean                          521.6418  236.1736
-  std. dev.                    1825.9667  356.5827
-  weight sum                         571      3229
-  precision                      77.0853   77.0853
+  mean                          343.4758  198.3963
+  std. dev.                     975.7439  331.7989
+  weight sum                        2000      2000
+  precision                      53.3969   53.3969
 
 dst_bytes
-  mean                         2686.3275  234.9861
-  std. dev.                   13875.9652   448.286
-  weight sum                         571      3229
-  precision                    1090.1869 1090.1869
+  mean                         4096.5641  124.8901
+  std. dev.                   21069.4129  261.4073
+  weight sum                        2000      2000
+  precision                     557.5453  557.5453
 
 wrong_fragment
   mean                                 0         0
   std. dev.                       0.0017    0.0017
-  weight sum                         571      3229
+  weight sum                        2000      2000
   precision                         0.01      0.01
 
 urgent
   mean                                 0         0
   std. dev.                       0.0017    0.0017
-  weight sum                         571      3229
+  weight sum                        2000      2000
   precision                         0.01      0.01
 
 count
-  mean                            76.768 3518.2519
-  std. dev.                     113.2941 6475.9365
-  weight sum                         571      3229
-  precision                      16.7691   16.7691
+  mean                           25.8148 3315.5695
+  std. dev.                      65.7734 6322.7832
+  weight sum                        2000      2000
+  precision                      24.3996   24.3996
 
 srv_count
-  mean                           92.6751 3511.3421
-  std. dev.                     113.0449 6478.9555
-  weight sum                         571      3229
-  precision                      17.0427   17.0427
+  mean                           33.5153 3308.4575
+  std. dev.                      69.7654 6325.5867
+  weight sum                        2000      2000
+  precision                      24.6436   24.6436
 
 serror_rate
-  mean                            0.0119    0.2808
-  std. dev.                       0.0991    0.4225
-  weight sum                         571      3229
-  precision                        0.011     0.011
+  mean                            0.0152    0.2506
+  std. dev.                       0.0974    0.4088
+  weight sum                        2000      2000
+  precision                       0.0115    0.0115
 
 srv_serror_rate
-  mean                            0.0164    0.2877
-  std. dev.                       0.0854    0.4274
-  weight sum                         571      3229
-  precision                       0.0103    0.0103
+  mean                            0.0174    0.2572
+  std. dev.                       0.0933    0.4141
+  weight sum                        2000      2000
+  precision                       0.0112    0.0112
 
 rerror_rate
-  mean                            0.0171         0
-  std. dev.                       0.1257    0.0417
-  weight sum                         571      3229
-  precision                         0.25      0.25
+  mean                            0.0578         0
+  std. dev.                       0.2306    0.0111
+  weight sum                        2000      2000
+  precision                       0.0667    0.0667
 
 srv_rerror_rate
-  mean                            0.0175         0
-  std. dev.                       0.1274    0.0333
-  weight sum                         571      3229
-  precision                          0.2       0.2
+  mean                             0.057         0
+  std. dev.                       0.2268    0.0069
+  weight sum                        2000      2000
+  precision                       0.0417    0.0417
 
 same_srv_rate
-  mean                            0.9035    0.9754
-  std. dev.                        0.295    0.1189
-  weight sum                         571      3229
-  precision                       0.0149    0.0149
+  mean                            0.9537    0.9767
+  std. dev.                       0.2097    0.1155
+  weight sum                        2000      2000
+  precision                       0.0208    0.0208
 
 diff_srv_rate
-  mean                            0.0001     0.024
-  std. dev.                       0.0031    0.1165
-  weight sum                         571      3229
-  precision                       0.0149    0.0149
+  mean                            0.0015    0.0228
+  std. dev.                       0.0387    0.1135
+  weight sum                        2000      2000
+  precision                       0.0208    0.0208
 
 srv_diff_host_rate
-  mean                            0.2737    0.0187
-  std. dev.                       0.3639    0.0924
-  weight sum                         571      3229
-  precision                       0.0111    0.0111
+  mean                            0.1802    0.0182
+  std. dev.                       0.2984    0.0897
+  weight sum                        2000      2000
+  precision                       0.0114    0.0114
 
 dst_host_count
-  mean                           49.0991   71.1714
-  std. dev.                      70.1028   27.9841
-  weight sum                         571      3229
-  precision                       2.0565    2.0565
+  mean                          100.4024   67.4949
+  std. dev.                     101.1166   28.5229
+  weight sum                        2000      2000
+  precision                        1.186     1.186
 
 dst_host_srv_count
-  mean                           89.2669   70.3693
-  std. dev.                      91.5602   27.3008
-  weight sum                         571      3229
-  precision                       2.1983    2.1983
+  mean                          192.1731   67.4019
+  std. dev.                      96.4476   28.5651
+  weight sum                        2000      2000
+  precision                       1.4246    1.4246
 
 dst_host_same_srv_rate
-  mean                            0.9195    0.9953
-  std. dev.                       0.2704     0.057
-  weight sum                         571      3229
-  precision                       0.0313    0.0313
+  mean                            0.9587    0.9961
+  std. dev.                       0.1912     0.052
+  weight sum                        2000      2000
+  precision                       0.0294    0.0294
 
 dst_host_diff_srv_rate
-  mean                            0.0015    0.0041
-  std. dev.                       0.0279    0.0511
-  weight sum                         571      3229
-  precision                        0.033     0.033
+  mean                            0.0029    0.0034
+  std. dev.                       0.0389    0.0466
+  weight sum                        2000      2000
+  precision                        0.037     0.037
 
 dst_host_same_src_port_rate
-  mean                            0.4725    0.2087
-  std. dev.                       0.4401    0.3908
-  weight sum                         571      3229
-  precision                       0.0127    0.0127
+  mean                            0.1868    0.2797
+  std. dev.                        0.332    0.4331
+  weight sum                        2000      2000
+  precision                       0.0122    0.0122
 
 dst_host_srv_diff_host_rate
-  mean                            0.2769    0.0043
-  std. dev.                       0.3907    0.0508
-  weight sum                         571      3229
-  precision                        0.012     0.012
+  mean                            0.1254    0.0043
+  std. dev.                       0.2699    0.0518
+  weight sum                        2000      2000
+  precision                       0.0111    0.0111
 
 dst_host_serror_rate
-  mean                            0.0071    0.3238
-  std. dev.                       0.0778    0.4573
-  weight sum                         571      3229
-  precision                       0.0123    0.0123
+  mean                            0.0086    0.2924
+  std. dev.                       0.0728    0.4466
+  weight sum                        2000      2000
+  precision                       0.0149    0.0149
 
 dst_host_srv_serror_rate
-  mean                            0.0127    0.3245
-  std. dev.                       0.0731    0.4577
-  weight sum                         571      3229
-  precision                       0.0119    0.0119
+  mean                            0.0079     0.293
+  std. dev.                       0.0607     0.447
+  weight sum                        2000      2000
+  precision                       0.0145    0.0145
 
 dst_host_rerror_rate
-  mean                            0.0168         0
-  std. dev.                       0.1227    0.0167
-  weight sum                         571      3229
-  precision                          0.1       0.1
+  mean                            0.0562         0
+  std. dev.                       0.2208    0.0035
+  weight sum                        2000      2000
+  precision                       0.0213    0.0213
 
 dst_host_srv_rerror_rate
-  mean                            0.0183         0
-  std. dev.                       0.1245    0.0128
-  weight sum                         571      3229
-  precision                       0.0769    0.0769
+  mean                            0.0585         0
+  std. dev.                       0.2205     0.003
+  weight sum                        2000      2000
+  precision                       0.0182    0.0182
 
 
 === Dedicated test set ===
 === Summary of NB ===
 
-Correctly Classified Instances         837               88.1053 %
-Incorrectly Classified Instances       113               11.8947 %
-Kappa statistic                          0.6475
-Mean absolute error                      0.1498
-Root mean squared error                  0.3557
-Relative absolute error                 58.5908 %
-Root relative squared error             99.4764 %
-Total Number of Instances              950     
+Correctly Classified Instances         672               67.2    %
+Incorrectly Classified Instances       328               32.8    %
+Kappa statistic                          0.344 
+Mean absolute error                      0.3265
+Root mean squared error                  0.5688
+Relative absolute error                 65.3026 %
+Root relative squared error            113.7597 %
+Total Number of Instances             1000     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.993    0.139    0.559      0.993    0.715      0.690    0.986     0.894     normal
-                 0.861    0.007    0.999      0.861    0.925      0.690    0.984     0.996     attack
-Weighted Avg.    0.881    0.027    0.932      0.881    0.893      0.690    0.985     0.981     
+                 0.466    0.122    0.793      0.466    0.587      0.378    0.870     0.853     normal
+                 0.878    0.534    0.622      0.878    0.728      0.378    0.860     0.869     attack
+Weighted Avg.    0.672    0.328    0.707      0.672    0.657      0.378    0.865     0.861     
 === Confusion Matrix ===
 
    a   b   <-- classified as
- 142   1 |   a = normal
- 112 695 |   b = attack
+ 233 267 |   a = normal
+  61 439 |   b = attack

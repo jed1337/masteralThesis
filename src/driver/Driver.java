@@ -17,8 +17,10 @@ import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
-import featureExtraction.KDDExtraction;
+import featureExtraction.NetmateExtraction;
 import featureSelection.FeatureSelection;
+import featureSelection.J48Wrapper;
+import featureSelection.NBWrapper;
 import featureSelection.NoFeatureSelection;
 import globalParameters.GlobalFeatureExtraction;
 
@@ -58,14 +60,14 @@ public final class Driver {
 //</editor-fold>
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-      GlobalFeatureExtraction.setInstance(new KDDExtraction());
-//      GlobalFeatureExtraction.setInstance(new NetmateExtraction());
+//      GlobalFeatureExtraction.setInstance(new KDDExtraction());
+      GlobalFeatureExtraction.setInstance(new NetmateExtraction());
       final int instanceCount = ArffInstanceCount.HALVED;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
          NoFeatureSelection.getInstance(),
-//         new NBWrapper(),
-//         new J48Wrapper()
+         new NBWrapper(),
+         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
          new GeneralAttackType(),
@@ -83,7 +85,6 @@ public final class Driver {
                   instanceCount,
                   new Single (noiseLevel, categoricalType)
                ).build());
-               System.out.println("");
             }
          }
          for (NoiseLevel noiseLevel : noiseLevels) {

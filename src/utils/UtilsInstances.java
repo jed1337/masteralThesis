@@ -12,12 +12,29 @@ import weka.core.Instances;
 public final class UtilsInstances{
    private UtilsInstances() {}
    
+   /**
+    * Gets the Instances specified in the path and sets the class index 
+    * as the last attribute
+    * @param path Where to get the instances from
+    * @return
+    * @throws FileNotFoundException
+    * @throws IOException 
+    */
    public static Instances getInstances(String path) throws FileNotFoundException, IOException {
       Instances instances = new Instances(Utils.getBufferedReader(path));
       instances.setClassIndex(instances.numAttributes()-1);
       return instances;
    }
    
+   /**
+    * Gets the header from the arff file specified in path and
+    * removes all the features to remove
+    * @param path The path to get the arff file from
+    * @param featuresToRemove 
+    * @return
+    * @throws IOException
+    * @throws Exception 
+    */
    public static Instances getHeader(String path, List<String> featuresToRemove) throws IOException, Exception{
       FormatAsArff faa = new FormatAsArff(path);
       faa.removeAllInstances();
@@ -49,8 +66,9 @@ public final class UtilsInstances{
       MutableInt count;
 
       if(attributeIndex == -1){
-         throw new IOException
-            ("Attribute "+attributeName+" not found. The class count can't continue");
+         throw new IOException(
+            "Attribute "+attributeName+" not found. getClassCount can't continue"
+         );
       }
 
       for (int i = instances.numInstances() - 1; i >= 0; i--) {

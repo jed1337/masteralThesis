@@ -5,13 +5,13 @@ import java.util.List;
 import preprocessFiles.PreprocessFile;
 
 public interface CategoricalType {
-   /**
-    * Returns the number of classes in pfL. 
-    * What a class is depends on the implementing subclass of CategoricalType
-    * @param pfL
-    * @return 
-    */
-   public int getClassCount(List<PreprocessFile> pfL);
+//   /**
+//    * Returns the number of classes in pfL. 
+//    * What a class is depends on the implementing subclass of CategoricalType
+//    * @param pfL
+//    * @return 
+//    */
+//   public int getClassCount(List<PreprocessFile> pfL);
    
    /**
     * Relabels the specific attack type depending on the implementation.<p>

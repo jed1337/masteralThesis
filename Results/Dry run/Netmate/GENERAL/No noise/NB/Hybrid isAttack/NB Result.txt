@@ -1,48 +1,66 @@
 === Classifier ===
 Naive Bayes Classifier
 
-                    Class
-Attribute          normal   attack
-                   (0.16)   (0.84)
-===================================
-total_bpackets
-  mean                   0 102.4756
-  std. dev.         2.5604 478.1225
-  weight sum           571     3056
-  precision        15.3625  15.3625
+                         Class
+Attribute               normal        attack
+                        (0.52)        (0.48)
+=============================================
+total_fpackets
+  mean                   4.9844      1921.402
+  std. dev.             61.7712     3440.7872
+  weight sum               2000          1866
+  precision              24.196        24.196
 
-min_fpktl
-  mean            165.9283  48.4893
-  std. dev.       235.9912  14.0962
-  weight sum           571     3056
-  precision         9.4481   9.4481
+mean_fpktl
+  mean                  181.043       80.3478
+  std. dev.            246.2445       52.8763
+  weight sum               2000          1866
+  precision              4.2669        4.2669
 
-max_fpktl
-  mean            185.9889 227.5237
-  std. dev.       271.4017 240.2201
-  weight sum           571     3056
-  precision         6.5378   6.5378
+min_bpktl
+  mean                        0       44.1645
+  std. dev.              5.0833       27.2678
+  weight sum               2000          1866
+  precision                30.5          30.5
+
+min_biat
+  mean                        0     2709.6631
+  std. dev.            529.3374    57506.6139
+  weight sum               2000          1866
+  precision           3176.0247     3176.0247
+
+max_biat
+  mean                        0   158137.7514
+  std. dev.            251.1584   316145.7705
+  weight sum               2000          1866
+  precision           1506.9506     1506.9506
+
+duration
+  mean              753353.2112  15615243.536
+  std. dev.        2235929.8328 13049661.9996
+  weight sum               2000          1866
+  precision          14215.1503    14215.1503
 
 
 === Dedicated test set ===
 === Summary of NB ===
 
-Correctly Classified Instances         870               95.9206 %
-Incorrectly Classified Instances        37                4.0794 %
-Kappa statistic                          0.8367
-Mean absolute error                      0.3626
-Root mean squared error                  0.4124
-Relative absolute error                136.5453 %
-Root relative squared error            113.1757 %
-Total Number of Instances              907     
+Correctly Classified Instances         958               99.0693 %
+Incorrectly Classified Instances         9                0.9307 %
+Kappa statistic                          0.9814
+Mean absolute error                      0.0093
+Root mean squared error                  0.0965
+Relative absolute error                  1.8676 %
+Root relative squared error             19.3063 %
+Total Number of Instances              967     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.797    0.010    0.934      0.797    0.860      0.840    0.871     0.814     normal
-                 0.990    0.203    0.963      0.990    0.976      0.840    0.871     0.962     attack
-Weighted Avg.    0.959    0.172    0.959      0.959    0.958      0.840    0.871     0.938     
+                 0.998    0.017    0.984      0.998    0.991      0.981    0.994     0.991     normal
+                 0.983    0.002    0.998      0.983    0.990      0.981    0.994     0.996     attack
+Weighted Avg.    0.991    0.010    0.991      0.991    0.991      0.981    0.994     0.993     
 === Confusion Matrix ===
 
    a   b   <-- classified as
- 114  29 |   a = normal
-   8 756 |   b = attack
+ 499   1 |   a = normal
+   8 459 |   b = attack

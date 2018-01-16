@@ -5,22 +5,22 @@ using 1 nearest neighbour(s) for classification
 === Dedicated test set ===
 === Summary of KNN===
 
-Correctly Classified Instances         898               99.0077 %
-Incorrectly Classified Instances         9                0.9923 %
-Kappa statistic                          0.963 
-Mean absolute error                      0.0095
-Root mean squared error                  0.0915
-Relative absolute error                  3.579  %
-Root relative squared error             25.1138 %
-Total Number of Instances              907     
+Correctly Classified Instances         952               98.4488 %
+Incorrectly Classified Instances        15                1.5512 %
+Kappa statistic                          0.9689
+Mean absolute error                      0.0159
+Root mean squared error                  0.1222
+Relative absolute error                  3.1891 %
+Root relative squared error             24.4513 %
+Total Number of Instances              967     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.979    0.008    0.959      0.979    0.969      0.963    0.989     0.979     normal
-                 0.992    0.021    0.996      0.992    0.994      0.963    0.989     0.996     attack
-Weighted Avg.    0.990    0.019    0.990      0.990    0.990      0.963    0.989     0.993     
+                 0.994    0.026    0.976      0.994    0.985      0.969    0.993     0.992     normal
+                 0.974    0.006    0.993      0.974    0.984      0.969    0.993     0.988     attack
+Weighted Avg.    0.984    0.016    0.985      0.984    0.984      0.969    0.993     0.990     
 === Confusion Matrix ===
 
    a   b   <-- classified as
- 140   3 |   a = normal
-   6 758 |   b = attack
+ 497   3 |   a = normal
+  12 455 |   b = attack

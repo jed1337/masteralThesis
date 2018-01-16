@@ -9,7 +9,9 @@ public class EvaluationTableConstants {
 	public final static String PREC       = "Prec";
 	public final static String RECALL     = "Recall";
 	public final static String FSCORE     = "Fscore";
-	public final static String KAPPA      = "Kappa";
+   
+	public final static String KAPPA            = "Kappa";
+	public final static String CONFUSION_MATRIX = "ConfusionMatrix";
 
 	private EvaluationTableConstants(){}
 }

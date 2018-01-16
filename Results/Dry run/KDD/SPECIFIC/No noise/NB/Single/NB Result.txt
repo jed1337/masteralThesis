@@ -1,0 +1,78 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                           Class
+Attribute               tcpFlood      normal   httpFlood    slowRead slowHeaders    udpFlood    slowBody
+                          (0.15)      (0.15)      (0.15)      (0.15)      (0.15)       (0.1)      (0.15)
+=========================================================================================================
+protocol_type
+  tcp                       572.0       572.0       572.0       572.0       572.0         1.0       572.0
+  icmp                        1.0         1.0         1.0         1.0         1.0         1.0         1.0
+  udp                         1.0         1.0         1.0         1.0         1.0       373.0         1.0
+  [total]                   574.0       574.0       574.0       574.0       574.0       375.0       574.0
+
+flag
+  OTH                       572.0         1.0       156.0       202.0       213.0       373.0       182.0
+  REJ                         1.0        46.0         1.0         1.0         1.0         1.0         1.0
+  RSTO                        1.0         2.0        62.0        67.0       100.0         1.0        51.0
+  RSTOS0                      1.0         1.0         1.0         1.0         1.0         1.0         1.0
+  RSTR                        1.0         1.0         1.0         1.0         1.0         1.0         1.0
+  S0                          1.0         3.0         1.0         1.0         1.0         1.0         1.0
+  S1                          1.0         2.0        14.0       305.0       255.0         1.0       328.0
+  S2                          1.0         3.0         1.0         1.0         6.0         1.0        14.0
+  S3                          1.0         1.0       343.0         1.0         1.0         1.0         1.0
+  SF                          1.0       521.0         1.0         1.0         2.0         1.0         1.0
+  SH                          1.0         1.0         1.0         1.0         1.0         1.0         1.0
+  [total]                   582.0       582.0       582.0       582.0       582.0       383.0       582.0
+
+srv_count
+  mean                 12675.4341      11.894    277.9186    405.7712    356.6873    109.6432    383.7254
+  std. dev.             7123.1551     14.7253    246.8913    296.3617    283.4655     34.5476    282.1422
+  weight sum                  571         571         571         571         571         372         571
+  precision                19.131      19.131      19.131      19.131      19.131      19.131      19.131
+
+rerror_rate
+  mean                          0      0.0796           0           0           0           0           0
+  std. dev.                0.0185      0.2657      0.0185      0.0185      0.0185      0.0185      0.0185
+  weight sum                  571         571         571         571         571         372         571
+  precision                0.1111      0.1111      0.1111      0.1111      0.1111      0.1111      0.1111
+
+dst_host_srv_count
+  mean                    69.0825    244.7189     83.4278     82.5347     80.4238     31.9169     83.8776
+  std. dev.                4.5734     40.2482     29.2556     24.7158     26.5071      7.2245     25.5568
+  weight sum                  571         571         571         571         571         372         571
+  precision                1.8345      1.8345      1.8345      1.8345      1.8345      1.8345      1.8345
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         629               66.1409 %
+Incorrectly Classified Instances       322               33.8591 %
+Kappa statistic                          0.6039
+Mean absolute error                      0.1045
+Root mean squared error                  0.2293
+Relative absolute error                 42.8021 %
+Root relative squared error             65.6263 %
+Total Number of Instances              951     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.986    0.000    1.000      0.986    0.993      0.992    1.000     0.999     tcpFlood
+                 0.979    0.000    1.000      0.979    0.989      0.988    1.000     1.000     normal
+                 0.643    0.010    0.920      0.643    0.757      0.738    0.948     0.844     httpFlood
+                 0.287    0.067    0.432      0.287    0.345      0.262    0.828     0.392     slowRead
+                 0.336    0.156    0.276      0.336    0.303      0.166    0.800     0.323     slowHeaders
+                 1.000    0.002    0.979      1.000    0.989      0.988    1.000     1.000     udpFlood
+                 0.517    0.163    0.359      0.517    0.424      0.307    0.824     0.380     slowBody
+Weighted Avg.    0.661    0.060    0.695      0.661    0.670      0.616    0.910     0.690     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 141   0   0   1   1   0   0 |   a = tcpFlood
+   0 140   1   0   2   0   0 |   b = normal
+   0   0  92   3  40   2   6 |   c = httpFlood
+   0   0   2  41  42   0  58 |   d = slowRead
+   0   0   2  25  48   0  68 |   e = slowHeaders
+   0   0   0   0   0  93   0 |   f = udpFlood
+   0   0   3  25  41   0  74 |   g = slowBody

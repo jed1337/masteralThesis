@@ -1,0 +1,91 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.1994 * (normalized) flag=OTH
+ +       0.8003 * (normalized) flag=RSTO
+ +       0.8    * (normalized) flag=S1
+ +       0.7991 * (normalized) flag=S2
+ +      -1.2    * (normalized) flag=S3
+ +       0.0013 * (normalized) dst_host_count
+ +      -0.0003 * (normalized) dst_host_same_srv_rate
+ +       0      * (normalized) dst_host_diff_srv_rate
+ +       0.1999
+
+Number of kernel evaluations: 440413 (54.832% cached)
+
+Classifier for classes: HIGH_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.3968 * (normalized) flag=OTH
+ +       0.6431 * (normalized) flag=REJ
+ +      -1      * (normalized) flag=RSTO
+ +       0.5961 * (normalized) flag=RSTR
+ +       0.6472 * (normalized) flag=S0
+ +       0.6063 * (normalized) flag=S1
+ +       0.6437 * (normalized) flag=S2
+ +      -1.3957 * (normalized) flag=S3
+ +       0.656  * (normalized) flag=SF
+ +      -0.057  * (normalized) dst_host_count
+ +      -1.9923 * (normalized) dst_host_same_srv_rate
+ +      -0.2934 * (normalized) dst_host_diff_srv_rate
+ +       2.3962
+
+Number of kernel evaluations: 478093 (76.294% cached)
+
+Classifier for classes: LOW_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -2.6203 * (normalized) flag=OTH
+ +       2      * (normalized) flag=REJ
+ +      -3.335  * (normalized) flag=RSTO
+ +       1      * (normalized) flag=S0
+ +      -2.0814 * (normalized) flag=S1
+ +      -0.9972 * (normalized) flag=S2
+ +       6.0339 * (normalized) flag=SF
+ +      -8.278  * (normalized) dst_host_count
+ +      -1.0905 * (normalized) dst_host_same_srv_rate
+ +       0.2554 * (normalized) dst_host_diff_srv_rate
+ +       4.3342
+
+Number of kernel evaluations: 466673 (71.333% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         545               55.5556 %
+Incorrectly Classified Instances       436               44.4444 %
+Kappa statistic                          0.3393
+Mean absolute error                      0.3674
+Root mean squared error                  0.4683
+Relative absolute error                 82.6988 %
+Root relative squared error             99.3519 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.851    0.569    0.414      0.851    0.557      0.278    0.662     0.412     HIGH_RATE
+                 0.640    0.082    0.801      0.640    0.711      0.594    0.813     0.653     LOW_RATE
+                 0.192    0.006    0.941      0.192    0.319      0.347    0.553     0.460     NORMAL
+Weighted Avg.    0.556    0.213    0.724      0.556    0.529      0.409    0.677     0.510     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 268  45   2 |   a = HIGH_RATE
+ 118 213   2 |   b = LOW_RATE
+ 261   8  64 |   c = NORMAL

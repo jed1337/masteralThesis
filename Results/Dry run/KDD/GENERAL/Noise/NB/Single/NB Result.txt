@@ -1,0 +1,64 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                             Class
+Attribute                HIGH_RATE  LOW_RATE    NORMAL
+                            (0.32)    (0.34)    (0.34)
+=======================================================
+flag
+  OTH                        1233.0     476.0     275.0
+  REJ                           1.0       1.0      76.0
+  RSTO                          5.0     173.0       8.0
+  RSTOS0                        1.0       1.0       1.0
+  RSTR                          1.0       1.0       7.0
+  S0                            1.0       1.0       7.0
+  S1                            2.0     669.0      17.0
+  S2                            1.0      18.0       4.0
+  S3                           24.0       1.0       1.0
+  SF                            1.0       1.0     947.0
+  SH                            1.0       1.0       1.0
+  [total]                    1271.0    1343.0    1344.0
+
+dst_host_count
+  mean                      53.2785   81.9284   99.9907
+  std. dev.                 20.4234   25.5492  100.5391
+  weight sum                   1260      1332      1333
+  precision                  1.2687    1.2687    1.2687
+
+dst_host_same_srv_rate
+  mean                       0.9986    0.9991    0.9682
+  std. dev.                  0.0352    0.0275    0.1674
+  weight sum                   1260      1332      1333
+  precision                    0.05      0.05      0.05
+
+dst_host_diff_srv_rate
+  mean                       0.0006    0.0001    0.0029
+  std. dev.                  0.0221    0.0119    0.0437
+  weight sum                   1260      1332      1333
+  precision                  0.0714    0.0714    0.0714
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         538               54.842  %
+Incorrectly Classified Instances       443               45.158  %
+Kappa statistic                          0.328 
+Mean absolute error                      0.3298
+Root mean squared error                  0.5148
+Relative absolute error                 74.224  %
+Root relative squared error            109.2135 %
+Total Number of Instances              981     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.784    0.545    0.405      0.784    0.534      0.230    0.536     0.409     HIGH_RATE
+                 0.691    0.113    0.759      0.691    0.723      0.592    0.863     0.802     LOW_RATE
+                 0.183    0.011    0.897      0.183    0.304      0.321    0.785     0.680     NORMAL
+Weighted Avg.    0.548    0.217    0.692      0.548    0.520      0.384    0.732     0.635     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 247  61   7 |   a = HIGH_RATE
+ 103 230   0 |   b = LOW_RATE
+ 260  12  61 |   c = NORMAL

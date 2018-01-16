@@ -5,30 +5,30 @@ using 1 nearest neighbour(s) for classification
 === Dedicated test set ===
 === Summary of KNN===
 
-Correctly Classified Instances         723               77.9095 %
-Incorrectly Classified Instances       205               22.0905 %
-Kappa statistic                          0.7332
-Mean absolute error                      0.0743
-Root mean squared error                  0.2711
-Relative absolute error                 26.9362 %
-Root relative squared error             72.9826 %
-Total Number of Instances              928     
+Correctly Classified Instances         835               94.3503 %
+Incorrectly Classified Instances        50                5.6497 %
+Kappa statistic                          0.931 
+Mean absolute error                      0.0191
+Root mean squared error                  0.1354
+Relative absolute error                  7.0151 %
+Root relative squared error             36.6624 %
+Total Number of Instances              885     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.994    0.007    0.971      0.994    0.982      0.978    0.994     0.966     tcpFlood
-                 0.976    0.005    0.976      0.976    0.976      0.971    0.987     0.963     httpFlood
-                 0.593    0.067    0.660      0.593    0.625      0.549    0.786     0.474     slowRead
-                 0.611    0.085    0.611      0.611    0.611      0.525    0.788     0.452     slowHeaders
-                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
-                 0.599    0.105    0.556      0.599    0.576      0.480    0.770     0.415     slowBody
-Weighted Avg.    0.779    0.048    0.779      0.779    0.779      0.731    0.879     0.689     
+                 1.000    0.001    0.980      1.000    0.990      0.990    0.999     0.981     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     httpFlood
+                 0.946    0.019    0.919      0.946    0.932      0.916    0.962     0.889     slowRead
+                 0.862    0.026    0.883      0.862    0.873      0.844    0.921     0.792     slowHeaders
+                 0.988    0.000    1.000      0.988    0.994      0.993    0.991     0.990     udpFlood
+                 0.904    0.022    0.904      0.904    0.904      0.882    0.942     0.841     slowBody
+Weighted Avg.    0.944    0.013    0.943      0.944    0.943      0.930    0.965     0.907     
 === Confusion Matrix ===
 
    a   b   c   d   e   f   <-- classified as
- 166   0   0   1   0   0 |   a = tcpFlood
-   1 163   0   2   0   1 |   b = httpFlood
-   4   2  99  29   0  33 |   c = slowRead
-   0   0  19 102   0  46 |   d = slowHeaders
-   0   0   0   0  93   0 |   e = udpFlood
-   0   2  32  33   0 100 |   f = slowBody
+  50   0   0   0   0   0 |   a = tcpFlood
+   0 167   0   0   0   0 |   b = httpFlood
+   0   0 158   5   0   4 |   c = slowRead
+   0   0  11 144   0  12 |   d = slowHeaders
+   1   0   1   0 165   0 |   e = udpFlood
+   0   0   2  14   0 151 |   f = slowBody

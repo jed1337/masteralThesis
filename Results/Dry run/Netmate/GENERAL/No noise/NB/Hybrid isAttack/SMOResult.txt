@@ -10,33 +10,36 @@ BinarySMO
 
 Machine linear: showing attribute weights, not support vectors.
 
-         0.4782 * (normalized) total_bpackets
- +     -12.6625 * (normalized) min_fpktl
- +      -0.0004 * (normalized) max_fpktl
- +       1.1993
+         6.5271 * (normalized) total_fpackets
+ +      -1.9026 * (normalized) mean_fpktl
+ +       3.3181 * (normalized) min_bpktl
+ +       0.0068 * (normalized) min_biat
+ +       0.0068 * (normalized) max_biat
+ +       3.2809 * (normalized) duration
+ -       1.6516
 
-Number of kernel evaluations: 32972 (49.239% cached)
+Number of kernel evaluations: 33271 (67.057% cached)
 
 
 === Dedicated test set ===
 === Summary of SMO===
 
-Correctly Classified Instances         784               86.4388 %
-Incorrectly Classified Instances       123               13.5612 %
-Kappa statistic                          0.2351
-Mean absolute error                      0.1356
-Root mean squared error                  0.3683
-Relative absolute error                 51.0624 %
-Root relative squared error            101.0512 %
-Total Number of Instances              907     
+Correctly Classified Instances         959               99.1727 %
+Incorrectly Classified Instances         8                0.8273 %
+Kappa statistic                          0.9834
+Mean absolute error                      0.0083
+Root mean squared error                  0.091 
+Relative absolute error                  1.6566 %
+Root relative squared error             18.2018 %
+Total Number of Instances              967     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.161    0.004    0.885      0.161    0.272      0.343    0.578     0.275     normal
-                 0.996    0.839    0.864      0.996    0.925      0.343    0.578     0.864     attack
-Weighted Avg.    0.864    0.707    0.867      0.864    0.822      0.343    0.578     0.771     
+                 1.000    0.017    0.984      1.000    0.992      0.984    0.991     0.984     normal
+                 0.983    0.000    1.000      0.983    0.991      0.984    0.991     0.991     attack
+Weighted Avg.    0.992    0.009    0.992      0.992    0.992      0.984    0.991     0.988     
 === Confusion Matrix ===
 
    a   b   <-- classified as
-  23 120 |   a = normal
-   3 761 |   b = attack
+ 500   0 |   a = normal
+   8 459 |   b = attack

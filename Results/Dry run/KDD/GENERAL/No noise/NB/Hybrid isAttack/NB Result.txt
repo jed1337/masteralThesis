@@ -1,0 +1,92 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                                  Class
+Attribute                        normal    attack
+                                  (0.5)     (0.5)
+==================================================
+protocol_type
+  tcp                             2001.0    1501.0
+  icmp                               1.0       1.0
+  udp                                1.0     501.0
+  [total]                         2003.0    2003.0
+
+flag
+  OTH                                1.0    1294.0
+  REJ                              145.0       1.0
+  RSTO                               5.0     102.0
+  RSTOS0                             1.0       1.0
+  RSTR                               1.0       1.0
+  S0                                15.0       1.0
+  S1                                13.0     295.0
+  S2                                 5.0      12.0
+  S3                                 1.0     302.0
+  SF                              1823.0       1.0
+  SH                                 1.0       1.0
+  [total]                         2011.0    2011.0
+
+src_bytes
+  mean                          236.6249  207.0344
+  std. dev.                      88.0917  327.6771
+  weight sum                        2000      2000
+  precision                      14.1345   14.1345
+
+dst_bytes
+  mean                         6049.1368    5.3866
+  std. dev.                   84204.3191  448.8822
+  weight sum                        2000      2000
+  precision                    2693.2933 2693.2933
+
+srv_count
+  mean                             9.932 3308.6273
+  std. dev.                      15.0737 6325.6248
+  weight sum                        2000      2000
+  precision                      25.2402   25.2402
+
+rerror_rate
+  mean                            0.0726         0
+  std. dev.                       0.2572    0.0111
+  weight sum                        2000      2000
+  precision                       0.0667    0.0667
+
+dst_host_count
+  mean                          125.3217   67.6557
+  std. dev.                     104.3599   28.6579
+  weight sum                        2000      2000
+  precision                       1.0759    1.0759
+
+dst_host_diff_srv_rate
+  mean                            0.0002    0.0034
+  std. dev.                       0.0087     0.047
+  weight sum                        2000      2000
+  precision                       0.0521    0.0521
+
+dst_host_srv_diff_host_rate
+  mean                            0.0285    0.0043
+  std. dev.                       0.0466    0.0518
+  weight sum                        2000      2000
+  precision                       0.0211    0.0211
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         997               99.7    %
+Incorrectly Classified Instances         3                0.3    %
+Kappa statistic                          0.994 
+Mean absolute error                      0.0039
+Root mean squared error                  0.0557
+Relative absolute error                  0.7782 %
+Root relative squared error             11.1435 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.998    0.004    0.996      0.998    0.997      0.994    0.996     0.991     normal
+                 0.996    0.002    0.998      0.996    0.997      0.994    0.996     0.996     attack
+Weighted Avg.    0.997    0.003    0.997      0.997    0.997      0.994    0.996     0.994     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 499   1 |   a = normal
+   2 498 |   b = attack

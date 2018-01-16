@@ -7,22 +7,22 @@ weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabi
 === Dedicated test set ===
 === Summary of RF ===
 
-Correctly Classified Instances         900               99.2282 %
-Incorrectly Classified Instances         7                0.7718 %
-Kappa statistic                          0.9714
-Mean absolute error                      0.009 
-Root mean squared error                  0.0762
-Relative absolute error                  3.3936 %
-Root relative squared error             20.9191 %
-Total Number of Instances              907     
+Correctly Classified Instances         961               99.3795 %
+Incorrectly Classified Instances         6                0.6205 %
+Kappa statistic                          0.9876
+Mean absolute error                      0.0092
+Root mean squared error                  0.0786
+Relative absolute error                  1.8471 %
+Root relative squared error             15.7209 %
+Total Number of Instances              967     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.993    0.008    0.959      0.993    0.976      0.972    0.998     0.984     normal
-                 0.992    0.007    0.999      0.992    0.995      0.972    0.998     1.000     attack
-Weighted Avg.    0.992    0.007    0.992      0.992    0.992      0.972    0.998     0.997     
+                 1.000    0.013    0.988      1.000    0.994      0.988    0.998     0.996     normal
+                 0.987    0.000    1.000      0.987    0.994      0.988    0.998     0.998     attack
+Weighted Avg.    0.994    0.007    0.994      0.994    0.994      0.988    0.998     0.997     
 === Confusion Matrix ===
 
    a   b   <-- classified as
- 142   1 |   a = normal
-   6 758 |   b = attack
+ 500   0 |   a = normal
+   6 461 |   b = attack

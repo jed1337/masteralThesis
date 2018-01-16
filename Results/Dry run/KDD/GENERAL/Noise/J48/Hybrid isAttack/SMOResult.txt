@@ -1,0 +1,55 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0567 * (normalized) protocol_type=tcp
+ +       0.0567 * (normalized) protocol_type=udp
+ +       0.4673 * (normalized) flag=OTH
+ +      -1.6489 * (normalized) flag=REJ
+ +       0.52   * (normalized) flag=RSTO
+ +      -1.5514 * (normalized) flag=S0
+ +       0.4611 * (normalized) flag=S1
+ +       0.4508 * (normalized) flag=S2
+ +       3      * (normalized) flag=S3
+ +      -1.6988 * (normalized) flag=SF
+ +       1.5055 * (normalized) count
+ +       0.0121 * (normalized) srv_serror_rate
+ +       3.71   * (normalized) diff_srv_rate
+ +      -4.9199 * (normalized) srv_diff_host_rate
+ +       0.2735 * (normalized) dst_host_srv_count
+ +      -3.6907 * (normalized) dst_host_srv_diff_host_rate
+ +       0.4757
+
+Number of kernel evaluations: 1768962 (70.364% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         777               77.7    %
+Incorrectly Classified Instances       223               22.3    %
+Kappa statistic                          0.554 
+Mean absolute error                      0.223 
+Root mean squared error                  0.4722
+Relative absolute error                 44.6    %
+Root relative squared error             94.4458 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.554    0.000    1.000      0.554    0.713      0.619    0.777     0.777     normal
+                 1.000    0.446    0.692      1.000    0.818      0.619    0.777     0.692     attack
+Weighted Avg.    0.777    0.223    0.846      0.777    0.765      0.619    0.777     0.734     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 277 223 |   a = normal
+   0 500 |   b = attack

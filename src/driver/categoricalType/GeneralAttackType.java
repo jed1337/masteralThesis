@@ -10,18 +10,18 @@ import java.util.function.Predicate;
 import preprocessFiles.PreprocessFile;
 
 public final class GeneralAttackType implements CategoricalType{
-   /**
-    * Returns how many unique generalAttackTypes there are
-    * @param pfL
-    * @return
-    */
-   @Override
-   public int getClassCount(List<PreprocessFile> pfL) {
-      return (int) pfL.stream()
-         .map(pf->pf.getGeneralAttackType())
-         .distinct()
-         .count();
-   }
+//   /**
+//    * Returns how many unique generalAttackTypes there are
+//    * @param pfL
+//    * @return
+//    */
+//   @Override
+//   public int getClassCount(List<PreprocessFile> pfL) {
+//      return (int) pfL.stream()
+//         .map(pf->pf.getGeneralAttackType())
+//         .distinct()
+//         .count();
+//   }
 
    @Override
    public String getRelabelSpecificAttack(List<PreprocessFile> pfL) {
@@ -51,7 +51,10 @@ public final class GeneralAttackType implements CategoricalType{
       pfL.forEach((pf)->{
          gats.add(pf.getGeneralAttackType());
       });
-
+      
+      //todo also set distribution with respect to the specific attack type
+      //tcpflood t1, t2, udpflood u; 1000 instances
+      //t1 = 250, 52 = 250, u = 500;
       for (GeneralAttackTypeEnum gat : gats) {
          Predicate<PreprocessFile> sameGAT = (pf)->pf.getGeneralAttackType() == gat;
 
