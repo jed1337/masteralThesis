@@ -10,34 +10,6 @@ import preprocessFiles.PreprocessFile;
 
 public final class SpecificAttackType implements CategoricalType{
    /**
-    * Returns how many unique specificAttackTypes there are
-    * @param pfL
-    * @return 
-    */
-//   @Override
-//   public int getClassCount(List<PreprocessFile> pfL) {
-//      Set<SpecificAttackTypeEnum> specificTypes = new HashSet<>();
-//      int specEnumSize = 0;
-//      for (PreprocessFile pf : pfL) {
-//         specificTypes.addAll(Arrays.asList(pf.getSpecificAttackType()));
-//      }
-//      
-//      specEnumSize = specificTypes.size();
-//      
-//      Set<String> specificTypesString = new HashSet<>();
-//      int specStringSize = 0;
-//      for (PreprocessFile pf : pfL) {
-//         specificTypesString.addAll(Arrays.asList(pf.getSpecificAttackType().getValue()));
-//      }
-//      
-//      specStringSize = specificTypesString.size();
-//      
-//
-//      return specEnumSize;
-////      return specificTypes.size();
-//   }
-
-   /**
     * Returns a blank String. That means not to relabel anything.
     * @param pfL
     * @return 

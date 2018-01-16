@@ -10,19 +10,6 @@ import java.util.function.Predicate;
 import preprocessFiles.PreprocessFile;
 
 public final class GeneralAttackType implements CategoricalType{
-//   /**
-//    * Returns how many unique generalAttackTypes there are
-//    * @param pfL
-//    * @return
-//    */
-//   @Override
-//   public int getClassCount(List<PreprocessFile> pfL) {
-//      return (int) pfL.stream()
-//         .map(pf->pf.getGeneralAttackType())
-//         .distinct()
-//         .count();
-//   }
-
    @Override
    public String getRelabelSpecificAttack(List<PreprocessFile> pfL) {
       ArrayList<String> relabels = new ArrayList<>();

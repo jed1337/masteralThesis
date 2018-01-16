@@ -50,8 +50,6 @@ public final class SystemTrain {
 	private final ArrayList<ClassifierHolder> classifierHolders;
 	private final List<PreprocessFile> preprocessFiles;
 
-//   private final Connection connection;
-//   private final int mainID;
    private final DBInterface db;
 
    private final FeatureSelection fs;
@@ -74,26 +72,14 @@ public final class SystemTrain {
       this.evaluationSets.add(new EvaluationSet(this.validationPath  , 1));
 
       this.db = new Mysql();
-//      this.connection = setupConnection();
-//      this.mainID = insertMainTable(sp);
       this.db.insertMainTable(sp);
+      
       setupTestTrainValidation();
       applyFeatureSelection();
       evaluateClassifiers();
 	}
-//
-//   private Connection setupConnection() throws SQLException, ClassNotFoundException{
-//      Class.forName(DBConnectionConstants.DRIVER_CLASS);
-//      System.out.println("MySQL JDBC Driver Registered!");
-//
-//      Connection con = DriverManager.getConnection(DBConnectionConstants.CONNECTION_URL+DBConnectionConstants.DATABASE_NAME,
-//         DBConnectionConstants.USERNAME,
-//         DBConnectionConstants.PASSWORD
-//      );
-//      return con;
-//   }
 
-	private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> pfL, String relabel)
+   private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> pfL, String relabel)
 			  throws IOException, Exception {
 		for (PreprocessFile pf : pfL) {
 			pf.setUp();
@@ -144,8 +130,6 @@ public final class SystemTrain {
       );
       writeTestTrainValidation();
 
-//      insertToFeatureSelectionTable();
-//      insertToFeatureTable();
       this.db.insertToFeatureSelectionTable(this.fs);
       this.db.insertToFeatureTable(getEvaluationSet(this.trainPath));
    }
@@ -198,172 +182,4 @@ public final class SystemTrain {
 
       return eval;
    }
-   
-//   /**
-//    * Prints the status when multiple DB updates are made. Ideally, the output
-//    * should all be: "OK"
-//    * @param updateCounts
-//    */
-//   public static void checkUpdateCounts(int[] updateCounts) {
-//      for (int i = 0; i < updateCounts.length; i++) {
-//         if (updateCounts[i] >= 0) {
-//            System.out.println("OK; updateCount=" + updateCounts[i]);
-//         } else if (updateCounts[i] == Statement.SUCCESS_NO_INFO) {
-//            System.out.println("OK; updateCount=Statement.SUCCESS_NO_INFO");
-//         } else if (updateCounts[i] == Statement.EXECUTE_FAILED) {
-//            System.out.println("Failure; updateCount=Statement.EXECUTE_FAILED");
-//         }
-//      }
-//   }
-//   
-//   
-//   private int insertMainTable(SystemParameters sp) throws SQLException {
-//      String query =
-//         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s) VALUES (?,?,?,?,?);",
-//            DBConnectionConstants.DATABASE_NAME,
-//            MainTableConstants.TABLE_NAME,
-//
-//            MainTableConstants.SYSTEM_TYPE,
-//            MainTableConstants.CATEGORICAL_TYPE,
-//            MainTableConstants.NOISE_LEVEL,
-//            MainTableConstants.DATASET,
-//            MainTableConstants.EXTRACTION_TOOL
-//      );
-//
-//      PreparedStatement ps = this.connection.prepareStatement(
-//         query,
-//         Statement.RETURN_GENERATED_KEYS
-//      );
-//
-//      int i=1;
-//      ps.setString(i++, sp.getSystemType());
-//      ps.setString(i++, sp.getCategoricalType().name());
-//      ps.setFloat(i++, sp.getNoiseLevelFloat());
-//      ps.setString(i++, "Initial");
-//      ps.setString(i++, GlobalFeatureExtraction.getInstance().getName());
-//
-//      ps.executeUpdate();
-//
-//      ResultSet rs = ps.getGeneratedKeys();
-//      rs.next();
-//      int generatedID = rs.getInt(1);
-//      System.out.println("Generated primary key: "+generatedID);
-//      return generatedID;
-//   }
-//
-//   private void insertToFeatureSelectionTable() throws SQLException {
-//      String query =
-//        String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
-//          DBConnectionConstants.DATABASE_NAME,
-//          FeatureSelectionTableConstants.TABLE_NAME,
-//
-//          FeatureSelectionTableConstants.MAIN_ID,
-//          FeatureSelectionTableConstants.METHOD
-//      );
-//
-//      PreparedStatement ps = this.connection.prepareStatement(query);
-//
-//      int i=1;
-//      ps.setInt   (i++, this.mainID);
-//      ps.setString(i++, this.fs.getFSMethodName());
-//
-//      ps.executeUpdate();
-//   }
-//   
-//   private void insertToFeatureTable() throws NoSuchElementException, SQLException {
-//      String query =
-//        String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
-//          DBConnectionConstants.DATABASE_NAME,
-//          FeatureTableConstants.TABLE_NAME,
-//
-//          FeatureTableConstants.MAIN_ID,
-//          FeatureTableConstants.NAME
-//      );
-//
-//      PreparedStatement ps = this.connection.prepareStatement(query);
-//
-//      Instances trainSet = getEvaluationSet(this.trainPath);
-//
-//      for(int i=0; i< trainSet.numAttributes(); i++){
-//         int psIndex=1;
-//         ps.setInt   (psIndex++, this.mainID);
-//         ps.setString(psIndex++, trainSet.attribute(i).name());
-//
-//         ps.addBatch();
-//
-//         int[] updateCounts = ps.executeBatch();
-//         checkUpdateCounts(updateCounts);
-//      }
-//   }
-//
-//   private void insertToEvaluationTable(ClassifierHolder ch, CustomEvaluation eval)
-//           throws SQLException, Exception{
-//      String query =
-//        String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?,?,?,?);",
-//          DBConnectionConstants.DATABASE_NAME,
-//          EvaluationTableConstants.TABLE_NAME,
-//
-//          EvaluationTableConstants.MAIN_ID,
-//          EvaluationTableConstants.CLASSIFIER,
-//          EvaluationTableConstants.CLASS,
-//          EvaluationTableConstants.ACCURACY,
-//          EvaluationTableConstants.PREC,
-//          EvaluationTableConstants.RECALL,
-//          EvaluationTableConstants.FSCORE,
-//          EvaluationTableConstants.KAPPA,
-//          EvaluationTableConstants.CONFUSION_MATRIX
-//      );
-//
-//      //Average of the results
-//      //This is on the separate area since some columns 
-//      //like Kappa and the confusion matrix only exist with the average
-//      PreparedStatement ps = this.connection.prepareStatement(query);
-//      {
-//         int avgClassIndex = 1;
-//         ps.setInt(avgClassIndex++, this.mainID);
-//         ps.setString(avgClassIndex++, ch.getClassifierName());
-//         ps.setString(avgClassIndex++, "Average");
-//
-//         ps.setDouble(avgClassIndex++, eval.correct()/eval.withClass());
-//         ps.setDouble(avgClassIndex++, eval.weightedPrecision());
-//         ps.setDouble(avgClassIndex++, eval.weightedRecall());
-//         ps.setDouble(avgClassIndex++, eval.weightedFMeasure());
-//         ps.setDouble(avgClassIndex++, eval.kappa());
-//         ps.setString(avgClassIndex++, eval.toMatrixString(""));
-//
-//         ps.addBatch();
-//      }
-//      
-//      //Per class evaluation
-//      {
-//         final String[] classNames = eval.getClassNames();
-//         for (int i = 0; i < classNames.length; i++) {
-//            int psIndex=1;
-//            ps.setInt   (psIndex++, this.mainID);
-//            ps.setString(psIndex++, ch.getClassifierName());
-//            ps.setString(psIndex++, classNames[i]);
-//
-//            double tp = eval.numTruePositives(i);
-//            double fp = eval.numFalsePositives(i);
-//            double tn = eval.numTrueNegatives(i);
-//            double fn = eval.numFalseNegatives(i);
-//            double total = tp+fp+tn+fn;
-//            if(total== 0){
-//               ps.setDouble(psIndex++, 0);
-//            }else{
-//               ps.setDouble(psIndex++, (tp+tn)/total);
-//            }
-//            ps.setDouble(psIndex++, eval.precision(i));
-//            ps.setDouble(psIndex++, eval.recall(i));
-//            ps.setDouble(psIndex++, eval.fMeasure(i));
-//            ps.setNull  (psIndex++, java.sql.Types.FLOAT);
-//            ps.setNull  (psIndex++, java.sql.Types.VARCHAR);
-//
-//            ps.addBatch();
-//         }
-//      }
-//
-//      int[] updateCounts = ps.executeBatch();
-//      checkUpdateCounts(updateCounts);
-//   }
 }
