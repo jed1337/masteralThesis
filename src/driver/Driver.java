@@ -11,6 +11,7 @@ import utils.UtilsInstances;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 import driver.categoricalType.CategoricalType;
+import driver.categoricalType.GeneralAttackType;
 import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
