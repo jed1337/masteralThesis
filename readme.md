@@ -22,10 +22,6 @@ Classification
 * SMO
 
 # Things to do
-* Miscellaneous
-	* Automate setting folder path based on configuration
-	* Clean up driver code
-
 * Classify
 		* Create a train model function
 
@@ -34,5 +30,4 @@ Classification
 	* Add more tests in general
 
 * Database
-	* Add stuff to the database
 	* Define a database controller

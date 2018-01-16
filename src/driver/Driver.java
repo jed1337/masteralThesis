@@ -2,7 +2,6 @@ package driver;
 
 import constants.ArffInstanceCount;
 import constants.DirectoryConstants;
-import driver.categoricalType.GeneralAttackType;
 import driver.mode.noiseLevel.NoiseLevel;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,7 +16,8 @@ import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
-import featureExtraction.NetmateExtraction;
+import driver.mode.noiseLevel.Noise;
+import featureExtraction.KDDExtraction;
 import featureSelection.FeatureSelection;
 import featureSelection.J48Wrapper;
 import featureSelection.NBWrapper;
@@ -60,8 +60,8 @@ public final class Driver {
 //</editor-fold>
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-//      GlobalFeatureExtraction.setInstance(new KDDExtraction());
-      GlobalFeatureExtraction.setInstance(new NetmateExtraction());
+      GlobalFeatureExtraction.setInstance(new KDDExtraction());
+//      GlobalFeatureExtraction.setInstance(new NetmateExtraction());
       final int instanceCount = ArffInstanceCount.HALVED;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
@@ -74,7 +74,7 @@ public final class Driver {
          new SpecificAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-//         new Noise(),
+         new Noise(),
          NoNoise.getInstance()
       };
 
