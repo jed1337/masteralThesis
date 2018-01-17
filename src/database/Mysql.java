@@ -87,7 +87,7 @@ public final class Mysql implements DBInterface {
 
       ps.executeUpdate();
    }
-   
+
    @Override
    public void insertToFeatureTable(Instances instances) throws NoSuchElementException, SQLException {
       String query =
@@ -100,8 +100,6 @@ public final class Mysql implements DBInterface {
       );
 
       PreparedStatement ps = this.connection.prepareStatement(query);
-
-//      Instances trainSet = getEvaluationSet(this.trainPath);
 
       for(int i=0; i< instances.numAttributes(); i++){
          int psIndex=1;
@@ -135,7 +133,7 @@ public final class Mysql implements DBInterface {
       );
 
       //Average of the results
-      //This is on the separate area since some columns 
+      //This is on the separate area since some columns
       //like Kappa and the confusion matrix only exist with the average
       PreparedStatement ps = this.connection.prepareStatement(query);
       {
@@ -153,7 +151,7 @@ public final class Mysql implements DBInterface {
 
          ps.addBatch();
       }
-      
+
       //Per class evaluation
       {
          final String[] classNames = eval.getClassNames();

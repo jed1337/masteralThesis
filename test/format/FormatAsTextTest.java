@@ -125,8 +125,6 @@ public class FormatAsTextTest {
       HashMap<String, String> hm = new HashMap<>();
       Utils.addToMap(hm,"tcpFlood", "flood_of_tcp_packets");
       Utils.addToMap(hm,"httpFlood", "flood_of_http_packets");
-      // hm.put("tcpFlood", "flood_of_tcp_packets");
-      // hm.put("httpFlood", "flood_of_http_packets");
       fat.replaceAllStrings(hm);
 
       assertEquals(-1, getContents().indexOf("tcpFlood"));

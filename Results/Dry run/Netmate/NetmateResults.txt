@@ -1,0 +1,89 @@
+Observations
+	Single outperforms hybrid
+		In all same Classifier performance
+			Except in SMO
+	Using NB as feature selection slightly outperforms no feature selection
+		No feature selection performed best with KDD features
+
+#Hybrid vs single, CategoricalType
+#										Accuracy		Precision	Recall		Fscore 		Kappa
+	Hybrid DDoS Type	GENERAL	85.26986678	87.56866694	85.26986678	83.03406616	69.37586627
+	Hybrid isAttack	GENERAL	97.88346569	97.96560049	97.88346569	97.87546674	95.75040023
+							Average	83.46510079	85.7871704	83.46510079	81.26997981	66.42766962
+
+	Single	GENERAL				90.73199947	88.60253294	90.73199947	88.71773322	85.788333019
+	-- select \n#*\ncount(*), main.systemtype, main.CategoricalType, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\nwhere 1=1\n#and (evaluation.Classifier = "nb")\n#and (main.systemType = "hybrid ddos type")\nand (main.CategoricalType = "general") \nand (evaluation.Class = "Average")\nand (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool = "netmate")\n\ngroup by systemtype
+
+#										Accuracy		Precision	Recall		Fscore 		Kappa
+	Hybrid DDoS Type	SPECIFIC	88.97913297	89.37119960	88.97913297	88.98399988	86.53426686
+	Average							75.87238815	78.26116812	75.87238815	73.88703334	60.03389726
+		Multiplied by hybrid ddos type general
+	Single SPECIFIC				88.61239989	89.43366686	88.61239989	88.48433335	86.56786680
+	-- select \n#*\ncount(*), main.systemtype, main.CategoricalType, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\nwhere 1=1\n#and (evaluation.Classifier = "nb")\n#and (main.systemType = "hybrid ddos type")\nand (main.CategoricalType = "specific") \nand (evaluation.Class = "Average")\nand (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool = "netmate")\n\ngroup by systemtype
+
+#Evaluation.class per CategoricalType, general
+#												Accuracy			Precision		Recall			Fscore 			Kappa
+	Hybrid DDoS Type	Average			85.269866784	87.568666935	85.269866784	83.034066161	69.375866274
+	Hybrid DDoS Type	HIGH_RATE		85.269866784	79.090799888	86.544865582	78.268199880
+	Hybrid DDoS Type	LOW_RATE			85.269866784	94.062800010	84.293334087	86.684666872
+	Hybrid isAttack	Average			97.883465687	97.965600491	97.883465687	97.875466744	95.750400225
+	Hybrid isAttack	attack			97.883465687	99.149399598	96.388267279	97.711200317
+	Hybrid isAttack	normal			97.883465687	96.859734456	99.280000130	98.028999964
+	Single Average							90.731999477	88.602532943	90.731999477	88.717733224	85.788333019
+	Single HIGH_RATE						91.393067042	75.263199608	79.142200425	75.649066331
+	Single LOW_RATE						93.148599863	93.155333201	91.971799533	91.588733594
+	Single NORMAL							96.922533512	94.945599635	98.959000111	96.521600882
+	-- select \n#*\ncount(*), main.systemtype, evaluation.class, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\nwhere 1=1\n#and (evaluation.Classifier = "nb")\n#and (main.systemType = "hybrid ddos type")\nand (main.CategoricalType = "general") \n#and (evaluation.Class = "Average")\nand (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool = "netmate")\n\ngroup by systemtype, evaluation.class
+
+	#Specific
+#												Accuracy			Precision		Recall			Fscore 			Kappa
+	Hybrid DDoS Type	Average			88.979132970	89.371199608	88.979132970	88.983999888	86.534266869
+	Hybrid DDoS Type	httpFlood		99.653466543	98.583134015	99.720533291	99.115733306
+	Hybrid DDoS Type	slowBody			91.841799815	77.682600419	82.195666631	79.619799852
+	Hybrid DDoS Type	slowHeaders		93.288199902	83.760199944	80.039866765	81.596399943
+	Hybrid DDoS Type	slowRead			93.883266846	84.534133275	82.515000502	83.225400448
+	Hybrid DDoS Type	tcpFlood			99.713733991	98.498200576	96.400000254	97.295600971
+	Hybrid DDoS Type	udpFlood			99.578132232	99.563466311	98.203599850	98.873932759
+	Single Average							88.612399896	89.433666865	88.612399896	88.484333356	86.567866802
+	Single httpFlood						99.735666911	99.374533097	98.974333207	99.157599211
+	Single normal							98.333400885	93.953933318	96.783133348	95.178332726
+	Single slowBody						91.784066757	74.107733170	84.102532864	78.173466921
+	Single slowHeaders					93.333267371	80.902733803	70.629400710	74.246933262
+	Single slowRead						95.212934017	86.605066061	82.517466942	84.118733803
+	Single tcpFlood						99.625599782	97.654133638	95.600000620	96.392134031
+	Single udpFlood						99.199865659	98.783133427	96.223533948	97.266000509
+
+-- Per feature selection algorithm
+#												Accuracy			Precision		Recall			Fscore 			Kappa
+	J48										89.464559555	87.496360064	89.464559555	87.961879611	83.647559999
+	NB											90.744799376	92.330200195	90.744799376	90.635520458	85.622919798
+	No feature selection					90.676759958	91.938439846	90.676759958	89.659959555	85.139560117
+
+-- Per system type, attack type, classifier
+#												Accuracy			Precision		Recall			Fscore 			Kappa
+	Hybrid DDoS Type	GENERAL	J48	87.013999621	90.851332744	87.013999621	86.870666345	74.854332209
+	Hybrid DDoS Type	GENERAL	KNN	95.960334937	96.541666985	95.960334937	95.973998308	91.939999660
+	Hybrid DDoS Type	GENERAL	NB 	61.985665560	63.519334793	61.985665560	51.252000531	16.095999978
+	Hybrid DDoS Type	GENERAL	RF 	93.695666393	95.364999771	93.695666393	93.653333187	87.706998984
+	Hybrid DDoS Type	GENERAL	SMO	87.693667412	91.566000382	87.693667412	87.420332432	76.282000542
+	Hybrid DDoS Type	SPECIFIC	J48	96.308666468	96.349332730	96.308666468	96.306333939	95.492666960
+	Hybrid DDoS Type	SPECIFIC	KNN	94.161665440	94.165333112	94.161665440	94.147334496	92.870998383
+	Hybrid DDoS Type	SPECIFIC	NB 	78.154333433	78.520665566	78.154333433	78.177666664	73.322333892
+	Hybrid DDoS Type	SPECIFIC	RF 	96.722998222	96.745334069	96.722998222	96.728666623	95.996999741
+	Hybrid DDoS Type	SPECIFIC	SMO	79.548001289	81.075332562	79.548001289	79.559997718	74.988335371
+	Hybrid isAttack	GENERAL	J48	99.172665675	99.179333448	99.172665675	99.172333876	98.343000809
+	Hybrid isAttack	GENERAL	KNN	98.931332429	98.941667875	98.931332429	98.931000630	97.859332959
+	Hybrid isAttack	GENERAL	NB 	95.897666613	96.098001798	95.897666613	95.877999067	91.757667065
+	Hybrid isAttack	GENERAL	RF 	99.310666323	99.319668611	99.310666323	99.310332537	98.618998130
+	Hybrid isAttack	GENERAL	SMO	96.104997396	96.289330721	96.104997396	96.085667610	92.173002164
+	Single				GENERAL	J48	95.486664772	95.990665754	95.486664772	95.492335161	93.228999774
+	Single				GENERAL	KNN	96.446333329	96.712332964	96.446333329	96.452999115	94.658666849
+	Single				GENERAL	NB 	78.890999158	72.051000595	78.890999158	72.157998880	67.318002383
+	Single				GENERAL	RF 	95.699999730	96.193665266	95.699999730	95.698666573	93.548331658
+	Single				GENERAL	SMO	87.136000395	82.065000137	87.136000395	83.786666393	80.187664429
+	Single				SPECIFIC	J48	96.695999304	96.714667479	96.695999304	96.689333518	96.104000012
+	Single				SPECIFIC	KNN	95.374667645	95.410333077	95.374667645	95.379332701	94.546999534
+	Single				SPECIFIC	NB 	78.817999363	79.991332690	78.817999363	78.542333841	75.026001533
+	Single				SPECIFIC	RF 	97.503666083	97.537666559	97.503666083	97.506334384	97.056667010
+	Single				SPECIFIC	SMO	74.669667085	77.514334520	74.669667085	74.304332336	70.105665922
+	-- select \n#*\ncount(*), main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\nwhere 1=1\n#and (evaluation.Classifier = "smo")\n#and (main.systemType = "hybrid ddos type")\n#and (main.CategoricalType = "specific") \nand (evaluation.Class = "Average")\nand (main.noiseLevel = 0)\n#and (feature_selection.Method like "%nb%")\nand (main.ExtractionTool = "netmate")\n\ngroup by main.systemtype, main.categoricaltype, evaluation.classifier

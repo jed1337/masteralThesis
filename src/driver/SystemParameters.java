@@ -52,7 +52,7 @@ public final class SystemParameters implements GetPreprocessFiles{
    }
 
    public String getSystemType() {
-      return systemType;
+      return this.systemType;
    }
    
    public static class Builder{

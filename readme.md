@@ -23,7 +23,7 @@ Classification
 
 # Things to do
 * Classify
-		* Create a train model function
+	* Create a train model function
 
 * Add JUnit tests
 	* Use checksum to verify that the files are the same

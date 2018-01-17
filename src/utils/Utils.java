@@ -91,15 +91,10 @@ public final class Utils {
     * @throws IOException
     */
    public static void duplicateDirectory(String sourceDirPath, String destinationDirPath) throws IOException{
-//      final File sourceDir = new File(sourceDirPath);
-//      makeFolders(destinationDirPath);
       FileUtils.copyDirectory(
          new File(sourceDirPath), 
          new File(destinationDirPath)
       );
-//      for (final File file : sourceDir.listFiles()) {
-//         duplicateFile(file.getAbsolutePath(), destinationDirPath+file.getName());
-//      }
    }
 
    /**
@@ -165,23 +160,6 @@ public final class Utils {
       return makeFolders(new File(filePath).getParentFile());
    }
 
-//   public static boolean makeFolders(String folderPath){
-//      return makeFolders(new File(folderPath));
-//   }
-//      if(!folderPath.isEmpty()){
-//      boolean wasCreated = new File(folderPath).mkdirs();
-//      if(wasCreated){
-//         System.out.println("Created the folder: '"+folderPath+"'");
-//      }else{
-//         System.err.println("Some or all folders of '"+folderPath+"' was not created");
-//      }
-//      return wasCreated;
-//      else{
-//         System.err.println("The folder '"+folderPath+"' already exists.");
-//         return false;
-//      }
-//   }
-   
    public static boolean makeFolders(File file){
       boolean wasCreated = file.mkdirs();
       if (wasCreated) {
