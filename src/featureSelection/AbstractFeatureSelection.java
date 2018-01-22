@@ -2,12 +2,11 @@ package featureSelection;
 
 import java.util.ArrayList;
 import preprocessFiles.preprocessEvaluationSet.EvaluationSet;
+import utils.UtilsFeatureSelection;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.attributeSelection.AttributeSelection;
 import weka.core.Instances;
-import weka.filters.Filter;
-import weka.filters.unsupervised.attribute.Remove;
 
 public abstract class AbstractFeatureSelection implements FeatureSelection{
    protected abstract ASEvaluation getASEvaluation();
@@ -27,27 +26,16 @@ public abstract class AbstractFeatureSelection implements FeatureSelection{
       as.SelectAttributes(trainSet);
       
       int[] selectedAttributes = as.selectedAttributes();
-      
 
       System.out.println("Feature selection results:");
       System.out.println(as.toResultsString());
       
       for (EvaluationSet evaluationSet : evaluationSets) {
          evaluationSet.setInstances(
-            AbstractFeatureSelection.applyFeatureSelection(
+            UtilsFeatureSelection.applyFeatureSelection(
                evaluationSet.getInstances(),selectedAttributes
             )
          );
       }
-
-   }
-   
-   public static Instances applyFeatureSelection(Instances instances, int[] selectedAttributes) throws Exception{
-      Remove remove = new Remove();
-      remove.setAttributeIndicesArray(selectedAttributes);
-      remove.setInvertSelection(true);
-      remove.setInputFormat(instances);
-
-      return Filter.useFilter(instances, remove);
    }
 }

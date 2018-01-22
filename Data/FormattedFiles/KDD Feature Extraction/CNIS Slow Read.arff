@@ -1,4 +1,4 @@
-@relation 'Slow Read-weka.filters.unsupervised.attribute.Remove-R3,7-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack-Nnormal:NORMAL, tcpFlood:HIGH_RATE, udpFlood:HIGH_RATE, httpFlood:HIGH_RATE, slowBody:LOW_RATE, slowHeaders:LOW_RATE, slowRead:LOW_RATE, normal:NORMAL'
+@relation 'Slow Read-weka.filters.unsupervised.attribute.Remove-R3,7-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack-Nnormal:NORMAL, tcpFlood:HIGH_RATE, udpFlood:HIGH_RATE, httpFlood:HIGH_RATE, slowBody:LOW_RATE, slowHeaders:LOW_RATE, slowRead:LOW_RATE'
 
 @attribute duration numeric
 @attribute protocol_type {tcp,icmp,udp}

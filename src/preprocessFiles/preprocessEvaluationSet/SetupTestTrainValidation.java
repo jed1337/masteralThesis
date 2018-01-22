@@ -66,10 +66,12 @@ public final class SetupTestTrainValidation {
    }
 
    /**
-    * The reason we repeatedly call UtilsInstances.getHeader(...) <p> 
-    * is because if not, they use the same header variable as the AL's value <p>
-    * Since they're the same, if 1 value is edited, all the others are as well. <p>
-    * They aren't technically edited, but since they point to the same object, it's just that 1 edit reflects to all
+    * The reason we repeatedly call UtilsInstances.getHeader(...) instead of
+    * assigning it to a variable and reusing it, is because if not, 
+    * each evaluationSet will use the same header variable as one another. <br>
+    * Since they're the same, if 1 value is edited, all the others are as well.
+    * They aren't technically edited, but since they point to the same object, 
+    * it's just that 1 edit reflects to all
     *
     * @param evaluationSets
     * @param source Source to get the headers from
@@ -78,7 +80,7 @@ public final class SetupTestTrainValidation {
    private void addHeaders(ArrayList<EvaluationSet> evaluationSets, String source) throws Exception {
       for (EvaluationSet evaluationSet : evaluationSets) {
          evaluationSet.setInstances(
-            UtilsInstances.getHeader(
+            UtilsInstances.getHeader( //Don't reuse UtilsInstances.getHeader(...)
                source, 
                GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
             )
@@ -119,9 +121,9 @@ public final class SetupTestTrainValidation {
    }
 
    /**
-    * Doesn't get any instances.
-    * <p>
-    * Is literally just a counter
+    * Used to count the instances. If the limit is reached, 
+    * don't add any more instances. <br>
+    * Doesn't get any instances. Is literally just a counter
     */
    private class SplitFileCounter{
       private final String nominalName;

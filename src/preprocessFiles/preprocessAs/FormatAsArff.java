@@ -1,11 +1,11 @@
 package preprocessFiles.preprocessAs;
 
-import utils.UtilsInstances;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import utils.Utils;
+import utils.UtilsInstances;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.filters.Filter;
@@ -102,12 +102,26 @@ public final class FormatAsArff {
       useFilter(this.instances, rnv);
    }
 
+   /**
+    * For each instance in this.instances, 
+    * if the value of its attributeName is not within
+    * classesToRetain, that instance is removed.
+    * @param attributeName
+    * @param classesToRetain
+    */
    public void removeNonMatchingClasses(String attributeName, String... classesToRetain) {
       removeNonMatchingClasses(
          UtilsInstances.getAttributeIndex(instances, attributeName), 
-         classesToRetain);
+         classesToRetain
+      );
    }
 
+   /**
+    * Refer to {@link #removeNonMatchingClasses(String, String...)
+    * removeNonMatchingClasses(String, String...)} 
+    * @param attributeIndex
+    * @param classesToRetain 
+    */
    public void removeNonMatchingClasses(int attributeIndex, String... classesToRetain) {
       // Iterate from last to first because when we remove an instance, the rest shifts by one position.
       for (int i = instances.numInstances() - 1; i >= 0; i--) {
@@ -119,8 +133,9 @@ public final class FormatAsArff {
    }
 
    /**
-    * keepXInstances("isAttack", "neptune", 2500)
-    * Keep only 2500 instances of "neptune" from "isAttack"
+    * {@code keepXInstances("isAttack", "neptune", 2500)}<br>
+    * Keep only 2500 instances of the "neptune" class
+    * from the "isAttack" attribute.
     * @param attribute
     * @param attributeValue
     * @param toKeep
@@ -134,7 +149,7 @@ public final class FormatAsArff {
    }
    
    public void keepXInstances(int attributeIndex, String attributeValue, int toKeep){
-      int cur = 0;
+      int cur = 0; //Current number of instnaces of that class
       
       for (int i = instances.numInstances() - 1; i >= 0; i--) {
          Instance inst = instances.get(i);
@@ -145,6 +160,15 @@ public final class FormatAsArff {
                instances.delete(i);
             }
          }
+      }
+      
+      if(cur<toKeep){
+         System.err.println(String.format(
+            "KeepXInstances was unable to keep %d since only %d of class %s exist",
+            toKeep,
+            cur,
+            attributeValue
+         ));
       }
    }
    

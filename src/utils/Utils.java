@@ -19,7 +19,7 @@ import org.apache.commons.io.FileUtils;
 import preprocessFiles.PreprocessFile;
 
 public final class Utils {
-   protected Utils() {}
+   private Utils() {}
 
    public static HashMap<String, String> replaceAttribute(String attribute, String... toReplace){
       return replaceAttribute(attribute, String.join(",",toReplace));

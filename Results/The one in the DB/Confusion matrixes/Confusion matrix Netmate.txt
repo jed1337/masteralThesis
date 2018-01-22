@@ -1,0 +1,167 @@
+Netmate	Single	GENERAL	J48	95.41600	95.94700	95.41600	95.43200	93.12300
+   a   b   c   <-- classified as
+ 272   0   0 |   a = HIGH_RATE
+  37 294   2 |   b = LOW_RATE
+   3   1 329 |   c = NORMAL
+
+Netmate	Single	GENERAL	KNN	96.05500	96.40500	96.05500	96.04800	94.07800
+   a   b   c   <-- classified as
+ 272   0   0 |   a = HIGH_RATE
+  31 298   4 |   b = LOW_RATE
+   1   1 331 |   c = NORMAL
+
+Netmate	Single	GENERAL	NB 	70.36200	66.97400	70.36200	60.71300	54.08400
+   a   b   c   <-- classified as
+   3 269   0 |   a = HIGH_RATE
+   1 328   4 |   b = LOW_RATE
+   3   1 329 |   c = NORMAL
+
+Netmate	Single	GENERAL	RF 	95.84200	96.31600	95.84200	95.83900	93.76100
+   a   b   c   <-- classified as
+ 272   0   0 |   a = HIGH_RATE
+  37 294   2 |   b = LOW_RATE
+   0   0 333 |   c = NORMAL
+
+Netmate	Single	GENERAL	SMO	97.33500	97.33700	97.33500	97.32600	95.98700
+   a   b   c   <-- classified as
+ 264   8   0 |   a = HIGH_RATE
+  12 316   5 |   b = LOW_RATE
+   0   0 333 |   c = NORMAL
+
+Netmate	Hybrid isAttack	GENERAL	J48	99.17300	99.18600	99.17300	99.17200	98.34300
+   a   b   <-- classified as
+ 500   0 |   a = normal
+   8 459 |   b = attack
+
+Netmate	Hybrid isAttack	GENERAL	KNN	99.06900	99.07400	99.06900	99.06900	98.13600
+   a   b   <-- classified as
+ 498   2 |   a = normal
+   7 460 |   b = attack
+
+Netmate	Hybrid isAttack	GENERAL	NB 	98.55200	98.55300	98.55200	98.55200	97.10100
+   a   b   <-- classified as
+ 494   6 |   a = normal
+   8 459 |   b = attack
+
+Netmate	Hybrid isAttack	GENERAL	RF 	99.27600	99.28600	99.27600	99.27600	98.55000
+   a   b   <-- classified as
+ 500   0 |   a = normal
+   7 460 |   b = attack
+
+Netmate	Hybrid isAttack	GENERAL	SMO	99.17300	99.18600	99.17300	99.17200	98.34300
+   a   b   <-- classified as
+ 500   0 |   a = normal
+   8 459 |   b = attack
+
+Netmate	Hybrid DDoS Type	GENERAL	J48	80.63400	86.47100	80.63400	80.41500	62.51200
+   a   b   <-- classified as
+ 382   1 |   a = HIGH_RATE
+ 170 330 |   b = LOW_RATE
+
+Netmate	Hybrid DDoS Type	GENERAL	KNN	97.96100	98.05300	97.96100	97.96600	95.87300
+   a   b   <-- classified as
+ 383   0 |   a = HIGH_RATE
+  18 482 |   b = LOW_RATE
+
+Netmate	Hybrid DDoS Type	GENERAL	NB 	56.73800	75.47500	56.73800	41.19900	0.29600
+   a   b   <-- classified as
+   1 382 |   a = HIGH_RATE
+   0 500 |   b = LOW_RATE
+
+Netmate	Hybrid DDoS Type	GENERAL	RF 	98.75400	98.77800	98.75400	98.75600	97.47100
+   a   b   <-- classified as
+ 382   1 |   a = HIGH_RATE
+  10 490 |   b = LOW_RATE
+
+Netmate	Hybrid DDoS Type	GENERAL	SMO	89.46800	91.44300	89.46800	89.50000	79.13900
+   a   b   <-- classified as
+ 382   1 |   a = HIGH_RATE
+  92 408 |   b = LOW_RATE
+
+Single	SPECIFIC	Netmate	J48	0.96476	0.96506	0.96476	0.96475	0.95844
+   a   b   c   d   e   f   g   <-- classified as
+  49   0   1   0   0   0   0 |   a = tcpFlood
+   0 141   0   0   0   2   0 |   b = normal
+   0   0 143   0   0   0   0 |   c = httpFlood
+   0   2   0 135   2   0   4 |   d = slowRead
+   0   1   0   1 132   0   9 |   e = slowHeaders
+   0   2   0   0   0 141   0 |   f = udpFlood
+   0   1   0   3   4   0 135 |   g = slowBody
+Single	SPECIFIC	Netmate	KNN	0.95595	0.95636	0.95595	0.95600	0.94805
+   a   b   c   d   e   f   g   <-- classified as
+  49   0   1   0   0   0   0 |   a = tcpFlood
+   0 139   1   0   0   3   0 |   b = normal
+   0   0 143   0   0   0   0 |   c = httpFlood
+   0   0   0 137   3   0   3 |   d = slowRead
+   0   0   0   3 126   0  14 |   e = slowHeaders
+   0   2   0   0   0 141   0 |   f = udpFlood
+   0   0   0   0  10   0 133 |   g = slowBody
+Single	SPECIFIC	Netmate	NB	0.78084	0.79859	0.78084	0.77717	0.74163
+   a   b   c   d   e   f   g   <-- classified as
+  49   0   0   1   0   0   0 |   a = tcpFlood
+   1 140   0   1   0   0   1 |   b = normal
+   0   0 139   0   0   0   4 |   c = httpFlood
+   0   1   0  95   8   0  39 |   d = slowRead
+   0   1   0  24  48   0  70 |   e = slowHeaders
+   0   3   0   0   0 140   0 |   f = udpFlood
+   1   1   0  28  15   0  98 |   g = slowBody
+Single	SPECIFIC	Netmate	RF	0.97577	0.97641	0.97577	0.97582	0.97143
+   a   b   c   d   e   f   g   <-- classified as
+  50   0   0   0   0   0   0 |   a = tcpFlood
+   0 143   0   0   0   0   0 |   b = normal
+   0   0 143   0   0   0   0 |   c = httpFlood
+   0   0   0 138   2   0   3 |   d = slowRead
+   0   1   0   0 132   0  10 |   e = slowHeaders
+   0   2   0   0   0 141   0 |   f = udpFlood
+   0   0   0   2   2   0 139 |   g = slowBody
+Single	SPECIFIC	Netmate	SMO	0.79956	0.82494	0.79956	0.80196	0.76386
+   a   b   c   d   e   f   g   <-- classified as
+  50   0   0   0   0   0   0 |   a = tcpFlood
+   0 143   0   0   0   0   0 |   b = normal
+   6   0 137   0   0   0   0 |   c = httpFlood
+   0   1   0  77  23   0  42 |   d = slowRead
+   0   1   0   5  79   0  58 |   e = slowHeaders
+   0   3   0   0   0 140   0 |   f = udpFlood
+   0   1   0   3  39   0 100 |   g = slowBody
+Hybrid DDoS Type	SPECIFIC	Netmate	J48	0.96949	0.96955	0.96949	0.96950	0.96275
+   a   b   c   d   e   f   <-- classified as
+  50   0   0   0   0   0 |   a = tcpFlood
+   0 167   0   0   0   0 |   b = httpFlood
+   0   0 160   3   1   3 |   c = slowRead
+   0   0   8 157   0   2 |   d = slowHeaders
+   1   0   0   0 165   1 |   e = udpFlood
+   0   0   1   7   0 159 |   f = slowBody
+Hybrid DDoS Type	SPECIFIC	Netmate	KNN	0.95480	0.95511	0.95480	0.95477	0.94481
+   a   b   c   d   e   f   <-- classified as
+  50   0   0   0   0   0 |   a = tcpFlood
+   0 167   0   0   0   0 |   b = httpFlood
+   0   0 159   3   0   5 |   c = slowRead
+   0   0   7 147   0  13 |   d = slowHeaders
+   1   0   1   0 165   0 |   e = udpFlood
+   0   0   0  10   0 157 |   f = slowBody
+Hybrid DDoS Type	SPECIFIC	Netmate	NB	0.72768	0.72963	0.72768	0.72795	0.66747
+   a   b   c   d   e   f   <-- classified as
+  49   0   1   0   0   0 |   a = tcpFlood
+   0 160   1   0   0   6 |   b = httpFlood
+   0   0 109  14   0  44 |   c = slowRead
+   0   0  25 103   0  39 |   d = slowHeaders
+   1   0   1   0 163   2 |   e = udpFlood
+   1   0  35  71   0  60 |   f = slowBody
+Hybrid DDoS Type	SPECIFIC	Netmate	RF	0.97514	0.97547	0.97514	0.97522	0.96963
+   a   b   c   d   e   f   <-- classified as
+  49   1   0   0   0   0 |   a = tcpFlood
+   0 167   0   0   0   0 |   b = httpFlood
+   0   0 163   1   0   3 |   c = slowRead
+   0   0   1 158   0   8 |   d = slowHeaders
+   0   0   0   1 165   1 |   e = udpFlood
+   0   0   2   4   0 161 |   f = slowBody
+Hybrid DDoS Type	SPECIFIC	Netmate	SMO	0.82712	0.84865	0.82712	0.82750	0.78885
+   a   b   c   d   e   f   <-- classified as
+  50   0   0   0   0   0 |   a = tcpFlood
+   0 167   0   0   0   0 |   b = httpFlood
+   0   0  94  25   0  48 |   c = slowRead
+   0   0   6 121   0  40 |   d = slowHeaders
+   0   0   1   0 165   1 |   e = udpFlood
+   0   0   3  29   0 135 |   f = slowBody
+
+#select \n#main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#*\nmain.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\nwhere 1=1\n#and (evaluation.Classifier = "nb")\nand (evaluation.ConfusionMatrix is not null)\n#and (main.systemType = "single")\nand (main.CategoricalType = "general")\nand (evaluation.Class = "Average")\nand (main.noiseLevel = 0)\nand (feature_selection.Method like "%no f%")\nand (main.ExtractionTool = "netmate")\n\n#group by main.systemtype, main.categoricaltype, evaluation.classifier

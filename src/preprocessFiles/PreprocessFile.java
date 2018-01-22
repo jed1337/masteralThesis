@@ -64,23 +64,22 @@ public abstract class PreprocessFile {
 
    private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType.getValue());
-//      this.faa.removeNonMatchingClasses("service", "http", "http_443");
       GlobalFeatureExtraction.getInstance()
          .removeNonMatchingClasses().accept(this.faa);
    }
 
    /**
     * For example there are 5000 instances
-    * <p>
+    * <br>
     * {@Literal @}attributeName{val1, val2}
-    * <p>
+    * <br>
     * Output: 2500 instances val1, 2500 instances val2
-    * <p>
+    * <br>
     * If setInstanceCount(int) isn't called beforehand, this function doesn't do anything
     */
    private void balanceInstances() {
       if(this.instancesCount == -1){
-         return;
+         return; //Exit this function (Don't do any balancing)
       }
 
       //Todo, make not directly the last index

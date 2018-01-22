@@ -3,8 +3,7 @@ package utils;
 import java.sql.Statement;
 
 public class UtilsDB {
-   private UtilsDB() {
-   }
+   private UtilsDB() {}
 
    /**
     * Prints the status when multiple DB updates are made. Ideally, the output

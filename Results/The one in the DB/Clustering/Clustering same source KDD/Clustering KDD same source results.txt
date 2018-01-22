@@ -1,0 +1,75 @@
+Parameters
+	No feature selection
+	No noise
+	K = # of classes
+	From same class (All classes = 500)
+
+Hybrid isAttack GENERAL
+	    0    1  <-- assigned to cluster
+	    8  492 | normal
+	 1085 1915 | attack
+
+	Cluster 0 <-- normal
+	Cluster 1 <-- attack
+
+	Incorrectly clustered instances :	1577.0	 45.0571 %
+
+Hybrid DDoS Type GENERAL
+	    0    1  <-- assigned to cluster
+	 1211  289 | HIGH_RATE
+	  698  802 | LOW_RATE
+
+	Cluster 0 <-- HIGH_RATE
+	Cluster 1 <-- LOW_RATE
+
+	Incorrectly clustered instances :	987.0	 32.9    %
+
+Hybrid DDoS Type SPECIFIC
+	   0   1   2   3   4   5  <-- assigned to cluster
+	 286   9  79  67  59   0 | httpFlood
+	   0 222   0 194  48  36 | slowRead
+	   0   0 500   0   0   0 | udpFlood
+	   0   0   0 500   0   0 | tcpFlood
+	   0 143   0 195  68  94 | slowHeaders
+	   0 222   0 163  40  75 | slowBody
+
+	Cluster 0 <-- httpFlood
+	Cluster 1 <-- slowRead
+	Cluster 2 <-- udpFlood
+	Cluster 3 <-- tcpFlood
+	Cluster 4 <-- slowHeaders
+	Cluster 5 <-- slowBody
+
+	Incorrectly clustered instances :	1349.0	 44.9667 %
+
+Single GENERAL
+	    0    1    2  <-- assigned to cluster
+	  800  699    1 | LOW_RATE
+	    9 1204  287 | HIGH_RATE
+	    8  492    0 | normal
+
+	Cluster 0 <-- LOW_RATE
+	Cluster 1 <-- HIGH_RATE
+	Cluster 2 <-- No class
+
+	Incorrectly clustered instances :	1496.0	 42.7429 %
+
+Single SPECIFIC
+	   0   1   2   3   4   5   6  <-- assigned to cluster
+	 105   1   0 250   0 144   0 | slowHeaders
+	   6 487   1   5   1   0   0 | normal
+	   0   0 193 202   0   9  96 | httpFlood
+	   0   0   0 500   0   0   0 | tcpFlood
+	   0   0   0   0 500   0   0 | udpFlood
+	  77   0   0 196   0 227   0 | slowBody
+	  33   0   0 242   0 224   1 | slowRead
+
+	Cluster 0 <-- slowHeaders
+	Cluster 1 <-- normal
+	Cluster 2 <-- httpFlood
+	Cluster 3 <-- tcpFlood
+	Cluster 4 <-- udpFlood
+	Cluster 5 <-- slowBody
+	Cluster 6 <-- slowRead
+
+	Incorrectly clustered instances :	1487.0	 42.4857 %
