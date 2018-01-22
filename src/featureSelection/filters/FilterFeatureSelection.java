@@ -5,6 +5,16 @@ import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.attributeSelection.Ranker;
 
+/**
+* This approach separates feature selection from classifier learning by selecting
+* features independently from it. In this approach, the undesirable features are
+* removed before the learning algorithm is used. Separating feature selection from
+* classifier learning allows filter models to be faster than wrapper models. This also
+* allows filter models to be applied with datasets with a large number of features.
+* Another advantage is that filter models can be used with any learning algorithm.
+* In contrast, wrapper models need to be executed again when a different learning
+* algorithm is used Kohavi & John (1997).
+*/
 public abstract class FilterFeatureSelection extends AbstractFeatureSelection{
    private final ASEvaluation asEvaluation;
    private final ASSearch asSearch;

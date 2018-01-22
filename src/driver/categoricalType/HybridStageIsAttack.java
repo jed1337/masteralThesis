@@ -5,11 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import preprocessFiles.PreprocessFile;
 
-public final class HybridStageIsAttack extends HybridStage{
+public final class HybridStageIsAttack extends HybridIntermediaryStage{
    @Override
    public String getRelabelSpecificAttack(List<PreprocessFile> pfL) {
       ArrayList<String> relabels = new ArrayList<>();
-      
       for (PreprocessFile pf : pfL) {
          final SpecificAttackTypeEnum sat = pf.getSpecificAttackType();
          relabels.add(String.format("%s:%s", sat,

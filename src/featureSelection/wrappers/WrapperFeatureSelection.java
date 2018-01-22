@@ -7,6 +7,9 @@ import weka.attributeSelection.BestFirst;
 import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
 
+/**
+ * Uses a separate Classifier to select features
+ */
 public abstract class WrapperFeatureSelection extends AbstractFeatureSelection{
    private final WrapperSubsetEval wEval;
    private final ASSearch asSearch;

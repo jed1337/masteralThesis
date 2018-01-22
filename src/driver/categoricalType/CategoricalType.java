@@ -16,8 +16,7 @@ public interface CategoricalType {
    public String getRelabelSpecificAttack(List<PreprocessFile> pfL);
    
    /**
-    * General or nominal
-    * @return 
+    * @return General or nominal
     */
    public CategoricalTypeConstants getCategoricalType();
    

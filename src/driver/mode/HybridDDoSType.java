@@ -1,17 +1,17 @@
 package driver.mode;
 
+import driver.categoricalType.CategoricalType;
 import driver.mode.noiseLevel.NoNoise;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import preprocessFiles.PreprocessFile;
 import preprocessFiles.PreprocessHTTPFlood;
 import preprocessFiles.PreprocessSlowBody;
 import preprocessFiles.PreprocessSlowHeaders;
 import preprocessFiles.PreprocessSlowRead;
 import preprocessFiles.PreprocessTCPFlood;
 import preprocessFiles.PreprocessUDPFlood;
-import driver.categoricalType.CategoricalType;
-import java.util.ArrayList;
-import java.util.List;
-import preprocessFiles.PreprocessFile;
 
 public final class HybridDDoSType extends Mode{
    public HybridDDoSType(CategoricalType categoricalType) throws IOException {

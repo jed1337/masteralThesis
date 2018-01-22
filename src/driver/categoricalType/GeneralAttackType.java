@@ -24,8 +24,7 @@ public final class GeneralAttackType implements CategoricalType{
    }
 
    /**
-    * Return general
-    * @return
+    * @return CategoricalTypeConstants.GENERAL
     */
    @Override
    public CategoricalTypeConstants getCategoricalType(){

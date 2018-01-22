@@ -14,11 +14,11 @@ public abstract class Mode implements GetPreprocessFiles{
       this.categoricalType = categoricalType;
    }
 
-   public NoiseLevel getNoiseLevel() {
+   public final NoiseLevel getNoiseLevel() {
       return this.nl;
    }
 
-   public CategoricalType getCategoricalType() {
+   public final CategoricalType getCategoricalType() {
       return this.categoricalType;
    }
    
