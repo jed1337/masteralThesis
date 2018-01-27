@@ -1,4 +1,6 @@
-package featureExtraction;
+package featureExtraction.Decorator;
+
+import featureExtraction.FeatureExtraction;
 
 public final class InitialDatabase extends ExtractionDBPathDecorator{
    /**

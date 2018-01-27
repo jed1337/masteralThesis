@@ -1,5 +1,9 @@
 package featureExtraction;
 
+import featureExtraction.interfaces.ARFFPaths;
+import featureExtraction.interfaces.GetDatasetName;
+import featureExtraction.interfaces.RemoveBasedOn;
+
 public abstract class FeatureExtraction implements ARFFPaths, RemoveBasedOn, GetDatasetName{
    public abstract String getName();
    

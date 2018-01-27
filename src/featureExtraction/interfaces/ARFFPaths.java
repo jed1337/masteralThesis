@@ -1,4 +1,4 @@
-package featureExtraction;
+package featureExtraction.interfaces;
 
 public interface ARFFPaths {
    public abstract String getNormalPath();

@@ -1,4 +1,4 @@
-package featureExtraction;
+package featureExtraction.interfaces;
 
 import java.util.List;
 import java.util.function.Consumer;

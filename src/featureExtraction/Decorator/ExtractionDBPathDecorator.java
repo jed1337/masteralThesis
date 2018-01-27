@@ -1,5 +1,6 @@
-package featureExtraction;
+package featureExtraction.Decorator;
 
+import featureExtraction.FeatureExtraction;
 import java.util.List;
 import java.util.function.Consumer;
 import preprocessFiles.preprocessAs.FormatAsArff;
