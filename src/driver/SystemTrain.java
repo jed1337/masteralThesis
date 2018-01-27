@@ -7,7 +7,6 @@ import constants.DirectoryConstants;
 import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
 import database.DBInterface;
-import database.Mysql;
 import database.NoDatabase;
 import featureSelection.FeatureSelection;
 import java.io.IOException;

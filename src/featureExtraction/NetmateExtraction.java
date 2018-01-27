@@ -70,9 +70,4 @@ public class NetmateExtraction extends FeatureExtraction{
    public Consumer<FormatAsArff> removeNonMatchingClasses() {
       return (faa)->{}; //Do nothing, don't remove any classes
    }
-
-   @Override
-   public String getDatasetName() {
-      return DatasetNames.initial;
-   }
 }

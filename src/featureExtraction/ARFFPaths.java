@@ -1,6 +1,6 @@
 package featureExtraction;
 
-interface ARFFPaths {
+public interface ARFFPaths {
    public abstract String getNormalPath();
    public abstract String getSlowBodyPath();
    public abstract String getSlowHeadersPath();

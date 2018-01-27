@@ -4,11 +4,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import preprocessFiles.preprocessAs.FormatAsArff;
 
-/**
- * 
- * @author 
- */
-interface RemoveBasedOn {
+public interface RemoveBasedOn {
    /**
     * Returns a String List (Ideally an unmodifiable one)
     * of the features to be removed <br>

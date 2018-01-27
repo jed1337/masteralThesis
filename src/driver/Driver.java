@@ -9,9 +9,13 @@ import driver.mode.HybridIsAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
+import featureExtraction.InitialDatabase;
 import featureExtraction.KDDExtraction;
 import featureSelection.FeatureSelection;
+import featureSelection.NoFeatureSelection;
 import featureSelection.filters.InfoGainFS;
+import featureSelection.wrappers.J48Wrapper;
+import featureSelection.wrappers.NBWrapper;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -56,13 +60,15 @@ public final class Driver {
 //</editor-fold>
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-      GlobalFeatureExtraction.setInstance(new KDDExtraction());
+      GlobalFeatureExtraction.setInstance(
+         new InitialDatabase(new KDDExtraction())
+      );
 //      GlobalFeatureExtraction.setInstance(new NetmateExtraction());
       final int instanceCount = ArffInstanceCount.HALVED;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
-         new InfoGainFS()
-//         NoFeatureSelection.getInstance(),
+         NoFeatureSelection.getInstance(),
+         new InfoGainFS(),
 //         new NBWrapper(),
 //         new J48Wrapper()
       };

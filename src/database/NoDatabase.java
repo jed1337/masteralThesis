@@ -8,6 +8,11 @@ import java.sql.SQLException;
 import java.util.NoSuchElementException;
 import weka.core.Instances;
 
+/**
+ * Null object implementation of DBInterface.<br>
+ * It's implemented as a singleton since it's ok for many objects to have
+ * reference to this since this class does nothing
+ */
 public class NoDatabase implements DBInterface{
    private static NoDatabase instance;
    private NoDatabase(){}

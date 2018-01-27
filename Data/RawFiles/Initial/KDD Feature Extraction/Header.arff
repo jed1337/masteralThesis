@@ -1,0 +1,31 @@
+@relation 'header'
+@attribute duration numeric
+@attribute protocol_type {tcp,icmp,udp}
+@attribute service {aol,auth,bgp,courier,csnet_ns,ctf,daytime,discard,domain,domain_u,echo,eco_i,ecr_i,efs,exec,finger,ftp,ftp_data,gopher,harvest,hostnames,http,http_2784,http_443,http_8001,imap4,IRC,iso_tsap,klogin,kshell,ldap,link,login,mtp,name,netbios_dgm,netbios_ns,netbios_ssn,netstat,nnsp,nntp,ntp_u,other,pm_dump,pop_2,pop_3,printer,private,red_i,remote_job,rje,shell,smtp,sql_net,ssh,sunrpc,supdup,systat,telnet,tftp_u,tim_i,time,urh_i,urp_i,uucp,uucp_path,vmnet,whois,X11,Z39_50}
+@attribute flag {OTH,REJ,RSTO,RSTOS0,RSTR,S0,S1,S2,S3,SF,SH}
+@attribute src_bytes numeric
+@attribute dst_bytes numeric
+@attribute land {0,1}
+@attribute wrong_fragment numeric
+@attribute urgent numeric
+@attribute count numeric
+@attribute srv_count numeric
+@attribute serror_rate numeric
+@attribute srv_serror_rate numeric
+@attribute rerror_rate numeric
+@attribute srv_rerror_rate numeric
+@attribute same_srv_rate numeric
+@attribute diff_srv_rate numeric
+@attribute srv_diff_host_rate numeric
+@attribute dst_host_count numeric
+@attribute dst_host_srv_count numeric
+@attribute dst_host_same_srv_rate numeric
+@attribute dst_host_diff_srv_rate numeric
+@attribute dst_host_same_src_port_rate numeric
+@attribute dst_host_srv_diff_host_rate numeric
+@attribute dst_host_serror_rate numeric
+@attribute dst_host_srv_serror_rate numeric
+@attribute dst_host_rerror_rate numeric
+@attribute dst_host_srv_rerror_rate numeric
+@attribute isAttack {apache2,back,buffer_overflow,ftp_write,guess_passwd,httptunnel,imap,ipsweep,land,loadmodule,mailbomb,mscan,multihop,named,neptune,nmap,normal,perl,phf,pod,portsweep,processtable,ps,rootkit,saint,satan,sendmail,smurf,snmpgetattack,snmpguess,spy,sqlattack,teardrop,udpstorm,warezclient,warezmaster,worm,xlock,xsnoop,xtermslowBody,slowHeaders,slowRead,tcpFlood,udpFlood,httpFlood}
+@data
