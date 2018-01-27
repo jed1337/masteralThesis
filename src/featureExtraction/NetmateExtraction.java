@@ -1,5 +1,6 @@
 package featureExtraction;
 
+import constants.DatasetNames;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -68,5 +69,10 @@ public class NetmateExtraction extends FeatureExtraction{
    @Override
    public Consumer<FormatAsArff> removeNonMatchingClasses() {
       return (faa)->{}; //Do nothing, don't remove any classes
+   }
+
+   @Override
+   public String getDatasetName() {
+      return DatasetNames.initial;
    }
 }

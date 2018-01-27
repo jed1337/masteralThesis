@@ -57,7 +57,7 @@ public final class Mysql implements DBInterface {
       ps.setString(i++, sp.getSystemType());
       ps.setString(i++, sp.getCategoricalType().name());
       ps.setFloat(i++, sp.getNoiseLevelFloat());
-      ps.setString(i++, "Initial");
+      ps.setString(i++, GlobalFeatureExtraction.getInstance().getDatasetName());
       ps.setString(i++, GlobalFeatureExtraction.getInstance().getName());
 
       ps.executeUpdate();

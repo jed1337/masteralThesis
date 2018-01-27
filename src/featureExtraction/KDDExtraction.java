@@ -1,5 +1,6 @@
 package featureExtraction;
 
+import constants.DatasetNames;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -79,5 +80,10 @@ public class KDDExtraction extends FeatureExtraction{
    @Override
    public Consumer<FormatAsArff> removeNonMatchingClasses() {
       return (faa)->faa.removeNonMatchingClasses("service", "http", "http_443");
+   }
+
+   @Override
+   public String getDatasetName() {
+      return DatasetNames.initial;
    }
 }

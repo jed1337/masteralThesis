@@ -3,6 +3,8 @@ package featureSelection.filters;
 import featureSelection.AbstractFeatureSelection;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
+import weka.attributeSelection.AttributeSelection;
+import weka.attributeSelection.RankedOutputSearch;
 import weka.attributeSelection.Ranker;
 
 /**
@@ -24,9 +26,8 @@ public abstract class FilterFeatureSelection extends AbstractFeatureSelection{
       this.asEvaluation = asEvaluation;
       this.fsMethodName = fsMethodName;
       
-//      this.asSearch = new Ranker();
       Ranker r = new Ranker();
-//      r.set
+//      CustomRanker r = new CustomRanker();
       //Edit new Ranker params (set # of features etc)
       
       this.asSearch = r;
@@ -45,5 +46,23 @@ public abstract class FilterFeatureSelection extends AbstractFeatureSelection{
    @Override
    protected final ASEvaluation getASEvaluation() {
       return this.asEvaluation;
+   }
+   
+   @Override
+   protected int[] filterRankedAttributes(AttributeSelection as) throws Exception{
+      final RankedOutputSearch ros = (RankedOutputSearch)this.asSearch;
+      
+      //If we didn't set the params of this.asSearch, dynamically cutoff
+      if(ros.getThreshold() == -Double.MAX_VALUE||
+         ros.getNumToSelect() == -1){
+         
+         double[][] rankedAttributes = as.rankedAttributes();
+         //Insert code to dynamically change stuff here
+//         return null;
+      }
+      
+      //If we did change those, 
+      //No filtering, just return the already selected attributes
+      return as.selectedAttributes();
    }
 }

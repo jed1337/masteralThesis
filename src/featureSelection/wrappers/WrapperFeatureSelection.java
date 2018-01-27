@@ -3,6 +3,7 @@ package featureSelection.wrappers;
 import featureSelection.AbstractFeatureSelection;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
+import weka.attributeSelection.AttributeSelection;
 import weka.attributeSelection.BestFirst;
 import weka.attributeSelection.WrapperSubsetEval;
 import weka.classifiers.Classifier;
@@ -38,5 +39,11 @@ public abstract class WrapperFeatureSelection extends AbstractFeatureSelection{
    @Override
    protected final ASEvaluation getASEvaluation() {
       return this.wEval;
+   }
+   
+   @Override
+   protected int[] filterRankedAttributes(AttributeSelection as) throws Exception{
+      //No filtering, just return the already selected attributes
+      return as.selectedAttributes();
    }
 }

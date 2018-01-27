@@ -8,6 +8,7 @@ import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
 import database.DBInterface;
 import database.Mysql;
+import database.NoDatabase;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,7 +60,8 @@ public final class SystemTrain {
       this.evaluationSets.add(new EvaluationSet(this.testPath        , 1));
       this.evaluationSets.add(new EvaluationSet(this.validationPath  , 1));
 
-      this.db = new Mysql();
+//      this.db = new Mysql();
+      this.db = NoDatabase.getInstance();
       this.db.insertMainTable(sp);
       
       setupTestTrainValidation();

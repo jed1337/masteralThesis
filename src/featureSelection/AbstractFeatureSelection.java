@@ -11,7 +11,8 @@ import weka.core.Instances;
 public abstract class AbstractFeatureSelection implements FeatureSelection{
    protected abstract ASEvaluation getASEvaluation();
    protected abstract ASSearch getSearchMethod();
-   
+   protected abstract int[] filterRankedAttributes(AttributeSelection as) throws Exception;
+
    @Override
    public void applyFeatureSelection(Instances trainSet, ArrayList<EvaluationSet> evaluationSets) throws Exception {
       ASEvaluation attributeEvaluator = getASEvaluation();
@@ -20,12 +21,18 @@ public abstract class AbstractFeatureSelection implements FeatureSelection{
 
       AttributeSelection as = new AttributeSelection();
       as.setEvaluator(attributeEvaluator);
-
       as.setSearch(getSearchMethod());
-      
       as.SelectAttributes(trainSet);
       
-      int[] selectedAttributes = as.selectedAttributes();
+      
+//      //Has an additional attribute compared to as.rankedAttributes
+//      //since that additional attribute is the classIndex (isAttack)
+//      as.selectedAttributes(); 
+//      
+//      as.rankedAttributes();
+
+//      int[] selectedAttributes = as.selectedAttributes();
+      int[] selectedAttributes = filterRankedAttributes(as);
 
       System.out.println("Feature selection results:");
       System.out.println(as.toResultsString());
