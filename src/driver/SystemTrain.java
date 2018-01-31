@@ -35,25 +35,25 @@ public final class SystemTrain {
    private final String testPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
    private final String validationPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
 
-	private final ArrayList<ClassifierHolder> classifierHolders;
-	private final List<PreprocessFile> preprocessFiles;
+//	private final ArrayList<ClassifierHolder> classifierHolders;
+//	private final List<PreprocessFile> preprocessFiles;
 
    private final DBInterface db;
 
-   private final FeatureSelection fs;
+//   private final FeatureSelection fs;
 
 	public SystemTrain(SystemParameters sp, FeatureSelection fs) throws IOException, Exception {
-      this.classifierHolders = new ArrayList<>();
       this.evaluationSets = new ArrayList<>();
-      this.fs = fs;
+//      FeatureSelection fs = fs;
 
-      this.preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
+      List<PreprocessFile> preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
 
-      this.classifierHolders.add(new ClassifierHolder(new J48(), "J48"));
-      this.classifierHolders.add(new ClassifierHolder(new IBk(), "KNN"));
-      this.classifierHolders.add(new ClassifierHolder(new NaiveBayes(), "NB "));
-      this.classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
-      this.classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
+      ArrayList<ClassifierHolder> classifierHolders = new ArrayList<>();
+      classifierHolders.add(new ClassifierHolder(new J48(), "J48"));
+      classifierHolders.add(new ClassifierHolder(new IBk(), "KNN"));
+      classifierHolders.add(new ClassifierHolder(new NaiveBayes(), "NB "));
+      classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
+      classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
 
       this.evaluationSets.add(new EvaluationSet(this.trainPath       , 4));
       this.evaluationSets.add(new EvaluationSet(this.testPath        , 1));
@@ -63,9 +63,10 @@ public final class SystemTrain {
       this.db = NoDatabase.getInstance();
       this.db.insertMainTable(sp);
       
-      setupTestTrainValidation();
-      applyFeatureSelection();
-      evaluateClassifiers();
+      createCombinedData(preprocessFiles, this.combinedPath);
+      setupTestTrainValidation(this.combinedPath);
+      applyFeatureSelection(fs);
+      evaluateClassifiers(classifierHolders);
 	}
 
    private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> pfL, String relabel)
@@ -81,22 +82,28 @@ public final class SystemTrain {
 		return pfL;
 	}
 
-	public void setupTestTrainValidation() throws IOException, Exception{
-//      Combine data
-		UtilsARFF.combineArffAndAddClassCount(
-			this.combinedPath,
-			this.preprocessFiles.stream()
-				.map(tl->tl.getFaa().getSavePath())
-				.collect(Collectors.toList()),
-			AttributeTypeConstants.ATTRIBUTE_CLASS
-		);
-
-		SetupTestTrainValidation sttv = new SetupTestTrainValidation(this.combinedPath);
+	public void setupTestTrainValidation(String combinedPath) throws IOException, Exception{
+		SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
 //		SetupTestTrainValidation sttv = new SetupTestTrainValidation(DirectoryConstants.FORMATTED_DIR+"Combined General (Shortened).arff");
 		sttv.setTrainTestValidationPaths(this.evaluationSets);
 
       writeTestTrainValidation();
 	}
+
+   /**
+    * Combines the data in the this.preprocessFiles and stores the output to this.combinedPath
+    * @throws IOException
+    * @throws IllegalArgumentException 
+    */
+   private void createCombinedData(List<PreprocessFile> pfL, String combinedPath) throws IOException, IllegalArgumentException {
+      UtilsARFF.combineArffAndAddClassCount(
+         combinedPath,
+         pfL.stream()
+            .map(tl->tl.getFaa().getSavePath())
+            .collect(Collectors.toList()),
+         AttributeTypeConstants.ATTRIBUTE_CLASS
+      );
+   }
 
    /**
     * Loops through the evaluationSets and finds the evaluation set matching the name and returns it if found
@@ -112,15 +119,15 @@ public final class SystemTrain {
       throw new NoSuchElementException("The evaluation set '"+name+"' wasn't found");
    }
 
-   public void applyFeatureSelection()
+   public void applyFeatureSelection(FeatureSelection fs)
            throws IOException, NoSuchElementException, Exception {
-      this.fs.applyFeatureSelection(
+      fs.applyFeatureSelection(
          getEvaluationSet(this.trainPath), 
          this.evaluationSets
       );
       writeTestTrainValidation();
 
-      this.db.insertToFeatureSelectionTable(this.fs);
+      this.db.insertToFeatureSelectionTable(fs);
       this.db.insertToFeatureTable(getEvaluationSet(this.trainPath));
    }
 
@@ -139,10 +146,10 @@ public final class SystemTrain {
       }
    }
 
-   public ArrayList<CustomEvaluation> evaluateClassifiers() throws Exception{
+   public ArrayList<CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders) throws Exception{
       final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
 
-      for (ClassifierHolder ch : this.classifierHolders) {
+      for (ClassifierHolder ch : classifierHolders) {
          CustomEvaluation eval = evaluateIndividualClassifier(ch);
          evaluations.add(eval);
 
