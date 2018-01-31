@@ -1,0 +1,120 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+src_bytes <= 369
+|   count <= 55
+|   |   flag = OTH
+|   |   |   src_bytes <= 66: httpFlood (25.0)
+|   |   |   src_bytes > 66: tcpFlood (4.0)
+|   |   flag = REJ: normal (45.0)
+|   |   flag = RSTO: normal (1.0)
+|   |   flag = RSTOS0: normal (0.0)
+|   |   flag = RSTR: normal (0.0)
+|   |   flag = S0: normal (2.0)
+|   |   flag = S1: normal (1.0)
+|   |   flag = S2: normal (2.0)
+|   |   flag = S3: normal (0.0)
+|   |   flag = SF: normal (505.0)
+|   |   flag = SH: normal (0.0)
+|   count > 55
+|   |   src_bytes <= 66: httpFlood (195.0)
+|   |   src_bytes > 66
+|   |   |   flag = OTH: tcpFlood (567.0)
+|   |   |   flag = REJ: tcpFlood (0.0)
+|   |   |   flag = RSTO: tcpFlood (0.0)
+|   |   |   flag = RSTOS0: tcpFlood (0.0)
+|   |   |   flag = RSTR: tcpFlood (0.0)
+|   |   |   flag = S0: tcpFlood (0.0)
+|   |   |   flag = S1
+|   |   |   |   dst_bytes <= 51
+|   |   |   |   |   src_bytes <= 259: slowBody (3.0/1.0)
+|   |   |   |   |   src_bytes > 259: slowHeaders (8.0)
+|   |   |   |   dst_bytes > 51: httpFlood (12.0)
+|   |   |   flag = S2: tcpFlood (0.0)
+|   |   |   flag = S3: tcpFlood (0.0)
+|   |   |   flag = SF: normal (1.0)
+|   |   |   flag = SH: tcpFlood (0.0)
+src_bytes > 369
+|   flag = OTH: slowRead (0.0)
+|   flag = REJ: slowRead (0.0)
+|   flag = RSTO
+|   |   src_bytes <= 440: httpFlood (47.0)
+|   |   src_bytes > 440
+|   |   |   dst_bytes <= 1187
+|   |   |   |   dst_bytes <= 953
+|   |   |   |   |   dst_bytes <= 911
+|   |   |   |   |   |   src_bytes <= 939: slowHeaders (6.0/1.0)
+|   |   |   |   |   |   src_bytes > 939
+|   |   |   |   |   |   |   src_bytes <= 1014: slowBody (7.0)
+|   |   |   |   |   |   |   src_bytes > 1014
+|   |   |   |   |   |   |   |   dst_bytes <= 801: slowBody (3.0)
+|   |   |   |   |   |   |   |   dst_bytes > 801
+|   |   |   |   |   |   |   |   |   dst_bytes <= 833: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   |   dst_bytes > 833
+|   |   |   |   |   |   |   |   |   |   src_bytes <= 1045: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   src_bytes > 1045: slowBody (4.0)
+|   |   |   |   |   dst_bytes > 911: slowHeaders (62.0)
+|   |   |   |   dst_bytes > 953
+|   |   |   |   |   dst_bytes <= 984: slowBody (79.0/12.0)
+|   |   |   |   |   dst_bytes > 984
+|   |   |   |   |   |   src_bytes <= 1045: slowHeaders (14.0/2.0)
+|   |   |   |   |   |   src_bytes > 1045: slowBody (12.0/1.0)
+|   |   |   dst_bytes > 1187
+|   |   |   |   dst_bytes <= 11914: slowRead (180.0)
+|   |   |   |   dst_bytes > 11914
+|   |   |   |   |   src_bytes <= 1732: slowRead (3.0)
+|   |   |   |   |   src_bytes > 1732: slowHeaders (3.0)
+|   flag = RSTOS0: slowRead (0.0)
+|   flag = RSTR: slowRead (81.0)
+|   flag = S0: slowRead (0.0)
+|   flag = S1
+|   |   count <= 3127
+|   |   |   count <= 866: slowBody (429.0/220.0)
+|   |   |   count > 866: slowHeaders (732.0/435.0)
+|   |   count > 3127: slowRead (67.0/28.0)
+|   flag = S2
+|   |   src_bytes <= 2971: slowHeaders (3.0/1.0)
+|   |   src_bytes > 2971: slowBody (2.0)
+|   flag = S3: httpFlood (292.0)
+|   flag = SF
+|   |   src_bytes <= 522: normal (14.0)
+|   |   src_bytes > 522
+|   |   |   dst_bytes <= 6086: slowBody (7.0/1.0)
+|   |   |   dst_bytes > 6086: slowRead (3.0)
+|   flag = SH: slowRead (0.0)
+
+Number of Leaves  : 	55
+
+Size of the tree : 	82
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         664               77.3893 %
+Incorrectly Classified Instances       194               22.6107 %
+Kappa statistic                          0.7287
+Mean absolute error                      0.0806
+Root mean squared error                  0.2047
+Relative absolute error                 29.0266 %
+Root relative squared error             54.9283 %
+Total Number of Instances              858     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.001    0.993      1.000    0.997      0.996    0.999     0.993     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 0.986    0.000    1.000      0.986    0.993      0.992    0.993     0.988     httpFlood
+                 0.538    0.014    0.885      0.538    0.670      0.648    0.935     0.737     slowRead
+                 0.601    0.155    0.437      0.601    0.506      0.395    0.865     0.502     slowHeaders
+                 0.517    0.101    0.507      0.517    0.512      0.413    0.891     0.511     slowBody
+Weighted Avg.    0.774    0.045    0.804      0.774    0.780      0.741    0.947     0.789     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 143   0   0   0   0   0 |   a = tcpFlood
+   0 143   0   0   0   0 |   b = normal
+   1   0 141   0   0   1 |   c = httpFlood
+   0   0   0  77  50  16 |   d = slowRead
+   0   0   0   2  86  55 |   e = slowHeaders
+   0   0   0   8  61  74 |   f = slowBody

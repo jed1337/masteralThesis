@@ -1,0 +1,66 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                       Class
+Attribute             normal      attack
+                       (0.5)       (0.5)
+=========================================
+total_fvolume
+  mean              4003.0957 214481.4108
+  std. dev.        59190.9756 282133.3483
+  weight sum             2000        2000
+  precision           831.035     831.035
+
+total_bpackets
+  mean                      0    621.6552
+  std. dev.            5.1838   1557.9209
+  weight sum             2000        2000
+  precision            31.103      31.103
+
+total_bvolume
+  mean                      0  33426.8672
+  std. dev.          246.6199  81865.4674
+  weight sum             2000        2000
+  precision         1479.7197   1479.7197
+
+min_fpktl
+  mean               170.8725     45.7125
+  std. dev.          234.5397     12.8386
+  weight sum             2000        2000
+  precision                 5           5
+
+max_fpktl
+  mean               193.9278    716.5635
+  std. dev.          273.3523   1011.8929
+  weight sum             2000        2000
+  precision            8.4624      8.4624
+
+std_fpktl
+  mean                 8.7365      68.557
+  std. dev.           56.5091     77.1999
+  weight sum             2000        2000
+  precision             2.954       2.954
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         516               51.6    %
+Incorrectly Classified Instances       484               48.4    %
+Kappa statistic                          0.032 
+Mean absolute error                      0.4431
+Root mean squared error                  0.6368
+Relative absolute error                 88.6118 %
+Root relative squared error            127.3563 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.992    0.960    0.508      0.992    0.672      0.105    0.989     0.994     normal
+                 0.040    0.008    0.833      0.040    0.076      0.105    0.989     0.968     attack
+Weighted Avg.    0.516    0.484    0.671      0.516    0.374      0.105    0.989     0.981     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 496   4 |   a = normal
+ 480  20 |   b = attack

@@ -21,32 +21,32 @@ public class KDDExtraction extends FeatureExtraction{
 
    @Override
    public String getSlowBodyPath() {
-      return KDD_PATH+"CNIS Slow Body.arff";
+      return KDD_PATH+"KDD CNIS Slow Body.arff";
    }
 
    @Override
    public String getSlowHeadersPath() {
-      return KDD_PATH+"CNIS Slow Headers.arff";
+      return KDD_PATH+"KDD CNIS Slow Headers.arff";
    }
 
    @Override
    public String getSlowReadPath() {
-      return KDD_PATH+"CNIS Slow Read.arff";
+      return KDD_PATH+"KDD CNIS Slow Read.arff";
    }
 
    @Override
    public String getTCPFloodPath() {
-      return KDD_PATH+"CNIS TCP Flood.arff";
+      return KDD_PATH+"KDD CNIS TCP Flood.arff";
    }
 
    @Override
    public String getUDPFloodPath() {
-      return KDD_PATH+"CNIS UDP Flood.arff";
+      return KDD_PATH+"KDD CNIS UDP Flood.arff";
    }
 
    @Override
    public String getHTTPFloodPath() {
-      return KDD_PATH+"CNIS HTTP Flood.arff";
+      return KDD_PATH+"KDD CNIS HTTP Flood.arff";
    }
 
    @Override

@@ -1,0 +1,50 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+duration <= 13
+|   duration <= 2
+|   |   flag = OTH: HIGH_RATE (1110.0)
+|   |   flag = REJ: HIGH_RATE (0.0)
+|   |   flag = RSTO: LOW_RATE (2.0)
+|   |   flag = RSTOS0: HIGH_RATE (0.0)
+|   |   flag = RSTR: HIGH_RATE (0.0)
+|   |   flag = S0: HIGH_RATE (0.0)
+|   |   flag = S1
+|   |   |   src_bytes <= 78: LOW_RATE (2.0)
+|   |   |   src_bytes > 78: HIGH_RATE (8.0)
+|   |   flag = S2: HIGH_RATE (0.0)
+|   |   flag = S3: HIGH_RATE (173.0)
+|   |   flag = SF: HIGH_RATE (0.0)
+|   |   flag = SH: HIGH_RATE (0.0)
+|   duration > 2
+|   |   dst_bytes <= 206: LOW_RATE (20.0)
+|   |   dst_bytes > 206: HIGH_RATE (36.0)
+duration > 13: LOW_RATE (1982.0/6.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	20
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         825               99.0396 %
+Incorrectly Classified Instances         8                0.9604 %
+Kappa statistic                          0.98  
+Mean absolute error                      0.0114
+Root mean squared error                  0.0978
+Relative absolute error                  2.3674 %
+Root relative squared error             19.9659 %
+Total Number of Instances              833     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.988    0.008    0.988      0.988    0.988      0.980    0.992     0.987     HIGH_RATE
+                 0.992    0.012    0.992      0.992    0.992      0.980    0.992     0.991     LOW_RATE
+Weighted Avg.    0.990    0.010    0.990      0.990    0.990      0.980    0.992     0.989     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 329   4 |   a = HIGH_RATE
+   4 496 |   b = LOW_RATE

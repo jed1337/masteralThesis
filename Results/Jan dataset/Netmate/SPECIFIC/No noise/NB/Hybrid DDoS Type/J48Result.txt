@@ -1,0 +1,117 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_fpktl <= 88
+|   min_fpktl <= 40: udpFlood (667.0)
+|   min_fpktl > 40
+|   |   max_fpktl <= 78: tcpFlood (14.0/2.0)
+|   |   max_fpktl > 78: httpFlood (669.0/2.0)
+max_fpktl > 88
+|   max_fpktl <= 554
+|   |   min_fpktl <= 40
+|   |   |   max_bpktl <= 535: slowHeaders (513.0)
+|   |   |   max_bpktl > 535
+|   |   |   |   max_bpktl <= 578
+|   |   |   |   |   max_fpktl <= 466
+|   |   |   |   |   |   max_fpktl <= 465
+|   |   |   |   |   |   |   max_fpktl <= 405
+|   |   |   |   |   |   |   |   max_fpktl <= 394: slowBody (122.0)
+|   |   |   |   |   |   |   |   max_fpktl > 394
+|   |   |   |   |   |   |   |   |   sflow_fpackets <= 1
+|   |   |   |   |   |   |   |   |   |   sflow_bbytes <= 161: slowBody (33.0/4.0)
+|   |   |   |   |   |   |   |   |   |   sflow_bbytes > 161
+|   |   |   |   |   |   |   |   |   |   |   sflow_bbytes <= 175
+|   |   |   |   |   |   |   |   |   |   |   |   max_active <= 35321
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_active <= 28375: slowBody (39.0/13.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_active > 28375: slowHeaders (17.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_active > 35321: slowBody (16.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   sflow_bbytes > 175: slowHeaders (10.0/2.0)
+|   |   |   |   |   |   |   |   |   sflow_fpackets > 1: slowBody (35.0/1.0)
+|   |   |   |   |   |   |   max_fpktl > 405: slowBody (180.0)
+|   |   |   |   |   |   max_fpktl > 465
+|   |   |   |   |   |   |   sflow_fpackets <= 1
+|   |   |   |   |   |   |   |   sflow_bbytes <= 161
+|   |   |   |   |   |   |   |   |   max_active <= 31985: slowHeaders (15.0)
+|   |   |   |   |   |   |   |   |   max_active > 31985
+|   |   |   |   |   |   |   |   |   |   sflow_bbytes <= 146: slowBody (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   sflow_bbytes > 146
+|   |   |   |   |   |   |   |   |   |   |   max_active <= 213191: slowBody (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   max_active > 213191: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   sflow_bbytes > 161
+|   |   |   |   |   |   |   |   |   sflow_bbytes <= 175: slowBody (78.0/36.0)
+|   |   |   |   |   |   |   |   |   sflow_bbytes > 175
+|   |   |   |   |   |   |   |   |   |   max_active <= 155095
+|   |   |   |   |   |   |   |   |   |   |   max_active <= 92396: slowBody (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   max_active > 92396: slowHeaders (5.0)
+|   |   |   |   |   |   |   |   |   |   max_active > 155095: slowBody (4.0)
+|   |   |   |   |   |   |   sflow_fpackets > 1: slowHeaders (9.0)
+|   |   |   |   |   max_fpktl > 466: slowBody (142.0)
+|   |   |   |   max_bpktl > 578
+|   |   |   |   |   max_bpktl <= 628: slowRead (24.0)
+|   |   |   |   |   max_bpktl > 628
+|   |   |   |   |   |   max_bpktl <= 5844
+|   |   |   |   |   |   |   max_fpktl <= 256
+|   |   |   |   |   |   |   |   sflow_bbytes <= 1982: slowBody (6.0)
+|   |   |   |   |   |   |   |   sflow_bbytes > 1982
+|   |   |   |   |   |   |   |   |   sflow_bbytes <= 3965: slowHeaders (3.0/1.0)
+|   |   |   |   |   |   |   |   |   sflow_bbytes > 3965
+|   |   |   |   |   |   |   |   |   |   sflow_fpackets <= 8: slowRead (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   sflow_fpackets > 8: slowBody (3.0)
+|   |   |   |   |   |   |   max_fpktl > 256: slowHeaders (20.0/7.0)
+|   |   |   |   |   |   max_bpktl > 5844: slowRead (14.0)
+|   |   min_fpktl > 40
+|   |   |   min_bpktl <= 52
+|   |   |   |   sflow_fpackets <= 4
+|   |   |   |   |   max_active <= 423279
+|   |   |   |   |   |   min_bpktl <= -1: tcpFlood (7.0/3.0)
+|   |   |   |   |   |   min_bpktl > -1: slowRead (4.0)
+|   |   |   |   |   max_active > 423279: slowRead (619.0)
+|   |   |   |   sflow_fpackets > 4
+|   |   |   |   |   max_bpktl <= 628: tcpFlood (9.0)
+|   |   |   |   |   max_bpktl > 628
+|   |   |   |   |   |   max_fpktl <= 256: slowBody (6.0/1.0)
+|   |   |   |   |   |   max_fpktl > 256: slowHeaders (10.0/2.0)
+|   |   |   min_bpktl > 52
+|   |   |   |   sflow_fpackets <= 2
+|   |   |   |   |   max_fpktl <= 364
+|   |   |   |   |   |   sflow_bbytes <= 15: slowBody (26.0/9.0)
+|   |   |   |   |   |   sflow_bbytes > 15: slowHeaders (4.0)
+|   |   |   |   |   max_fpktl > 364: slowBody (15.0/1.0)
+|   |   |   |   sflow_fpackets > 2: tcpFlood (18.0)
+|   max_fpktl > 554: tcpFlood (622.0)
+
+Number of Leaves  : 	40
+
+Size of the tree : 	79
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         971               96.9062 %
+Incorrectly Classified Instances        31                3.0938 %
+Kappa statistic                          0.9629
+Mean absolute error                      0.0127
+Root mean squared error                  0.0864
+Relative absolute error                  4.5879 %
+Root relative squared error             23.1739 %
+Total Number of Instances             1002     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.002    0.988      1.000    0.994      0.993    1.000     1.000     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     httpFlood
+                 0.994    0.000    1.000      0.994    0.997      0.996    0.997     0.995     slowRead
+                 0.856    0.006    0.966      0.856    0.908      0.893    0.992     0.973     slowHeaders
+                 0.988    0.000    1.000      0.988    0.994      0.993    0.994     0.990     udpFlood
+                 0.976    0.029    0.872      0.976    0.921      0.906    0.992     0.964     slowBody
+Weighted Avg.    0.969    0.006    0.971      0.969    0.969      0.964    0.996     0.987     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 167   0   0   0   0   0 |   a = tcpFlood
+   0 167   0   0   0   0 |   b = httpFlood
+   0   0 166   1   0   0 |   c = slowRead
+   0   0   0 143   0  24 |   d = slowHeaders
+   2   0   0   0 165   0 |   e = udpFlood
+   0   0   0   4   0 163 |   f = slowBody

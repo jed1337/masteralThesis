@@ -1,0 +1,56 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                     Class
+Attribute        HIGH_RATE    LOW_RATE      NORMAL
+                    (0.33)      (0.33)      (0.33)
+===================================================
+max_fpktl
+  mean            1176.9312    385.6322    192.8644
+  std. dev.       1267.1401     81.1924    271.1627
+  weight sum           1332        1332        1333
+  precision         10.0855     10.0855     10.0855
+
+mean_fiat
+  mean             9540.109  53681.0974  26288.3331
+  std. dev.      41270.7702  92282.3816 113307.1183
+  weight sum           1332        1332        1333
+  precision        403.4487    403.4487    403.4487
+
+sflow_bbytes
+  mean           52240.2301    238.2841           0
+  std. dev.      92673.5715   1560.2109    175.1625
+  weight sum           1332        1332        1333
+  precision       1050.9747   1050.9747   1050.9747
+
+total_fhlen
+  mean          248126.6869    600.4259     56.0515
+  std. dev.     169037.6392     99.6222    664.0674
+  weight sum           1332        1332        1333
+  precision        597.7334    597.7334    597.7334
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         508               50.8509 %
+Incorrectly Classified Instances       491               49.1491 %
+Kappa statistic                          0.2628
+Mean absolute error                      0.3291
+Root mean squared error                  0.5351
+Relative absolute error                 74.0485 %
+Root relative squared error            113.515  %
+Total Number of Instances              999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.012    0.000      0.000    0.000      -0.064   0.806     0.631     HIGH_RATE
+                 0.538    0.002    0.994      0.538    0.698      0.657    0.991     0.988     LOW_RATE
+                 0.988    0.724    0.406      0.988    0.575      0.319    0.872     0.805     NORMAL
+Weighted Avg.    0.509    0.246    0.467      0.509    0.424      0.304    0.890     0.808     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   0   0 333 |   a = HIGH_RATE
+   5 179 149 |   b = LOW_RATE
+   3   1 329 |   c = NORMAL

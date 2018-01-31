@@ -1,0 +1,62 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                   Class
+Attribute      HIGH_RATE  LOW_RATE
+                   (0.4)     (0.6)
+===================================
+flag
+  OTH              1111.0       1.0
+  REJ                 1.0       1.0
+  RSTO               39.0     350.0
+  RSTOS0              1.0       1.0
+  RSTR                1.0       1.0
+  S0                  1.0       1.0
+  S1                  9.0    1631.0
+  S2                  1.0      14.0
+  S3                178.0       1.0
+  SF                  1.0       9.0
+  SH                  1.0       1.0
+  [total]          1344.0    2011.0
+
+src_bytes
+  mean            128.767  534.5633
+  std. dev.      123.7421  479.0772
+  weight sum         1333      2000
+  precision       25.2236   25.2236
+
+dst_bytes
+  mean           108.5305  155.4373
+  std. dev.      247.4875  666.6828
+  weight sum         1333      2000
+  precision      672.8889  672.8889
+
+count
+  mean          2520.8848 1094.8536
+  std. dev.     1983.0055  877.2457
+  weight sum         1333      2000
+  precision        2.7781    2.7781
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         801               96.1585 %
+Incorrectly Classified Instances        32                3.8415 %
+Kappa statistic                          0.9187
+Mean absolute error                      0.0545
+Root mean squared error                  0.1975
+Relative absolute error                 11.3637 %
+Root relative squared error             40.3116 %
+Total Number of Instances              833     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.907    0.002    0.997      0.907    0.950      0.921    0.987     0.983     HIGH_RATE
+                 0.998    0.093    0.942      0.998    0.969      0.921    0.987     0.991     LOW_RATE
+Weighted Avg.    0.962    0.057    0.964      0.962    0.961      0.921    0.987     0.988     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 302  31 |   a = HIGH_RATE
+   1 499 |   b = LOW_RATE

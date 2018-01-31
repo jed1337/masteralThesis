@@ -1,0 +1,31 @@
+@relation 'highrate-weka.filters.unsupervised.attribute.Remove-R3,7-weka.filters.unsupervised.instance.Randomize-S11-weka.filters.unsupervised.attribute.RenameNominalValues-RisAttack-Nnormal:NORMAL, tcpFlood:HIGH_RATE, udpFlood:HIGH_RATE, httpFlood:HIGH_RATE, slowBody:LOW_RATE, slowHeaders:LOW_RATE, slowRead:LOW_RATE'
+
+@attribute duration numeric
+@attribute protocol_type {tcp,icmp,udp}
+@attribute flag {OTH,REJ,RSTO,RSTOS0,RSTR,S0,S1,S2,S3,SF,SH}
+@attribute src_bytes numeric
+@attribute dst_bytes numeric
+@attribute wrong_fragment numeric
+@attribute urgent numeric
+@attribute count numeric
+@attribute srv_count numeric
+@attribute serror_rate numeric
+@attribute srv_serror_rate numeric
+@attribute rerror_rate numeric
+@attribute srv_rerror_rate numeric
+@attribute same_srv_rate numeric
+@attribute diff_srv_rate numeric
+@attribute srv_diff_host_rate numeric
+@attribute dst_host_count numeric
+@attribute dst_host_srv_count numeric
+@attribute dst_host_same_srv_rate numeric
+@attribute dst_host_diff_srv_rate numeric
+@attribute dst_host_same_src_port_rate numeric
+@attribute dst_host_srv_diff_host_rate numeric
+@attribute dst_host_serror_rate numeric
+@attribute dst_host_srv_serror_rate numeric
+@attribute dst_host_rerror_rate numeric
+@attribute dst_host_srv_rerror_rate numeric
+@attribute isAttack {NORMAL,neptune,smurf,pod,back,land,LOW_RATE,slowHeaders,slowRead,HIGH_RATE,udpFlood,httpFlood}
+
+@data

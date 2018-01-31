@@ -1,0 +1,57 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+std_bpktl <= 13
+|   min_bpktl <= -1
+|   |   sflow_fpackets <= 1491: normal (101.0/2.0)
+|   |   sflow_fpackets > 1491: udpFlood (98.0)
+|   min_bpktl > -1: tcpFlood (98.0)
+std_bpktl > 13
+|   mean_fpktl <= 62: httpFlood (99.0)
+|   mean_fpktl > 62
+|   |   max_fpktl <= 394
+|   |   |   mean_idle <= 6759326
+|   |   |   |   sflow_bpackets <= 4: slowRead (98.0)
+|   |   |   |   sflow_bpackets > 4
+|   |   |   |   |   total_fvolume <= 907: slowBody (2.0)
+|   |   |   |   |   total_fvolume > 907: slowHeaders (3.0/1.0)
+|   |   |   mean_idle > 6759326: slowHeaders (97.0)
+|   |   max_fpktl > 394: slowBody (97.0)
+
+Number of Leaves  : 	9
+
+Size of the tree : 	17
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         171               97.7143 %
+Incorrectly Classified Instances         4                2.2857 %
+Kappa statistic                          0.9733
+Mean absolute error                      0.0073
+Root mean squared error                  0.0806
+Relative absolute error                  2.9901 %
+Root relative squared error             23.0303 %
+Total Number of Instances              175     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 1.000    0.007    0.962      1.000    0.980      0.977    0.997     0.962     normal
+                 0.960    0.000    1.000      0.960    0.980      0.977    0.980     0.966     httpFlood
+                 1.000    0.020    0.893      1.000    0.943      0.935    0.990     0.893     slowRead
+                 0.920    0.000    1.000      0.920    0.958      0.953    0.960     0.931     slowHeaders
+                 0.960    0.000    1.000      0.960    0.980      0.977    0.997     0.980     udpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     slowBody
+Weighted Avg.    0.977    0.004    0.979      0.977    0.977      0.974    0.989     0.962     
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+ 25  0  0  0  0  0  0 |  a = tcpFlood
+  0 25  0  0  0  0  0 |  b = normal
+  0  0 24  1  0  0  0 |  c = httpFlood
+  0  0  0 25  0  0  0 |  d = slowRead
+  0  0  0  2 23  0  0 |  e = slowHeaders
+  0  1  0  0  0 24  0 |  f = udpFlood
+  0  0  0  0  0  0 25 |  g = slowBody

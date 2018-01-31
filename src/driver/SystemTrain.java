@@ -92,6 +92,7 @@ public final class SystemTrain {
 		);
 
 		SetupTestTrainValidation sttv = new SetupTestTrainValidation(this.combinedPath);
+//		SetupTestTrainValidation sttv = new SetupTestTrainValidation(DirectoryConstants.FORMATTED_DIR+"Combined General (Shortened).arff");
 		sttv.setTrainTestValidationPaths(this.evaluationSets);
 
       writeTestTrainValidation();

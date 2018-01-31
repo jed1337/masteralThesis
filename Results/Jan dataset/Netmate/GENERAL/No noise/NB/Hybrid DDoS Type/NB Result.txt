@@ -1,0 +1,84 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                        Class
+Attribute           HIGH_RATE     LOW_RATE
+                        (0.5)        (0.5)
+===========================================
+total_fpackets
+  mean               8578.1949      14.5254
+  std. dev.          6684.5549       2.4367
+  weight sum              2000         2000
+  precision            14.6205      14.6205
+
+max_fpktl
+  mean               1185.9641     385.3443
+  std. dev.          1268.4248      84.5957
+  weight sum              2000         2000
+  precision            21.5644      21.5644
+
+std_fpktl
+  mean                 62.4027     116.8166
+  std. dev.            88.6037      31.1244
+  weight sum              2000         2000
+  precision             2.9643       2.9643
+
+min_bpktl
+  mean                 29.9917       60.878
+  std. dev.            30.2781       3.3889
+  weight sum              2000         2000
+  precision            20.3333      20.3333
+
+std_bpktl
+  mean                       0      205.656
+  std. dev.            12.5714     295.4615
+  weight sum              2000         2000
+  precision            75.4286      75.4286
+
+min_biat
+  mean                  3.1047     350.2715
+  std. dev.            18.2585     828.6861
+  weight sum              2000         2000
+  precision            18.2092      18.2092
+
+mean_idle
+  mean             612547.9883 7265422.7972
+  std. dev.       1106152.2994 1772557.0264
+  weight sum              2000         2000
+  precision          5700.2418    5700.2418
+
+fpsh_cnt
+  mean                2418.874       1.2018
+  std. dev.          3626.2977       4.3806
+  weight sum              2000         2000
+  precision            17.1691      17.1691
+
+bpsh_cnt
+  mean                   0.291       0.9635
+  std. dev.              0.464       0.1875
+  weight sum              2000         2000
+  precision                  1            1
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         499               49.9    %
+Incorrectly Classified Instances       501               50.1    %
+Kappa statistic                         -0.002 
+Mean absolute error                      0.5087
+Root mean squared error                  0.708 
+Relative absolute error                101.7458 %
+Root relative squared error            141.602  %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.002    0.000      0.000    0.000      -0.032   0.500     0.461     HIGH_RATE
+                 0.998    1.000    0.499      0.998    0.666      -0.032   0.323     0.413     LOW_RATE
+Weighted Avg.    0.499    0.501    0.250      0.499    0.333      -0.032   0.411     0.437     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+   0 500 |   a = HIGH_RATE
+   1 499 |   b = LOW_RATE

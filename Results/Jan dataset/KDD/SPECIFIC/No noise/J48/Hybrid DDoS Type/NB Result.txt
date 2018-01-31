@@ -1,0 +1,72 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                             Class
+Attribute                 tcpFlood   httpFlood    slowRead slowHeaders    slowBody
+                             (0.2)       (0.2)       (0.2)       (0.2)       (0.2)
+===================================================================================
+src_bytes
+  mean                      75.3644    269.2177    1178.637    514.5191    552.8604
+  std. dev.                  4.1869    162.4957   1139.8473    399.3912    545.9485
+  weight sum                    667         667         667         667         667
+  precision                 25.1215     25.1215     25.1215     25.1215     25.1215
+
+dst_bytes
+  mean                            0     493.224    714.9257    175.6176    143.2342
+  std. dev.                 69.2299    408.0198   1659.8141     721.213    313.8105
+  weight sum                    667         667         667         667         667
+  precision                415.3793    415.3793    415.3793    415.3793    415.3793
+
+count
+  mean                    3158.9389    460.0677   1311.7367   1071.6937   1083.5756
+  std. dev.               1833.5154    341.2816   1002.5121    752.2985    955.8465
+  weight sum                    667         667         667         667         667
+  precision                    3.01        3.01        3.01        3.01        3.01
+
+srv_count
+  mean                    3158.9389    460.0677   1311.7367   1071.6937   1083.5756
+  std. dev.               1833.5154    341.2816   1002.5121    752.2985    955.8465
+  weight sum                    667         667         667         667         667
+  precision                    3.01        3.01        3.01        3.01        3.01
+
+serror_rate
+  mean                            0      0.4661      0.3895      0.6427      0.6312
+  std. dev.                  0.0017      0.3953      0.2754      0.3263      0.3284
+  weight sum                    667         667         667         667         667
+  precision                  0.0101      0.0101      0.0101      0.0101      0.0101
+
+dst_host_serror_rate
+  mean                            0      0.5169      0.5383      0.7932      0.7814
+  std. dev.                  0.0017      0.4297      0.4349      0.3631      0.3737
+  weight sum                    667         667         667         667         667
+  precision                  0.0103      0.0103      0.0103      0.0103      0.0103
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         422               50.5389 %
+Incorrectly Classified Instances       413               49.4611 %
+Kappa statistic                          0.3817
+Mean absolute error                      0.1932
+Root mean squared error                  0.3765
+Relative absolute error                 60.3648 %
+Root relative squared error             94.1221 %
+Total Number of Instances              835     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.078    0.763      1.000    0.865      0.839    0.996     0.987     tcpFlood
+                 0.551    0.205    0.402      0.551    0.465      0.310    0.791     0.461     httpFlood
+                 0.455    0.064    0.639      0.455    0.531      0.447    0.899     0.690     slowRead
+                 0.246    0.112    0.353      0.246    0.290      0.154    0.750     0.337     slowHeaders
+                 0.275    0.159    0.303      0.275    0.288      0.121    0.765     0.388     slowBody
+Weighted Avg.    0.505    0.124    0.492      0.505    0.488      0.374    0.840     0.573     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   <-- classified as
+ 167   0   0   0   0 |   a = tcpFlood
+  52  92   0  23   0 |   b = httpFlood
+   0  22  76  12  57 |   c = slowRead
+   0  58  19  41  49 |   d = slowHeaders
+   0  57  24  40  46 |   e = slowBody

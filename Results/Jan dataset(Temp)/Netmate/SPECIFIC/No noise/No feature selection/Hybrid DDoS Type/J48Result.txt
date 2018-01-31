@@ -1,0 +1,53 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+std_bpktl <= 13
+|   min_fpktl <= 40: udpFlood (99.0)
+|   min_fpktl > 40: tcpFlood (99.0)
+std_bpktl > 13
+|   mean_fpktl <= 62: httpFlood (99.0)
+|   mean_fpktl > 62
+|   |   max_fpktl <= 394
+|   |   |   mean_idle <= 6759326
+|   |   |   |   sflow_bpackets <= 4: slowRead (98.0)
+|   |   |   |   sflow_bpackets > 4
+|   |   |   |   |   total_fvolume <= 907: slowBody (2.0)
+|   |   |   |   |   total_fvolume > 907: slowHeaders (3.0/1.0)
+|   |   |   mean_idle > 6759326: slowHeaders (97.0)
+|   |   max_fpktl > 394: slowBody (97.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	15
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         147               98      %
+Incorrectly Classified Instances         3                2      %
+Kappa statistic                          0.976 
+Mean absolute error                      0.0067
+Root mean squared error                  0.0816
+Relative absolute error                  2.4    %
+Root relative squared error             21.9089 %
+Total Number of Instances              150     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 0.960    0.000    1.000      0.960    0.980      0.976    0.980     0.967     httpFlood
+                 1.000    0.024    0.893      1.000    0.943      0.934    0.988     0.893     slowRead
+                 0.920    0.000    1.000      0.920    0.958      0.952    0.960     0.933     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     slowBody
+Weighted Avg.    0.980    0.004    0.982      0.980    0.980      0.977    0.988     0.965     
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f   <-- classified as
+ 25  0  0  0  0  0 |  a = tcpFlood
+  0 24  1  0  0  0 |  b = httpFlood
+  0  0 25  0  0  0 |  c = slowRead
+  0  0  2 23  0  0 |  d = slowHeaders
+  0  0  0  0 25  0 |  e = udpFlood
+  0  0  0  0  0 25 |  f = slowBody

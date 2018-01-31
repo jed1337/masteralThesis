@@ -1,12 +1,12 @@
 package preprocessFiles;
 
 import constants.AttributeTypeConstants;
-import constants.GeneralAttackTypeEnum;
 import constants.DirectoryConstants;
+import constants.GeneralAttackTypeEnum;
 import constants.SpecificAttackTypeEnum;
 import globalParameters.GlobalFeatureExtraction;
-import preprocessFiles.preprocessAs.FormatAsArff;
 import java.io.IOException;
+import preprocessFiles.preprocessAs.FormatAsArff;
 
 /**
  * An abstract class That setups the files to be used by the classifier<p>
@@ -42,6 +42,14 @@ public abstract class PreprocessFile {
       balanceInstances();
    }
 
+   /**
+    * Uses the renameNominalValuesfunction in this.faa
+    * @see preprocessFiles.preprocessAs.FormatAsArff#renameNominalValues(String, String)
+    * 
+    * @param attributes
+    * @param toReplace
+    * @throws java.lang.Exception
+    */
    public final void relabel(String attributes, String toReplace) throws Exception {
       this.faa.renameNominalValues(attributes, toReplace);
    }
@@ -62,6 +70,10 @@ public abstract class PreprocessFile {
       return faa;
    }
 
+   /**
+    * Uses the removeNonMatchingClasses in this.faa
+    * @see preprocessFiles.preprocessAs.FormatAsArff#removeNonMatchingClasses(String, String...)
+    */
    private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType.getValue());
       GlobalFeatureExtraction.getInstance()

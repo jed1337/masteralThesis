@@ -1,0 +1,38 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances         978               97.7023 %
+Incorrectly Classified Instances        23                2.2977 %
+Kappa statistic                          0.9732
+Mean absolute error                      0.0122
+Root mean squared error                  0.0666
+Relative absolute error                  4.9965 %
+Root relative squared error             19.0464 %
+Total Number of Instances             1001     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     httpFlood
+                 0.993    0.001    0.993      0.993    0.993      0.992    1.000     1.000     slowRead
+                 0.895    0.008    0.948      0.895    0.921      0.909    0.997     0.986     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+                 0.951    0.017    0.901      0.951    0.925      0.913    0.998     0.985     slowBody
+Weighted Avg.    0.977    0.004    0.977      0.977    0.977      0.973    0.999     0.996     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 143   0   0   0   0   0   0 |   a = tcpFlood
+   0 143   0   0   0   0   0 |   b = normal
+   0   0 143   0   0   0   0 |   c = httpFlood
+   0   0   0 142   0   0   1 |   d = slowRead
+   0   0   0   1 128   0  14 |   e = slowHeaders
+   0   0   0   0   0 143   0 |   f = udpFlood
+   0   0   0   0   7   0 136 |   g = slowBody

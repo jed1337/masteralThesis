@@ -1,0 +1,56 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         3.4979 * (normalized) duration
+ +      -1.1797 * (normalized) flag=OTH
+ +      -0.9541 * (normalized) flag=RSTO
+ +       1.7909 * (normalized) flag=S1
+ +       1.3429 * (normalized) flag=S2
+ +      -1      * (normalized) flag=S3
+ +       1.2563 * (normalized) src_bytes
+ +       1.6564 * (normalized) dst_bytes
+ +       0.7438 * (normalized) count
+ +       0.7438 * (normalized) srv_count
+ +      -0.243  * (normalized) serror_rate
+ +      -0.243  * (normalized) srv_serror_rate
+ +      -0.2568 * (normalized) dst_host_count
+ +      -0.2568 * (normalized) dst_host_srv_count
+ +      -0.0899 * (normalized) dst_host_same_src_port_rate
+ +      -0.0026 * (normalized) dst_host_serror_rate
+ +      -0.0026 * (normalized) dst_host_srv_serror_rate
+ -       0.991 
+
+Number of kernel evaluations: 324819 (62.786% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         828               99.3998 %
+Incorrectly Classified Instances         5                0.6002 %
+Kappa statistic                          0.9875
+Mean absolute error                      0.006 
+Root mean squared error                  0.0775
+Relative absolute error                  1.2506 %
+Root relative squared error             15.8161 %
+Total Number of Instances              833     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.010    0.985      1.000    0.993      0.988    0.995     0.985     HIGH_RATE
+                 0.990    0.000    1.000      0.990    0.995      0.988    0.995     0.996     LOW_RATE
+Weighted Avg.    0.994    0.004    0.994      0.994    0.994      0.988    0.995     0.992     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 333   0 |   a = HIGH_RATE
+   5 495 |   b = LOW_RATE

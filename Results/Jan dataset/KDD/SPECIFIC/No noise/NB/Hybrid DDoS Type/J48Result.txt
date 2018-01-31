@@ -1,0 +1,88 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+src_bytes <= 78
+|   src_bytes <= 74: httpFlood (256.0/1.0)
+|   src_bytes > 74: tcpFlood (667.0)
+src_bytes > 78
+|   flag = OTH: slowRead (0.0)
+|   flag = REJ: slowRead (0.0)
+|   flag = RSTO
+|   |   src_bytes <= 440: httpFlood (60.0)
+|   |   src_bytes > 440
+|   |   |   dst_bytes <= 1022
+|   |   |   |   dst_bytes <= 953
+|   |   |   |   |   dst_bytes <= 890
+|   |   |   |   |   |   dst_bytes <= 887
+|   |   |   |   |   |   |   src_bytes <= 4706: slowHeaders (15.0/4.0)
+|   |   |   |   |   |   |   src_bytes > 4706: slowBody (3.0)
+|   |   |   |   |   |   dst_bytes > 887
+|   |   |   |   |   |   |   src_bytes <= 1007: slowBody (6.0)
+|   |   |   |   |   |   |   src_bytes > 1007: slowHeaders (3.0/1.0)
+|   |   |   |   |   dst_bytes > 890: slowHeaders (70.0)
+|   |   |   |   dst_bytes > 953
+|   |   |   |   |   dst_bytes <= 956: slowBody (102.0/15.0)
+|   |   |   |   |   dst_bytes > 956
+|   |   |   |   |   |   dst_bytes <= 1019: slowHeaders (10.0)
+|   |   |   |   |   |   dst_bytes > 1019: slowBody (22.0/7.0)
+|   |   |   dst_bytes > 1022
+|   |   |   |   dst_bytes <= 11914: slowRead (212.0)
+|   |   |   |   dst_bytes > 11914
+|   |   |   |   |   src_bytes <= 1732: slowRead (4.0)
+|   |   |   |   |   src_bytes > 1732: slowHeaders (2.0)
+|   flag = RSTOS0: slowRead (0.0)
+|   flag = RSTR: slowRead (87.0)
+|   flag = S0: slowRead (0.0)
+|   flag = S1
+|   |   src_bytes <= 296
+|   |   |   dst_bytes <= 0
+|   |   |   |   src_bytes <= 242: slowRead (2.0/1.0)
+|   |   |   |   src_bytes > 242: slowHeaders (11.0)
+|   |   |   dst_bytes > 0: httpFlood (16.0)
+|   |   src_bytes > 296
+|   |   |   count <= 3115
+|   |   |   |   count <= 867: slowBody (497.0/262.0)
+|   |   |   |   count > 867: slowHeaders (848.0/504.0)
+|   |   |   count > 3115: slowRead (86.0/36.0)
+|   flag = S2
+|   |   count <= 1808: slowBody (7.0/1.0)
+|   |   count > 1808: slowHeaders (2.0)
+|   flag = S3: httpFlood (336.0)
+|   flag = SF
+|   |   dst_bytes <= 1886: slowBody (7.0/1.0)
+|   |   dst_bytes > 1886: slowRead (4.0)
+|   flag = SH: slowRead (0.0)
+
+Number of Leaves  : 	31
+
+Size of the tree : 	52
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         614               73.5329 %
+Incorrectly Classified Instances       221               26.4671 %
+Kappa statistic                          0.6692
+Mean absolute error                      0.1168
+Root mean squared error                  0.2423
+Relative absolute error                 36.5083 %
+Root relative squared error             60.5783 %
+Total Number of Instances              835     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 0.988    0.000    1.000      0.988    0.994      0.993    0.997     0.995     httpFlood
+                 0.515    0.019    0.869      0.515    0.647      0.613    0.911     0.719     slowRead
+                 0.647    0.198    0.450      0.647    0.531      0.397    0.852     0.522     slowHeaders
+                 0.527    0.114    0.537      0.527    0.532      0.416    0.873     0.562     slowBody
+Weighted Avg.    0.735    0.066    0.771      0.735    0.741      0.684    0.927     0.760     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   <-- classified as
+ 167   0   0   0   0 |   a = tcpFlood
+   0 165   1   1   0 |   b = httpFlood
+   0   0  86  61  20 |   c = slowRead
+   0   0   3 108  56 |   d = slowHeaders
+   0   0   9  70  88 |   e = slowBody

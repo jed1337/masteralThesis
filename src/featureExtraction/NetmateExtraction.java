@@ -1,6 +1,5 @@
 package featureExtraction;
 
-import constants.DatasetNames;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -66,6 +65,12 @@ public class NetmateExtraction extends FeatureExtraction{
       return Collections.unmodifiableList(al);
    }
 
+   /**
+    * {@inheritDoc}
+    * <p>
+    * The implementation of this function by this class doesn't do anything
+    * since it doesn't have any non-matching features to remove.
+    */
    @Override
    public Consumer<FormatAsArff> removeNonMatchingClasses() {
       return (faa)->{}; //Do nothing, don't remove any classes

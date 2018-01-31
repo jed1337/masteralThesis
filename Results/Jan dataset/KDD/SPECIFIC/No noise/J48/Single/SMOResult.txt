@@ -1,0 +1,277 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: tcpFlood, normal
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.245  * (normalized) src_bytes
+ +       0.7211 * (normalized) dst_bytes
+ +      -2.0734 * (normalized) count
+ +      -0      * (normalized) serror_rate
+ +       3.583  * (normalized) dst_host_srv_count
+ +       0.02   * (normalized) dst_host_serror_rate
+ -       1.7832
+
+Number of kernel evaluations: 3243 (65.437% cached)
+
+Classifier for classes: tcpFlood, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.2119 * (normalized) src_bytes
+ +       0.0019 * (normalized) dst_bytes
+ +      -2.8198 * (normalized) count
+ +       0.1859 * (normalized) serror_rate
+ +      11.2841 * (normalized) dst_host_srv_count
+ +       0.2113 * (normalized) dst_host_serror_rate
+ -       3.1937
+
+Number of kernel evaluations: 10571 (62.31% cached)
+
+Classifier for classes: tcpFlood, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         8.2816 * (normalized) src_bytes
+ +       1.3797 * (normalized) dst_bytes
+ +      -2.4353 * (normalized) count
+ +       1.5534 * (normalized) serror_rate
+ +       3.4373 * (normalized) dst_host_srv_count
+ +       2.375  * (normalized) dst_host_serror_rate
+ -       1.7216
+
+Number of kernel evaluations: 7641 (62.047% cached)
+
+Classifier for classes: tcpFlood, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         8.2654 * (normalized) src_bytes
+ +       0.6131 * (normalized) dst_bytes
+ +      -3.3284 * (normalized) count
+ +       1.6308 * (normalized) serror_rate
+ +       3.664  * (normalized) dst_host_srv_count
+ +       1.5938 * (normalized) dst_host_serror_rate
+ -       1.6721
+
+Number of kernel evaluations: 3637 (56.286% cached)
+
+Classifier for classes: tcpFlood, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         8.5393 * (normalized) src_bytes
+ +       0.5458 * (normalized) dst_bytes
+ +      -3.2783 * (normalized) count
+ +       1.5371 * (normalized) serror_rate
+ +       2.6903 * (normalized) dst_host_srv_count
+ +       2.0365 * (normalized) dst_host_serror_rate
+ -       1.4359
+
+Number of kernel evaluations: 6063 (61.402% cached)
+
+Classifier for classes: normal, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.3657 * (normalized) src_bytes
+ +      -0.9296 * (normalized) dst_bytes
+ +       0.6112 * (normalized) count
+ +       0.1327 * (normalized) serror_rate
+ +      -3.5842 * (normalized) dst_host_srv_count
+ +       0.1097 * (normalized) dst_host_serror_rate
+ +       2.3833
+
+Number of kernel evaluations: 11274 (69.783% cached)
+
+Classifier for classes: normal, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         4.6807 * (normalized) src_bytes
+ +      -0.2717 * (normalized) dst_bytes
+ +       1.429  * (normalized) count
+ +       0.2206 * (normalized) serror_rate
+ +      -2.7618 * (normalized) dst_host_srv_count
+ +       1.1299 * (normalized) dst_host_serror_rate
+ +       1.2304
+
+Number of kernel evaluations: 11658 (64.889% cached)
+
+Classifier for classes: normal, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         4.1827 * (normalized) src_bytes
+ +      -0.5671 * (normalized) dst_bytes
+ +       1.0696 * (normalized) count
+ +       0.2325 * (normalized) serror_rate
+ +      -3.0132 * (normalized) dst_host_srv_count
+ +       1.0207 * (normalized) dst_host_serror_rate
+ +       1.4839
+
+Number of kernel evaluations: 12713 (65.983% cached)
+
+Classifier for classes: normal, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         4.2506 * (normalized) src_bytes
+ +      -0.6219 * (normalized) dst_bytes
+ +       1.1659 * (normalized) count
+ +       0.3474 * (normalized) serror_rate
+ +      -2.9241 * (normalized) dst_host_srv_count
+ +       1.2989 * (normalized) dst_host_serror_rate
+ +       1.3808
+
+Number of kernel evaluations: 10074 (65.055% cached)
+
+Classifier for classes: httpFlood, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        12.0534 * (normalized) src_bytes
+ +       0.8847 * (normalized) dst_bytes
+ +       6.3276 * (normalized) count
+ +      -6.0279 * (normalized) serror_rate
+ +      -1.5125 * (normalized) dst_host_srv_count
+ +       3.9415 * (normalized) dst_host_serror_rate
+ -       1.0128
+
+Number of kernel evaluations: 82528 (77.221% cached)
+
+Classifier for classes: httpFlood, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        10.5961 * (normalized) src_bytes
+ +      -1.5218 * (normalized) dst_bytes
+ +       7.3609 * (normalized) count
+ +      -3.3258 * (normalized) serror_rate
+ +      -2.7393 * (normalized) dst_host_srv_count
+ +       3.3821 * (normalized) dst_host_serror_rate
+ -       0.7732
+
+Number of kernel evaluations: 86876 (70.861% cached)
+
+Classifier for classes: httpFlood, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        10.947  * (normalized) src_bytes
+ +      -1.7387 * (normalized) dst_bytes
+ +       5.3871 * (normalized) count
+ +      -4.0145 * (normalized) serror_rate
+ +      -2.9544 * (normalized) dst_host_srv_count
+ +       3.9635 * (normalized) dst_host_serror_rate
+ -       0.5509
+
+Number of kernel evaluations: 84349 (69.925% cached)
+
+Classifier for classes: slowRead, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -3.9512 * (normalized) src_bytes
+ +      -0.3616 * (normalized) dst_bytes
+ +      -8.2007 * (normalized) count
+ +       5.4402 * (normalized) serror_rate
+ +      -0.7244 * (normalized) dst_host_srv_count
+ +      -1.1573 * (normalized) dst_host_serror_rate
+ +       0.1705
+
+Number of kernel evaluations: 74157 (69.582% cached)
+
+Classifier for classes: slowRead, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -3.8335 * (normalized) src_bytes
+ +      -1.044  * (normalized) dst_bytes
+ +      -6.5947 * (normalized) count
+ +       5.5331 * (normalized) serror_rate
+ +      -1.378  * (normalized) dst_host_srv_count
+ +      -1.5187 * (normalized) dst_host_serror_rate
+ +       0.3894
+
+Number of kernel evaluations: 61118 (69.752% cached)
+
+Classifier for classes: slowHeaders, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.4945 * (normalized) src_bytes
+ +      -0.525  * (normalized) dst_bytes
+ +       0.193  * (normalized) count
+ +      -0.3158 * (normalized) serror_rate
+ +      -0.0919 * (normalized) dst_host_srv_count
+ +      -0.2217 * (normalized) dst_host_serror_rate
+ +       0.1984
+
+Number of kernel evaluations: 88439 (56.023% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         589               68.648  %
+Incorrectly Classified Instances       269               31.352  %
+Kappa statistic                          0.6238
+Mean absolute error                      0.2339
+Root mean squared error                  0.3284
+Relative absolute error                 84.1865 %
+Root relative squared error             88.1208 %
+Total Number of Instances              858     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.993    0.017    0.922      0.993    0.956      0.948    0.993     0.939     tcpFlood
+                 0.944    0.000    1.000      0.944    0.971      0.966    0.976     0.959     normal
+                 0.699    0.077    0.645      0.699    0.671      0.603    0.856     0.520     httpFlood
+                 0.867    0.119    0.593      0.867    0.705      0.650    0.880     0.577     slowRead
+                 0.615    0.158    0.438      0.615    0.512      0.402    0.802     0.374     slowHeaders
+                 0.000    0.006    0.000      0.000    0.000      -0.031   0.715     0.266     slowBody
+Weighted Avg.    0.686    0.063    0.600      0.686    0.636      0.590    0.870     0.606     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 142   0   1   0   0   0 |   a = tcpFlood
+   2 135   6   0   0   0 |   b = normal
+   7   0 100   0  36   0 |   c = httpFlood
+   1   0   9 124   5   4 |   d = slowRead
+   2   0  18  35  88   0 |   e = slowHeaders
+   0   0  21  50  72   0 |   f = slowBody

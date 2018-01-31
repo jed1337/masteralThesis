@@ -1,0 +1,36 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances         807               94.0559 %
+Incorrectly Classified Instances        51                5.9441 %
+Kappa statistic                          0.9287
+Mean absolute error                      0.0344
+Root mean squared error                  0.1255
+Relative absolute error                 12.3727 %
+Root relative squared error             33.6627 %
+Total Number of Instances              858     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.001    0.993      1.000    0.997      0.996    1.000     1.000     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 0.993    0.000    1.000      0.993    0.996      0.996    1.000     1.000     httpFlood
+                 0.979    0.003    0.986      0.979    0.982      0.979    0.996     0.993     slowRead
+                 0.790    0.024    0.869      0.790    0.828      0.797    0.979     0.893     slowHeaders
+                 0.881    0.043    0.803      0.881    0.840      0.807    0.978     0.893     slowBody
+Weighted Avg.    0.941    0.012    0.942      0.941    0.941      0.929    0.992     0.963     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 143   0   0   0   0   0 |   a = tcpFlood
+   0 143   0   0   0   0 |   b = normal
+   1   0 142   0   0   0 |   c = httpFlood
+   0   0   0 140   1   2 |   d = slowRead
+   0   0   0   1 113  29 |   e = slowHeaders
+   0   0   0   1  16 126 |   f = slowBody

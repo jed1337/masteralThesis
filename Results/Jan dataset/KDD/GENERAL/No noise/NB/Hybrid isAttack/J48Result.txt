@@ -1,0 +1,46 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+dst_host_srv_diff_host_rate <= 0
+|   flag = OTH: attack (684.0)
+|   flag = REJ: normal (8.0)
+|   flag = RSTO: attack (175.0/1.0)
+|   flag = RSTOS0: attack (0.0)
+|   flag = RSTR: attack (0.0)
+|   flag = S0: normal (1.0)
+|   flag = S1: attack (557.0/4.0)
+|   flag = S2
+|   |   dst_host_count <= 177: attack (4.0)
+|   |   dst_host_count > 177: normal (2.0)
+|   flag = S3: attack (252.0)
+|   flag = SF: normal (667.0)
+|   flag = SH: attack (0.0)
+dst_host_srv_diff_host_rate > 0: normal (1317.0)
+
+Number of Leaves  : 	13
+
+Size of the tree : 	16
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         916               99.8909 %
+Incorrectly Classified Instances         1                0.1091 %
+Kappa statistic                          0.9978
+Mean absolute error                      0.0085
+Root mean squared error                  0.049 
+Relative absolute error                  1.7212 %
+Root relative squared error              9.8404 %
+Total Number of Instances              917     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.002    0.998      1.000    0.999      0.998    0.999     0.998     normal
+                 0.998    0.000    1.000      0.998    0.999      0.998    0.999     0.999     attack
+Weighted Avg.    0.999    0.001    0.999      0.999    0.999      0.998    0.999     0.998     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+   1 416 |   b = attack

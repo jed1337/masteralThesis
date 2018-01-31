@@ -1,0 +1,56 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                         Class
+Attribute               normal    attack
+                        (0.55)    (0.45)
+=========================================
+flag
+  OTH                       1.0     685.0
+  REJ                     145.0       1.0
+  RSTO                      5.0     175.0
+  RSTOS0                    1.0       1.0
+  RSTR                      1.0       1.0
+  S0                       15.0       1.0
+  S1                       13.0     554.0
+  S2                        5.0       5.0
+  S3                        1.0     253.0
+  SF                     1823.0       1.0
+  SH                        1.0       1.0
+  [total]                2011.0    1678.0
+
+count
+  mean                   8.9469 1560.7611
+  std. dev.             14.8404 1649.4511
+  weight sum               2000      1667
+  precision              4.7973    4.7973
+
+dst_host_srv_count
+  mean                 244.6218    87.261
+  std. dev.              38.808   18.7393
+  weight sum               2000      1667
+  precision              1.5839    1.5839
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         908               99.0185 %
+Incorrectly Classified Instances         9                0.9815 %
+Kappa statistic                          0.9802
+Mean absolute error                      0.0087
+Root mean squared error                  0.0757
+Relative absolute error                  1.764  %
+Root relative squared error             15.201  %
+Total Number of Instances              917     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.984    0.002    0.998      0.984    0.991      0.980    1.000     1.000     normal
+                 0.998    0.016    0.981      0.998    0.989      0.980    1.000     1.000     attack
+Weighted Avg.    0.990    0.009    0.990      0.990    0.990      0.980    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 492   8 |   a = normal
+   1 416 |   b = attack

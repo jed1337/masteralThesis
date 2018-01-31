@@ -1,22 +1,21 @@
 package driver;
 
 import constants.ArffInstanceCount;
+import constants.DirectoryConstants;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.GeneralAttackType;
 import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
-import driver.mode.HybridIsAttack;
-import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
-import featureExtraction.Decorator.InitialDatabase;
-import featureExtraction.KDDExtraction;
+import featureExtraction.Decorator.JanCNISDatabase;
+import featureExtraction.NetmateTempExtraction;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
-import featureSelection.filters.InfoGainFS;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
@@ -25,28 +24,32 @@ import weka.core.Instances;
 public final class Driver {
 //<editor-fold defaultstate="collapsed" desc="System">
    public static void system() throws IOException, Exception {
-      Instances validation = UtilsInstances.getInstances(
-              "Results/TestTrainValidation/NormalOrAttack/Validation.arff");
-      Instances hlValidation = UtilsInstances.getInstances(
-              "Results/TestTrainValidation/HL/Validation.arff");
-      Classifier normalClassifier = UtilsClssifiers.readModel(
-              "Results/TestTrainValidation/NormalOrAttack/KNN.model");
-      Classifier hlClassifier = UtilsClssifiers.readModel(
-              "Results/TestTrainValidation/HL/KNN.model");
+      Instances isAttackValidation = UtilsInstances.getInstances(
+              "Results/The one in the DB/BINARY/No noise/J48/isAttack/Validation.arff");
+      Instances ddosTypeValidation = UtilsInstances.getInstances(
+              "Results/The one in the DB/BINARY/No noise/J48/DDoS type/Validation.arff");
+      
+      Instances incompatible = UtilsInstances.getInstances(
+              "Results/The one in the DB/NOMINAL/No noise/J48/DDoS type/Validation.arff");
+      
+      Classifier isAttackClassifier = UtilsClssifiers.readModel(
+              "Results/The one in the DB/BINARY/No noise/J48/isAttack/RF .model");
+      Classifier ddosTypeClassifier = UtilsClssifiers.readModel(
+              "Results/The one in the DB/BINARY/No noise/J48/DDoS type/RF .model");
 
-      for (int i = 0; i < validation.classAttribute().numValues(); i++) {
-         System.out.println("Value " + i + " = " + validation.classAttribute()
+      for (int i = 0; i < isAttackValidation.classAttribute().numValues(); i++) {
+         System.out.println("Value " + i + " = " + isAttackValidation.classAttribute()
                  .value(i));
       }
-      for (int i = 0; i < validation.size(); i++) {
+      for (int i = 0; i < isAttackValidation.size(); i++) {
 
-         String predictedValue = validation.classAttribute().value(
-                 (int) normalClassifier.classifyInstance(validation.get(i)));
-         String actualValue = validation.get(i).stringValue(26);
+         String predictedValue = isAttackValidation.classAttribute().value(
+                 (int) isAttackClassifier.classifyInstance(isAttackValidation.get(i)));
+         String actualValue = isAttackValidation.get(i).stringValue(26);
 
          if (predictedValue.equalsIgnoreCase("attack")) {
-            predictedValue = hlValidation.classAttribute().value(
-                    (int) hlClassifier.classifyInstance(validation.get(i)));
+            predictedValue = ddosTypeValidation.classAttribute().value(
+                    (int) ddosTypeClassifier.classifyInstance(isAttackValidation.get(i)));
          }
 
          System.out.println(
@@ -58,15 +61,16 @@ public final class Driver {
 //</editor-fold>
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
+//      system();
       GlobalFeatureExtraction.setInstance(
-         new InitialDatabase(new KDDExtraction())
+//         new JanCNISDatabase(new NetmateExtraction())
+         new JanCNISDatabase(new NetmateTempExtraction())
       );
-//      GlobalFeatureExtraction.setInstance(new NetmateExtraction());
       final int instanceCount = ArffInstanceCount.HALVED;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
          NoFeatureSelection.getInstance(),
-         new InfoGainFS(),
+////         new InfoGainFS(),
 //         new NBWrapper(),
 //         new J48Wrapper()
       };
@@ -80,33 +84,33 @@ public final class Driver {
       };
 
       for (FeatureSelection fs : featureSelections) {
+//         for (CategoricalType categoricalType : categoricalTypes) {
+//            for (NoiseLevel noiseLevel : noiseLevels) {
+//               systemTrain(
+//                  fs,
+//                  new SystemParameters.Builder(
+//                     instanceCount,
+//                     new Single (noiseLevel, categoricalType)
+//                  ).build()
+//               );
+//            }
+//         }
+//         for (NoiseLevel noiseLevel : noiseLevels) {
+//            systemTrain(
+//              fs,
+//              new SystemParameters.Builder(
+//                instanceCount,
+//                new HybridIsAttack(noiseLevel)
+//              ).build()
+//            );
+//         }
          for (CategoricalType categoricalType : categoricalTypes) {
-            for (NoiseLevel noiseLevel : noiseLevels) {
-               systemTrain(
-                  fs,
-                  new SystemParameters.Builder(
-                     instanceCount,
-                     new Single (noiseLevel, categoricalType)
-                  ).build()
-               );
-            }
-         }
-         for (NoiseLevel noiseLevel : noiseLevels) {
             systemTrain(
-              fs,
-              new SystemParameters.Builder(
-                instanceCount,
-                new HybridIsAttack(noiseLevel)
-              ).build()
-            );
-         }
-         for (CategoricalType categoricalType : categoricalTypes) {
-            systemTrain(
-              fs,
-              new SystemParameters.Builder(
-                instanceCount,
-                new HybridDDoSType(categoricalType)
-              ).build()
+               fs,
+               new SystemParameters.Builder(
+                  instanceCount,
+                  new HybridDDoSType(categoricalType)
+               ).build()
             );
          }
       }
@@ -116,15 +120,15 @@ public final class Driver {
            throws IOException, Exception {
       new SystemTrain(systemParameters, fs);
 
-//      String fullFolderPath = String.join("/",
-//         "Results",
-//         "Dry run",
-//         GlobalFeatureExtraction.getInstance().getName(),
-//         systemParameters.getCategoricalType().name(),
-//         systemParameters.getNoiseLevelString(),
-//         fs.getFSMethodName(),
-//         systemParameters.getSystemType()
-//      )+"/";
-//      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
+      String fullFolderPath = String.join("/",
+         "Results",
+         "Jan dataset(Temp)",
+         GlobalFeatureExtraction.getInstance().getName(),
+         systemParameters.getCategoricalType().name(),
+         systemParameters.getNoiseLevelString(),
+         fs.getFSMethodName(),
+         systemParameters.getSystemType()
+      )+"/";
+      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
    }
 }

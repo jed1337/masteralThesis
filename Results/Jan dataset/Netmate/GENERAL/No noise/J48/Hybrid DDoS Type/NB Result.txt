@@ -1,0 +1,48 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                   Class
+Attribute      HIGH_RATE  LOW_RATE
+                   (0.5)     (0.5)
+===================================
+std_fpktl
+  mean            62.4027  116.8166
+  std. dev.       88.6037   31.1244
+  weight sum         2000      2000
+  precision        2.9643    2.9643
+
+min_biat
+  mean             3.1047  350.2715
+  std. dev.       18.2585  828.6861
+  weight sum         2000      2000
+  precision       18.2092   18.2092
+
+fpsh_cnt
+  mean           2418.874    1.2018
+  std. dev.     3626.2977    4.3806
+  weight sum         2000      2000
+  precision       17.1691   17.1691
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         586               58.6    %
+Incorrectly Classified Instances       414               41.4    %
+Kappa statistic                          0.172 
+Mean absolute error                      0.4362
+Root mean squared error                  0.6403
+Relative absolute error                 87.2369 %
+Root relative squared error            128.0628 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.180    0.008    0.957      0.180    0.303      0.295    0.575     0.628     HIGH_RATE
+                 0.992    0.820    0.547      0.992    0.706      0.295    0.466     0.472     LOW_RATE
+Weighted Avg.    0.586    0.414    0.752      0.586    0.504      0.295    0.521     0.550     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  90 410 |   a = HIGH_RATE
+   4 496 |   b = LOW_RATE

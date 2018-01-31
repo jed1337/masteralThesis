@@ -1,0 +1,292 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: tcpFlood, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.9632 * (normalized) min_fpktl
+ +      -5.5527 * (normalized) max_fpktl
+ +      -0.3073 * (normalized) min_bpktl
+ +       1.4616 * (normalized) max_bpktl
+ +      -2.05   * (normalized) max_active
+ +      -1.528  * (normalized) sflow_fpackets
+ +      -1.7867 * (normalized) sflow_bbytes
+ +       1.3298
+
+Number of kernel evaluations: 12891 (66.741% cached)
+
+Classifier for classes: tcpFlood, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -2.7605 * (normalized) min_fpktl
+ +      -5.5315 * (normalized) max_fpktl
+ +      -1.6435 * (normalized) min_bpktl
+ +       4.0683 * (normalized) max_bpktl
+ +      -1.3428 * (normalized) max_active
+ +      -2.1358 * (normalized) sflow_fpackets
+ +      -2.4217 * (normalized) sflow_bbytes
+ +       2.6955
+
+Number of kernel evaluations: 18935 (78.836% cached)
+
+Classifier for classes: tcpFlood, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -2.4974 * (normalized) min_fpktl
+ +      -5.3716 * (normalized) max_fpktl
+ +      -0.6199 * (normalized) min_bpktl
+ +       2.8752 * (normalized) max_bpktl
+ +      -2.5019 * (normalized) max_active
+ +      -1.7283 * (normalized) sflow_fpackets
+ +      -1.9998 * (normalized) sflow_bbytes
+ +       1.8532
+
+Number of kernel evaluations: 12414 (72.535% cached)
+
+Classifier for classes: tcpFlood, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.9451 * (normalized) min_fpktl
+ +      -0.8164 * (normalized) max_fpktl
+ +      -2.1415 * (normalized) min_bpktl
+ +      -0.138  * (normalized) max_bpktl
+ +      -0.003  * (normalized) max_active
+ +       0.0257 * (normalized) sflow_fpackets
+ +      -0.382  * (normalized) sflow_bbytes
+ +       0.999 
+
+Number of kernel evaluations: 9643 (74.42% cached)
+
+Classifier for classes: tcpFlood, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -2.0783 * (normalized) min_fpktl
+ +      -5.2969 * (normalized) max_fpktl
+ +       0.0037 * (normalized) min_bpktl
+ +       2.6249 * (normalized) max_bpktl
+ +      -2.7302 * (normalized) max_active
+ +      -1.8284 * (normalized) sflow_fpackets
+ +      -2.0935 * (normalized) sflow_bbytes
+ +       1.4292
+
+Number of kernel evaluations: 8782 (71.898% cached)
+
+Classifier for classes: httpFlood, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.4982 * (normalized) min_fpktl
+ +      19.2089 * (normalized) max_fpktl
+ +      -4.5793 * (normalized) min_bpktl
+ +       3.351  * (normalized) max_bpktl
+ +      14.2435 * (normalized) max_active
+ +      -0.0373 * (normalized) sflow_fpackets
+ +      -0.184  * (normalized) sflow_bbytes
+ +       2.5253
+
+Number of kernel evaluations: 26220 (72.467% cached)
+
+Classifier for classes: httpFlood, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+       -16.4058 * (normalized) min_fpktl
+ +      21.8938 * (normalized) max_fpktl
+ +       0.0984 * (normalized) min_bpktl
+ +       1.522  * (normalized) max_bpktl
+ +       0.2292 * (normalized) max_active
+ +      -0.0348 * (normalized) sflow_fpackets
+ +      -0.116  * (normalized) sflow_bbytes
+ -       0.7553
+
+Number of kernel evaluations: 10804 (45.116% cached)
+
+Classifier for classes: httpFlood, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.11   * (normalized) min_fpktl
+ +      -0.0291 * (normalized) max_fpktl
+ +      -2.2947 * (normalized) min_bpktl
+ +      -0.0336 * (normalized) max_bpktl
+ +       0.0497 * (normalized) max_active
+ +       0.0334 * (normalized) sflow_fpackets
+ +      -0.0004 * (normalized) sflow_bbytes
+ +       0.9981
+
+Number of kernel evaluations: 929 (65.31% cached)
+
+Classifier for classes: httpFlood, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+       -10.5957 * (normalized) min_fpktl
+ +      21.3386 * (normalized) max_fpktl
+ +       2.1824 * (normalized) min_bpktl
+ +       2.3187 * (normalized) max_bpktl
+ +       0.3305 * (normalized) max_active
+ +      -0.0288 * (normalized) sflow_fpackets
+ +      -0.0547 * (normalized) sflow_bbytes
+ -       2.8603
+
+Number of kernel evaluations: 29412 (64.656% cached)
+
+Classifier for classes: slowRead, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+       -15.3307 * (normalized) min_fpktl
+ +       0.7148 * (normalized) max_fpktl
+ +       4.7909 * (normalized) min_bpktl
+ +      -2.1505 * (normalized) max_bpktl
+ +     -13.7904 * (normalized) max_active
+ +       0.0022 * (normalized) sflow_fpackets
+ +       0.125  * (normalized) sflow_bbytes
+ -       3.0471
+
+Number of kernel evaluations: 41645 (74.334% cached)
+
+Classifier for classes: slowRead, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.1785 * (normalized) min_fpktl
+ +      -0.2687 * (normalized) max_fpktl
+ +      -2.8794 * (normalized) min_bpktl
+ +      -0.0358 * (normalized) max_bpktl
+ +      -0.017  * (normalized) max_active
+ +       0.0938 * (normalized) sflow_fpackets
+ +      -0.0001 * (normalized) sflow_bbytes
+ +       0.9981
+
+Number of kernel evaluations: 658 (67.034% cached)
+
+Classifier for classes: slowRead, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+       -14.2467 * (normalized) min_fpktl
+ +       8.4696 * (normalized) max_fpktl
+ +       5.208  * (normalized) min_bpktl
+ +      -2.0728 * (normalized) max_bpktl
+ +     -11.9234 * (normalized) max_active
+ +       0.0025 * (normalized) sflow_fpackets
+ +       0.1026 * (normalized) sflow_bbytes
+ -       4.0813
+
+Number of kernel evaluations: 28293 (64.577% cached)
+
+Classifier for classes: slowHeaders, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.1076 * (normalized) min_fpktl
+ +      -0.1851 * (normalized) max_fpktl
+ +      -2.273  * (normalized) min_bpktl
+ +      -0.1923 * (normalized) max_bpktl
+ +      -0      * (normalized) max_active
+ +       0.0769 * (normalized) sflow_fpackets
+ +      -0.0004 * (normalized) sflow_bbytes
+ +       0.9977
+
+Number of kernel evaluations: 2546 (65.59% cached)
+
+Classifier for classes: slowHeaders, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.7153 * (normalized) min_fpktl
+ +      12.7181 * (normalized) max_fpktl
+ +       1.3607 * (normalized) min_bpktl
+ +      -1.5072 * (normalized) max_bpktl
+ +       1.4783 * (normalized) max_active
+ +      -0.0003 * (normalized) sflow_fpackets
+ +      -0.0579 * (normalized) sflow_bbytes
+ -       1.6832
+
+Number of kernel evaluations: 10209 (55.302% cached)
+
+Classifier for classes: udpFlood, slowBody
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.1319 * (normalized) min_fpktl
+ +       0.2914 * (normalized) max_fpktl
+ +       2.2563 * (normalized) min_bpktl
+ +       0.1919 * (normalized) max_bpktl
+ +       0.0083 * (normalized) max_active
+ +      -0.0739 * (normalized) sflow_fpackets
+ +       0.0004 * (normalized) sflow_bbytes
+ -       0.9985
+
+Number of kernel evaluations: 2130 (69.563% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         833               83.1337 %
+Incorrectly Classified Instances       169               16.8663 %
+Kappa statistic                          0.7976
+Mean absolute error                      0.2266
+Root mean squared error                  0.3172
+Relative absolute error                 81.5808 %
+Root relative squared error             85.1109 %
+Total Number of Instances             1002     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.001    0.994      0.994    0.994      0.993    0.996     0.989     tcpFlood
+                 1.000    0.011    0.949      1.000    0.974      0.969    0.995     0.949     httpFlood
+                 0.886    0.008    0.955      0.886    0.919      0.905    0.932     0.867     slowRead
+                 0.162    0.002    0.931      0.162    0.276      0.354    0.825     0.424     slowHeaders
+                 0.994    0.000    1.000      0.994    0.997      0.996    1.000     1.000     udpFlood
+                 0.952    0.180    0.515      0.952    0.668      0.623    0.898     0.505     slowBody
+Weighted Avg.    0.831    0.034    0.891      0.831    0.805      0.807    0.941     0.789     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 166   0   0   0   0   1 |   a = tcpFlood
+   0 167   0   0   0   0 |   b = httpFlood
+   0   4 148   1   0  14 |   c = slowRead
+   0   1   4  27   0 135 |   d = slowHeaders
+   1   0   0   0 166   0 |   e = udpFlood
+   0   4   3   1   0 159 |   f = slowBody

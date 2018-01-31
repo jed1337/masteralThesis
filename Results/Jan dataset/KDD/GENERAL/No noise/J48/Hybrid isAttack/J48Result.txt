@@ -1,0 +1,52 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+flag = OTH: attack (684.0)
+flag = REJ: normal (144.0)
+flag = RSTO
+|   count <= 16
+|   |   dst_host_srv_count <= 176: attack (5.0)
+|   |   dst_host_srv_count > 176: normal (4.0)
+|   count > 16: attack (169.0)
+flag = RSTOS0: normal (0.0)
+flag = RSTR: normal (0.0)
+flag = S0: normal (14.0)
+flag = S1
+|   count <= 119
+|   |   dst_host_srv_count <= 176: attack (13.0)
+|   |   dst_host_srv_count > 176: normal (12.0)
+|   count > 119: attack (540.0)
+flag = S2
+|   dst_host_srv_count <= 176: attack (4.0)
+|   dst_host_srv_count > 176: normal (4.0)
+flag = S3: attack (252.0)
+flag = SF: normal (1822.0)
+flag = SH: normal (0.0)
+
+Number of Leaves  : 	16
+
+Size of the tree : 	22
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         902               98.3642 %
+Incorrectly Classified Instances        15                1.6358 %
+Kappa statistic                          0.9669
+Mean absolute error                      0.0094
+Root mean squared error                  0.075 
+Relative absolute error                  1.8991 %
+Root relative squared error             15.0712 %
+Total Number of Instances              917     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.036    0.971      1.000    0.985      0.967    0.999     0.998     normal
+                 0.964    0.000    1.000      0.964    0.982      0.967    0.999     0.999     attack
+Weighted Avg.    0.984    0.020    0.984      0.984    0.984      0.967    0.999     0.998     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+  15 402 |   b = attack
