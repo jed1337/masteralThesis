@@ -5,7 +5,10 @@ import customWeka.CustomEvaluation;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.NoSuchElementException;
+import weka.core.Attribute;
 
 public interface Evaluation {
    /**
@@ -23,10 +26,12 @@ public interface Evaluation {
     * (Not sure if it's ok for the Evaluation object to have reference to the 
     * Feature Selection object)
     * @param fs
+    * @return An enumeration of the selected attributes
     * @throws IOException
     * @throws NoSuchElementException
     * @throws Exception 
     */
-   public void applyFeatureSelection(FeatureSelection fs) throws IOException, NoSuchElementException, Exception;
-   public ArrayList<CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders) throws Exception;
+   public Enumeration<Attribute> applyFeatureSelection(FeatureSelection fs) throws IOException, NoSuchElementException, Exception;
+   
+   public HashMap<String, CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders) throws Exception;
 }

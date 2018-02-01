@@ -16,9 +16,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Enumeration;
 import java.util.NoSuchElementException;
 import utils.UtilsDB;
-import weka.core.Instances;
+import weka.core.Attribute;
 
 public final class Mysql implements Database {
    private final Connection connection;
@@ -104,7 +105,7 @@ public final class Mysql implements Database {
    }
 
    @Override
-   public void insertToFeatureTable(Instances instances) throws NoSuchElementException, SQLException {
+   public void insertToFeatureTable(Enumeration<Attribute> attributes) throws NoSuchElementException, SQLException {
       String query =
         String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
           DBConnectionConstants.DATABASE_NAME,
@@ -115,21 +116,33 @@ public final class Mysql implements Database {
       );
 
       PreparedStatement ps = this.connection.prepareStatement(query);
-
-      for(int i=0; i< instances.numAttributes(); i++){
-         int psIndex=1;
+      
+      while(attributes.hasMoreElements()){
+         int psIndex=1; //Gets reinitialised to 1 every time the loop runs
+         
          ps.setInt   (psIndex++, this.mainID);
-         ps.setString(psIndex++, instances.attribute(i).name());
+         ps.setString(psIndex++, attributes.nextElement().name());
 
          ps.addBatch();
 
          int[] updateCounts = ps.executeBatch();
          UtilsDB.checkUpdateCounts(updateCounts);
       }
+
+//      for(int i=0; i< attributes.numAttributes(); i++){
+//         int psIndex=1;
+//         ps.setInt   (psIndex++, this.mainID);
+//         ps.setString(psIndex++, attributes.attribute(i).name());
+//
+//         ps.addBatch();
+//
+//         int[] updateCounts = ps.executeBatch();
+//         UtilsDB.checkUpdateCounts(updateCounts);
+//      }
    }
 
    @Override
-   public void insertToEvaluationTable(ClassifierHolder ch, CustomEvaluation eval)
+   public void insertToEvaluationTable(String classifierName, CustomEvaluation eval)
            throws SQLException, Exception{
       String query =
         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?,?,?,?);",
@@ -154,7 +167,8 @@ public final class Mysql implements Database {
       {
          int avgClassIndex = 1;
          ps.setInt(avgClassIndex++, this.mainID);
-         ps.setString(avgClassIndex++, ch.getClassifierName());
+//         ps.setString(avgClassIndex++, classifierName.getClassifierName());
+         ps.setString(avgClassIndex++, classifierName);
          ps.setString(avgClassIndex++, "Average");
 
          ps.setDouble(avgClassIndex++, eval.correct()/eval.withClass());
@@ -173,7 +187,8 @@ public final class Mysql implements Database {
          for (int i = 0; i < classNames.length; i++) {
             int psIndex=1;
             ps.setInt   (psIndex++, this.mainID);
-            ps.setString(psIndex++, ch.getClassifierName());
+//            ps.setString(psIndex++, classifierName.getClassifierName());
+            ps.setString(psIndex++, classifierName);
             ps.setString(psIndex++, classNames[i]);
 
             double tp = eval.numTruePositives(i);

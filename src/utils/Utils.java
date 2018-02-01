@@ -66,6 +66,14 @@ public final class Utils {
       return getFileContents(filename, s->false);
    }
 
+   /**
+    * Returns the String contents within the file in filename
+    * @param filename
+    * @param breakCondition Stop adding to the current contents 
+    * if this condition is met
+    * @return The string contents
+    * @throws IOException 
+    */
    public static String getFileContents(
       String filename, Predicate<String> breakCondition) throws IOException{
 
@@ -117,10 +125,16 @@ public final class Utils {
       }
    }
    
-   public static void writePreprocessFile(PreprocessFile p) throws IOException{
+   /**
+    * Writes the instances of the PreprocessFile into its save path 
+    * (pf.getFaa().getSavePath())
+    * @param pf
+    * @throws IOException 
+    */
+   public static void writePreprocessFile(PreprocessFile pf) throws IOException{
       Utils.writeStringFile(
-         p.getFaa().getSavePath(),
-         p.getFaa().getInstances().toString()
+         pf.getFaa().getSavePath(),
+         pf.getFaa().getInstances().toString()
       );
    }
 
@@ -146,15 +160,17 @@ public final class Utils {
    }
    
    /**
-    * Assume that only the Data/ folder exists
+    * Assume that only the Data/ folder exists,
     * {@code
     * makeParentFolder(Data/subdir1/subdir2/file.txt)
     * }
-    * Creates subdir1 and subdir2. File.txt, however, isn't created<br>
+    * Creates subdir1 and subdir2. File.txt, however, isn't created
+    * <br>
     * @see <a href="https://stackoverflow.com/questions/2833853/create-whole-path-automatically-when-writing-to-a-new-file">
     * Source: stackoverflow.com</a>
     * @param filePath The path towards the file
-    * @return 
+    * @return true if all folders were created, false otherwise 
+    * (if none, or only some were created)
     */
    public static boolean makeParentFolder(String filePath){
       return makeFolders(new File(filePath).getParentFile());
@@ -170,6 +186,18 @@ public final class Utils {
       return wasCreated;
    }
 
+   /**
+    * Makes sure that no duplicate key in the Map is added. 
+    * <br>
+    * Normally, when a duplicate key is added, it replaces the old one.
+    * But we don't want that
+    * @param <K> A generic type 
+    * @param <V> A generic type
+    * @param map Where to search duplicates from
+    * @param key
+    * @param value
+    * @throws IllegalArgumentException if a duplicate item is added
+    */
    public static <K extends Object, V extends Object> void addToMap(Map map, K key, V value) throws IllegalArgumentException{
       if(!map.containsKey(key)){
          map.put(key, value);
@@ -178,6 +206,14 @@ public final class Utils {
       }
    }
    
+   /**
+    * Uses the corresponding function in Weka's Utils
+    * @see weka.core.Utils.doubleToString#doubleToString(double, int, int)
+    * @param value
+    * @param width
+    * @param afterDecimalPoint
+    * @return 
+    */
    public static String doubleToString(double value, int width, int afterDecimalPoint) {
       return weka.core.Utils.doubleToString(value, width, afterDecimalPoint);
    }

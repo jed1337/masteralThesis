@@ -5,8 +5,9 @@ import customWeka.CustomEvaluation;
 import driver.SystemParameters;
 import featureSelection.FeatureSelection;
 import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.NoSuchElementException;
-import weka.core.Instances;
+import weka.core.Attribute;
 
 /**
  * Null object implementation of Database.<br>
@@ -37,7 +38,7 @@ public class NoDatabase implements Database{
    }
 
    @Override
-   public void insertToEvaluationTable(ClassifierHolder ch, CustomEvaluation eval)
+   public void insertToEvaluationTable(String classifierName, CustomEvaluation eval)
            throws SQLException, Exception {
       System.err.println("Not doing inserting to insertToEvaluationTable");
    }
@@ -49,7 +50,7 @@ public class NoDatabase implements Database{
    }
 
    @Override
-   public void insertToFeatureTable(Instances instances) throws
+   public void insertToFeatureTable(Enumeration<Attribute> attributes) throws
                                                                 NoSuchElementException,
                                                                 SQLException {
       System.err.println("Not doing inserting to insertToFeatureTable");

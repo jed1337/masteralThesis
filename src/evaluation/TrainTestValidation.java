@@ -10,12 +10,15 @@ import database.Database;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.NoSuchElementException;
 import preprocessFiles.preprocessAs.FormatAsText;
 import preprocessFiles.preprocessEvaluationSet.EvaluationSet;
 import preprocessFiles.preprocessEvaluationSet.SetupTestTrainValidation;
 import utils.Utils;
 import utils.UtilsClssifiers;
+import weka.core.Attribute;
 import weka.core.Instances;
 
 /**
@@ -24,17 +27,14 @@ import weka.core.Instances;
  * <br> 
  * The paths for train, test, and validation, are statically set as private variables
  */
-public class TrainTestValidation implements Evaluation{
+public final class TrainTestValidation implements Evaluation{
    private final String TRAIN_PATH      = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
    private final String TEST_PATH       = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
    private final String VALIDATION_PATH = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
    
    private final ArrayList<EvaluationSet> evaluationSets;
-   private final Database db;
 
-   public TrainTestValidation(Database db){
-      this.db = db;
-      
+   public TrainTestValidation(){
       this.evaluationSets = new ArrayList<>();
       this.evaluationSets.add(new EvaluationSet(this.TRAIN_PATH       , 4));
       this.evaluationSets.add(new EvaluationSet(this.TEST_PATH        , 1));
@@ -51,13 +51,8 @@ public class TrainTestValidation implements Evaluation{
       writeTestTrainValidation();
 	}
 
-   
-   //todo check if we can return fs so that the this class doesn't know
-   //about the DB.
-   //Check if fs contains features so that, we'll pass that to db.isnertToFeaturetable
-   //instead of using an actual Instances class
    @Override
-   public void applyFeatureSelection(FeatureSelection fs) 
+   public Enumeration<Attribute> applyFeatureSelection(FeatureSelection fs) 
            throws IOException,NoSuchElementException,Exception {
       
       fs.applyFeatureSelection(
@@ -66,23 +61,27 @@ public class TrainTestValidation implements Evaluation{
       );
       writeTestTrainValidation();
 
-      this.db.insertToFeatureSelectionTable(fs);
-      this.db.insertToFeatureTable(getEvaluationSet(this.TRAIN_PATH));
+//      this.db.insertToFeatureSelectionTable(fs);
+//      this.db.insertToFeatureTable(getEvaluationSet(this.TRAIN_PATH));
+      return getEvaluationSet(this.TRAIN_PATH).enumerateAttributes();
    }
 
    @Override
-   public ArrayList<CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders)
+   public HashMap<String, CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders)
            throws Exception {
-      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
+      
+      final HashMap<String, CustomEvaluation> hmEval = new HashMap<>();
+//      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
 
       for (ClassifierHolder ch : classifierHolders) {
          CustomEvaluation eval = evaluateIndividualClassifier(ch);
-         evaluations.add(eval);
+         Utils.addToMap(hmEval, ch.getClassifierName(), eval);
+//         evaluations.add(eval);
 
          //Insert to evaluation table
-         this.db.insertToEvaluationTable(ch, eval);
+//         this.db.insertToEvaluationTable(ch.getClassifierName(), eval);
       }
-      return evaluations;
+      return hmEval;
    }
    
    private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{

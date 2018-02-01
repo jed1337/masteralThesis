@@ -5,8 +5,9 @@ import customWeka.CustomEvaluation;
 import driver.SystemParameters;
 import featureSelection.FeatureSelection;
 import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.NoSuchElementException;
-import weka.core.Instances;
+import weka.core.Attribute;
 
 public interface Database {
    /**
@@ -32,7 +33,7 @@ public interface Database {
       String systemType, String categoricalType, Float noiseLevel, 
       String dataset, String extractionTool) throws SQLException;
 
-   public void insertToEvaluationTable(ClassifierHolder ch, CustomEvaluation eval)
+   public void insertToEvaluationTable(String classifierName, CustomEvaluation eval)
            throws SQLException, Exception;
 
    /**
@@ -44,10 +45,10 @@ public interface Database {
 
    /**
     * Inserts the features found in the instances to the DB
-    * @param instances This is passed to know the names of the attributes
+    * @param attributes This is passed to know the names of the attributes
     * @throws NoSuchElementException
     * @throws SQLException
     */
-   public void insertToFeatureTable(Instances instances) throws NoSuchElementException,
+   public void insertToFeatureTable(Enumeration<Attribute> attributes) throws NoSuchElementException,
                                                          SQLException;
 }
