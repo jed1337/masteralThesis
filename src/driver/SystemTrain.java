@@ -2,40 +2,32 @@ package driver;
 
 import classifier.ClassifierHolder;
 import constants.AttributeTypeConstants;
-import constants.CharConstants;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
-import customWeka.CustomEvaluation;
+import database.Database;
+import database.NoDatabase;
+import evaluation.TrainTestValidation;
 import featureSelection.FeatureSelection;
+import featureSelection.NoFeatureSelection;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 import preprocessFiles.PreprocessFile;
-import preprocessFiles.preprocessAs.FormatAsText;
-import preprocessFiles.preprocessEvaluationSet.EvaluationSet;
-import preprocessFiles.preprocessEvaluationSet.SetupTestTrainValidation;
 import utils.Utils;
 import utils.UtilsARFF;
-import utils.UtilsClssifiers;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.SMO;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
-import weka.core.Instances;
-import database.Database;
-import database.NoDatabase;
-import featureSelection.NoFeatureSelection;
 
 public final class SystemTrain {
-	private final ArrayList<EvaluationSet> evaluationSets;
-   private final String TRAIN_PATH      = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
-   private final String TEST_PATH       = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
-   private final String VALIDATION_PATH = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
+//	  private final ArrayList<EvaluationSet> evaluationSets;
+//   private final String TRAIN_PATH      = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
+//   private final String TEST_PATH       = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
+//   private final String VALIDATION_PATH = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
 
-//	private final String combinedPath;
    private final Database db;
 
 	private SystemTrain(SystemTrain.Buidler builder, SystemParameters sp) throws IOException, Exception {
@@ -44,7 +36,7 @@ public final class SystemTrain {
       FeatureSelection fs = builder.fs;
       String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
       
-      this.evaluationSets = new ArrayList<>();
+//      this.evaluationSets = new ArrayList<>();
       
       List<PreprocessFile> preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
       this.db.insertMainTable(sp);
@@ -66,7 +58,7 @@ public final class SystemTrain {
       FeatureSelection fs = builder.fs;
       this.db = builder.db;
       
-      this.evaluationSets = new ArrayList<>();
+//      this.evaluationSets = new ArrayList<>();
       
       this.db.insertMainTable(systemType, categoricalType, noiseLevel, dataset, extractionTool);
 
@@ -81,13 +73,17 @@ public final class SystemTrain {
       classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
       classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
 
-      this.evaluationSets.add(new EvaluationSet(this.TRAIN_PATH       , 4));
-      this.evaluationSets.add(new EvaluationSet(this.TEST_PATH        , 1));
-      this.evaluationSets.add(new EvaluationSet(this.VALIDATION_PATH  , 1));
-
-      setupTestTrainValidation(combinedPath);
-      applyFeatureSelection(fs);
-      evaluateClassifiers(classifierHolders);
+//      this.evaluationSets.add(new EvaluationSet(this.TRAIN_PATH       , 4));
+//      this.evaluationSets.add(new EvaluationSet(this.TEST_PATH        , 1));
+//      this.evaluationSets.add(new EvaluationSet(this.VALIDATION_PATH  , 1));
+//
+//      setupTestTrainValidation(combinedPath);
+//      applyFeatureSelection(fs);
+//      evaluateClassifiers(classifierHolders);
+      TrainTestValidation ttv = new TrainTestValidation(this.db);
+      ttv.setupTestTrainValidation(combinedPath);
+      ttv.applyFeatureSelection(fs);
+      ttv.evaluateClassifiers(classifierHolders);
    }
 
    private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> pfL, String relabel)
@@ -101,14 +97,6 @@ public final class SystemTrain {
 			Utils.writePreprocessFile(pf);
 		}
 		return pfL;
-	}
-
-	public void setupTestTrainValidation(String combinedPath) throws IOException, Exception{
-		SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
-//		SetupTestTrainValidation sttv = new SetupTestTrainValidation(DirectoryConstants.FORMATTED_DIR+"Combined General (Shortened).arff");
-		sttv.setTrainTestValidationPaths(this.evaluationSets);
-
-      writeTestTrainValidation();
 	}
 
    /**
@@ -126,80 +114,87 @@ public final class SystemTrain {
       );
    }
 
-   /**
-    * Loops through the evaluationSets and finds the evaluation set matching the name and returns it if found
-    * @return
-    * @throws NoSuchElementException if an evaluationSet matching the name can't be found
-    */
-   private Instances getEvaluationSet(String name) throws NoSuchElementException{
-      for (EvaluationSet evaluationSet : this.evaluationSets) {
-         if(evaluationSet.getName().equalsIgnoreCase(name)){
-            return evaluationSet.getInstances();
-         }
-      }
-      throw new NoSuchElementException("The evaluation set '"+name+"' wasn't found");
-   }
+//	public void setupTestTrainValidation(String combinedPath) throws IOException, Exception{
+//		SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
+//		sttv.setTrainTestValidationPaths(this.evaluationSets);
+//
+//      writeTestTrainValidation();
+//	}
 
-   public void applyFeatureSelection(FeatureSelection fs)
-           throws IOException, NoSuchElementException, Exception {
-      fs.applyFeatureSelection(
-         getEvaluationSet(this.TRAIN_PATH), 
-         this.evaluationSets
-      );
-      writeTestTrainValidation();
+//   /**
+//    * Loops through the evaluationSets and finds the evaluation set matching the name and returns it if found
+//    * @return the evaluationSet matching the name
+//    * @throws NoSuchElementException if an evaluationSet matching the name can't be found
+//    */
+//   private Instances getEvaluationSet(String name) throws NoSuchElementException{
+//      for (EvaluationSet evaluationSet : this.evaluationSets) {
+//         if(evaluationSet.getName().equalsIgnoreCase(name)){
+//            return evaluationSet.getInstances();
+//         }
+//      }
+//      throw new NoSuchElementException("The evaluation set '"+name+"' wasn't found");
+//   }
 
-      this.db.insertToFeatureSelectionTable(fs);
-      this.db.insertToFeatureTable(getEvaluationSet(this.TRAIN_PATH));
-   }
+//   public void applyFeatureSelection(FeatureSelection fs)
+//           throws IOException, NoSuchElementException, Exception {
+//      fs.applyFeatureSelection(
+//         getEvaluationSet(this.TRAIN_PATH), 
+//         this.evaluationSets
+//      );
+//      writeTestTrainValidation();
+//
+//      this.db.insertToFeatureSelectionTable(fs);
+//      this.db.insertToFeatureTable(getEvaluationSet(this.TRAIN_PATH));
+//   }
 
-   /**
-    * Writes the test, train, and validation files to a folder
-    * and also adds the class count
-    * @throws IOException
-    */
-   public void writeTestTrainValidation() throws IOException {
-      for (EvaluationSet evaluationSet : this.evaluationSets) {
-         final String path = evaluationSet.getName();
-         Utils.writeStringFile(path, evaluationSet.getInstances().toString());
+//   /**
+//    * Writes the test, train, and validation files to a folder
+//    * and also adds the class count
+//    * @throws IOException
+//    */
+//   public void writeTestTrainValidation() throws IOException {
+//      for (EvaluationSet evaluationSet : this.evaluationSets) {
+//         final String path = evaluationSet.getName();
+//         Utils.writeStringFile(path, evaluationSet.getInstances().toString());
+//
+//         FormatAsText fat = new FormatAsText(path);
+//         fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
+//      }
+//   }
 
-         FormatAsText fat = new FormatAsText(path);
-         fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
-      }
-   }
+//   public ArrayList<CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders) throws Exception{
+//      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
+//
+//      for (ClassifierHolder ch : classifierHolders) {
+//         CustomEvaluation eval = evaluateIndividualClassifier(ch);
+//         evaluations.add(eval);
+//
+//         //Insert to evaluation table
+//         this.db.insertToEvaluationTable(ch, eval);
+//      }
+//      return evaluations;
+//   }
 
-   public ArrayList<CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders) throws Exception{
-      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
-
-      for (ClassifierHolder ch : classifierHolders) {
-         CustomEvaluation eval = evaluateIndividualClassifier(ch);
-         evaluations.add(eval);
-
-         //Insert to evaluation table
-         this.db.insertToEvaluationTable(ch, eval);
-      }
-      return evaluations;
-   }
-
-   private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
-      ch.getClassifier().buildClassifier(getEvaluationSet(this.TRAIN_PATH));
-      UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
-
-      CustomEvaluation eval = new CustomEvaluation(getEvaluationSet(this.TRAIN_PATH));
-      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.TEST_PATH));
-
-      StringBuilder sb = new StringBuilder();
-      sb.append("=== Classifier ===\n");
-      sb.append(ch.getClassifier().toString()).append(CharConstants.NEW_LINE);
-      sb.append("=== Dedicated test set ===\n");
-      sb.append(eval.toSummaryString("=== Summary of " + ch.getClassifierName() + "===\n", false));
-      sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
-      sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));
-
-      System.out.println(sb);
-      Utils.writeStringFile(DirectoryConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
-
-      return eval;
-   }
+//   private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
+//      ch.getClassifier().buildClassifier(getEvaluationSet(this.TRAIN_PATH));
+//      UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
+//
+//      CustomEvaluation eval = new CustomEvaluation(getEvaluationSet(this.TRAIN_PATH));
+//      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.TEST_PATH));
+//
+//      StringBuilder sb = new StringBuilder();
+//      sb.append("=== Classifier ===\n");
+//      sb.append(ch.getClassifier().toString()).append(CharConstants.NEW_LINE);
+//      sb.append("=== Dedicated test set ===\n");
+//      sb.append(eval.toSummaryString("=== Summary of " + ch.getClassifierName() + "===\n", false));
+//      sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
+//      sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));
+//
+//      System.out.println(sb);
+//      Utils.writeStringFile(DirectoryConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
+//
+//      return eval;
+//   }
  
    /**
     * Required parameters: either SystemParameters, or a path to the combinedPath.

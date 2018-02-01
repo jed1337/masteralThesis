@@ -7,8 +7,8 @@ import weka.core.Instances;
 public interface FeatureSelection {
    /**
     * @param trainSet The instances to apply feature selection to
-    * @param evaluationSets The same selected features are applied to 
-    * each of the evaluationSets
+    * @param evaluationSets The same selected features are applied to
+    * each of the evaluationSets. Can be an empty set
     * @throws Exception 
     */
    public abstract void applyFeatureSelection(Instances trainSet, ArrayList<EvaluationSet> evaluationSets) throws Exception;

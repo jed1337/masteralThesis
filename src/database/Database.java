@@ -35,10 +35,16 @@ public interface Database {
    public void insertToEvaluationTable(ClassifierHolder ch, CustomEvaluation eval)
            throws SQLException, Exception;
 
+   /**
+    * Only inserts the MainID and the FeatureSelection name
+    * @param fs
+    * @throws SQLException 
+    */
    public void insertToFeatureSelectionTable(FeatureSelection fs) throws SQLException;
 
    /**
-    * @param instances This is passed to know which attributes to look for
+    * Inserts the features found in the instances to the DB
+    * @param instances This is passed to know the names of the attributes
     * @throws NoSuchElementException
     * @throws SQLException
     */
