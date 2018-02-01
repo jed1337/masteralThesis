@@ -18,6 +18,12 @@ import utils.Utils;
 import utils.UtilsClssifiers;
 import weka.core.Instances;
 
+/**
+ * Class for performing train test and validation. 
+ * Its ratio is train: 4/6, test: 1/6, and validation: 1/6
+ * <br> 
+ * The paths for train, test, and validation, are statically set as private variables
+ */
 public class TrainTestValidation implements Evaluation{
    private final String TRAIN_PATH      = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
    private final String TEST_PATH       = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
@@ -35,11 +41,13 @@ public class TrainTestValidation implements Evaluation{
       this.evaluationSets.add(new EvaluationSet(this.VALIDATION_PATH  , 1));
    }
    
+   /**
+    * {@inheritDoc}
+    * Sets up the train, test, and validation sets.
+    */
    @Override
-   public void setupTestTrainValidation(String combinedPath) throws IOException, Exception{
-		SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
-		sttv.setTrainTestValidationPaths(this.evaluationSets);
-
+   public void setupEvaluationSets(String combinedPath) throws IOException, Exception{
+		new SetupTestTrainValidation(combinedPath, this.evaluationSets);
       writeTestTrainValidation();
 	}
 
@@ -109,7 +117,7 @@ public class TrainTestValidation implements Evaluation{
     * and also adds the class count
     * @throws IOException
     */
-   public void writeTestTrainValidation() throws IOException {
+   private void writeTestTrainValidation() throws IOException {
       for (EvaluationSet evaluationSet : this.evaluationSets) {
          final String path = evaluationSet.getName();
          Utils.writeStringFile(path, evaluationSet.getInstances().toString());
@@ -132,5 +140,4 @@ public class TrainTestValidation implements Evaluation{
       }
       throw new NoSuchElementException("The evaluation set '"+name+"' wasn't found");
    }
-
 }

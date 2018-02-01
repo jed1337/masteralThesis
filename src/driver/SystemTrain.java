@@ -23,24 +23,16 @@ import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 
 public final class SystemTrain {
-//	  private final ArrayList<EvaluationSet> evaluationSets;
-//   private final String TRAIN_PATH      = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
-//   private final String TEST_PATH       = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
-//   private final String VALIDATION_PATH = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
-
    private final Database db;
 
 	private SystemTrain(SystemTrain.Buidler builder, SystemParameters sp) throws IOException, Exception {
       this.db = builder.db;
-      
       FeatureSelection fs = builder.fs;
-      String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
-      
-//      this.evaluationSets = new ArrayList<>();
       
       List<PreprocessFile> preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
       this.db.insertMainTable(sp);
       
+      String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
       createCombinedData(
          preprocessFiles, 
          combinedPath
@@ -58,8 +50,6 @@ public final class SystemTrain {
       FeatureSelection fs = builder.fs;
       this.db = builder.db;
       
-//      this.evaluationSets = new ArrayList<>();
-      
       this.db.insertMainTable(systemType, categoricalType, noiseLevel, dataset, extractionTool);
 
       execute(fs, combinedPath);
@@ -73,15 +63,8 @@ public final class SystemTrain {
       classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
       classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
 
-//      this.evaluationSets.add(new EvaluationSet(this.TRAIN_PATH       , 4));
-//      this.evaluationSets.add(new EvaluationSet(this.TEST_PATH        , 1));
-//      this.evaluationSets.add(new EvaluationSet(this.VALIDATION_PATH  , 1));
-//
-//      setupTestTrainValidation(combinedPath);
-//      applyFeatureSelection(fs);
-//      evaluateClassifiers(classifierHolders);
       TrainTestValidation ttv = new TrainTestValidation(this.db);
-      ttv.setupTestTrainValidation(combinedPath);
+      ttv.setupEvaluationSets(combinedPath);
       ttv.applyFeatureSelection(fs);
       ttv.evaluateClassifiers(classifierHolders);
    }
@@ -114,88 +97,6 @@ public final class SystemTrain {
       );
    }
 
-//	public void setupTestTrainValidation(String combinedPath) throws IOException, Exception{
-//		SetupTestTrainValidation sttv = new SetupTestTrainValidation(combinedPath);
-//		sttv.setTrainTestValidationPaths(this.evaluationSets);
-//
-//      writeTestTrainValidation();
-//	}
-
-//   /**
-//    * Loops through the evaluationSets and finds the evaluation set matching the name and returns it if found
-//    * @return the evaluationSet matching the name
-//    * @throws NoSuchElementException if an evaluationSet matching the name can't be found
-//    */
-//   private Instances getEvaluationSet(String name) throws NoSuchElementException{
-//      for (EvaluationSet evaluationSet : this.evaluationSets) {
-//         if(evaluationSet.getName().equalsIgnoreCase(name)){
-//            return evaluationSet.getInstances();
-//         }
-//      }
-//      throw new NoSuchElementException("The evaluation set '"+name+"' wasn't found");
-//   }
-
-//   public void applyFeatureSelection(FeatureSelection fs)
-//           throws IOException, NoSuchElementException, Exception {
-//      fs.applyFeatureSelection(
-//         getEvaluationSet(this.TRAIN_PATH), 
-//         this.evaluationSets
-//      );
-//      writeTestTrainValidation();
-//
-//      this.db.insertToFeatureSelectionTable(fs);
-//      this.db.insertToFeatureTable(getEvaluationSet(this.TRAIN_PATH));
-//   }
-
-//   /**
-//    * Writes the test, train, and validation files to a folder
-//    * and also adds the class count
-//    * @throws IOException
-//    */
-//   public void writeTestTrainValidation() throws IOException {
-//      for (EvaluationSet evaluationSet : this.evaluationSets) {
-//         final String path = evaluationSet.getName();
-//         Utils.writeStringFile(path, evaluationSet.getInstances().toString());
-//
-//         FormatAsText fat = new FormatAsText(path);
-//         fat.addClassCount(AttributeTypeConstants.ATTRIBUTE_CLASS);
-//      }
-//   }
-
-//   public ArrayList<CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders) throws Exception{
-//      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
-//
-//      for (ClassifierHolder ch : classifierHolders) {
-//         CustomEvaluation eval = evaluateIndividualClassifier(ch);
-//         evaluations.add(eval);
-//
-//         //Insert to evaluation table
-//         this.db.insertToEvaluationTable(ch, eval);
-//      }
-//      return evaluations;
-//   }
-
-//   private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
-//      ch.getClassifier().buildClassifier(getEvaluationSet(this.TRAIN_PATH));
-//      UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
-//
-//      CustomEvaluation eval = new CustomEvaluation(getEvaluationSet(this.TRAIN_PATH));
-//      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.TEST_PATH));
-//
-//      StringBuilder sb = new StringBuilder();
-//      sb.append("=== Classifier ===\n");
-//      sb.append(ch.getClassifier().toString()).append(CharConstants.NEW_LINE);
-//      sb.append("=== Dedicated test set ===\n");
-//      sb.append(eval.toSummaryString("=== Summary of " + ch.getClassifierName() + "===\n", false));
-//      sb.append(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
-//      sb.append(eval.toMatrixString("=== Confusion Matrix ===\n"));
-//
-//      System.out.println(sb);
-//      Utils.writeStringFile(DirectoryConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
-//
-//      return eval;
-//   }
- 
    /**
     * Required parameters: either SystemParameters, or a path to the combinedPath.
     * Since it's an "either or" scenario, there are 2 build functions here.

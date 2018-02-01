@@ -13,18 +13,26 @@ import weka.core.Instances;
 
 public final class SetupTestTrainValidation {
    private final Instances combinedInstances;
-   private final String combinePath;
+   private final String combinedPath;
 
-	public SetupTestTrainValidation(String combinedPath) throws IOException{
-		this.combinePath    = combinedPath;
-		this.combinedInstances= UtilsInstances.getInstances(combinedPath);
-	}
-
-	public void setTrainTestValidationPaths(ArrayList<EvaluationSet> evaluationSets) throws IOException, Exception{
+   /**
+    * Sets up the instances in the train, test, and validation evaluationSets
+    * <br>
+    * Everything is done through the constructor.
+    * @param combinedPath The combined instances. These are split up then given
+    * to each of the evaluationSets
+    * @param evaluationSets 
+    * @throws IOException
+    * @throws Exception 
+    */
+	public SetupTestTrainValidation(String combinedPath, ArrayList<EvaluationSet> evaluationSets) throws IOException, Exception{
+		this.combinedPath      = combinedPath;
+		this.combinedInstances = UtilsInstances.getInstances(combinedPath);
+      
       final ArrayList<SplitFileCounter> splitFileCounters = 
          setSplitFileCounters(evaluationSets);
       
-      addHeaders(evaluationSets, this.combinePath);
+      addHeaders(this.combinedPath, evaluationSets);
       
       setEvaluationSetInstances(splitFileCounters, evaluationSets);
    }  
@@ -68,16 +76,17 @@ public final class SetupTestTrainValidation {
    /**
     * The reason we repeatedly call UtilsInstances.getHeader(...) instead of
     * assigning it to a variable and reusing it, is because if not, 
-    * each evaluationSet will use the same header variable as one another. <br>
+    * each evaluationSet will use the same header variable as one another. 
+    * <br>
     * Since they're the same, if 1 value is edited, all the others are as well.
     * They aren't technically edited, but since they point to the same object, 
     * it's just that 1 edit reflects to all
     *
-    * @param evaluationSets
     * @param source Source to get the headers from
+    * @param evaluationSets Where the headers are placed
     * @throws Exception
     */
-   private void addHeaders(ArrayList<EvaluationSet> evaluationSets, String source) throws Exception {
+   private void addHeaders(String source, ArrayList<EvaluationSet> evaluationSets) throws Exception {
       for (EvaluationSet evaluationSet : evaluationSets) {
          evaluationSet.setInstances(
             UtilsInstances.getHeader( //Don't reuse UtilsInstances.getHeader(...)
