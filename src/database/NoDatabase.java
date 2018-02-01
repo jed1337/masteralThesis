@@ -26,27 +26,32 @@ public class NoDatabase implements Database{
    }
    
    @Override
+   public void insertMainTable(String systemType, String categoricalType, Float noiseLevel, String dataset, String extractionTool)
+           throws SQLException {
+      System.err.println("Not doing inserting to insertMainTable");
+   }
+   
+   @Override
    public void insertMainTable(SystemParameters sp) throws SQLException {
-        System.err.println("Not doing inserting to insertMainTable");
+      System.err.println("Not doing inserting to insertMainTable");
    }
 
    @Override
    public void insertToEvaluationTable(ClassifierHolder ch, CustomEvaluation eval)
            throws SQLException, Exception {
-        System.err.println("Not doing inserting to insertToEvaluationTable");
+      System.err.println("Not doing inserting to insertToEvaluationTable");
    }
 
    @Override
    public void insertToFeatureSelectionTable(FeatureSelection fs) throws
                                                                          SQLException {
-        System.err.println("Not doing inserting to insertToFeatureSelectionTable");
+      System.err.println("Not doing inserting to insertToFeatureSelectionTable");
    }
 
    @Override
    public void insertToFeatureTable(Instances instances) throws
                                                                 NoSuchElementException,
                                                                 SQLException {
-        System.err.println("Not doing inserting to insertToFeatureTable");
+      System.err.println("Not doing inserting to insertToFeatureTable");
    }
-
 }

@@ -36,6 +36,21 @@ public final class Mysql implements Database {
 
    @Override
    public void insertMainTable(SystemParameters sp) throws SQLException {
+      insertMainTable(
+         sp.getSystemType(),
+         sp.getCategoricalType().name(),
+         sp.getNoiseLevelFloat(),
+         GlobalFeatureExtraction.getInstance().getDatasetName(),
+         GlobalFeatureExtraction.getInstance().getName()
+      );
+   }
+   
+   @Override
+   public void insertMainTable(
+      String systemType, String categoricalType, Float noiseLevel, 
+      String dataset, String extractionTool)
+      throws SQLException{
+
       String query =
          String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s) VALUES (?,?,?,?,?);",
             DBConnectionConstants.DATABASE_NAME,
@@ -54,11 +69,11 @@ public final class Mysql implements Database {
       );
 
       int i=1;
-      ps.setString(i++, sp.getSystemType());
-      ps.setString(i++, sp.getCategoricalType().name());
-      ps.setFloat(i++, sp.getNoiseLevelFloat());
-      ps.setString(i++, GlobalFeatureExtraction.getInstance().getDatasetName());
-      ps.setString(i++, GlobalFeatureExtraction.getInstance().getName());
+      ps.setString(i++, systemType);
+      ps.setString(i++, categoricalType);
+      ps.setFloat (i++, noiseLevel);
+      ps.setString(i++, dataset);
+      ps.setString(i++, extractionTool);
 
       ps.executeUpdate();
 

@@ -6,7 +6,6 @@ import constants.CharConstants;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
-import database.Mysql;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,26 +31,49 @@ import featureSelection.NoFeatureSelection;
 
 public final class SystemTrain {
 	private final ArrayList<EvaluationSet> evaluationSets;
-	private final String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
-   private final String trainPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
-   private final String testPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
-   private final String validationPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
+   private final String TRAIN_PATH      = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
+   private final String TEST_PATH       = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
+   private final String VALIDATION_PATH = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
 
-//	private final ArrayList<ClassifierHolder> classifierHolders;
-//	private final List<PreprocessFile> preprocessFiles;
-
+//	private final String combinedPath;
    private final Database db;
 
-//   private final FeatureSelection fs;
-
 	private SystemTrain(SystemTrain.Buidler builder, SystemParameters sp) throws IOException, Exception {
+      this.db = builder.db;
+      
+      FeatureSelection fs = builder.fs;
+      String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
+      
+      this.evaluationSets = new ArrayList<>();
+      
+      List<PreprocessFile> preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
+      this.db.insertMainTable(sp);
+      
+      createCombinedData(
+         preprocessFiles, 
+         combinedPath
+      );
+
+      execute(fs, combinedPath);
+	}
+
+	private SystemTrain(
+      SystemTrain.Buidler builder, String combinedPath,
+      String systemType, String categoricalType, Float noiseLevel,
+      String dataset, String extractionTool)
+      throws IOException, Exception {
+      
       FeatureSelection fs = builder.fs;
       this.db = builder.db;
       
       this.evaluationSets = new ArrayList<>();
+      
+      this.db.insertMainTable(systemType, categoricalType, noiseLevel, dataset, extractionTool);
 
-      List<PreprocessFile> preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
-
+      execute(fs, combinedPath);
+	}
+   
+   private void execute(FeatureSelection fs, String combinedPath) throws Exception {
       ArrayList<ClassifierHolder> classifierHolders = new ArrayList<>();
       classifierHolders.add(new ClassifierHolder(new J48(), "J48"));
       classifierHolders.add(new ClassifierHolder(new IBk(), "KNN"));
@@ -59,19 +81,14 @@ public final class SystemTrain {
       classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
       classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
 
-      this.evaluationSets.add(new EvaluationSet(this.trainPath       , 4));
-      this.evaluationSets.add(new EvaluationSet(this.testPath        , 1));
-      this.evaluationSets.add(new EvaluationSet(this.validationPath  , 1));
+      this.evaluationSets.add(new EvaluationSet(this.TRAIN_PATH       , 4));
+      this.evaluationSets.add(new EvaluationSet(this.TEST_PATH        , 1));
+      this.evaluationSets.add(new EvaluationSet(this.VALIDATION_PATH  , 1));
 
-//      this.db = new Mysql();
-//      this.db = NoDatabase.getInstance();
-      this.db.insertMainTable(sp);
-      
-      createCombinedData(preprocessFiles, this.combinedPath);
-      setupTestTrainValidation(this.combinedPath);
+      setupTestTrainValidation(combinedPath);
       applyFeatureSelection(fs);
       evaluateClassifiers(classifierHolders);
-	}
+   }
 
    private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> pfL, String relabel)
 			  throws IOException, Exception {
@@ -126,13 +143,13 @@ public final class SystemTrain {
    public void applyFeatureSelection(FeatureSelection fs)
            throws IOException, NoSuchElementException, Exception {
       fs.applyFeatureSelection(
-         getEvaluationSet(this.trainPath), 
+         getEvaluationSet(this.TRAIN_PATH), 
          this.evaluationSets
       );
       writeTestTrainValidation();
 
       this.db.insertToFeatureSelectionTable(fs);
-      this.db.insertToFeatureTable(getEvaluationSet(this.trainPath));
+      this.db.insertToFeatureTable(getEvaluationSet(this.TRAIN_PATH));
    }
 
    /**
@@ -164,11 +181,11 @@ public final class SystemTrain {
    }
 
    private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
-      ch.getClassifier().buildClassifier(getEvaluationSet(this.trainPath));
+      ch.getClassifier().buildClassifier(getEvaluationSet(this.TRAIN_PATH));
       UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
 
-      CustomEvaluation eval = new CustomEvaluation(getEvaluationSet(this.trainPath));
-      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.testPath));
+      CustomEvaluation eval = new CustomEvaluation(getEvaluationSet(this.TRAIN_PATH));
+      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.TEST_PATH));
 
       StringBuilder sb = new StringBuilder();
       sb.append("=== Classifier ===\n");
@@ -184,7 +201,13 @@ public final class SystemTrain {
       return eval;
    }
  
+   /**
+    * Required parameters: either SystemParameters, or a path to the combinedPath.
+    * Since it's an "either or" scenario, there are 2 build functions here.
+    * Optional parameters: FeatureSelection, Database<br>
+    */
    public static class Buidler{
+      //Initialised to null objects
       private FeatureSelection fs = NoFeatureSelection.getInstance();
       private Database db = NoDatabase.getInstance();
 
@@ -200,6 +223,35 @@ public final class SystemTrain {
       
       public SystemTrain build(SystemParameters sp) throws Exception{
          return new SystemTrain(this, sp);
+      }
+      
+      /**
+       * This has a lot of parameters since those parameters needed to know
+       * What stuff to insert to the Database
+       * @param combinedPath
+       * @param systemType
+       * @param categoricalType
+       * @param noiseLevel
+       * @param dataset
+       * @param extractionTool
+       * @return
+       * @throws Exception 
+       */
+      public SystemTrain build(
+            String combinedPath, 
+            String systemType, String categoricalType, Float noiseLevel, 
+            String dataset, String extractionTool)
+            throws Exception{
+         
+         return new SystemTrain(
+            this,
+            combinedPath,
+            systemType,
+            categoricalType,
+            noiseLevel,
+            dataset,
+            extractionTool
+         );
       }
    }
 }

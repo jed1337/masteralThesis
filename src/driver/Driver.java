@@ -127,15 +127,15 @@ public final class Driver {
          .featureSelection(fs)
          .build(systemParameters);
 
-      String fullFolderPath = String.join("/",
-         "Results",
-         "Jan dataset(Temp)",
-         GlobalFeatureExtraction.getInstance().getName(),
-         systemParameters.getCategoricalType().name(),
-         systemParameters.getNoiseLevelString(),
-         fs.getFSMethodName(),
-         systemParameters.getSystemType()
-      )+"/";
-      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
+//      String fullFolderPath = String.join("/",
+//         "Results",
+//         "Jan dataset(Temp)",
+//         GlobalFeatureExtraction.getInstance().getName(),
+//         systemParameters.getCategoricalType().name(),
+//         systemParameters.getNoiseLevelString(),
+//         fs.getFSMethodName(),
+//         systemParameters.getSystemType()
+//      )+"/";
+//      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
    }
 }
