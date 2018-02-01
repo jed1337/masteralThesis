@@ -4,7 +4,6 @@ import classifier.ClassifierHolder;
 import constants.CharConstants;
 import constants.DirectoryConstants;
 import customWeka.CustomEvaluation;
-import database.Database;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,6 +29,9 @@ public final class CrossValidation implements Evaluation{
    @Override
    public Enumeration<Attribute> applyFeatureSelection(FeatureSelection fs) 
            throws IOException,NoSuchElementException,Exception {
+      
+      //We pass an empty ArrayList<>() since we don't have any other
+      //instances to apply the features selection to, just this.combinedInstances
       fs.applyFeatureSelection(
          this.combinedInstances,
          new ArrayList<>()
@@ -41,16 +43,11 @@ public final class CrossValidation implements Evaluation{
    @Override
    public HashMap<String, CustomEvaluation> evaluateClassifiers(ArrayList<ClassifierHolder> classifierHolders)
            throws Exception {
-//      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
       final HashMap<String, CustomEvaluation> hmEval = new HashMap<>();
 
       for (ClassifierHolder ch : classifierHolders) {
          CustomEvaluation eval = evaluateIndividualClassifier(ch);
          Utils.addToMap(hmEval, ch.getClassifierName(), eval);
-//         evaluations.add(eval);
-
-//         Insert to evaluation table
-//         this.db.insertToEvaluationTable(ch.getClassifierName(), eval);
       }
       return hmEval;
    }

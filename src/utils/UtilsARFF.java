@@ -2,12 +2,12 @@ package utils;
 
 import constants.AttributeTypeConstants;
 import constants.CharConstants;
-import preprocessFiles.preprocessAs.FormatAsText;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import preprocessFiles.preprocessAs.FormatAsArff;
+import preprocessFiles.preprocessAs.FormatAsText;
 import weka.core.Instances;
 
 public final class UtilsARFF{
@@ -82,7 +82,7 @@ public final class UtilsARFF{
     * @param inputPaths
     * @return
     * @throws IOException
-    * @throws IllegalArgumentException
+    * @throws IllegalArgumentException if the inputPaths is null or empty
     */
    public static FormatAsText combineArff(String outputPath, List<String> inputPaths)
            throws IOException, IllegalArgumentException{
@@ -103,7 +103,9 @@ public final class UtilsARFF{
 
    /**
     * Checks if the inputPaths have the same header as one another.<p>
-    * Ignores mismatches in the class label
+    * Ignores mismatches in the class label (since we're combining lots of arffs
+    * with different class labels but with the same attributes)
+    * 
     * @param inputPaths
     * @throws IllegalArgumentException if the inputPaths don't have the same header as one another
     */
@@ -114,7 +116,8 @@ public final class UtilsARFF{
          "Attributes differ at position "+
          (UtilsInstances.getAttributeIndex(first,AttributeTypeConstants.ATTRIBUTE_CLASS)+1)
       ;
-      //Start at 1 since it doesn't make sense to compare it to
+      
+      //It's i=1 since it doesn't make sense to compare it to
       //the first element (itself)
       for (int i = 1; i < inputPaths.size(); i++) {
          Instances other = new FormatAsArff(inputPaths.get(i)).getInstances();

@@ -9,7 +9,6 @@ import database.Database;
 import database.NoDatabase;
 import evaluation.Evaluation;
 import evaluation.NoEvaluation;
-import evaluation.TrainTestValidation;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
 import java.io.IOException;
@@ -18,8 +17,6 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import preprocessFiles.PreprocessFile;
 import utils.Utils;
@@ -31,12 +28,14 @@ import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Attribute;
 
+/**
+ * A class to train the system given a wide variety of different parameters.
+ */
 public final class SystemTrain {
    private final Database db;
 
 	private SystemTrain(SystemTrain.Buidler builder, SystemParameters sp) throws IOException, Exception {
       this.db = builder.db;
-      FeatureSelection fs = builder.fs;
 
       List<PreprocessFile> preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
       this.db.insertMainTable(sp);
@@ -70,7 +69,7 @@ public final class SystemTrain {
       classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
       classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
 
-      TrainTestValidation ttv = new TrainTestValidation();
+      Evaluation ttv = builder.eval;
       ttv.setupEvaluationSets(combinedPath);
       
       Enumeration<Attribute> selectedAttributes =
@@ -83,10 +82,10 @@ public final class SystemTrain {
          ttv.evaluateClassifiers(classifierHolders);
       
       for (Map.Entry<String, CustomEvaluation> entry : hmEval.entrySet()) {
-         String classifierName = entry.getKey();
-         CustomEvaluation eval = entry.getValue();
+         String classifierName  = entry.getKey();
+         CustomEvaluation cEval = entry.getValue();
          
-         this.db.insertToEvaluationTable(classifierName, eval);
+         this.db.insertToEvaluationTable(classifierName, cEval);
       }
    }
 
@@ -121,7 +120,8 @@ public final class SystemTrain {
    /**
     * Required parameters: either SystemParameters, or a path to the combinedPath.
     * Since it's an "either or" scenario, there are 2 build functions here.
-    * Optional parameters: FeatureSelection, Database<br>
+    * <br>
+    * Optional parameters: FeatureSelection, Database
     */
    public static class Buidler{
       //Initialised to null objects
@@ -151,7 +151,7 @@ public final class SystemTrain {
       /**
        * This has a lot of parameters since those parameters needed to know
        * What stuff to insert to the Database
-       * @param combinedPath
+       * @param combinedPath The path to the arff file containing all the instances
        * @param systemType
        * @param categoricalType
        * @param noiseLevel

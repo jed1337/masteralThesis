@@ -61,8 +61,6 @@ public final class TrainTestValidation implements Evaluation{
       );
       writeTestTrainValidation();
 
-//      this.db.insertToFeatureSelectionTable(fs);
-//      this.db.insertToFeatureTable(getEvaluationSet(this.TRAIN_PATH));
       return getEvaluationSet(this.TRAIN_PATH).enumerateAttributes();
    }
 
@@ -71,15 +69,10 @@ public final class TrainTestValidation implements Evaluation{
            throws Exception {
       
       final HashMap<String, CustomEvaluation> hmEval = new HashMap<>();
-//      final ArrayList<CustomEvaluation> evaluations = new ArrayList<>();
 
       for (ClassifierHolder ch : classifierHolders) {
          CustomEvaluation eval = evaluateIndividualClassifier(ch);
          Utils.addToMap(hmEval, ch.getClassifierName(), eval);
-//         evaluations.add(eval);
-
-         //Insert to evaluation table
-//         this.db.insertToEvaluationTable(ch.getClassifierName(), eval);
       }
       return hmEval;
    }
