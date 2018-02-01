@@ -10,67 +10,67 @@ BinarySMO
 
 Machine linear: showing attribute weights, not support vectors.
 
-        -0.1008 * (normalized) total_fpackets
- +      -0.2387 * (normalized) total_fvolume
- +      -0.2798 * (normalized) total_bpackets
- +      -0.273  * (normalized) total_bvolume
- +      -0.1312 * (normalized) min_fpktl
- +       0.1443 * (normalized) mean_fpktl
- +      -0.2438 * (normalized) max_fpktl
- +      -0.0518 * (normalized) std_fpktl
- +      -0.0908 * (normalized) min_bpktl
- +       0.102  * (normalized) mean_bpktl
- +       0.2036 * (normalized) max_bpktl
- +       0.2014 * (normalized) std_bpktl
- +       0.0037 * (normalized) min_fiat
- +      -0.006  * (normalized) mean_fiat
- +      -0.0815 * (normalized) max_fiat
- +       0.115  * (normalized) std_fiat
- +       0.0417 * (normalized) min_biat
- +       0.016  * (normalized) mean_biat
- +      -0.1418 * (normalized) max_biat
- +      -0.0083 * (normalized) std_biat
- +       0.38   * (normalized) duration
- +      -0.2275 * (normalized) min_active
- +      -0.1412 * (normalized) mean_active
- +      -0.2186 * (normalized) max_active
- +      -0.1925 * (normalized) std_active
- +      -0.2609 * (normalized) min_idle
- +       0.031  * (normalized) mean_idle
- +      -0.1212 * (normalized) max_idle
- +      -0.1531 * (normalized) std_idle
- +      -0.0621 * (normalized) sflow_fpackets
- +      -0.1472 * (normalized) sflow_fbytes
- +      -0.1716 * (normalized) sflow_bpackets
- +      -0.1695 * (normalized) sflow_bbytes
- +      -0.2895 * (normalized) fpsh_cnt
- +       1.7994 * (normalized) bpsh_cnt
- +      -0.2616 * (normalized) total_fhlen
- +      -0.2809 * (normalized) total_bhlen
- -       0.9954
+        -0.3367 * (normalized) total_fpackets
+ +      -0.5071 * (normalized) total_fvolume
+ +      -0.2977 * (normalized) total_bpackets
+ +      -0.2856 * (normalized) total_bvolume
+ +      -0.8778 * (normalized) min_fpktl
+ +       2.2164 * (normalized) mean_fpktl
+ +      -2.2659 * (normalized) max_fpktl
+ +      -3.1388 * (normalized) std_fpktl
+ +       0.619  * (normalized) min_bpktl
+ +       0.6383 * (normalized) mean_bpktl
+ +       0.8813 * (normalized) max_bpktl
+ +       0.7035 * (normalized) std_bpktl
+ +      -0.592  * (normalized) min_fiat
+ +       3.5595 * (normalized) mean_fiat
+ +      -1.4577 * (normalized) max_fiat
+ +       1.3385 * (normalized) std_fiat
+ +       0.0934 * (normalized) min_biat
+ +       0.0122 * (normalized) mean_biat
+ +      -0.011  * (normalized) max_biat
+ +       0.0085 * (normalized) std_biat
+ +       2.263  * (normalized) duration
+ +      -0.4991 * (normalized) min_active
+ +      -0.4289 * (normalized) mean_active
+ +      -0.2712 * (normalized) max_active
+ +      -0.0633 * (normalized) std_active
+ +      -0.7248 * (normalized) min_idle
+ +      -0.11   * (normalized) mean_idle
+ +      -0.3456 * (normalized) max_idle
+ +      -0.2811 * (normalized) std_idle
+ +      -0.3138 * (normalized) sflow_fpackets
+ +      -0.493  * (normalized) sflow_fbytes
+ +      -0.2991 * (normalized) sflow_bpackets
+ +      -0.2915 * (normalized) sflow_bbytes
+ +      -0.5107 * (normalized) fpsh_cnt
+ +       2.5912 * (normalized) bpsh_cnt
+ +      -0.5383 * (normalized) total_fhlen
+ +      -0.2983 * (normalized) total_bhlen
+ -       1.2453
 
-Number of kernel evaluations: 5011 (85.572% cached)
+Number of kernel evaluations: 198362 (70.85% cached)
 
 
 === Dedicated test set ===
 === Summary of SMO===
 
-Correctly Classified Instances          70               47.2973 %
-Incorrectly Classified Instances        78               52.7027 %
-Kappa statistic                         -0.0541
-Mean absolute error                      0.527 
-Root mean squared error                  0.726 
-Relative absolute error                105.4054 %
-Root relative squared error            145.1933 %
-Total Number of Instances              148     
+Correctly Classified Instances         526               52.6    %
+Incorrectly Classified Instances       474               47.4    %
+Kappa statistic                          0.052 
+Mean absolute error                      0.474 
+Root mean squared error                  0.6885
+Relative absolute error                 94.8    %
+Root relative squared error            137.6953 %
+Total Number of Instances             1000     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.000    0.054    0.000      0.000    0.000      -0.167   0.473     0.500     HIGH_RATE
-                 0.946    1.000    0.486      0.946    0.642      -0.167   0.473     0.487     LOW_RATE
-Weighted Avg.    0.473    0.527    0.243      0.473    0.321      -0.167   0.473     0.493     
+                 0.054    0.002    0.964      0.054    0.102      0.158    0.526     0.525     HIGH_RATE
+                 0.998    0.946    0.513      0.998    0.678      0.158    0.526     0.513     LOW_RATE
+Weighted Avg.    0.526    0.474    0.739      0.526    0.390      0.158    0.526     0.519     
 === Confusion Matrix ===
 
-  a  b   <-- classified as
-  0 74 |  a = HIGH_RATE
-  4 70 |  b = LOW_RATE
+   a   b   <-- classified as
+  27 473 |   a = HIGH_RATE
+   1 499 |   b = LOW_RATE

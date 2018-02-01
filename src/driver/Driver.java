@@ -2,14 +2,17 @@ package driver;
 
 import constants.ArffInstanceCount;
 import constants.DirectoryConstants;
+import database.Mysql;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.GeneralAttackType;
 import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
+import driver.mode.HybridIsAttack;
+import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import featureExtraction.Decorator.JanCNISDatabase;
-import featureExtraction.NetmateTempExtraction;
+import featureExtraction.NetmateExtraction;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
 import globalParameters.GlobalFeatureExtraction;
@@ -63,8 +66,8 @@ public final class Driver {
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
 //      system();
       GlobalFeatureExtraction.setInstance(
-//         new JanCNISDatabase(new NetmateExtraction())
-         new JanCNISDatabase(new NetmateTempExtraction())
+         new JanCNISDatabase(new NetmateExtraction())
+//         new JanCNISDatabase(new NetmateTempExtraction())
       );
       final int instanceCount = ArffInstanceCount.HALVED;
 
@@ -84,26 +87,26 @@ public final class Driver {
       };
 
       for (FeatureSelection fs : featureSelections) {
-//         for (CategoricalType categoricalType : categoricalTypes) {
-//            for (NoiseLevel noiseLevel : noiseLevels) {
-//               systemTrain(
-//                  fs,
-//                  new SystemParameters.Builder(
-//                     instanceCount,
-//                     new Single (noiseLevel, categoricalType)
-//                  ).build()
-//               );
-//            }
-//         }
-//         for (NoiseLevel noiseLevel : noiseLevels) {
-//            systemTrain(
-//              fs,
-//              new SystemParameters.Builder(
-//                instanceCount,
-//                new HybridIsAttack(noiseLevel)
-//              ).build()
-//            );
-//         }
+         for (CategoricalType categoricalType : categoricalTypes) {
+            for (NoiseLevel noiseLevel : noiseLevels) {
+               systemTrain(
+                  fs,
+                  new SystemParameters.Builder(
+                     instanceCount,
+                     new Single (noiseLevel, categoricalType)
+                  ).build()
+               );
+            }
+         }
+         for (NoiseLevel noiseLevel : noiseLevels) {
+            systemTrain(
+              fs,
+              new SystemParameters.Builder(
+                instanceCount,
+                new HybridIsAttack(noiseLevel)
+              ).build()
+            );
+         }
          for (CategoricalType categoricalType : categoricalTypes) {
             systemTrain(
                fs,
@@ -118,7 +121,11 @@ public final class Driver {
 
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
            throws IOException, Exception {
-      new SystemTrain(systemParameters, fs);
+      
+      new SystemTrain.Buidler()
+         .database(new Mysql())
+         .featureSelection(fs)
+         .build(systemParameters);
 
       String fullFolderPath = String.join("/",
          "Results",

@@ -2,40 +2,54 @@
 J48 pruned tree
 ------------------
 
-mean_bpktl <= 60
-|   total_fhlen <= 256: NORMAL (96.0/1.0)
-|   total_fhlen > 256
-|   |   total_fhlen <= 27228
-|   |   |   min_active <= 5227491: HIGH_RATE (35.0/1.0)
-|   |   |   min_active > 5227491: NORMAL (3.0)
-|   |   total_fhlen > 27228: HIGH_RATE (261.0)
-mean_bpktl > 60: LOW_RATE (296.0)
+std_bpktl <= 18
+|   total_fhlen <= 428
+|   |   std_idle <= 867538: NORMAL (1302.0/5.0)
+|   |   std_idle > 867538
+|   |   |   total_bpackets <= 0
+|   |   |   |   duration <= 10001747: NORMAL (13.0)
+|   |   |   |   duration > 10001747
+|   |   |   |   |   std_fpktl <= 23: HIGH_RATE (6.0/2.0)
+|   |   |   |   |   std_fpktl > 23: NORMAL (2.0)
+|   |   |   total_bpackets > 0: HIGH_RATE (4.0)
+|   total_fhlen > 428
+|   |   mean_fpktl <= 163
+|   |   |   mean_fiat <= 18049: HIGH_RATE (1284.0)
+|   |   |   mean_fiat > 18049
+|   |   |   |   total_bpackets <= 0: NORMAL (11.0)
+|   |   |   |   total_bpackets > 0: HIGH_RATE (18.0)
+|   |   mean_fpktl > 163
+|   |   |   max_bpktl <= -1: NORMAL (10.0)
+|   |   |   max_bpktl > -1
+|   |   |   |   max_fpktl <= 532: LOW_RATE (42.0/1.0)
+|   |   |   |   max_fpktl > 532: HIGH_RATE (17.0)
+std_bpktl > 18: LOW_RATE (1288.0)
 
-Number of Leaves  : 	5
+Number of Leaves  : 	12
 
-Size of the tree : 	9
+Size of the tree : 	23
 
 === Dedicated test set ===
 === Summary of J48===
 
-Correctly Classified Instances          95               54.9133 %
-Incorrectly Classified Instances        78               45.0867 %
-Kappa statistic                          0.2647
-Mean absolute error                      0.3016
-Root mean squared error                  0.5479
-Relative absolute error                 73.7885 %
-Root relative squared error            121.183  %
-Total Number of Instances              173     
+Correctly Classified Instances         631               63.1632 %
+Incorrectly Classified Instances       368               36.8368 %
+Kappa statistic                          0.4474
+Mean absolute error                      0.2478
+Root mean squared error                  0.4956
+Relative absolute error                 55.7488 %
+Root relative squared error            105.1237 %
+Total Number of Instances              999     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.000    0.040    0.000      0.000    0.000      -0.133   0.354     0.428     HIGH_RATE
-                 0.946    0.747    0.486      0.946    0.642      0.263    0.599     0.483     LOW_RATE
-                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     NORMAL
-Weighted Avg.    0.549    0.337    0.352      0.549    0.419      0.200    0.552     0.534     
+                 0.000    0.053    0.000      0.000    0.000      -0.135   0.176     0.326     HIGH_RATE
+                 0.901    0.488    0.480      0.901    0.626      0.402    0.618     0.412     LOW_RATE
+                 0.994    0.012    0.976      0.994    0.985      0.978    0.991     0.973     NORMAL
+Weighted Avg.    0.632    0.184    0.485      0.632    0.537      0.415    0.595     0.570     
 === Confusion Matrix ===
 
-  a  b  c   <-- classified as
-  0 74  0 |  a = HIGH_RATE
-  4 70  0 |  b = LOW_RATE
-  0  0 25 |  c = NORMAL
+   a   b   c   <-- classified as
+   0 325   8 |   a = HIGH_RATE
+  33 300   0 |   b = LOW_RATE
+   2   0 331 |   c = NORMAL

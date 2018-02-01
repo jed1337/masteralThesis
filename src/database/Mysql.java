@@ -20,7 +20,7 @@ import java.util.NoSuchElementException;
 import utils.UtilsDB;
 import weka.core.Instances;
 
-public final class Mysql implements DBInterface {
+public final class Mysql implements Database {
    private final Connection connection;
    private int mainID;
 

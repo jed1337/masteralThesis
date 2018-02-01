@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.NoSuchElementException;
 import weka.core.Instances;
 
-public interface DBInterface {
+public interface Database {
    void insertMainTable(SystemParameters sp) throws SQLException;
 
    void insertToEvaluationTable(ClassifierHolder ch, CustomEvaluation eval)

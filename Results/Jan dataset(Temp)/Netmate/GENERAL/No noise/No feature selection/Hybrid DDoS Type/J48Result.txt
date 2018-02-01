@@ -2,32 +2,38 @@
 J48 pruned tree
 ------------------
 
-mean_bpktl <= 60: HIGH_RATE (296.0)
-mean_bpktl > 60: LOW_RATE (296.0)
+total_fpackets <= 17
+|   max_fpktl <= 568
+|   |   total_bpackets <= 1
+|   |   |   std_fiat <= 273665: HIGH_RATE (29.0/4.0)
+|   |   |   std_fiat > 273665: LOW_RATE (54.0)
+|   |   total_bpackets > 1: LOW_RATE (1942.0)
+|   max_fpktl > 568: HIGH_RATE (30.0)
+total_fpackets > 17: HIGH_RATE (1945.0)
 
-Number of Leaves  : 	2
+Number of Leaves  : 	5
 
-Size of the tree : 	3
+Size of the tree : 	9
 
 === Dedicated test set ===
 === Summary of J48===
 
-Correctly Classified Instances          70               47.2973 %
-Incorrectly Classified Instances        78               52.7027 %
-Kappa statistic                         -0.0541
-Mean absolute error                      0.527 
-Root mean squared error                  0.726 
-Relative absolute error                105.4054 %
-Root relative squared error            145.1933 %
-Total Number of Instances              148     
+Correctly Classified Instances         499               49.9    %
+Incorrectly Classified Instances       501               50.1    %
+Kappa statistic                         -0.002 
+Mean absolute error                      0.5009
+Root mean squared error                  0.7076
+Relative absolute error                100.1724 %
+Root relative squared error            141.5264 %
+Total Number of Instances             1000     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.000    0.054    0.000      0.000    0.000      -0.167   0.473     0.500     HIGH_RATE
-                 0.946    1.000    0.486      0.946    0.642      -0.167   0.473     0.487     LOW_RATE
-Weighted Avg.    0.473    0.527    0.243      0.473    0.321      -0.167   0.473     0.493     
+                 0.000    0.002    0.000      0.000    0.000      -0.032   0.499     0.500     HIGH_RATE
+                 0.998    1.000    0.499      0.998    0.666      -0.032   0.499     0.500     LOW_RATE
+Weighted Avg.    0.499    0.501    0.250      0.499    0.333      -0.032   0.499     0.500     
 === Confusion Matrix ===
 
-  a  b   <-- classified as
-  0 74 |  a = HIGH_RATE
-  4 70 |  b = LOW_RATE
+   a   b   <-- classified as
+   0 500 |   a = HIGH_RATE
+   1 499 |   b = LOW_RATE

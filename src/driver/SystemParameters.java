@@ -18,16 +18,16 @@ public final class SystemParameters implements GetPreprocessFiles{
    
    private final List<PreprocessFile> pfL;
    
-   private SystemParameters(Builder spb) throws IOException{
-      this.nl = spb.mode.getNoiseLevel();
-      this.categoricalType = spb.mode.getCategoricalType();
-      this.systemType = spb.mode.getSystemType();
+   private SystemParameters(SystemParameters.Builder builder) throws IOException{
+      this.nl = builder.mode.getNoiseLevel();
+      this.categoricalType = builder.mode.getCategoricalType();
+      this.systemType = builder.mode.getSystemType();
       
       this.pfL = new ArrayList<>();
-      this.pfL.addAll(spb.mode.getPreprocessFiles());
-      this.pfL.addAll(spb.mode.getNoiseLevel().getPreprocessFiles());
+      this.pfL.addAll(builder.mode.getPreprocessFiles());
+      this.pfL.addAll(builder.mode.getNoiseLevel().getPreprocessFiles());
       
-      this.categoricalType.setPreprocessFileCount(this.pfL, spb.instanceCount);
+      this.categoricalType.setPreprocessFileCount(this.pfL, builder.instanceCount);
    }
    
    @Override
@@ -63,6 +63,7 @@ public final class SystemParameters implements GetPreprocessFiles{
          this.instanceCount = instanceCount;
          this.mode = mode;
       }
+      
       public SystemParameters build() throws IOException{
          return new SystemParameters(this);
       }

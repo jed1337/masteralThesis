@@ -1,0 +1,264 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                         Class
+Attribute               normal        attack
+                         (0.5)         (0.5)
+=============================================
+total_fpackets
+  mean                   5.0544     4231.0175
+  std. dev.             62.0382      6282.993
+  weight sum               2000          2000
+  precision             26.8852       26.8852
+
+total_fvolume
+  mean                4003.0957   214481.4108
+  std. dev.          59190.9756   282133.3483
+  weight sum               2000          2000
+  precision             831.035       831.035
+
+total_bpackets
+  mean                        0      621.6552
+  std. dev.              5.1838     1557.9209
+  weight sum               2000          2000
+  precision              31.103        31.103
+
+total_bvolume
+  mean                        0    33426.8672
+  std. dev.            246.6199    81865.4674
+  weight sum               2000          2000
+  precision           1479.7197     1479.7197
+
+min_fpktl
+  mean                 170.8725       45.7125
+  std. dev.            234.5397       12.8386
+  weight sum               2000          2000
+  precision                   5             5
+
+mean_fpktl
+  mean                 180.8972       80.3325
+  std. dev.            246.2097       46.8069
+  weight sum               2000          2000
+  precision               4.242         4.242
+
+max_fpktl
+  mean                 193.9278      716.5635
+  std. dev.            273.3523     1011.8929
+  weight sum               2000          2000
+  precision              8.4624        8.4624
+
+std_fpktl
+  mean                   8.7365        68.557
+  std. dev.             56.5091       77.1999
+  weight sum               2000          2000
+  precision               2.954         2.954
+
+min_bpktl
+  mean                        0       45.4755
+  std. dev.              3.3889       26.4534
+  weight sum               2000          2000
+  precision             20.3333       20.3333
+
+mean_bpktl
+  mean                        0       85.7578
+  std. dev.             26.3222      163.8364
+  weight sum               2000          2000
+  precision            157.9333      157.9333
+
+max_bpktl
+  mean                        0      266.2184
+  std. dev.             66.6212      310.2574
+  weight sum               2000          2000
+  precision            399.7273      399.7273
+
+std_bpktl
+  mean                        0      114.4746
+  std. dev.               14.62      168.9829
+  weight sum               2000          2000
+  precision               87.72         87.72
+
+min_fiat
+  mean               20787.3608     1236.5866
+  std. dev.         109955.0095    19296.9552
+  weight sum               2000          2000
+  precision            1114.544      1114.544
+
+mean_fiat
+  mean               30712.1301    28148.5744
+  std. dev.         126466.3537    65444.1467
+  weight sum               2000          2000
+  precision             479.035       479.035
+
+max_fiat
+  mean               48439.2343   354809.9343
+  std. dev.         180153.5253   332519.1234
+  weight sum               2000          2000
+  precision            449.2269      449.2269
+
+std_fiat
+  mean               11651.6579    46060.9742
+  std. dev.          58809.4639    97124.7141
+  weight sum               2000          2000
+  precision            324.1208      324.1208
+
+min_biat
+  mean                        0      187.8307
+  std. dev.              6.8599      667.5458
+  weight sum               2000          2000
+  precision             41.1594       41.1594
+
+mean_biat
+  mean                        0    19160.3087
+  std. dev.            108.5613     64849.908
+  weight sum               2000          2000
+  precision            651.3678      651.3678
+
+max_biat
+  mean                        0   175209.1831
+  std. dev.            370.2559   306178.9707
+  weight sum               2000          2000
+  precision           2221.5356     2221.5356
+
+std_biat
+  mean                        0    34198.0116
+  std. dev.            158.0147   108186.0394
+  weight sum               2000          2000
+  precision            948.0881      948.0881
+
+duration
+  mean               753209.921 20453773.8215
+  std. dev.        2235651.4359 14161562.2696
+  weight sum               2000          2000
+  precision          16779.7612    16779.7612
+
+min_active
+  mean              189225.1325  7809208.4588
+  std. dev.        1197520.4559    11543277.5
+  weight sum               2000          2000
+  precision          23688.6746    23688.6746
+
+mean_active
+  mean              191906.7031  9045229.2583
+  std. dev.        1188344.5777 11869483.6036
+  weight sum               2000          2000
+  precision          17769.1392    17769.1392
+
+max_active
+  mean              222889.2035 10423950.8583
+  std. dev.        1257599.5691 12851459.3265
+  weight sum               2000          2000
+  precision          17729.7223    17729.7223
+
+std_active
+  mean               31819.3785  1848461.4916
+  std. dev.         279728.6371  4232353.6752
+  weight sum               2000          2000
+  precision          11892.8718    11892.8718
+
+min_idle
+  mean               330689.037   1087773.285
+  std. dev.        1213999.8796  1866208.6348
+  weight sum               2000          2000
+  precision          10952.8695    10952.8695
+
+mean_idle
+  mean              356386.8105  2583613.2398
+  std. dev.        1253988.0339  3262824.9492
+  weight sum               2000          2000
+  precision          10922.0598    10922.0598
+
+max_idle
+  mean              385829.7256  3442581.5171
+  std. dev.         1326192.204  4513524.3994
+  weight sum               2000          2000
+  precision          11817.3242    11817.3242
+
+std_idle
+  mean                34452.382   1166829.166
+  std. dev.         249172.6683  1995691.7231
+  weight sum               2000          2000
+  precision          12302.2253    12302.2253
+
+sflow_fpackets
+  mean                   4.6754     3446.8732
+  std. dev.             61.4795     5778.9944
+  weight sum               2000          2000
+  precision             27.6653       27.6653
+
+sflow_fbytes
+  mean                3894.5804   172817.2048
+  std. dev.          59145.0061   255298.4701
+  weight sum               2000          2000
+  precision            960.2023      960.2023
+
+sflow_bpackets
+  mean                        0      494.5254
+  std. dev.               5.172     1360.1026
+  weight sum               2000          2000
+  precision              31.032        31.032
+
+sflow_bbytes
+  mean                        0    26364.6215
+  std. dev.             232.973    71177.8708
+  weight sum               2000          2000
+  precision           1397.8379     1397.8379
+
+fpsh_cnt
+  mean                        0     1206.0453
+  std. dev.              5.5086      2822.309
+  weight sum               2000          2000
+  precision             33.0514       33.0514
+
+bpsh_cnt
+  mean                        0        0.6275
+  std. dev.              0.1667        0.4866
+  weight sum               2000          2000
+  precision                   1             1
+
+furg_cnt
+  mean                        0             0
+  std. dev.              0.0017        0.0017
+  weight sum               2000          2000
+  precision                0.01          0.01
+
+burg_cnt
+  mean                        0             0
+  std. dev.              0.0017        0.0017
+  weight sum               2000          2000
+  precision                0.01          0.01
+
+total_fhlen
+  mean                  99.5756   123483.3266
+  std. dev.           1233.0927   171661.4348
+  weight sum               2000          2000
+  precision            768.9234      768.9234
+
+total_bhlen
+  mean                        0    32961.6013
+  std. dev.            247.4762    81866.1156
+  weight sum               2000          2000
+  precision           1484.8571     1484.8571
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         993               99.3    %
+Incorrectly Classified Instances         7                0.7    %
+Kappa statistic                          0.986 
+Mean absolute error                      0.007 
+Root mean squared error                  0.0837
+Relative absolute error                  1.4    %
+Root relative squared error             16.7332 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.988    0.002    0.998      0.988    0.993      0.986    0.999     0.998     normal
+                 0.998    0.012    0.988      0.998    0.993      0.986    0.994     0.988     attack
+Weighted Avg.    0.993    0.007    0.993      0.993    0.993      0.986    0.996     0.993     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 494   6 |   a = normal
+   1 499 |   b = attack

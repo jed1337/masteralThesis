@@ -6,8 +6,7 @@ import constants.CharConstants;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
-import database.DBInterface;
-import database.NoDatabase;
+import database.Mysql;
 import featureSelection.FeatureSelection;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,6 +26,9 @@ import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
+import database.Database;
+import database.NoDatabase;
+import featureSelection.NoFeatureSelection;
 
 public final class SystemTrain {
 	private final ArrayList<EvaluationSet> evaluationSets;
@@ -38,13 +40,15 @@ public final class SystemTrain {
 //	private final ArrayList<ClassifierHolder> classifierHolders;
 //	private final List<PreprocessFile> preprocessFiles;
 
-   private final DBInterface db;
+   private final Database db;
 
 //   private final FeatureSelection fs;
 
-	public SystemTrain(SystemParameters sp, FeatureSelection fs) throws IOException, Exception {
+	private SystemTrain(SystemTrain.Buidler builder, SystemParameters sp) throws IOException, Exception {
+      FeatureSelection fs = builder.fs;
+      this.db = builder.db;
+      
       this.evaluationSets = new ArrayList<>();
-//      FeatureSelection fs = fs;
 
       List<PreprocessFile> preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
 
@@ -60,7 +64,7 @@ public final class SystemTrain {
       this.evaluationSets.add(new EvaluationSet(this.validationPath  , 1));
 
 //      this.db = new Mysql();
-      this.db = NoDatabase.getInstance();
+//      this.db = NoDatabase.getInstance();
       this.db.insertMainTable(sp);
       
       createCombinedData(preprocessFiles, this.combinedPath);
@@ -178,5 +182,24 @@ public final class SystemTrain {
       Utils.writeStringFile(DirectoryConstants.FORMATTED_DIR+ch.getResultName(), sb.toString());
 
       return eval;
+   }
+ 
+   public static class Buidler{
+      private FeatureSelection fs = NoFeatureSelection.getInstance();
+      private Database db = NoDatabase.getInstance();
+
+      public SystemTrain.Buidler featureSelection(FeatureSelection fs) {
+         this.fs = fs;
+         return this;
+      }
+
+      public SystemTrain.Buidler database(Database db) {
+         this.db = db;
+         return this;
+      }
+      
+      public SystemTrain build(SystemParameters sp) throws Exception{
+         return new SystemTrain(this, sp);
+      }
    }
 }
