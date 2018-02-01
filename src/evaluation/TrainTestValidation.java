@@ -68,7 +68,6 @@ public class TrainTestValidation implements Evaluation{
 
       this.db.insertToFeatureSelectionTable(fs);
       this.db.insertToFeatureTable(getEvaluationSet(this.TRAIN_PATH));
-
    }
 
    @Override

@@ -6,6 +6,7 @@ import constants.DirectoryConstants;
 import constants.FileNameConstants;
 import database.Database;
 import database.NoDatabase;
+import evaluation.CrossValidation;
 import evaluation.TrainTestValidation;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
@@ -63,7 +64,8 @@ public final class SystemTrain {
       classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
       classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
 
-      TrainTestValidation ttv = new TrainTestValidation(this.db);
+//      TrainTestValidation ttv = new TrainTestValidation(this.db);
+      CrossValidation ttv = new CrossValidation(this.db);
       ttv.setupEvaluationSets(combinedPath);
       ttv.applyFeatureSelection(fs);
       ttv.evaluateClassifiers(classifierHolders);

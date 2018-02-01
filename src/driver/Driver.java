@@ -1,8 +1,8 @@
 package driver;
 
 import constants.ArffInstanceCount;
-import constants.DirectoryConstants;
 import database.Mysql;
+import database.NoDatabase;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.GeneralAttackType;
 import driver.categoricalType.SpecificAttackType;
@@ -15,10 +15,10 @@ import featureExtraction.Decorator.JanCNISDatabase;
 import featureExtraction.NetmateExtraction;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
+import featureSelection.filters.InfoGainFS;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
@@ -72,13 +72,13 @@ public final class Driver {
       final int instanceCount = ArffInstanceCount.HALVED;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
-         NoFeatureSelection.getInstance(),
-////         new InfoGainFS(),
+//         NoFeatureSelection.getInstance(),
+         new InfoGainFS(),
 //         new NBWrapper(),
 //         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
-         new GeneralAttackType(),
+//         new GeneralAttackType(),
          new SpecificAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
@@ -96,6 +96,7 @@ public final class Driver {
                      new Single (noiseLevel, categoricalType)
                   ).build()
                );
+               System.out.println("");
             }
          }
          for (NoiseLevel noiseLevel : noiseLevels) {
@@ -123,7 +124,7 @@ public final class Driver {
            throws IOException, Exception {
       
       new SystemTrain.Buidler()
-         .database(new Mysql())
+         .database(NoDatabase.getInstance())
          .featureSelection(fs)
          .build(systemParameters);
 

@@ -15,8 +15,6 @@ public final class UtilsClssifiers{
    }
 
    public static void writeModel(String directory, ClassifierHolder ch) throws Exception {
-//      Utils.makeFolders(ch.getFolderPath());
-      
       final String path = directory+ch.getModelName();
       weka.core.SerializationHelper.write(path, ch.getClassifier());
       System.out.println("Created the model of "+ch.getModelName()+" at '"+path+"'");
