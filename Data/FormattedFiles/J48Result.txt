@@ -2,118 +2,54 @@
 J48 pruned tree
 ------------------
 
-max_fpktl <= 88
-|   min_fpktl <= 40: udpFlood (667.0)
-|   min_fpktl > 40
-|   |   std_fpktl <= 7: tcpFlood (16.0/2.0)
-|   |   std_fpktl > 7: httpFlood (667.0)
-max_fpktl > 88
-|   fpsh_cnt <= 11
-|   |   min_fpktl <= 40
-|   |   |   max_bpktl <= 535: slowHeaders (513.0)
-|   |   |   max_bpktl > 535
-|   |   |   |   max_bpktl <= 578
-|   |   |   |   |   max_fpktl <= 466
-|   |   |   |   |   |   max_fpktl <= 465
-|   |   |   |   |   |   |   duration <= 31617360
-|   |   |   |   |   |   |   |   max_fpktl <= 405
-|   |   |   |   |   |   |   |   |   max_fpktl <= 394: slowBody (118.0)
-|   |   |   |   |   |   |   |   |   max_fpktl > 394
-|   |   |   |   |   |   |   |   |   |   sflow_fpackets <= 1
-|   |   |   |   |   |   |   |   |   |   |   duration <= 31554012
-|   |   |   |   |   |   |   |   |   |   |   |   max_fiat <= 24387: slowBody (38.0)
-|   |   |   |   |   |   |   |   |   |   |   |   max_fiat > 24387
-|   |   |   |   |   |   |   |   |   |   |   |   |   min_idle <= 1008335
-|   |   |   |   |   |   |   |   |   |   |   |   |   |   total_fpackets <= 8: slowHeaders (7.0)
-|   |   |   |   |   |   |   |   |   |   |   |   |   |   total_fpackets > 8: slowBody (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   |   |   min_idle > 1008335: slowBody (26.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   duration > 31554012: slowHeaders (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   sflow_fpackets > 1: slowBody (18.0/1.0)
-|   |   |   |   |   |   |   |   max_fpktl > 405: slowBody (155.0)
-|   |   |   |   |   |   |   duration > 31617360
-|   |   |   |   |   |   |   |   min_idle <= 1009138
-|   |   |   |   |   |   |   |   |   max_fpktl <= 405: slowHeaders (30.0)
-|   |   |   |   |   |   |   |   |   max_fpktl > 405: slowBody (20.0)
-|   |   |   |   |   |   |   |   min_idle > 1009138: slowBody (33.0)
-|   |   |   |   |   |   max_fpktl > 465
-|   |   |   |   |   |   |   min_idle <= 1005104
-|   |   |   |   |   |   |   |   sflow_bpackets <= 0: slowHeaders (4.0)
-|   |   |   |   |   |   |   |   sflow_bpackets > 0
-|   |   |   |   |   |   |   |   |   sflow_bbytes <= 146
-|   |   |   |   |   |   |   |   |   |   max_idle <= 10217975: slowHeaders (2.0)
-|   |   |   |   |   |   |   |   |   |   max_idle > 10217975: slowBody (5.0)
-|   |   |   |   |   |   |   |   |   sflow_bbytes > 146: slowBody (35.0)
-|   |   |   |   |   |   |   min_idle > 1005104
-|   |   |   |   |   |   |   |   max_idle <= 10027747: slowBody (7.0)
-|   |   |   |   |   |   |   |   max_idle > 10027747
-|   |   |   |   |   |   |   |   |   mean_fiat <= 6720
-|   |   |   |   |   |   |   |   |   |   max_idle <= 10279952: slowHeaders (13.0/1.0)
-|   |   |   |   |   |   |   |   |   |   max_idle > 10279952: slowBody (11.0/1.0)
-|   |   |   |   |   |   |   |   |   mean_fiat > 6720: slowHeaders (55.0/2.0)
-|   |   |   |   |   max_fpktl > 466: slowBody (142.0)
-|   |   |   |   max_bpktl > 578
-|   |   |   |   |   total_bvolume <= 11792: slowRead (34.0)
-|   |   |   |   |   total_bvolume > 11792
-|   |   |   |   |   |   max_bpktl <= 5844
-|   |   |   |   |   |   |   max_fpktl <= 256
-|   |   |   |   |   |   |   |   std_bpktl <= 1544: slowBody (10.0/1.0)
-|   |   |   |   |   |   |   |   std_bpktl > 1544
-|   |   |   |   |   |   |   |   |   total_fpackets <= 6: slowHeaders (2.0/1.0)
-|   |   |   |   |   |   |   |   |   total_fpackets > 6: slowRead (3.0)
-|   |   |   |   |   |   |   max_fpktl > 256
-|   |   |   |   |   |   |   |   min_active <= 2302: slowBody (3.0)
-|   |   |   |   |   |   |   |   min_active > 2302: slowHeaders (17.0/4.0)
-|   |   |   |   |   |   max_bpktl > 5844: slowRead (4.0)
-|   |   min_fpktl > 40
-|   |   |   std_bpktl <= 7
-|   |   |   |   max_fpktl <= 880
-|   |   |   |   |   std_fpktl <= 73
-|   |   |   |   |   |   max_idle <= 15529137: tcpFlood (6.0/1.0)
-|   |   |   |   |   |   max_idle > 15529137: slowRead (2.0/1.0)
-|   |   |   |   |   std_fpktl > 73
-|   |   |   |   |   |   total_bpackets <= 1: slowBody (36.0/9.0)
-|   |   |   |   |   |   total_bpackets > 1
-|   |   |   |   |   |   |   max_fiat <= 832077: slowBody (4.0)
-|   |   |   |   |   |   |   max_fiat > 832077: slowHeaders (5.0)
-|   |   |   |   max_fpktl > 880: tcpFlood (17.0)
-|   |   |   std_bpktl > 7
-|   |   |   |   max_bpktl <= 628: slowRead (623.0)
-|   |   |   |   max_bpktl > 628
-|   |   |   |   |   max_fpktl <= 256: slowBody (6.0/1.0)
-|   |   |   |   |   max_fpktl > 256: slowHeaders (10.0/2.0)
-|   fpsh_cnt > 11: tcpFlood (631.0)
+std_bpktl <= 18
+|   total_fhlen <= 428
+|   |   std_idle <= 867538: NORMAL (1302.0/5.0)
+|   |   std_idle > 867538
+|   |   |   total_bpackets <= 0
+|   |   |   |   duration <= 10001747: NORMAL (13.0)
+|   |   |   |   duration > 10001747
+|   |   |   |   |   std_fpktl <= 23: HIGH_RATE (6.0/2.0)
+|   |   |   |   |   std_fpktl > 23: NORMAL (2.0)
+|   |   |   total_bpackets > 0: HIGH_RATE (4.0)
+|   total_fhlen > 428
+|   |   mean_fpktl <= 163
+|   |   |   mean_fiat <= 18049: HIGH_RATE (1284.0)
+|   |   |   mean_fiat > 18049
+|   |   |   |   total_bpackets <= 0: NORMAL (11.0)
+|   |   |   |   total_bpackets > 0: HIGH_RATE (18.0)
+|   |   mean_fpktl > 163
+|   |   |   max_bpktl <= -1: NORMAL (10.0)
+|   |   |   max_bpktl > -1
+|   |   |   |   max_fpktl <= 532: LOW_RATE (42.0/1.0)
+|   |   |   |   max_fpktl > 532: HIGH_RATE (17.0)
+std_bpktl > 18: LOW_RATE (1288.0)
 
-Number of Leaves  : 	41
+Number of Leaves  : 	12
 
-Size of the tree : 	81
+Size of the tree : 	23
 
 === Dedicated test set ===
 === Summary of J48===
 
-Correctly Classified Instances         975               97.3054 %
-Incorrectly Classified Instances        27                2.6946 %
-Kappa statistic                          0.9677
-Mean absolute error                      0.0091
-Root mean squared error                  0.0847
-Relative absolute error                  3.2921 %
-Root relative squared error             22.7353 %
-Total Number of Instances             1002     
+Correctly Classified Instances         631               63.1632 %
+Incorrectly Classified Instances       368               36.8368 %
+Kappa statistic                          0.4474
+Mean absolute error                      0.2478
+Root mean squared error                  0.4956
+Relative absolute error                 55.7488 %
+Root relative squared error            105.1237 %
+Total Number of Instances              999     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1.000    0.001    0.994      1.000    0.997      0.996    1.000     1.000     tcpFlood
-                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     httpFlood
-                 0.994    0.002    0.988      0.994    0.991      0.989    0.996     0.989     slowRead
-                 0.904    0.010    0.950      0.904    0.926      0.912    0.985     0.959     slowHeaders
-                 0.988    0.000    1.000      0.988    0.994      0.993    0.994     0.990     udpFlood
-                 0.952    0.019    0.909      0.952    0.930      0.916    0.990     0.956     slowBody
-Weighted Avg.    0.973    0.005    0.973      0.973    0.973      0.968    0.994     0.982     
+                 0.000    0.053    0.000      0.000    0.000      -0.135   0.176     0.326     HIGH_RATE
+                 0.901    0.488    0.480      0.901    0.626      0.402    0.618     0.412     LOW_RATE
+                 0.994    0.012    0.976      0.994    0.985      0.978    0.991     0.973     NORMAL
+Weighted Avg.    0.632    0.184    0.485      0.632    0.537      0.415    0.595     0.570     
 === Confusion Matrix ===
 
-   a   b   c   d   e   f   <-- classified as
- 167   0   0   0   0   0 |   a = tcpFlood
-   0 167   0   0   0   0 |   b = httpFlood
-   0   0 166   0   0   1 |   c = slowRead
-   0   0   1 151   0  15 |   d = slowHeaders
-   1   0   1   0 165   0 |   e = udpFlood
-   0   0   0   8   0 159 |   f = slowBody
+   a   b   c   <-- classified as
+   0 325   8 |   a = HIGH_RATE
+  33 300   0 |   b = LOW_RATE
+   2   0 331 |   c = NORMAL

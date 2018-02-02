@@ -1,6 +1,5 @@
 package database;
 
-import classifier.ClassifierHolder;
 import constants.DBConstants.DBConnectionConstants;
 import constants.DBConstants.EvaluationTableConstants;
 import constants.DBConstants.FeatureSelectionTableConstants;
@@ -16,6 +15,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Enumeration;
 import java.util.NoSuchElementException;
 import utils.UtilsDB;
@@ -53,7 +54,7 @@ public final class Mysql implements Database {
       throws SQLException{
 
       String query =
-         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s) VALUES (?,?,?,?,?);",
+         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?);",
             DBConnectionConstants.DATABASE_NAME,
             MainTableConstants.TABLE_NAME,
 
@@ -61,13 +62,18 @@ public final class Mysql implements Database {
             MainTableConstants.CATEGORICAL_TYPE,
             MainTableConstants.NOISE_LEVEL,
             MainTableConstants.DATASET,
-            MainTableConstants.EXTRACTION_TOOL
+            MainTableConstants.EXTRACTION_TOOL,
+            MainTableConstants.TIMESTAMP
       );
 
       PreparedStatement ps = this.connection.prepareStatement(
          query,
          Statement.RETURN_GENERATED_KEYS
       );
+      
+      //Taken from https://alvinalexander.com/java/java-timestamp-example-current-time-now
+      Calendar calendar = Calendar.getInstance();
+      Timestamp timestamp = new Timestamp(calendar.getTime().getTime());
 
       int i=1;
       ps.setString(i++, systemType);
@@ -75,6 +81,7 @@ public final class Mysql implements Database {
       ps.setFloat (i++, noiseLevel);
       ps.setString(i++, dataset);
       ps.setString(i++, extractionTool);
+      ps.setTimestamp(i++, timestamp);
 
       ps.executeUpdate();
 
