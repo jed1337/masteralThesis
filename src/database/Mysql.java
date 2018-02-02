@@ -1,5 +1,6 @@
 package database;
 
+import constants.CharConstants;
 import constants.DBConstants.DBConnectionConstants;
 import constants.DBConstants.EvaluationTableConstants;
 import constants.DBConstants.FeatureSelectionTableConstants;
@@ -16,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Enumeration;
 import java.util.NoSuchElementException;
@@ -53,18 +55,29 @@ public final class Mysql implements Database {
       String dataset, String extractionTool)
       throws SQLException{
 
-      String query =
-         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?);",
-            DBConnectionConstants.DATABASE_NAME,
-            MainTableConstants.TABLE_NAME,
+      String query = getQueryString(
+         DBConnectionConstants.DATABASE_NAME,
+         MainTableConstants.TABLE_NAME,
 
-            MainTableConstants.SYSTEM_TYPE,
-            MainTableConstants.CATEGORICAL_TYPE,
-            MainTableConstants.NOISE_LEVEL,
-            MainTableConstants.DATASET,
-            MainTableConstants.EXTRACTION_TOOL,
-            MainTableConstants.TIMESTAMP
+         MainTableConstants.SYSTEM_TYPE,
+         MainTableConstants.CATEGORICAL_TYPE,
+         MainTableConstants.NOISE_LEVEL,
+         MainTableConstants.DATASET,
+         MainTableConstants.EXTRACTION_TOOL,
+         MainTableConstants.TIMESTAMP
       );
+//      String query =
+//         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?);",
+//            DBConnectionConstants.DATABASE_NAME,
+//            MainTableConstants.TABLE_NAME,
+//
+//            MainTableConstants.SYSTEM_TYPE,
+//            MainTableConstants.CATEGORICAL_TYPE,
+//            MainTableConstants.NOISE_LEVEL,
+//            MainTableConstants.DATASET,
+//            MainTableConstants.EXTRACTION_TOOL,
+//            MainTableConstants.TIMESTAMP
+//      );
 
       PreparedStatement ps = this.connection.prepareStatement(
          query,
@@ -93,13 +106,12 @@ public final class Mysql implements Database {
 
    @Override
    public void insertToFeatureSelectionTable(FeatureSelection fs) throws SQLException {
-      String query =
-        String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
-          DBConnectionConstants.DATABASE_NAME,
-          FeatureSelectionTableConstants.TABLE_NAME,
+      String query = getQueryString(
+         DBConnectionConstants.DATABASE_NAME,
+         FeatureSelectionTableConstants.TABLE_NAME,
 
-          FeatureSelectionTableConstants.MAIN_ID,
-          FeatureSelectionTableConstants.METHOD
+         FeatureSelectionTableConstants.MAIN_ID,
+         FeatureSelectionTableConstants.METHOD
       );
 
       PreparedStatement ps = this.connection.prepareStatement(query);
@@ -113,13 +125,12 @@ public final class Mysql implements Database {
 
    @Override
    public void insertToFeatureTable(Enumeration<Attribute> attributes) throws NoSuchElementException, SQLException {
-      String query =
-        String.format("INSERT INTO %s.%s (%s, %s) VALUES (?,?);",
-          DBConnectionConstants.DATABASE_NAME,
-          FeatureTableConstants.TABLE_NAME,
+      String query = getQueryString(
+         DBConnectionConstants.DATABASE_NAME,
+         FeatureTableConstants.TABLE_NAME,
 
-          FeatureTableConstants.MAIN_ID,
-          FeatureTableConstants.NAME
+         FeatureTableConstants.MAIN_ID,
+         FeatureTableConstants.NAME
       );
 
       PreparedStatement ps = this.connection.prepareStatement(query);
@@ -135,37 +146,25 @@ public final class Mysql implements Database {
          int[] updateCounts = ps.executeBatch();
          UtilsDB.checkUpdateCounts(updateCounts);
       }
-
-//      for(int i=0; i< attributes.numAttributes(); i++){
-//         int psIndex=1;
-//         ps.setInt   (psIndex++, this.mainID);
-//         ps.setString(psIndex++, attributes.attribute(i).name());
-//
-//         ps.addBatch();
-//
-//         int[] updateCounts = ps.executeBatch();
-//         UtilsDB.checkUpdateCounts(updateCounts);
-//      }
    }
 
    @Override
    public void insertToEvaluationTable(String classifyType, String classifierName, CustomEvaluation eval)
            throws SQLException, Exception{
-      String query =
-        String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?,?,?,?,?);",
-          DBConnectionConstants.DATABASE_NAME,
-          EvaluationTableConstants.TABLE_NAME,
+      String query =getQueryString(
+         DBConnectionConstants.DATABASE_NAME,
+         EvaluationTableConstants.TABLE_NAME,
 
-          EvaluationTableConstants.MAIN_ID,
-          EvaluationTableConstants.TYPE,
-          EvaluationTableConstants.CLASSIFIER,
-          EvaluationTableConstants.CLASS,
-          EvaluationTableConstants.ACCURACY,
-          EvaluationTableConstants.PREC,
-          EvaluationTableConstants.RECALL,
-          EvaluationTableConstants.FSCORE,
-          EvaluationTableConstants.KAPPA,
-          EvaluationTableConstants.CONFUSION_MATRIX
+         EvaluationTableConstants.MAIN_ID,
+         EvaluationTableConstants.TYPE,
+         EvaluationTableConstants.CLASSIFIER,
+         EvaluationTableConstants.CLASS,
+         EvaluationTableConstants.ACCURACY,
+         EvaluationTableConstants.PREC,
+         EvaluationTableConstants.RECALL,
+         EvaluationTableConstants.FSCORE,
+         EvaluationTableConstants.KAPPA,
+         EvaluationTableConstants.CONFUSION_MATRIX
       );
 
       //Average of the results
@@ -221,5 +220,59 @@ public final class Mysql implements Database {
 
       int[] updateCounts = ps.executeBatch();
       UtilsDB.checkUpdateCounts(updateCounts);
+   }
+   
+   /**
+    * This function was created in order to better dynamically create the 
+    * insert statement in the database
+    * <p>
+    * Returns something like
+    * <br>
+    * INSERT INTO db.table (col1, col2, col3, col4, col5, col6) VALUES (?,?,?,?,?,?);
+    * @param columns
+    * @return 
+    */
+   private String getQueryString(String database, String table, String... columns){
+      return String.format("INSERT INTO %s.%s (%s) VALUES (%s)",
+         database,
+         table,
+         getConcatenatedColumns(columns),
+         getConcatenatedQuestionMarks(columns.length)
+      );
+   }
+   
+   /**
+    * Used in {@link database.Mysql#getQueryString(String, String, String...) getQueryString}
+    * <p>
+    * Input:
+    * {@code
+    *    getConcatenatedColumns("col1", "col2", "col3")
+    * }
+    * <br>
+    * Output: "col1,col2,col3"
+    * @param columns
+    * @return 
+    */
+   private String getConcatenatedColumns(String... columns){
+      return String.join(CharConstants.COMMA, columns);
+   }
+   
+   /**
+    * Used in {@link database.Mysql#getQueryString(String, String, String...) getQueryString}
+    * <p>
+    * Input:
+    * {@code
+    *    getConcatenatedQuestionMarks(3)
+    * }
+    * <br>
+    * Output: "?,?,?"
+    * @param qCount the number of question marks to produce
+    * @see <a href="https://stackoverflow.com/a/2804866">Stack Overflow</a>
+    * @return 
+    */
+   private String getConcatenatedQuestionMarks(int qCount){
+      String[] questionMarks = new String[qCount];
+      Arrays.fill(questionMarks, "?");
+      return String.join(CharConstants.COMMA, questionMarks);
    }
 }
