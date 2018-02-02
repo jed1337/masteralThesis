@@ -33,7 +33,7 @@ public interface Database {
       String systemType, String categoricalType, Float noiseLevel, 
       String dataset, String extractionTool) throws SQLException;
 
-   public void insertToEvaluationTable(String classifierName, CustomEvaluation eval)
+   public void insertToEvaluationTable(String classifyType, String classifierName, CustomEvaluation eval)
            throws SQLException, Exception;
 
    /**

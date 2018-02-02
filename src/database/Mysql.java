@@ -149,14 +149,15 @@ public final class Mysql implements Database {
    }
 
    @Override
-   public void insertToEvaluationTable(String classifierName, CustomEvaluation eval)
+   public void insertToEvaluationTable(String classifyType, String classifierName, CustomEvaluation eval)
            throws SQLException, Exception{
       String query =
-        String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?,?,?,?);",
+        String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?,?,?,?,?);",
           DBConnectionConstants.DATABASE_NAME,
           EvaluationTableConstants.TABLE_NAME,
 
           EvaluationTableConstants.MAIN_ID,
+          EvaluationTableConstants.TYPE,
           EvaluationTableConstants.CLASSIFIER,
           EvaluationTableConstants.CLASS,
           EvaluationTableConstants.ACCURACY,
@@ -174,7 +175,7 @@ public final class Mysql implements Database {
       {
          int avgClassIndex = 1;
          ps.setInt(avgClassIndex++, this.mainID);
-//         ps.setString(avgClassIndex++, classifierName.getClassifierName());
+         ps.setString(avgClassIndex++, classifyType);
          ps.setString(avgClassIndex++, classifierName);
          ps.setString(avgClassIndex++, "Average");
 
@@ -194,7 +195,7 @@ public final class Mysql implements Database {
          for (int i = 0; i < classNames.length; i++) {
             int psIndex=1;
             ps.setInt   (psIndex++, this.mainID);
-//            ps.setString(psIndex++, classifierName.getClassifierName());
+            ps.setString(psIndex++, classifyType);
             ps.setString(psIndex++, classifierName);
             ps.setString(psIndex++, classNames[i]);
 

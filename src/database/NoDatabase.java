@@ -38,7 +38,7 @@ public class NoDatabase implements Database{
    }
 
    @Override
-   public void insertToEvaluationTable(String classifierName, CustomEvaluation eval)
+   public void insertToEvaluationTable(String classifyType, String classifierName, CustomEvaluation eval)
            throws SQLException, Exception {
       System.err.println("Not doing inserting to insertToEvaluationTable");
    }

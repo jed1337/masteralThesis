@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.NoSuchElementException;
 import weka.core.Attribute;
 
-public interface Evaluation {
+public interface Classify {
+   public String getType();
+   
    /**
     * @param combinedPath The combined arff file. All further processing
     * (feature selection, evaluation) is done on this arff path. 
@@ -23,8 +25,8 @@ public interface Evaluation {
    public void setupEvaluationSets(String combinedPath) throws IOException, Exception;
    
    /**
-    * (Not sure if it's ok for the Evaluation object to have reference to the 
-    * Feature Selection object)
+    * (Not sure if it's ok for the Classify object to have reference to the 
+ Feature Selection object)
     * @param fs
     * @return An enumeration of the selected attributes
     * @throws IOException

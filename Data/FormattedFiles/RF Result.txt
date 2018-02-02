@@ -1,30 +1,26 @@
 === Classifier ===
-RandomForest
-
-Bagging with 100 iterations and base learner
-
-weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
-=== Dedicated test set ===
+RandomForest: No model built yet.
+=== Cross validation ===
 === Summary of RF ===
 
-Correctly Classified Instances         674               67.4675 %
-Incorrectly Classified Instances       325               32.5325 %
-Kappa statistic                          0.512 
-Mean absolute error                      0.2235
-Root mean squared error                  0.4159
-Relative absolute error                 50.2958 %
-Root relative squared error             88.2271 %
-Total Number of Instances              999     
+Correctly Classified Instances        5985               99.8165 %
+Incorrectly Classified Instances        11                0.1835 %
+Kappa statistic                          0.9972
+Mean absolute error                      0.004 
+Root mean squared error                  0.0363
+Relative absolute error                  0.8951 %
+Root relative squared error              7.6999 %
+Total Number of Instances             5996     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.024    0.000    1.000      0.024    0.047      0.127    0.883     0.673     HIGH_RATE
-                 1.000    0.488    0.506      1.000    0.672      0.509    0.852     0.818     LOW_RATE
-                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     NORMAL
-Weighted Avg.    0.675    0.163    0.835      0.675    0.573      0.545    0.912     0.831     
+                 0.996    0.001    0.999      0.996    0.998      0.997    0.999     0.999     HIGH_RATE
+                 0.998    0.000    0.999      0.998    0.999      0.998    0.999     0.999     LOW_RATE
+                 1.000    0.002    0.996      1.000    0.998      0.997    1.000     0.999     NORMAL
+Weighted Avg.    0.998    0.001    0.998      0.998    0.998      0.997    0.999     0.999     
 === Confusion Matrix ===
 
-   a   b   c   <-- classified as
-   8 325   0 |   a = HIGH_RATE
-   0 333   0 |   b = LOW_RATE
-   0   0 333 |   c = NORMAL
+    a    b    c   <-- classified as
+ 1991    1    6 |    a = HIGH_RATE
+    1 1995    2 |    b = LOW_RATE
+    1    0 1999 |    c = NORMAL

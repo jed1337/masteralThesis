@@ -1,28 +1,26 @@
 === Classifier ===
-IB1 instance-based classifier
-using 1 nearest neighbour(s) for classification
-
-=== Dedicated test set ===
+IBk: No model built yet.
+=== Cross validation ===
 === Summary of KNN===
 
-Correctly Classified Instances         971               97.1972 %
-Incorrectly Classified Instances        28                2.8028 %
-Kappa statistic                          0.958 
-Mean absolute error                      0.0189
-Root mean squared error                  0.1366
-Relative absolute error                  4.2596 %
-Root relative squared error             28.9865 %
-Total Number of Instances              999     
+Correctly Classified Instances        5975               99.6498 %
+Incorrectly Classified Instances        21                0.3502 %
+Kappa statistic                          0.9947
+Mean absolute error                      0.0025
+Root mean squared error                  0.0483
+Relative absolute error                  0.5685 %
+Root relative squared error             10.2477 %
+Total Number of Instances             5996     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.916    0.000    1.000      0.916    0.956      0.938    0.973     0.953     HIGH_RATE
-                 1.000    0.042    0.922      1.000    0.960      0.940    0.979     0.922     LOW_RATE
-                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     NORMAL
-Weighted Avg.    0.972    0.014    0.974      0.972    0.972      0.959    0.984     0.959     
+                 0.995    0.001    0.997      0.995    0.996      0.994    0.998     0.996     HIGH_RATE
+                 0.998    0.002    0.996      0.998    0.997      0.995    0.999     0.995     LOW_RATE
+                 0.997    0.002    0.997      0.997    0.997      0.995    0.998     0.997     NORMAL
+Weighted Avg.    0.996    0.002    0.996      0.996    0.996      0.995    0.998     0.996     
 === Confusion Matrix ===
 
-   a   b   c   <-- classified as
- 305  28   0 |   a = HIGH_RATE
-   0 333   0 |   b = LOW_RATE
-   0   0 333 |   c = NORMAL
+    a    b    c   <-- classified as
+ 1988    5    5 |    a = HIGH_RATE
+    2 1994    2 |    b = LOW_RATE
+    3    4 1993 |    c = NORMAL

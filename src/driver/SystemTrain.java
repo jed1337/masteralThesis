@@ -7,7 +7,6 @@ import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
 import database.Database;
 import database.NoDatabase;
-import evaluation.Evaluation;
 import evaluation.NoEvaluation;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
@@ -27,6 +26,7 @@ import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Attribute;
+import evaluation.Classify;
 
 /**
  * A class to train the system given a wide variety of different parameters.
@@ -69,23 +69,23 @@ public final class SystemTrain {
       classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
       classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
 
-      Evaluation ttv = builder.eval;
-      ttv.setupEvaluationSets(combinedPath);
+      Classify classify = builder.eval;
+      classify.setupEvaluationSets(combinedPath);
       
       Enumeration<Attribute> selectedAttributes =
-         ttv.applyFeatureSelection(builder.fs);
+         classify.applyFeatureSelection(builder.fs);
       
       this.db.insertToFeatureSelectionTable(builder.fs);
       this.db.insertToFeatureTable(selectedAttributes);
       
       HashMap<String, CustomEvaluation> hmEval =
-         ttv.evaluateClassifiers(classifierHolders);
+         classify.evaluateClassifiers(classifierHolders);
       
       for (Map.Entry<String, CustomEvaluation> entry : hmEval.entrySet()) {
          String classifierName  = entry.getKey();
          CustomEvaluation cEval = entry.getValue();
          
-         this.db.insertToEvaluationTable(classifierName, cEval);
+         this.db.insertToEvaluationTable(classify.getType(), classifierName, cEval);
       }
    }
 
@@ -127,7 +127,7 @@ public final class SystemTrain {
       //Initialised to null objects
       private FeatureSelection fs = NoFeatureSelection.getInstance();
       private Database db = NoDatabase.getInstance();
-      private Evaluation eval = NoEvaluation.getInstance();
+      private Classify eval = NoEvaluation.getInstance();
 
       public SystemTrain.Buidler featureSelection(FeatureSelection fs) {
          this.fs = fs;
@@ -139,7 +139,7 @@ public final class SystemTrain {
          return this;
       }
 
-      public SystemTrain.Buidler evaluation(Evaluation eval) {
+      public SystemTrain.Buidler evaluation(Classify eval) {
          this.eval = eval;
          return this;
       }

@@ -17,9 +17,14 @@ import utils.UtilsInstances;
 import weka.core.Attribute;
 import weka.core.Instances;
 
-public final class CrossValidation implements Evaluation{
+public final class CrossValidation implements Classify{
    private Instances combinedInstances;
 
+   @Override
+   public String getType() {
+      return "Cross Validation";
+   }
+   
    @Override
    public void setupEvaluationSets(String combinedPath) 
            throws IOException,Exception {
@@ -51,7 +56,7 @@ public final class CrossValidation implements Evaluation{
       }
       return hmEval;
    }
-   
+
    private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
       //Don't build the classifier in Cross validation since Weka says so
       //https://weka.wikispaces.com/Use+WEKA+in+your+Java+code#Classification-Cross-validation

@@ -3,6 +3,7 @@ package constants.DBConstants;
 public class EvaluationTableConstants {
 	public final static String TABLE_NAME = "evaluation";
 	public final static String MAIN_ID    = "MainID";
+	public final static String TYPE       = "Type";
 	public final static String CLASSIFIER = "Classifier";
    public final static String CLASS      = "Class";
 	public final static String ACCURACY   = "Accuracy";

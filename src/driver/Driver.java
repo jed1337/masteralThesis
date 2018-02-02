@@ -10,6 +10,7 @@ import driver.mode.HybridIsAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
+import evaluation.CrossValidation;
 import evaluation.TrainTestValidation;
 import featureExtraction.Decorator.JanCNISDatabase;
 import featureExtraction.NetmateExtraction;
@@ -126,6 +127,7 @@ public final class Driver {
          .database(new Mysql())
          .featureSelection(fs)
          .evaluation(new TrainTestValidation())
+         .evaluation(new CrossValidation())
          .build(systemParameters);
 
 //      String fullFolderPath = String.join("/",

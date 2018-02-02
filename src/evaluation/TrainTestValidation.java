@@ -27,7 +27,7 @@ import weka.core.Instances;
  * <br> 
  * The paths for train, test, and validation, are statically set as private variables
  */
-public final class TrainTestValidation implements Evaluation{
+public final class TrainTestValidation implements Classify{
    private final String TRAIN_PATH      = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
    private final String TEST_PATH       = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
    private final String VALIDATION_PATH = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;
@@ -40,6 +40,12 @@ public final class TrainTestValidation implements Evaluation{
       this.evaluationSets.add(new EvaluationSet(this.TEST_PATH        , 1));
       this.evaluationSets.add(new EvaluationSet(this.VALIDATION_PATH  , 1));
    }
+   
+   @Override
+   public String getType() {
+      return "Train-Test";
+   }
+   
    
    /**
     * {@inheritDoc}
@@ -76,7 +82,7 @@ public final class TrainTestValidation implements Evaluation{
       }
       return hmEval;
    }
-   
+
    private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
       //Build the classifier on the trainset
       ch.getClassifier().buildClassifier(getEvaluationSet(this.TRAIN_PATH));
