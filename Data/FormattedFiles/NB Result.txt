@@ -3,24 +3,30 @@ Naive Bayes Classifier: No model built yet.
 === Cross validation ===
 === Summary of NB ===
 
-Correctly Classified Instances        5251               87.5751 %
-Incorrectly Classified Instances       745               12.4249 %
-Kappa statistic                          0.8136
-Mean absolute error                      0.0828
-Root mean squared error                  0.2876
-Relative absolute error                 18.6225 %
-Root relative squared error             61.0137 %
-Total Number of Instances             5996     
+Correctly Classified Instances        4895               81.5833 %
+Incorrectly Classified Instances      1105               18.4167 %
+Kappa statistic                          0.779 
+Mean absolute error                      0.06  
+Root mean squared error                  0.2372
+Relative absolute error                 21.599  %
+Root relative squared error             63.6437 %
+Total Number of Instances             6000     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.649    0.006    0.983      0.649    0.782      0.732    0.982     0.974     HIGH_RATE
-                 0.998    0.177    0.738      0.998    0.849      0.778    0.982     0.936     LOW_RATE
-                 0.980    0.004    0.992      0.980    0.986      0.979    0.996     0.992     NORMAL
-Weighted Avg.    0.876    0.062    0.904      0.876    0.872      0.830    0.987     0.967     
+                 0.968    0.000    0.998      0.968    0.983      0.980    0.998     0.995     tcpFlood
+                 0.989    0.000    1.000      0.989    0.994      0.993    0.999     0.999     httpFlood
+                 0.981    0.051    0.794      0.981    0.877      0.857    0.990     0.941     slowRead
+                 0.821    0.149    0.524      0.821    0.640      0.570    0.938     0.738     slowHeaders
+                 0.997    0.000    0.999      0.997    0.998      0.998    0.999     0.998     udpFlood
+                 0.139    0.020    0.579      0.139    0.224      0.226    0.922     0.600     slowBody
+Weighted Avg.    0.816    0.037    0.816      0.816    0.786      0.771    0.975     0.879     
 === Confusion Matrix ===
 
-    a    b    c   <-- classified as
- 1297  688   13 |    a = HIGH_RATE
-    2 1994    2 |    b = LOW_RATE
-   21   19 1960 |    c = NORMAL
+   a   b   c   d   e   f   <-- classified as
+ 968   0  18   6   0   8 |   a = tcpFlood
+   0 989   8   1   0   2 |   b = httpFlood
+   0   0 981  15   0   4 |   c = slowRead
+   0   0  93 821   0  86 |   d = slowHeaders
+   2   0   0   0 997   1 |   e = udpFlood
+   0   0 136 724   1 139 |   f = slowBody

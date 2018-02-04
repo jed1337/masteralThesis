@@ -3,24 +3,30 @@ IBk: No model built yet.
 === Cross validation ===
 === Summary of KNN===
 
-Correctly Classified Instances        5975               99.6498 %
-Incorrectly Classified Instances        21                0.3502 %
-Kappa statistic                          0.9947
-Mean absolute error                      0.0025
-Root mean squared error                  0.0483
-Relative absolute error                  0.5685 %
-Root relative squared error             10.2477 %
-Total Number of Instances             5996     
+Correctly Classified Instances        5781               96.35   %
+Incorrectly Classified Instances       219                3.65   %
+Kappa statistic                          0.9562
+Mean absolute error                      0.0125
+Root mean squared error                  0.1102
+Relative absolute error                  4.4861 %
+Root relative squared error             29.5811 %
+Total Number of Instances             6000     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.995    0.001    0.997      0.995    0.996      0.994    0.998     0.996     HIGH_RATE
-                 0.998    0.002    0.996      0.998    0.997      0.995    0.999     0.995     LOW_RATE
-                 0.997    0.002    0.997      0.997    0.997      0.995    0.998     0.997     NORMAL
-Weighted Avg.    0.996    0.002    0.996      0.996    0.996      0.995    0.998     0.996     
+                 0.994    0.001    0.996      0.994    0.995      0.994    0.997     0.991     tcpFlood
+                 0.997    0.000    0.999      0.997    0.998      0.998    0.998     0.997     httpFlood
+                 0.988    0.001    0.996      0.988    0.992      0.990    0.994     0.986     slowRead
+                 0.896    0.020    0.901      0.896    0.898      0.878    0.938     0.824     slowHeaders
+                 0.999    0.000    0.998      0.999    0.999      0.998    0.999     0.997     udpFlood
+                 0.907    0.022    0.893      0.907    0.900      0.880    0.943     0.825     slowBody
+Weighted Avg.    0.964    0.007    0.964      0.964    0.964      0.956    0.978     0.937     
 === Confusion Matrix ===
 
-    a    b    c   <-- classified as
- 1988    5    5 |    a = HIGH_RATE
-    2 1994    2 |    b = LOW_RATE
-    3    4 1993 |    c = NORMAL
+   a   b   c   d   e   f   <-- classified as
+ 994   1   0   1   1   3 |   a = tcpFlood
+   0 997   2   1   0   0 |   b = httpFlood
+   0   0 988   6   0   6 |   c = slowRead
+   1   0   2 896   1 100 |   d = slowHeaders
+   1   0   0   0 999   0 |   e = udpFlood
+   2   0   0  91   0 907 |   f = slowBody

@@ -11,7 +11,6 @@ import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import evaluation.CrossValidation;
-import evaluation.TrainTestValidation;
 import featureExtraction.Decorator.JanCNISDatabase;
 import featureExtraction.NetmateExtraction;
 import featureSelection.FeatureSelection;
@@ -126,7 +125,6 @@ public final class Driver {
       new SystemTrain.Buidler()
          .database(new Mysql())
          .featureSelection(fs)
-         .evaluation(new TrainTestValidation())
          .evaluation(new CrossValidation())
          .build(systemParameters);
 

@@ -3,24 +3,30 @@ RandomForest: No model built yet.
 === Cross validation ===
 === Summary of RF ===
 
-Correctly Classified Instances        5985               99.8165 %
-Incorrectly Classified Instances        11                0.1835 %
-Kappa statistic                          0.9972
-Mean absolute error                      0.004 
-Root mean squared error                  0.0363
-Relative absolute error                  0.8951 %
-Root relative squared error              7.6999 %
-Total Number of Instances             5996     
+Correctly Classified Instances        5894               98.2333 %
+Incorrectly Classified Instances       106                1.7667 %
+Kappa statistic                          0.9788
+Mean absolute error                      0.0125
+Root mean squared error                  0.0688
+Relative absolute error                  4.5    %
+Root relative squared error             18.4682 %
+Total Number of Instances             6000     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.996    0.001    0.999      0.996    0.998      0.997    0.999     0.999     HIGH_RATE
-                 0.998    0.000    0.999      0.998    0.999      0.998    0.999     0.999     LOW_RATE
-                 1.000    0.002    0.996      1.000    0.998      0.997    1.000     0.999     NORMAL
-Weighted Avg.    0.998    0.001    0.998      0.998    0.998      0.997    0.999     0.999     
+                 0.996    0.001    0.996      0.996    0.996      0.995    1.000     1.000     tcpFlood
+                 1.000    0.000    0.999      1.000    1.000      0.999    1.000     1.000     httpFlood
+                 0.994    0.000    0.999      0.994    0.996      0.996    0.999     0.998     slowRead
+                 0.933    0.005    0.974      0.933    0.953      0.944    0.998     0.992     slowHeaders
+                 0.998    0.000    0.999      0.998    0.998      0.998    0.999     0.999     udpFlood
+                 0.973    0.015    0.929      0.973    0.951      0.941    0.998     0.992     slowBody
+Weighted Avg.    0.982    0.004    0.983      0.982    0.982      0.979    0.999     0.997     
 === Confusion Matrix ===
 
-    a    b    c   <-- classified as
- 1991    1    6 |    a = HIGH_RATE
-    1 1995    2 |    b = LOW_RATE
-    1    0 1999 |    c = NORMAL
+   a   b   c   d   e   f   <-- classified as
+ 996   1   0   0   0   3 |   a = tcpFlood
+   0 1000   0   0   0   0 |   b = httpFlood
+   1   0 994   1   0   4 |   c = slowRead
+   1   0   0 933   0  66 |   d = slowHeaders
+   1   0   0   0 998   1 |   e = udpFlood
+   1   0   1  24   1 973 |   f = slowBody

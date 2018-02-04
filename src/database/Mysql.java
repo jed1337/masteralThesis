@@ -66,18 +66,6 @@ public final class Mysql implements Database {
          MainTableConstants.EXTRACTION_TOOL,
          MainTableConstants.TIMESTAMP
       );
-//      String query =
-//         String.format("INSERT INTO %s.%s (%s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?);",
-//            DBConnectionConstants.DATABASE_NAME,
-//            MainTableConstants.TABLE_NAME,
-//
-//            MainTableConstants.SYSTEM_TYPE,
-//            MainTableConstants.CATEGORICAL_TYPE,
-//            MainTableConstants.NOISE_LEVEL,
-//            MainTableConstants.DATASET,
-//            MainTableConstants.EXTRACTION_TOOL,
-//            MainTableConstants.TIMESTAMP
-//      );
 
       PreparedStatement ps = this.connection.prepareStatement(
          query,

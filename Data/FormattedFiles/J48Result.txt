@@ -3,24 +3,30 @@ No classifier built
 === Cross validation ===
 === Summary of J48===
 
-Correctly Classified Instances        5974               99.6331 %
-Incorrectly Classified Instances        22                0.3669 %
-Kappa statistic                          0.9945
-Mean absolute error                      0.0034
-Root mean squared error                  0.0483
-Relative absolute error                  0.7582 %
-Root relative squared error             10.2534 %
-Total Number of Instances             5996     
+Correctly Classified Instances        5901               98.35   %
+Incorrectly Classified Instances        99                1.65   %
+Kappa statistic                          0.9802
+Mean absolute error                      0.0064
+Root mean squared error                  0.071 
+Relative absolute error                  2.3038 %
+Root relative squared error             19.0492 %
+Total Number of Instances             6000     
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.996    0.003    0.994      0.996    0.995      0.992    0.996     0.987     HIGH_RATE
-                 0.997    0.001    0.998      0.997    0.997      0.996    0.998     0.997     LOW_RATE
-                 0.996    0.001    0.997      0.996    0.997      0.995    0.997     0.993     NORMAL
-Weighted Avg.    0.996    0.002    0.996      0.996    0.996      0.994    0.997     0.993     
+                 0.995    0.001    0.996      0.995    0.995      0.995    0.997     0.995     tcpFlood
+                 1.000    0.000    0.999      1.000    1.000      0.999    1.000     0.999     httpFlood
+                 0.991    0.001    0.996      0.991    0.993      0.992    0.996     0.992     slowRead
+                 0.952    0.008    0.961      0.952    0.956      0.948    0.985     0.962     slowHeaders
+                 0.998    0.001    0.997      0.998    0.998      0.997    0.999     0.998     udpFlood
+                 0.965    0.010    0.953      0.965    0.959      0.950    0.988     0.956     slowBody
+Weighted Avg.    0.984    0.003    0.984      0.984    0.984      0.980    0.994     0.984     
 === Confusion Matrix ===
 
-    a    b    c   <-- classified as
- 1990    4    4 |    a = HIGH_RATE
-    5 1992    1 |    b = LOW_RATE
-    8    0 1992 |    c = NORMAL
+   a   b   c   d   e   f   <-- classified as
+ 995   1   1   0   2   1 |   a = tcpFlood
+   0 1000   0   0   0   0 |   b = httpFlood
+   1   0 991   6   0   2 |   c = slowRead
+   1   0   1 952   1  45 |   d = slowHeaders
+   1   0   1   0 998   0 |   e = udpFlood
+   1   0   1  33   0 965 |   f = slowBody

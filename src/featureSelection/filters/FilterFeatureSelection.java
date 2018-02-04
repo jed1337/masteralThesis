@@ -27,6 +27,7 @@ public abstract class FilterFeatureSelection extends AbstractFeatureSelection{
       this.fsMethodName = fsMethodName;
       
       Ranker r = new Ranker();
+      r.setThreshold(0.5);
 //      CustomRanker r = new CustomRanker();
       //Edit new Ranker params (set # of features etc)
       
