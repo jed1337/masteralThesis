@@ -16,7 +16,7 @@ public class NetmateExtraction extends FeatureExtraction{
 
    @Override
    public String getNormalPath() {
-      return NETMATE_PATH+"NetmateNormal.arff";
+      return NETMATE_PATH+"Netmate Normal.arff";
    }
 
    @Override

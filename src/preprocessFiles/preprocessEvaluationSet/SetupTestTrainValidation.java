@@ -97,7 +97,6 @@ public final class SetupTestTrainValidation {
       }
    }
 
-   //TODO cleanup
    private void setEvaluationSetInstances(final ArrayList<SplitFileCounter> splitFileCounters, ArrayList<EvaluationSet> evaluationSets) {
       int isAttackIndex = UtilsInstances.getAttributeIndex(
          this.combinedInstances, 

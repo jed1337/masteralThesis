@@ -1,0 +1,17 @@
+Netmate
+	UDP Flood	= 905
+	TCP Flood	= 485
+	HTTP Flood	= 6869
+	Slowbody		= 1716
+	Slowheaders	= 1586
+	Slowread		= 4500
+	Normal      = 3286
+
+KDD
+	UDP Flood	= 952
+	TCP Flood	= >1M (Sampled to 10k rows)
+	HTTP Flood	= 12843
+	Slowbody		= 13053
+	Slowheaders	= 14276
+	Slowread		= 8632
+	Normal      = 5558

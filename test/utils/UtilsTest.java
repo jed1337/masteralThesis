@@ -11,36 +11,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class UtilsTest {
-//   /**
-//    * Test of replaceAttribute method, of class Utils.
-//    */
-//   @Test
-//   public void testReplaceAttribute_String_StringArr() {
-//      System.out.println("replaceAttribute");
-//      String attribute = "";
-//      String[] toReplace = null;
-//      HashMap<String, String> expResult = null;
-//      HashMap<String, String> result = Utils.replaceAttribute(attribute, toReplace);
-//      assertEquals(expResult, result);
-//      // TODO review the generated test code and remove the default call to fail.
-//      fail("The test case is a prototype.");
-//   }
-//
-//   /**
-//    * Test of replaceAttribute method, of class Utils.
-//    */
-//   @Test
-//   public void testReplaceAttribute_String_String() {
-//      System.out.println("replaceAttribute");
-//      String attribute = "";
-//      String toReplace = "";
-//      HashMap<String, String> expResult = null;
-//      HashMap<String, String> result = Utils.replaceAttribute(attribute, toReplace);
-//      assertEquals(expResult, result);
-//      // TODO review the generated test code and remove the default call to fail.
-//      fail("The test case is a prototype.");
-//   }
-
    /**
     * Test of arrayContains method, of class Utils.
     */
@@ -122,73 +92,6 @@ public class UtilsTest {
       
       assertEquals(expResult, result);
    }
-//
-//   /**
-//    * Test of duplicateDirectory method, of class Utils.
-//    */
-//   @Test
-//   public void testDuplicateFolder() throws Exception {
-//      System.out.println("duplicateDirectory");
-//      String sourceDir = "";
-//      String destinationDir = "";
-//      Utils.duplicateDirectory(sourceDir, destinationDir);
-//      // TODO review the generated test code and remove the default call to fail.
-//      fail("The test case is a prototype.");
-//   }
-//
-//   /**
-//    * Test of duplicateFile method, of class Utils.
-//    */
-//   @Test
-//   public void testDuplicateFile() throws Exception {
-//      System.out.println("duplicateFile");
-//      String source = "";
-//      String destination = "";
-//      Utils.duplicateFile(source, destination);
-//      // TODO review the generated test code and remove the default call to fail.
-//      fail("The test case is a prototype.");
-//   }
-//
-//   /**
-//    * Test of writeStringFile method, of class Utils.
-//    */
-//   @Test
-//   public void testWriteStringFile_String_String() throws Exception {
-//      System.out.println("writeStringFile");
-//      String destination = "";
-//      String allLines = "";
-//      Utils.writeStringFile(destination, allLines);
-//      // TODO review the generated test code and remove the default call to fail.
-//      fail("The test case is a prototype.");
-//   }
-//
-//   /**
-//    * Test of writeStringFile method, of class Utils.
-//    */
-//   @Test
-//   public void testWriteStringFile_3args() throws Exception {
-//      System.out.println("writeStringFile");
-//      String destination = "";
-//      String allLines = "";
-//      boolean append = false;
-//      Utils.writeStringFile(destination, allLines, append);
-//      // TODO review the generated test code and remove the default call to fail.
-//      fail("The test case is a prototype.");
-//   }
-//
-//   /**
-//    * Test of makeFolders method, of class Utils.
-//    */
-//   @Test
-//   public void testMakeFolders() {
-//      System.out.println("makeFolders");
-//      String folderPath = "";
-//      Utils.makeFolders(folderPath);
-//      // TODO review the generated test code and remove the default call to fail.
-//      fail("The test case is a prototype.");
-//   }
-//
-
    /**
     * Test of addToMap method, of class Utils.
     */

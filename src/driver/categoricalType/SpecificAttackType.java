@@ -39,7 +39,6 @@ public final class SpecificAttackType implements CategoricalType{
       pfL.forEach((pf)->{
          sats.add(pf.getSpecificAttackType());
       });
-      
 
       for (SpecificAttackTypeEnum sat : sats) {
          Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType().equals(sat);

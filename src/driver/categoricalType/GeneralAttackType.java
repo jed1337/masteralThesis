@@ -40,7 +40,7 @@ public final class GeneralAttackType implements CategoricalType{
       
       //todo also set distribution with respect to the specific attack type
       //tcpflood t1, t2, udpflood u; 1000 instances
-      //t1 = 250, 52 = 250, u = 500;
+      //t1 = 250, t2 = 250, u = 500;
       for (GeneralAttackTypeEnum gat : gats) {
          Predicate<PreprocessFile> sameGAT = (pf)->pf.getGeneralAttackType() == gat;
 

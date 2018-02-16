@@ -18,16 +18,28 @@ public final class SystemParameters implements GetPreprocessFiles{
    
    private final List<PreprocessFile> pfL;
    
+   /**
+    * Responsible for configuring the amount of instances in PreprocessFiles
+    * given the noise, categorical type, and system type
+    * <p>
+    * PreprocessFile list order<br>
+    * Noise<br>
+    * Not-noise
+    * 
+    * @param builder
+    * @throws IOException 
+    */
    private SystemParameters(SystemParameters.Builder builder) throws IOException{
       this.nl = builder.mode.getNoiseLevel();
       this.categoricalType = builder.mode.getCategoricalType();
       this.systemType = builder.mode.getSystemType();
       
       this.pfL = new ArrayList<>();
+      this.pfL.addAll(this.nl.getPreprocessFiles());
       this.pfL.addAll(builder.mode.getPreprocessFiles());
-      this.pfL.addAll(builder.mode.getNoiseLevel().getPreprocessFiles());
       
       this.categoricalType.setPreprocessFileCount(this.pfL, builder.instanceCount);
+      System.out.println("");
    }
    
    @Override
@@ -55,6 +67,11 @@ public final class SystemParameters implements GetPreprocessFiles{
       return this.systemType;
    }
    
+   /**
+    * Responsible for building a SystemParameter object
+    * (which has private access)<p>
+    * Actually has no point since all the parameters are mandatory
+    */
    public static class Builder{
       private final int instanceCount;
       private final Mode mode;

@@ -2,6 +2,7 @@ package driver;
 
 import constants.ArffInstanceCount;
 import database.Mysql;
+import database.NoDatabase;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.GeneralAttackType;
 import driver.categoricalType.SpecificAttackType;
@@ -9,10 +10,11 @@ import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
+import driver.mode.noiseLevel.NoiseRandomWebsite;
 import driver.mode.noiseLevel.NoiseLevel;
-import evaluation.CrossValidation;
-import featureExtraction.Decorator.JanCNISDatabase;
-import featureExtraction.NetmateExtraction;
+import evaluation.TrainTest;
+import featureExtraction.Decorator.InitialDatabase;
+import featureExtraction.KDDExtraction;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
 import globalParameters.GlobalFeatureExtraction;
@@ -65,8 +67,8 @@ public final class Driver {
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
 //      system();
       GlobalFeatureExtraction.setInstance(
-         new JanCNISDatabase(new NetmateExtraction())
-//         new JanCNISDatabase(new NetmateTempExtraction())
+         new InitialDatabase(new KDDExtraction())
+//         new Feb2CNISDatabase(new NetmateExtraction())
       );
       final int instanceCount = ArffInstanceCount.HALVED;
 
@@ -81,8 +83,8 @@ public final class Driver {
          new SpecificAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-//         new Noise(),
-         NoNoise.getInstance()
+         NoNoise.getInstance(),
+         new NoiseRandomWebsite()
       };
 
       for (FeatureSelection fs : featureSelections) {
@@ -120,12 +122,12 @@ public final class Driver {
    }
 
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
-           throws IOException, Exception {
-      
+         throws IOException, Exception {
+
       new SystemTrain.Buidler()
          .database(new Mysql())
          .featureSelection(fs)
-         .evaluation(new CrossValidation())
+         .evaluation(new TrainTest())
          .build(systemParameters);
 
 //      String fullFolderPath = String.join("/",

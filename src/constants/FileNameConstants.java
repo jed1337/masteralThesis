@@ -14,8 +14,9 @@ public final class FileNameConstants{
 	public static final String VALIDATION           = "Validation.arff";
 
    //todo comment out and put to FeatureExtractionPaths
-	public static final String NOISE_APACHE_BENCHMARK = "KDD Feature Extraction/Noise/Noise Apache Benchmark.arff";
-	public static final String NOISE_RANDOM_WEBSITES  = "KDD Feature Extraction/Noise/Noise Random Websites.arff";
+//	public static final String NOISE_RANDOM_WEBSITES  = "KDD Feature Extraction/Noise/Noise Random Websites.arff";
+//   public static final String NOISE_RANDOM_WEBSITES  = "Initial/KDD Feature Extraction/Noise/Noise Random Websites.arff";
+   public static final String NOISE_RANDOM_WEBSITES  = "Initial/KDD Feature Extraction/Noise/Noise Random Websites(December).arff";
 
 	private FileNameConstants(){}
 }

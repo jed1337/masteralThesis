@@ -7,6 +7,7 @@ import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
 import database.Database;
 import database.NoDatabase;
+import evaluation.Classify;
 import evaluation.NoEvaluation;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
@@ -26,7 +27,6 @@ import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Attribute;
-import evaluation.Classify;
 
 /**
  * A class to train the system given a wide variety of different parameters.

@@ -144,6 +144,14 @@ single, noise
   78.0018334 78.4465332 78.0018334 76.0039663 71.9065666
   -- select \n#* \nmain.systemtype, main.noiselevel, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "j48")\n and (evaluation.Class = "Average")\n #and (main.systemType = "hybrid isattack") \n#and (main.CategoricalType = "nominal")\n #and (main.noiseLevel = 0) \n#and (feature_selection.Method like "%no f%")\n\nand (main.ExtractionTool="kdd") \n\ngroup by main.noiselevel, main.systemtype
 
+#Noise vs no noise, with no feature selection
+Hybrid DDoS Type  0.00000 78.349100053  79.379400611  78.349100053  77.358399630  68.744599298
+Hybrid isAttack 0.00000 99.747400284  99.749000072  99.747400284  99.747799635  99.015799761
+Single  0.00000 84.740466277  85.342066685  84.740466277  84.010667404  79.973999659
+Hybrid isAttack 0.50000 97.452600002  98.480000496  97.452600002  97.697199583  92.288398743
+Single  0.50000 80.412099361  81.744000912  80.412099361  79.196000099  75.049300194
+-- select \n#* \nmain.systemtype, main.noiselevel, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "j48")\nand (evaluation.Class = "Average")\n#and (main.systemType = "hybrid isattack") \n#and (main.CategoricalType = "nominal")\n#and (main.noiseLevel = 0) \n#and (feature_selection.Method like "%no f%")\n\nand (main.ExtractionTool="kdd") \n\ngroup by main.noiselevel, main.systemtype\n
+
 #Per classifier
 J48
   89.1022921 89.5112914 89.1022921 88.8143333 85.8740839
@@ -339,3 +347,92 @@ hybrid isAttack
 hybrid ddos type
   78.1291338 80.5040334 78.1291338 76.7384997 67.9040332
   -- select \n#* \ncount(main.id) as `Count`, main.CategoricalType, main.SystemType, evaluation.Classifier, avg(evaluation.Accuracy*100) as Accuracy, avg(evaluation.Prec*100) as Prec, avg(evaluation.Recall*100) as Recall, avg(evaluation.FScore*100) as FScore, avg(evaluation.Kappa*100) as Kappa\nfrom main join evaluation on main.ID = evaluation.MainID join feature_selection on main.ID = feature_selection.MainID where 1=1 \n\n#and (evaluation.Classifier = "smo")\n and (evaluation.Class = "Average")\n and (main.systemType = "hybrid ddos type") \n#and (main.CategoricalType = "nominal") \n#and (main.noiseLevel > 0) \n#and (feature_selection.Method like "%no f%")\nand (main.ExtractionTool="kdd")
+
+Validation set, no feature selection, averaged noise and no noise
+System type
+Hybrid isAttack 96.389999390  96.927799582  96.389999390  96.206999421  92.780000567
+Hybrid DDoS Type  79.021700323  80.271299481  79.021700323  78.069400191  69.814000428
+Single  80.194599628  81.176950336  80.194599628  79.334149957  74.760450125
+-- select \nmain.systemtype, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\n\nwhere 1=1\n#and (evaluation.Classifier = "rf")\n#and (evaluation.ConfusionMatrix is not null)\n#and (main.systemType = "single")\n#and (main.CategoricalType = "general")\nand (evaluation.Class = "Average")\n#and (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no %")\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\ngroup by main.systemtype\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp\n
+
+Attack type
+GENERAL 91.275720119  91.984479904  91.275720119  90.970719814  84.898200154
+SPECIFIC  71.741065780  73.061199983  71.741065780  70.345266660  66.579600573
+-- select \nmain.categoricaltype, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \nwhere 1=1\n#and (evaluation.Classifier = "rf")\n#and (evaluation.ConfusionMatrix is not null)\n#and (main.systemType = "single")\n#and (main.CategoricalType = "general")\nand (evaluation.Class = "Average")\n#and (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no %")\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\ngroup by main.categoricaltype\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp\n
+
+General attack, single system
+Single  NORMAL  96.880699992  96.293399930  94.414499700  94.625700116
+Single  HIGH_RATE 87.716699839  88.031099737  71.460400820  78.388699889
+Single  LOW_RATE  90.448600054  81.709000468  95.825998783  87.936500907
+-- select \nmain.systemtype, evaluation.class, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\n\nwhere 1=1\n#and (evaluation.Classifier = "rf")\n#and (evaluation.ConfusionMatrix is not null)\nand (main.systemType = "single")\nand (main.CategoricalType = "general")\nand (evaluation.Class <> "Average")\n#and (main.noiseLevel = 0)\nand (feature_selection.Method like "%no %")\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\ngroup by evaluation.class\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp
+General attack hybrid is attack
+Hybrid isAttack normal  96.389999390  98.447000384  93.640000522  95.424000025
+Hybrid isAttack attack  96.389999390  95.408400893  99.140000343  96.990000010
+-- select \nmain.systemtype, evaluation.class, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\n\nwhere 1=1\n#and (evaluation.Classifier = "rf")\n#and (evaluation.ConfusionMatrix is not null)\nand (main.systemType = "hybrid isattack")\nand (main.CategoricalType = "general")\nand (evaluation.Class <> "Average")\n#and (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no %")\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\ngroup by evaluation.class\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp\n
+
+General attack Hybrid ddos type
+Hybrid DDoS Type  HIGH_RATE 88.552601337  90.888800621  81.032598615  85.344401002
+Hybrid DDoS Type  LOW_RATE  88.552601337  86.811399460  94.960001707  90.553400517
+-- select \nmain.systemtype, evaluation.class, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\n\nwhere 1=1\n#and (evaluation.Classifier = "rf")\n#and (evaluation.ConfusionMatrix is not null)\nand (main.systemType = "hybrid ddos type")\nand (main.CategoricalType = "general")\nand (evaluation.Class <> "Average")\n#and (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no %")\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\ngroup by evaluation.class\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp
+
+Specific attack type
+Single  normal  98.894700408  98.170700073  94.439099431  95.808499455
+Single  tcpFlood  97.043700218  90.595300198  97.412499785  92.588900328
+Single  httpFlood 96.369900107  92.314400673  79.440500438  82.993800342
+Single  udpFlood  99.358099699  95.326399803  99.892500043  97.253699899
+Single  slowRead  84.082099199  46.354300678  48.112000376  44.829300437
+Single  slowHeaders 85.323599577  51.069600582  57.342699617  53.043099940
+Single  slowBody  84.660799503  49.476800263  42.937199473  43.241300806
+Hybrid DDoS Type  tcpFlood  96.467999220  90.677000284  97.228800058  92.549999952
+Hybrid DDoS Type  httpFlood 96.489800215  99.149999619  80.843399763  84.733800292
+Hybrid DDoS Type  udpFlood  99.609999657  96.756800413  100.000000000 98.235199451
+Hybrid DDoS Type  slowRead  80.866599083  49.435200095  52.650800496  46.756600440
+Hybrid DDoS Type  slowHeaders 83.271998167  54.045000076  56.746999323  54.650999904
+Hybrid DDoS Type  slowBody  82.275201082  52.017199397  42.891600728  44.268401116
+-- select \nmain.systemtype, evaluation.class, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100)#, avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\n\nwhere 1=1\n#and (evaluation.Classifier = "rf")\n#and (evaluation.ConfusionMatrix is not null)\n#and (main.systemType = "hybrid ddos type")\nand (main.CategoricalType = "specific")\nand (evaluation.Class <> "Average")\n#and (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no %")\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\ngroup by main.systemtype, evaluation.class\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp
+--
+Noise level and system type
+stage1
+Hybrid isAttack no noise Average 99.759999514  99.763599634  99.759999514  99.759999514  99.520000219
+Hybrid isAttack noise Average 93.019999266  94.091999531  93.019999266  92.653999329  86.040000916
+Hybrid DDoS Type  no noise Average 79.021700323  80.271299481  79.021700323  78.069400191  69.814000428
+Single  no noise Average 82.028299570  82.838300467  82.028299570  81.182900071  77.316000760
+Single  noise Average 78.360899687  79.515600204  78.360899687  77.485399842  72.204899490
+-- select \nmain.systemtype, main.NoiseLevel, evaluation.class, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\n\nwhere 1=1\n#and (evaluation.Classifier = "rf")\nand (evaluation.ConfusionMatrix is not null)\nand (main.systemType = "single")\n#and (main.CategoricalType = "specific")\nand (evaluation.Class = "Average")\n#and (main.noiseLevel = 0)\n#and (feature_selection.Method like "%no %")\n\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\n\ngroup by main.NoiseLevel\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp
+--
+
+Classifier
+J48 91.234499216  91.675750166  91.234499216  91.070000082  88.707251102
+KNN 90.487374365  90.579500049  90.487374365  90.484750271  87.791625410
+NB  62.666874751  65.683749318  62.666874751  60.106500238  44.917875156
+RF  91.811499745  91.879999638  91.811499745  91.800498962  89.769875258
+SMO 83.550875634  84.622250497  83.550875634  82.719124854  78.956999630
+-- select \nevaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\n\nwhere 1=1\n#and (evaluation.Classifier = "rf")\nand (evaluation.ConfusionMatrix is not null)\n#and (main.systemType = "single")\n#and (main.CategoricalType = "specific")\nand (evaluation.Class = "Average")\n#and (main.noiseLevel = 0)\nand (feature_selection.Method like "%no %")\n\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\n\ngroup by evaluation.classifier\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp\n
+
+Classifier, per system type, per CategoricalType
+GENERAL J48 Hybrid isAttack 99.349999428  99.360999465  99.349999428  99.349999428  98.700001836
+GENERAL J48 Hybrid DDoS Type  97.083997726  97.190999985  97.083997726  97.077000141  94.107002020
+GENERAL J48 Single  93.935000896  94.544500113  93.935000896  93.859499693  90.885499120
+GENERAL KNN Hybrid isAttack 99.149999022  99.166500568  99.149999022  99.149999022  98.300001025
+GENERAL KNN Hybrid DDoS Type  95.248001814  95.393997431  95.248001814  95.231997967  90.389001369
+GENERAL KNN Single  96.482998133  96.636000276  96.482998133  96.441000700  94.718000293
+GENERAL NB  Hybrid isAttack 83.899998665  86.558997631  83.899998665  82.984998822  67.800000310
+GENERAL NB  Hybrid DDoS Type  58.315002918  58.111000061  58.315002918  56.414002180  13.727000356
+GENERAL NB  Single  61.977499723  64.756500721  61.977499723  60.866001248  42.847999930
+GENERAL RF  Hybrid isAttack 99.649998546  99.652498960  99.649998546  99.649998546  99.300000072
+GENERAL RF  Hybrid DDoS Type  98.272001743  98.312997818  98.272001743  98.269999027  96.513998508
+GENERAL RF  Single  96.432501078  96.669998765  96.432501078  96.387499571  94.641000032
+GENERAL SMO Hybrid isAttack 99.900001287  99.900001287  99.900001287  99.900001287  99.799999595
+GENERAL SMO Hybrid DDoS Type  93.844002485  94.428002834  93.844002485  93.792998791  87.489998341
+GENERAL SMO Single  88.787001371  90.841501951  88.787001371  88.152000308  83.121499419
+SPECIFIC  J48 Hybrid DDoS Type  81.256997585  82.594001293  81.256997585  80.817002058  77.367001772
+SPECIFIC  J48 Single  82.482498884  82.905000448  82.482498884  82.123500109  79.506501555
+SPECIFIC  KNN Hybrid DDoS Type  77.680999041  77.781999111  77.680999041  77.719002962  73.049002886
+SPECIFIC  KNN Single  79.851999879  79.927501082  79.851999879  79.872500896  76.429498196
+SPECIFIC  NB  Hybrid DDoS Type  46.586999297  53.175997734  46.586999297  41.051000357  35.620999336
+SPECIFIC  NB  Single  52.338999510  55.776000023  52.338999510  47.842499614  44.349500537
+SPECIFIC  RF  Hybrid DDoS Type  79.089999199  79.100000858  79.089999199  79.092997313  74.750000238
+SPECIFIC  RF  Single  82.482498884  82.491001487  82.482498884  82.482999563  79.506501555
+SPECIFIC  SMO Hybrid DDoS Type  62.839001417  66.623997688  62.839001417  61.228001118  55.125999451
+SPECIFIC  SMO Single  67.174997926  67.221498489  67.174997926  65.313997865  61.598500609
+-- select \nmain.categoricaltype, evaluation.classifier, main.systemtype, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100)\n#main.Timestamp, main.systemtype, main.categoricaltype, evaluation.classifier, avg(evaluation.Accuracy*100), avg(evaluation.Prec*100), avg(evaluation.Recall*100), avg(evaluation.FScore*100), avg(evaluation.Kappa*100), evaluation.ConfusionMatrix\n#*\n#main.ExtractionTool, main.systemtype, main.categoricaltype, evaluation.classifier, evaluation.Accuracy*100, evaluation.Prec*100, evaluation.Recall*100, evaluation.FScore*100, evaluation.Kappa*100, evaluation.ConfusionMatrix\n\n\nfrom main \njoin evaluation on main.ID = evaluation.MainID \njoin feature_selection on main.ID = feature_selection.MainID \n\n\nwhere 1=1\n#and (evaluation.Classifier = "rf")\nand (evaluation.ConfusionMatrix is not null)\n#and (main.systemType = "single")\n#and (main.CategoricalType = "general")\nand (evaluation.Class = "Average")\n#and (main.noiseLevel = 0)\nand (feature_selection.Method like "%no %")\n\nand (main.ExtractionTool = "kdd")\nand dataset like "%initial%"\nand evaluation.Type = "train-validation"\n\ngroup by main.categoricaltype, evaluation.classifier, main.systemtype\n#order by systemtype, evaluation.classifier, categoricaltype, main.timestamp\n
