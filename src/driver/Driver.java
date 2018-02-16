@@ -32,10 +32,10 @@ public final class Driver {
               "Results/The one in the DB/BINARY/No noise/J48/isAttack/Validation.arff");
       Instances ddosTypeValidation = UtilsInstances.getInstances(
               "Results/The one in the DB/BINARY/No noise/J48/DDoS type/Validation.arff");
-      
+
       Instances incompatible = UtilsInstances.getInstances(
               "Results/The one in the DB/NOMINAL/No noise/J48/DDoS type/Validation.arff");
-      
+
       Classifier isAttackClassifier = UtilsClssifiers.readModel(
               "Results/The one in the DB/BINARY/No noise/J48/isAttack/RF .model");
       Classifier ddosTypeClassifier = UtilsClssifiers.readModel(
@@ -92,10 +92,10 @@ public final class Driver {
             for (NoiseLevel noiseLevel : noiseLevels) {
                systemTrain(
                   fs,
-                  new SystemParameters.Builder(
+                  new SystemParameters(
                      instanceCount,
                      new Single (noiseLevel, categoricalType)
-                  ).build()
+                  )
                );
                System.out.println("");
             }
@@ -103,19 +103,19 @@ public final class Driver {
          for (NoiseLevel noiseLevel : noiseLevels) {
             systemTrain(
               fs,
-              new SystemParameters.Builder(
+              new SystemParameters(
                 instanceCount,
                 new HybridIsAttack(noiseLevel)
-              ).build()
+              )
             );
          }
          for (CategoricalType categoricalType : categoricalTypes) {
             systemTrain(
                fs,
-               new SystemParameters.Builder(
+               new SystemParameters(
                   instanceCount,
                   new HybridDDoSType(categoricalType)
-               ).build()
+               )
             );
          }
       }
