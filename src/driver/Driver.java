@@ -2,7 +2,6 @@ package driver;
 
 import constants.ArffInstanceCount;
 import database.Mysql;
-import database.NoDatabase;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.GeneralAttackType;
 import driver.categoricalType.SpecificAttackType;
@@ -10,13 +9,15 @@ import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoNoise;
-import driver.mode.noiseLevel.NoiseRandomWebsite;
 import driver.mode.noiseLevel.NoiseLevel;
+import driver.mode.noiseLevel.NoiseRandomWebsite;
 import evaluation.TrainTest;
 import featureExtraction.Decorator.InitialDatabase;
 import featureExtraction.KDDExtraction;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
+import featureSelection.wrappers.J48Wrapper;
+import featureSelection.wrappers.NBWrapper;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -75,8 +76,8 @@ public final class Driver {
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
          NoFeatureSelection.getInstance(),
 //         new InfoGainFS(),
-//         new NBWrapper(),
-//         new J48Wrapper()
+         new NBWrapper(),
+         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
          new GeneralAttackType(),

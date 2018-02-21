@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import preprocessFiles.PreprocessFile;
-import preprocessFiles.PreprocessNoiseRandomWebsites;
+import preprocessFiles.noise.PreprocessNoiseRandomWebsites;
 
 public final class NoiseRandomWebsite implements NoiseLevel{
    @Override
@@ -25,13 +25,8 @@ public final class NoiseRandomWebsite implements NoiseLevel{
       return 0.50f;
    }
    
-   /**
-    * From random websites
-    * @return 
-    */
    @Override
    public String getNoiseLevelString() {
-//      return "Random websites";
-      return "Noise";
+      return "Random websites";
    }
 }

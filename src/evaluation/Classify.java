@@ -11,6 +11,11 @@ import java.util.NoSuchElementException;
 import weka.core.Attribute;
 
 public interface Classify {
+   /**
+    * Return the type of classification done. 
+    * E.g. Cross validation, train-test, train-validation, etc.
+    * @return 
+    */
    public String getType();
    
    /**
@@ -25,8 +30,7 @@ public interface Classify {
    public void setupEvaluationSets(String combinedPath) throws IOException, Exception;
    
    /**
-    * (Not sure if it's ok for the Classify object to have reference to the 
- Feature Selection object)
+    * (Not sure if it's ok for the Classify object to have reference to the Feature Selection object)
     * @param fs
     * @return An enumeration of the selected attributes
     * @throws IOException

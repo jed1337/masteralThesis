@@ -17,13 +17,13 @@ public abstract class ExtractionDBPathDecorator extends FeatureExtraction{
    /**
     * Is protected since the subclass assigns the path
     * @param fe
-    * @param path 
+    * @param path
     */
    protected ExtractionDBPathDecorator(FeatureExtraction fe, String path) {
       this.fe = fe;
       this.path = path;
    }
-   
+
    /**
     * Doesn't decorate this function. <br>
     * Simply calls the function of its FeatureExtraction object
@@ -70,6 +70,36 @@ public abstract class ExtractionDBPathDecorator extends FeatureExtraction{
    }
 
    @Override
+   public String getNoiseSlowBodyPath() {
+      return this.path+this.fe.getNoiseSlowBodyPath();
+   }
+
+   @Override
+   public String getNoiseSlowHeadersPath() {
+      return this.path+this.fe.getNoiseSlowHeadersPath();
+   }
+
+   @Override
+   public String getNoiseSlowReadPath() {
+      return this.path+this.fe.getNoiseSlowReadPath();
+   }
+
+   @Override
+   public String getNoiseTCPFloodPath() {
+      return this.path+this.fe.getNoiseTCPFloodPath();
+   }
+
+   @Override
+   public String getNoiseUDPFloodPath() {
+      return this.path+this.fe.getNoiseUDPFloodPath();
+   }
+
+   @Override
+   public String getNoiseHTTPFloodPath() {
+      return this.path+this.fe.getNoiseHTTPFloodPath();
+   }
+
+   @Override
    public String getKDDTrainPath() throws UnsupportedOperationException {
       return this.path+this.fe.getKDDTrainPath();
    }
@@ -83,7 +113,7 @@ public abstract class ExtractionDBPathDecorator extends FeatureExtraction{
    public List<String> getFeaturesToRemove() {
       return this.fe.getFeaturesToRemove();
    }
-   
+
    /**
     * Doesn't decorate this function. <br>
     * Simply calls the function of its FeatureExtraction object

@@ -26,10 +26,10 @@ public final class SystemParameters implements GetPreprocessFiles{
     * Noise<br>
     * Not-noise
     *
-    * @param builder
+    * @param instanceCount How many overall instances to keep
+    * @param mode
     * @throws IOException
     */
-//   private SystemParameters(SystemParameters.Builder builder) throws IOException{
    public SystemParameters(int instanceCount, Mode mode) throws IOException{
       this.nl              = mode.getNoiseLevel();
       this.categoricalType = mode.getCategoricalType();
@@ -67,23 +67,4 @@ public final class SystemParameters implements GetPreprocessFiles{
    public String getSystemType() {
       return this.systemType;
    }
-
-//   /**
-//    * Responsible for building a SystemParameter object
-//    * (which has private access)<p>
-//    * Actually has no point since all the parameters are mandatory
-//    */
-//   public static class Builder{
-//      private final int instanceCount;
-//      private final Mode mode;
-//
-//      public Builder(int instanceCount, Mode mode) {
-//         this.instanceCount = instanceCount;
-//         this.mode = mode;
-//      }
-//
-//      public SystemParameters build() throws IOException{
-//         return new SystemParameters(this);
-//      }
-//   }
 }

@@ -55,6 +55,36 @@ public class NetmateExtraction extends FeatureExtraction{
    }
 
    @Override
+   public String getNoiseSlowBodyPath() {
+      return NETMATE_PATH+"Noise Netmate Slow Body.arff";
+   }
+
+   @Override
+   public String getNoiseSlowHeadersPath() {
+      return NETMATE_PATH+"Noise Netmate Slow Headers.arff";
+   }
+
+   @Override
+   public String getNoiseSlowReadPath() {
+      return NETMATE_PATH+"Noise Netmate Slow Read.arff";
+   }
+
+   @Override
+   public String getNoiseTCPFloodPath() {
+      return NETMATE_PATH+"Noise Netmate TCP Flood.arff";
+   }
+
+   @Override
+   public String getNoiseUDPFloodPath() {
+      return NETMATE_PATH+"Noise Netmate UDP Flood.arff";
+   }
+
+   @Override
+   public String getNoiseHTTPFloodPath() {
+      return NETMATE_PATH+"Noise Netmate HTTP Flood.arff";
+   }
+
+   @Override
    public List<String> getFeaturesToRemove() {
       ArrayList<String> al = new ArrayList<>();
       al.add("srcip");
