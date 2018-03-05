@@ -35,7 +35,7 @@ public final class HybridIsAttack extends Mode{
       pfL.add(new PreprocessUDPFlood());
       pfL.add(new PreprocessHTTPFlood());
 
-      pfL.add(new PreprocessSlowBody());
+//      pfL.add(new PreprocessSlowBody());
       pfL.add(new PreprocessSlowHeaders());
       pfL.add(new PreprocessSlowRead());
 

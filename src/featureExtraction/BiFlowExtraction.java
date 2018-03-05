@@ -108,7 +108,8 @@ public class BiFlowExtraction extends FeatureExtraction{
    @Override
    public Consumer<FormatAsArff> removeNonMatchingClasses() {
       //remove instances that aren't 6 (TCP) or 17 (UDP)
-      return (faa)->faa.removeNonMatchingClasses("proto_number", "6", "17");
+//      return (faa)->faa.removeNonMatchingClasses("proto_number", "6", "17");
+      return (faa)->{};
    }
 
    @Override

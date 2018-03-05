@@ -12,8 +12,8 @@ import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import driver.mode.noiseLevel.NoiseRandomWebsite;
 import evaluation.TrainTest;
-import featureExtraction.Decorator.InitialDatabase;
-import featureExtraction.KDDExtraction;
+import featureExtraction.BiFlowExtraction;
+import featureExtraction.Decorator.FinalDatabase;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
 import featureSelection.wrappers.J48Wrapper;
@@ -68,7 +68,8 @@ public final class Driver {
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
 //      system();
       GlobalFeatureExtraction.setInstance(
-         new InitialDatabase(new KDDExtraction())
+         new FinalDatabase(new BiFlowExtraction())
+//         new InitialDatabase(new KDDExtraction())
 //         new Feb2CNISDatabase(new NetmateExtraction())
       );
       final int instanceCount = ArffInstanceCount.HALVED;
@@ -76,8 +77,8 @@ public final class Driver {
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
          NoFeatureSelection.getInstance(),
 //         new InfoGainFS(),
-         new NBWrapper(),
-         new J48Wrapper()
+//         new NBWrapper(),
+//         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
          new GeneralAttackType(),

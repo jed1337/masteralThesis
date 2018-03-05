@@ -19,7 +19,7 @@ public final class SpecificLowrate extends SpecificAttack{
    @Override
    public List<PreprocessFile> getPreprocessFiles() throws IOException {
       ArrayList<PreprocessFile> pfL = new ArrayList<>();
-      pfL.add(new PreprocessSlowBody());
+//      pfL.add(new PreprocessSlowBody());
       pfL.add(new PreprocessSlowHeaders());
       pfL.add(new PreprocessSlowRead());
       return pfL;

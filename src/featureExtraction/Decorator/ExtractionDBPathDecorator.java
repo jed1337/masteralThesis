@@ -68,6 +68,11 @@ public abstract class ExtractionDBPathDecorator extends FeatureExtraction{
    public String getHTTPFloodPath() {
       return this.path+this.fe.getHTTPFloodPath();
    }
+   
+    @Override
+    public String getNoiseNormalPath() {
+        return this.path+this.fe.getNoiseNormalPath();
+    }
 
    @Override
    public String getNoiseSlowBodyPath() {
@@ -123,6 +128,12 @@ public abstract class ExtractionDBPathDecorator extends FeatureExtraction{
    public Consumer<FormatAsArff> removeNonMatchingClasses() {
       return this.fe.removeNonMatchingClasses();
    }
+   
+   @Override
+    public Consumer<FormatAsArff> additionalFormatting() {
+        return this.fe.additionalFormatting();
+    }
+
 
    /**
     * this.path is set by the protected constructor
