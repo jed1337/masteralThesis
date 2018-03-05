@@ -11,6 +11,7 @@ import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.RenameNominalValues;
+import weka.filters.unsupervised.attribute.StringToNominal;
 import weka.filters.unsupervised.instance.Randomize;
 
 public final class FormatAsArff {
@@ -100,6 +101,14 @@ public final class FormatAsArff {
       rnv.setSelectedAttributes(attributes);
       rnv.setValueReplacements(replacement);
       useFilter(this.instances, rnv);
+   }
+   
+   public void stringToNominal(String attributeName) throws Exception{
+      String sIndex = UtilsInstances.getAttributeIndex(this.instances, attributeName)+"";
+      
+      StringToNominal stn = new StringToNominal();
+      stn.setAttributeRange(sIndex);
+      useFilter(this.instances, stn);
    }
 
    /**

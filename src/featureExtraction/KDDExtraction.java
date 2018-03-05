@@ -80,6 +80,16 @@ public class KDDExtraction extends FeatureExtraction{
    public Consumer<FormatAsArff> removeNonMatchingClasses() {
       return (faa)->faa.removeNonMatchingClasses("service", "http", "http_443");
    }
+   
+   @Override
+   public Consumer<FormatAsArff> additionalFormatting() {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   }
+
+   @Override
+   public String getNoiseNormalPath() {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   }
 
    @Override
    public String getNoiseSlowBodyPath() {
@@ -110,4 +120,5 @@ public class KDDExtraction extends FeatureExtraction{
    public String getNoiseHTTPFloodPath() {
       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
    }
+
 }

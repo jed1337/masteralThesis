@@ -35,8 +35,11 @@ public abstract class PreprocessFile {
       removeNonMatchingClasses();
 
       this.faa.removeAttributes(
-         GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
+            GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
       );
+      
+      //Put change string to nominal and other stuff here
+      additionalFormatting();
       this.faa.randomise(this.RANDOM_SEED);
 
       balanceInstances();
@@ -78,6 +81,11 @@ public abstract class PreprocessFile {
       this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType.getValue());
       GlobalFeatureExtraction.getInstance()
          .removeNonMatchingClasses().accept(this.faa);
+   }
+   
+   private void additionalFormatting(){
+      GlobalFeatureExtraction.getInstance()
+         .additionalFormatting().accept(this.faa);
    }
 
    /**

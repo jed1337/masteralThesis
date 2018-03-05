@@ -10,6 +10,14 @@ public interface ARFFPaths {
    public abstract String getUDPFloodPath();
    public abstract String getHTTPFloodPath();
    
+   /** 
+    * Noise normal = normal attacks that are attack like.<br>
+    * E.g., normal accesses that read data really slowly (slow read),
+    * normal accesses that refresh really quick (flood)
+    * @return The path
+    */
+   public abstract String getNoiseNormalPath();
+   
    public abstract String getNoiseSlowBodyPath();
    public abstract String getNoiseSlowHeadersPath();
    public abstract String getNoiseSlowReadPath();
