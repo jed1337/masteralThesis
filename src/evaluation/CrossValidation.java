@@ -63,6 +63,10 @@ public final class CrossValidation implements Classify{
       CustomEvaluation eval = new CustomEvaluation(this.combinedInstances);
       eval.crossValidateModel(ch.getClassifier(), this.combinedInstances, 10, new Random(1));
       
+      if(1==1) {
+         throw new Exception("Fix getting the cross validation model. This returns a blank file since it hasn't been trained");
+      }
+      
       UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
       
       //System out the results

@@ -83,8 +83,8 @@ public final class Driver {
 //         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
-         new SpecificAttackType(),
-         new GeneralAttackType()
+         new GeneralAttackType(),
+         new SpecificAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
          new HalfNoise(),
@@ -132,8 +132,8 @@ public final class Driver {
       new SystemTrain.Buidler()
          .database(new Mysql())
          .featureSelection(fs)
-         .evaluation(new TrainTest())
-//         .evaluation(new CrossValidation())
+//         .evaluation(new TrainTest())
+         .evaluation(new CrossValidation())
          .build(systemParameters);
 
 //      String fullFolderPath = String.join("/",

@@ -7,7 +7,6 @@ import java.util.List;
 import preprocessFiles.PreprocessFile;
 import preprocessFiles.noise.PreprocessNoiseHttpFlood;
 import preprocessFiles.noise.PreprocessNoiseNormal;
-import preprocessFiles.noise.PreprocessNoiseSlowBody;
 import preprocessFiles.noise.PreprocessNoiseSlowHeaders;
 import preprocessFiles.noise.PreprocessNoiseSlowRead;
 import preprocessFiles.noise.PreprocessNoiseTCPFlood;
@@ -21,7 +20,7 @@ public final class HalfNoise implements NoiseLevel{
 			new PreprocessNoiseHttpFlood(),
 			new PreprocessNoiseUDPFlood(),
 			new PreprocessNoiseTCPFlood(),
-			new PreprocessNoiseSlowBody(),
+//			new PreprocessNoiseSlowBody(),
 			new PreprocessNoiseSlowRead(),
 			new PreprocessNoiseSlowHeaders()
       ));

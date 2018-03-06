@@ -71,6 +71,10 @@ public abstract class PreprocessFile {
       return faa;
    }
 
+   public int getInstancesCount() {
+      return instancesCount;
+   }
+
    /**
     * Uses the removeNonMatchingClasses in this.faa
     * @see preprocessFiles.preprocessAs.FormatAsArff#removeNonMatchingClasses(String, String...)

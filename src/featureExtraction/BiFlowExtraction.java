@@ -101,6 +101,8 @@ public class BiFlowExtraction extends FeatureExtraction{
       al.add("src_ip");
       al.add("dst_ip");
       al.add("proto_number");
+      al.add("src_port");
+      al.add("dst_port");
 //      al.add("cof");
       return Collections.unmodifiableList(al);
    }
