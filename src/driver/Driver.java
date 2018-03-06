@@ -83,13 +83,12 @@ public final class Driver {
 //         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
-         new GeneralAttackType(),
-         new SpecificAttackType()
+         new SpecificAttackType(),
+         new GeneralAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
          NoNoise.getInstance(),
          new HalfNoise()
-//         new NoiseRandomWebsite()
       };
 
       for (FeatureSelection fs : featureSelections) {

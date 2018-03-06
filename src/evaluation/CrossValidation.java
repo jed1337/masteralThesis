@@ -58,16 +58,13 @@ public final class CrossValidation implements Classify{
    }
 
    private CustomEvaluation evaluateIndividualClassifier(ClassifierHolder ch) throws IOException, Exception{
-      //Don't build the classifier in Cross validation since Weka says so
+      //Don't build the classifier before Cross validation since Weka says so
       //https://weka.wikispaces.com/Use+WEKA+in+your+Java+code#Classification-Cross-validation
       CustomEvaluation eval = new CustomEvaluation(this.combinedInstances);
       eval.crossValidateModel(ch.getClassifier(), this.combinedInstances, 10, new Random(1));
       
-      if(1==1) {
-         throw new Exception("Fix getting the cross validation model. This returns a blank file since it hasn't been trained");
-      }
-      
-
+      //We only build the classifier after cross evaluation
+      ch.getClassifier().buildClassifier(this.combinedInstances);
       UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
       
       //System out the results
