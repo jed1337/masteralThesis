@@ -67,6 +67,7 @@ public final class CrossValidation implements Classify{
          throw new Exception("Fix getting the cross validation model. This returns a blank file since it hasn't been trained");
       }
       
+
       UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
       
       //System out the results

@@ -87,8 +87,8 @@ public final class Driver {
          new SpecificAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-         new HalfNoise(),
-         NoNoise.getInstance()
+         NoNoise.getInstance(),
+         new HalfNoise()
 //         new NoiseRandomWebsite()
       };
 
@@ -132,8 +132,8 @@ public final class Driver {
       new SystemTrain.Buidler()
          .database(new Mysql())
          .featureSelection(fs)
-//         .evaluation(new TrainTest())
-         .evaluation(new CrossValidation())
+         .evaluation(new TrainTest())
+//         .evaluation(new CrossValidation())
          .build(systemParameters);
 
 //      String fullFolderPath = String.join("/",

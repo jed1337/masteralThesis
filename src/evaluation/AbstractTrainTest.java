@@ -82,10 +82,9 @@ public abstract class AbstractTrainTest implements Classify{
       
       UtilsClssifiers.writeModel(DirectoryConstants.FORMATTED_DIR, ch);
 
-      //Evaluate the classifier on the test set
+      //Evaluate the classifier on the 
       CustomEvaluation eval = new CustomEvaluation(getEvaluationSet(this.TRAIN_PATH));
-//      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.TEST_PATH));
-      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(this.VALIDATION_PATH));
+      eval.evaluateModel(ch.getClassifier(), getEvaluationSet(evaluateUsing()));
 
       //System out the results
       StringBuilder sb = new StringBuilder();
@@ -132,5 +131,5 @@ public abstract class AbstractTrainTest implements Classify{
       throw new NoSuchElementException("The evaluation set '"+name+"' wasn't found");
    }
    
-   public abstract String evaluateUsing(String name);
+   public abstract String evaluateUsing();
 }
