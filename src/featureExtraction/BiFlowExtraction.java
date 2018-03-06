@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import preprocessFiles.preprocessAs.FormatAsArff;
 
 public class BiFlowExtraction extends FeatureExtraction{
@@ -102,6 +100,8 @@ public class BiFlowExtraction extends FeatureExtraction{
       ArrayList<String> al = new ArrayList<>();
       al.add("src_ip");
       al.add("dst_ip");
+      al.add("proto_number");
+//      al.add("cof");
       return Collections.unmodifiableList(al);
    }
 
@@ -110,17 +110,5 @@ public class BiFlowExtraction extends FeatureExtraction{
       //remove instances that aren't 6 (TCP) or 17 (UDP)
 //      return (faa)->faa.removeNonMatchingClasses("proto_number", "6", "17");
       return (faa)->{};
-   }
-
-   @Override
-   public Consumer<FormatAsArff> additionalFormatting() {
-//      Todo: clean this up
-      return (faa)->{
-         try {
-            faa.stringToNominal("cof");
-         } catch (Exception ex) {
-            System.err.println("COF can't be converted to a nominal value");
-         }
-      };
    }
 }

@@ -129,12 +129,6 @@ public abstract class ExtractionDBPathDecorator extends FeatureExtraction{
       return this.fe.removeNonMatchingClasses();
    }
    
-   @Override
-    public Consumer<FormatAsArff> additionalFormatting() {
-        return this.fe.additionalFormatting();
-    }
-
-
    /**
     * this.path is set by the protected constructor
     * @return this.path

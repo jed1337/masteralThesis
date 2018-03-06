@@ -62,12 +62,7 @@ public final class SystemTrain {
 	}
 
    private void execute(SystemTrain.Buidler builder, String combinedPath) throws Exception {
-      ArrayList<ClassifierHolder> classifierHolders = new ArrayList<>();
-      classifierHolders.add(new ClassifierHolder(new J48(), "J48"));
-      classifierHolders.add(new ClassifierHolder(new IBk(), "KNN"));
-      classifierHolders.add(new ClassifierHolder(new NaiveBayes(), "NB "));
-      classifierHolders.add(new ClassifierHolder(new RandomForest(), "RF "));
-      classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
+      ArrayList<ClassifierHolder> classifierHolders = getClassifierHolders();
 
       Classify classify = builder.eval;
       classify.setupEvaluationSets(combinedPath);
@@ -87,6 +82,21 @@ public final class SystemTrain {
          
          this.db.insertToEvaluationTable(classify.getType(), classifierName, cEval);
       }
+   }
+
+   private ArrayList<ClassifierHolder> getClassifierHolders() throws Exception {
+      ArrayList<ClassifierHolder> classifierHolders = new ArrayList<>();
+      classifierHolders.add(new ClassifierHolder(new J48(), "J48"));
+      classifierHolders.add(new ClassifierHolder(new IBk(), "KNN"));
+      classifierHolders.add(new ClassifierHolder(new NaiveBayes(), "NB "));
+      
+      //We just extracted rf so that we can set print to be true
+      RandomForest rf = new RandomForest();
+      rf.setPrintClassifiers(true);
+      classifierHolders.add(new ClassifierHolder(rf, "RF "));
+      
+      classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));
+      return classifierHolders;
    }
 
    private List<PreprocessFile> setupPreprocessFiles(final List<PreprocessFile> pfL, String relabel)

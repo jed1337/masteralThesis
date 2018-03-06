@@ -38,11 +38,9 @@ public abstract class PreprocessFile {
             GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
       );
       
-      //Put change string to nominal and other stuff here
-      additionalFormatting();
       this.faa.randomise(this.RANDOM_SEED);
 
-      balanceInstances();
+      keepXInstances();
    }
 
    /**
@@ -83,11 +81,6 @@ public abstract class PreprocessFile {
          .removeNonMatchingClasses().accept(this.faa);
    }
    
-   private void additionalFormatting(){
-      GlobalFeatureExtraction.getInstance()
-         .additionalFormatting().accept(this.faa);
-   }
-
    /**
     * For example there are 5000 instances
     * <br>
@@ -97,7 +90,7 @@ public abstract class PreprocessFile {
     * <br>
     * If setInstanceCount(int) isn't called beforehand, this function doesn't do anything
     */
-   private void balanceInstances() {
+   private void keepXInstances() {
       if(this.instancesCount == -1){
          return; //Exit this function (Don't do any balancing)
       }

@@ -8,9 +8,11 @@ import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Single;
+import driver.mode.noiseLevel.HalfNoise;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import driver.mode.noiseLevel.NoiseRandomWebsite;
+import evaluation.CrossValidation;
 import evaluation.TrainTest;
 import featureExtraction.BiFlowExtraction;
 import featureExtraction.Decorator.FinalDatabase;
@@ -81,12 +83,13 @@ public final class Driver {
 //         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
-         new GeneralAttackType(),
-         new SpecificAttackType()
+         new SpecificAttackType(),
+         new GeneralAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-         NoNoise.getInstance(),
-         new NoiseRandomWebsite()
+         new HalfNoise(),
+         NoNoise.getInstance()
+//         new NoiseRandomWebsite()
       };
 
       for (FeatureSelection fs : featureSelections) {
@@ -130,6 +133,7 @@ public final class Driver {
          .database(new Mysql())
          .featureSelection(fs)
          .evaluation(new TrainTest())
+//         .evaluation(new CrossValidation())
          .build(systemParameters);
 
 //      String fullFolderPath = String.join("/",

@@ -107,11 +107,6 @@ public class NetmateExtraction extends FeatureExtraction{
    }
 
    @Override
-   public Consumer<FormatAsArff> additionalFormatting() {
-      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   }
-
-   @Override
    public String getNoiseNormalPath() {
       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
    }

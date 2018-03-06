@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import preprocessFiles.PreprocessFile;
 import preprocessFiles.noise.PreprocessNoiseHttpFlood;
+import preprocessFiles.noise.PreprocessNoiseNormal;
 import preprocessFiles.noise.PreprocessNoiseSlowBody;
 import preprocessFiles.noise.PreprocessNoiseSlowHeaders;
 import preprocessFiles.noise.PreprocessNoiseSlowRead;
@@ -16,6 +17,7 @@ public final class HalfNoise implements NoiseLevel{
    @Override
    public List<PreprocessFile> getPreprocessFiles() throws IOException {
       return Collections.unmodifiableList(Arrays.asList(
+			new PreprocessNoiseNormal(),
 			new PreprocessNoiseHttpFlood(),
 			new PreprocessNoiseUDPFlood(),
 			new PreprocessNoiseTCPFlood(),
