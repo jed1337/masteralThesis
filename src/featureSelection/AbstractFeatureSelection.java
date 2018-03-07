@@ -6,6 +6,7 @@ import utils.UtilsFeatureSelection;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.attributeSelection.AttributeSelection;
+import weka.attributeSelection.Ranker;
 import weka.core.Instances;
 
 public abstract class AbstractFeatureSelection implements FeatureSelection{

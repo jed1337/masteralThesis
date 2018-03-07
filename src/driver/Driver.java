@@ -1,6 +1,7 @@
 package driver;
 
 import constants.ArffInstanceCount;
+import constants.DirectoryConstants;
 import database.Mysql;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.GeneralAttackType;
@@ -11,18 +12,20 @@ import driver.mode.Single;
 import driver.mode.noiseLevel.HalfNoise;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
-import driver.mode.noiseLevel.NoiseRandomWebsite;
-import evaluation.CrossValidation;
+import evaluation.Classify;
 import evaluation.TrainTest;
 import featureExtraction.BiFlowExtraction;
 import featureExtraction.Decorator.FinalDatabase;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
+import featureSelection.filters.CorrelationFS;
+import featureSelection.filters.InfoGainFS;
 import featureSelection.wrappers.J48Wrapper;
 import featureSelection.wrappers.NBWrapper;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import utils.Utils;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
@@ -74,21 +77,24 @@ public final class Driver {
 //         new InitialDatabase(new KDDExtraction())
 //         new Feb2CNISDatabase(new NetmateExtraction())
       );
-      final int instanceCount = ArffInstanceCount.HALVED;
+      
+      final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
-         NoFeatureSelection.getInstance(),
-//         new InfoGainFS(),
-//         new NBWrapper(),
-//         new J48Wrapper()
+                  new NBWrapper(),         
+NoFeatureSelection.getInstance(),
+         new InfoGainFS(),
+         new CorrelationFS(),
+         new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
          new SpecificAttackType(),
          new GeneralAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-         NoNoise.getInstance(),
          new HalfNoise()
+            ,
+         NoNoise.getInstance()
       };
 
       for (FeatureSelection fs : featureSelections) {
@@ -128,22 +134,26 @@ public final class Driver {
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
          throws IOException, Exception {
 
+      Classify classify = new TrainTest();
+//      Classify classify = new CrossValidation();
+       
       new SystemTrain.Buidler()
          .database(new Mysql())
          .featureSelection(fs)
-         .evaluation(new TrainTest())
-//         .evaluation(new CrossValidation())
+         .evaluation(classify)
          .build(systemParameters);
 
-//      String fullFolderPath = String.join("/",
-//         "Results",
-//         "Jan dataset(Temp)",
-//         GlobalFeatureExtraction.getInstance().getName(),
-//         systemParameters.getCategoricalType().name(),
-//         systemParameters.getNoiseLevelString(),
-//         fs.getFSMethodName(),
-//         systemParameters.getSystemType()
-//      )+"/";
-//      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
+      String fullFolderPath = String.join("/",
+         "Results",
+         GlobalFeatureExtraction.getInstance().getDatasetName(),
+         GlobalFeatureExtraction.getInstance().getName(),
+         classify.getType(),
+         systemParameters.getCategoricalType().name(),
+         systemParameters.getNoiseLevelString(),
+         fs.getFSMethodName(),
+         systemParameters.getSystemType()
+      )+"/";
+      
+      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
    }
 }
