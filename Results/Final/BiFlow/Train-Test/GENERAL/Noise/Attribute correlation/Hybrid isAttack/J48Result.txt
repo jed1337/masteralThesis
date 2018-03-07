@@ -1,0 +1,37 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_b_pkt <= 535
+|   total_b_packets <= 5: attack (9538.0/3856.0)
+|   total_b_packets > 5
+|   |   max_b_pkt <= 64: normal (22.0)
+|   |   max_b_pkt > 64: attack (289.0)
+max_b_pkt > 535: normal (2148.0/29.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1689               56.3188 %
+Incorrectly Classified Instances      1310               43.6812 %
+Kappa statistic                          0.1262
+Mean absolute error                      0.5159
+Root mean squared error                  0.6801
+Relative absolute error                103.1771 %
+Root relative squared error            136.0178 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.346    0.219    0.612      0.346    0.442      0.140    0.439     0.542     normal
+                 0.781    0.654    0.544      0.781    0.641      0.140    0.439     0.470     attack
+Weighted Avg.    0.563    0.437    0.578      0.563    0.541      0.140    0.439     0.506     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+  518  981 |    a = normal
+  329 1171 |    b = attack

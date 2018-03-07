@@ -1,0 +1,175 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.6046 * (normalized) max_f_pkt
+ +       0.7248 * (normalized) mean_f_pkt
+ +       0.0135 * (normalized) total_f_bytes
+ +      -0.3179 * (normalized) cof=N/A
+ +       1.5286 * (normalized) cof=2
+ +      -0.3451 * (normalized) cof=4
+ +      -0.5686 * (normalized) cof=18
+ +      -0.5604 * (normalized) cof=22
+ +      -0      * (normalized) cof=26
+ +       0.0649 * (normalized) cof=27
+ +      -0      * (normalized) cof=29
+ +       0.0949 * (normalized) cof=30
+ +       0.1036 * (normalized) cof=31
+ +       1.2707 * (normalized) duration
+ +       0.0332 * (normalized) bps_f
+ +       0.025  * (normalized) pps_f
+ +       0.8054 * (normalized) mean_f_time
+ +       0.7338 * (normalized) max_f_time
+ +       0.9531 * (normalized) std_f_time
+ +       0.0081 * (normalized) total_f_packets
+ +       0.1783 * (normalized) mean_b_pkt
+ +       0.314  * (normalized) total_b_bytes
+ +      -0.0615 * (normalized) rfb_bytes
+ +       0.1199 * (normalized) max_b_pkt
+ +      -0.1731 * (normalized) rfb_packets
+ +       0.1332 * (normalized) std_f_pkt
+ +       0.1308 * (normalized) std_b_pkt
+ +       0.9732 * (normalized) total_b_packets
+ +       0.063  * (normalized) bps_b
+ +       0.2199 * (normalized) mean_b_time
+ +       0.0731 * (normalized) pps_b
+ +       0.389  * (normalized) max_b_time
+ +       0.2784 * (normalized) std_b_time
+ +       0.0982 * (normalized) min_f_time
+ +       0.0397 * (normalized) psh_f_cnt
+ +       0.0853 * (normalized) min_b_time
+ +       0.7587 * (normalized) min_f_pkt
+ +       0.4141 * (normalized) min_b_pkt
+ +      -0.3023 * (normalized) psh_b_cnt
+ +       0.3179 * (normalized) urg_f_cnt
+ -       0.9933
+
+Number of kernel evaluations: 362463 (65.055% cached)
+
+Classifier for classes: HIGH_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.6012 * (normalized) max_f_pkt
+ +       0.7244 * (normalized) mean_f_pkt
+ +       0.0049 * (normalized) total_f_bytes
+ +      -0.2865 * (normalized) cof=N/A
+ +       1.0544 * (normalized) cof=2
+ +      -0.3656 * (normalized) cof=4
+ +      -0.4153 * (normalized) cof=18
+ +      -0.4222 * (normalized) cof=22
+ +       0.4352 * (normalized) cof=27
+ +       0.2116 * (normalized) duration
+ +       0.0116 * (normalized) bps_f
+ +       0.0108 * (normalized) pps_f
+ +       0.7502 * (normalized) mean_f_time
+ +       0.2441 * (normalized) max_f_time
+ +       0.0006 * (normalized) std_f_time
+ +       0.0024 * (normalized) total_f_packets
+ +       0.2147 * (normalized) mean_b_pkt
+ +       0.4316 * (normalized) total_b_bytes
+ +      -0.0263 * (normalized) rfb_bytes
+ +       0.1731 * (normalized) max_b_pkt
+ +      -0.0467 * (normalized) rfb_packets
+ +       0.082  * (normalized) std_f_pkt
+ +       0.205  * (normalized) std_b_pkt
+ +       0.2204 * (normalized) total_b_packets
+ +       0.0093 * (normalized) bps_b
+ +       0.0001 * (normalized) mean_b_time
+ +       0.0146 * (normalized) pps_b
+ +       0.0005 * (normalized) max_b_time
+ +       0.0004 * (normalized) std_b_time
+ +       1.1797 * (normalized) min_f_time
+ +       0.0481 * (normalized) psh_f_cnt
+ +       0      * (normalized) min_b_time
+ +       0.867  * (normalized) min_f_pkt
+ +       0.0297 * (normalized) min_b_pkt
+ +       0.0165 * (normalized) psh_b_cnt
+ +       0.2865 * (normalized) urg_f_cnt
+ -       0.9442
+
+Number of kernel evaluations: 223988 (66.348% cached)
+
+Classifier for classes: LOW_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -2.8498 * (normalized) max_f_pkt
+ +       0.4889 * (normalized) mean_f_pkt
+ +      -0.0158 * (normalized) total_f_bytes
+ +       0.6787 * (normalized) cof=N/A
+ +      -0.6642 * (normalized) cof=2
+ +      -0.647  * (normalized) cof=18
+ +      -0.251  * (normalized) cof=22
+ +       1.2214 * (normalized) cof=27
+ +      -0.0253 * (normalized) cof=29
+ +      -0.1516 * (normalized) cof=30
+ +      -0.161  * (normalized) cof=31
+ +      -0.6481 * (normalized) duration
+ +      -0.2656 * (normalized) bps_f
+ +       0.2115 * (normalized) pps_f
+ +       0.0295 * (normalized) mean_f_time
+ +      -0.2    * (normalized) max_f_time
+ +      -0.3152 * (normalized) std_f_time
+ +      -0.0056 * (normalized) total_f_packets
+ +       0.1688 * (normalized) mean_b_pkt
+ +       0.898  * (normalized) total_b_bytes
+ +      -0.0306 * (normalized) rfb_bytes
+ +      -0.0353 * (normalized) max_b_pkt
+ +      -0.2187 * (normalized) rfb_packets
+ +      -1.765  * (normalized) std_f_pkt
+ +       0.0307 * (normalized) std_b_pkt
+ +       0.2011 * (normalized) total_b_packets
+ +      -0.1202 * (normalized) bps_b
+ +      -0.0906 * (normalized) mean_b_time
+ +       0.1733 * (normalized) pps_b
+ +      -0.1645 * (normalized) max_b_time
+ +      -0.1191 * (normalized) std_b_time
+ +       0.3709 * (normalized) min_f_time
+ +       0.0052 * (normalized) psh_f_cnt
+ +      -0.0425 * (normalized) min_b_time
+ +       1.0371 * (normalized) min_f_pkt
+ +      -0.1322 * (normalized) min_b_pkt
+ +       0.4346 * (normalized) psh_b_cnt
+ +      -0.6787 * (normalized) urg_f_cnt
+ +       0.3241
+
+Number of kernel evaluations: 366291 (70.426% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        2034               67.8    %
+Incorrectly Classified Instances       966               32.2    %
+Kappa statistic                          0.517 
+Mean absolute error                      0.2974
+Root mean squared error                  0.3863
+Relative absolute error                 66.9167 %
+Root relative squared error             81.9553 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.041    0.003    0.872      0.041    0.078      0.144    0.971     0.952     HIGH_RATE
+                 0.996    0.475    0.512      0.996    0.676      0.514    0.761     0.511     LOW_RATE
+                 0.997    0.005    0.990      0.997    0.994      0.990    0.997     0.989     NORMAL
+Weighted Avg.    0.678    0.161    0.791      0.678    0.583      0.550    0.910     0.817     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  41 950   9 |   a = HIGH_RATE
+   3 996   1 |   b = LOW_RATE
+   3   0 997 |   c = NORMAL

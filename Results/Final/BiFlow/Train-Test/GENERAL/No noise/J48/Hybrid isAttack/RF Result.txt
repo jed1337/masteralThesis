@@ -1,0 +1,2748 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilitiesAll the base classifiers: 
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   min_f_time < 2.24
+|   |   max_f_pkt < 73
+|   |   |   max_f_pkt < 49 : attack (3471/0)
+|   |   |   max_f_pkt >= 49
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   min_f_time < 0 : attack (8/0)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (3/0)
+|   |   |   |   max_f_pkt >= 58 : attack (470/0)
+|   |   max_f_pkt >= 73
+|   |   |   std_f_pkt < 9 : normal (4/0)
+|   |   |   std_f_pkt >= 9 : attack (10/0)
+|   min_f_time >= 2.24
+|   |   min_f_time < 3.6 : normal (6/0)
+|   |   min_f_time >= 3.6
+|   |   |   max_f_pkt < 65.5 : attack (3/0)
+|   |   |   max_f_pkt >= 65.5 : normal (1/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4384/0)
+|   std_f_pkt >= 36.78 : attack (2078/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   max_f_pkt < 47.5 : attack (1737/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   max_f_pkt < 51.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 51.5 : attack (112/0)
+|   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   max_f_pkt < 56 : attack (8/2)
+|   |   |   |   |   max_f_pkt >= 56 : attack (48/0)
+|   |   min_f_time >= 0 : attack (2072/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (6/0)
+|   |   max_f_pkt >= 58 : attack (4/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 139
+|   |   |   max_f_pkt < 88 : normal (6/0)
+|   |   |   max_f_pkt >= 88 : attack (8/0)
+|   |   max_f_pkt >= 139 : normal (4479/0)
+|   std_f_pkt >= 36.78 : attack (1958/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   min_f_time < 2.24
+|   |   min_f_time < 0.41
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 47.5 : attack (1869/0)
+|   |   |   |   max_f_pkt >= 47.5
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 58
+|   |   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   |   |   max_f_pkt >= 50.5 : attack (7/0)
+|   |   |   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   |   |   max_f_pkt >= 58 : attack (161/0)
+|   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   min_f_time >= 0 : attack (1720/0)
+|   |   min_f_time >= 0.41
+|   |   |   max_f_pkt < 73 : attack (257/0)
+|   |   |   max_f_pkt >= 73 : normal (2/0)
+|   min_f_time >= 2.24
+|   |   min_f_time < 3.6 : normal (7/0)
+|   |   min_f_time >= 3.6 : attack (6/0)
+std_f_pkt >= 26.48
+|   max_f_pkt < 176 : normal (4378/0)
+|   max_f_pkt >= 176 : attack (2027/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 139
+|   min_f_time < 2.51
+|   |   min_f_time < 0.41
+|   |   |   max_f_pkt < 49 : attack (3574/0)
+|   |   |   max_f_pkt >= 49
+|   |   |   |   min_f_time < 0
+|   |   |   |   |   max_f_pkt < 58
+|   |   |   |   |   |   max_f_pkt < 54 : attack (4/1)
+|   |   |   |   |   |   max_f_pkt >= 54 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 58 : attack (173/0)
+|   |   |   |   min_f_time >= 0
+|   |   |   |   |   max_f_pkt < 56 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 56 : attack (20/0)
+|   |   min_f_time >= 0.41
+|   |   |   max_f_pkt < 73 : attack (257/0)
+|   |   |   max_f_pkt >= 73 : normal (2/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 56 : normal (7/0)
+|   |   max_f_pkt >= 56 : attack (3/0)
+max_f_pkt >= 139
+|   std_f_pkt < 36.78 : normal (4378/0)
+|   std_f_pkt >= 36.78 : attack (2018/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3509/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 54
+|   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   min_f_time < 0 : attack (6/1)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 54 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (459/0)
+|   min_f_time >= 2.51 : normal (7/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   psh_f_cnt < 3.5 : normal (4403/0)
+|   |   psh_f_cnt >= 3.5 : attack (9/0)
+|   std_f_pkt >= 36.86 : attack (2042/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   max_f_pkt < 49 : attack (3485/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   max_f_pkt < 55 : attack (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   psh_f_cnt >= -0.5 : attack (4/0)
+|   |   |   min_f_time >= 0 : normal (6/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 73 : attack (436/0)
+|   |   |   max_f_pkt >= 73
+|   |   |   |   std_f_pkt < 9 : normal (1/0)
+|   |   |   |   std_f_pkt >= 9 : attack (12/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.86 : normal (4480/0)
+|   std_f_pkt >= 36.86 : attack (2013/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3514/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 56
+|   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 50.5 : attack (5/1)
+|   |   |   max_f_pkt >= 56
+|   |   |   |   max_f_pkt < 73 : attack (438/0)
+|   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   max_f_pkt < 86 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 86 : attack (12/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (3/0)
+|   |   max_f_pkt >= 58 : attack (5/0)
+std_f_pkt >= 26.48
+|   max_f_pkt < 176 : normal (4395/0)
+|   max_f_pkt >= 176 : attack (2065/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 169.5
+|   |   |   max_f_pkt < 47.5 : attack (3551/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   psh_f_cnt < -0.5 : normal (2/0)
+|   |   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   |   min_f_time < 0 : attack (6/0)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58 : attack (427/0)
+|   |   max_f_pkt >= 169.5 : normal (2/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (9/0)
+|   |   max_f_pkt >= 58 : attack (4/0)
+std_f_pkt >= 26.5
+|   max_f_pkt < 176 : normal (4432/0)
+|   max_f_pkt >= 176 : attack (2005/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94
+|   min_f_time < 2.51
+|   |   max_f_pkt < 73
+|   |   |   max_f_pkt < 47.5 : attack (3491/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 56
+|   |   |   |   |   max_f_pkt < 50.5 : normal (3/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   min_f_time < 0 : attack (3/1)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 56 : attack (400/0)
+|   |   max_f_pkt >= 73 : normal (4/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 65.5
+|   |   |   min_f_time < 3.63 : normal (1/0)
+|   |   |   min_f_time >= 3.63 : attack (1/0)
+|   |   max_f_pkt >= 65.5 : normal (2/0)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 56 : normal (5/0)
+|   |   |   max_f_pkt >= 56 : attack (27/0)
+|   |   max_f_pkt >= 139.5 : normal (4456/0)
+|   std_f_pkt >= 36.78 : attack (2045/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51 : attack (3987/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 56 : normal (7/0)
+|   |   max_f_pkt >= 56 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4394/0)
+|   |   psh_f_cnt >= 3.5 : attack (14/0)
+|   std_f_pkt >= 36.78 : attack (2035/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   max_f_pkt < 47.5 : attack (3434/0)
+|   max_f_pkt >= 47.5
+|   |   min_f_time < 0.01
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 56
+|   |   |   |   |   psh_f_cnt < -0.5 : normal (1/0)
+|   |   |   |   |   psh_f_cnt >= -0.5 : attack (9/3)
+|   |   |   |   max_f_pkt >= 56 : attack (171/0)
+|   |   |   min_f_time >= 0 : normal (1/0)
+|   |   min_f_time >= 0.01
+|   |   |   max_f_pkt < 56 : normal (1/0)
+|   |   |   max_f_pkt >= 56 : attack (272/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   max_f_pkt < 139
+|   |   |   max_f_pkt < 86 : normal (5/0)
+|   |   |   max_f_pkt >= 86 : attack (10/0)
+|   |   max_f_pkt >= 139 : normal (4460/0)
+|   std_f_pkt >= 36.86 : attack (2075/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   max_f_pkt < 49 : attack (3605/0)
+|   max_f_pkt >= 49
+|   |   min_f_time < 2.51
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   max_f_pkt < 53
+|   |   |   |   |   |   min_f_time < 0 : attack (1/0)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (478/0)
+|   |   min_f_time >= 2.51
+|   |   |   max_f_pkt < 58 : normal (9/0)
+|   |   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4322/0)
+|   |   psh_f_cnt >= 3.5 : attack (4/0)
+|   max_f_pkt >= 176 : attack (2014/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   min_f_time < 2.24
+|   |   max_f_pkt < 73
+|   |   |   max_f_pkt < 55 : attack (3500/0)
+|   |   |   max_f_pkt >= 55
+|   |   |   |   max_f_pkt < 58 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58 : attack (453/0)
+|   |   max_f_pkt >= 73
+|   |   |   std_f_pkt < 9 : normal (4/0)
+|   |   |   std_f_pkt >= 9 : attack (11/0)
+|   min_f_time >= 2.24
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 65.5 : attack (1/0)
+|   |   |   max_f_pkt >= 65.5 : normal (3/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4410/0)
+|   std_f_pkt >= 36.78 : attack (2049/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   max_f_pkt < 47.5 : attack (3515/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 50.5 : normal (2/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 54 : attack (4/0)
+|   |   |   |   |   max_f_pkt >= 54 : normal (1/0)
+|   |   |   min_f_time >= 0 : normal (11/0)
+|   |   max_f_pkt >= 58
+|   |   |   psh_f_cnt < -0.5
+|   |   |   |   max_f_pkt < 69.5 : attack (111/0)
+|   |   |   |   max_f_pkt >= 69.5 : normal (6/0)
+|   |   |   psh_f_cnt >= -0.5 : attack (374/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4384/0)
+|   std_f_pkt >= 36.78 : attack (2031/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3494/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 56 : normal (4/0)
+|   |   |   max_f_pkt >= 56 : attack (456/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (3/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   psh_f_cnt < 3.5 : normal (4431/0)
+|   |   psh_f_cnt >= 3.5 : attack (11/0)
+|   std_f_pkt >= 36.86 : attack (2038/0)
+
+Size of the tree : 15
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3504/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 50.5 : normal (2/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 55 : attack (4/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (482/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 56 : normal (7/0)
+|   |   max_f_pkt >= 56
+|   |   |   max_f_pkt < 65.5 : attack (4/0)
+|   |   |   max_f_pkt >= 65.5 : normal (1/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.86 : normal (4444/0)
+|   std_f_pkt >= 36.86 : attack (1988/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   min_f_time < 2.24
+|   |   min_f_time < 0.41
+|   |   |   max_f_pkt < 49 : attack (3465/0)
+|   |   |   max_f_pkt >= 49
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   |   max_f_pkt < 53 : attack (3/1)
+|   |   |   |   |   |   |   max_f_pkt >= 53 : attack (2/0)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   max_f_pkt >= 58
+|   |   |   |   |   max_f_pkt < 170 : attack (179/0)
+|   |   |   |   |   max_f_pkt >= 170 : normal (1/0)
+|   |   min_f_time >= 0.41
+|   |   |   max_f_pkt < 73 : attack (256/0)
+|   |   |   max_f_pkt >= 73 : normal (5/0)
+|   min_f_time >= 2.24
+|   |   max_f_pkt < 58 : normal (6/0)
+|   |   max_f_pkt >= 58
+|   |   |   psh_f_cnt < -0.5 : normal (2/0)
+|   |   |   psh_f_cnt >= -0.5 : attack (2/0)
+std_f_pkt >= 26.48
+|   max_f_pkt < 176 : normal (4480/0)
+|   max_f_pkt >= 176 : attack (2035/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3554/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 54
+|   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 50.5 : attack (4/1)
+|   |   |   |   max_f_pkt >= 54 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (443/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (4/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4405/0)
+|   |   psh_f_cnt >= 3.5 : attack (6/0)
+|   std_f_pkt >= 36.78 : attack (2018/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   max_f_pkt < 47.5 : attack (1783/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   max_f_pkt < 53
+|   |   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   |   max_f_pkt >= 50.5 : normal (7/3)
+|   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (3/0)
+|   |   |   |   max_f_pkt >= 58 : attack (145/0)
+|   |   min_f_time >= 0 : attack (1995/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (10/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 65.5 : attack (2/0)
+|   |   |   max_f_pkt >= 65.5 : normal (1/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4483/0)
+|   std_f_pkt >= 36.78 : attack (2008/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 139
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3514/0)
+|   |   max_f_pkt >= 49
+|   |   |   min_f_time < 0.86
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   max_f_pkt < 53
+|   |   |   |   |   |   |   min_f_time < 0 : attack (6/0)
+|   |   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58
+|   |   |   |   |   max_f_pkt < 73 : attack (188/0)
+|   |   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   |   max_f_pkt < 89 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 89 : attack (8/0)
+|   |   |   min_f_time >= 0.86 : attack (264/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (4/0)
+max_f_pkt >= 139
+|   std_f_pkt < 36.86 : normal (4337/0)
+|   std_f_pkt >= 36.86 : attack (2109/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3471/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 56
+|   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   min_f_time < 0 : normal (2/1)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   max_f_pkt >= 56 : attack (428/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (6/0)
+|   |   max_f_pkt >= 58 : attack (5/0)
+max_f_pkt >= 69.5
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4444/0)
+|   |   psh_f_cnt >= 3.5 : attack (10/0)
+|   max_f_pkt >= 176 : attack (2071/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   min_f_time < 2.24
+|   |   min_f_time < 0.41
+|   |   |   max_f_pkt < 47.5 : attack (3454/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 53
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 50.5 : attack (3/0)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 53 : attack (162/0)
+|   |   min_f_time >= 0.41
+|   |   |   max_f_pkt < 73 : attack (264/0)
+|   |   |   max_f_pkt >= 73 : normal (4/0)
+|   min_f_time >= 2.24
+|   |   min_f_time < 3.6 : normal (9/0)
+|   |   min_f_time >= 3.6
+|   |   |   min_f_time < 7.12 : attack (6/0)
+|   |   |   min_f_time >= 7.12 : normal (2/0)
+std_f_pkt >= 26.5
+|   max_f_pkt < 176 : normal (4512/0)
+|   max_f_pkt >= 176 : attack (2021/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   max_f_pkt < 47.5 : attack (1875/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 50.5 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   |   |   max_f_pkt < 53 : attack (3/1)
+|   |   |   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58 : attack (152/0)
+|   |   min_f_time >= 0 : attack (1880/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (13/0)
+|   |   max_f_pkt >= 58 : attack (1/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4427/0)
+|   |   psh_f_cnt >= 3.5 : attack (11/0)
+|   std_f_pkt >= 36.78 : attack (2072/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3510/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   psh_f_cnt < -0.5 : normal (6/0)
+|   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   min_f_time < 0 : attack (5/1)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   max_f_pkt >= 58 : attack (424/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : attack (1/0)
+max_f_pkt >= 69.5
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4507/0)
+|   |   psh_f_cnt >= 3.5 : attack (11/0)
+|   max_f_pkt >= 176
+|   |   psh_f_cnt < 0 : normal (1/0)
+|   |   psh_f_cnt >= 0 : attack (1971/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3594/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 56
+|   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 50.5 : attack (11/1)
+|   |   |   max_f_pkt >= 56 : attack (444/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (1/0)
+|   |   min_f_time >= 3.6 : attack (4/0)
+max_f_pkt >= 73
+|   std_f_pkt < 37.02
+|   |   psh_f_cnt < 3.5 : normal (4376/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   std_f_pkt >= 37.02 : attack (2000/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3450/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 58
+|   |   |   |   psh_f_cnt < -0.5 : normal (2/0)
+|   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   min_f_time < 0 : normal (4/2)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   max_f_pkt >= 58 : attack (453/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (9/0)
+|   |   min_f_time >= 3.6 : attack (3/0)
+max_f_pkt >= 73
+|   std_f_pkt < 36.86
+|   |   psh_f_cnt < 3.5 : normal (4447/0)
+|   |   psh_f_cnt >= 3.5 : attack (12/0)
+|   std_f_pkt >= 36.86 : attack (2058/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3485/0)
+|   |   max_f_pkt >= 49
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 54 : attack (3/1)
+|   |   |   |   |   |   max_f_pkt >= 54 : normal (2/0)
+|   |   |   |   |   min_f_time >= 0 : normal (3/0)
+|   |   |   |   max_f_pkt >= 58 : attack (169/0)
+|   |   |   min_f_time >= 0 : attack (298/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (10/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 65.5 : attack (3/0)
+|   |   |   max_f_pkt >= 65.5 : normal (1/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.86 : normal (4407/0)
+|   std_f_pkt >= 36.86 : attack (2058/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   max_f_pkt < 47.5 : attack (3449/0)
+|   max_f_pkt >= 47.5
+|   |   min_f_time < 2.51
+|   |   |   max_f_pkt < 58
+|   |   |   |   psh_f_cnt < -0.5 : normal (3/0)
+|   |   |   |   psh_f_cnt >= -0.5 : attack (3/0)
+|   |   |   max_f_pkt >= 58 : attack (485/0)
+|   |   min_f_time >= 2.51
+|   |   |   max_f_pkt < 58 : normal (4/0)
+|   |   |   max_f_pkt >= 58 : attack (5/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 37.02
+|   |   psh_f_cnt < 3.5 : normal (4509/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   std_f_pkt >= 37.02 : attack (1973/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3515/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 56
+|   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   min_f_time < 0 : attack (6/0)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   max_f_pkt >= 56
+|   |   |   |   max_f_pkt < 73 : attack (462/0)
+|   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   max_f_pkt < 86 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 86 : attack (14/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (6/0)
+|   |   min_f_time >= 3.6 : attack (3/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4368/0)
+|   std_f_pkt >= 36.78 : attack (2061/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3485/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   min_f_time < 0.01
+|   |   |   |   max_f_pkt < 50.5 : normal (3/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 53 : attack (6/1)
+|   |   |   |   |   max_f_pkt >= 53 : attack (151/0)
+|   |   |   min_f_time >= 0.01 : attack (267/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (4/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 88 : normal (4/0)
+|   |   |   max_f_pkt >= 88 : attack (9/0)
+|   |   max_f_pkt >= 139.5 : normal (4449/0)
+|   std_f_pkt >= 36.78 : attack (2059/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   max_f_pkt < 47.5 : attack (3509/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   psh_f_cnt < -0.5 : normal (3/0)
+|   |   |   psh_f_cnt >= -0.5
+|   |   |   |   min_f_time < 1.5 : attack (2/0)
+|   |   |   |   min_f_time >= 1.5 : normal (2/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 73 : attack (473/0)
+|   |   |   max_f_pkt >= 73
+|   |   |   |   std_f_pkt < 12.27 : normal (3/0)
+|   |   |   |   std_f_pkt >= 12.27 : attack (7/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4425/0)
+|   std_f_pkt >= 36.78 : attack (2015/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   psh_f_cnt < -0.5
+|   |   |   |   max_f_pkt < 51.5
+|   |   |   |   |   max_f_pkt < 47.5 : attack (7/0)
+|   |   |   |   |   max_f_pkt >= 47.5 : normal (2/0)
+|   |   |   |   max_f_pkt >= 51.5 : attack (121/0)
+|   |   |   psh_f_cnt >= -0.5
+|   |   |   |   max_f_pkt < 49 : attack (1774/0)
+|   |   |   |   max_f_pkt >= 49
+|   |   |   |   |   max_f_pkt < 56 : attack (9/1)
+|   |   |   |   |   max_f_pkt >= 56 : attack (56/0)
+|   |   min_f_time >= 0 : attack (2016/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.61 : normal (4/0)
+|   |   min_f_time >= 3.61 : attack (4/0)
+max_f_pkt >= 73
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4398/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   std_f_pkt >= 36.78 : attack (2040/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3589/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 50.5 : normal (2/0)
+|   |   |   max_f_pkt >= 50.5 : attack (474/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (5/0)
+|   |   min_f_time >= 3.6 : attack (4/0)
+max_f_pkt >= 73
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4314/0)
+|   |   psh_f_cnt >= 3.5 : attack (10/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 22.82 : normal (3/0)
+|   |   std_f_pkt >= 22.82 : attack (2038/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 49 : attack (1909/0)
+|   |   |   |   max_f_pkt >= 49
+|   |   |   |   |   max_f_pkt < 58
+|   |   |   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   |   |   max_f_pkt < 55 : attack (1/0)
+|   |   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (4/1)
+|   |   |   |   |   max_f_pkt >= 58 : attack (174/0)
+|   |   |   min_f_time >= 0
+|   |   |   |   psh_f_cnt < -0.5 : attack (7/0)
+|   |   |   |   psh_f_cnt >= -0.5 : normal (3/0)
+|   |   min_f_time >= 0 : attack (1898/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58 : attack (1/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4391/0)
+|   |   psh_f_cnt >= 3.5 : attack (12/0)
+|   std_f_pkt >= 36.78 : attack (2031/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3475/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 53
+|   |   |   |   psh_f_cnt < -0.5 : normal (2/0)
+|   |   |   |   psh_f_cnt >= -0.5 : attack (10/2)
+|   |   |   max_f_pkt >= 53 : attack (447/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : attack (4/0)
+max_f_pkt >= 139.5
+|   max_f_pkt < 176 : normal (4475/0)
+|   max_f_pkt >= 176 : attack (2024/0)
+
+Size of the tree : 15
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   max_f_pkt < 47.5 : attack (3547/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 55 : attack (4/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   min_f_time >= 0 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (458/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 88 : normal (3/0)
+|   |   |   max_f_pkt >= 88 : attack (11/0)
+|   |   max_f_pkt >= 139.5 : normal (4413/0)
+|   std_f_pkt >= 36.86 : attack (1996/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 47.5 : attack (1842/0)
+|   |   |   |   max_f_pkt >= 47.5
+|   |   |   |   |   max_f_pkt < 58
+|   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   |   |   max_f_pkt < 53 : attack (5/1)
+|   |   |   |   |   |   |   |   max_f_pkt >= 53 : attack (2/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 58 : attack (155/0)
+|   |   |   min_f_time >= 0
+|   |   |   |   max_f_pkt < 49 : attack (5/0)
+|   |   |   |   max_f_pkt >= 49 : normal (2/0)
+|   |   min_f_time >= 0 : attack (2020/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (4/0)
+|   |   max_f_pkt >= 58 : attack (1/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4350/0)
+|   |   psh_f_cnt >= 3.5 : attack (13/0)
+|   std_f_pkt >= 36.78 : attack (2037/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3485/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 50.5 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   max_f_pkt < 53
+|   |   |   |   |   |   |   |   min_f_time < 0 : attack (10/0)
+|   |   |   |   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58 : attack (172/0)
+|   |   |   min_f_time >= 0 : attack (294/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 73
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 88 : normal (1/0)
+|   |   |   max_f_pkt >= 88 : attack (4/0)
+|   |   max_f_pkt >= 139.5 : normal (4384/0)
+|   std_f_pkt >= 36.78 : attack (2076/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   max_f_pkt < 69.5
+|   |   min_f_time < 2.51
+|   |   |   max_f_pkt < 47.5 : attack (3463/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 53
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   psh_f_cnt < -0.5 : normal (1/0)
+|   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (7/1)
+|   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   |   max_f_pkt >= 53 : attack (497/0)
+|   |   min_f_time >= 2.51 : normal (2/0)
+|   max_f_pkt >= 69.5
+|   |   std_f_pkt < 9.61 : normal (8/0)
+|   |   std_f_pkt >= 9.61 : attack (9/0)
+std_f_pkt >= 26.48
+|   max_f_pkt < 176 : normal (4392/0)
+|   max_f_pkt >= 176 : attack (2058/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3542/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 53
+|   |   |   |   max_f_pkt < 50.5 : normal (4/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   min_f_time < 0 : attack (1/0)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   max_f_pkt >= 53
+|   |   |   |   max_f_pkt < 73 : attack (429/0)
+|   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   max_f_pkt < 86 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 86 : attack (10/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 56 : normal (6/0)
+|   |   max_f_pkt >= 56
+|   |   |   max_f_pkt < 65.5 : attack (4/0)
+|   |   |   max_f_pkt >= 65.5 : normal (1/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4395/0)
+|   std_f_pkt >= 36.78 : attack (2045/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   max_f_pkt < 49 : attack (1806/0)
+|   |   |   max_f_pkt >= 49
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   max_f_pkt < 53
+|   |   |   |   |   |   |   min_f_time < 0 : attack (7/1)
+|   |   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 53 : attack (2/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (3/0)
+|   |   |   |   max_f_pkt >= 58 : attack (174/0)
+|   |   min_f_time >= 0 : attack (1965/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (6/0)
+max_f_pkt >= 73
+|   max_f_pkt < 176
+|   |   max_f_pkt < 139
+|   |   |   max_f_pkt < 89 : normal (4/0)
+|   |   |   max_f_pkt >= 89 : attack (10/0)
+|   |   max_f_pkt >= 139 : normal (4400/0)
+|   max_f_pkt >= 176 : attack (2056/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 139
+|   max_f_pkt < 47.5 : attack (3567/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 53
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 50.5 : normal (5/2)
+|   |   |   min_f_time >= 0 : normal (7/0)
+|   |   max_f_pkt >= 53
+|   |   |   max_f_pkt < 73 : attack (443/0)
+|   |   |   max_f_pkt >= 73
+|   |   |   |   std_f_pkt < 9 : normal (1/0)
+|   |   |   |   std_f_pkt >= 9 : attack (11/0)
+max_f_pkt >= 139
+|   std_f_pkt < 36.78 : normal (4353/0)
+|   std_f_pkt >= 36.78 : attack (2051/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   max_f_pkt < 47.5 : attack (3608/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   psh_f_cnt < -0.5 : normal (5/0)
+|   |   |   |   psh_f_cnt >= -0.5 : attack (6/2)
+|   |   |   min_f_time >= 0 : normal (10/0)
+|   |   max_f_pkt >= 58
+|   |   |   psh_f_cnt < -0.5
+|   |   |   |   min_f_time < 0.37 : attack (121/0)
+|   |   |   |   min_f_time >= 0.37
+|   |   |   |   |   min_f_time < 0.86 : normal (2/0)
+|   |   |   |   |   min_f_time >= 0.86 : attack (3/0)
+|   |   |   psh_f_cnt >= -0.5 : attack (322/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4273/0)
+|   std_f_pkt >= 36.78 : attack (2089/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   min_f_time < 2.24
+|   |   max_f_pkt < 73
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 49 : attack (1785/0)
+|   |   |   |   max_f_pkt >= 49
+|   |   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   |   max_f_pkt < 62
+|   |   |   |   |   |   |   max_f_pkt < 55 : attack (4/0)
+|   |   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 62 : attack (114/0)
+|   |   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   |   max_f_pkt < 56 : attack (8/2)
+|   |   |   |   |   |   max_f_pkt >= 56 : attack (54/0)
+|   |   |   min_f_time >= 0 : attack (2003/0)
+|   |   max_f_pkt >= 73
+|   |   |   psh_f_cnt < 2.5 : normal (5/0)
+|   |   |   psh_f_cnt >= 2.5 : attack (9/0)
+|   min_f_time >= 2.24
+|   |   min_f_time < 3.6 : normal (6/0)
+|   |   min_f_time >= 3.6
+|   |   |   min_f_time < 7.1 : attack (2/0)
+|   |   |   min_f_time >= 7.1 : normal (1/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4369/0)
+|   std_f_pkt >= 36.78 : attack (2078/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   max_f_pkt < 47.5 : attack (3435/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 1.5
+|   |   |   |   max_f_pkt < 50.5 : normal (3/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   psh_f_cnt < -0.5 : attack (1/0)
+|   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (6/1)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   min_f_time >= 1.5 : normal (7/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 69.5 : attack (458/0)
+|   |   |   max_f_pkt >= 69.5
+|   |   |   |   max_f_pkt < 86 : normal (2/0)
+|   |   |   |   max_f_pkt >= 86 : attack (18/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4467/0)
+|   std_f_pkt >= 36.78 : attack (2041/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   psh_f_cnt < -0.5
+|   |   |   min_f_time < 0.39
+|   |   |   |   max_f_pkt < 47.5 : attack (1636/0)
+|   |   |   |   max_f_pkt >= 47.5
+|   |   |   |   |   max_f_pkt < 51.5 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 51.5 : attack (124/0)
+|   |   |   min_f_time >= 0.39
+|   |   |   |   max_f_pkt < 73 : attack (4/0)
+|   |   |   |   max_f_pkt >= 73 : normal (2/0)
+|   |   psh_f_cnt >= -0.5 : attack (2224/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (8/0)
+|   |   max_f_pkt >= 58 : attack (1/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4416/0)
+|   std_f_pkt >= 36.78 : attack (2022/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   max_f_pkt < 49 : attack (1722/0)
+|   |   |   max_f_pkt >= 49
+|   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   max_f_pkt < 62
+|   |   |   |   |   |   max_f_pkt < 55 : attack (1/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 62 : attack (98/0)
+|   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   max_f_pkt < 56 : attack (5/1)
+|   |   |   |   |   max_f_pkt >= 56 : attack (42/0)
+|   |   min_f_time >= 0 : attack (2024/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58 : attack (5/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 86 : normal (4/0)
+|   |   |   max_f_pkt >= 86 : attack (13/0)
+|   |   max_f_pkt >= 139.5 : normal (4422/0)
+|   std_f_pkt >= 36.78 : attack (2095/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3484/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   min_f_time < 0
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   |   max_f_pkt < 53 : attack (6/1)
+|   |   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (436/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4433/0)
+|   |   psh_f_cnt >= 3.5 : attack (11/0)
+|   std_f_pkt >= 36.78 : attack (2056/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   min_f_time < 2.51
+|   |   min_f_time < 0.41
+|   |   |   max_f_pkt < 47.5 : attack (3490/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   |   max_f_pkt < 53
+|   |   |   |   |   |   |   |   min_f_time < 0 : attack (5/1)
+|   |   |   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   |   |   |   max_f_pkt >= 53 : attack (2/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   max_f_pkt >= 58
+|   |   |   |   |   max_f_pkt < 169.5 : attack (214/0)
+|   |   |   |   |   max_f_pkt >= 169.5 : normal (1/0)
+|   |   min_f_time >= 0.41
+|   |   |   max_f_pkt < 73 : attack (284/0)
+|   |   |   max_f_pkt >= 73 : normal (3/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (5/0)
+|   |   min_f_time >= 3.6
+|   |   |   max_f_pkt < 65.5 : attack (3/0)
+|   |   |   max_f_pkt >= 65.5 : normal (2/0)
+std_f_pkt >= 26.17
+|   max_f_pkt < 176 : normal (4426/0)
+|   max_f_pkt >= 176 : attack (2000/0)
+
+Size of the tree : 29
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3469/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 53
+|   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 50.5 : attack (6/1)
+|   |   |   |   max_f_pkt >= 53 : attack (169/0)
+|   |   |   min_f_time >= 0 : attack (298/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (3/0)
+|   |   min_f_time >= 3.6 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4435/0)
+|   |   psh_f_cnt >= 3.5 : attack (15/0)
+|   std_f_pkt >= 36.78 : attack (2041/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3501/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 58
+|   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   max_f_pkt < 55 : attack (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   psh_f_cnt >= -0.5 : normal (4/0)
+|   |   |   max_f_pkt >= 58
+|   |   |   |   max_f_pkt < 73 : attack (440/0)
+|   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   std_f_pkt < 9 : normal (1/0)
+|   |   |   |   |   std_f_pkt >= 9 : attack (5/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 139.5
+|   max_f_pkt < 176 : normal (4467/0)
+|   max_f_pkt >= 176
+|   |   psh_f_cnt < 0 : normal (4/0)
+|   |   psh_f_cnt >= 0 : attack (2005/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3530/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   min_f_time < 0.01
+|   |   |   |   max_f_pkt < 56
+|   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   min_f_time < 0 : attack (2/0)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 56 : attack (167/0)
+|   |   |   min_f_time >= 0.01 : attack (283/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (6/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   psh_f_cnt < 3.5 : normal (4403/0)
+|   |   psh_f_cnt >= 3.5 : attack (16/0)
+|   std_f_pkt >= 36.86 : attack (2028/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   max_f_pkt < 49 : attack (3469/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   max_f_pkt < 53 : attack (4/1)
+|   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   max_f_pkt >= 55 : normal (3/0)
+|   |   |   min_f_time >= 0 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (457/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 88 : normal (2/0)
+|   |   |   max_f_pkt >= 88 : attack (8/0)
+|   |   max_f_pkt >= 139.5 : normal (4454/0)
+|   std_f_pkt >= 36.86 : attack (2036/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : attack (3486/0)
+|   max_f_pkt >= 47.5
+|   |   min_f_time < 2.51
+|   |   |   min_f_time < 0
+|   |   |   |   min_f_time < 0
+|   |   |   |   |   max_f_pkt < 58
+|   |   |   |   |   |   psh_f_cnt < -0.5 : normal (3/0)
+|   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (3/1)
+|   |   |   |   |   max_f_pkt >= 58 : attack (172/0)
+|   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   min_f_time >= 0 : attack (306/0)
+|   |   min_f_time >= 2.51
+|   |   |   min_f_time < 3.6 : normal (8/0)
+|   |   |   min_f_time >= 3.6 : attack (2/0)
+max_f_pkt >= 73
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4388/0)
+|   |   psh_f_cnt >= 3.5 : attack (7/0)
+|   std_f_pkt >= 36.78 : attack (2062/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3511/0)
+|   |   max_f_pkt >= 49
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   psh_f_cnt < -0.5 : attack (1/0)
+|   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (7/2)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58 : attack (165/0)
+|   |   |   min_f_time >= 0 : attack (278/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (4/0)
+|   |   max_f_pkt >= 58 : attack (4/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4415/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   std_f_pkt >= 36.78 : attack (2045/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   max_f_pkt < 47.5 : attack (3456/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 1.5
+|   |   |   |   max_f_pkt < 50.5 : normal (4/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 55 : attack (7/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   min_f_time >= 1.5 : normal (8/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 69.5 : attack (446/0)
+|   |   |   max_f_pkt >= 69.5
+|   |   |   |   max_f_pkt < 86 : normal (9/0)
+|   |   |   |   max_f_pkt >= 86 : attack (8/0)
+std_f_pkt >= 26.17
+|   max_f_pkt < 176 : normal (4439/0)
+|   max_f_pkt >= 176 : attack (2060/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3435/0)
+|   |   max_f_pkt >= 49
+|   |   |   min_f_time < 0
+|   |   |   |   psh_f_cnt < -0.5 : attack (110/0)
+|   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   max_f_pkt < 56 : attack (11/4)
+|   |   |   |   |   max_f_pkt >= 56 : attack (49/0)
+|   |   |   min_f_time >= 0 : attack (259/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (8/0)
+|   |   max_f_pkt >= 58 : attack (1/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   max_f_pkt < 139.5
+|   |   |   std_f_pkt < 9 : normal (4/0)
+|   |   |   std_f_pkt >= 9 : attack (12/0)
+|   |   max_f_pkt >= 139.5 : normal (4493/0)
+|   std_f_pkt >= 36.86 : attack (2057/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3490/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   max_f_pkt < 53 : attack (4/1)
+|   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   max_f_pkt >= 55 : normal (3/0)
+|   |   |   max_f_pkt >= 58 : attack (447/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (6/0)
+|   |   max_f_pkt >= 58 : attack (6/0)
+max_f_pkt >= 69.5
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4494/0)
+|   |   psh_f_cnt >= 3.5 : attack (10/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 22.82 : normal (2/0)
+|   |   std_f_pkt >= 22.82 : attack (1975/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3530/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 58
+|   |   |   |   min_f_time < 0
+|   |   |   |   |   max_f_pkt < 55 : attack (6/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (431/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (4/0)
+|   |   max_f_pkt >= 58 : attack (5/0)
+max_f_pkt >= 73
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4385/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   std_f_pkt >= 36.78 : attack (2067/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   max_f_pkt < 47.5 : attack (3523/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   psh_f_cnt < -0.5 : attack (1/0)
+|   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (13/4)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   min_f_time >= 0 : normal (3/0)
+|   |   max_f_pkt >= 58
+|   |   |   psh_f_cnt < -0.5
+|   |   |   |   max_f_pkt < 73 : attack (115/0)
+|   |   |   |   max_f_pkt >= 73 : normal (1/0)
+|   |   |   psh_f_cnt >= -0.5 : attack (322/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.86 : normal (4400/0)
+|   std_f_pkt >= 36.86 : attack (2059/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   min_f_time < 0
+|   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   max_f_pkt < 58.5
+|   |   |   |   |   |   max_f_pkt < 47.5 : attack (88/0)
+|   |   |   |   |   |   max_f_pkt >= 47.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 58.5 : attack (116/0)
+|   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 49 : attack (1754/0)
+|   |   |   |   |   |   max_f_pkt >= 49
+|   |   |   |   |   |   |   max_f_pkt < 56 : normal (2/1)
+|   |   |   |   |   |   |   max_f_pkt >= 56 : attack (37/0)
+|   |   |   |   |   min_f_time >= 0 : attack (12/0)
+|   |   |   min_f_time >= 0
+|   |   |   |   psh_f_cnt < -0.5 : attack (6/0)
+|   |   |   |   psh_f_cnt >= -0.5 : normal (1/0)
+|   |   min_f_time >= 0 : attack (1888/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (1/0)
+max_f_pkt >= 69.5
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4437/0)
+|   |   psh_f_cnt >= 3.5 : attack (7/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 20.82 : normal (2/0)
+|   |   std_f_pkt >= 20.82 : attack (2082/0)
+
+Size of the tree : 31
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3521/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 53
+|   |   |   |   |   psh_f_cnt < -0.5 : normal (2/0)
+|   |   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   |   min_f_time < 0 : attack (3/1)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 53 : attack (175/0)
+|   |   |   min_f_time >= 0 : attack (291/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (8/0)
+|   |   min_f_time >= 3.6
+|   |   |   max_f_pkt < 65.5 : attack (3/0)
+|   |   |   max_f_pkt >= 65.5 : normal (1/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4432/0)
+|   std_f_pkt >= 36.78 : attack (2002/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 47.5 : attack (1839/0)
+|   |   |   |   max_f_pkt >= 47.5
+|   |   |   |   |   max_f_pkt < 58
+|   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   |   psh_f_cnt < -0.5 : attack (2/0)
+|   |   |   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (5/1)
+|   |   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 58 : attack (178/0)
+|   |   |   min_f_time >= 0
+|   |   |   |   max_f_pkt < 49 : attack (3/0)
+|   |   |   |   max_f_pkt >= 49 : normal (4/0)
+|   |   min_f_time >= 0 : attack (1927/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (4/0)
+|   |   max_f_pkt >= 58 : attack (10/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4458/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   std_f_pkt >= 36.78 : attack (1999/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94
+|   min_f_time < 2.51
+|   |   psh_f_cnt < -0.5
+|   |   |   max_f_pkt < 73
+|   |   |   |   max_f_pkt < 47.5 : attack (1792/0)
+|   |   |   |   max_f_pkt >= 47.5
+|   |   |   |   |   min_f_time < 1
+|   |   |   |   |   |   max_f_pkt < 58.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 58.5 : attack (110/0)
+|   |   |   |   |   min_f_time >= 1 : attack (2/0)
+|   |   |   max_f_pkt >= 73 : normal (3/0)
+|   |   psh_f_cnt >= -0.5 : attack (2123/0)
+|   min_f_time >= 2.51 : normal (4/0)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.5
+|   |   |   max_f_pkt < 56 : normal (6/0)
+|   |   |   max_f_pkt >= 56
+|   |   |   |   max_f_pkt < 173.5 : attack (23/0)
+|   |   |   |   max_f_pkt >= 173.5 : normal (1/0)
+|   |   std_f_pkt >= 26.5 : normal (4331/0)
+|   std_f_pkt >= 36.78 : attack (2043/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3527/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 56
+|   |   |   |   min_f_time < 0 : attack (4/0)
+|   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   max_f_pkt >= 56 : attack (449/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.61 : normal (3/0)
+|   |   min_f_time >= 3.61 : attack (2/0)
+max_f_pkt >= 73
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4443/0)
+|   |   psh_f_cnt >= 3.5 : attack (7/0)
+|   std_f_pkt >= 36.78 : attack (2003/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   max_f_pkt < 47.5 : attack (1776/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   |   max_f_pkt < 51.5 : normal (2/0)
+|   |   |   |   |   |   max_f_pkt >= 51.5
+|   |   |   |   |   |   |   max_f_pkt < 55 : attack (1/0)
+|   |   |   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   |   min_f_time < 0 : attack (11/2)
+|   |   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   |   max_f_pkt >= 58 : attack (161/0)
+|   |   min_f_time >= 0
+|   |   |   max_f_pkt < 73 : attack (1931/0)
+|   |   |   max_f_pkt >= 73
+|   |   |   |   max_f_pkt < 86 : normal (1/0)
+|   |   |   |   max_f_pkt >= 86 : attack (5/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (6/0)
+max_f_pkt >= 139.5
+|   max_f_pkt < 176 : normal (4448/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 22.89 : normal (4/0)
+|   |   std_f_pkt >= 22.89 : attack (2084/0)
+
+Size of the tree : 29
+
+
+RandomTree
+==========
+
+std_f_pkt < 25.74
+|   min_f_time < 2.24
+|   |   max_f_pkt < 73 : attack (4131/0)
+|   |   max_f_pkt >= 73
+|   |   |   psh_f_cnt < 2.5 : normal (5/0)
+|   |   |   psh_f_cnt >= 2.5 : attack (7/0)
+|   min_f_time >= 2.24
+|   |   min_f_time < 3.6 : normal (4/0)
+|   |   min_f_time >= 3.6 : attack (3/0)
+std_f_pkt >= 25.74
+|   max_f_pkt < 176 : normal (4352/0)
+|   max_f_pkt >= 176 : attack (1937/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   max_f_pkt < 47.5 : attack (3483/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   |   max_f_pkt < 51.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 51.5 : attack (1/0)
+|   |   |   |   |   psh_f_cnt >= -0.5 : attack (9/2)
+|   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   min_f_time >= 0 : normal (5/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 69.5 : attack (399/0)
+|   |   |   max_f_pkt >= 69.5
+|   |   |   |   std_f_pkt < 11 : normal (5/0)
+|   |   |   |   std_f_pkt >= 11 : attack (12/0)
+std_f_pkt >= 26.5
+|   max_f_pkt < 176 : normal (4539/0)
+|   max_f_pkt >= 176 : attack (1983/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3533/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 53 : attack (3/1)
+|   |   |   max_f_pkt >= 53 : attack (454/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (4/0)
+|   |   max_f_pkt >= 58 : attack (4/0)
+max_f_pkt >= 69.5
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4352/0)
+|   |   psh_f_cnt >= 3.5 : attack (11/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 20.82 : normal (1/0)
+|   |   std_f_pkt >= 20.82 : attack (2077/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3513/0)
+|   |   max_f_pkt >= 49
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 54 : attack (3/1)
+|   |   |   |   |   |   max_f_pkt >= 54 : normal (1/0)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58 : attack (162/0)
+|   |   |   min_f_time >= 0 : attack (279/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58
+|   |   |   min_f_time < 7.12 : attack (2/0)
+|   |   |   min_f_time >= 7.12 : normal (1/0)
+max_f_pkt >= 139.5
+|   max_f_pkt < 176 : normal (4376/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 22.9 : normal (2/0)
+|   |   std_f_pkt >= 22.9 : attack (2092/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3560/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   min_f_time < 0 : attack (4/0)
+|   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (454/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58 : attack (3/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   psh_f_cnt < 3.5 : normal (4365/0)
+|   |   psh_f_cnt >= 3.5 : attack (9/0)
+|   std_f_pkt >= 36.86 : attack (2033/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3465/0)
+|   |   max_f_pkt >= 49
+|   |   |   min_f_time < 0.87
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   |   max_f_pkt < 55 : attack (1/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   psh_f_cnt >= -0.5 : attack (3/1)
+|   |   |   |   max_f_pkt >= 58
+|   |   |   |   |   max_f_pkt < 73 : attack (179/0)
+|   |   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   |   max_f_pkt < 88 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 88 : attack (17/0)
+|   |   |   min_f_time >= 0.87 : attack (297/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (7/0)
+|   |   min_f_time >= 3.6
+|   |   |   max_f_pkt < 65.5 : attack (3/0)
+|   |   |   max_f_pkt >= 65.5 : normal (2/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4401/0)
+|   std_f_pkt >= 36.78 : attack (2062/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51 : attack (4000/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (4/0)
+|   |   max_f_pkt >= 58 : attack (1/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   max_f_pkt < 139.5
+|   |   |   std_f_pkt < 9 : normal (4/0)
+|   |   |   std_f_pkt >= 9 : attack (7/0)
+|   |   max_f_pkt >= 139.5 : normal (4357/0)
+|   std_f_pkt >= 36.86 : attack (2066/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   max_f_pkt < 47.5 : attack (3521/0)
+|   max_f_pkt >= 47.5
+|   |   min_f_time < 2.51
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   max_f_pkt < 53 : attack (6/2)
+|   |   |   |   |   |   max_f_pkt >= 53 : attack (3/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   max_f_pkt >= 58 : attack (450/0)
+|   |   min_f_time >= 2.51
+|   |   |   max_f_pkt < 58 : normal (5/0)
+|   |   |   max_f_pkt >= 58 : attack (4/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4431/0)
+|   |   psh_f_cnt >= 3.5 : attack (9/0)
+|   std_f_pkt >= 36.78 : attack (2008/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3605/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 56 : attack (3/1)
+|   |   |   max_f_pkt >= 56 : attack (454/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4419/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   std_f_pkt >= 36.78 : attack (1941/0)
+
+Size of the tree : 15
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3508/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 53
+|   |   |   |   psh_f_cnt < -0.5 : normal (1/0)
+|   |   |   |   psh_f_cnt >= -0.5 : attack (6/1)
+|   |   |   max_f_pkt >= 53 : attack (457/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (6/0)
+|   |   max_f_pkt >= 58 : attack (4/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4387/0)
+|   |   psh_f_cnt >= 3.5 : attack (11/0)
+|   std_f_pkt >= 36.78 : attack (2059/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   max_f_pkt < 47.5 : attack (3446/0)
+|   max_f_pkt >= 47.5
+|   |   min_f_time < 2.51
+|   |   |   max_f_pkt < 56
+|   |   |   |   max_f_pkt < 50.5 : normal (2/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   min_f_time < 0 : attack (6/2)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   max_f_pkt >= 56 : attack (452/0)
+|   |   min_f_time >= 2.51
+|   |   |   min_f_time < 3.61 : normal (3/0)
+|   |   |   min_f_time >= 3.61 : attack (1/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 86 : normal (3/0)
+|   |   |   max_f_pkt >= 86 : attack (11/0)
+|   |   max_f_pkt >= 139.5 : normal (4479/0)
+|   std_f_pkt >= 36.86 : attack (2035/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3432/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   min_f_time < 0 : attack (5/0)
+|   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   max_f_pkt >= 58
+|   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   max_f_pkt < 73 : attack (124/0)
+|   |   |   |   |   max_f_pkt >= 73 : normal (2/0)
+|   |   |   |   psh_f_cnt >= -0.5 : attack (361/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (7/0)
+|   |   min_f_time >= 3.6
+|   |   |   max_f_pkt < 65.5 : attack (5/0)
+|   |   |   max_f_pkt >= 65.5 : normal (1/0)
+std_f_pkt >= 26.5
+|   max_f_pkt < 176 : normal (4451/0)
+|   max_f_pkt >= 176 : attack (2047/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   max_f_pkt < 47.5 : attack (3528/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   max_f_pkt < 50.5 : normal (5/0)
+|   |   |   max_f_pkt >= 50.5
+|   |   |   |   min_f_time < 0
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   psh_f_cnt < -0.5 : attack (1/0)
+|   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (7/3)
+|   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   min_f_time >= 0 : normal (7/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 73 : attack (455/0)
+|   |   |   max_f_pkt >= 73
+|   |   |   |   max_f_pkt < 86 : normal (2/0)
+|   |   |   |   max_f_pkt >= 86 : attack (11/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4378/0)
+|   std_f_pkt >= 36.78 : attack (2043/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : attack (3470/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   max_f_pkt < 51.5 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 51.5
+|   |   |   |   |   |   max_f_pkt < 55 : attack (1/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   psh_f_cnt >= -0.5 : normal (2/0)
+|   |   |   min_f_time >= 0 : normal (6/0)
+|   |   max_f_pkt >= 58 : attack (483/0)
+max_f_pkt >= 73
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 139
+|   |   |   max_f_pkt < 88 : normal (2/0)
+|   |   |   max_f_pkt >= 88 : attack (8/0)
+|   |   max_f_pkt >= 139 : normal (4399/0)
+|   std_f_pkt >= 36.78 : attack (2064/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3444/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   max_f_pkt < 50.5 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   |   psh_f_cnt < -0.5 : attack (1/0)
+|   |   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (4/1)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 55 : normal (3/0)
+|   |   |   max_f_pkt >= 58
+|   |   |   |   max_f_pkt < 73 : attack (471/0)
+|   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   max_f_pkt < 89 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 89 : attack (10/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (10/0)
+|   |   max_f_pkt >= 58
+|   |   |   min_f_time < 7.09 : attack (2/0)
+|   |   |   min_f_time >= 7.09 : normal (1/0)
+max_f_pkt >= 139.5
+|   max_f_pkt < 176 : normal (4487/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 22.82 : normal (3/0)
+|   |   std_f_pkt >= 22.82 : attack (1999/0)
+
+Size of the tree : 29
+
+
+RandomTree
+==========
+
+max_f_pkt < 139
+|   min_f_time < 2.51
+|   |   psh_f_cnt < -0.5
+|   |   |   max_f_pkt < 51 : attack (1660/0)
+|   |   |   max_f_pkt >= 51
+|   |   |   |   max_f_pkt < 62 : normal (2/0)
+|   |   |   |   max_f_pkt >= 62
+|   |   |   |   |   max_f_pkt < 73 : attack (131/0)
+|   |   |   |   |   max_f_pkt >= 73 : normal (1/0)
+|   |   psh_f_cnt >= -0.5 : attack (2190/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (9/0)
+|   |   max_f_pkt >= 58 : attack (3/0)
+max_f_pkt >= 139
+|   max_f_pkt < 176 : normal (4361/0)
+|   max_f_pkt >= 176
+|   |   psh_f_cnt < 0 : normal (2/0)
+|   |   psh_f_cnt >= 0 : attack (2080/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3466/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   psh_f_cnt < -0.5
+|   |   |   |   max_f_pkt < 58.5 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58.5 : attack (113/0)
+|   |   |   psh_f_cnt >= -0.5 : attack (314/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (8/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 138.5
+|   |   |   max_f_pkt < 86 : normal (3/0)
+|   |   |   max_f_pkt >= 86 : attack (8/0)
+|   |   max_f_pkt >= 138.5 : normal (4462/0)
+|   std_f_pkt >= 36.78 : attack (2062/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   max_f_pkt < 49 : attack (3461/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   max_f_pkt < 53 : attack (8/1)
+|   |   |   |   |   max_f_pkt >= 53 : attack (4/0)
+|   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   min_f_time >= 0 : normal (5/0)
+|   |   max_f_pkt >= 58
+|   |   |   min_f_time < 2.24
+|   |   |   |   max_f_pkt < 73 : attack (445/0)
+|   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   max_f_pkt < 89 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 89 : attack (13/0)
+|   |   |   min_f_time >= 2.24
+|   |   |   |   max_f_pkt < 148.5 : attack (2/0)
+|   |   |   |   max_f_pkt >= 148.5 : normal (1/0)
+std_f_pkt >= 26.5
+|   max_f_pkt < 176 : normal (4534/0)
+|   max_f_pkt >= 176 : attack (1964/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 139.5
+|   min_f_time < 2.51
+|   |   min_f_time < 0
+|   |   |   max_f_pkt < 47.5 : attack (1847/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 53
+|   |   |   |   |   max_f_pkt < 50.5 : normal (3/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   min_f_time < 0 : attack (4/1)
+|   |   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   |   max_f_pkt >= 53 : attack (150/0)
+|   |   min_f_time >= 0
+|   |   |   max_f_pkt < 69 : attack (1938/0)
+|   |   |   max_f_pkt >= 69
+|   |   |   |   max_f_pkt < 86 : normal (1/0)
+|   |   |   |   max_f_pkt >= 86 : attack (13/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (6/0)
+|   |   min_f_time >= 3.6
+|   |   |   min_f_time < 7.09 : attack (1/0)
+|   |   |   min_f_time >= 7.09 : normal (1/0)
+max_f_pkt >= 139.5
+|   std_f_pkt < 36.78 : normal (4467/0)
+|   std_f_pkt >= 36.78 : attack (2006/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3503/0)
+|   |   max_f_pkt >= 49
+|   |   |   max_f_pkt < 53 : attack (6/1)
+|   |   |   max_f_pkt >= 53 : attack (448/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (5/0)
+|   |   max_f_pkt >= 58 : attack (5/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   psh_f_cnt < 3.5 : normal (4433/0)
+|   |   psh_f_cnt >= 3.5 : attack (12/0)
+|   std_f_pkt >= 36.86 : attack (2027/0)
+
+Size of the tree : 15
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94
+|   max_f_pkt < 47.5 : attack (3509/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   max_f_pkt < 54
+|   |   |   |   min_f_time < 1.5
+|   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 50.5 : attack (4/1)
+|   |   |   |   min_f_time >= 1.5 : normal (2/0)
+|   |   |   max_f_pkt >= 54 : normal (3/0)
+|   |   max_f_pkt >= 58 : attack (440/0)
+std_f_pkt >= 0.94
+|   max_f_pkt < 176
+|   |   std_f_pkt < 26.5
+|   |   |   max_f_pkt < 56 : normal (4/0)
+|   |   |   max_f_pkt >= 56 : attack (16/0)
+|   |   std_f_pkt >= 26.5 : normal (4376/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 22.82 : normal (1/0)
+|   |   std_f_pkt >= 22.82 : attack (2083/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   min_f_time < 2.51
+|   |   max_f_pkt < 73
+|   |   |   max_f_pkt < 47.5 : attack (3507/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   |   max_f_pkt < 51.5 : normal (1/0)
+|   |   |   |   |   |   |   |   max_f_pkt >= 51.5 : attack (1/0)
+|   |   |   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (3/1)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 58 : attack (460/0)
+|   |   max_f_pkt >= 73
+|   |   |   std_f_pkt < 9 : normal (5/0)
+|   |   |   std_f_pkt >= 9 : attack (11/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58
+|   |   |   max_f_pkt < 65.5 : attack (4/0)
+|   |   |   max_f_pkt >= 65.5 : normal (4/0)
+std_f_pkt >= 26.17
+|   max_f_pkt < 176 : normal (4452/0)
+|   max_f_pkt >= 176 : attack (1981/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   max_f_pkt < 47.5 : attack (3514/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58
+|   |   |   min_f_time < 0
+|   |   |   |   psh_f_cnt < -0.5
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   max_f_pkt < 51.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 51.5 : attack (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   |   psh_f_cnt >= -0.5 : attack (6/0)
+|   |   |   min_f_time >= 0 : normal (6/0)
+|   |   max_f_pkt >= 58 : attack (431/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4445/0)
+|   |   psh_f_cnt >= 3.5 : attack (14/0)
+|   std_f_pkt >= 36.78 : attack (2019/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3443/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   psh_f_cnt < -0.5 : normal (3/0)
+|   |   |   |   psh_f_cnt >= -0.5
+|   |   |   |   |   min_f_time < 0 : attack (6/0)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   max_f_pkt >= 58 : attack (435/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 56 : normal (4/0)
+|   |   max_f_pkt >= 56 : attack (3/0)
+max_f_pkt >= 73
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4503/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   std_f_pkt >= 36.78 : attack (2033/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94
+|   max_f_pkt < 69.5
+|   |   min_f_time < 2.51
+|   |   |   max_f_pkt < 47.5 : attack (3589/0)
+|   |   |   max_f_pkt >= 47.5
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   psh_f_cnt < -0.5 : normal (2/0)
+|   |   |   |   |   psh_f_cnt >= -0.5 : attack (5/1)
+|   |   |   |   max_f_pkt >= 58 : attack (420/0)
+|   |   min_f_time >= 2.51
+|   |   |   max_f_pkt < 58 : normal (4/0)
+|   |   |   max_f_pkt >= 58 : attack (6/0)
+|   max_f_pkt >= 69.5 : normal (6/0)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 56 : normal (3/0)
+|   |   |   max_f_pkt >= 56 : attack (17/0)
+|   |   max_f_pkt >= 139.5 : normal (4332/0)
+|   std_f_pkt >= 36.78 : attack (2055/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3496/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   max_f_pkt < 53 : attack (7/2)
+|   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (458/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.61 : normal (7/0)
+|   |   min_f_time >= 3.61 : attack (3/0)
+max_f_pkt >= 73
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4383/0)
+|   |   psh_f_cnt >= 3.5 : attack (8/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 22.82 : normal (4/0)
+|   |   std_f_pkt >= 22.82 : attack (2069/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3501/0)
+|   |   max_f_pkt >= 49
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   max_f_pkt < 53 : attack (5/1)
+|   |   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   min_f_time >= 0 : normal (3/0)
+|   |   |   |   max_f_pkt >= 58 : attack (179/0)
+|   |   |   min_f_time >= 0 : attack (286/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.61 : normal (4/0)
+|   |   min_f_time >= 3.61 : attack (1/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.86
+|   |   psh_f_cnt < 3.5 : normal (4416/0)
+|   |   psh_f_cnt >= 3.5 : attack (7/0)
+|   std_f_pkt >= 36.86 : attack (2035/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3524/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 55
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 50.5 : attack (10/0)
+|   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   max_f_pkt >= 55 : normal (2/0)
+|   |   |   max_f_pkt >= 58 : attack (434/0)
+|   min_f_time >= 2.51
+|   |   std_f_pkt < 0.94 : attack (5/0)
+|   |   std_f_pkt >= 0.94 : normal (4/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 37.02
+|   |   max_f_pkt < 139
+|   |   |   max_f_pkt < 86 : normal (5/0)
+|   |   |   max_f_pkt >= 86 : attack (10/0)
+|   |   max_f_pkt >= 139 : normal (4402/0)
+|   std_f_pkt >= 37.02 : attack (2041/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 49 : attack (3530/0)
+|   |   max_f_pkt >= 49
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   max_f_pkt < 53 : attack (5/2)
+|   |   |   |   |   |   |   max_f_pkt >= 53 : attack (1/0)
+|   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   |   max_f_pkt >= 58 : attack (161/0)
+|   |   |   min_f_time >= 0 : attack (298/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (11/0)
+|   |   max_f_pkt >= 58 : attack (7/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   max_f_pkt < 139.5
+|   |   |   max_f_pkt < 86 : normal (3/0)
+|   |   |   max_f_pkt >= 86 : attack (11/0)
+|   |   max_f_pkt >= 139.5 : normal (4375/0)
+|   std_f_pkt >= 36.78 : attack (2034/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3512/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 50.5 : normal (2/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   min_f_time < 0 : attack (3/0)
+|   |   |   |   |   |   min_f_time >= 0 : normal (1/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   max_f_pkt >= 58 : attack (421/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.63 : normal (6/0)
+|   |   min_f_time >= 3.63 : attack (2/0)
+max_f_pkt >= 73
+|   max_f_pkt < 176
+|   |   psh_f_cnt < 3.5 : normal (4473/0)
+|   |   psh_f_cnt >= 3.5 : attack (6/0)
+|   max_f_pkt >= 176
+|   |   std_f_pkt < 22.89 : normal (3/0)
+|   |   std_f_pkt >= 22.89 : attack (2009/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   min_f_time < 2.24
+|   |   max_f_pkt < 73
+|   |   |   min_f_time < 0
+|   |   |   |   max_f_pkt < 49 : attack (1772/0)
+|   |   |   |   max_f_pkt >= 49
+|   |   |   |   |   max_f_pkt < 58
+|   |   |   |   |   |   max_f_pkt < 54 : attack (5/1)
+|   |   |   |   |   |   max_f_pkt >= 54 : normal (2/0)
+|   |   |   |   |   max_f_pkt >= 58 : attack (168/0)
+|   |   |   min_f_time >= 0 : attack (2081/0)
+|   |   max_f_pkt >= 73
+|   |   |   std_f_pkt < 9 : normal (6/0)
+|   |   |   std_f_pkt >= 9 : attack (14/0)
+|   min_f_time >= 2.24 : normal (9/0)
+std_f_pkt >= 26.5
+|   max_f_pkt < 176 : normal (4389/0)
+|   max_f_pkt >= 176 : attack (1993/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3487/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   min_f_time < 0.86
+|   |   |   |   max_f_pkt < 58
+|   |   |   |   |   min_f_time < 0
+|   |   |   |   |   |   max_f_pkt < 50.5 : normal (1/0)
+|   |   |   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   |   |   max_f_pkt < 55
+|   |   |   |   |   |   |   |   psh_f_cnt < -0.5 : attack (2/0)
+|   |   |   |   |   |   |   |   psh_f_cnt >= -0.5 : attack (3/1)
+|   |   |   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   |   |   min_f_time >= 0 : normal (2/0)
+|   |   |   |   max_f_pkt >= 58
+|   |   |   |   |   max_f_pkt < 73 : attack (178/0)
+|   |   |   |   |   max_f_pkt >= 73
+|   |   |   |   |   |   std_f_pkt < 9.91 : normal (2/0)
+|   |   |   |   |   |   std_f_pkt >= 9.91 : attack (9/0)
+|   |   |   min_f_time >= 0.86 : attack (290/0)
+|   min_f_time >= 2.51
+|   |   min_f_time < 3.6 : normal (6/0)
+|   |   min_f_time >= 3.6
+|   |   |   max_f_pkt < 65.5 : attack (2/0)
+|   |   |   max_f_pkt >= 65.5 : normal (1/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4402/0)
+|   std_f_pkt >= 36.86 : attack (2053/0)
+
+Size of the tree : 29
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 47.5 : attack (3498/0)
+|   |   max_f_pkt >= 47.5
+|   |   |   max_f_pkt < 58
+|   |   |   |   max_f_pkt < 50.5 : normal (3/0)
+|   |   |   |   max_f_pkt >= 50.5
+|   |   |   |   |   max_f_pkt < 55 : attack (5/0)
+|   |   |   |   |   max_f_pkt >= 55 : normal (1/0)
+|   |   |   max_f_pkt >= 58 : attack (446/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 56 : normal (6/0)
+|   |   max_f_pkt >= 56 : attack (4/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4407/0)
+|   |   psh_f_cnt >= 3.5 : attack (5/0)
+|   std_f_pkt >= 36.78 : attack (2064/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+max_f_pkt < 69.5
+|   min_f_time < 2.51
+|   |   max_f_pkt < 55 : attack (3586/0)
+|   |   max_f_pkt >= 55
+|   |   |   max_f_pkt < 58 : normal (1/0)
+|   |   |   max_f_pkt >= 58 : attack (412/0)
+|   min_f_time >= 2.51
+|   |   max_f_pkt < 58 : normal (7/0)
+|   |   max_f_pkt >= 58 : attack (2/0)
+max_f_pkt >= 69.5
+|   std_f_pkt < 36.78
+|   |   psh_f_cnt < 3.5 : normal (4431/0)
+|   |   psh_f_cnt >= 3.5 : attack (5/0)
+|   std_f_pkt >= 36.78 : attack (1995/0)
+
+Size of the tree : 15
+
+
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances        2609               99.9617 %
+Incorrectly Classified Instances         1                0.0383 %
+Kappa statistic                          0.9992
+Mean absolute error                      0.0006
+Root mean squared error                  0.0201
+Relative absolute error                  0.1199 %
+Root relative squared error              4.0688 %
+Total Number of Instances             2610     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.000    1.000      0.999    1.000      0.999    1.000     0.999     normal
+                 1.000    0.001    0.999      1.000    1.000      0.999    1.000     0.999     attack
+Weighted Avg.    1.000    0.001    1.000      1.000    1.000      0.999    1.000     0.999     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1109    1 |    a = normal
+    0 1500 |    b = attack

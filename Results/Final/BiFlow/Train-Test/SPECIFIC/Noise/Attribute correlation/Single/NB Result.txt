@@ -1,0 +1,68 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                     Class
+Attribute         tcpFlood      normal   httpFlood    slowRead slowHeaders    udpFlood
+                    (0.17)      (0.17)      (0.17)      (0.17)      (0.17)      (0.17)
+=======================================================================================
+mean_f_time
+  mean               0.0011      0.6856      0.0078       3.945       5.114      0.0073
+  std. dev.          0.0073      1.5764      0.0321      1.3599      1.5056      0.0573
+  weight sum           2000        1997        2000        2000        2000        2000
+  precision          0.0021      0.0021      0.0021      0.0021      0.0021      0.0021
+
+duration
+  mean               0.0011      9.6647      0.0349      51.809     43.8155      3.0189
+  std. dev.          0.0073      20.548      0.1065     19.4717     18.0673       0.909
+  weight sum           2000        1997        2000        2000        2000        2000
+  precision          0.0068      0.0068      0.0068      0.0068      0.0068      0.0068
+
+std_f_time
+  mean                    0      1.1461      0.0103      5.4665      4.7133      0.0046
+  std. dev.          0.0003      2.7007      0.0389      2.1921      1.4103      0.0025
+  weight sum           2000        1997        2000        2000        2000        2000
+  precision          0.0019      0.0019      0.0019      0.0019      0.0019      0.0019
+
+max_f_time
+  mean               0.0011      4.1163      0.0253     18.9116     12.7167        0.04
+  std. dev.          0.0072      9.7449      0.1031      8.0456      4.9339      0.0619
+  weight sum           2000        1997        2000        2000        2000        2000
+  precision          0.0054      0.0054      0.0054      0.0054      0.0054      0.0054
+
+urg_f_cnt
+  mean                    0     -0.2138           0     -0.0005      -0.001          -1
+  std. dev.          0.1667        0.41      0.1667      0.1667      0.1667      0.1667
+  weight sum           2000        1997        2000        2000        2000        2000
+  precision               1           1           1           1           1           1
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances        2072               69.0897 %
+Incorrectly Classified Instances       927               30.9103 %
+Kappa statistic                          0.6291
+Mean absolute error                      0.1116
+Root mean squared error                  0.3011
+Relative absolute error                 40.1932 %
+Root relative squared error             80.8051 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.974    0.102    0.656      0.974    0.784      0.753    0.979     0.834     tcpFlood
+                 0.012    0.022    0.098      0.012    0.021      -0.026   0.774     0.319     normal
+                 0.676    0.008    0.944      0.676    0.788      0.768    0.969     0.851     httpFlood
+                 0.646    0.058    0.690      0.646    0.667      0.604    0.891     0.577     slowRead
+                 0.900    0.181    0.499      0.900    0.642      0.584    0.921     0.720     slowHeaders
+                 0.936    0.000    1.000      0.936    0.967      0.961    0.998     0.997     udpFlood
+Weighted Avg.    0.691    0.062    0.648      0.691    0.645      0.608    0.922     0.717     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 487   0  13   0   0   0 |   a = tcpFlood
+  30   6   6 128 329   0 |   b = normal
+ 160   2 338   0   0   0 |   c = httpFlood
+  26  28   0 323 123   0 |   d = slowRead
+   9  23   1  17 450   0 |   e = slowHeaders
+  30   2   0   0   0 468 |   f = udpFlood

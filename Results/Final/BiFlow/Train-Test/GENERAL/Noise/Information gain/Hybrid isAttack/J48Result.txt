@@ -1,0 +1,183 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_f_time <= 16.146297
+|   bps_f <= 17124.43974
+|   |   total_f_bytes <= 286
+|   |   |   bps_f <= 164.006718
+|   |   |   |   total_f_bytes <= 180: attack (3200.0/1254.0)
+|   |   |   |   total_f_bytes > 180
+|   |   |   |   |   total_f_bytes <= 240
+|   |   |   |   |   |   total_f_bytes <= 204: normal (2.0)
+|   |   |   |   |   |   total_f_bytes > 204
+|   |   |   |   |   |   |   max_f_time <= 4.196104
+|   |   |   |   |   |   |   |   max_f_time <= 4.063163: attack (4.0)
+|   |   |   |   |   |   |   |   max_f_time > 4.063163: normal (18.0/7.0)
+|   |   |   |   |   |   |   max_f_time > 4.196104: attack (7.0)
+|   |   |   |   |   total_f_bytes > 240: normal (11.0)
+|   |   |   bps_f > 164.006718
+|   |   |   |   max_f_time <= 0.086233
+|   |   |   |   |   max_f_time <= 0.040796
+|   |   |   |   |   |   total_f_bytes <= 92: normal (120.0/27.0)
+|   |   |   |   |   |   total_f_bytes > 92
+|   |   |   |   |   |   |   max_f_time <= 0.012876: normal (3.0)
+|   |   |   |   |   |   |   max_f_time > 0.012876: attack (8.0)
+|   |   |   |   |   max_f_time > 0.040796: attack (24.0)
+|   |   |   |   max_f_time > 0.086233: normal (54.0)
+|   |   total_f_bytes > 286
+|   |   |   bps_f <= 11576.338989
+|   |   |   |   total_f_bytes <= 1167
+|   |   |   |   |   max_f_time <= 8.191298
+|   |   |   |   |   |   max_f_time <= 2.016496: attack (161.0/18.0)
+|   |   |   |   |   |   max_f_time > 2.016496: normal (128.0)
+|   |   |   |   |   max_f_time > 8.191298: attack (354.0)
+|   |   |   |   total_f_bytes > 1167
+|   |   |   |   |   total_f_bytes <= 11270
+|   |   |   |   |   |   pps_f <= 0.571508: attack (176.0)
+|   |   |   |   |   |   pps_f > 0.571508
+|   |   |   |   |   |   |   bps_f <= 279.078903: normal (7.0)
+|   |   |   |   |   |   |   bps_f > 279.078903: attack (26.0/1.0)
+|   |   |   |   |   total_f_bytes > 11270: attack (1326.0)
+|   |   |   bps_f > 11576.338989
+|   |   |   |   max_f_time <= 0.020737
+|   |   |   |   |   max_f_time <= 0.014014
+|   |   |   |   |   |   total_f_bytes <= 1770: normal (83.0/19.0)
+|   |   |   |   |   |   total_f_bytes > 1770: attack (7.0)
+|   |   |   |   |   max_f_time > 0.014014
+|   |   |   |   |   |   max_f_time <= 0.017079
+|   |   |   |   |   |   |   max_f_time <= 0.014675
+|   |   |   |   |   |   |   |   mean_f_time <= 0.005881
+|   |   |   |   |   |   |   |   |   max_f_time <= 0.014587: attack (118.0/16.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 0.014587
+|   |   |   |   |   |   |   |   |   |   bps_f <= 15514.869777
+|   |   |   |   |   |   |   |   |   |   |   bps_f <= 15311.919947: attack (9.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   bps_f > 15311.919947: normal (4.0)
+|   |   |   |   |   |   |   |   |   |   bps_f > 15514.869777: attack (6.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.005881
+|   |   |   |   |   |   |   |   |   total_f_bytes <= 415: attack (2.0)
+|   |   |   |   |   |   |   |   |   total_f_bytes > 415
+|   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.006258
+|   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.014626
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.005925: normal (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.005925
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_bytes <= 441: attack (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_bytes > 441: normal (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.014626: attack (5.0)
+|   |   |   |   |   |   |   |   |   |   mean_f_time > 0.006258: normal (5.0)
+|   |   |   |   |   |   |   max_f_time > 0.014675
+|   |   |   |   |   |   |   |   mean_f_time <= 0.005692
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.005334: attack (65.0/3.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.005334
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 0.015706
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.005497: normal (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.005497: attack (9.0/2.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 0.015706: normal (11.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.005692: attack (554.0/54.0)
+|   |   |   |   |   |   max_f_time > 0.017079
+|   |   |   |   |   |   |   mean_f_time <= 0.006506
+|   |   |   |   |   |   |   |   mean_f_time <= 0.003203: attack (73.0/20.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.003203: normal (76.0/31.0)
+|   |   |   |   |   |   |   mean_f_time > 0.006506: attack (111.0/20.0)
+|   |   |   |   max_f_time > 0.020737
+|   |   |   |   |   max_f_time <= 0.048457
+|   |   |   |   |   |   mean_f_time <= 0.003871: normal (166.0/31.0)
+|   |   |   |   |   |   mean_f_time > 0.003871
+|   |   |   |   |   |   |   bps_f <= 12918.595431: attack (31.0/5.0)
+|   |   |   |   |   |   |   bps_f > 12918.595431: normal (6.0/1.0)
+|   |   |   |   |   max_f_time > 0.048457: attack (32.0)
+|   bps_f > 17124.43974
+|   |   total_f_bytes <= 735
+|   |   |   pps_f <= 901.645373
+|   |   |   |   max_f_time <= 0.014273
+|   |   |   |   |   mean_f_time <= 0.001716
+|   |   |   |   |   |   total_f_bytes <= 440: attack (27.0/11.0)
+|   |   |   |   |   |   total_f_bytes > 440
+|   |   |   |   |   |   |   total_f_bytes <= 447: normal (45.0/14.0)
+|   |   |   |   |   |   |   total_f_bytes > 447
+|   |   |   |   |   |   |   |   max_f_time <= 0.004219
+|   |   |   |   |   |   |   |   |   bps_f <= 67104.070852: normal (8.0/1.0)
+|   |   |   |   |   |   |   |   |   bps_f > 67104.070852: attack (2.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.004219: attack (5.0)
+|   |   |   |   |   mean_f_time > 0.001716
+|   |   |   |   |   |   pps_f <= 564.529193: normal (1053.0/256.0)
+|   |   |   |   |   |   pps_f > 564.529193
+|   |   |   |   |   |   |   total_f_bytes <= 360: attack (5.0)
+|   |   |   |   |   |   |   total_f_bytes > 360
+|   |   |   |   |   |   |   |   max_f_time <= 0.007683: normal (123.0/10.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.007683: attack (6.0)
+|   |   |   |   max_f_time > 0.014273: attack (92.0/19.0)
+|   |   |   pps_f > 901.645373: attack (449.0/37.0)
+|   |   total_f_bytes > 735
+|   |   |   pps_f <= 451.931831
+|   |   |   |   max_f_time <= 0.015697
+|   |   |   |   |   pps_f <= 431.030543
+|   |   |   |   |   |   total_f_bytes <= 24978
+|   |   |   |   |   |   |   mean_f_time <= 0.002571: normal (4.0)
+|   |   |   |   |   |   |   mean_f_time > 0.002571: attack (4.0/1.0)
+|   |   |   |   |   |   total_f_bytes > 24978: attack (59.0/3.0)
+|   |   |   |   |   pps_f > 431.030543
+|   |   |   |   |   |   mean_f_time <= 0.002265: attack (26.0/11.0)
+|   |   |   |   |   |   mean_f_time > 0.002265
+|   |   |   |   |   |   |   max_f_time <= 0.01438
+|   |   |   |   |   |   |   |   total_f_bytes <= 66700: normal (3.0/1.0)
+|   |   |   |   |   |   |   |   total_f_bytes > 66700: attack (4.0/1.0)
+|   |   |   |   |   |   |   max_f_time > 0.01438: normal (7.0)
+|   |   |   |   max_f_time > 0.015697
+|   |   |   |   |   max_f_time <= 0.028529
+|   |   |   |   |   |   mean_f_time <= 0.002571: normal (194.0/26.0)
+|   |   |   |   |   |   mean_f_time > 0.002571
+|   |   |   |   |   |   |   total_f_bytes <= 56534: attack (5.0)
+|   |   |   |   |   |   |   total_f_bytes > 56534
+|   |   |   |   |   |   |   |   max_f_time <= 0.016893: attack (3.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.016893
+|   |   |   |   |   |   |   |   |   total_f_bytes <= 58604: normal (13.0/1.0)
+|   |   |   |   |   |   |   |   |   total_f_bytes > 58604
+|   |   |   |   |   |   |   |   |   |   total_f_bytes <= 59064: attack (4.0)
+|   |   |   |   |   |   |   |   |   |   total_f_bytes > 59064: normal (2.0)
+|   |   |   |   |   max_f_time > 0.028529
+|   |   |   |   |   |   max_f_time <= 0.033861: normal (2.0)
+|   |   |   |   |   |   max_f_time > 0.033861: attack (10.0)
+|   |   |   pps_f > 451.931831: normal (1863.0/12.0)
+max_f_time > 16.146297
+|   total_f_bytes <= 1077
+|   |   mean_f_time <= 5.080487: normal (811.0/6.0)
+|   |   mean_f_time > 5.080487
+|   |   |   bps_f <= 14.061032: attack (3.0)
+|   |   |   bps_f > 14.061032
+|   |   |   |   pps_f <= 0.202781
+|   |   |   |   |   total_f_bytes <= 987: normal (3.0)
+|   |   |   |   |   total_f_bytes > 987: attack (2.0)
+|   |   |   |   pps_f > 0.202781: normal (42.0/2.0)
+|   total_f_bytes > 1077
+|   |   max_f_time <= 19.926825
+|   |   |   max_f_time <= 19.713862: normal (14.0)
+|   |   |   max_f_time > 19.713862: attack (9.0)
+|   |   max_f_time > 19.926825: normal (70.0)
+
+Number of Leaves  : 	77
+
+Size of the tree : 	153
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1705               56.8523 %
+Incorrectly Classified Instances      1294               43.1477 %
+Kappa statistic                          0.1369
+Mean absolute error                      0.4332
+Root mean squared error                  0.6532
+Relative absolute error                 86.6395 %
+Root relative squared error            130.6376 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.330    0.193    0.631      0.330    0.433      0.156    0.554     0.527     normal
+                 0.807    0.670    0.546      0.807    0.652      0.156    0.554     0.534     attack
+Weighted Avg.    0.569    0.432    0.589      0.569    0.542      0.156    0.554     0.530     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+  494 1005 |    a = normal
+  289 1211 |    b = attack

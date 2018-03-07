@@ -1,0 +1,194 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+cof = N/A
+|   total_f_bytes <= 39744: attack (1653.0/147.0)
+|   total_f_bytes > 39744
+|   |   total_f_bytes <= 69736
+|   |   |   total_f_bytes <= 49082: normal (164.0/34.0)
+|   |   |   total_f_bytes > 49082
+|   |   |   |   total_f_bytes <= 59846: attack (242.0/76.0)
+|   |   |   |   total_f_bytes > 59846: normal (302.0/93.0)
+|   |   total_f_bytes > 69736: normal (724.0/2.0)
+cof = 0: attack (0.0)
+cof = 1: attack (0.0)
+cof = 2
+|   total_f_bytes <= 136
+|   |   min_f_pkt <= 54: normal (2.0)
+|   |   min_f_pkt > 54: attack (14.0/2.0)
+|   total_f_bytes > 136: attack (270.0)
+cof = 3: attack (0.0)
+cof = 4: attack (243.0/115.0)
+cof = 5: attack (0.0)
+cof = 6: attack (0.0)
+cof = 7: attack (0.0)
+cof = 8: attack (0.0)
+cof = 9: attack (0.0)
+cof = 10: attack (0.0)
+cof = 11: attack (0.0)
+cof = 12: attack (0.0)
+cof = 13: attack (0.0)
+cof = 14: attack (0.0)
+cof = 15: attack (0.0)
+cof = 16: attack (0.0)
+cof = 17: attack (0.0)
+cof = 18
+|   total_f_bytes <= 52: attack (2683.0/1038.0)
+|   total_f_bytes > 52
+|   |   total_f_bytes <= 204: attack (64.0/21.0)
+|   |   total_f_bytes > 204: normal (11.0)
+cof = 19: attack (4.0)
+cof = 20: attack (0.0)
+cof = 21: attack (4.0)
+cof = 22: normal (201.0/44.0)
+cof = 23: attack (7.0)
+cof = 24: attack (0.0)
+cof = 25: attack (0.0)
+cof = 26: normal (1.0)
+cof = 27
+|   total_f_bytes <= 507: attack (68.0/27.0)
+|   total_f_bytes > 507
+|   |   total_f_bytes <= 1163: normal (1267.0/4.0)
+|   |   total_f_bytes > 1163
+|   |   |   psh_b_cnt <= 0: attack (10.0)
+|   |   |   psh_b_cnt > 0: normal (15.0)
+cof = 28: attack (0.0)
+cof = 29: attack (55.0/18.0)
+cof = 30
+|   total_f_bytes <= 868
+|   |   total_f_bytes <= 507: attack (13.0)
+|   |   total_f_bytes > 507: normal (115.0/4.0)
+|   total_f_bytes > 868: normal (683.0/5.0)
+cof = 31
+|   total_f_bytes <= 1031
+|   |   total_f_bytes <= 766: attack (2837.0/1202.0)
+|   |   total_f_bytes > 766
+|   |   |   total_f_bytes <= 948: normal (53.0/10.0)
+|   |   |   total_f_bytes > 948
+|   |   |   |   total_f_bytes <= 1020: attack (27.0/5.0)
+|   |   |   |   total_f_bytes > 1020: normal (4.0)
+|   total_f_bytes > 1031: attack (261.0)
+cof = 32: attack (0.0)
+cof = 33: attack (0.0)
+cof = 34: attack (0.0)
+cof = 35: attack (0.0)
+cof = 36: attack (0.0)
+cof = 37: attack (0.0)
+cof = 38: attack (0.0)
+cof = 39: attack (0.0)
+cof = 40: attack (0.0)
+cof = 41: attack (0.0)
+cof = 42: attack (0.0)
+cof = 43: attack (0.0)
+cof = 44: attack (0.0)
+cof = 45: attack (0.0)
+cof = 46: attack (0.0)
+cof = 47: attack (0.0)
+cof = 48: attack (0.0)
+cof = 49: attack (0.0)
+cof = 50: attack (0.0)
+cof = 51: attack (0.0)
+cof = 52: attack (0.0)
+cof = 53: attack (0.0)
+cof = 54: attack (0.0)
+cof = 55: attack (0.0)
+cof = 56: attack (0.0)
+cof = 57: attack (0.0)
+cof = 58: attack (0.0)
+cof = 59: attack (0.0)
+cof = 60: attack (0.0)
+cof = 61: attack (0.0)
+cof = 62: attack (0.0)
+cof = 63: attack (0.0)
+cof = 64: attack (0.0)
+cof = 65: attack (0.0)
+cof = 66: attack (0.0)
+cof = 67: attack (0.0)
+cof = 68: attack (0.0)
+cof = 69: attack (0.0)
+cof = 70: attack (0.0)
+cof = 71: attack (0.0)
+cof = 72: attack (0.0)
+cof = 73: attack (0.0)
+cof = 74: attack (0.0)
+cof = 75: attack (0.0)
+cof = 76: attack (0.0)
+cof = 77: attack (0.0)
+cof = 78: attack (0.0)
+cof = 79: attack (0.0)
+cof = 80: attack (0.0)
+cof = 81: attack (0.0)
+cof = 82: attack (0.0)
+cof = 83: attack (0.0)
+cof = 84: attack (0.0)
+cof = 85: attack (0.0)
+cof = 86: attack (0.0)
+cof = 87: attack (0.0)
+cof = 88: attack (0.0)
+cof = 89: attack (0.0)
+cof = 90: attack (0.0)
+cof = 91: attack (0.0)
+cof = 92: attack (0.0)
+cof = 93: attack (0.0)
+cof = 94: attack (0.0)
+cof = 95: attack (0.0)
+cof = 96: attack (0.0)
+cof = 97: attack (0.0)
+cof = 98: attack (0.0)
+cof = 99: attack (0.0)
+cof = 100: attack (0.0)
+cof = 101: attack (0.0)
+cof = 102: attack (0.0)
+cof = 103: attack (0.0)
+cof = 104: attack (0.0)
+cof = 105: attack (0.0)
+cof = 106: attack (0.0)
+cof = 107: attack (0.0)
+cof = 108: attack (0.0)
+cof = 109: attack (0.0)
+cof = 110: attack (0.0)
+cof = 111: attack (0.0)
+cof = 112: attack (0.0)
+cof = 113: attack (0.0)
+cof = 114: attack (0.0)
+cof = 115: attack (0.0)
+cof = 116: attack (0.0)
+cof = 117: attack (0.0)
+cof = 118: attack (0.0)
+cof = 119: attack (0.0)
+cof = 120: attack (0.0)
+cof = 121: attack (0.0)
+cof = 122: attack (0.0)
+cof = 123: attack (0.0)
+cof = 124: attack (0.0)
+cof = 125: attack (0.0)
+cof = 126: attack (0.0)
+cof = 127: attack (0.0)
+
+Number of Leaves  : 	146
+
+Size of the tree : 	164
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1796               59.8866 %
+Incorrectly Classified Instances      1203               40.1134 %
+Kappa statistic                          0.1976
+Mean absolute error                      0.4057
+Root mean squared error                  0.6239
+Relative absolute error                 81.1331 %
+Root relative squared error            124.7852 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.408    0.211    0.659      0.408    0.504      0.214    0.605     0.588     normal
+                 0.789    0.592    0.572      0.789    0.663      0.214    0.605     0.565     attack
+Weighted Avg.    0.599    0.401    0.616      0.599    0.584      0.214    0.605     0.576     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+  612  887 |    a = normal
+  316 1184 |    b = attack

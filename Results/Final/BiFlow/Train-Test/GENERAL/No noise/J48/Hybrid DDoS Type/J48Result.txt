@@ -1,0 +1,37 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+mean_f_pkt <= 46: HIGH_RATE (5813.0)
+mean_f_pkt > 46
+|   mean_f_pkt <= 68
+|   |   mean_f_pkt <= 67.857143: LOW_RATE (2708.0)
+|   |   mean_f_pkt > 67.857143: HIGH_RATE (187.0)
+|   mean_f_pkt > 68: LOW_RATE (3292.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1515               50.5    %
+Incorrectly Classified Instances      1485               49.5    %
+Kappa statistic                          0.01  
+Mean absolute error                      0.495 
+Root mean squared error                  0.7036
+Relative absolute error                 99      %
+Root relative squared error            140.7125 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.010    0.000    1.000      0.010    0.020      0.071    0.505     0.505     HIGH_RATE
+                 1.000    0.990    0.503      1.000    0.669      0.071    0.505     0.503     LOW_RATE
+Weighted Avg.    0.505    0.495    0.751      0.505    0.344      0.071    0.505     0.504     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+   15 1485 |    a = HIGH_RATE
+    0 1500 |    b = LOW_RATE

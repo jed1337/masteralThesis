@@ -1,0 +1,60 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                      Class
+Attribute            normal    attack
+                      (0.5)     (0.5)
+======================================
+total_b_bytes
+  mean             3060.4834  229.7895
+  std. dev.         4954.611  733.2397
+  weight sum            5997      6000
+  precision            249.5     249.5
+
+mean_b_pkt
+  mean              472.9475   53.7486
+  std. dev.         771.4306  124.7095
+  weight sum            5997      6000
+  precision          48.3279   48.3279
+
+std_b_pkt
+  mean              628.9658   49.5219
+  std. dev.        1078.7159  145.2465
+  weight sum            5997      6000
+  precision           42.039    42.039
+
+max_b_pkt
+  mean             1648.7151  218.2536
+  std. dev.        2699.9589  421.0766
+  weight sum            5997      6000
+  precision         607.6667  607.6667
+
+total_b_packets
+  mean                4.0737     1.997
+  std. dev.           3.7438    2.4241
+  weight sum            5997      6000
+  precision           1.0625    1.0625
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances        1761               58.7196 %
+Incorrectly Classified Instances      1238               41.2804 %
+Kappa statistic                          0.1742
+Mean absolute error                      0.4197
+Root mean squared error                  0.6004
+Relative absolute error                 83.9309 %
+Root relative squared error            120.0894 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.263    0.089    0.748      0.263    0.389      0.229    0.739     0.673     normal
+                 0.911    0.737    0.553      0.911    0.688      0.229    0.739     0.767     attack
+Weighted Avg.    0.587    0.413    0.650      0.587    0.539      0.229    0.739     0.720     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+  394 1105 |    a = normal
+  133 1367 |    b = attack

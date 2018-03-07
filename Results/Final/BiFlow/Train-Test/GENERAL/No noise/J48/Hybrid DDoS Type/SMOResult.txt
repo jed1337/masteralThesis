@@ -1,0 +1,40 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        32.7773 * (normalized) mean_f_pkt
+ -       1.2846
+
+Number of kernel evaluations: 47146 (42.155% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        1520               50.6667 %
+Incorrectly Classified Instances      1480               49.3333 %
+Kappa statistic                          0.0133
+Mean absolute error                      0.4933
+Root mean squared error                  0.7024
+Relative absolute error                 98.6667 %
+Root relative squared error            140.4754 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.013    0.000    1.000      0.013    0.026      0.082    0.507     0.507     HIGH_RATE
+                 1.000    0.987    0.503      1.000    0.670      0.082    0.507     0.503     LOW_RATE
+Weighted Avg.    0.507    0.493    0.752      0.507    0.348      0.082    0.507     0.505     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+   20 1480 |    a = HIGH_RATE
+    0 1500 |    b = LOW_RATE

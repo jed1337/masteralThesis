@@ -1,0 +1,44 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+       -11.6302 * (normalized) total_b_bytes
+ +       7.7955 * (normalized) mean_b_pkt
+ +      -2.2461 * (normalized) std_b_pkt
+ +       2.7893 * (normalized) max_b_pkt
+ +      -1.7227 * (normalized) total_b_packets
+ +       0.9996
+
+Number of kernel evaluations: 5199791 (52.508% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        2087               69.5899 %
+Incorrectly Classified Instances       912               30.4101 %
+Kappa statistic                          0.3919
+Mean absolute error                      0.3041
+Root mean squared error                  0.5515
+Relative absolute error                 60.8203 %
+Root relative squared error            110.2908 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.961    0.569    0.628      0.961    0.760      0.462    0.696     0.623     normal
+                 0.431    0.039    0.918      0.431    0.586      0.462    0.696     0.680     attack
+Weighted Avg.    0.696    0.304    0.773      0.696    0.673      0.462    0.696     0.651     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1441   58 |    a = normal
+  854  646 |    b = attack

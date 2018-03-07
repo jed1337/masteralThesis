@@ -1,0 +1,233 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_f_time <= 1.04374
+|   urg_f_cnt <= -1
+|   |   mean_f_time <= 0.00378
+|   |   |   mean_f_time <= 0.002272
+|   |   |   |   mean_f_time <= 0.000724: udpFlood (152.0/34.0)
+|   |   |   |   mean_f_time > 0.000724
+|   |   |   |   |   mean_f_time <= 0.002124: normal (265.0/1.0)
+|   |   |   |   |   mean_f_time > 0.002124
+|   |   |   |   |   |   std_f_time <= 0.001645
+|   |   |   |   |   |   |   duration <= 2.867961: normal (3.0)
+|   |   |   |   |   |   |   duration > 2.867961: udpFlood (15.0)
+|   |   |   |   |   |   std_f_time > 0.001645
+|   |   |   |   |   |   |   max_f_time <= 0.024784: normal (21.0/2.0)
+|   |   |   |   |   |   |   max_f_time > 0.024784: udpFlood (3.0)
+|   |   |   mean_f_time > 0.002272
+|   |   |   |   mean_f_time <= 0.002702
+|   |   |   |   |   std_f_time <= 0.00197
+|   |   |   |   |   |   mean_f_time <= 0.002318
+|   |   |   |   |   |   |   std_f_time <= 0.001765: udpFlood (13.0/2.0)
+|   |   |   |   |   |   |   std_f_time > 0.001765
+|   |   |   |   |   |   |   |   max_f_time <= 0.031759: normal (7.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.031759: udpFlood (2.0)
+|   |   |   |   |   |   mean_f_time > 0.002318: udpFlood (121.0/7.0)
+|   |   |   |   |   std_f_time > 0.00197
+|   |   |   |   |   |   mean_f_time <= 0.002579
+|   |   |   |   |   |   |   max_f_time <= 0.032085: normal (34.0/1.0)
+|   |   |   |   |   |   |   max_f_time > 0.032085: udpFlood (5.0)
+|   |   |   |   |   |   mean_f_time > 0.002579
+|   |   |   |   |   |   |   std_f_time <= 0.002266: udpFlood (17.0/2.0)
+|   |   |   |   |   |   |   std_f_time > 0.002266: normal (5.0)
+|   |   |   |   mean_f_time > 0.002702
+|   |   |   |   |   std_f_time <= 0.002393: udpFlood (132.0/3.0)
+|   |   |   |   |   std_f_time > 0.002393
+|   |   |   |   |   |   max_f_time <= 0.042644
+|   |   |   |   |   |   |   std_f_time <= 0.002531: udpFlood (20.0/3.0)
+|   |   |   |   |   |   |   std_f_time > 0.002531
+|   |   |   |   |   |   |   |   duration <= 3.145542: udpFlood (7.0/2.0)
+|   |   |   |   |   |   |   |   duration > 3.145542: normal (47.0/8.0)
+|   |   |   |   |   |   max_f_time > 0.042644: udpFlood (42.0)
+|   |   mean_f_time > 0.00378: udpFlood (1515.0/4.0)
+|   urg_f_cnt > -1
+|   |   std_f_time <= 0
+|   |   |   mean_f_time <= 0.071002
+|   |   |   |   duration <= 0.000134: tcpFlood (2415.0/466.0)
+|   |   |   |   duration > 0.000134
+|   |   |   |   |   mean_f_time <= 0.021195: httpFlood (17.0/3.0)
+|   |   |   |   |   mean_f_time > 0.021195
+|   |   |   |   |   |   mean_f_time <= 0.028167: normal (8.0)
+|   |   |   |   |   |   mean_f_time > 0.028167: tcpFlood (78.0/27.0)
+|   |   |   mean_f_time > 0.071002
+|   |   |   |   mean_f_time <= 0.524369: normal (21.0/1.0)
+|   |   |   |   mean_f_time > 0.524369: slowRead (15.0/1.0)
+|   |   std_f_time > 0
+|   |   |   std_f_time <= 0.00625
+|   |   |   |   duration <= 0.003258: httpFlood (251.0/6.0)
+|   |   |   |   duration > 0.003258
+|   |   |   |   |   mean_f_time <= 0.000872
+|   |   |   |   |   |   duration <= 0.004359
+|   |   |   |   |   |   |   mean_f_time <= 0.000378: normal (66.0/1.0)
+|   |   |   |   |   |   |   mean_f_time > 0.000378
+|   |   |   |   |   |   |   |   mean_f_time <= 0.000478: slowRead (2.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.000478: httpFlood (43.0)
+|   |   |   |   |   |   duration > 0.004359
+|   |   |   |   |   |   |   max_f_time <= 0.002258
+|   |   |   |   |   |   |   |   std_f_time <= 0.000722: normal (103.0/4.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.000722
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.000543: normal (5.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.000543: slowRead (3.0/1.0)
+|   |   |   |   |   |   |   max_f_time > 0.002258
+|   |   |   |   |   |   |   |   duration <= 0.00705
+|   |   |   |   |   |   |   |   |   duration <= 0.005237
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.00064: slowRead (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.00064: normal (42.0/12.0)
+|   |   |   |   |   |   |   |   |   duration > 0.005237
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.00097: slowRead (177.0/83.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.00097
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.000569: normal (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.000569: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   duration > 0.00705: normal (97.0/13.0)
+|   |   |   |   |   mean_f_time > 0.000872
+|   |   |   |   |   |   duration <= 0.006643: httpFlood (131.0/2.0)
+|   |   |   |   |   |   duration > 0.006643
+|   |   |   |   |   |   |   mean_f_time <= 0.00167
+|   |   |   |   |   |   |   |   duration <= 0.011902: httpFlood (44.0/16.0)
+|   |   |   |   |   |   |   |   duration > 0.011902: slowHeaders (18.0/8.0)
+|   |   |   |   |   |   |   mean_f_time > 0.00167
+|   |   |   |   |   |   |   |   max_f_time <= 0.005716: normal (66.0/9.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.005716
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.002087: httpFlood (17.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.002087
+|   |   |   |   |   |   |   |   |   |   duration <= 0.02729
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.004741
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.003454
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002835
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.006017
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002459: httpFlood (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002459: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.006017: normal (13.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002835: httpFlood (170.0/64.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.003454: normal (146.0/52.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.004741
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.005906: httpFlood (197.0/54.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.005906: normal (52.0/23.0)
+|   |   |   |   |   |   |   |   |   |   duration > 0.02729
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.004155: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.004155
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.005869: normal (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.005869: httpFlood (2.0)
+|   |   |   std_f_time > 0.00625
+|   |   |   |   max_f_time <= 0.282223: httpFlood (1161.0/72.0)
+|   |   |   |   max_f_time > 0.282223
+|   |   |   |   |   std_f_time <= 0.274244: slowHeaders (6.0/1.0)
+|   |   |   |   |   std_f_time > 0.274244: httpFlood (19.0)
+max_f_time > 1.04374
+|   max_f_time <= 16.142041
+|   |   mean_f_time <= 4.060093
+|   |   |   std_f_time <= 4.7705
+|   |   |   |   mean_f_time <= 1.499886
+|   |   |   |   |   mean_f_time <= 0.38769
+|   |   |   |   |   |   duration <= 1.4761: slowRead (4.0)
+|   |   |   |   |   |   duration > 1.4761
+|   |   |   |   |   |   |   mean_f_time <= 0.261378: slowHeaders (6.0/1.0)
+|   |   |   |   |   |   |   mean_f_time > 0.261378
+|   |   |   |   |   |   |   |   mean_f_time <= 0.276584: slowRead (2.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.276584: slowHeaders (2.0)
+|   |   |   |   |   mean_f_time > 0.38769
+|   |   |   |   |   |   mean_f_time <= 0.803817
+|   |   |   |   |   |   |   mean_f_time <= 0.660479: normal (3.0)
+|   |   |   |   |   |   |   mean_f_time > 0.660479: slowHeaders (6.0/2.0)
+|   |   |   |   |   |   mean_f_time > 0.803817: normal (36.0/1.0)
+|   |   |   |   mean_f_time > 1.499886
+|   |   |   |   |   mean_f_time <= 3.12602
+|   |   |   |   |   |   std_f_time <= 1.119974: slowHeaders (56.0/5.0)
+|   |   |   |   |   |   std_f_time > 1.119974
+|   |   |   |   |   |   |   duration <= 38.493368
+|   |   |   |   |   |   |   |   duration <= 10.260027: slowRead (137.0/42.0)
+|   |   |   |   |   |   |   |   duration > 10.260027
+|   |   |   |   |   |   |   |   |   max_f_time <= 10.092545: normal (5.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 10.092545: slowHeaders (12.0)
+|   |   |   |   |   |   |   duration > 38.493368: slowRead (47.0)
+|   |   |   |   |   mean_f_time > 3.12602
+|   |   |   |   |   |   mean_f_time <= 4.002149: slowHeaders (120.0)
+|   |   |   |   |   |   mean_f_time > 4.002149: slowRead (13.0)
+|   |   |   std_f_time > 4.7705: slowRead (233.0/4.0)
+|   |   mean_f_time > 4.060093
+|   |   |   std_f_time <= 5.485368: slowHeaders (866.0)
+|   |   |   std_f_time > 5.485368
+|   |   |   |   max_f_time <= 16.129487
+|   |   |   |   |   duration <= 31.540475
+|   |   |   |   |   |   max_f_time <= 16.1127: slowRead (7.0/1.0)
+|   |   |   |   |   |   max_f_time > 16.1127: slowHeaders (385.0/27.0)
+|   |   |   |   |   duration > 31.540475
+|   |   |   |   |   |   max_f_time <= 16.125577: slowHeaders (8.0)
+|   |   |   |   |   |   max_f_time > 16.125577
+|   |   |   |   |   |   |   max_f_time <= 16.128257: slowRead (60.0/25.0)
+|   |   |   |   |   |   |   max_f_time > 16.128257
+|   |   |   |   |   |   |   |   max_f_time <= 16.129297: slowHeaders (45.0/9.0)
+|   |   |   |   |   |   |   |   max_f_time > 16.129297
+|   |   |   |   |   |   |   |   |   max_f_time <= 16.129348: slowRead (5.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 16.129348
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 5.492051: slowHeaders (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 5.492051: slowRead (3.0)
+|   |   |   |   max_f_time > 16.129487
+|   |   |   |   |   max_f_time <= 16.134192
+|   |   |   |   |   |   max_f_time <= 16.134108: slowHeaders (233.0/11.0)
+|   |   |   |   |   |   max_f_time > 16.134108: slowRead (6.0/1.0)
+|   |   |   |   |   max_f_time > 16.134192: slowHeaders (120.0)
+|   max_f_time > 16.142041
+|   |   mean_f_time <= 5.083473
+|   |   |   max_f_time <= 34.987955
+|   |   |   |   mean_f_time <= 2.810491: normal (20.0/1.0)
+|   |   |   |   mean_f_time > 2.810491
+|   |   |   |   |   max_f_time <= 19.926825
+|   |   |   |   |   |   max_f_time <= 19.716571: slowRead (538.0/38.0)
+|   |   |   |   |   |   max_f_time > 19.716571: slowHeaders (21.0)
+|   |   |   |   |   max_f_time > 19.926825
+|   |   |   |   |   |   duration <= 60.74264
+|   |   |   |   |   |   |   mean_f_time <= 3.825616: slowRead (38.0)
+|   |   |   |   |   |   |   mean_f_time > 3.825616
+|   |   |   |   |   |   |   |   std_f_time <= 6.996858
+|   |   |   |   |   |   |   |   |   duration <= 60.60893: normal (26.0/3.0)
+|   |   |   |   |   |   |   |   |   duration > 60.60893
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 24.375112: slowRead (15.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 24.375112: normal (35.0/16.0)
+|   |   |   |   |   |   |   |   std_f_time > 6.996858
+|   |   |   |   |   |   |   |   |   mean_f_time <= 4.325778: normal (15.0/4.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 4.325778: slowRead (143.0/33.0)
+|   |   |   |   |   |   duration > 60.74264: slowRead (823.0/146.0)
+|   |   |   max_f_time > 34.987955
+|   |   |   |   max_f_time <= 41.802609: normal (28.0)
+|   |   |   |   max_f_time > 41.802609: slowHeaders (5.0)
+|   |   mean_f_time > 5.083473
+|   |   |   mean_f_time <= 7.30427: slowHeaders (28.0/1.0)
+|   |   |   mean_f_time > 7.30427: slowRead (4.0)
+
+Number of Leaves  : 	98
+
+Size of the tree : 	195
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2408               80.2934 %
+Incorrectly Classified Instances       591               19.7066 %
+Kappa statistic                          0.7635
+Mean absolute error                      0.0871
+Root mean squared error                  0.2474
+Relative absolute error                 31.3659 %
+Root relative squared error             66.3826 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.009    0.958      1.000    0.978      0.974    0.995     0.957     tcpFlood
+                 0.062    0.023    0.352      0.062    0.106      0.087    0.337     0.182     normal
+                 0.896    0.002    0.987      0.896    0.939      0.929    0.987     0.949     httpFlood
+                 0.946    0.064    0.747      0.946    0.835      0.806    0.974     0.810     slowRead
+                 0.924    0.138    0.572      0.924    0.706      0.660    0.901     0.496     slowHeaders
+                 0.988    0.000    1.000      0.988    0.994      0.993    1.000     1.000     udpFlood
+Weighted Avg.    0.803    0.039    0.769      0.803    0.760      0.742    0.866     0.733     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 500   0   0   0   0   0 |   a = tcpFlood
+   0  31   5 131 332   0 |   b = normal
+  22  30 448   0   0   0 |   c = httpFlood
+   0  14   0 473  13   0 |   d = slowRead
+   0   8   1  29 462   0 |   e = slowHeaders
+   0   5   0   0   1 494 |   f = udpFlood

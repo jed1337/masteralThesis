@@ -81,20 +81,19 @@ public final class Driver {
       final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
-                  new NBWrapper(),         
-NoFeatureSelection.getInstance(),
+         NoFeatureSelection.getInstance(),
          new InfoGainFS(),
          new CorrelationFS(),
+         new NBWrapper(),         
          new J48Wrapper()
       };
       final CategoricalType[] categoricalTypes = new CategoricalType[]{
-         new SpecificAttackType(),
-         new GeneralAttackType()
+         new GeneralAttackType(),
+         new SpecificAttackType()
       };
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
+         NoNoise.getInstance(),
          new HalfNoise()
-            ,
-         NoNoise.getInstance()
       };
 
       for (FeatureSelection fs : featureSelections) {
