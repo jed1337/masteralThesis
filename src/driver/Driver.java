@@ -13,7 +13,7 @@ import driver.mode.noiseLevel.HalfNoise;
 import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import evaluation.Classify;
-import evaluation.TrainTest;
+import evaluation.CrossValidation;
 import featureExtraction.BiFlowExtraction;
 import featureExtraction.Decorator.FinalDatabase;
 import featureSelection.FeatureSelection;
@@ -133,8 +133,8 @@ public final class Driver {
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
          throws IOException, Exception {
 
-      Classify classify = new TrainTest();
-//      Classify classify = new CrossValidation();
+//      Classify classify = new TrainTest();
+      Classify classify = new CrossValidation();
        
       new SystemTrain.Buidler()
          .database(new Mysql())
