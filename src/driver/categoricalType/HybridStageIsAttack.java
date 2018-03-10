@@ -10,9 +10,15 @@ public final class HybridStageIsAttack extends HybridIntermediaryStage{
    public String getRelabelSpecificAttack(List<PreprocessFile> pfL) {
       ArrayList<String> relabels = new ArrayList<>();
       for (PreprocessFile pf : pfL) {
+<<<<<<< HEAD
          final SpecificAttackTypeEnum sat = pf.getSpecificAttackType();
          relabels.add(String.format("%s:%s", sat,
             sat == SpecificAttackTypeEnum.NORMAL? "normal": "attack")
+=======
+         relabels.add(
+            String.format("%s:%s", pf.getSpecificAttackType(),
+               pf.getSpecificAttackType().getValue().equalsIgnoreCase(NORMAL)? NORMAL: ATTACK)
+>>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
          );
       }
       
@@ -20,8 +26,33 @@ public final class HybridStageIsAttack extends HybridIntermediaryStage{
    }
    
    @Override
+<<<<<<< HEAD
    public void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
       int halfTotalInstancesCount = totalInstanceCount/2;
+=======
+   public final void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstanceCount) {
+      Set<String> sats = new HashSet(); // Unique values
+      pfL.forEach((pf)->{
+         sats.add(pf.getSpecificAttackType().getValue());
+      });
+
+      /**
+       * //Todo, fix
+       * The loop repeats for an unnecessary amount of times, initialising the 
+       * same value to total instance count
+       */
+      for (String sat : sats) {
+         
+         Predicate<PreprocessFile> sameCategory = (pf)->{
+            if(sat.equalsIgnoreCase(NORMAL)){
+               return pf.getSpecificAttackType().getValue().equalsIgnoreCase(NORMAL);
+            } else{ //Assumes anything != normal is an attack
+               return !pf.getSpecificAttackType().getValue().equalsIgnoreCase(NORMAL);
+            }
+         };
+            
+         Predicate<PreprocessFile> sameSAT = (pf)->pf.getSpecificAttackType().equals(sat);
+>>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
 
       int normalPFLs = (int) pfL.stream()
          .filter(pf->pf.getSpecificAttackType()==SpecificAttackTypeEnum.NORMAL)

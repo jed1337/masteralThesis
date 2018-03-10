@@ -31,4 +31,8 @@ Classification
 	* Add more tests in general
 
 * Database
+<<<<<<< HEAD
 	* Define a database controller
+=======
+	* Clean DB code
+>>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9

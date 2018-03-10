@@ -109,7 +109,27 @@ public final class SystemTrain {
 			);
 			Utils.writePreprocessFile(pf);
 		}
+<<<<<<< HEAD
 		return pfL;
+=======
+		return preprocessFiles;
+      }
+
+	public void setupTestTrainValidation() throws IOException, Exception{
+//      Combine data
+		UtilsARFF.createArff(
+			this.combinedPath,
+			this.preprocessFiles.stream()
+				.map(tl->tl.getFaa().getSavePath())
+				.collect(Collectors.toList()),
+			AttributeTypeConstants.ATTRIBUTE_CLASS
+		);
+
+		SetupTestTrainValidation sttv = new SetupTestTrainValidation(this.combinedPath);
+		sttv.setTrainTestValidationPaths(this.evaluationSets);
+
+      writeTestTrainValidation();
+>>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
 	}
 
    /**
