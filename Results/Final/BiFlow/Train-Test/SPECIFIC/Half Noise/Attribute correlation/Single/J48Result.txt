@@ -1,0 +1,137 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_b_pkt <= 535
+|   urg_f_cnt <= -1: udpFlood (2004.0/4.0)
+|   urg_f_cnt > -1
+|   |   mean_f_time <= 0.647293
+|   |   |   max_b_pkt <= 44
+|   |   |   |   psh_b_cnt <= -1
+|   |   |   |   |   mean_f_time <= 0.00001: tcpFlood (161.0/30.0)
+|   |   |   |   |   mean_f_time > 0.00001: httpFlood (5.0)
+|   |   |   |   psh_b_cnt > -1: tcpFlood (1869.0)
+|   |   |   max_b_pkt > 44: httpFlood (1966.0)
+|   |   mean_f_time > 0.647293
+|   |   |   mean_f_time <= 2.44338
+|   |   |   |   duration <= 1.499059: slowRead (15.0/1.0)
+|   |   |   |   duration > 1.499059
+|   |   |   |   |   max_f_time <= 2.017735: slowHeaders (32.0/2.0)
+|   |   |   |   |   max_f_time > 2.017735: slowRead (140.0/44.0)
+|   |   |   mean_f_time > 2.44338
+|   |   |   |   std_f_time <= 5.485368: slowHeaders (1026.0/1.0)
+|   |   |   |   std_f_time > 5.485368
+|   |   |   |   |   urg_b_cnt <= -1
+|   |   |   |   |   |   max_f_time <= 16.125693: slowHeaders (143.0)
+|   |   |   |   |   |   max_f_time > 16.125693
+|   |   |   |   |   |   |   max_f_time <= 16.129487
+|   |   |   |   |   |   |   |   duration <= 31.540475: slowHeaders (251.0/27.0)
+|   |   |   |   |   |   |   |   duration > 31.540475
+|   |   |   |   |   |   |   |   |   max_f_time <= 16.128257: slowRead (60.0/25.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 16.128257
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 16.129297: slowHeaders (45.0/9.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 16.129297
+|   |   |   |   |   |   |   |   |   |   |   max_f_time <= 16.129348: slowRead (5.0)
+|   |   |   |   |   |   |   |   |   |   |   max_f_time > 16.129348
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 5.492051: slowHeaders (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 5.492051: slowRead (3.0)
+|   |   |   |   |   |   |   max_f_time > 16.129487
+|   |   |   |   |   |   |   |   max_f_time <= 16.134192
+|   |   |   |   |   |   |   |   |   max_f_time <= 16.132798: slowHeaders (189.0/2.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 16.132798
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 16.134108: slowHeaders (44.0/9.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 16.134108: slowRead (6.0/1.0)
+|   |   |   |   |   |   |   |   max_f_time > 16.134192: slowHeaders (133.0)
+|   |   |   |   |   urg_b_cnt > -1
+|   |   |   |   |   |   psh_b_cnt <= 0: slowRead (10.0)
+|   |   |   |   |   |   psh_b_cnt > 0: slowHeaders (19.0)
+max_b_pkt > 535
+|   total_b_bytes <= 11896
+|   |   max_b_pkt <= 628
+|   |   |   mean_f_time <= 5.080572
+|   |   |   |   std_f_time <= 6.929349: slowRead (1050.0/1.0)
+|   |   |   |   std_f_time > 6.929349
+|   |   |   |   |   std_f_time <= 6.967035
+|   |   |   |   |   |   std_f_time <= 6.941752: slowHeaders (4.0)
+|   |   |   |   |   |   std_f_time > 6.941752: slowRead (6.0)
+|   |   |   |   |   std_f_time > 6.967035: slowRead (536.0/7.0)
+|   |   |   mean_f_time > 5.080572
+|   |   |   |   mean_f_time <= 5.083473: slowRead (75.0/7.0)
+|   |   |   |   mean_f_time > 5.083473: slowHeaders (10.0)
+|   |   max_b_pkt > 628
+|   |   |   duration <= 3.135823
+|   |   |   |   max_f_time <= 0.002186: slowHeaders (5.0)
+|   |   |   |   max_f_time > 0.002186
+|   |   |   |   |   std_b_pkt <= 2979.286787
+|   |   |   |   |   |   mean_f_time <= 0.06848
+|   |   |   |   |   |   |   duration <= 0.005237
+|   |   |   |   |   |   |   |   std_f_time <= 0.000749
+|   |   |   |   |   |   |   |   |   max_f_time <= 0.002457
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 0.002327: slowRead (4.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 0.002327
+|   |   |   |   |   |   |   |   |   |   |   total_b_bytes <= 11863
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.000673: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.000673: slowRead (2.0)
+|   |   |   |   |   |   |   |   |   |   |   total_b_bytes > 11863
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.002399: slowRead (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.002399: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 0.002457: normal (4.0/1.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.000749: slowHeaders (2.0)
+|   |   |   |   |   |   |   duration > 0.005237: slowRead (121.0/13.0)
+|   |   |   |   |   |   mean_f_time > 0.06848
+|   |   |   |   |   |   |   std_b_pkt <= 1962.454138: slowRead (2.0)
+|   |   |   |   |   |   |   std_b_pkt > 1962.454138: slowHeaders (7.0/2.0)
+|   |   |   |   |   std_b_pkt > 2979.286787
+|   |   |   |   |   |   max_f_time <= 0.002721: slowRead (3.0)
+|   |   |   |   |   |   max_f_time > 0.002721
+|   |   |   |   |   |   |   total_b_bytes <= 11792
+|   |   |   |   |   |   |   |   mean_f_time <= 0.000552: normal (3.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.000552: slowHeaders (2.0)
+|   |   |   |   |   |   |   total_b_bytes > 11792: normal (2.0)
+|   |   |   duration > 3.135823: slowHeaders (15.0/1.0)
+|   total_b_bytes > 11896
+|   |   mean_b_pkt <= 1708.571429
+|   |   |   total_b_bytes <= 11967
+|   |   |   |   std_b_pkt <= 1672.004371: slowHeaders (14.0/1.0)
+|   |   |   |   std_b_pkt > 1672.004371: slowRead (3.0)
+|   |   |   total_b_bytes > 11967
+|   |   |   |   mean_f_time <= 0.277561
+|   |   |   |   |   total_b_bytes <= 12000: slowHeaders (7.0)
+|   |   |   |   |   total_b_bytes > 12000: normal (17.0)
+|   |   |   |   mean_f_time > 0.277561: normal (261.0)
+|   |   mean_b_pkt > 1708.571429: normal (1706.0)
+
+Number of Leaves  : 	50
+
+Size of the tree : 	99
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2942               98.0667 %
+Incorrectly Classified Instances        58                1.9333 %
+Kappa statistic                          0.9768
+Mean absolute error                      0.0092
+Root mean squared error                  0.0705
+Relative absolute error                  3.3085 %
+Root relative squared error             18.9128 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.004    0.978      1.000    0.989      0.987    1.000     0.999     tcpFlood
+                 0.994    0.000    0.998      0.994    0.996      0.995    0.999     0.996     normal
+                 0.978    0.000    1.000      0.978    0.989      0.987    1.000     0.999     httpFlood
+                 0.974    0.012    0.942      0.974    0.958      0.949    0.997     0.989     slowRead
+                 0.938    0.005    0.973      0.938    0.955      0.947    0.997     0.985     slowHeaders
+                 1.000    0.001    0.994      1.000    0.997      0.996    0.999     0.994     udpFlood
+Weighted Avg.    0.981    0.004    0.981      0.981    0.981      0.977    0.999     0.994     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 500   0   0   0   0   0 |   a = tcpFlood
+   0 497   0   0   0   3 |   b = normal
+  11   0 489   0   0   0 |   c = httpFlood
+   0   0   0 487  13   0 |   d = slowRead
+   0   1   0  30 469   0 |   e = slowHeaders
+   0   0   0   0   0 500 |   f = udpFlood

@@ -10,7 +10,6 @@ import driver.mode.HybridIsAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.HalfNoise;
 import driver.mode.noiseLevel.NoiseLevel;
-import driver.modeAdapter.NormalVersusSpecificAttack;
 import evaluation.Classify;
 import evaluation.TrainValidation;
 import featureExtraction.BiFlowExtraction;

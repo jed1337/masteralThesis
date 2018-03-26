@@ -1,0 +1,36 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                     Class
+Attribute           normal     attack
+                     (0.5)      (0.5)
+======================================
+total_b_bytes
+  mean           12079.7023   235.3838
+  std. dev.        764.0684    736.138
+  weight sum           6000       6000
+  precision        257.2969   257.2969
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances        2934               97.8    %
+Incorrectly Classified Instances        66                2.2    %
+Kappa statistic                          0.956 
+Mean absolute error                      0.022 
+Root mean squared error                  0.1483
+Relative absolute error                  4.4    %
+Root relative squared error             29.6648 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.040    0.961      0.996    0.978      0.957    0.977     0.960     normal
+                 0.960    0.004    0.996      0.960    0.978      0.957    0.983     0.979     attack
+Weighted Avg.    0.978    0.022    0.979      0.978    0.978      0.957    0.980     0.969     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1494    6 |    a = normal
+   60 1440 |    b = attack

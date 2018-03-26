@@ -1,0 +1,71 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+total_b_bytes <= 11896
+|   max_f_time <= 0.979988
+|   |   min_b_pkt <= 44
+|   |   |   min_f_pkt <= 46: HIGH_RATE (3871.0)
+|   |   |   min_f_pkt > 46
+|   |   |   |   min_f_pkt <= 60: LOW_RATE (6.0/1.0)
+|   |   |   |   min_f_pkt > 60: HIGH_RATE (130.0/2.0)
+|   |   min_b_pkt > 44
+|   |   |   max_f_pkt <= 169: NORMAL (9.0)
+|   |   |   max_f_pkt > 169
+|   |   |   |   bps_b <= 2716335.045114
+|   |   |   |   |   total_f_bytes <= 787: NORMAL (3.0/1.0)
+|   |   |   |   |   total_f_bytes > 787: LOW_RATE (71.0/1.0)
+|   |   |   |   bps_b > 2716335.045114
+|   |   |   |   |   min_f_pkt <= 49
+|   |   |   |   |   |   mean_f_time <= 0.000485
+|   |   |   |   |   |   |   pps_b <= 1510.553661
+|   |   |   |   |   |   |   |   std_f_time <= 0.000655: LOW_RATE (6.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.000655
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.000378: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.000378
+|   |   |   |   |   |   |   |   |   |   std_b_time <= 0.000246: LOW_RATE (3.0)
+|   |   |   |   |   |   |   |   |   |   std_b_time > 0.000246
+|   |   |   |   |   |   |   |   |   |   |   min_b_time <= 0.000416
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.002536: NORMAL (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.002536: LOW_RATE (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   min_b_time > 0.000416: NORMAL (13.0/1.0)
+|   |   |   |   |   |   |   pps_b > 1510.553661: LOW_RATE (8.0)
+|   |   |   |   |   |   mean_f_time > 0.000485: NORMAL (2.0)
+|   |   |   |   |   min_f_pkt > 49: LOW_RATE (2.0)
+|   max_f_time > 0.979988
+|   |   min_f_time <= 2.017032: LOW_RATE (3843.0/3.0)
+|   |   min_f_time > 2.017032
+|   |   |   min_f_pkt <= 56: NORMAL (3.0)
+|   |   |   min_f_pkt > 56: LOW_RATE (22.0)
+total_b_bytes > 11896
+|   min_f_pkt <= 49: LOW_RATE (28.0)
+|   min_f_pkt > 49: NORMAL (3962.0/4.0)
+
+Number of Leaves  : 	20
+
+Size of the tree : 	39
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1989               66.3    %
+Incorrectly Classified Instances      1011               33.7    %
+Kappa statistic                          0.4945
+Mean absolute error                      0.2248
+Root mean squared error                  0.4218
+Relative absolute error                 50.5881 %
+Root relative squared error             89.4808 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.008    0.001    0.800      0.008    0.016      0.057    0.276     0.335     HIGH_RATE
+                 0.984    0.016    0.969      0.984    0.976      0.964    0.987     0.977     LOW_RATE
+                 0.997    0.489    0.505      0.997    0.670      0.505    0.976     0.954     NORMAL
+Weighted Avg.    0.663    0.169    0.758      0.663    0.554      0.509    0.746     0.756     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   8  31 961 |   a = HIGH_RATE
+   0 984  16 |   b = LOW_RATE
+   2   1 997 |   c = NORMAL

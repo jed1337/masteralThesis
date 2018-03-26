@@ -1,0 +1,51 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_b_pkt <= 628
+|   min_f_pkt <= 46: attack (5448.0)
+|   min_f_pkt > 46
+|   |   min_f_pkt <= 56
+|   |   |   urg_b_cnt <= -1: normal (9.0/1.0)
+|   |   |   urg_b_cnt > -1: attack (95.0/1.0)
+|   |   min_f_pkt > 56: attack (439.0/2.0)
+max_b_pkt > 628
+|   min_f_pkt <= 46
+|   |   max_b_pkt <= 5844: attack (9.0/1.0)
+|   |   max_b_pkt > 5844
+|   |   |   max_f_pkt <= 226
+|   |   |   |   total_b_bytes <= 11863
+|   |   |   |   |   bps_b <= 2963069.616981: attack (5.0/1.0)
+|   |   |   |   |   bps_b > 2963069.616981: normal (3.0)
+|   |   |   |   total_b_bytes > 11863
+|   |   |   |   |   bps_b <= 2631932.386771: normal (4.0)
+|   |   |   |   |   bps_b > 2631932.386771: attack (3.0/1.0)
+|   |   |   max_f_pkt > 226: normal (30.0/1.0)
+|   min_f_pkt > 46: normal (5955.0/5.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	21
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2965               98.8333 %
+Incorrectly Classified Instances        35                1.1667 %
+Kappa statistic                          0.9767
+Mean absolute error                      0.0151
+Root mean squared error                  0.107 
+Relative absolute error                  3.0265 %
+Root relative squared error             21.4095 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.997    0.021    0.980      0.997    0.988      0.977    0.994     0.992     normal
+                 0.979    0.003    0.997      0.979    0.988      0.977    0.994     0.994     attack
+Weighted Avg.    0.988    0.012    0.988      0.988    0.988      0.977    0.994     0.993     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1496    4 |    a = normal
+   31 1469 |    b = attack

@@ -1,0 +1,192 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+cof = N/A: udpFlood (2004.0/4.0)
+cof = 0: tcpFlood (0.0)
+cof = 1: tcpFlood (0.0)
+cof = 2: slowHeaders (1152.0/221.0)
+cof = 3: tcpFlood (0.0)
+cof = 4: tcpFlood (133.0/17.0)
+cof = 5: tcpFlood (0.0)
+cof = 6: tcpFlood (0.0)
+cof = 7: tcpFlood (0.0)
+cof = 8: tcpFlood (0.0)
+cof = 9: tcpFlood (0.0)
+cof = 10: tcpFlood (0.0)
+cof = 11: tcpFlood (0.0)
+cof = 12: tcpFlood (0.0)
+cof = 13: tcpFlood (0.0)
+cof = 14: tcpFlood (0.0)
+cof = 15: tcpFlood (0.0)
+cof = 16: tcpFlood (0.0)
+cof = 17: tcpFlood (0.0)
+cof = 18
+|   max_b_pkt <= 46: tcpFlood (1832.0)
+|   max_b_pkt > 46: httpFlood (55.0/5.0)
+cof = 19: httpFlood (3.0)
+cof = 20: tcpFlood (0.0)
+cof = 21: httpFlood (6.0)
+cof = 22
+|   max_b_pkt <= 46: tcpFlood (51.0)
+|   max_b_pkt > 46: slowRead (10.0)
+cof = 23: httpFlood (8.0)
+cof = 24: tcpFlood (0.0)
+cof = 25: tcpFlood (0.0)
+cof = 26: slowRead (63.0)
+cof = 27
+|   max_b_pkt <= 628
+|   |   mean_f_pkt <= 122.588235: httpFlood (52.0)
+|   |   mean_f_pkt > 122.588235: slowHeaders (26.0)
+|   max_b_pkt > 628: normal (2001.0/17.0)
+cof = 28: tcpFlood (0.0)
+cof = 29
+|   max_b_pkt <= 307: httpFlood (36.0)
+|   max_b_pkt > 307: slowHeaders (29.0)
+cof = 30
+|   mean_f_pkt <= 80.307692: slowRead (1419.0/33.0)
+|   mean_f_pkt > 80.307692
+|   |   max_b_pkt <= 307: httpFlood (11.0)
+|   |   max_b_pkt > 307: slowRead (212.0/2.0)
+cof = 31
+|   max_b_pkt <= 307
+|   |   mean_f_pkt <= 86: httpFlood (1780.0)
+|   |   mean_f_pkt > 86
+|   |   |   mean_f_pkt <= 129.736842: httpFlood (21.0)
+|   |   |   mean_f_pkt > 129.736842: slowHeaders (4.0)
+|   max_b_pkt > 307
+|   |   max_b_pkt <= 2948: slowHeaders (943.0/3.0)
+|   |   max_b_pkt > 2948
+|   |   |   mean_f_pkt <= 61.142857: slowHeaders (2.0)
+|   |   |   mean_f_pkt > 61.142857: slowRead (147.0/35.0)
+cof = 32: tcpFlood (0.0)
+cof = 33: tcpFlood (0.0)
+cof = 34: tcpFlood (0.0)
+cof = 35: tcpFlood (0.0)
+cof = 36: tcpFlood (0.0)
+cof = 37: tcpFlood (0.0)
+cof = 38: tcpFlood (0.0)
+cof = 39: tcpFlood (0.0)
+cof = 40: tcpFlood (0.0)
+cof = 41: tcpFlood (0.0)
+cof = 42: tcpFlood (0.0)
+cof = 43: tcpFlood (0.0)
+cof = 44: tcpFlood (0.0)
+cof = 45: tcpFlood (0.0)
+cof = 46: tcpFlood (0.0)
+cof = 47: tcpFlood (0.0)
+cof = 48: tcpFlood (0.0)
+cof = 49: tcpFlood (0.0)
+cof = 50: tcpFlood (0.0)
+cof = 51: tcpFlood (0.0)
+cof = 52: tcpFlood (0.0)
+cof = 53: tcpFlood (0.0)
+cof = 54: tcpFlood (0.0)
+cof = 55: tcpFlood (0.0)
+cof = 56: tcpFlood (0.0)
+cof = 57: tcpFlood (0.0)
+cof = 58: tcpFlood (0.0)
+cof = 59: tcpFlood (0.0)
+cof = 60: tcpFlood (0.0)
+cof = 61: tcpFlood (0.0)
+cof = 62: tcpFlood (0.0)
+cof = 63: tcpFlood (0.0)
+cof = 64: tcpFlood (0.0)
+cof = 65: tcpFlood (0.0)
+cof = 66: tcpFlood (0.0)
+cof = 67: tcpFlood (0.0)
+cof = 68: tcpFlood (0.0)
+cof = 69: tcpFlood (0.0)
+cof = 70: tcpFlood (0.0)
+cof = 71: tcpFlood (0.0)
+cof = 72: tcpFlood (0.0)
+cof = 73: tcpFlood (0.0)
+cof = 74: tcpFlood (0.0)
+cof = 75: tcpFlood (0.0)
+cof = 76: tcpFlood (0.0)
+cof = 77: tcpFlood (0.0)
+cof = 78: tcpFlood (0.0)
+cof = 79: tcpFlood (0.0)
+cof = 80: tcpFlood (0.0)
+cof = 81: tcpFlood (0.0)
+cof = 82: tcpFlood (0.0)
+cof = 83: tcpFlood (0.0)
+cof = 84: tcpFlood (0.0)
+cof = 85: tcpFlood (0.0)
+cof = 86: tcpFlood (0.0)
+cof = 87: tcpFlood (0.0)
+cof = 88: tcpFlood (0.0)
+cof = 89: tcpFlood (0.0)
+cof = 90: tcpFlood (0.0)
+cof = 91: tcpFlood (0.0)
+cof = 92: tcpFlood (0.0)
+cof = 93: tcpFlood (0.0)
+cof = 94: tcpFlood (0.0)
+cof = 95: tcpFlood (0.0)
+cof = 96: tcpFlood (0.0)
+cof = 97: tcpFlood (0.0)
+cof = 98: tcpFlood (0.0)
+cof = 99: tcpFlood (0.0)
+cof = 100: tcpFlood (0.0)
+cof = 101: tcpFlood (0.0)
+cof = 102: tcpFlood (0.0)
+cof = 103: tcpFlood (0.0)
+cof = 104: tcpFlood (0.0)
+cof = 105: tcpFlood (0.0)
+cof = 106: tcpFlood (0.0)
+cof = 107: tcpFlood (0.0)
+cof = 108: tcpFlood (0.0)
+cof = 109: tcpFlood (0.0)
+cof = 110: tcpFlood (0.0)
+cof = 111: tcpFlood (0.0)
+cof = 112: tcpFlood (0.0)
+cof = 113: tcpFlood (0.0)
+cof = 114: tcpFlood (0.0)
+cof = 115: tcpFlood (0.0)
+cof = 116: tcpFlood (0.0)
+cof = 117: tcpFlood (0.0)
+cof = 118: tcpFlood (0.0)
+cof = 119: tcpFlood (0.0)
+cof = 120: tcpFlood (0.0)
+cof = 121: tcpFlood (0.0)
+cof = 122: tcpFlood (0.0)
+cof = 123: tcpFlood (0.0)
+cof = 124: tcpFlood (0.0)
+cof = 125: tcpFlood (0.0)
+cof = 126: tcpFlood (0.0)
+cof = 127: tcpFlood (0.0)
+
+Number of Leaves  : 	141
+
+Size of the tree : 	154
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2914               97.1333 %
+Incorrectly Classified Instances        86                2.8667 %
+Kappa statistic                          0.9656
+Mean absolute error                      0.0159
+Root mean squared error                  0.0903
+Relative absolute error                  5.7417 %
+Root relative squared error             24.24   %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.003    0.984      1.000    0.992      0.991    1.000     0.999     tcpFlood
+                 0.994    0.002    0.992      0.994    0.993      0.992    0.996     0.988     normal
+                 0.976    0.002    0.992      0.976    0.984      0.981    0.999     0.996     httpFlood
+                 0.896    0.007    0.961      0.896    0.928      0.914    0.992     0.946     slowRead
+                 0.962    0.020    0.908      0.962    0.934      0.921    0.993     0.946     slowHeaders
+                 1.000    0.001    0.994      1.000    0.997      0.996    0.999     0.994     udpFlood
+Weighted Avg.    0.971    0.006    0.972      0.971    0.971      0.966    0.997     0.978     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 500   0   0   0   0   0 |   a = tcpFlood
+   0 497   0   0   0   3 |   b = normal
+   8   0 488   0   4   0 |   c = httpFlood
+   0   3   4 448  45   0 |   d = slowRead
+   0   1   0  18 481   0 |   e = slowHeaders
+   0   0   0   0   0 500 |   f = udpFlood
