@@ -7,6 +7,7 @@ import driver.categoricalType.GeneralAttackType;
 import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
+import driver.mode.NormalVersusSpecificAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.HalfNoise;
 import driver.mode.noiseLevel.NoiseLevel;
@@ -23,6 +24,8 @@ import featureSelection.wrappers.NBWrapper;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import preprocessFiles.PreprocessTCPFlood;
+import preprocessFiles.PreprocessUDPFlood;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
@@ -97,8 +100,8 @@ public final class Driver {
 
       for (FeatureSelection fs : featureSelections) {
          singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
+         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
+         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
 //         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
 //         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
 //         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
