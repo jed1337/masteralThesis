@@ -1,0 +1,69 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: tcpFlood, normal
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.2758 * (normalized) max_f_pkt
+ +       0.2949 * (normalized) total_f_bytes
+ +       0.2418 * (normalized) std_f_pkt
+ +       0.2831 * (normalized) total_f_packets
+ +       0.1822 * (normalized) total_b_bytes
+ +       0.0886 * (normalized) std_b_pkt
+ +       0.1172 * (normalized) mean_b_pkt
+ +      -0.4813 * (normalized) psh_f_cnt
+ +       0.1309 * (normalized) total_b_packets
+ +       0.0744 * (normalized) max_b_pkt
+ +       0.0226 * (normalized) pps_b
+ +       0.1642 * (normalized) mean_f_pkt
+ +       0.041  * (normalized) psh_b_cnt
+ +       0.0171 * (normalized) bps_b
+ +       0.0094 * (normalized) bps_f
+ +       0.0081 * (normalized) pps_f
+ +       1.1452 * (normalized) cof=N/A
+ +       0      * (normalized) cof=2
+ +      -0.5029 * (normalized) cof=4
+ +      -0.4957 * (normalized) cof=18
+ +      -0.3294 * (normalized) cof=22
+ +       0.1827 * (normalized) cof=27
+ +      -0.121  * (normalized) rfb_packets
+ +      -0.3227 * (normalized) rfb_bytes
+ +       0.0407 * (normalized) min_b_time
+ +       0.1396 * (normalized) min_f_pkt
+ +       0.2171 * (normalized) min_b_pkt
+ +       0.0146 * (normalized) mean_b_time
+ +       0.0199 * (normalized) max_b_time
+ +       0.0175 * (normalized) std_b_time
+ -       0.2633
+
+Number of kernel evaluations: 12099 (77.03% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        1000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0     
+Relative absolute error                  0      %
+Root relative squared error              0      %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = tcpFlood
+   0 500 |   b = normal

@@ -1,0 +1,76 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0001 * (normalized) mean_f_pkt
+ +       0.2063 * (normalized) max_f_pkt
+ +      -0.2322 * (normalized) total_f_bytes
+ +      -0.912  * (normalized) total_b_bytes
+ +      -0.4222 * (normalized) std_b_pkt
+ +       0.4798 * (normalized) rfb_bytes
+ +      -0.333  * (normalized) max_b_pkt
+ +      -0.5351 * (normalized) mean_b_pkt
+ +       0.5358 * (normalized) std_f_pkt
+ +      -0.3643 * (normalized) total_f_packets
+ +      -0.1947 * (normalized) total_b_packets
+ +       0.4993 * (normalized) rfb_packets
+ +      -0.0013 * (normalized) bps_b
+ +      -1.6652 * (normalized) cof=N/A
+ +       0.3351 * (normalized) cof=2
+ +       0.3764 * (normalized) cof=4
+ +       0.1717 * (normalized) cof=18
+ +       0.1376 * (normalized) cof=19
+ +       0.1571 * (normalized) cof=21
+ +       0.1678 * (normalized) cof=23
+ +       0.0296 * (normalized) cof=27
+ +      -0      * (normalized) cof=29
+ +       0.0884 * (normalized) cof=30
+ +       0.2014 * (normalized) cof=31
+ +      -0.1543 * (normalized) min_f_pkt
+ +       0.0694 * (normalized) mean_b_time
+ +      -0      * (normalized) pps_b
+ +      -0.3546 * (normalized) std_f_time
+ +      -0.3303 * (normalized) max_f_time
+ +      -0.458  * (normalized) duration
+ +       0.0738 * (normalized) min_b_time
+ +      -0.4183 * (normalized) mean_f_time
+ +       0.0044 * (normalized) bps_f
+ +       0.0046 * (normalized) pps_f
+ +       0.0259 * (normalized) max_b_time
+ +       0.0204 * (normalized) std_b_time
+ +      -0.3723 * (normalized) min_f_time
+ +       0.6642
+
+Number of kernel evaluations: 21488 (74.885% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        1000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0     
+Relative absolute error                  0      %
+Root relative squared error              0      %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     httpFlood
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+   0 500 |   b = httpFlood

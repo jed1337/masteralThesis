@@ -1,0 +1,94 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.5843 * (normalized) mean_f_time
+ +       1.2556 * (normalized) duration
+ +       0.8672 * (normalized) std_f_time
+ +       1.1029 * (normalized) max_f_time
+ +       2.0068 * (normalized) psh_f_cnt
+ +       0.7009 * (normalized) mean_f_pkt
+ +       2.7908 * (normalized) max_f_pkt
+ +       1.4069 * (normalized) std_f_pkt
+ +       0.3441 * (normalized) total_b_packets
+ +       6.5434 * (normalized) min_f_time
+ +       0.0001 * (normalized) mean_b_time
+ -       1.2654
+
+Number of kernel evaluations: 23032 (79.457% cached)
+
+Classifier for classes: HIGH_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.6732 * (normalized) mean_f_time
+ +       4.8995 * (normalized) duration
+ +       0.2296 * (normalized) std_f_time
+ +       0.345  * (normalized) max_f_time
+ +       2.9174 * (normalized) psh_f_cnt
+ +       0.5938 * (normalized) mean_f_pkt
+ +       3.2496 * (normalized) max_f_pkt
+ +       1.7369 * (normalized) std_f_pkt
+ +       1.1322 * (normalized) total_b_packets
+ +       1.4443 * (normalized) min_f_time
+ +       0.1284 * (normalized) mean_b_time
+ -       1.2854
+
+Number of kernel evaluations: 550035 (54.492% cached)
+
+Classifier for classes: LOW_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -4.5621 * (normalized) mean_f_time
+ +      -3.7962 * (normalized) duration
+ +       2.8969 * (normalized) std_f_time
+ +       3.1421 * (normalized) max_f_time
+ +      -2.3719 * (normalized) psh_f_cnt
+ +       1.1335 * (normalized) mean_f_pkt
+ +      -5.9447 * (normalized) max_f_pkt
+ +       2.852  * (normalized) std_f_pkt
+ +       5.8136 * (normalized) total_b_packets
+ +      -6.9375 * (normalized) min_f_time
+ +      -1.8392 * (normalized) mean_b_time
+ +       1.4215
+
+Number of kernel evaluations: 4414080 (63.931% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        1757               58.5667 %
+Incorrectly Classified Instances      1243               41.4333 %
+Kappa statistic                          0.3785
+Mean absolute error                      0.385 
+Root mean squared error                  0.4866
+Relative absolute error                 86.6167 %
+Root relative squared error            103.2311 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.046    0.001    0.979      0.046    0.088      0.173    0.521     0.363     HIGH_RATE
+                 0.836    0.062    0.871      0.836    0.853      0.782    0.889     0.784     LOW_RATE
+                 0.875    0.559    0.439      0.875    0.585      0.315    0.658     0.426     NORMAL
+Weighted Avg.    0.586    0.207    0.763      0.586    0.509      0.423    0.689     0.524     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  46   0 954 |   a = HIGH_RATE
+   0 836 164 |   b = LOW_RATE
+   1 124 875 |   c = NORMAL

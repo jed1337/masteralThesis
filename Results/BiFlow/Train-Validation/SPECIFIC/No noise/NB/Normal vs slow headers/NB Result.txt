@@ -1,0 +1,36 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                     Class
+Attribute           normal slowHeaders
+                     (0.5)       (0.5)
+=======================================
+max_f_pkt
+  mean             163.1246     177.844
+  std. dev.          5.6839    122.3197
+  weight sum           2000        2000
+  precision          9.6111      9.6111
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         998               99.8    %
+Incorrectly Classified Instances         2                0.2    %
+Kappa statistic                          0.996 
+Mean absolute error                      0.0265
+Root mean squared error                  0.0566
+Relative absolute error                  5.2985 %
+Root relative squared error             11.3218 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.000    1.000      0.996    0.998      0.996    0.999     0.999     normal
+                 1.000    0.004    0.996      1.000    0.998      0.996    0.998     0.996     slowHeaders
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    0.999     0.997     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 498   2 |   a = normal
+   0 500 |   b = slowHeaders

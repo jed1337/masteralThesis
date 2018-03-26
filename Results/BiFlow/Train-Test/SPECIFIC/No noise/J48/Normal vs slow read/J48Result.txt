@@ -1,0 +1,35 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_f_pkt <= 168
+|   max_f_pkt <= 60: slowRead (221.0/3.0)
+|   max_f_pkt > 60: normal (1996.0)
+max_f_pkt > 168: slowRead (1783.0/1.0)
+
+Number of Leaves  : 	3
+
+Size of the tree : 	5
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         997               99.7    %
+Incorrectly Classified Instances         3                0.3    %
+Kappa statistic                          0.994 
+Mean absolute error                      0.0039
+Root mean squared error                  0.0544
+Relative absolute error                  0.7833 %
+Root relative squared error             10.871  %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.000    1.000      0.994    0.997      0.994    0.999     0.999     normal
+                 1.000    0.006    0.994      1.000    0.997      0.994    0.999     0.997     slowRead
+Weighted Avg.    0.997    0.003    0.997      0.997    0.997      0.994    0.999     0.998     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 497   3 |   a = normal
+   0 500 |   b = slowRead

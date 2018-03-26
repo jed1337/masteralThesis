@@ -1,0 +1,266 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+cof = N/A: udpFlood (2004.0/4.0)
+cof = 0: tcpFlood (0.0)
+cof = 1: tcpFlood (0.0)
+cof = 2
+|   mean_f_time <= 3.003442
+|   |   total_f_bytes <= 112: httpFlood (20.0/4.0)
+|   |   total_f_bytes > 112
+|   |   |   total_f_bytes <= 180
+|   |   |   |   max_f_time <= 1.475708: slowRead (14.0)
+|   |   |   |   max_f_time > 1.475708: slowHeaders (33.0/3.0)
+|   |   |   total_f_bytes > 180: slowRead (132.0/42.0)
+|   mean_f_time > 3.003442
+|   |   max_f_time <= 16.125693: slowHeaders (166.0)
+|   |   max_f_time > 16.125693
+|   |   |   max_f_time <= 16.129468
+|   |   |   |   duration <= 31.540475: slowHeaders (290.0/27.0)
+|   |   |   |   duration > 31.540475
+|   |   |   |   |   max_f_time <= 16.128257: slowRead (60.0/25.0)
+|   |   |   |   |   max_f_time > 16.128257
+|   |   |   |   |   |   max_f_time <= 16.129297: slowHeaders (46.0/9.0)
+|   |   |   |   |   |   max_f_time > 16.129297
+|   |   |   |   |   |   |   max_f_time <= 16.129348: slowRead (5.0)
+|   |   |   |   |   |   |   max_f_time > 16.129348
+|   |   |   |   |   |   |   |   duration <= 31.578648: slowRead (5.0/1.0)
+|   |   |   |   |   |   |   |   duration > 31.578648: slowHeaders (2.0)
+|   |   |   max_f_time > 16.129468
+|   |   |   |   max_f_time <= 16.134192
+|   |   |   |   |   max_f_time <= 16.132798: slowHeaders (196.0/2.0)
+|   |   |   |   |   max_f_time > 16.132798
+|   |   |   |   |   |   max_f_time <= 16.134108: slowHeaders (44.0/9.0)
+|   |   |   |   |   |   max_f_time > 16.134108: slowRead (6.0/1.0)
+|   |   |   |   max_f_time > 16.134192: slowHeaders (133.0)
+cof = 3: tcpFlood (0.0)
+cof = 4
+|   total_f_bytes <= 68: tcpFlood (117.0/1.0)
+|   total_f_bytes > 68: httpFlood (16.0)
+cof = 5: tcpFlood (0.0)
+cof = 6: tcpFlood (0.0)
+cof = 7: tcpFlood (0.0)
+cof = 8: tcpFlood (0.0)
+cof = 9: tcpFlood (0.0)
+cof = 10: tcpFlood (0.0)
+cof = 11: tcpFlood (0.0)
+cof = 12: tcpFlood (0.0)
+cof = 13: tcpFlood (0.0)
+cof = 14: tcpFlood (0.0)
+cof = 15: tcpFlood (0.0)
+cof = 16: tcpFlood (0.0)
+cof = 17: tcpFlood (0.0)
+cof = 18
+|   total_f_bytes <= 52: tcpFlood (1832.0)
+|   total_f_bytes > 52
+|   |   total_b_packets <= 2: httpFlood (50.0)
+|   |   total_b_packets > 2: slowRead (5.0)
+cof = 19: httpFlood (3.0)
+cof = 20: tcpFlood (0.0)
+cof = 21: httpFlood (6.0)
+cof = 22
+|   mean_b_pkt <= 50: tcpFlood (51.0)
+|   mean_b_pkt > 50: slowRead (10.0)
+cof = 23: httpFlood (8.0)
+cof = 24: tcpFlood (0.0)
+cof = 25: tcpFlood (0.0)
+cof = 26: slowRead (63.0)
+cof = 27
+|   total_f_bytes <= 508: httpFlood (52.0)
+|   total_f_bytes > 508
+|   |   mean_b_pkt <= 284: slowHeaders (26.0)
+|   |   mean_b_pkt > 284
+|   |   |   rfb_bytes <= 0.071746: normal (1803.0)
+|   |   |   rfb_bytes > 0.071746
+|   |   |   |   total_b_bytes <= 11948
+|   |   |   |   |   mean_b_pkt <= 2368.8
+|   |   |   |   |   |   total_b_packets <= 5: slowRead (10.0/2.0)
+|   |   |   |   |   |   total_b_packets > 5: slowHeaders (7.0/2.0)
+|   |   |   |   |   mean_b_pkt > 2368.8: normal (2.0)
+|   |   |   |   total_b_bytes > 11948: normal (179.0)
+cof = 28: tcpFlood (0.0)
+cof = 29
+|   std_b_pkt <= 138.641639: httpFlood (36.0)
+|   std_b_pkt > 138.641639: slowHeaders (29.0)
+cof = 30
+|   pps_b <= 1.732491
+|   |   mean_f_time <= 5.080572
+|   |   |   total_f_bytes <= 990
+|   |   |   |   mean_f_time <= 4.353533
+|   |   |   |   |   pps_b <= 0.21414: slowHeaders (4.0)
+|   |   |   |   |   pps_b > 0.21414: slowRead (48.0/6.0)
+|   |   |   |   mean_f_time > 4.353533: slowRead (116.0)
+|   |   |   total_f_bytes > 990: slowRead (1366.0/2.0)
+|   |   mean_f_time > 5.080572
+|   |   |   mean_f_time <= 5.083473
+|   |   |   |   total_f_bytes <= 864
+|   |   |   |   |   pps_b <= 0.210427
+|   |   |   |   |   |   pps_b <= 0.207028: slowRead (7.0)
+|   |   |   |   |   |   pps_b > 0.207028: slowHeaders (7.0)
+|   |   |   |   |   pps_b > 0.210427: slowRead (12.0)
+|   |   |   |   total_f_bytes > 864: slowRead (49.0)
+|   |   |   mean_f_time > 5.083473: slowHeaders (7.0)
+|   pps_b > 1.732491
+|   |   total_b_packets <= 3: httpFlood (11.0)
+|   |   total_b_packets > 3
+|   |   |   mean_f_time <= 0.000539
+|   |   |   |   max_f_time <= 0.002721: slowRead (3.0)
+|   |   |   |   max_f_time > 0.002721: normal (3.0)
+|   |   |   mean_f_time > 0.000539
+|   |   |   |   std_b_pkt <= 2979.286787: slowRead (5.0/2.0)
+|   |   |   |   std_b_pkt > 2979.286787: slowHeaders (4.0)
+cof = 31
+|   total_f_bytes <= 706: httpFlood (1801.0)
+|   total_f_bytes > 706
+|   |   mean_f_time <= 0.001001
+|   |   |   duration <= 0.005237
+|   |   |   |   total_f_bytes <= 864: slowHeaders (10.0/2.0)
+|   |   |   |   total_f_bytes > 864
+|   |   |   |   |   max_f_time <= 0.002206: slowHeaders (3.0)
+|   |   |   |   |   max_f_time > 0.002206
+|   |   |   |   |   |   max_f_time <= 0.002438: slowRead (9.0/1.0)
+|   |   |   |   |   |   max_f_time > 0.002438: normal (3.0)
+|   |   |   duration > 0.005237
+|   |   |   |   std_b_pkt <= 1672.004371: slowHeaders (2.0)
+|   |   |   |   std_b_pkt > 1672.004371: slowRead (108.0/10.0)
+|   |   mean_f_time > 0.001001
+|   |   |   pps_b <= 1.174362: slowHeaders (937.0)
+|   |   |   pps_b > 1.174362
+|   |   |   |   total_b_bytes <= 12071
+|   |   |   |   |   std_b_pkt <= 1672.004371: slowHeaders (13.0)
+|   |   |   |   |   std_b_pkt > 1672.004371
+|   |   |   |   |   |   total_b_packets <= 5: slowHeaders (4.0)
+|   |   |   |   |   |   total_b_packets > 5: slowRead (4.0)
+|   |   |   |   total_b_bytes > 12071: normal (3.0)
+cof = 32: tcpFlood (0.0)
+cof = 33: tcpFlood (0.0)
+cof = 34: tcpFlood (0.0)
+cof = 35: tcpFlood (0.0)
+cof = 36: tcpFlood (0.0)
+cof = 37: tcpFlood (0.0)
+cof = 38: tcpFlood (0.0)
+cof = 39: tcpFlood (0.0)
+cof = 40: tcpFlood (0.0)
+cof = 41: tcpFlood (0.0)
+cof = 42: tcpFlood (0.0)
+cof = 43: tcpFlood (0.0)
+cof = 44: tcpFlood (0.0)
+cof = 45: tcpFlood (0.0)
+cof = 46: tcpFlood (0.0)
+cof = 47: tcpFlood (0.0)
+cof = 48: tcpFlood (0.0)
+cof = 49: tcpFlood (0.0)
+cof = 50: tcpFlood (0.0)
+cof = 51: tcpFlood (0.0)
+cof = 52: tcpFlood (0.0)
+cof = 53: tcpFlood (0.0)
+cof = 54: tcpFlood (0.0)
+cof = 55: tcpFlood (0.0)
+cof = 56: tcpFlood (0.0)
+cof = 57: tcpFlood (0.0)
+cof = 58: tcpFlood (0.0)
+cof = 59: tcpFlood (0.0)
+cof = 60: tcpFlood (0.0)
+cof = 61: tcpFlood (0.0)
+cof = 62: tcpFlood (0.0)
+cof = 63: tcpFlood (0.0)
+cof = 64: tcpFlood (0.0)
+cof = 65: tcpFlood (0.0)
+cof = 66: tcpFlood (0.0)
+cof = 67: tcpFlood (0.0)
+cof = 68: tcpFlood (0.0)
+cof = 69: tcpFlood (0.0)
+cof = 70: tcpFlood (0.0)
+cof = 71: tcpFlood (0.0)
+cof = 72: tcpFlood (0.0)
+cof = 73: tcpFlood (0.0)
+cof = 74: tcpFlood (0.0)
+cof = 75: tcpFlood (0.0)
+cof = 76: tcpFlood (0.0)
+cof = 77: tcpFlood (0.0)
+cof = 78: tcpFlood (0.0)
+cof = 79: tcpFlood (0.0)
+cof = 80: tcpFlood (0.0)
+cof = 81: tcpFlood (0.0)
+cof = 82: tcpFlood (0.0)
+cof = 83: tcpFlood (0.0)
+cof = 84: tcpFlood (0.0)
+cof = 85: tcpFlood (0.0)
+cof = 86: tcpFlood (0.0)
+cof = 87: tcpFlood (0.0)
+cof = 88: tcpFlood (0.0)
+cof = 89: tcpFlood (0.0)
+cof = 90: tcpFlood (0.0)
+cof = 91: tcpFlood (0.0)
+cof = 92: tcpFlood (0.0)
+cof = 93: tcpFlood (0.0)
+cof = 94: tcpFlood (0.0)
+cof = 95: tcpFlood (0.0)
+cof = 96: tcpFlood (0.0)
+cof = 97: tcpFlood (0.0)
+cof = 98: tcpFlood (0.0)
+cof = 99: tcpFlood (0.0)
+cof = 100: tcpFlood (0.0)
+cof = 101: tcpFlood (0.0)
+cof = 102: tcpFlood (0.0)
+cof = 103: tcpFlood (0.0)
+cof = 104: tcpFlood (0.0)
+cof = 105: tcpFlood (0.0)
+cof = 106: tcpFlood (0.0)
+cof = 107: tcpFlood (0.0)
+cof = 108: tcpFlood (0.0)
+cof = 109: tcpFlood (0.0)
+cof = 110: tcpFlood (0.0)
+cof = 111: tcpFlood (0.0)
+cof = 112: tcpFlood (0.0)
+cof = 113: tcpFlood (0.0)
+cof = 114: tcpFlood (0.0)
+cof = 115: tcpFlood (0.0)
+cof = 116: tcpFlood (0.0)
+cof = 117: tcpFlood (0.0)
+cof = 118: tcpFlood (0.0)
+cof = 119: tcpFlood (0.0)
+cof = 120: tcpFlood (0.0)
+cof = 121: tcpFlood (0.0)
+cof = 122: tcpFlood (0.0)
+cof = 123: tcpFlood (0.0)
+cof = 124: tcpFlood (0.0)
+cof = 125: tcpFlood (0.0)
+cof = 126: tcpFlood (0.0)
+cof = 127: tcpFlood (0.0)
+
+Number of Leaves  : 	178
+
+Size of the tree : 	228
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2957               98.5667 %
+Incorrectly Classified Instances        43                1.4333 %
+Kappa statistic                          0.9828
+Mean absolute error                      0.0068
+Root mean squared error                  0.0607
+Relative absolute error                  2.4358 %
+Root relative squared error             16.2812 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 0.996    0.000    1.000      0.996    0.998      0.998    1.000     0.998     normal
+                 1.000    0.001    0.996      1.000    0.998      0.998    1.000     1.000     httpFlood
+                 0.978    0.011    0.946      0.978    0.962      0.954    0.996     0.982     slowRead
+                 0.940    0.004    0.977      0.940    0.958      0.950    0.996     0.984     slowHeaders
+                 1.000    0.001    0.996      1.000    0.998      0.998    1.000     0.996     udpFlood
+Weighted Avg.    0.986    0.003    0.986      0.986    0.986      0.983    0.998     0.993     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 500   0   0   0   0   0 |   a = tcpFlood
+   0 498   0   0   0   2 |   b = normal
+   0   0 500   0   0   0 |   c = httpFlood
+   0   0   0 489  11   0 |   d = slowRead
+   0   0   2  28 470   0 |   e = slowHeaders
+   0   0   0   0   0 500 |   f = udpFlood

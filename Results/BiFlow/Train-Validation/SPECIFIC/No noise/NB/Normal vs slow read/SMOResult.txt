@@ -1,0 +1,40 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        11.2128 * (normalized) std_f_pkt
+ -       3.0278
+
+Number of kernel evaluations: 56451 (59.167% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         899               89.9    %
+Incorrectly Classified Instances       101               10.1    %
+Kappa statistic                          0.798 
+Mean absolute error                      0.101 
+Root mean squared error                  0.3178
+Relative absolute error                 20.2    %
+Root relative squared error             63.561  %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.202    0.832      1.000    0.908      0.815    0.899     0.832     normal
+                 0.798    0.000    1.000      0.798    0.888      0.815    0.899     0.899     slowRead
+Weighted Avg.    0.899    0.101    0.916      0.899    0.898      0.815    0.899     0.865     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+ 101 399 |   b = slowRead

@@ -1,0 +1,3008 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilitiesAll the base classifiers: 
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2205/9)
+|   total_b_bytes >= 22 : attack (3787/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (6/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11879.5
+|   |   |   |   total_b_bytes < 11853.5 : normal (19/4)
+|   |   |   |   total_b_bytes >= 11853.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (20/5)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4206/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (7/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (535/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (247/6)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (960/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2190/13)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1687/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2062/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (6/1)
+|   |   |   total_b_bytes >= 11818 : normal (25/5)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (21/1)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4194/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (8/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (575/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (233/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (990/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2310/6)
+|   |   |   total_b_bytes >= 22 : attack (1687/0)
+|   |   total_b_bytes >= 49 : normal (2/0)
+|   total_b_bytes >= 56 : attack (2056/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (11/3)
+|   |   |   total_b_bytes >= 11818 : normal (30/6)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (19/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4181/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (555/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (213/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (917/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2244/12)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1717/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2079/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818
+|   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   total_b_bytes >= 9598 : normal (13/1)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (18/5)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (27/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4172/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (17/8)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (527/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (212/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (962/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2263/15)
+|   total_b_bytes >= 22 : attack (3738/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (11/0)
+|   |   |   total_b_bytes >= 11818 : normal (22/5)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (7/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (31/1)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4261/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (6/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (517/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (203/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (941/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2214/11)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1665/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2061/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (5/1)
+|   |   |   total_b_bytes >= 11818 : normal (21/5)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (13/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (22/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4230/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (13/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (547/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (224/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (983/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2351/10)
+|   total_b_bytes >= 22 : attack (3741/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (10/1)
+|   |   |   total_b_bytes >= 11818 : normal (15/6)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (11/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (20/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4034/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11983.5 : normal (546/0)
+|   |   |   |   |   total_b_bytes >= 11983.5 : normal (261/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (997/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2219/5)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1696/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2067/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (9/1)
+|   |   |   total_b_bytes >= 11818 : normal (18/4)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (14/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (27/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4140/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (8/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (602/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (221/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (978/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2172/10)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1718/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2056/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (6/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (24/7)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (17/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4204/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (13/5)
+|   |   |   total_b_bytes >= 11957.5 : normal (1781/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2259/14)
+|   |   |   total_b_bytes >= 22 : attack (1658/0)
+|   |   total_b_bytes >= 49 : normal (3/0)
+|   total_b_bytes >= 56 : attack (2099/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (10/1)
+|   |   |   total_b_bytes >= 11818 : normal (30/6)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (9/1)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4134/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (14/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11983.5 : normal (569/0)
+|   |   |   |   |   total_b_bytes >= 11983.5 : normal (242/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (960/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2247/6)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1621/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2075/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (3/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (4/1)
+|   |   |   |   total_b_bytes >= 11818 : normal (20/7)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (25/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4284/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (8/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (550/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (249/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (904/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2330/9)
+|   total_b_bytes >= 22 : attack (3733/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (3/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (11/1)
+|   |   |   total_b_bytes >= 11818 : normal (26/9)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (3/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (28/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4163/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (554/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (216/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (921/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2254/11)
+|   total_b_bytes >= 22 : attack (3772/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (15/4)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (19/2)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (10/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (25/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4161/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/2)
+|   |   |   total_b_bytes >= 11957.5 : normal (1732/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2226/10)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1669/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2098/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (9/1)
+|   |   |   total_b_bytes >= 11818 : normal (28/9)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (15/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (17/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4141/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (8/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (633/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (218/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (937/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2142/16)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1797/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2077/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 11818
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598 : normal (11/1)
+|   |   total_b_bytes >= 11818 : normal (24/10)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (7/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (28/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4117/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (15/7)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (554/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (242/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (983/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2213/7)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1695/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2044/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (12/2)
+|   |   |   total_b_bytes >= 11818 : normal (32/16)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (15/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4185/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (602/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (236/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (944/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2259/11)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1646/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2047/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (6/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (23/9)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (10/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (21/6)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4256/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (14/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (553/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (222/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (941/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2259/10)
+|   total_b_bytes >= 22 : attack (3714/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (9/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (25/6)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (6/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (22/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4212/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (8/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (575/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (214/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (956/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2228/11)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1648/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2033/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (15/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (24/10)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (30/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4245/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (13/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (605/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (228/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (918/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2261/11)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1675/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2128/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 9598 : normal (2/0)
+|   |   total_b_bytes >= 9598
+|   |   |   total_b_bytes < 11818 : normal (6/1)
+|   |   |   total_b_bytes >= 11818 : normal (19/6)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (10/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (23/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4103/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (13/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11983.5 : normal (545/0)
+|   |   |   |   |   total_b_bytes >= 11983.5 : normal (247/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (966/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2262/7)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1647/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2104/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (7/2)
+|   |   |   |   total_b_bytes >= 11818 : normal (24/5)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (6/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (17/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4123/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (594/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (226/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (978/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2233/11)
+|   total_b_bytes >= 22 : attack (3733/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (10/1)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (25/7)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (11/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (21/5)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4206/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (4/1)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (535/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (208/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1014/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2175/10)
+|   total_b_bytes >= 22 : attack (3793/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (16/3)
+|   |   |   |   total_b_bytes >= 11818 : normal (16/5)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (15/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (26/6)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4124/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (556/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (254/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1012/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2266/8)
+|   |   |   total_b_bytes >= 22 : attack (1662/0)
+|   |   total_b_bytes >= 49 : normal (2/0)
+|   total_b_bytes >= 56 : attack (1971/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (6/0)
+|   |   |   total_b_bytes >= 11818 : normal (21/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (20/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4227/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (13/6)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (559/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (249/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (996/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2210/5)
+|   total_b_bytes >= 22 : attack (3807/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (12/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (26/10)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (6/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (35/7)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4187/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (16/7)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (551/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (190/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (960/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2299/6)
+|   total_b_bytes >= 22 : attack (3725/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818
+|   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   total_b_bytes >= 9598 : normal (9/1)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (25/9)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (7/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (21/5)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4182/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (4/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (541/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (204/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (981/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2219/5)
+|   total_b_bytes >= 22 : attack (3741/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (12/3)
+|   |   |   total_b_bytes >= 11818 : normal (23/7)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (29/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4204/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (556/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (227/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (970/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2224/9)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1667/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2053/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (10/1)
+|   |   |   total_b_bytes >= 11818 : normal (17/3)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (27/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4150/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (557/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (223/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1050/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2268/8)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1671/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2092/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (6/1)
+|   |   |   total_b_bytes >= 11818 : normal (22/6)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (4/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (16/1)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4105/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (593/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (248/5)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (965/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2220/7)
+|   |   |   total_b_bytes >= 22 : attack (1627/0)
+|   |   total_b_bytes >= 49 : normal (3/0)
+|   total_b_bytes >= 56 : attack (2085/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 11818 : normal (4/0)
+|   |   total_b_bytes >= 11818 : normal (23/9)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (6/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (23/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4216/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (8/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (584/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (235/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (966/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2325/12)
+|   total_b_bytes >= 22 : attack (3753/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (11/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (25/8)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (11/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (24/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4098/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (18/7)
+|   |   |   total_b_bytes >= 11957.5 : normal (1735/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2268/13)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1704/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2059/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 9598 : normal (1/0)
+|   |   total_b_bytes >= 9598
+|   |   |   total_b_bytes < 11818 : normal (7/2)
+|   |   |   total_b_bytes >= 11818 : normal (22/6)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (5/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (21/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4108/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (543/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (221/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1031/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2228/9)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1767/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2108/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (4/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (23/7)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (31/6)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4098/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (551/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (253/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (913/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2239/7)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1724/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2058/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (4/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (23/7)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (7/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (15/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4187/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (9/4)
+|   |   |   total_b_bytes >= 11957.5 : normal (1733/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2199/15)
+|   total_b_bytes >= 22 : attack (3767/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (9/0)
+|   |   |   total_b_bytes >= 11818 : normal (27/10)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (19/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4184/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (9/4)
+|   |   |   total_b_bytes >= 11957.5 : normal (1774/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2264/10)
+|   |   |   total_b_bytes >= 22 : attack (1640/0)
+|   |   total_b_bytes >= 49 : normal (3/0)
+|   total_b_bytes >= 56 : attack (2055/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (10/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11879.5
+|   |   |   |   total_b_bytes < 11853.5 : normal (31/6)
+|   |   |   |   total_b_bytes >= 11853.5 : normal (7/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (19/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4200/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (8/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (589/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (223/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (951/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2310/7)
+|   total_b_bytes >= 22 : attack (3809/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (6/1)
+|   |   |   |   total_b_bytes >= 11818 : normal (21/4)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (7/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (19/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4021/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (15/6)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (571/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (236/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (984/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2250/13)
+|   total_b_bytes >= 22 : attack (3827/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11879.5
+|   |   |   total_b_bytes < 11853.5
+|   |   |   |   total_b_bytes < 11818 : normal (9/2)
+|   |   |   |   total_b_bytes >= 11818 : normal (19/6)
+|   |   |   total_b_bytes >= 11853.5 : normal (4/0)
+|   |   total_b_bytes >= 11879.5 : normal (13/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4102/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (4/1)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (591/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (234/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (947/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2243/11)
+|   total_b_bytes >= 22 : attack (3791/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (15/2)
+|   |   |   |   total_b_bytes >= 11818 : normal (24/5)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (13/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4084/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/1)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (590/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (229/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (990/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2203/11)
+|   total_b_bytes >= 22 : attack (3836/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (6/1)
+|   |   |   total_b_bytes >= 11818 : normal (25/9)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (16/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4142/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (4/1)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (558/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (209/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (989/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2278/10)
+|   total_b_bytes >= 22 : attack (3751/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (8/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (20/4)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (2/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (20/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4192/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (528/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (208/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (982/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2298/11)
+|   |   |   total_b_bytes >= 22 : attack (1693/0)
+|   |   total_b_bytes >= 49 : normal (3/0)
+|   total_b_bytes >= 56 : attack (2073/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 11818 : normal (9/0)
+|   |   total_b_bytes >= 11818 : normal (34/11)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5 : normal (4144/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (8/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (569/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (222/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (947/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2224/10)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1790/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2123/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (15/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (25/12)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (21/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4005/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (5/0)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (588/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (227/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (968/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2215/10)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1634/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2132/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (3/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (14/3)
+|   |   |   |   total_b_bytes >= 11818 : normal (20/5)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (5/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (19/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4226/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (8/4)
+|   |   |   total_b_bytes >= 11957.5 : normal (1722/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2199/16)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1634/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2097/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 9598 : normal (2/0)
+|   |   total_b_bytes >= 9598
+|   |   |   total_b_bytes < 11818 : normal (11/2)
+|   |   |   total_b_bytes >= 11818 : normal (30/9)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (10/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (22/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4203/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (15/6)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (569/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (220/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (987/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2201/6)
+|   total_b_bytes >= 22 : attack (3775/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (10/2)
+|   |   |   |   total_b_bytes >= 11818 : normal (33/7)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (27/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4128/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (583/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (254/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (971/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2217/8)
+|   total_b_bytes >= 22 : attack (3809/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (3/1)
+|   |   |   total_b_bytes >= 11818 : normal (27/6)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (17/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4105/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (19/9)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (546/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (249/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (999/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2193/8)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1719/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2077/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 9598 : normal (1/0)
+|   |   total_b_bytes >= 9598
+|   |   |   total_b_bytes < 11853.5
+|   |   |   |   total_b_bytes < 11818 : normal (5/1)
+|   |   |   |   total_b_bytes >= 11818 : normal (17/5)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (27/7)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4170/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (4/2)
+|   |   |   total_b_bytes >= 11957.5 : normal (1778/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2199/14)
+|   total_b_bytes >= 22 : attack (3760/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (7/1)
+|   |   |   total_b_bytes >= 11818 : normal (20/9)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (25/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4159/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (6/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (594/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (241/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (979/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 11853.5
+|   total_b_bytes < 6788
+|   |   total_b_bytes < 22 : attack (2254/10)
+|   |   total_b_bytes >= 22 : attack (3752/0)
+|   total_b_bytes >= 6788
+|   |   total_b_bytes < 11818 : normal (5/1)
+|   |   total_b_bytes >= 11818 : attack (25/10)
+total_b_bytes >= 11853.5
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11879.5 : normal (5/0)
+|   |   total_b_bytes >= 11879.5 : normal (25/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4189/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (8/3)
+|   |   |   total_b_bytes >= 11957.5 : normal (1737/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2256/10)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1654/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2034/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (8/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (24/9)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (14/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (19/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4175/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (566/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (209/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1031/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2213/11)
+|   total_b_bytes >= 22 : attack (3791/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (14/1)
+|   |   |   total_b_bytes >= 11818 : normal (19/6)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (27/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4138/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (10/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (574/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (236/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (967/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2249/13)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1629/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2089/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (9/0)
+|   |   |   total_b_bytes >= 11818 : normal (13/3)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (20/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (16/1)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4148/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/5)
+|   |   |   total_b_bytes >= 11957.5 : normal (1814/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2274/9)
+|   |   |   total_b_bytes >= 22 : attack (1690/0)
+|   |   total_b_bytes >= 49 : normal (2/0)
+|   total_b_bytes >= 56 : attack (2096/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (9/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (22/8)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (21/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4075/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (12/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (539/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (218/5)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1030/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2259/8)
+|   total_b_bytes >= 22 : attack (3764/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11931.5 : normal (4224/0)
+|   total_b_bytes >= 11931.5
+|   |   total_b_bytes < 11957.5 : attack (10/3)
+|   |   total_b_bytes >= 11957.5
+|   |   |   total_b_bytes < 12009.5
+|   |   |   |   total_b_bytes < 11989.5 : normal (555/0)
+|   |   |   |   total_b_bytes >= 11989.5 : normal (267/2)
+|   |   |   total_b_bytes >= 12009.5 : normal (921/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2103/9)
+|   |   |   total_b_bytes >= 22 : attack (1685/0)
+|   |   total_b_bytes >= 49 : normal (3/0)
+|   total_b_bytes >= 56 : attack (2143/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (11/2)
+|   |   |   |   total_b_bytes >= 11818 : normal (27/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (6/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (20/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4281/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (547/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (212/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (948/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2157/6)
+|   total_b_bytes >= 22 : attack (3795/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (9/3)
+|   |   |   |   total_b_bytes >= 11818 : normal (29/12)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (6/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (31/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4220/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (7/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (519/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (241/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (985/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2218/6)
+|   |   |   total_b_bytes >= 22 : attack (1660/0)
+|   |   total_b_bytes >= 49 : normal (2/0)
+|   total_b_bytes >= 56 : attack (2058/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (10/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (25/8)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (26/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4154/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (561/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (244/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1023/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2286/16)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1665/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2084/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (7/3)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11879.5
+|   |   |   |   total_b_bytes < 11853.5 : normal (32/4)
+|   |   |   |   total_b_bytes >= 11853.5 : normal (10/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (21/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4131/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (15/7)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (540/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (205/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1003/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2157/7)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1729/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2105/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (8/4)
+|   |   |   |   total_b_bytes >= 11818 : normal (23/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (19/5)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4183/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (10/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (568/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (233/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (955/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2212/8)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1645/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2118/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (9/1)
+|   |   |   total_b_bytes >= 11818 : normal (29/10)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (11/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (25/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4137/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (14/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (603/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (227/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (968/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2235/11)
+|   total_b_bytes >= 22 : attack (3689/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (14/2)
+|   |   |   total_b_bytes >= 11818 : normal (40/15)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (12/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4192/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (586/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (212/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (997/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2309/9)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1669/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2037/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (8/0)
+|   |   |   total_b_bytes >= 11818 : normal (31/12)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (3/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (28/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4157/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/1)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (549/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (221/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (978/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2350/7)
+|   total_b_bytes >= 22 : attack (3783/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (10/1)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (21/8)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (6/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (28/6)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4055/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (12/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (584/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (217/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (934/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2188/8)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1698/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2021/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (9/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (36/12)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (10/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (17/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4160/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (590/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (235/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1024/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2213/11)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1674/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2134/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (3/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (4/1)
+|   |   |   |   total_b_bytes >= 11818 : normal (23/9)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (24/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4171/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (508/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (258/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (966/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2323/8)
+|   |   |   total_b_bytes >= 22 : attack (1674/0)
+|   |   total_b_bytes >= 49 : normal (2/0)
+|   total_b_bytes >= 56 : attack (2029/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (8/1)
+|   |   |   total_b_bytes >= 11818 : normal (23/10)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (31/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4147/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (8/1)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (553/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (222/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (971/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2229/13)
+|   |   |   total_b_bytes >= 22 : attack (1698/0)
+|   |   total_b_bytes >= 49 : normal (4/0)
+|   total_b_bytes >= 56 : attack (1990/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (12/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (18/5)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (10/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (17/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4254/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/3)
+|   |   |   total_b_bytes >= 11957.5 : normal (1759/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2258/3)
+|   |   |   total_b_bytes >= 22 : attack (1692/0)
+|   |   total_b_bytes >= 49 : normal (2/0)
+|   total_b_bytes >= 56 : attack (2120/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (7/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (18/5)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (28/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4146/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (567/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (229/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (913/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2308/10)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1652/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2122/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 9598 : normal (1/0)
+|   |   total_b_bytes >= 9598
+|   |   |   total_b_bytes < 11818 : normal (13/6)
+|   |   |   total_b_bytes >= 11818 : normal (24/12)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (7/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (17/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4128/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (5/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (544/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (212/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (965/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2277/7)
+|   |   |   total_b_bytes >= 22 : attack (1689/0)
+|   |   total_b_bytes >= 49 : normal (3/0)
+|   total_b_bytes >= 56 : attack (2071/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (14/3)
+|   |   |   total_b_bytes >= 11818 : attack (26/12)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (17/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4158/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (8/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (537/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (230/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (959/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2211/7)
+|   |   |   total_b_bytes >= 22 : attack (1719/0)
+|   |   total_b_bytes >= 49 : normal (2/0)
+|   total_b_bytes >= 56 : attack (2106/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 11818 : normal (17/1)
+|   |   total_b_bytes >= 11818 : normal (29/10)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (5/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (20/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4143/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (15/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (559/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (249/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (925/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2200/4)
+|   |   |   total_b_bytes >= 22 : attack (1690/0)
+|   |   total_b_bytes >= 49 : normal (2/0)
+|   total_b_bytes >= 56 : attack (2120/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (12/2)
+|   |   |   total_b_bytes >= 11818 : normal (17/6)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (23/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4166/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (7/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (589/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (219/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (946/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2253/13)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1712/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2029/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (6/2)
+|   |   |   total_b_bytes >= 11818 : normal (26/7)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (24/5)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4148/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (571/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (232/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (979/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2248/8)
+|   total_b_bytes >= 22 : attack (3727/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (10/0)
+|   |   |   total_b_bytes >= 11818 : normal (27/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (16/1)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4246/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (6/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (557/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (217/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (934/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2211/9)
+|   total_b_bytes >= 22 : attack (3784/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 11818 : normal (11/2)
+|   |   total_b_bytes >= 11818 : normal (19/9)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (4/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (20/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4199/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (7/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (552/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (201/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (992/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2203/13)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1666/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2089/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (7/2)
+|   |   |   total_b_bytes >= 11818 : normal (28/13)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (4/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (24/5)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4160/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/4)
+|   |   |   total_b_bytes >= 11957.5 : normal (1808/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2239/5)
+|   total_b_bytes >= 22 : attack (3767/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 9598 : normal (1/0)
+|   |   total_b_bytes >= 9598
+|   |   |   total_b_bytes < 11818 : normal (8/3)
+|   |   |   total_b_bytes >= 11818 : normal (21/10)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (26/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4092/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (11/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (579/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (230/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1018/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2230/5)
+|   total_b_bytes >= 22 : attack (3759/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818
+|   |   |   total_b_bytes < 9598 : normal (2/0)
+|   |   |   total_b_bytes >= 9598 : normal (8/1)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (19/7)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (5/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (14/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4188/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (9/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (561/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (243/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (962/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2231/12)
+|   total_b_bytes >= 22 : attack (3784/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (8/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (22/7)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (3/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (19/5)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4210/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (7/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (571/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (220/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (925/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2182/15)
+|   |   |   total_b_bytes >= 22 : attack (1672/0)
+|   |   total_b_bytes >= 49 : normal (4/0)
+|   total_b_bytes >= 56 : attack (2045/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 11818
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598 : normal (12/1)
+|   |   total_b_bytes >= 11818 : normal (28/9)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (10/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (16/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4264/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (6/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (540/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (219/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1001/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2244/5)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1713/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2079/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (9/1)
+|   |   |   total_b_bytes >= 11818 : normal (27/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (6/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (12/1)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4094/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (10/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (587/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (211/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1006/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 56
+|   |   total_b_bytes < 49
+|   |   |   total_b_bytes < 22 : attack (2194/12)
+|   |   |   total_b_bytes >= 22 : attack (1677/0)
+|   |   total_b_bytes >= 49 : normal (4/0)
+|   total_b_bytes >= 56 : attack (2098/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818
+|   |   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   |   total_b_bytes >= 9598 : normal (19/3)
+|   |   |   total_b_bytes >= 11818 : normal (21/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (27/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4192/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (559/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (224/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (964/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2162/14)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1644/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2087/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (5/1)
+|   |   |   total_b_bytes >= 11818 : normal (27/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (18/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4267/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (7/1)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (523/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (248/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1003/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2216/16)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1657/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2054/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 11818 : normal (8/0)
+|   |   total_b_bytes >= 11818 : normal (25/7)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (14/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (23/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4251/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (6/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (574/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (252/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (919/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2246/12)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1693/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2075/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (8/1)
+|   |   |   total_b_bytes >= 11818 : attack (26/12)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (25/6)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4151/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (564/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (201/4)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (987/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2268/8)
+|   total_b_bytes >= 22 : attack (3762/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (6/2)
+|   |   |   total_b_bytes >= 11818 : normal (21/5)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (10/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (19/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4146/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (7/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (572/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (244/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (945/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2236/13)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1758/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (1984/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (4/1)
+|   |   |   |   total_b_bytes >= 11818 : normal (24/10)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (9/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (31/6)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4193/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (569/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (221/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (958/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2237/9)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1663/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2083/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (11/2)
+|   |   |   total_b_bytes >= 11818 : normal (21/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (28/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4134/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (10/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (593/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (248/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (963/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2310/13)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1597/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2045/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (12/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (25/7)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (2/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (30/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4211/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (556/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (232/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (968/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2307/10)
+|   total_b_bytes >= 22 : attack (3760/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (10/0)
+|   |   |   total_b_bytes >= 11818 : normal (26/13)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (5/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (33/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4065/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (8/4)
+|   |   |   total_b_bytes >= 11957.5 : normal (1786/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2259/6)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1683/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2162/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (6/1)
+|   |   |   total_b_bytes >= 11818 : normal (21/10)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (31/5)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4076/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (8/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (550/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (203/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (992/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2237/11)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1678/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2061/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11853.5
+|   |   total_b_bytes < 11818
+|   |   |   total_b_bytes < 9598 : normal (3/0)
+|   |   |   total_b_bytes >= 9598 : normal (15/1)
+|   |   total_b_bytes >= 11818 : normal (23/9)
+|   total_b_bytes >= 11853.5
+|   |   total_b_bytes < 11931.5
+|   |   |   total_b_bytes < 11905.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (23/1)
+|   |   |   total_b_bytes >= 11905.5 : normal (4091/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (574/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (239/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1034/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2171/12)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1682/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2162/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11818 : normal (12/0)
+|   |   total_b_bytes >= 11818
+|   |   |   total_b_bytes < 11853.5 : normal (29/8)
+|   |   |   total_b_bytes >= 11853.5
+|   |   |   |   total_b_bytes < 11879.5 : normal (14/0)
+|   |   |   |   total_b_bytes >= 11879.5 : normal (16/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4148/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (13/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (571/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (235/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (945/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2209/12)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1719/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2108/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (10/0)
+|   |   |   total_b_bytes >= 11818 : normal (33/12)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (12/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (24/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4149/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (8/2)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (538/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (217/5)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (972/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2214/14)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1695/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2034/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (10/1)
+|   |   |   total_b_bytes >= 11818 : normal (35/10)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (2/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (30/4)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4168/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (8/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (573/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (219/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1010/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2268/11)
+|   total_b_bytes >= 22 : attack (3703/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (2/1)
+|   |   |   |   total_b_bytes >= 11818 : normal (24/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (13/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (24/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4186/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (12/3)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (569/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (236/7)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (962/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2164/14)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1734/0)
+|   |   |   total_b_bytes >= 49 : normal (2/0)
+|   |   total_b_bytes >= 56 : attack (2153/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (5/0)
+|   |   |   total_b_bytes >= 11818 : normal (26/9)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (13/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (15/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4126/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : normal (11/5)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989.5 : normal (553/0)
+|   |   |   |   |   total_b_bytes >= 11989.5 : normal (243/2)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (955/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 6788
+|   total_b_bytes < 22 : attack (2287/8)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1634/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2104/0)
+total_b_bytes >= 6788
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 11818 : normal (9/0)
+|   |   |   total_b_bytes >= 11818 : attack (25/11)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (8/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (22/2)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4139/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (11/4)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11989 : normal (578/0)
+|   |   |   |   |   total_b_bytes >= 11989 : normal (208/1)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (974/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+total_b_bytes < 4594
+|   total_b_bytes < 22 : attack (2234/11)
+|   total_b_bytes >= 22
+|   |   total_b_bytes < 56
+|   |   |   total_b_bytes < 49 : attack (1703/0)
+|   |   |   total_b_bytes >= 49 : normal (1/0)
+|   |   total_b_bytes >= 56 : attack (2022/0)
+total_b_bytes >= 4594
+|   total_b_bytes < 11905.5
+|   |   total_b_bytes < 11853.5
+|   |   |   total_b_bytes < 9598 : normal (1/0)
+|   |   |   total_b_bytes >= 9598
+|   |   |   |   total_b_bytes < 11818 : normal (8/2)
+|   |   |   |   total_b_bytes >= 11818 : normal (24/8)
+|   |   total_b_bytes >= 11853.5
+|   |   |   total_b_bytes < 11879.5 : normal (7/0)
+|   |   |   total_b_bytes >= 11879.5 : normal (23/3)
+|   total_b_bytes >= 11905.5
+|   |   total_b_bytes < 11931.5 : normal (4155/0)
+|   |   total_b_bytes >= 11931.5
+|   |   |   total_b_bytes < 11957.5 : attack (4/1)
+|   |   |   total_b_bytes >= 11957.5
+|   |   |   |   total_b_bytes < 12009.5
+|   |   |   |   |   total_b_bytes < 11983.5 : normal (556/0)
+|   |   |   |   |   total_b_bytes >= 11983.5 : normal (250/3)
+|   |   |   |   total_b_bytes >= 12009.5 : normal (1012/0)
+
+Size of the tree : 27
+
+
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances        2899               96.6333 %
+Incorrectly Classified Instances       101                3.3667 %
+Kappa statistic                          0.9327
+Mean absolute error                      0.0269
+Root mean squared error                  0.1447
+Relative absolute error                  5.3761 %
+Root relative squared error             28.9315 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.063    0.940      0.996    0.967      0.934    1.000     0.999     normal
+                 0.937    0.004    0.996      0.937    0.965      0.934    1.000     0.999     attack
+Weighted Avg.    0.966    0.034    0.968      0.966    0.966      0.934    1.000     0.999     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1494    6 |    a = normal
+   95 1405 |    b = attack

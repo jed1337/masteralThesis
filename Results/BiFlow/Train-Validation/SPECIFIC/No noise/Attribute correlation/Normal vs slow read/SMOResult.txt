@@ -1,0 +1,69 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.8221 * (normalized) total_b_bytes
+ +       0.0364 * (normalized) std_b_pkt
+ +      -0.0957 * (normalized) max_b_pkt
+ +       0.083  * (normalized) mean_b_pkt
+ +       0.0962 * (normalized) mean_f_time
+ +       0.1752 * (normalized) duration
+ +       0.1742 * (normalized) std_f_time
+ +       0.198  * (normalized) max_f_time
+ +      -1.0722 * (normalized) cof=N/A
+ +       1.052  * (normalized) cof=2
+ +       0.5474 * (normalized) cof=18
+ +       0.3043 * (normalized) cof=22
+ +      -0      * (normalized) cof=26
+ +      -1.2114 * (normalized) cof=27
+ +       0.0361 * (normalized) cof=30
+ +       0.3438 * (normalized) cof=31
+ +      -0.244  * (normalized) pps_f
+ +      -0.2298 * (normalized) pps_b
+ +       0.3379 * (normalized) bps_f
+ +       0.2174 * (normalized) bps_b
+ +       0.1993 * (normalized) std_b_time
+ +       0.2318 * (normalized) max_b_time
+ +       0.4177 * (normalized) mean_b_time
+ +       0.4792 * (normalized) rfb_bytes
+ +       2.3109 * (normalized) max_f_pkt
+ +       1.3573 * (normalized) std_f_pkt
+ +       0.3246 * (normalized) rfb_packets
+ +      -0.2953 * (normalized) total_b_packets
+ +       0.1339 * (normalized) total_f_bytes
+ +       0.0085 * (normalized) mean_f_pkt
+ -       0.1444
+
+Number of kernel evaluations: 167010 (68.853% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        1000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0     
+Relative absolute error                  0      %
+Root relative squared error              0      %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     slowRead
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+   0 500 |   b = slowRead

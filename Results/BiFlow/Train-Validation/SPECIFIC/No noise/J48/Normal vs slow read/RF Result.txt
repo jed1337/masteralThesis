@@ -1,0 +1,1530 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilitiesAll the base classifiers: 
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (242/2)
+|   max_f_pkt >= 69 : normal (1982/0)
+max_f_pkt >= 197 : slowRead (1773/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (230/0)
+|   max_f_pkt >= 69 : normal (1979/0)
+max_f_pkt >= 197 : slowRead (1789/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (226/0)
+|   max_f_pkt >= 69 : normal (1992/0)
+max_f_pkt >= 168.5 : slowRead (1780/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69 : slowRead (222/0)
+|   max_f_pkt >= 69 : normal (1954/0)
+max_f_pkt >= 197 : slowRead (1824/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (223/2)
+|   max_f_pkt >= 69 : normal (1981/0)
+max_f_pkt >= 197 : slowRead (1794/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (231/2)
+|   max_f_pkt >= 69 : normal (2010/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (303/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1453/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (5/0)
+|   |   max_f_pkt >= 56 : slowRead (218/0)
+|   max_f_pkt >= 69 : normal (1937/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (301/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1538/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (4/0)
+|   |   max_f_pkt >= 56 : slowRead (189/0)
+|   max_f_pkt >= 69 : normal (2036/0)
+max_f_pkt >= 168.5 : slowRead (1771/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 114
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (224/2)
+|   max_f_pkt >= 114 : normal (2030/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (308/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1435/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (233/0)
+|   max_f_pkt >= 69 : normal (1952/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (310/0)
+|   |   max_f_pkt >= 227.5 : normal (4/0)
+|   max_f_pkt >= 238 : slowRead (1500/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (202/2)
+|   max_f_pkt >= 69 : normal (1990/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (304/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1502/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (226/2)
+|   max_f_pkt >= 69 : normal (1947/0)
+max_f_pkt >= 168.5 : slowRead (1825/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (4/0)
+|   |   max_f_pkt >= 56 : slowRead (229/2)
+|   max_f_pkt >= 69 : normal (1932/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (289/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1544/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (193/0)
+|   max_f_pkt >= 69 : normal (1967/0)
+max_f_pkt >= 197 : slowRead (1839/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (223/0)
+|   max_f_pkt >= 69 : normal (2004/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (284/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1487/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (218/1)
+|   max_f_pkt >= 69 : normal (2014/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (297/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1469/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69 : slowRead (226/1)
+|   max_f_pkt >= 69 : normal (2025/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (290/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1458/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (233/1)
+|   max_f_pkt >= 69 : normal (1985/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (283/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1495/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (233/0)
+|   max_f_pkt >= 69 : normal (2029/0)
+max_f_pkt >= 168.5 : slowRead (1735/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (4/0)
+|   |   max_f_pkt >= 56 : slowRead (204/0)
+|   max_f_pkt >= 69 : normal (1948/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (319/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1524/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (205/1)
+|   max_f_pkt >= 69 : normal (1991/0)
+max_f_pkt >= 168.5 : slowRead (1802/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (226/1)
+|   max_f_pkt >= 69 : normal (2001/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (308/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1463/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 114
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (196/0)
+|   max_f_pkt >= 114 : normal (2002/0)
+max_f_pkt >= 197 : slowRead (1801/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (230/1)
+|   max_f_pkt >= 69 : normal (2024/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (288/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1454/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (193/1)
+|   max_f_pkt >= 69 : normal (2044/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (314/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1445/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (227/0)
+|   max_f_pkt >= 69 : normal (2000/0)
+max_f_pkt >= 197 : slowRead (1772/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (225/0)
+|   max_f_pkt >= 69 : normal (2005/0)
+max_f_pkt >= 168.5 : slowRead (1768/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (216/2)
+|   max_f_pkt >= 69 : normal (2009/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (327/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1445/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (221/1)
+|   max_f_pkt >= 69 : normal (1963/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (305/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1507/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (214/3)
+|   max_f_pkt >= 69 : normal (2019/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (304/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1461/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (208/0)
+|   max_f_pkt >= 69 : normal (1959/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (311/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1520/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (223/0)
+|   max_f_pkt >= 69 : normal (1986/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (321/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1466/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69 : slowRead (219/0)
+|   max_f_pkt >= 69 : normal (1995/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (298/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1486/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (208/0)
+|   max_f_pkt >= 69 : normal (1965/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (290/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1535/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (218/1)
+|   max_f_pkt >= 69 : normal (2032/0)
+max_f_pkt >= 197 : slowRead (1747/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (4/0)
+|   |   max_f_pkt >= 56 : slowRead (243/1)
+|   max_f_pkt >= 69 : normal (2026/0)
+max_f_pkt >= 168.5 : slowRead (1727/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (207/1)
+|   max_f_pkt >= 69 : normal (1952/0)
+max_f_pkt >= 197 : slowRead (1840/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (235/0)
+|   max_f_pkt >= 69 : normal (1960/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (314/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1487/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (212/0)
+|   max_f_pkt >= 69 : normal (1987/0)
+max_f_pkt >= 197 : slowRead (1799/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (5/0)
+|   |   max_f_pkt >= 56 : slowRead (203/1)
+|   max_f_pkt >= 69 : normal (1940/0)
+max_f_pkt >= 197 : slowRead (1852/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (216/0)
+|   max_f_pkt >= 69 : normal (1981/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (303/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1497/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (221/1)
+|   max_f_pkt >= 69 : normal (1958/0)
+max_f_pkt >= 197 : slowRead (1818/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (222/0)
+|   max_f_pkt >= 69 : normal (1916/0)
+max_f_pkt >= 168.5 : slowRead (1859/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (238/1)
+|   max_f_pkt >= 69 : normal (1974/0)
+max_f_pkt >= 168.5 : slowRead (1787/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (201/1)
+|   max_f_pkt >= 69 : normal (1992/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (278/0)
+|   |   max_f_pkt >= 227.5 : normal (3/0)
+|   max_f_pkt >= 238 : slowRead (1525/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69 : slowRead (223/0)
+|   max_f_pkt >= 69 : normal (2005/0)
+max_f_pkt >= 168.5 : slowRead (1772/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (207/1)
+|   max_f_pkt >= 69 : normal (1969/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (287/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1533/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (189/1)
+|   max_f_pkt >= 69 : normal (1976/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (286/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1545/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (236/1)
+|   max_f_pkt >= 69 : normal (2011/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (290/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1461/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (6/0)
+|   |   max_f_pkt >= 56 : slowRead (226/0)
+|   max_f_pkt >= 69 : normal (1989/0)
+max_f_pkt >= 197 : slowRead (1779/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69 : slowRead (218/0)
+|   max_f_pkt >= 69 : normal (1991/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (331/0)
+|   |   max_f_pkt >= 227.5 : normal (3/0)
+|   max_f_pkt >= 238 : slowRead (1457/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (221/3)
+|   max_f_pkt >= 69 : normal (1978/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (271/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1526/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (204/0)
+|   max_f_pkt >= 69 : normal (2007/0)
+max_f_pkt >= 168.5 : slowRead (1788/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (3/0)
+|   |   max_f_pkt >= 54.5 : slowRead (206/1)
+|   max_f_pkt >= 69 : normal (1945/0)
+max_f_pkt >= 168.5 : slowRead (1846/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69 : slowRead (196/0)
+|   max_f_pkt >= 69 : normal (1972/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (320/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1510/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (213/1)
+|   max_f_pkt >= 69 : normal (1990/0)
+max_f_pkt >= 168.5 : slowRead (1795/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (224/2)
+|   max_f_pkt >= 69 : normal (2036/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (318/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1420/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (216/1)
+|   max_f_pkt >= 69 : normal (2010/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (300/0)
+|   |   max_f_pkt >= 227.5 : normal (3/0)
+|   max_f_pkt >= 238 : slowRead (1469/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (232/0)
+|   max_f_pkt >= 69 : normal (1951/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (277/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1536/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (4/0)
+|   |   max_f_pkt >= 56 : slowRead (204/0)
+|   max_f_pkt >= 69 : normal (1998/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (312/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1481/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (206/2)
+|   max_f_pkt >= 69 : normal (2024/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (317/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1451/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (258/3)
+|   max_f_pkt >= 69 : normal (2008/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (313/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1419/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (210/1)
+|   max_f_pkt >= 69 : normal (2003/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (301/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1482/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69 : slowRead (227/1)
+|   max_f_pkt >= 69 : normal (1985/0)
+max_f_pkt >= 168.5 : slowRead (1788/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 114
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (212/1)
+|   max_f_pkt >= 114 : normal (2031/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (295/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1459/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (231/2)
+|   max_f_pkt >= 69 : normal (1941/0)
+max_f_pkt >= 168.5 : slowRead (1827/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (221/2)
+|   max_f_pkt >= 69 : normal (1978/0)
+max_f_pkt >= 197 : slowRead (1799/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (238/0)
+|   max_f_pkt >= 69 : normal (2048/0)
+max_f_pkt >= 168.5 : slowRead (1713/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (243/2)
+|   max_f_pkt >= 69 : normal (1971/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (282/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1502/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (4/0)
+|   |   max_f_pkt >= 56 : slowRead (223/2)
+|   max_f_pkt >= 69 : normal (1987/0)
+max_f_pkt >= 197 : slowRead (1786/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 114
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (204/0)
+|   max_f_pkt >= 114 : normal (1999/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (333/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1461/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (251/0)
+|   max_f_pkt >= 69 : normal (1966/0)
+max_f_pkt >= 168.5 : slowRead (1781/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (229/0)
+|   max_f_pkt >= 69 : normal (1978/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (302/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1487/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (202/0)
+|   max_f_pkt >= 69 : normal (2004/0)
+max_f_pkt >= 168.5 : slowRead (1793/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (1/0)
+|   |   max_f_pkt >= 56 : slowRead (195/1)
+|   max_f_pkt >= 69 : normal (2021/0)
+max_f_pkt >= 168.5 : slowRead (1783/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (234/3)
+|   max_f_pkt >= 69 : normal (1997/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (322/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1444/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (244/2)
+|   max_f_pkt >= 69 : normal (1991/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (314/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1447/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (233/1)
+|   max_f_pkt >= 69 : normal (1967/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (316/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1479/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (249/1)
+|   max_f_pkt >= 69 : normal (1974/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (304/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1469/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 114
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (206/0)
+|   max_f_pkt >= 114 : normal (1987/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (316/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1488/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (3/0)
+|   |   max_f_pkt >= 54.5 : slowRead (206/2)
+|   max_f_pkt >= 69 : normal (2038/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (307/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1445/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (236/0)
+|   max_f_pkt >= 69 : normal (1969/0)
+max_f_pkt >= 168.5 : slowRead (1793/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 114
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (206/0)
+|   max_f_pkt >= 114 : normal (1965/0)
+max_f_pkt >= 168.5 : slowRead (1828/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 114
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (216/1)
+|   max_f_pkt >= 114 : normal (2027/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (332/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1422/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (223/1)
+|   max_f_pkt >= 69 : normal (2022/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (303/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1449/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (227/3)
+|   max_f_pkt >= 69 : normal (1987/0)
+max_f_pkt >= 168.5 : slowRead (1784/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (3/0)
+|   |   max_f_pkt >= 54.5 : slowRead (202/1)
+|   max_f_pkt >= 69 : normal (2021/0)
+max_f_pkt >= 168.5 : slowRead (1774/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69 : slowRead (216/1)
+|   max_f_pkt >= 69 : normal (2024/0)
+max_f_pkt >= 197 : slowRead (1760/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (201/1)
+|   max_f_pkt >= 69 : normal (1984/0)
+max_f_pkt >= 197 : slowRead (1813/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (214/1)
+|   max_f_pkt >= 69 : normal (2074/0)
+max_f_pkt >= 197 : slowRead (1711/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (208/1)
+|   max_f_pkt >= 69 : normal (1993/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (282/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1514/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (2/0)
+|   |   max_f_pkt >= 54.5 : slowRead (255/2)
+|   max_f_pkt >= 69 : normal (1987/0)
+max_f_pkt >= 197 : slowRead (1756/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (209/2)
+|   max_f_pkt >= 69 : normal (1961/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (302/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1525/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69 : slowRead (221/3)
+|   max_f_pkt >= 69 : normal (2000/0)
+max_f_pkt >= 197 : slowRead (1779/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (211/0)
+|   max_f_pkt >= 69 : normal (1994/0)
+max_f_pkt >= 197 : slowRead (1794/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 54.5 : normal (1/0)
+|   |   max_f_pkt >= 54.5 : slowRead (238/1)
+|   max_f_pkt >= 69 : normal (2022/0)
+max_f_pkt >= 168.5 : slowRead (1739/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69 : slowRead (210/2)
+|   max_f_pkt >= 69 : normal (2004/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (320/0)
+|   |   max_f_pkt >= 227.5 : normal (3/0)
+|   max_f_pkt >= 238 : slowRead (1463/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+max_f_pkt < 197
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (4/0)
+|   |   max_f_pkt >= 56 : slowRead (236/1)
+|   max_f_pkt >= 69 : normal (1937/0)
+max_f_pkt >= 197
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (286/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1536/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (3/0)
+|   |   max_f_pkt >= 56 : slowRead (214/0)
+|   max_f_pkt >= 69 : normal (1984/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (296/0)
+|   |   max_f_pkt >= 227.5 : normal (1/0)
+|   max_f_pkt >= 238 : slowRead (1502/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+max_f_pkt < 168.5
+|   max_f_pkt < 69
+|   |   max_f_pkt < 56 : normal (2/0)
+|   |   max_f_pkt >= 56 : slowRead (229/2)
+|   max_f_pkt >= 69 : normal (2013/0)
+max_f_pkt >= 168.5
+|   max_f_pkt < 238
+|   |   max_f_pkt < 227.5 : slowRead (311/0)
+|   |   max_f_pkt >= 227.5 : normal (2/0)
+|   max_f_pkt >= 238 : slowRead (1443/0)
+
+Size of the tree : 11
+
+
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances         998               99.8    %
+Incorrectly Classified Instances         2                0.2    %
+Kappa statistic                          0.996 
+Mean absolute error                      0.0022
+Root mean squared error                  0.0445
+Relative absolute error                  0.4356 %
+Root relative squared error              8.9081 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.000    1.000      0.996    0.998      0.996    1.000     1.000     normal
+                 1.000    0.004    0.996      1.000    0.998      0.996    1.000     1.000     slowRead
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 498   2 |   a = normal
+   0 500 |   b = slowRead

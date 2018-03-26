@@ -1,0 +1,254 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+urg_f_cnt <= -1: udpFlood (2403.0/3.0)
+urg_f_cnt > -1
+|   max_f_pkt <= 46
+|   |   bps_f <= 3153.941169: tcpFlood (2395.0/1.0)
+|   |   bps_f > 3153.941169
+|   |   |   total_b_bytes <= 0: httpFlood (19.0)
+|   |   |   total_b_bytes > 0: tcpFlood (6.0)
+|   max_f_pkt > 46
+|   |   max_f_time <= 1.04374
+|   |   |   max_b_pkt <= 628
+|   |   |   |   min_f_time <= 0.01708: httpFlood (2370.0/2.0)
+|   |   |   |   min_f_time > 0.01708
+|   |   |   |   |   max_b_pkt <= 0
+|   |   |   |   |   |   duration <= 1.033708: slowRead (13.0)
+|   |   |   |   |   |   duration > 1.033708: httpFlood (2.0)
+|   |   |   |   |   max_b_pkt > 0: httpFlood (10.0)
+|   |   |   max_b_pkt > 628
+|   |   |   |   max_b_pkt <= 2948: slowHeaders (23.0/1.0)
+|   |   |   |   max_b_pkt > 2948
+|   |   |   |   |   mean_f_time <= 0.034622
+|   |   |   |   |   |   max_f_pkt <= 226
+|   |   |   |   |   |   |   mean_f_time <= 0.000488
+|   |   |   |   |   |   |   |   total_f_bytes <= 858
+|   |   |   |   |   |   |   |   |   total_f_bytes <= 822
+|   |   |   |   |   |   |   |   |   |   std_b_time <= 0.000368: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   std_b_time > 0.000368
+|   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.002773: slowRead (3.0)
+|   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.002773: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   total_f_bytes > 822: slowHeaders (8.0/1.0)
+|   |   |   |   |   |   |   |   total_f_bytes > 858
+|   |   |   |   |   |   |   |   |   max_b_time <= 0.001618: slowRead (6.0)
+|   |   |   |   |   |   |   |   |   max_b_time > 0.001618: slowHeaders (3.0/1.0)
+|   |   |   |   |   |   |   mean_f_time > 0.000488: slowRead (25.0/2.0)
+|   |   |   |   |   |   max_f_pkt > 226
+|   |   |   |   |   |   |   max_f_time <= 0.002197
+|   |   |   |   |   |   |   |   max_f_time <= 0.001435: slowRead (2.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.001435: slowHeaders (5.0)
+|   |   |   |   |   |   |   max_f_time > 0.002197: slowRead (129.0/7.0)
+|   |   |   |   |   mean_f_time > 0.034622: slowHeaders (5.0)
+|   |   max_f_time > 1.04374
+|   |   |   bps_b <= 29.28862
+|   |   |   |   pps_f <= 0.515673
+|   |   |   |   |   cof = N/A: slowHeaders (0.0)
+|   |   |   |   |   cof = 0: slowHeaders (0.0)
+|   |   |   |   |   cof = 1: slowHeaders (0.0)
+|   |   |   |   |   cof = 2
+|   |   |   |   |   |   max_f_time <= 16.125693: slowHeaders (183.0)
+|   |   |   |   |   |   max_f_time > 16.125693
+|   |   |   |   |   |   |   max_f_time <= 16.129474
+|   |   |   |   |   |   |   |   duration <= 31.435345: slowHeaders (160.0/2.0)
+|   |   |   |   |   |   |   |   duration > 31.435345
+|   |   |   |   |   |   |   |   |   pps_f <= 0.190235
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 16.128257: slowRead (79.0/36.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 16.128257: slowHeaders (59.0/15.0)
+|   |   |   |   |   |   |   |   |   pps_f > 0.190235: slowHeaders (192.0/35.0)
+|   |   |   |   |   |   |   max_f_time > 16.129474
+|   |   |   |   |   |   |   |   max_f_time <= 16.134192
+|   |   |   |   |   |   |   |   |   max_f_time <= 16.132798: slowHeaders (235.0/3.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 16.132798
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 16.134125
+|   |   |   |   |   |   |   |   |   |   |   duration <= 31.521245
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 16.13329
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 16.13313
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 31.467577: slowRead (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 31.467577: slowHeaders (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 16.13313: slowRead (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 16.13329: slowHeaders (5.0)
+|   |   |   |   |   |   |   |   |   |   |   duration > 31.521245: slowHeaders (34.0/1.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 16.134125: slowRead (5.0)
+|   |   |   |   |   |   |   |   max_f_time > 16.134192: slowHeaders (152.0)
+|   |   |   |   |   cof = 3: slowHeaders (0.0)
+|   |   |   |   |   cof = 4: slowHeaders (0.0)
+|   |   |   |   |   cof = 5: slowHeaders (0.0)
+|   |   |   |   |   cof = 6: slowHeaders (0.0)
+|   |   |   |   |   cof = 7: slowHeaders (0.0)
+|   |   |   |   |   cof = 8: slowHeaders (0.0)
+|   |   |   |   |   cof = 9: slowHeaders (0.0)
+|   |   |   |   |   cof = 10: slowHeaders (0.0)
+|   |   |   |   |   cof = 11: slowHeaders (0.0)
+|   |   |   |   |   cof = 12: slowHeaders (0.0)
+|   |   |   |   |   cof = 13: slowHeaders (0.0)
+|   |   |   |   |   cof = 14: slowHeaders (0.0)
+|   |   |   |   |   cof = 15: slowHeaders (0.0)
+|   |   |   |   |   cof = 16: slowHeaders (0.0)
+|   |   |   |   |   cof = 17: slowHeaders (0.0)
+|   |   |   |   |   cof = 18: slowHeaders (0.0)
+|   |   |   |   |   cof = 19: slowHeaders (0.0)
+|   |   |   |   |   cof = 20: slowHeaders (0.0)
+|   |   |   |   |   cof = 21: slowHeaders (0.0)
+|   |   |   |   |   cof = 22: slowRead (11.0)
+|   |   |   |   |   cof = 23: slowHeaders (0.0)
+|   |   |   |   |   cof = 24: slowHeaders (0.0)
+|   |   |   |   |   cof = 25: slowHeaders (0.0)
+|   |   |   |   |   cof = 26: slowHeaders (0.0)
+|   |   |   |   |   cof = 27: slowHeaders (30.0)
+|   |   |   |   |   cof = 28: slowHeaders (0.0)
+|   |   |   |   |   cof = 29: slowHeaders (33.0)
+|   |   |   |   |   cof = 30: slowRead (1.0)
+|   |   |   |   |   cof = 31: slowHeaders (1134.0)
+|   |   |   |   |   cof = 32: slowHeaders (0.0)
+|   |   |   |   |   cof = 33: slowHeaders (0.0)
+|   |   |   |   |   cof = 34: slowHeaders (0.0)
+|   |   |   |   |   cof = 35: slowHeaders (0.0)
+|   |   |   |   |   cof = 36: slowHeaders (0.0)
+|   |   |   |   |   cof = 37: slowHeaders (0.0)
+|   |   |   |   |   cof = 38: slowHeaders (0.0)
+|   |   |   |   |   cof = 39: slowHeaders (0.0)
+|   |   |   |   |   cof = 40: slowHeaders (0.0)
+|   |   |   |   |   cof = 41: slowHeaders (0.0)
+|   |   |   |   |   cof = 42: slowHeaders (0.0)
+|   |   |   |   |   cof = 43: slowHeaders (0.0)
+|   |   |   |   |   cof = 44: slowHeaders (0.0)
+|   |   |   |   |   cof = 45: slowHeaders (0.0)
+|   |   |   |   |   cof = 46: slowHeaders (0.0)
+|   |   |   |   |   cof = 47: slowHeaders (0.0)
+|   |   |   |   |   cof = 48: slowHeaders (0.0)
+|   |   |   |   |   cof = 49: slowHeaders (0.0)
+|   |   |   |   |   cof = 50: slowHeaders (0.0)
+|   |   |   |   |   cof = 51: slowHeaders (0.0)
+|   |   |   |   |   cof = 52: slowHeaders (0.0)
+|   |   |   |   |   cof = 53: slowHeaders (0.0)
+|   |   |   |   |   cof = 54: slowHeaders (0.0)
+|   |   |   |   |   cof = 55: slowHeaders (0.0)
+|   |   |   |   |   cof = 56: slowHeaders (0.0)
+|   |   |   |   |   cof = 57: slowHeaders (0.0)
+|   |   |   |   |   cof = 58: slowHeaders (0.0)
+|   |   |   |   |   cof = 59: slowHeaders (0.0)
+|   |   |   |   |   cof = 60: slowHeaders (0.0)
+|   |   |   |   |   cof = 61: slowHeaders (0.0)
+|   |   |   |   |   cof = 62: slowHeaders (0.0)
+|   |   |   |   |   cof = 63: slowHeaders (0.0)
+|   |   |   |   |   cof = 64: slowHeaders (0.0)
+|   |   |   |   |   cof = 65: slowHeaders (0.0)
+|   |   |   |   |   cof = 66: slowHeaders (0.0)
+|   |   |   |   |   cof = 67: slowHeaders (0.0)
+|   |   |   |   |   cof = 68: slowHeaders (0.0)
+|   |   |   |   |   cof = 69: slowHeaders (0.0)
+|   |   |   |   |   cof = 70: slowHeaders (0.0)
+|   |   |   |   |   cof = 71: slowHeaders (0.0)
+|   |   |   |   |   cof = 72: slowHeaders (0.0)
+|   |   |   |   |   cof = 73: slowHeaders (0.0)
+|   |   |   |   |   cof = 74: slowHeaders (0.0)
+|   |   |   |   |   cof = 75: slowHeaders (0.0)
+|   |   |   |   |   cof = 76: slowHeaders (0.0)
+|   |   |   |   |   cof = 77: slowHeaders (0.0)
+|   |   |   |   |   cof = 78: slowHeaders (0.0)
+|   |   |   |   |   cof = 79: slowHeaders (0.0)
+|   |   |   |   |   cof = 80: slowHeaders (0.0)
+|   |   |   |   |   cof = 81: slowHeaders (0.0)
+|   |   |   |   |   cof = 82: slowHeaders (0.0)
+|   |   |   |   |   cof = 83: slowHeaders (0.0)
+|   |   |   |   |   cof = 84: slowHeaders (0.0)
+|   |   |   |   |   cof = 85: slowHeaders (0.0)
+|   |   |   |   |   cof = 86: slowHeaders (0.0)
+|   |   |   |   |   cof = 87: slowHeaders (0.0)
+|   |   |   |   |   cof = 88: slowHeaders (0.0)
+|   |   |   |   |   cof = 89: slowHeaders (0.0)
+|   |   |   |   |   cof = 90: slowHeaders (0.0)
+|   |   |   |   |   cof = 91: slowHeaders (0.0)
+|   |   |   |   |   cof = 92: slowHeaders (0.0)
+|   |   |   |   |   cof = 93: slowHeaders (0.0)
+|   |   |   |   |   cof = 94: slowHeaders (0.0)
+|   |   |   |   |   cof = 95: slowHeaders (0.0)
+|   |   |   |   |   cof = 96: slowHeaders (0.0)
+|   |   |   |   |   cof = 97: slowHeaders (0.0)
+|   |   |   |   |   cof = 98: slowHeaders (0.0)
+|   |   |   |   |   cof = 99: slowHeaders (0.0)
+|   |   |   |   |   cof = 100: slowHeaders (0.0)
+|   |   |   |   |   cof = 101: slowHeaders (0.0)
+|   |   |   |   |   cof = 102: slowHeaders (0.0)
+|   |   |   |   |   cof = 103: slowHeaders (0.0)
+|   |   |   |   |   cof = 104: slowHeaders (0.0)
+|   |   |   |   |   cof = 105: slowHeaders (0.0)
+|   |   |   |   |   cof = 106: slowHeaders (0.0)
+|   |   |   |   |   cof = 107: slowHeaders (0.0)
+|   |   |   |   |   cof = 108: slowHeaders (0.0)
+|   |   |   |   |   cof = 109: slowHeaders (0.0)
+|   |   |   |   |   cof = 110: slowHeaders (0.0)
+|   |   |   |   |   cof = 111: slowHeaders (0.0)
+|   |   |   |   |   cof = 112: slowHeaders (0.0)
+|   |   |   |   |   cof = 113: slowHeaders (0.0)
+|   |   |   |   |   cof = 114: slowHeaders (0.0)
+|   |   |   |   |   cof = 115: slowHeaders (0.0)
+|   |   |   |   |   cof = 116: slowHeaders (0.0)
+|   |   |   |   |   cof = 117: slowHeaders (0.0)
+|   |   |   |   |   cof = 118: slowHeaders (0.0)
+|   |   |   |   |   cof = 119: slowHeaders (0.0)
+|   |   |   |   |   cof = 120: slowHeaders (0.0)
+|   |   |   |   |   cof = 121: slowHeaders (0.0)
+|   |   |   |   |   cof = 122: slowHeaders (0.0)
+|   |   |   |   |   cof = 123: slowHeaders (0.0)
+|   |   |   |   |   cof = 124: slowHeaders (0.0)
+|   |   |   |   |   cof = 125: slowHeaders (0.0)
+|   |   |   |   |   cof = 126: slowHeaders (0.0)
+|   |   |   |   |   cof = 127: slowHeaders (0.0)
+|   |   |   |   pps_f > 0.515673
+|   |   |   |   |   pps_f <= 0.985003
+|   |   |   |   |   |   max_f_time <= 4.192692
+|   |   |   |   |   |   |   pps_f <= 0.554034: slowHeaders (5.0)
+|   |   |   |   |   |   |   pps_f > 0.554034: slowRead (98.0/35.0)
+|   |   |   |   |   |   max_f_time > 4.192692: slowRead (50.0/6.0)
+|   |   |   |   |   pps_f > 0.985003: slowHeaders (40.0/3.0)
+|   |   |   bps_b > 29.28862
+|   |   |   |   max_b_pkt <= 628
+|   |   |   |   |   mean_f_time <= 5.082629: slowRead (1986.0/20.0)
+|   |   |   |   |   mean_f_time > 5.082629
+|   |   |   |   |   |   pps_f <= 0.213086: slowHeaders (12.0)
+|   |   |   |   |   |   pps_f > 0.213086
+|   |   |   |   |   |   |   total_f_bytes <= 864
+|   |   |   |   |   |   |   |   std_f_time <= 7.857932: slowRead (5.0)
+|   |   |   |   |   |   |   |   std_f_time > 7.857932
+|   |   |   |   |   |   |   |   |   max_f_time <= 27.989885: slowHeaders (3.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 27.989885: slowRead (2.0)
+|   |   |   |   |   |   |   total_f_bytes > 864: slowRead (16.0)
+|   |   |   |   max_b_pkt > 628
+|   |   |   |   |   duration <= 1.4761: slowRead (2.0)
+|   |   |   |   |   duration > 1.4761: slowHeaders (24.0/2.0)
+
+Number of Leaves  : 	173
+
+Size of the tree : 	218
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2950               98.3333 %
+Incorrectly Classified Instances        50                1.6667 %
+Kappa statistic                          0.9792
+Mean absolute error                      0.0092
+Root mean squared error                  0.072 
+Relative absolute error                  2.8896 %
+Root relative squared error             17.9919 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 1.000    0.001    0.997      1.000    0.998      0.998    1.000     0.997     httpFlood
+                 0.973    0.013    0.948      0.973    0.961      0.951    0.995     0.976     slowRead
+                 0.943    0.007    0.973      0.943    0.958      0.947    0.993     0.982     slowHeaders
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+Weighted Avg.    0.983    0.004    0.983      0.983    0.983      0.979    0.997     0.991     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   <-- classified as
+ 600   0   0   0   0 |   a = tcpFlood
+   0 600   0   0   0 |   b = httpFlood
+   0   0 584  16   0 |   c = slowRead
+   0   2  32 566   0 |   d = slowHeaders
+   0   0   0   0 600 |   e = udpFlood

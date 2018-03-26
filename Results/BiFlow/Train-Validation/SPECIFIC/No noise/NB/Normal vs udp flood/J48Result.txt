@@ -1,0 +1,33 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+urg_f_cnt <= -1: udpFlood (2005.0/5.0)
+urg_f_cnt > -1: normal (1995.0)
+
+Number of Leaves  : 	2
+
+Size of the tree : 	3
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         998               99.8    %
+Incorrectly Classified Instances         2                0.2    %
+Kappa statistic                          0.996 
+Mean absolute error                      0.0032
+Root mean squared error                  0.0446
+Relative absolute error                  0.6484 %
+Root relative squared error              8.9289 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.000    1.000      0.996    0.998      0.996    0.998     0.998     normal
+                 1.000    0.004    0.996      1.000    0.998      0.996    0.998     0.996     udpFlood
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    0.998     0.997     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 498   2 |   a = normal
+   0 500 |   b = udpFlood

@@ -1,0 +1,412 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_f_time <= 0.983813
+|   bps_f <= 20781.173911
+|   |   min_b_pkt <= 46
+|   |   |   rfb_bytes <= 1.548961
+|   |   |   |   duration <= 3.358206
+|   |   |   |   |   mean_f_time <= 0.003851
+|   |   |   |   |   |   mean_f_time <= 0.003188
+|   |   |   |   |   |   |   max_f_time <= 0.038421
+|   |   |   |   |   |   |   |   max_f_time <= 0.021068
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.002711
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001938
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002439
+|   |   |   |   |   |   |   |   |   |   |   |   cof = N/A
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001803
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   bps_f <= 19563.199677: HIGH_RATE (206.0/58.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   bps_f > 19563.199677
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 3.35092: NORMAL (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 3.35092
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001652: HIGH_RATE (22.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.001652
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002272: NORMAL (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002272: HIGH_RATE (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.001803: NORMAL (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 0: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 1: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 2: LOW_RATE (7.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 3: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 4: HIGH_RATE (188.0/65.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 5: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 6: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 7: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 8: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 9: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 10: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 11: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 12: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 13: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 14: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 15: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 16: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 17: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 18: HIGH_RATE (2516.0/691.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 19: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 20: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 21: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 22: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 23: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 24: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 25: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 26: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 27: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 28: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 29: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 30: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 31: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 32: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 33: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 34: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 35: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 36: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 37: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 38: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 39: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 40: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 41: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 42: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 43: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 44: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 45: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 46: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 47: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 48: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 49: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 50: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 51: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 52: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 53: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 54: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 55: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 56: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 57: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 58: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 59: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 60: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 61: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 62: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 63: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 64: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 65: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 66: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 67: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 68: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 69: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 70: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 71: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 72: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 73: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 74: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 75: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 76: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 77: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 78: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 79: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 80: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 81: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 82: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 83: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 84: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 85: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 86: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 87: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 88: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 89: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 90: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 91: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 92: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 93: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 94: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 95: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 96: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 97: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 98: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 99: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 100: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 101: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 102: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 103: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 104: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 105: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 106: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 107: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 108: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 109: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 110: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 111: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 112: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 113: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 114: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 115: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 116: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 117: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 118: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 119: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 120: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 121: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 122: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 123: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 124: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 125: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 126: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 127: HIGH_RATE (0.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002439: HIGH_RATE (41.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.001938
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002571: NORMAL (28.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002571
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002101: HIGH_RATE (13.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002101: NORMAL (9.0/1.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.002711
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002364: HIGH_RATE (97.0/1.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.002364
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.003092
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002519
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_bytes <= 53222: HIGH_RATE (12.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_bytes > 53222: NORMAL (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002519: NORMAL (4.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.003092: HIGH_RATE (6.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.021068
+|   |   |   |   |   |   |   |   |   std_f_time <= 0.002577
+|   |   |   |   |   |   |   |   |   |   total_f_bytes <= 53544: HIGH_RATE (19.0/3.0)
+|   |   |   |   |   |   |   |   |   |   total_f_bytes > 53544
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001746: HIGH_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.001746
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002482: NORMAL (16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002482
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002135: HIGH_RATE (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002135: NORMAL (15.0/1.0)
+|   |   |   |   |   |   |   |   |   std_f_time > 0.002577: NORMAL (14.0)
+|   |   |   |   |   |   |   max_f_time > 0.038421: HIGH_RATE (40.0)
+|   |   |   |   |   |   mean_f_time > 0.003188
+|   |   |   |   |   |   |   std_f_time <= 0.002701: HIGH_RATE (5.0)
+|   |   |   |   |   |   |   std_f_time > 0.002701
+|   |   |   |   |   |   |   |   max_f_time <= 0.05715
+|   |   |   |   |   |   |   |   |   bps_f <= 12569.152581
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.003418: HIGH_RATE (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.003418: NORMAL (5.0)
+|   |   |   |   |   |   |   |   |   bps_f > 12569.152581: NORMAL (47.0/3.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.05715: HIGH_RATE (7.0)
+|   |   |   |   |   mean_f_time > 0.003851
+|   |   |   |   |   |   max_f_pkt <= 54: HIGH_RATE (1458.0/3.0)
+|   |   |   |   |   |   max_f_pkt > 54
+|   |   |   |   |   |   |   bps_f <= 138.768958: NORMAL (2.0)
+|   |   |   |   |   |   |   bps_f > 138.768958: HIGH_RATE (5.0/1.0)
+|   |   |   |   duration > 3.358206
+|   |   |   |   |   std_f_time <= 0.001677: HIGH_RATE (14.0)
+|   |   |   |   |   std_f_time > 0.001677
+|   |   |   |   |   |   mean_f_time <= 0.002494
+|   |   |   |   |   |   |   max_f_time <= 0.034906
+|   |   |   |   |   |   |   |   std_f_time <= 0.001839
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.002342: NORMAL (16.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.002342: HIGH_RATE (5.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.001839: NORMAL (42.0)
+|   |   |   |   |   |   |   max_f_time > 0.034906: HIGH_RATE (3.0)
+|   |   |   |   |   |   mean_f_time > 0.002494
+|   |   |   |   |   |   |   max_f_time <= 0.017551: HIGH_RATE (18.0/1.0)
+|   |   |   |   |   |   |   max_f_time > 0.017551
+|   |   |   |   |   |   |   |   mean_f_time <= 0.003811
+|   |   |   |   |   |   |   |   |   std_f_time <= 0.002225
+|   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.00267: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   |   mean_f_time > 0.00267: HIGH_RATE (5.0)
+|   |   |   |   |   |   |   |   |   std_f_time > 0.002225
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 0.04579: NORMAL (22.0/1.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 0.04579: HIGH_RATE (2.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.003811: HIGH_RATE (59.0)
+|   |   |   rfb_bytes > 1.548961
+|   |   |   |   max_f_time <= 0.085921
+|   |   |   |   |   max_f_time <= 0.040174: NORMAL (92.0/29.0)
+|   |   |   |   |   max_f_time > 0.040174: HIGH_RATE (23.0)
+|   |   |   |   max_f_time > 0.085921: NORMAL (38.0)
+|   |   min_b_pkt > 46
+|   |   |   rfb_packets <= 1.555556: NORMAL (318.0)
+|   |   |   rfb_packets > 1.555556
+|   |   |   |   std_f_time <= 0.108414: NORMAL (5.0)
+|   |   |   |   std_f_time > 0.108414: LOW_RATE (6.0)
+|   bps_f > 20781.173911
+|   |   max_f_pkt <= 192: NORMAL (1737.0/2.0)
+|   |   max_f_pkt > 192
+|   |   |   max_f_pkt <= 251
+|   |   |   |   max_b_pkt <= 5844: LOW_RATE (16.0)
+|   |   |   |   max_b_pkt > 5844
+|   |   |   |   |   max_f_pkt <= 226
+|   |   |   |   |   |   total_b_bytes <= 11863: LOW_RATE (27.0/8.0)
+|   |   |   |   |   |   total_b_bytes > 11863
+|   |   |   |   |   |   |   mean_f_time <= 0.000391: LOW_RATE (3.0)
+|   |   |   |   |   |   |   mean_f_time > 0.000391
+|   |   |   |   |   |   |   |   std_f_time <= 0.000778: NORMAL (9.0/2.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.000778
+|   |   |   |   |   |   |   |   |   max_b_time <= 0.00161: LOW_RATE (5.0)
+|   |   |   |   |   |   |   |   |   max_b_time > 0.00161: NORMAL (3.0/1.0)
+|   |   |   |   |   max_f_pkt > 226: NORMAL (28.0/10.0)
+|   |   |   max_f_pkt > 251
+|   |   |   |   std_f_pkt <= 94.95975: LOW_RATE (73.0/8.0)
+|   |   |   |   std_f_pkt > 94.95975: NORMAL (3.0)
+max_f_time > 0.983813
+|   bps_b <= 30.182633
+|   |   total_f_packets <= 3
+|   |   |   max_f_pkt <= 60: LOW_RATE (77.0)
+|   |   |   max_f_pkt > 60: NORMAL (3.0/1.0)
+|   |   total_f_packets > 3: LOW_RATE (2881.0)
+|   bps_b > 30.182633
+|   |   total_b_bytes <= 11967
+|   |   |   max_f_pkt <= 251
+|   |   |   |   bps_b <= 63.931876
+|   |   |   |   |   mean_f_time <= 5.082711
+|   |   |   |   |   |   std_f_time <= 5.180699
+|   |   |   |   |   |   |   rfb_packets <= 1: NORMAL (15.0)
+|   |   |   |   |   |   |   rfb_packets > 1
+|   |   |   |   |   |   |   |   bps_b <= 61.382429: LOW_RATE (51.0/2.0)
+|   |   |   |   |   |   |   |   bps_b > 61.382429
+|   |   |   |   |   |   |   |   |   total_f_packets <= 16: NORMAL (10.0)
+|   |   |   |   |   |   |   |   |   total_f_packets > 16: LOW_RATE (7.0)
+|   |   |   |   |   |   std_f_time > 5.180699
+|   |   |   |   |   |   |   duration <= 60.709101
+|   |   |   |   |   |   |   |   total_f_bytes <= 927
+|   |   |   |   |   |   |   |   |   std_b_time <= 8.251796: NORMAL (5.0)
+|   |   |   |   |   |   |   |   |   std_b_time > 8.251796: LOW_RATE (13.0/1.0)
+|   |   |   |   |   |   |   |   total_f_bytes > 927
+|   |   |   |   |   |   |   |   |   rfb_packets <= 2.333333: NORMAL (177.0/4.0)
+|   |   |   |   |   |   |   |   |   rfb_packets > 2.333333
+|   |   |   |   |   |   |   |   |   |   total_f_bytes <= 2008: LOW_RATE (3.0)
+|   |   |   |   |   |   |   |   |   |   total_f_bytes > 2008: NORMAL (4.0)
+|   |   |   |   |   |   |   duration > 60.709101
+|   |   |   |   |   |   |   |   total_f_packets <= 15
+|   |   |   |   |   |   |   |   |   total_b_bytes <= 1732
+|   |   |   |   |   |   |   |   |   |   max_f_pkt <= 226
+|   |   |   |   |   |   |   |   |   |   |   max_b_time <= 13.566027: LOW_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   |   max_b_time > 13.566027
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.397172
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.389936
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 60.88029
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 6.642619
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   bps_f <= 16.222077: NORMAL (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   bps_f > 16.222077: LOW_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 6.642619: NORMAL (15.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 60.88029: LOW_RATE (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.389936
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 25.999473: LOW_RATE (14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 25.999473: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.397172
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 26.157924: NORMAL (21.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 26.157924
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 26.227532: LOW_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 26.227532
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   bps_f <= 16.209634
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 26.612207: LOW_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 26.612207: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   bps_f > 16.209634: NORMAL (3.0)
+|   |   |   |   |   |   |   |   |   |   max_f_pkt > 226
+|   |   |   |   |   |   |   |   |   |   |   total_f_bytes <= 1908
+|   |   |   |   |   |   |   |   |   |   |   |   total_f_bytes <= 1198
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.399651
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 26.044268
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.390031
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   min_f_time <= 0.000532: NORMAL (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   min_f_time > 0.000532: LOW_RATE (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.390031: NORMAL (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 26.044268: LOW_RATE (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.399651: NORMAL (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   total_f_bytes > 1198: NORMAL (4.0)
+|   |   |   |   |   |   |   |   |   |   |   total_f_bytes > 1908: LOW_RATE (2.0)
+|   |   |   |   |   |   |   |   |   total_b_bytes > 1732
+|   |   |   |   |   |   |   |   |   |   pps_f <= 0.213243
+|   |   |   |   |   |   |   |   |   |   |   pps_f <= 0.213144: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   |   |   pps_f > 0.213144
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 8.041976
+|   |   |   |   |   |   |   |   |   |   |   |   |   bps_b <= 32.483661
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   bps_f <= 14.07131
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 27.738101: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 27.738101: LOW_RATE (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   bps_f > 14.07131: LOW_RATE (14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   bps_b > 32.483661: NORMAL (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 8.041976: NORMAL (7.0)
+|   |   |   |   |   |   |   |   |   |   pps_f > 0.213243
+|   |   |   |   |   |   |   |   |   |   |   mean_b_time <= 5.133383
+|   |   |   |   |   |   |   |   |   |   |   |   min_f_time <= 0.001327
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_b_time <= 8.454176
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 7.275177: LOW_RATE (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 7.275177
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.214648
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 13: NORMAL (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 13: LOW_RATE (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.214648
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_pkt <= 67.071429: NORMAL (62.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_pkt > 67.071429
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f <= 0.213637: NORMAL (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f > 0.213637: LOW_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_b_time > 8.454176: LOW_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   min_f_time > 0.001327: LOW_RATE (7.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_b_time > 5.133383: NORMAL (94.0/7.0)
+|   |   |   |   |   |   |   |   total_f_packets > 15
+|   |   |   |   |   |   |   |   |   max_b_time <= 13.822487: LOW_RATE (13.0/2.0)
+|   |   |   |   |   |   |   |   |   max_b_time > 13.822487
+|   |   |   |   |   |   |   |   |   |   pps_b <= 0.397464
+|   |   |   |   |   |   |   |   |   |   |   total_f_bytes <= 1555
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.390187: LOW_RATE (14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.390187
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.393115: NORMAL (12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.393115: LOW_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   |   total_f_bytes > 1555
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.178813: LOW_RATE (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.178813: NORMAL (4.0)
+|   |   |   |   |   |   |   |   |   |   pps_b > 0.397464: NORMAL (6.0)
+|   |   |   |   |   mean_f_time > 5.082711
+|   |   |   |   |   |   std_f_time <= 8.086384: LOW_RATE (16.0)
+|   |   |   |   |   |   std_f_time > 8.086384
+|   |   |   |   |   |   |   bps_b <= 31.261882: LOW_RATE (8.0)
+|   |   |   |   |   |   |   bps_b > 31.261882: NORMAL (2.0)
+|   |   |   |   bps_b > 63.931876: LOW_RATE (46.0)
+|   |   |   max_f_pkt > 251
+|   |   |   |   rfb_packets <= 1.375
+|   |   |   |   |   mean_f_pkt <= 77.928571
+|   |   |   |   |   |   mean_b_time <= 2.716764: NORMAL (9.0/1.0)
+|   |   |   |   |   |   mean_b_time > 2.716764
+|   |   |   |   |   |   |   max_f_time <= 24.120332
+|   |   |   |   |   |   |   |   std_f_time <= 6.555351
+|   |   |   |   |   |   |   |   |   total_b_bytes <= 1784: LOW_RATE (23.0)
+|   |   |   |   |   |   |   |   |   total_b_bytes > 1784: NORMAL (2.0)
+|   |   |   |   |   |   |   |   std_f_time > 6.555351: NORMAL (8.0)
+|   |   |   |   |   |   |   max_f_time > 24.120332: LOW_RATE (219.0/5.0)
+|   |   |   |   |   mean_f_pkt > 77.928571
+|   |   |   |   |   |   max_f_pkt <= 351: LOW_RATE (3.0)
+|   |   |   |   |   |   max_f_pkt > 351
+|   |   |   |   |   |   |   total_b_bytes <= 1732: NORMAL (4.0)
+|   |   |   |   |   |   |   total_b_bytes > 1732
+|   |   |   |   |   |   |   |   bps_f <= 16.872531: LOW_RATE (28.0/10.0)
+|   |   |   |   |   |   |   |   bps_f > 16.872531
+|   |   |   |   |   |   |   |   |   pps_f <= 0.214554: NORMAL (14.0)
+|   |   |   |   |   |   |   |   |   pps_f > 0.214554: LOW_RATE (2.0)
+|   |   |   |   rfb_packets > 1.375: LOW_RATE (374.0)
+|   |   total_b_bytes > 11967: NORMAL (192.0)
+
+Number of Leaves  : 	254
+
+Size of the tree : 	380
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1816               60.5333 %
+Incorrectly Classified Instances      1184               39.4667 %
+Kappa statistic                          0.408 
+Mean absolute error                      0.2671
+Root mean squared error                  0.5105
+Relative absolute error                 60.087  %
+Root relative squared error            108.2829 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.006    0.001    0.750      0.006    0.012      0.046    0.482     0.329     HIGH_RATE
+                 0.947    0.076    0.862      0.947    0.903      0.853    0.944     0.820     LOW_RATE
+                 0.863    0.516    0.456      0.863    0.596      0.340    0.543     0.444     NORMAL
+Weighted Avg.    0.605    0.197    0.689      0.605    0.504      0.413    0.656     0.531     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   6  16 978 |   a = HIGH_RATE
+   0 947  53 |   b = LOW_RATE
+   2 135 863 |   c = NORMAL

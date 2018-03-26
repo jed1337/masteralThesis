@@ -1,0 +1,3495 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilitiesAll the base classifiers: 
+
+
+RandomTree
+==========
+
+total_f_bytes < 122
+|   max_f_pkt < 47.5 : tcpFlood (2013/0)
+|   max_f_pkt >= 47.5 : normal (6/0)
+total_f_bytes >= 122 : normal (1981/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : tcpFlood (2019/0)
+mean_f_pkt >= 47.5 : normal (1981/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+total_f_packets < 2.5
+|   mean_f_pkt < 47.5 : tcpFlood (2006/0)
+|   mean_f_pkt >= 47.5 : normal (2/0)
+total_f_packets >= 2.5 : normal (1992/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (2046/0)
+min_f_pkt >= 49 : normal (1954/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (2015/0)
+max_f_pkt >= 47.5 : normal (1985/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+cof = N/A : normal (4/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (3/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (116/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18
+|   total_b_bytes < 52 : tcpFlood (1818/0)
+|   total_b_bytes >= 52 : normal (2/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (48/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (2009/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 132
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2057/0)
+min_f_pkt >= 47 : normal (1943/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+total_b_packets < 3.5
+|   psh_f_cnt < -0.5 : normal (7/0)
+|   psh_f_cnt >= -0.5
+|   |   total_f_packets < 2.5 : tcpFlood (1960/0)
+|   |   total_f_packets >= 2.5 : normal (1/0)
+total_b_packets >= 3.5 : normal (2032/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94
+|   psh_f_cnt < -0.5 : normal (2/0)
+|   psh_f_cnt >= -0.5
+|   |   min_f_pkt < 53 : tcpFlood (1965/0)
+|   |   min_f_pkt >= 53 : normal (2/0)
+std_f_pkt >= 0.94 : normal (2031/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+std_f_pkt < 14.85
+|   min_f_pkt < 47.5 : tcpFlood (2043/0)
+|   min_f_pkt >= 47.5 : normal (7/0)
+std_f_pkt >= 14.85 : normal (1950/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (2006/0)
+max_f_pkt >= 47.5 : normal (1994/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (2049/0)
+max_f_pkt >= 47.5 : normal (1951/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+total_f_bytes < 122
+|   mean_f_pkt < 47.5 : tcpFlood (2060/0)
+|   mean_f_pkt >= 47.5 : normal (3/0)
+total_f_bytes >= 122 : normal (1937/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+cof = N/A : normal (6/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2
+|   min_f_pkt < 47 : tcpFlood (2/0)
+|   min_f_pkt >= 47 : normal (1/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (104/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1877/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (49/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1961/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 132
+
+
+RandomTree
+==========
+
+total_f_packets < 2.5
+|   min_f_pkt < 137.5 : tcpFlood (1994/0)
+|   min_f_pkt >= 137.5 : normal (1/0)
+total_f_packets >= 2.5 : normal (2005/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+cof = N/A : normal (5/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (1/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (130/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18
+|   min_f_pkt < 53 : tcpFlood (1795/0)
+|   min_f_pkt >= 53 : normal (1/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (57/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (2011/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 132
+
+
+RandomTree
+==========
+
+mean_f_pkt < 53 : tcpFlood (1973/0)
+mean_f_pkt >= 53 : normal (2027/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+std_f_time < 0
+|   total_f_bytes < 160.5
+|   |   total_b_bytes < 52 : tcpFlood (2010/0)
+|   |   total_b_bytes >= 52 : normal (1/0)
+|   total_f_bytes >= 160.5 : normal (2/0)
+std_f_time >= 0 : normal (1987/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (1968/0)
+max_f_pkt >= 47.5 : normal (2032/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+total_f_bytes < 122
+|   duration < 0
+|   |   min_f_pkt < 47.5 : tcpFlood (144/0)
+|   |   min_f_pkt >= 47.5 : normal (1/0)
+|   duration >= 0 : tcpFlood (1903/0)
+total_f_bytes >= 122 : normal (1952/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : tcpFlood (2006/0)
+mean_f_pkt >= 47.5 : normal (1994/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1996/0)
+min_f_pkt >= 47.5 : normal (2004/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+cof = N/A : normal (1/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (2/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (116/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1833/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (46/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (2002/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 130
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (1971/0)
+max_f_pkt >= 47.5 : normal (2029/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1951/0)
+min_f_pkt >= 47 : normal (2049/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+cof = N/A : normal (8/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (1/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (119/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1834/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (45/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1993/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 130
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : tcpFlood (1993/0)
+mean_f_pkt >= 48.33 : normal (2007/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : tcpFlood (1986/0)
+mean_f_pkt >= 47.5 : normal (2014/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_b_pkt < 52
+|   urg_f_cnt < -0.5 : normal (5/0)
+|   urg_f_cnt >= -0.5
+|   |   mean_f_time < 2.29 : tcpFlood (2032/0)
+|   |   mean_f_time >= 2.29 : normal (1/0)
+max_b_pkt >= 52 : normal (1962/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : tcpFlood (1976/0)
+mean_f_pkt >= 47.5 : normal (2024/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+std_b_pkt < 718.58
+|   max_f_time < 0.41
+|   |   duration < 0
+|   |   |   total_f_bytes < 62 : tcpFlood (125/0)
+|   |   |   total_f_bytes >= 62 : normal (2/0)
+|   |   duration >= 0 : tcpFlood (1914/0)
+|   max_f_time >= 0.41 : normal (4/0)
+std_b_pkt >= 718.58 : normal (1955/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_time < 0
+|   cof = N/A : normal (5/0)
+|   cof = 0 : tcpFlood (0/0)
+|   cof = 1 : tcpFlood (0/0)
+|   cof = 2 : tcpFlood (1/0)
+|   cof = 3 : tcpFlood (0/0)
+|   cof = 4 : tcpFlood (108/0)
+|   cof = 5 : tcpFlood (0/0)
+|   cof = 6 : tcpFlood (0/0)
+|   cof = 7 : tcpFlood (0/0)
+|   cof = 8 : tcpFlood (0/0)
+|   cof = 9 : tcpFlood (0/0)
+|   cof = 10 : tcpFlood (0/0)
+|   cof = 11 : tcpFlood (0/0)
+|   cof = 12 : tcpFlood (0/0)
+|   cof = 13 : tcpFlood (0/0)
+|   cof = 14 : tcpFlood (0/0)
+|   cof = 15 : tcpFlood (0/0)
+|   cof = 16 : tcpFlood (0/0)
+|   cof = 17 : tcpFlood (0/0)
+|   cof = 18 : tcpFlood (1853/0)
+|   cof = 19 : tcpFlood (0/0)
+|   cof = 20 : tcpFlood (0/0)
+|   cof = 21 : tcpFlood (0/0)
+|   cof = 22 : tcpFlood (48/0)
+|   cof = 23 : tcpFlood (0/0)
+|   cof = 24 : tcpFlood (0/0)
+|   cof = 25 : tcpFlood (0/0)
+|   cof = 26 : tcpFlood (0/0)
+|   cof = 27 : tcpFlood (0/0)
+|   cof = 28 : tcpFlood (0/0)
+|   cof = 29 : tcpFlood (0/0)
+|   cof = 30 : tcpFlood (0/0)
+|   cof = 31 : tcpFlood (0/0)
+|   cof = 32 : tcpFlood (0/0)
+|   cof = 33 : tcpFlood (0/0)
+|   cof = 34 : tcpFlood (0/0)
+|   cof = 35 : tcpFlood (0/0)
+|   cof = 36 : tcpFlood (0/0)
+|   cof = 37 : tcpFlood (0/0)
+|   cof = 38 : tcpFlood (0/0)
+|   cof = 39 : tcpFlood (0/0)
+|   cof = 40 : tcpFlood (0/0)
+|   cof = 41 : tcpFlood (0/0)
+|   cof = 42 : tcpFlood (0/0)
+|   cof = 43 : tcpFlood (0/0)
+|   cof = 44 : tcpFlood (0/0)
+|   cof = 45 : tcpFlood (0/0)
+|   cof = 46 : tcpFlood (0/0)
+|   cof = 47 : tcpFlood (0/0)
+|   cof = 48 : tcpFlood (0/0)
+|   cof = 49 : tcpFlood (0/0)
+|   cof = 50 : tcpFlood (0/0)
+|   cof = 51 : tcpFlood (0/0)
+|   cof = 52 : tcpFlood (0/0)
+|   cof = 53 : tcpFlood (0/0)
+|   cof = 54 : tcpFlood (0/0)
+|   cof = 55 : tcpFlood (0/0)
+|   cof = 56 : tcpFlood (0/0)
+|   cof = 57 : tcpFlood (0/0)
+|   cof = 58 : tcpFlood (0/0)
+|   cof = 59 : tcpFlood (0/0)
+|   cof = 60 : tcpFlood (0/0)
+|   cof = 61 : tcpFlood (0/0)
+|   cof = 62 : tcpFlood (0/0)
+|   cof = 63 : tcpFlood (0/0)
+|   cof = 64 : tcpFlood (0/0)
+|   cof = 65 : tcpFlood (0/0)
+|   cof = 66 : tcpFlood (0/0)
+|   cof = 67 : tcpFlood (0/0)
+|   cof = 68 : tcpFlood (0/0)
+|   cof = 69 : tcpFlood (0/0)
+|   cof = 70 : tcpFlood (0/0)
+|   cof = 71 : tcpFlood (0/0)
+|   cof = 72 : tcpFlood (0/0)
+|   cof = 73 : tcpFlood (0/0)
+|   cof = 74 : tcpFlood (0/0)
+|   cof = 75 : tcpFlood (0/0)
+|   cof = 76 : tcpFlood (0/0)
+|   cof = 77 : tcpFlood (0/0)
+|   cof = 78 : tcpFlood (0/0)
+|   cof = 79 : tcpFlood (0/0)
+|   cof = 80 : tcpFlood (0/0)
+|   cof = 81 : tcpFlood (0/0)
+|   cof = 82 : tcpFlood (0/0)
+|   cof = 83 : tcpFlood (0/0)
+|   cof = 84 : tcpFlood (0/0)
+|   cof = 85 : tcpFlood (0/0)
+|   cof = 86 : tcpFlood (0/0)
+|   cof = 87 : tcpFlood (0/0)
+|   cof = 88 : tcpFlood (0/0)
+|   cof = 89 : tcpFlood (0/0)
+|   cof = 90 : tcpFlood (0/0)
+|   cof = 91 : tcpFlood (0/0)
+|   cof = 92 : tcpFlood (0/0)
+|   cof = 93 : tcpFlood (0/0)
+|   cof = 94 : tcpFlood (0/0)
+|   cof = 95 : tcpFlood (0/0)
+|   cof = 96 : tcpFlood (0/0)
+|   cof = 97 : tcpFlood (0/0)
+|   cof = 98 : tcpFlood (0/0)
+|   cof = 99 : tcpFlood (0/0)
+|   cof = 100 : tcpFlood (0/0)
+|   cof = 101 : tcpFlood (0/0)
+|   cof = 102 : tcpFlood (0/0)
+|   cof = 103 : tcpFlood (0/0)
+|   cof = 104 : tcpFlood (0/0)
+|   cof = 105 : tcpFlood (0/0)
+|   cof = 106 : tcpFlood (0/0)
+|   cof = 107 : tcpFlood (0/0)
+|   cof = 108 : tcpFlood (0/0)
+|   cof = 109 : tcpFlood (0/0)
+|   cof = 110 : tcpFlood (0/0)
+|   cof = 111 : tcpFlood (0/0)
+|   cof = 112 : tcpFlood (0/0)
+|   cof = 113 : tcpFlood (0/0)
+|   cof = 114 : tcpFlood (0/0)
+|   cof = 115 : tcpFlood (0/0)
+|   cof = 116 : tcpFlood (0/0)
+|   cof = 117 : tcpFlood (0/0)
+|   cof = 118 : tcpFlood (0/0)
+|   cof = 119 : tcpFlood (0/0)
+|   cof = 120 : tcpFlood (0/0)
+|   cof = 121 : tcpFlood (0/0)
+|   cof = 122 : tcpFlood (0/0)
+|   cof = 123 : tcpFlood (0/0)
+|   cof = 124 : tcpFlood (0/0)
+|   cof = 125 : tcpFlood (0/0)
+|   cof = 126 : tcpFlood (0/0)
+|   cof = 127 : tcpFlood (0/0)
+std_f_time >= 0 : normal (1985/0)
+
+Size of the tree : 132
+
+
+RandomTree
+==========
+
+cof = N/A : normal (6/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (3/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (101/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1839/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (60/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1991/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 130
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2033/0)
+min_f_pkt >= 47 : normal (1967/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+total_f_bytes < 122
+|   urg_f_cnt < -0.5 : normal (1/0)
+|   urg_f_cnt >= -0.5
+|   |   max_b_pkt < 52 : tcpFlood (1964/0)
+|   |   max_b_pkt >= 52 : normal (1/0)
+total_f_bytes >= 122 : normal (2034/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+mean_b_pkt < 52
+|   psh_f_cnt < -0.5 : normal (6/0)
+|   psh_f_cnt >= -0.5
+|   |   duration < 4.54 : tcpFlood (1969/0)
+|   |   duration >= 4.54 : normal (2/0)
+mean_b_pkt >= 52 : normal (2023/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : tcpFlood (2046/0)
+mean_f_pkt >= 47.5 : normal (1954/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+total_f_packets < 2.5
+|   min_f_pkt < 47.5 : tcpFlood (2036/0)
+|   min_f_pkt >= 47.5 : normal (3/0)
+total_f_packets >= 2.5 : normal (1961/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+total_f_bytes < 122 : tcpFlood (2011/0)
+total_f_bytes >= 122 : normal (1989/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2054/0)
+min_f_pkt >= 47 : normal (1946/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2016/0)
+min_f_pkt >= 47 : normal (1984/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+total_f_bytes < 122
+|   rfb_bytes < 1.02
+|   |   total_f_bytes < 47.5 : tcpFlood (137/0)
+|   |   total_f_bytes >= 47.5 : normal (3/0)
+|   rfb_bytes >= 1.02 : tcpFlood (1901/0)
+total_f_bytes >= 122 : normal (1959/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+total_b_packets < 3
+|   mean_f_pkt < 47.5 : tcpFlood (2081/0)
+|   mean_f_pkt >= 47.5 : normal (7/0)
+total_b_packets >= 3 : normal (1912/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 49 : tcpFlood (2024/0)
+max_f_pkt >= 49 : normal (1976/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2003/0)
+min_f_pkt >= 47.5 : normal (1997/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+cof = N/A : normal (2/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (2/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (98/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1854/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (41/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (2003/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 130
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2026/0)
+min_f_pkt >= 47 : normal (1974/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (2019/0)
+max_f_pkt >= 47.5 : normal (1981/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_b_pkt < 48
+|   urg_f_cnt < -0.5 : normal (6/0)
+|   urg_f_cnt >= -0.5 : tcpFlood (1986/0)
+min_b_pkt >= 48 : normal (2008/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+bps_b < 15002.26
+|   min_f_pkt < 47 : tcpFlood (2005/0)
+|   min_f_pkt >= 47 : normal (13/0)
+bps_b >= 15002.26 : normal (1982/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+cof = N/A : normal (8/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (1/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (125/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1832/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (48/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1986/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 130
+
+
+RandomTree
+==========
+
+total_b_bytes < 52
+|   max_f_pkt < 47.5 : tcpFlood (2015/0)
+|   max_f_pkt >= 47.5 : normal (7/0)
+total_b_bytes >= 52 : normal (1978/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+total_b_packets < 3
+|   psh_f_cnt < -0.5 : normal (7/0)
+|   psh_f_cnt >= -0.5 : tcpFlood (1992/0)
+total_b_packets >= 3 : normal (2001/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : tcpFlood (2051/0)
+mean_f_pkt >= 47.5 : normal (1949/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+cof = N/A : normal (4/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (0/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (99/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1870/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (57/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1970/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 130
+
+
+RandomTree
+==========
+
+min_b_pkt < 48
+|   min_f_pkt < 47 : tcpFlood (2007/0)
+|   min_f_pkt >= 47 : normal (4/0)
+min_b_pkt >= 48 : normal (1989/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+min_b_pkt < 48
+|   psh_f_cnt < -0.5 : normal (5/0)
+|   psh_f_cnt >= -0.5 : tcpFlood (1960/0)
+min_b_pkt >= 48 : normal (2035/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+total_f_bytes < 122
+|   duration < 0 : tcpFlood (1937/0)
+|   duration >= 0
+|   |   total_f_bytes < 76 : normal (1/0)
+|   |   total_f_bytes >= 76 : tcpFlood (47/0)
+total_f_bytes >= 122 : normal (2015/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+pps_b < 7.55
+|   total_b_bytes < 22
+|   |   max_f_pkt < 47.5 : tcpFlood (128/0)
+|   |   max_f_pkt >= 47.5 : normal (5/0)
+|   total_b_bytes >= 22 : tcpFlood (1917/0)
+pps_b >= 7.55 : normal (1950/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+mean_b_time < 0
+|   max_f_pkt < 47.5 : tcpFlood (1997/0)
+|   max_f_pkt >= 47.5 : normal (7/0)
+mean_b_time >= 0 : normal (1996/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+std_f_time < 0
+|   mean_f_pkt < 53 : tcpFlood (1972/0)
+|   mean_f_pkt >= 53 : normal (4/0)
+std_f_time >= 0 : normal (2024/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (1987/0)
+max_f_pkt >= 47.5 : normal (2013/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94
+|   min_f_pkt < 47.5 : tcpFlood (1992/0)
+|   min_f_pkt >= 47.5 : normal (5/0)
+std_f_pkt >= 0.94 : normal (2003/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (2014/0)
+min_f_pkt >= 49 : normal (1986/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : tcpFlood (1965/0)
+mean_f_pkt >= 48.33 : normal (2035/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+std_f_time < 0
+|   mean_b_pkt < 52
+|   |   mean_f_pkt < 62 : tcpFlood (2056/0)
+|   |   mean_f_pkt >= 62 : normal (1/0)
+|   mean_b_pkt >= 52 : normal (2/0)
+std_f_time >= 0 : normal (1941/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+total_f_packets < 2.5
+|   total_b_bytes < 52
+|   |   cof = N/A : normal (2/0)
+|   |   cof = 0 : tcpFlood (0/0)
+|   |   cof = 1 : tcpFlood (0/0)
+|   |   cof = 2 : tcpFlood (0/0)
+|   |   cof = 3 : tcpFlood (0/0)
+|   |   cof = 4 : tcpFlood (104/0)
+|   |   cof = 5 : tcpFlood (0/0)
+|   |   cof = 6 : tcpFlood (0/0)
+|   |   cof = 7 : tcpFlood (0/0)
+|   |   cof = 8 : tcpFlood (0/0)
+|   |   cof = 9 : tcpFlood (0/0)
+|   |   cof = 10 : tcpFlood (0/0)
+|   |   cof = 11 : tcpFlood (0/0)
+|   |   cof = 12 : tcpFlood (0/0)
+|   |   cof = 13 : tcpFlood (0/0)
+|   |   cof = 14 : tcpFlood (0/0)
+|   |   cof = 15 : tcpFlood (0/0)
+|   |   cof = 16 : tcpFlood (0/0)
+|   |   cof = 17 : tcpFlood (0/0)
+|   |   cof = 18 : tcpFlood (1863/0)
+|   |   cof = 19 : tcpFlood (0/0)
+|   |   cof = 20 : tcpFlood (0/0)
+|   |   cof = 21 : tcpFlood (0/0)
+|   |   cof = 22 : tcpFlood (51/0)
+|   |   cof = 23 : tcpFlood (0/0)
+|   |   cof = 24 : tcpFlood (0/0)
+|   |   cof = 25 : tcpFlood (0/0)
+|   |   cof = 26 : tcpFlood (0/0)
+|   |   cof = 27 : tcpFlood (0/0)
+|   |   cof = 28 : tcpFlood (0/0)
+|   |   cof = 29 : tcpFlood (0/0)
+|   |   cof = 30 : tcpFlood (0/0)
+|   |   cof = 31 : tcpFlood (0/0)
+|   |   cof = 32 : tcpFlood (0/0)
+|   |   cof = 33 : tcpFlood (0/0)
+|   |   cof = 34 : tcpFlood (0/0)
+|   |   cof = 35 : tcpFlood (0/0)
+|   |   cof = 36 : tcpFlood (0/0)
+|   |   cof = 37 : tcpFlood (0/0)
+|   |   cof = 38 : tcpFlood (0/0)
+|   |   cof = 39 : tcpFlood (0/0)
+|   |   cof = 40 : tcpFlood (0/0)
+|   |   cof = 41 : tcpFlood (0/0)
+|   |   cof = 42 : tcpFlood (0/0)
+|   |   cof = 43 : tcpFlood (0/0)
+|   |   cof = 44 : tcpFlood (0/0)
+|   |   cof = 45 : tcpFlood (0/0)
+|   |   cof = 46 : tcpFlood (0/0)
+|   |   cof = 47 : tcpFlood (0/0)
+|   |   cof = 48 : tcpFlood (0/0)
+|   |   cof = 49 : tcpFlood (0/0)
+|   |   cof = 50 : tcpFlood (0/0)
+|   |   cof = 51 : tcpFlood (0/0)
+|   |   cof = 52 : tcpFlood (0/0)
+|   |   cof = 53 : tcpFlood (0/0)
+|   |   cof = 54 : tcpFlood (0/0)
+|   |   cof = 55 : tcpFlood (0/0)
+|   |   cof = 56 : tcpFlood (0/0)
+|   |   cof = 57 : tcpFlood (0/0)
+|   |   cof = 58 : tcpFlood (0/0)
+|   |   cof = 59 : tcpFlood (0/0)
+|   |   cof = 60 : tcpFlood (0/0)
+|   |   cof = 61 : tcpFlood (0/0)
+|   |   cof = 62 : tcpFlood (0/0)
+|   |   cof = 63 : tcpFlood (0/0)
+|   |   cof = 64 : tcpFlood (0/0)
+|   |   cof = 65 : tcpFlood (0/0)
+|   |   cof = 66 : tcpFlood (0/0)
+|   |   cof = 67 : tcpFlood (0/0)
+|   |   cof = 68 : tcpFlood (0/0)
+|   |   cof = 69 : tcpFlood (0/0)
+|   |   cof = 70 : tcpFlood (0/0)
+|   |   cof = 71 : tcpFlood (0/0)
+|   |   cof = 72 : tcpFlood (0/0)
+|   |   cof = 73 : tcpFlood (0/0)
+|   |   cof = 74 : tcpFlood (0/0)
+|   |   cof = 75 : tcpFlood (0/0)
+|   |   cof = 76 : tcpFlood (0/0)
+|   |   cof = 77 : tcpFlood (0/0)
+|   |   cof = 78 : tcpFlood (0/0)
+|   |   cof = 79 : tcpFlood (0/0)
+|   |   cof = 80 : tcpFlood (0/0)
+|   |   cof = 81 : tcpFlood (0/0)
+|   |   cof = 82 : tcpFlood (0/0)
+|   |   cof = 83 : tcpFlood (0/0)
+|   |   cof = 84 : tcpFlood (0/0)
+|   |   cof = 85 : tcpFlood (0/0)
+|   |   cof = 86 : tcpFlood (0/0)
+|   |   cof = 87 : tcpFlood (0/0)
+|   |   cof = 88 : tcpFlood (0/0)
+|   |   cof = 89 : tcpFlood (0/0)
+|   |   cof = 90 : tcpFlood (0/0)
+|   |   cof = 91 : tcpFlood (0/0)
+|   |   cof = 92 : tcpFlood (0/0)
+|   |   cof = 93 : tcpFlood (0/0)
+|   |   cof = 94 : tcpFlood (0/0)
+|   |   cof = 95 : tcpFlood (0/0)
+|   |   cof = 96 : tcpFlood (0/0)
+|   |   cof = 97 : tcpFlood (0/0)
+|   |   cof = 98 : tcpFlood (0/0)
+|   |   cof = 99 : tcpFlood (0/0)
+|   |   cof = 100 : tcpFlood (0/0)
+|   |   cof = 101 : tcpFlood (0/0)
+|   |   cof = 102 : tcpFlood (0/0)
+|   |   cof = 103 : tcpFlood (0/0)
+|   |   cof = 104 : tcpFlood (0/0)
+|   |   cof = 105 : tcpFlood (0/0)
+|   |   cof = 106 : tcpFlood (0/0)
+|   |   cof = 107 : tcpFlood (0/0)
+|   |   cof = 108 : tcpFlood (0/0)
+|   |   cof = 109 : tcpFlood (0/0)
+|   |   cof = 110 : tcpFlood (0/0)
+|   |   cof = 111 : tcpFlood (0/0)
+|   |   cof = 112 : tcpFlood (0/0)
+|   |   cof = 113 : tcpFlood (0/0)
+|   |   cof = 114 : tcpFlood (0/0)
+|   |   cof = 115 : tcpFlood (0/0)
+|   |   cof = 116 : tcpFlood (0/0)
+|   |   cof = 117 : tcpFlood (0/0)
+|   |   cof = 118 : tcpFlood (0/0)
+|   |   cof = 119 : tcpFlood (0/0)
+|   |   cof = 120 : tcpFlood (0/0)
+|   |   cof = 121 : tcpFlood (0/0)
+|   |   cof = 122 : tcpFlood (0/0)
+|   |   cof = 123 : tcpFlood (0/0)
+|   |   cof = 124 : tcpFlood (0/0)
+|   |   cof = 125 : tcpFlood (0/0)
+|   |   cof = 126 : tcpFlood (0/0)
+|   |   cof = 127 : tcpFlood (0/0)
+|   total_b_bytes >= 52 : normal (2/0)
+total_f_packets >= 2.5 : normal (1978/0)
+
+Size of the tree : 134
+
+
+RandomTree
+==========
+
+total_b_packets < 3.5
+|   min_f_pkt < 47 : tcpFlood (1951/0)
+|   min_f_pkt >= 47 : normal (5/0)
+total_b_packets >= 3.5 : normal (2044/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+cof = N/A : normal (3/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (1/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (108/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18
+|   total_b_bytes < 52 : tcpFlood (1879/0)
+|   total_b_bytes >= 52 : normal (2/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (37/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1970/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 132
+
+
+RandomTree
+==========
+
+std_f_time < 0
+|   min_b_pkt < 52 : tcpFlood (2007/0)
+|   min_b_pkt >= 52 : normal (2/0)
+std_f_time >= 0 : normal (1991/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : tcpFlood (1998/0)
+mean_f_pkt >= 47.5 : normal (2002/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+pps_f < 88.76
+|   max_f_pkt < 47.5 : tcpFlood (2032/0)
+|   max_f_pkt >= 47.5 : normal (5/0)
+pps_f >= 88.76 : normal (1963/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+cof = N/A : normal (4/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2
+|   duration < 4.5 : tcpFlood (2/0)
+|   duration >= 4.5 : normal (1/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (108/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1857/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (51/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1977/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 132
+
+
+RandomTree
+==========
+
+cof = N/A : normal (6/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : normal (1/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (127/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1818/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (50/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1998/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 130
+
+
+RandomTree
+==========
+
+pps_f < 88.76
+|   min_f_pkt < 47 : tcpFlood (1977/0)
+|   min_f_pkt >= 47 : normal (3/0)
+pps_f >= 88.76 : normal (2020/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+total_b_bytes < 52
+|   min_f_pkt < 47 : tcpFlood (1997/0)
+|   min_f_pkt >= 47 : normal (8/0)
+total_b_bytes >= 52 : normal (1995/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+total_f_packets < 2.5
+|   total_b_bytes < 52
+|   |   cof = N/A : normal (1/0)
+|   |   cof = 0 : tcpFlood (0/0)
+|   |   cof = 1 : tcpFlood (0/0)
+|   |   cof = 2 : tcpFlood (1/0)
+|   |   cof = 3 : tcpFlood (0/0)
+|   |   cof = 4 : tcpFlood (116/0)
+|   |   cof = 5 : tcpFlood (0/0)
+|   |   cof = 6 : tcpFlood (0/0)
+|   |   cof = 7 : tcpFlood (0/0)
+|   |   cof = 8 : tcpFlood (0/0)
+|   |   cof = 9 : tcpFlood (0/0)
+|   |   cof = 10 : tcpFlood (0/0)
+|   |   cof = 11 : tcpFlood (0/0)
+|   |   cof = 12 : tcpFlood (0/0)
+|   |   cof = 13 : tcpFlood (0/0)
+|   |   cof = 14 : tcpFlood (0/0)
+|   |   cof = 15 : tcpFlood (0/0)
+|   |   cof = 16 : tcpFlood (0/0)
+|   |   cof = 17 : tcpFlood (0/0)
+|   |   cof = 18 : tcpFlood (1833/0)
+|   |   cof = 19 : tcpFlood (0/0)
+|   |   cof = 20 : tcpFlood (0/0)
+|   |   cof = 21 : tcpFlood (0/0)
+|   |   cof = 22 : tcpFlood (53/0)
+|   |   cof = 23 : tcpFlood (0/0)
+|   |   cof = 24 : tcpFlood (0/0)
+|   |   cof = 25 : tcpFlood (0/0)
+|   |   cof = 26 : tcpFlood (0/0)
+|   |   cof = 27 : tcpFlood (0/0)
+|   |   cof = 28 : tcpFlood (0/0)
+|   |   cof = 29 : tcpFlood (0/0)
+|   |   cof = 30 : tcpFlood (0/0)
+|   |   cof = 31 : tcpFlood (0/0)
+|   |   cof = 32 : tcpFlood (0/0)
+|   |   cof = 33 : tcpFlood (0/0)
+|   |   cof = 34 : tcpFlood (0/0)
+|   |   cof = 35 : tcpFlood (0/0)
+|   |   cof = 36 : tcpFlood (0/0)
+|   |   cof = 37 : tcpFlood (0/0)
+|   |   cof = 38 : tcpFlood (0/0)
+|   |   cof = 39 : tcpFlood (0/0)
+|   |   cof = 40 : tcpFlood (0/0)
+|   |   cof = 41 : tcpFlood (0/0)
+|   |   cof = 42 : tcpFlood (0/0)
+|   |   cof = 43 : tcpFlood (0/0)
+|   |   cof = 44 : tcpFlood (0/0)
+|   |   cof = 45 : tcpFlood (0/0)
+|   |   cof = 46 : tcpFlood (0/0)
+|   |   cof = 47 : tcpFlood (0/0)
+|   |   cof = 48 : tcpFlood (0/0)
+|   |   cof = 49 : tcpFlood (0/0)
+|   |   cof = 50 : tcpFlood (0/0)
+|   |   cof = 51 : tcpFlood (0/0)
+|   |   cof = 52 : tcpFlood (0/0)
+|   |   cof = 53 : tcpFlood (0/0)
+|   |   cof = 54 : tcpFlood (0/0)
+|   |   cof = 55 : tcpFlood (0/0)
+|   |   cof = 56 : tcpFlood (0/0)
+|   |   cof = 57 : tcpFlood (0/0)
+|   |   cof = 58 : tcpFlood (0/0)
+|   |   cof = 59 : tcpFlood (0/0)
+|   |   cof = 60 : tcpFlood (0/0)
+|   |   cof = 61 : tcpFlood (0/0)
+|   |   cof = 62 : tcpFlood (0/0)
+|   |   cof = 63 : tcpFlood (0/0)
+|   |   cof = 64 : tcpFlood (0/0)
+|   |   cof = 65 : tcpFlood (0/0)
+|   |   cof = 66 : tcpFlood (0/0)
+|   |   cof = 67 : tcpFlood (0/0)
+|   |   cof = 68 : tcpFlood (0/0)
+|   |   cof = 69 : tcpFlood (0/0)
+|   |   cof = 70 : tcpFlood (0/0)
+|   |   cof = 71 : tcpFlood (0/0)
+|   |   cof = 72 : tcpFlood (0/0)
+|   |   cof = 73 : tcpFlood (0/0)
+|   |   cof = 74 : tcpFlood (0/0)
+|   |   cof = 75 : tcpFlood (0/0)
+|   |   cof = 76 : tcpFlood (0/0)
+|   |   cof = 77 : tcpFlood (0/0)
+|   |   cof = 78 : tcpFlood (0/0)
+|   |   cof = 79 : tcpFlood (0/0)
+|   |   cof = 80 : tcpFlood (0/0)
+|   |   cof = 81 : tcpFlood (0/0)
+|   |   cof = 82 : tcpFlood (0/0)
+|   |   cof = 83 : tcpFlood (0/0)
+|   |   cof = 84 : tcpFlood (0/0)
+|   |   cof = 85 : tcpFlood (0/0)
+|   |   cof = 86 : tcpFlood (0/0)
+|   |   cof = 87 : tcpFlood (0/0)
+|   |   cof = 88 : tcpFlood (0/0)
+|   |   cof = 89 : tcpFlood (0/0)
+|   |   cof = 90 : tcpFlood (0/0)
+|   |   cof = 91 : tcpFlood (0/0)
+|   |   cof = 92 : tcpFlood (0/0)
+|   |   cof = 93 : tcpFlood (0/0)
+|   |   cof = 94 : tcpFlood (0/0)
+|   |   cof = 95 : tcpFlood (0/0)
+|   |   cof = 96 : tcpFlood (0/0)
+|   |   cof = 97 : tcpFlood (0/0)
+|   |   cof = 98 : tcpFlood (0/0)
+|   |   cof = 99 : tcpFlood (0/0)
+|   |   cof = 100 : tcpFlood (0/0)
+|   |   cof = 101 : tcpFlood (0/0)
+|   |   cof = 102 : tcpFlood (0/0)
+|   |   cof = 103 : tcpFlood (0/0)
+|   |   cof = 104 : tcpFlood (0/0)
+|   |   cof = 105 : tcpFlood (0/0)
+|   |   cof = 106 : tcpFlood (0/0)
+|   |   cof = 107 : tcpFlood (0/0)
+|   |   cof = 108 : tcpFlood (0/0)
+|   |   cof = 109 : tcpFlood (0/0)
+|   |   cof = 110 : tcpFlood (0/0)
+|   |   cof = 111 : tcpFlood (0/0)
+|   |   cof = 112 : tcpFlood (0/0)
+|   |   cof = 113 : tcpFlood (0/0)
+|   |   cof = 114 : tcpFlood (0/0)
+|   |   cof = 115 : tcpFlood (0/0)
+|   |   cof = 116 : tcpFlood (0/0)
+|   |   cof = 117 : tcpFlood (0/0)
+|   |   cof = 118 : tcpFlood (0/0)
+|   |   cof = 119 : tcpFlood (0/0)
+|   |   cof = 120 : tcpFlood (0/0)
+|   |   cof = 121 : tcpFlood (0/0)
+|   |   cof = 122 : tcpFlood (0/0)
+|   |   cof = 123 : tcpFlood (0/0)
+|   |   cof = 124 : tcpFlood (0/0)
+|   |   cof = 125 : tcpFlood (0/0)
+|   |   cof = 126 : tcpFlood (0/0)
+|   |   cof = 127 : tcpFlood (0/0)
+|   total_b_bytes >= 52 : normal (2/0)
+total_f_packets >= 2.5 : normal (1994/0)
+
+Size of the tree : 134
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (2027/0)
+max_f_pkt >= 47.5 : normal (1973/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+mean_b_pkt < 52
+|   max_f_pkt < 47.5 : tcpFlood (2021/0)
+|   max_f_pkt >= 47.5 : normal (7/0)
+mean_b_pkt >= 52 : normal (1972/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+total_f_bytes < 122 : tcpFlood (2010/0)
+total_f_bytes >= 122 : normal (1990/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1956/0)
+min_f_pkt >= 47.5 : normal (2044/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94
+|   mean_f_pkt < 62 : tcpFlood (2029/0)
+|   mean_f_pkt >= 62 : normal (4/0)
+std_f_pkt >= 0.94 : normal (1967/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+cof = N/A : normal (1/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : tcpFlood (2/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (121/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18 : tcpFlood (1851/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (60/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1965/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 130
+
+
+RandomTree
+==========
+
+std_f_time < 0
+|   psh_f_cnt < -0.5 : normal (3/0)
+|   psh_f_cnt >= -0.5
+|   |   mean_f_pkt < 53 : tcpFlood (1969/0)
+|   |   mean_f_pkt >= 53 : normal (1/0)
+std_f_time >= 0 : normal (2027/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94
+|   urg_f_cnt < -0.5 : normal (5/0)
+|   urg_f_cnt >= -0.5
+|   |   min_f_pkt < 53 : tcpFlood (1974/0)
+|   |   min_f_pkt >= 53 : normal (1/0)
+std_f_pkt >= 0.94 : normal (2020/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+total_f_packets < 2.5
+|   min_f_pkt < 47.5 : tcpFlood (2008/0)
+|   min_f_pkt >= 47.5 : normal (5/0)
+total_f_packets >= 2.5 : normal (1987/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+pps_f < 88.76
+|   total_b_packets < 0.5
+|   |   min_f_pkt < 47.5 : tcpFlood (134/0)
+|   |   min_f_pkt >= 47.5 : normal (7/0)
+|   total_b_packets >= 0.5
+|   |   total_b_bytes < 52 : tcpFlood (1841/0)
+|   |   total_b_bytes >= 52 : normal (1/0)
+pps_f >= 88.76 : normal (2017/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+mean_f_pkt < 53 : tcpFlood (1975/0)
+mean_f_pkt >= 53 : normal (2025/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+cof = N/A : normal (2/0)
+cof = 0 : tcpFlood (0/0)
+cof = 1 : tcpFlood (0/0)
+cof = 2 : normal (2/0)
+cof = 3 : tcpFlood (0/0)
+cof = 4 : tcpFlood (106/0)
+cof = 5 : tcpFlood (0/0)
+cof = 6 : tcpFlood (0/0)
+cof = 7 : tcpFlood (0/0)
+cof = 8 : tcpFlood (0/0)
+cof = 9 : tcpFlood (0/0)
+cof = 10 : tcpFlood (0/0)
+cof = 11 : tcpFlood (0/0)
+cof = 12 : tcpFlood (0/0)
+cof = 13 : tcpFlood (0/0)
+cof = 14 : tcpFlood (0/0)
+cof = 15 : tcpFlood (0/0)
+cof = 16 : tcpFlood (0/0)
+cof = 17 : tcpFlood (0/0)
+cof = 18
+|   total_b_bytes < 52 : tcpFlood (1862/0)
+|   total_b_bytes >= 52 : normal (1/0)
+cof = 19 : tcpFlood (0/0)
+cof = 20 : tcpFlood (0/0)
+cof = 21 : tcpFlood (0/0)
+cof = 22 : tcpFlood (45/0)
+cof = 23 : tcpFlood (0/0)
+cof = 24 : tcpFlood (0/0)
+cof = 25 : tcpFlood (0/0)
+cof = 26 : tcpFlood (0/0)
+cof = 27 : normal (1982/0)
+cof = 28 : tcpFlood (0/0)
+cof = 29 : tcpFlood (0/0)
+cof = 30 : tcpFlood (0/0)
+cof = 31 : tcpFlood (0/0)
+cof = 32 : tcpFlood (0/0)
+cof = 33 : tcpFlood (0/0)
+cof = 34 : tcpFlood (0/0)
+cof = 35 : tcpFlood (0/0)
+cof = 36 : tcpFlood (0/0)
+cof = 37 : tcpFlood (0/0)
+cof = 38 : tcpFlood (0/0)
+cof = 39 : tcpFlood (0/0)
+cof = 40 : tcpFlood (0/0)
+cof = 41 : tcpFlood (0/0)
+cof = 42 : tcpFlood (0/0)
+cof = 43 : tcpFlood (0/0)
+cof = 44 : tcpFlood (0/0)
+cof = 45 : tcpFlood (0/0)
+cof = 46 : tcpFlood (0/0)
+cof = 47 : tcpFlood (0/0)
+cof = 48 : tcpFlood (0/0)
+cof = 49 : tcpFlood (0/0)
+cof = 50 : tcpFlood (0/0)
+cof = 51 : tcpFlood (0/0)
+cof = 52 : tcpFlood (0/0)
+cof = 53 : tcpFlood (0/0)
+cof = 54 : tcpFlood (0/0)
+cof = 55 : tcpFlood (0/0)
+cof = 56 : tcpFlood (0/0)
+cof = 57 : tcpFlood (0/0)
+cof = 58 : tcpFlood (0/0)
+cof = 59 : tcpFlood (0/0)
+cof = 60 : tcpFlood (0/0)
+cof = 61 : tcpFlood (0/0)
+cof = 62 : tcpFlood (0/0)
+cof = 63 : tcpFlood (0/0)
+cof = 64 : tcpFlood (0/0)
+cof = 65 : tcpFlood (0/0)
+cof = 66 : tcpFlood (0/0)
+cof = 67 : tcpFlood (0/0)
+cof = 68 : tcpFlood (0/0)
+cof = 69 : tcpFlood (0/0)
+cof = 70 : tcpFlood (0/0)
+cof = 71 : tcpFlood (0/0)
+cof = 72 : tcpFlood (0/0)
+cof = 73 : tcpFlood (0/0)
+cof = 74 : tcpFlood (0/0)
+cof = 75 : tcpFlood (0/0)
+cof = 76 : tcpFlood (0/0)
+cof = 77 : tcpFlood (0/0)
+cof = 78 : tcpFlood (0/0)
+cof = 79 : tcpFlood (0/0)
+cof = 80 : tcpFlood (0/0)
+cof = 81 : tcpFlood (0/0)
+cof = 82 : tcpFlood (0/0)
+cof = 83 : tcpFlood (0/0)
+cof = 84 : tcpFlood (0/0)
+cof = 85 : tcpFlood (0/0)
+cof = 86 : tcpFlood (0/0)
+cof = 87 : tcpFlood (0/0)
+cof = 88 : tcpFlood (0/0)
+cof = 89 : tcpFlood (0/0)
+cof = 90 : tcpFlood (0/0)
+cof = 91 : tcpFlood (0/0)
+cof = 92 : tcpFlood (0/0)
+cof = 93 : tcpFlood (0/0)
+cof = 94 : tcpFlood (0/0)
+cof = 95 : tcpFlood (0/0)
+cof = 96 : tcpFlood (0/0)
+cof = 97 : tcpFlood (0/0)
+cof = 98 : tcpFlood (0/0)
+cof = 99 : tcpFlood (0/0)
+cof = 100 : tcpFlood (0/0)
+cof = 101 : tcpFlood (0/0)
+cof = 102 : tcpFlood (0/0)
+cof = 103 : tcpFlood (0/0)
+cof = 104 : tcpFlood (0/0)
+cof = 105 : tcpFlood (0/0)
+cof = 106 : tcpFlood (0/0)
+cof = 107 : tcpFlood (0/0)
+cof = 108 : tcpFlood (0/0)
+cof = 109 : tcpFlood (0/0)
+cof = 110 : tcpFlood (0/0)
+cof = 111 : tcpFlood (0/0)
+cof = 112 : tcpFlood (0/0)
+cof = 113 : tcpFlood (0/0)
+cof = 114 : tcpFlood (0/0)
+cof = 115 : tcpFlood (0/0)
+cof = 116 : tcpFlood (0/0)
+cof = 117 : tcpFlood (0/0)
+cof = 118 : tcpFlood (0/0)
+cof = 119 : tcpFlood (0/0)
+cof = 120 : tcpFlood (0/0)
+cof = 121 : tcpFlood (0/0)
+cof = 122 : tcpFlood (0/0)
+cof = 123 : tcpFlood (0/0)
+cof = 124 : tcpFlood (0/0)
+cof = 125 : tcpFlood (0/0)
+cof = 126 : tcpFlood (0/0)
+cof = 127 : tcpFlood (0/0)
+
+Size of the tree : 132
+
+
+RandomTree
+==========
+
+std_f_time < 0
+|   mean_f_pkt < 47.5 : tcpFlood (1924/0)
+|   mean_f_pkt >= 47.5 : normal (2/0)
+std_f_time >= 0 : normal (2074/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+total_f_packets < 2.5
+|   min_f_pkt < 47.5 : tcpFlood (2003/0)
+|   min_f_pkt >= 47.5 : normal (4/0)
+total_f_packets >= 2.5 : normal (1993/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+max_f_pkt < 47.5 : tcpFlood (2009/0)
+max_f_pkt >= 47.5 : normal (1991/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : tcpFlood (2034/0)
+mean_f_pkt >= 47.5 : normal (1966/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (1997/0)
+min_f_pkt >= 49 : normal (2003/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+std_f_pkt < 14.85
+|   rfb_bytes < 0.52
+|   |   cof = N/A : normal (2/0)
+|   |   cof = 0 : tcpFlood (0/0)
+|   |   cof = 1 : tcpFlood (0/0)
+|   |   cof = 2 : tcpFlood (4/0)
+|   |   cof = 3 : tcpFlood (0/0)
+|   |   cof = 4 : tcpFlood (116/0)
+|   |   cof = 5 : tcpFlood (0/0)
+|   |   cof = 6 : tcpFlood (0/0)
+|   |   cof = 7 : tcpFlood (0/0)
+|   |   cof = 8 : tcpFlood (0/0)
+|   |   cof = 9 : tcpFlood (0/0)
+|   |   cof = 10 : tcpFlood (0/0)
+|   |   cof = 11 : tcpFlood (0/0)
+|   |   cof = 12 : tcpFlood (0/0)
+|   |   cof = 13 : tcpFlood (0/0)
+|   |   cof = 14 : tcpFlood (0/0)
+|   |   cof = 15 : tcpFlood (0/0)
+|   |   cof = 16 : tcpFlood (0/0)
+|   |   cof = 17 : tcpFlood (0/0)
+|   |   cof = 18 : tcpFlood (16/0)
+|   |   cof = 19 : tcpFlood (0/0)
+|   |   cof = 20 : tcpFlood (0/0)
+|   |   cof = 21 : tcpFlood (0/0)
+|   |   cof = 22 : tcpFlood (0/0)
+|   |   cof = 23 : tcpFlood (0/0)
+|   |   cof = 24 : tcpFlood (0/0)
+|   |   cof = 25 : tcpFlood (0/0)
+|   |   cof = 26 : tcpFlood (0/0)
+|   |   cof = 27 : tcpFlood (0/0)
+|   |   cof = 28 : tcpFlood (0/0)
+|   |   cof = 29 : tcpFlood (0/0)
+|   |   cof = 30 : tcpFlood (0/0)
+|   |   cof = 31 : tcpFlood (0/0)
+|   |   cof = 32 : tcpFlood (0/0)
+|   |   cof = 33 : tcpFlood (0/0)
+|   |   cof = 34 : tcpFlood (0/0)
+|   |   cof = 35 : tcpFlood (0/0)
+|   |   cof = 36 : tcpFlood (0/0)
+|   |   cof = 37 : tcpFlood (0/0)
+|   |   cof = 38 : tcpFlood (0/0)
+|   |   cof = 39 : tcpFlood (0/0)
+|   |   cof = 40 : tcpFlood (0/0)
+|   |   cof = 41 : tcpFlood (0/0)
+|   |   cof = 42 : tcpFlood (0/0)
+|   |   cof = 43 : tcpFlood (0/0)
+|   |   cof = 44 : tcpFlood (0/0)
+|   |   cof = 45 : tcpFlood (0/0)
+|   |   cof = 46 : tcpFlood (0/0)
+|   |   cof = 47 : tcpFlood (0/0)
+|   |   cof = 48 : tcpFlood (0/0)
+|   |   cof = 49 : tcpFlood (0/0)
+|   |   cof = 50 : tcpFlood (0/0)
+|   |   cof = 51 : tcpFlood (0/0)
+|   |   cof = 52 : tcpFlood (0/0)
+|   |   cof = 53 : tcpFlood (0/0)
+|   |   cof = 54 : tcpFlood (0/0)
+|   |   cof = 55 : tcpFlood (0/0)
+|   |   cof = 56 : tcpFlood (0/0)
+|   |   cof = 57 : tcpFlood (0/0)
+|   |   cof = 58 : tcpFlood (0/0)
+|   |   cof = 59 : tcpFlood (0/0)
+|   |   cof = 60 : tcpFlood (0/0)
+|   |   cof = 61 : tcpFlood (0/0)
+|   |   cof = 62 : tcpFlood (0/0)
+|   |   cof = 63 : tcpFlood (0/0)
+|   |   cof = 64 : tcpFlood (0/0)
+|   |   cof = 65 : tcpFlood (0/0)
+|   |   cof = 66 : tcpFlood (0/0)
+|   |   cof = 67 : tcpFlood (0/0)
+|   |   cof = 68 : tcpFlood (0/0)
+|   |   cof = 69 : tcpFlood (0/0)
+|   |   cof = 70 : tcpFlood (0/0)
+|   |   cof = 71 : tcpFlood (0/0)
+|   |   cof = 72 : tcpFlood (0/0)
+|   |   cof = 73 : tcpFlood (0/0)
+|   |   cof = 74 : tcpFlood (0/0)
+|   |   cof = 75 : tcpFlood (0/0)
+|   |   cof = 76 : tcpFlood (0/0)
+|   |   cof = 77 : tcpFlood (0/0)
+|   |   cof = 78 : tcpFlood (0/0)
+|   |   cof = 79 : tcpFlood (0/0)
+|   |   cof = 80 : tcpFlood (0/0)
+|   |   cof = 81 : tcpFlood (0/0)
+|   |   cof = 82 : tcpFlood (0/0)
+|   |   cof = 83 : tcpFlood (0/0)
+|   |   cof = 84 : tcpFlood (0/0)
+|   |   cof = 85 : tcpFlood (0/0)
+|   |   cof = 86 : tcpFlood (0/0)
+|   |   cof = 87 : tcpFlood (0/0)
+|   |   cof = 88 : tcpFlood (0/0)
+|   |   cof = 89 : tcpFlood (0/0)
+|   |   cof = 90 : tcpFlood (0/0)
+|   |   cof = 91 : tcpFlood (0/0)
+|   |   cof = 92 : tcpFlood (0/0)
+|   |   cof = 93 : tcpFlood (0/0)
+|   |   cof = 94 : tcpFlood (0/0)
+|   |   cof = 95 : tcpFlood (0/0)
+|   |   cof = 96 : tcpFlood (0/0)
+|   |   cof = 97 : tcpFlood (0/0)
+|   |   cof = 98 : tcpFlood (0/0)
+|   |   cof = 99 : tcpFlood (0/0)
+|   |   cof = 100 : tcpFlood (0/0)
+|   |   cof = 101 : tcpFlood (0/0)
+|   |   cof = 102 : tcpFlood (0/0)
+|   |   cof = 103 : tcpFlood (0/0)
+|   |   cof = 104 : tcpFlood (0/0)
+|   |   cof = 105 : tcpFlood (0/0)
+|   |   cof = 106 : tcpFlood (0/0)
+|   |   cof = 107 : tcpFlood (0/0)
+|   |   cof = 108 : tcpFlood (0/0)
+|   |   cof = 109 : tcpFlood (0/0)
+|   |   cof = 110 : tcpFlood (0/0)
+|   |   cof = 111 : tcpFlood (0/0)
+|   |   cof = 112 : tcpFlood (0/0)
+|   |   cof = 113 : tcpFlood (0/0)
+|   |   cof = 114 : tcpFlood (0/0)
+|   |   cof = 115 : tcpFlood (0/0)
+|   |   cof = 116 : tcpFlood (0/0)
+|   |   cof = 117 : tcpFlood (0/0)
+|   |   cof = 118 : tcpFlood (0/0)
+|   |   cof = 119 : tcpFlood (0/0)
+|   |   cof = 120 : tcpFlood (0/0)
+|   |   cof = 121 : tcpFlood (0/0)
+|   |   cof = 122 : tcpFlood (0/0)
+|   |   cof = 123 : tcpFlood (0/0)
+|   |   cof = 124 : tcpFlood (0/0)
+|   |   cof = 125 : tcpFlood (0/0)
+|   |   cof = 126 : tcpFlood (0/0)
+|   |   cof = 127 : tcpFlood (0/0)
+|   rfb_bytes >= 0.52 : tcpFlood (1869/0)
+std_f_pkt >= 14.85 : normal (1993/0)
+
+Size of the tree : 134
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1976/0)
+min_f_pkt >= 47.5 : normal (2024/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+mean_b_pkt < 52
+|   cof = N/A : normal (6/0)
+|   cof = 0 : tcpFlood (0/0)
+|   cof = 1 : tcpFlood (0/0)
+|   cof = 2 : tcpFlood (1/0)
+|   cof = 3 : tcpFlood (0/0)
+|   cof = 4 : tcpFlood (104/0)
+|   cof = 5 : tcpFlood (0/0)
+|   cof = 6 : tcpFlood (0/0)
+|   cof = 7 : tcpFlood (0/0)
+|   cof = 8 : tcpFlood (0/0)
+|   cof = 9 : tcpFlood (0/0)
+|   cof = 10 : tcpFlood (0/0)
+|   cof = 11 : tcpFlood (0/0)
+|   cof = 12 : tcpFlood (0/0)
+|   cof = 13 : tcpFlood (0/0)
+|   cof = 14 : tcpFlood (0/0)
+|   cof = 15 : tcpFlood (0/0)
+|   cof = 16 : tcpFlood (0/0)
+|   cof = 17 : tcpFlood (0/0)
+|   cof = 18 : tcpFlood (1842/0)
+|   cof = 19 : tcpFlood (0/0)
+|   cof = 20 : tcpFlood (0/0)
+|   cof = 21 : tcpFlood (0/0)
+|   cof = 22 : tcpFlood (44/0)
+|   cof = 23 : tcpFlood (0/0)
+|   cof = 24 : tcpFlood (0/0)
+|   cof = 25 : tcpFlood (0/0)
+|   cof = 26 : tcpFlood (0/0)
+|   cof = 27 : tcpFlood (0/0)
+|   cof = 28 : tcpFlood (0/0)
+|   cof = 29 : tcpFlood (0/0)
+|   cof = 30 : tcpFlood (0/0)
+|   cof = 31 : tcpFlood (0/0)
+|   cof = 32 : tcpFlood (0/0)
+|   cof = 33 : tcpFlood (0/0)
+|   cof = 34 : tcpFlood (0/0)
+|   cof = 35 : tcpFlood (0/0)
+|   cof = 36 : tcpFlood (0/0)
+|   cof = 37 : tcpFlood (0/0)
+|   cof = 38 : tcpFlood (0/0)
+|   cof = 39 : tcpFlood (0/0)
+|   cof = 40 : tcpFlood (0/0)
+|   cof = 41 : tcpFlood (0/0)
+|   cof = 42 : tcpFlood (0/0)
+|   cof = 43 : tcpFlood (0/0)
+|   cof = 44 : tcpFlood (0/0)
+|   cof = 45 : tcpFlood (0/0)
+|   cof = 46 : tcpFlood (0/0)
+|   cof = 47 : tcpFlood (0/0)
+|   cof = 48 : tcpFlood (0/0)
+|   cof = 49 : tcpFlood (0/0)
+|   cof = 50 : tcpFlood (0/0)
+|   cof = 51 : tcpFlood (0/0)
+|   cof = 52 : tcpFlood (0/0)
+|   cof = 53 : tcpFlood (0/0)
+|   cof = 54 : tcpFlood (0/0)
+|   cof = 55 : tcpFlood (0/0)
+|   cof = 56 : tcpFlood (0/0)
+|   cof = 57 : tcpFlood (0/0)
+|   cof = 58 : tcpFlood (0/0)
+|   cof = 59 : tcpFlood (0/0)
+|   cof = 60 : tcpFlood (0/0)
+|   cof = 61 : tcpFlood (0/0)
+|   cof = 62 : tcpFlood (0/0)
+|   cof = 63 : tcpFlood (0/0)
+|   cof = 64 : tcpFlood (0/0)
+|   cof = 65 : tcpFlood (0/0)
+|   cof = 66 : tcpFlood (0/0)
+|   cof = 67 : tcpFlood (0/0)
+|   cof = 68 : tcpFlood (0/0)
+|   cof = 69 : tcpFlood (0/0)
+|   cof = 70 : tcpFlood (0/0)
+|   cof = 71 : tcpFlood (0/0)
+|   cof = 72 : tcpFlood (0/0)
+|   cof = 73 : tcpFlood (0/0)
+|   cof = 74 : tcpFlood (0/0)
+|   cof = 75 : tcpFlood (0/0)
+|   cof = 76 : tcpFlood (0/0)
+|   cof = 77 : tcpFlood (0/0)
+|   cof = 78 : tcpFlood (0/0)
+|   cof = 79 : tcpFlood (0/0)
+|   cof = 80 : tcpFlood (0/0)
+|   cof = 81 : tcpFlood (0/0)
+|   cof = 82 : tcpFlood (0/0)
+|   cof = 83 : tcpFlood (0/0)
+|   cof = 84 : tcpFlood (0/0)
+|   cof = 85 : tcpFlood (0/0)
+|   cof = 86 : tcpFlood (0/0)
+|   cof = 87 : tcpFlood (0/0)
+|   cof = 88 : tcpFlood (0/0)
+|   cof = 89 : tcpFlood (0/0)
+|   cof = 90 : tcpFlood (0/0)
+|   cof = 91 : tcpFlood (0/0)
+|   cof = 92 : tcpFlood (0/0)
+|   cof = 93 : tcpFlood (0/0)
+|   cof = 94 : tcpFlood (0/0)
+|   cof = 95 : tcpFlood (0/0)
+|   cof = 96 : tcpFlood (0/0)
+|   cof = 97 : tcpFlood (0/0)
+|   cof = 98 : tcpFlood (0/0)
+|   cof = 99 : tcpFlood (0/0)
+|   cof = 100 : tcpFlood (0/0)
+|   cof = 101 : tcpFlood (0/0)
+|   cof = 102 : tcpFlood (0/0)
+|   cof = 103 : tcpFlood (0/0)
+|   cof = 104 : tcpFlood (0/0)
+|   cof = 105 : tcpFlood (0/0)
+|   cof = 106 : tcpFlood (0/0)
+|   cof = 107 : tcpFlood (0/0)
+|   cof = 108 : tcpFlood (0/0)
+|   cof = 109 : tcpFlood (0/0)
+|   cof = 110 : tcpFlood (0/0)
+|   cof = 111 : tcpFlood (0/0)
+|   cof = 112 : tcpFlood (0/0)
+|   cof = 113 : tcpFlood (0/0)
+|   cof = 114 : tcpFlood (0/0)
+|   cof = 115 : tcpFlood (0/0)
+|   cof = 116 : tcpFlood (0/0)
+|   cof = 117 : tcpFlood (0/0)
+|   cof = 118 : tcpFlood (0/0)
+|   cof = 119 : tcpFlood (0/0)
+|   cof = 120 : tcpFlood (0/0)
+|   cof = 121 : tcpFlood (0/0)
+|   cof = 122 : tcpFlood (0/0)
+|   cof = 123 : tcpFlood (0/0)
+|   cof = 124 : tcpFlood (0/0)
+|   cof = 125 : tcpFlood (0/0)
+|   cof = 126 : tcpFlood (0/0)
+|   cof = 127 : tcpFlood (0/0)
+mean_b_pkt >= 52 : normal (2003/0)
+
+Size of the tree : 132
+
+
+RandomTree
+==========
+
+total_f_bytes < 122
+|   min_f_pkt < 47.5 : tcpFlood (2057/0)
+|   min_f_pkt >= 47.5 : normal (8/0)
+total_f_bytes >= 122 : normal (1935/0)
+
+Size of the tree : 5
+
+
+RandomTree
+==========
+
+mean_b_pkt < 692.61
+|   std_f_pkt < 0.94
+|   |   total_f_bytes < 160.5 : tcpFlood (2012/0)
+|   |   total_f_bytes >= 160.5 : normal (2/0)
+|   std_f_pkt >= 0.94 : normal (3/0)
+mean_b_pkt >= 692.61 : normal (1983/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+total_b_bytes < 52
+|   max_f_pkt < 47.5 : tcpFlood (1981/0)
+|   max_f_pkt >= 47.5 : normal (8/0)
+total_b_bytes >= 52 : normal (2011/0)
+
+Size of the tree : 5
+
+
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances        1000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0001
+Root mean squared error                  0.0032
+Relative absolute error                  0.022  %
+Root relative squared error              0.6356 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = tcpFlood
+   0 500 |   b = normal

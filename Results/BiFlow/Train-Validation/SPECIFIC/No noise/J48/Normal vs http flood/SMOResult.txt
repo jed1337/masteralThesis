@@ -1,0 +1,51 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.5735 * (normalized) cof=N/A
+ +       0.6915 * (normalized) cof=2
+ +       0.898  * (normalized) cof=4
+ +       0.6919 * (normalized) cof=18
+ +       0.6919 * (normalized) cof=19
+ +       0.8098 * (normalized) cof=21
+ +       0.6906 * (normalized) cof=23
+ +      -2.9001 * (normalized) cof=27
+ +       0      * (normalized) cof=29
+ +      -0      * (normalized) cof=30
+ +       0      * (normalized) cof=31
+ +       2.6963 * (normalized) max_f_pkt
+ +       0.1025
+
+Number of kernel evaluations: 58970 (65.29% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         987               98.7    %
+Incorrectly Classified Instances        13                1.3    %
+Kappa statistic                          0.974 
+Mean absolute error                      0.013 
+Root mean squared error                  0.114 
+Relative absolute error                  2.6    %
+Root relative squared error             22.8035 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.026    0.975      1.000    0.987      0.974    0.987     0.975     normal
+                 0.974    0.000    1.000      0.974    0.987      0.974    0.987     0.987     httpFlood
+Weighted Avg.    0.987    0.013    0.987      0.987    0.987      0.974    0.987     0.981     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+  13 487 |   b = httpFlood

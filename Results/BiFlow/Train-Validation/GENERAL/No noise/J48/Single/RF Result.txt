@@ -1,0 +1,2574 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilitiesAll the base classifiers: 
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3898/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (27/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3930/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1492/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2519/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (128/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (4/2)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3897/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (24/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4032/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 58
+|   |   |   |   min_f_pkt < 55 : LOW_RATE (4/0)
+|   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   |   min_f_pkt >= 58 : LOW_RATE (1474/2)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2446/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (117/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3877/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   mean_f_pkt < 53 : NORMAL (3/0)
+|   |   |   |   mean_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (3/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   mean_f_pkt >= 56.6
+|   |   |   |   min_f_pkt < 53 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 53 : LOW_RATE (1484/1)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (17/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3916/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2558/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (128/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 199
+|   |   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (4/1)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (4/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3923/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 53.67 : NORMAL (3/0)
+|   |   |   mean_f_pkt >= 53.67 : LOW_RATE (1471/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (24/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3951/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2504/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (115/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5
+|   |   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   |   min_f_pkt >= 74.5 : LOW_RATE (4/2)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3890/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (27/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3983/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 57 : LOW_RATE (2/0)
+|   |   |   min_f_pkt >= 57 : LOW_RATE (1465/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2504/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (122/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 74.5 : NORMAL (5/2)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3804/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 49 : LOW_RATE (19/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (4102/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 58
+|   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   min_f_pkt >= 58 : LOW_RATE (1516/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2420/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (131/0)
+|   |   |   min_f_pkt >= 69.5 : NORMAL (5/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3859/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 53 : NORMAL (5/0)
+|   |   |   mean_f_pkt >= 53
+|   |   |   |   mean_f_pkt < 56.6
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (4/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   |   mean_f_pkt >= 56.6
+|   |   |   |   |   min_f_pkt < 53 : LOW_RATE (5/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (1531/2)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (19/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3936/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2501/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (133/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 153.5 : LOW_RATE (3/1)
+|   |   |   |   |   min_f_pkt >= 153.5 : NORMAL (1/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3884/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (21/0)
+|   |   |   min_f_pkt >= 47.5 : NORMAL (4003/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1498/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2443/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (143/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (4/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3941/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (19/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3993/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1459/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2443/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (134/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 74.5 : NORMAL (9/2)
+
+Size of the tree : 15
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3902/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (23/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3934/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (4/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1453/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2551/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (125/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3902/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   mean_f_pkt < 53 : NORMAL (5/0)
+|   |   |   |   mean_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (4/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   mean_f_pkt >= 56.6 : LOW_RATE (1463/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3966/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2520/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (106/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 153.5
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : NORMAL (5/2)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (2/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3911/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (18/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3879/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1523/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2558/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (99/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : NORMAL (5/2)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3902/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (24/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3918/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1535/2)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2477/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (134/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (4/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3936/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (23/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3914/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1484/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2522/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (112/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (3/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (5/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (4009/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (19/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3937/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1453/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2437/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (140/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3905/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (33/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   min_f_pkt < 53 : NORMAL (3996/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1480/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2453/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (126/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : LOW_RATE (2/1)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (1/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3805/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (28/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (3/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (4/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (4047/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1548/2)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2427/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (134/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (2/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3857/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 49 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 49 : NORMAL (4/0)
+|   |   |   mean_f_pkt >= 56.6
+|   |   |   |   min_f_pkt < 53 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 53 : LOW_RATE (1531/1)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (27/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3978/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2461/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (127/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 199
+|   |   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (3/1)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 25
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3866/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (29/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4028/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1521/2)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2410/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (141/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3855/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (24/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 51 : NORMAL (3/0)
+|   |   |   |   |   min_f_pkt >= 51 : LOW_RATE (2/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (3935/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1446/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2572/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (159/0)
+|   |   |   min_f_pkt >= 69.5 : NORMAL (4/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3826/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (28/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3972/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1526/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2498/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (141/0)
+|   |   |   min_f_pkt >= 73 : NORMAL (5/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3826/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 49 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 49 : NORMAL (5/0)
+|   |   |   mean_f_pkt >= 56.6 : LOW_RATE (1530/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (17/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (4035/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2465/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (114/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3870/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 49 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 49
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   |   mean_f_pkt >= 56.6
+|   |   |   |   min_f_pkt < 53 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 53 : LOW_RATE (1513/1)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (23/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (4014/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2453/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (114/0)
+|   |   |   min_f_pkt >= 73 : NORMAL (4/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3857/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   mean_f_pkt < 53 : NORMAL (2/0)
+|   |   |   |   mean_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   mean_f_pkt >= 56.6
+|   |   |   |   min_f_pkt < 53 : LOW_RATE (4/0)
+|   |   |   |   min_f_pkt >= 53 : LOW_RATE (1433/2)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (14/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (4071/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2465/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (141/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : NORMAL (6/1)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3945/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 47.5 : NORMAL (3932/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1510/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2448/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (132/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (4/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3734/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 49 : LOW_RATE (23/0)
+|   |   |   min_f_pkt >= 49
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (1/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (4041/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1497/3)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2570/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (126/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 74.5 : NORMAL (6/2)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3862/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (21/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4019/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 58
+|   |   |   |   min_f_pkt < 55 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   |   min_f_pkt >= 58 : LOW_RATE (1506/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2444/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (138/0)
+|   |   |   min_f_pkt >= 69.5 : NORMAL (5/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3826/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (16/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (4079/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1513/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2435/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (125/0)
+|   |   |   min_f_pkt >= 73 : NORMAL (4/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3908/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (19/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3913/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1457/2)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2571/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (122/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3806/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (4052/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1530/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2459/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (119/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (4/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3808/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (29/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (2/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (3971/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1520/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2520/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (139/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (4/2)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (4/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3960/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (29/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (4/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (2/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (3898/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1521/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2450/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (131/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3829/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 53 : NORMAL (2/0)
+|   |   |   mean_f_pkt >= 53
+|   |   |   |   min_f_pkt < 57 : LOW_RATE (11/0)
+|   |   |   |   min_f_pkt >= 57 : LOW_RATE (1529/3)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (32/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3968/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2497/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (126/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (3/1)
+|   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3951/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3947/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1459/3)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2508/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (105/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 120 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 120
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3849/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (27/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4067/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1483/2)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2440/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (127/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (4/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3896/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (19/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3980/0)
+|   |   min_f_pkt >= 53 : LOW_RATE (1493/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2480/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (127/0)
+|   |   |   min_f_pkt >= 73 : NORMAL (5/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3917/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (26/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   min_f_pkt < 53 : NORMAL (3854/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1523/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2515/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (154/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 153.5 : NORMAL (3/1)
+|   |   |   |   |   min_f_pkt >= 153.5 : NORMAL (2/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3902/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (18/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3906/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1504/3)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2540/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (127/0)
+|   |   |   min_f_pkt >= 73 : NORMAL (3/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3870/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (26/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   min_f_pkt < 53 : NORMAL (3934/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1446/2)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2584/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (130/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 153.5
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : LOW_RATE (4/2)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (2/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3875/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (18/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3977/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1483/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2514/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (125/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 50.67 : HIGH_RATE (3814/0)
+mean_f_pkt >= 50.67
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 51 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 51 : NORMAL (1/0)
+|   |   |   mean_f_pkt >= 56.6 : LOW_RATE (1538/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (22/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3965/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2525/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (126/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (4/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (3/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3897/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (32/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   min_f_pkt < 53 : NORMAL (3897/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1489/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2546/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (131/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3905/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (29/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3908/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1490/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2517/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (141/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (8/2)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3904/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 49 : LOW_RATE (33/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3926/0)
+|   |   min_f_pkt >= 53 : LOW_RATE (1439/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2571/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 118.5 : HIGH_RATE (125/0)
+|   |   |   min_f_pkt >= 118.5
+|   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 15
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3909/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 56
+|   |   |   min_f_pkt < 47 : LOW_RATE (27/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3994/0)
+|   |   min_f_pkt >= 56 : LOW_RATE (1493/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2449/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (118/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 199
+|   |   |   |   |   |   min_f_pkt < 123.5 : NORMAL (5/2)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3913/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (14/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3949/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1525/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2465/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (126/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : NORMAL (3/1)
+|   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3746/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (22/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 51.5 : NORMAL (3/0)
+|   |   |   |   |   min_f_pkt >= 51.5 : LOW_RATE (2/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (4055/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1547/3)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2494/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (128/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3897/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3995/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1493/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2453/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (128/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (3/1)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3904/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (18/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3966/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (4/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1526/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2441/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (136/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 74.5 : LOW_RATE (2/1)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3835/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (34/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3980/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 58
+|   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   min_f_pkt >= 58 : LOW_RATE (1471/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2544/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (128/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 120 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 120 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3867/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (26/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (1/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (4013/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1444/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2516/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (124/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : NORMAL (4/1)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3811/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (18/0)
+|   |   |   min_f_pkt >= 47.5 : NORMAL (3987/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1524/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2526/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (125/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 153.5 : NORMAL (5/1)
+|   |   |   |   |   min_f_pkt >= 153.5 : NORMAL (1/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3890/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (22/0)
+|   |   |   min_f_pkt >= 47.5 : NORMAL (3965/0)
+|   |   min_f_pkt >= 53 : LOW_RATE (1484/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2507/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (121/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (4/2)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (4/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3829/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (20/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3990/0)
+|   |   min_f_pkt >= 53 : LOW_RATE (1502/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2525/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (123/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 153.5 : NORMAL (8/3)
+|   |   |   |   |   min_f_pkt >= 153.5 : NORMAL (1/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3895/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (23/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3960/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1505/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2481/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (124/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (4/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3946/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (30/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3950/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1435/4)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2476/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (152/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : LOW_RATE (4/2)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3866/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (23/0)
+|   |   |   min_f_pkt >= 47.5 : NORMAL (4066/0)
+|   |   min_f_pkt >= 53 : LOW_RATE (1510/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2390/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (129/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (4/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 199
+|   |   |   |   |   |   min_f_pkt < 123.5 : NORMAL (8/1)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3814/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (18/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4076/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1485/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2474/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (123/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5
+|   |   |   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   |   |   min_f_pkt >= 74.5 : NORMAL (3/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (4/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3820/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (16/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (3/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (1/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (3955/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1536/2)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2520/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (138/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (8/3)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3956/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (30/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3964/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1445/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2481/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (119/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3869/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (21/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   min_f_pkt < 53 : NORMAL (3964/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1504/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2509/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (122/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3869/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 49 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 49 : NORMAL (5/0)
+|   |   |   mean_f_pkt >= 56.6
+|   |   |   |   min_f_pkt < 53 : LOW_RATE (5/0)
+|   |   |   |   min_f_pkt >= 53 : LOW_RATE (1529/1)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (15/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3984/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2456/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (130/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (2/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3784/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 56
+|   |   |   min_f_pkt < 47 : LOW_RATE (37/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4021/0)
+|   |   min_f_pkt >= 56 : LOW_RATE (1448/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2570/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (137/0)
+|   |   |   min_f_pkt >= 73 : LOW_RATE (3/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3856/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (22/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3913/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1588/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2481/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (133/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3886/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (34/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (3/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (1/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (4056/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1488/3)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2389/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (134/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 199
+|   |   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (3/1)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3830/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (27/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3984/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1500/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2525/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (122/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (4/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (4/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3913/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (22/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3903/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1529/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2496/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (130/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : NORMAL (4/1)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (3/0)
+
+Size of the tree : 15
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3933/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (31/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (4041/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1450/3)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2426/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (111/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 120 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 120 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3888/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (28/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3956/0)
+|   |   min_f_pkt >= 53 : LOW_RATE (1473/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2533/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (112/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 199
+|   |   |   |   |   |   min_f_pkt < 123.5 : NORMAL (5/2)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3776/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3971/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1560/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2536/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (123/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (4/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3898/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (26/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   min_f_pkt < 53 : NORMAL (3944/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1505/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2506/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (110/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (5/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3931/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (15/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3904/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1515/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2506/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (118/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : NORMAL (4/1)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3973/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (31/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (4/0)
+|   |   |   |   |   min_f_pkt >= 53 : LOW_RATE (2/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (3905/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1480/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2477/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (123/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : LOW_RATE (4/2)
+|   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3849/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (26/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4017/0)
+|   |   min_f_pkt >= 53 : LOW_RATE (1514/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2455/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (129/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (4/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (5/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3851/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.55
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   mean_f_pkt < 53 : NORMAL (3/0)
+|   |   |   |   mean_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (3/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   mean_f_pkt >= 56.6 : LOW_RATE (1454/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (19/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (4021/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2522/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (121/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (2/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3889/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (33/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3965/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1456/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2512/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (137/0)
+|   |   |   min_f_pkt >= 69.5 : NORMAL (8/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3863/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (32/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3991/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1475/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2501/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (130/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : LOW_RATE (4/2)
+|   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (3/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3800/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (16/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (4009/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1503/4)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2535/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (124/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (6/0)
+|   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3772/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 53 : NORMAL (2/0)
+|   |   |   mean_f_pkt >= 53
+|   |   |   |   min_f_pkt < 53 : LOW_RATE (5/0)
+|   |   |   |   min_f_pkt >= 53 : LOW_RATE (1489/3)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (33/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (4027/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2528/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (137/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3830/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3978/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 57 : LOW_RATE (1/0)
+|   |   |   min_f_pkt >= 57 : LOW_RATE (1462/2)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2554/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (143/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 120 : NORMAL (4/0)
+|   |   |   |   min_f_pkt >= 120
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3867/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 56
+|   |   |   min_f_pkt < 49 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (4065/0)
+|   |   min_f_pkt >= 56 : LOW_RATE (1433/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2479/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (124/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 153.5 : NORMAL (3/1)
+|   |   |   |   |   min_f_pkt >= 153.5 : NORMAL (2/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3919/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.55
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 49 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 49
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (3/0)
+|   |   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   |   mean_f_pkt >= 56.6
+|   |   |   |   min_f_pkt < 53 : LOW_RATE (5/0)
+|   |   |   |   min_f_pkt >= 53 : LOW_RATE (1516/1)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (18/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3907/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2493/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (131/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 27
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3887/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (28/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   min_f_pkt < 53 : NORMAL (4014/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1453/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2502/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (107/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3788/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (23/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4116/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 58
+|   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   min_f_pkt >= 58 : LOW_RATE (1459/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2475/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (130/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (2/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3851/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (34/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4028/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1450/3)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2499/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (131/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 153.5
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : LOW_RATE (2/1)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (4/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3891/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 55
+|   |   |   |   |   mean_f_pkt < 53 : NORMAL (2/0)
+|   |   |   |   |   mean_f_pkt >= 53 : LOW_RATE (3/0)
+|   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   |   mean_f_pkt >= 56.6 : LOW_RATE (1495/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (16/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3934/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2523/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (128/0)
+|   |   |   min_f_pkt >= 73 : NORMAL (5/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3842/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.55
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 49 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 49
+|   |   |   |   |   min_f_pkt < 53 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   |   min_f_pkt < 55 : LOW_RATE (1/0)
+|   |   |   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   mean_f_pkt >= 56.6 : LOW_RATE (1530/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (21/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3959/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2511/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (124/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 153.5 : NORMAL (6/2)
+|   |   |   |   min_f_pkt >= 153.5 : NORMAL (1/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3941/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 53.67 : NORMAL (4/0)
+|   |   |   mean_f_pkt >= 53.67 : LOW_RATE (1465/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (11/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (4011/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2439/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (125/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 74.5 : NORMAL (3/1)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3852/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (26/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (4009/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 58
+|   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 55 : NORMAL (1/0)
+|   |   |   min_f_pkt >= 58 : LOW_RATE (1497/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2475/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (130/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : NORMAL (4/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 49 : HIGH_RATE (3797/0)
+mean_f_pkt >= 49
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 49 : LOW_RATE (28/0)
+|   |   |   min_f_pkt >= 49
+|   |   |   |   min_f_pkt < 53 : NORMAL (4056/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (3/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (3/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1440/1)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2552/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (115/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : NORMAL (4/1)
+|   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (1/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3872/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (28/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3919/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1525/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2531/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (120/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (2/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (2/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3819/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (35/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3917/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1580/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2506/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (132/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199 : LOW_RATE (4/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3923/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   mean_f_pkt < 53 : NORMAL (4/0)
+|   |   |   |   mean_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   |   mean_f_pkt >= 56.6 : LOW_RATE (1514/0)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (24/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3945/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2433/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (146/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (5/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 23
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3874/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (28/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   min_f_pkt < 53 : NORMAL (3975/0)
+|   |   |   |   min_f_pkt >= 53
+|   |   |   |   |   min_f_pkt < 55 : LOW_RATE (2/0)
+|   |   |   |   |   min_f_pkt >= 55 : NORMAL (2/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1462/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2520/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (131/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 74.5 : NORMAL (3/1)
+|   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3907/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (23/0)
+|   |   |   min_f_pkt >= 47
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 51 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 51 : LOW_RATE (1/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (3967/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1489/1)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2482/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (120/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (6/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3939/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (22/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3986/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 57 : LOW_RATE (2/0)
+|   |   |   min_f_pkt >= 57 : LOW_RATE (1477/2)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2429/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (137/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (2/1)
+|   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (4/0)
+
+Size of the tree : 19
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3896/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47 : LOW_RATE (17/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3992/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1473/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2521/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (93/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 74.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   min_f_pkt < 153.5 : LOW_RATE (6/3)
+|   |   |   |   |   min_f_pkt >= 153.5 : NORMAL (1/0)
+
+Size of the tree : 17
+
+
+RandomTree
+==========
+
+mean_f_pkt < 47.5 : HIGH_RATE (3894/0)
+mean_f_pkt >= 47.5
+|   mean_f_pkt < 62.55
+|   |   min_f_pkt < 58
+|   |   |   min_f_pkt < 47.5 : LOW_RATE (22/0)
+|   |   |   min_f_pkt >= 47.5
+|   |   |   |   mean_f_pkt < 55
+|   |   |   |   |   min_f_pkt < 51.5 : NORMAL (1/0)
+|   |   |   |   |   min_f_pkt >= 51.5 : LOW_RATE (1/0)
+|   |   |   |   mean_f_pkt >= 55 : NORMAL (3938/0)
+|   |   min_f_pkt >= 58 : LOW_RATE (1479/0)
+|   mean_f_pkt >= 62.55
+|   |   min_f_pkt < 60 : LOW_RATE (2523/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (135/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (3/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (3/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3859/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   min_f_pkt < 53
+|   |   |   min_f_pkt < 47 : LOW_RATE (25/0)
+|   |   |   min_f_pkt >= 47 : NORMAL (3939/0)
+|   |   min_f_pkt >= 53
+|   |   |   min_f_pkt < 57 : LOW_RATE (1/0)
+|   |   |   min_f_pkt >= 57 : LOW_RATE (1542/3)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2498/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 69.5 : HIGH_RATE (123/0)
+|   |   |   min_f_pkt >= 69.5
+|   |   |   |   min_f_pkt < 199
+|   |   |   |   |   min_f_pkt < 74.5 : NORMAL (2/0)
+|   |   |   |   |   min_f_pkt >= 74.5
+|   |   |   |   |   |   min_f_pkt < 123.5 : LOW_RATE (5/2)
+|   |   |   |   |   |   min_f_pkt >= 123.5 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 199 : NORMAL (4/0)
+
+Size of the tree : 21
+
+
+RandomTree
+==========
+
+mean_f_pkt < 48.33 : HIGH_RATE (3909/0)
+mean_f_pkt >= 48.33
+|   mean_f_pkt < 62.49
+|   |   mean_f_pkt < 60.43
+|   |   |   mean_f_pkt < 56.6
+|   |   |   |   min_f_pkt < 47 : LOW_RATE (2/0)
+|   |   |   |   min_f_pkt >= 47 : NORMAL (7/0)
+|   |   |   mean_f_pkt >= 56.6
+|   |   |   |   min_f_pkt < 53 : LOW_RATE (6/0)
+|   |   |   |   min_f_pkt >= 53 : LOW_RATE (1478/1)
+|   |   mean_f_pkt >= 60.43
+|   |   |   min_f_pkt < 49 : LOW_RATE (14/0)
+|   |   |   min_f_pkt >= 49 : NORMAL (3980/0)
+|   mean_f_pkt >= 62.49
+|   |   min_f_pkt < 60 : LOW_RATE (2466/0)
+|   |   min_f_pkt >= 60
+|   |   |   min_f_pkt < 73 : HIGH_RATE (135/0)
+|   |   |   min_f_pkt >= 73
+|   |   |   |   min_f_pkt < 123.5 : NORMAL (1/0)
+|   |   |   |   min_f_pkt >= 123.5
+|   |   |   |   |   min_f_pkt < 199 : LOW_RATE (1/0)
+|   |   |   |   |   min_f_pkt >= 199 : NORMAL (1/0)
+
+Size of the tree : 23
+
+
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances        2011               67.0333 %
+Incorrectly Classified Instances       989               32.9667 %
+Kappa statistic                          0.5055
+Mean absolute error                      0.22  
+Root mean squared error                  0.4686
+Relative absolute error                 49.4952 %
+Root relative squared error             99.4088 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.011    0.000    1.000      0.011    0.022      0.086    0.506     0.341     HIGH_RATE
+                 1.000    0.490    0.505      1.000    0.671      0.508    0.739     0.489     LOW_RATE
+                 1.000    0.005    0.990      1.000    0.995      0.993    1.000     1.000     NORMAL
+Weighted Avg.    0.670    0.165    0.832      0.670    0.563      0.529    0.748     0.610     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  11 979  10 |   a = HIGH_RATE
+   0 1000   0 |   b = LOW_RATE
+   0   0 1000 |   c = NORMAL

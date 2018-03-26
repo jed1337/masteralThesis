@@ -1,0 +1,930 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilitiesAll the base classifiers: 
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2013/0)
+min_f_pkt >= 47 : normal (1987/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2019/0)
+min_f_pkt >= 47 : normal (1981/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2006/0)
+min_f_pkt >= 47.5 : normal (1994/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (2046/0)
+min_f_pkt >= 49 : normal (1954/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2015/0)
+min_f_pkt >= 47 : normal (1985/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1985/0)
+min_f_pkt >= 47.5 : normal (2015/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2057/0)
+min_f_pkt >= 47 : normal (1943/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1960/0)
+min_f_pkt >= 47 : normal (2040/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1965/0)
+min_f_pkt >= 47 : normal (2035/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2043/0)
+min_f_pkt >= 47.5 : normal (1957/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2006/0)
+min_f_pkt >= 47.5 : normal (1994/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2049/0)
+min_f_pkt >= 47 : normal (1951/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2060/0)
+min_f_pkt >= 47 : normal (1940/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2032/0)
+min_f_pkt >= 47 : normal (1968/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1994/0)
+min_f_pkt >= 47 : normal (2006/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1983/0)
+min_f_pkt >= 47.5 : normal (2017/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (1973/0)
+min_f_pkt >= 49 : normal (2027/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2010/0)
+min_f_pkt >= 47 : normal (1990/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1968/0)
+min_f_pkt >= 47 : normal (2032/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2047/0)
+min_f_pkt >= 47 : normal (1953/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2006/0)
+min_f_pkt >= 47 : normal (1994/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1996/0)
+min_f_pkt >= 47.5 : normal (2004/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1997/0)
+min_f_pkt >= 47.5 : normal (2003/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1971/0)
+min_f_pkt >= 47 : normal (2029/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1951/0)
+min_f_pkt >= 47 : normal (2049/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1999/0)
+min_f_pkt >= 47.5 : normal (2001/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1993/0)
+min_f_pkt >= 47 : normal (2007/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1986/0)
+min_f_pkt >= 47 : normal (2014/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2032/0)
+min_f_pkt >= 47 : normal (1968/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1976/0)
+min_f_pkt >= 47.5 : normal (2024/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2039/0)
+min_f_pkt >= 47 : normal (1961/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2010/0)
+min_f_pkt >= 47.5 : normal (1990/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (2003/0)
+min_f_pkt >= 49 : normal (1997/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2033/0)
+min_f_pkt >= 47 : normal (1967/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1964/0)
+min_f_pkt >= 47 : normal (2036/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1969/0)
+min_f_pkt >= 47 : normal (2031/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2046/0)
+min_f_pkt >= 47.5 : normal (1954/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2036/0)
+min_f_pkt >= 47 : normal (1964/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2011/0)
+min_f_pkt >= 47 : normal (1989/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2054/0)
+min_f_pkt >= 47 : normal (1946/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2016/0)
+min_f_pkt >= 47 : normal (1984/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2038/0)
+min_f_pkt >= 47 : normal (1962/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2081/0)
+min_f_pkt >= 47 : normal (1919/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2024/0)
+min_f_pkt >= 47 : normal (1976/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2003/0)
+min_f_pkt >= 47.5 : normal (1997/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (1995/0)
+min_f_pkt >= 49 : normal (2005/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2026/0)
+min_f_pkt >= 47 : normal (1974/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2019/0)
+min_f_pkt >= 47 : normal (1981/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1986/0)
+min_f_pkt >= 47.5 : normal (2014/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2005/0)
+min_f_pkt >= 47 : normal (1995/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (2006/0)
+min_f_pkt >= 49 : normal (1994/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2015/0)
+min_f_pkt >= 47.5 : normal (1985/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1992/0)
+min_f_pkt >= 47.5 : normal (2008/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2051/0)
+min_f_pkt >= 47.5 : normal (1949/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (2026/0)
+min_f_pkt >= 49 : normal (1974/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2007/0)
+min_f_pkt >= 47 : normal (1993/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1960/0)
+min_f_pkt >= 47.5 : normal (2040/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1984/0)
+min_f_pkt >= 47 : normal (2016/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2045/0)
+min_f_pkt >= 47.5 : normal (1955/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1997/0)
+min_f_pkt >= 47 : normal (2003/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1972/0)
+min_f_pkt >= 47 : normal (2028/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1987/0)
+min_f_pkt >= 47.5 : normal (2013/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1992/0)
+min_f_pkt >= 47 : normal (2008/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (2014/0)
+min_f_pkt >= 49 : normal (1986/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1965/0)
+min_f_pkt >= 47 : normal (2035/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2056/0)
+min_f_pkt >= 47 : normal (1944/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2018/0)
+min_f_pkt >= 47.5 : normal (1982/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1951/0)
+min_f_pkt >= 47 : normal (2049/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2025/0)
+min_f_pkt >= 47.5 : normal (1975/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2007/0)
+min_f_pkt >= 47 : normal (1993/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1998/0)
+min_f_pkt >= 47.5 : normal (2002/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2032/0)
+min_f_pkt >= 47 : normal (1968/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2018/0)
+min_f_pkt >= 47 : normal (1982/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1995/0)
+min_f_pkt >= 47 : normal (2005/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1977/0)
+min_f_pkt >= 47 : normal (2023/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1997/0)
+min_f_pkt >= 47 : normal (2003/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2003/0)
+min_f_pkt >= 47 : normal (1997/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2027/0)
+min_f_pkt >= 47 : normal (1973/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2021/0)
+min_f_pkt >= 47 : normal (1979/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2010/0)
+min_f_pkt >= 47 : normal (1990/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1956/0)
+min_f_pkt >= 47.5 : normal (2044/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2029/0)
+min_f_pkt >= 47 : normal (1971/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2034/0)
+min_f_pkt >= 47.5 : normal (1966/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1969/0)
+min_f_pkt >= 47.5 : normal (2031/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1974/0)
+min_f_pkt >= 47 : normal (2026/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2008/0)
+min_f_pkt >= 47 : normal (1992/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1975/0)
+min_f_pkt >= 47.5 : normal (2025/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (1975/0)
+min_f_pkt >= 49 : normal (2025/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2013/0)
+min_f_pkt >= 47 : normal (1987/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1924/0)
+min_f_pkt >= 47.5 : normal (2076/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2003/0)
+min_f_pkt >= 47.5 : normal (1997/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2009/0)
+min_f_pkt >= 47.5 : normal (1991/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2034/0)
+min_f_pkt >= 47.5 : normal (1966/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (1997/0)
+min_f_pkt >= 49 : normal (2003/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (2005/0)
+min_f_pkt >= 47.5 : normal (1995/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47.5 : tcpFlood (1976/0)
+min_f_pkt >= 47.5 : normal (2024/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 49 : tcpFlood (1991/0)
+min_f_pkt >= 49 : normal (2009/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2057/0)
+min_f_pkt >= 47 : normal (1943/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (2012/0)
+min_f_pkt >= 47 : normal (1988/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+min_f_pkt < 47 : tcpFlood (1981/0)
+min_f_pkt >= 47 : normal (2019/0)
+
+Size of the tree : 3
+
+
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances        1000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0     
+Relative absolute error                  0      %
+Root relative squared error              0      %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tcpFlood
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = tcpFlood
+   0 500 |   b = normal

@@ -1,0 +1,71 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0157 * (normalized) mean_f_pkt
+ +       2.3647 * (normalized) max_f_pkt
+ +       0.2178 * (normalized) total_f_bytes
+ +       1.3685 * (normalized) std_f_pkt
+ +      -0.7015 * (normalized) total_b_bytes
+ +       0.1092 * (normalized) rfb_bytes
+ +       0.0245 * (normalized) std_b_pkt
+ +       0.1588 * (normalized) mean_b_pkt
+ +      -0.893  * (normalized) cof=N/A
+ +       1.2344 * (normalized) cof=2
+ +       0      * (normalized) cof=18
+ +       0.3686 * (normalized) cof=22
+ +      -1.1574 * (normalized) cof=27
+ +       0.0588 * (normalized) cof=30
+ +       0.3886 * (normalized) cof=31
+ +       0.2156 * (normalized) bps_b
+ +       0.3009 * (normalized) rfb_packets
+ +       0.3529 * (normalized) mean_b_time
+ +       0.1878 * (normalized) duration
+ +       0.3065 * (normalized) max_b_time
+ +      -0.2323 * (normalized) pps_f
+ +      -0.2377 * (normalized) pps_b
+ +       0.1486 * (normalized) mean_f_time
+ +       0.2746 * (normalized) std_b_time
+ +       0.3286 * (normalized) bps_f
+ +       0.2786 * (normalized) max_f_time
+ +       0.2408 * (normalized) std_f_time
+ +      -0.0346 * (normalized) max_b_pkt
+ +      -0.2227 * (normalized) total_b_packets
+ +      -0.0426 * (normalized) min_f_time
+ +      -0.1996 * (normalized) total_f_packets
+ +       0.9933 * (normalized) min_b_time
+ -       0.3099
+
+Number of kernel evaluations: 174023 (71.173% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         999               99.9    %
+Incorrectly Classified Instances         1                0.1    %
+Kappa statistic                          0.998 
+Mean absolute error                      0.001 
+Root mean squared error                  0.0316
+Relative absolute error                  0.2    %
+Root relative squared error              6.3246 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.998    0.000    1.000      0.998    0.999      0.998    0.999     0.999     normal
+                 1.000    0.002    0.998      1.000    0.999      0.998    0.999     0.998     slowRead
+Weighted Avg.    0.999    0.001    0.999      0.999    0.999      0.998    0.999     0.999     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 499   1 |   a = normal
+   0 500 |   b = slowRead

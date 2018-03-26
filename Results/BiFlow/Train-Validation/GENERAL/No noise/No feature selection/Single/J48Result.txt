@@ -1,0 +1,180 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+total_b_bytes <= 11896
+|   max_f_time <= 0.979988
+|   |   max_f_pkt <= 71
+|   |   |   min_f_pkt <= 46: HIGH_RATE (3871.0)
+|   |   |   min_f_pkt > 46
+|   |   |   |   total_f_bytes <= 60
+|   |   |   |   |   cof = N/A: NORMAL (3.0/1.0)
+|   |   |   |   |   cof = 0: LOW_RATE (0.0)
+|   |   |   |   |   cof = 1: LOW_RATE (0.0)
+|   |   |   |   |   cof = 2: LOW_RATE (4.0)
+|   |   |   |   |   cof = 3: LOW_RATE (0.0)
+|   |   |   |   |   cof = 4: LOW_RATE (0.0)
+|   |   |   |   |   cof = 5: LOW_RATE (0.0)
+|   |   |   |   |   cof = 6: LOW_RATE (0.0)
+|   |   |   |   |   cof = 7: LOW_RATE (0.0)
+|   |   |   |   |   cof = 8: LOW_RATE (0.0)
+|   |   |   |   |   cof = 9: LOW_RATE (0.0)
+|   |   |   |   |   cof = 10: LOW_RATE (0.0)
+|   |   |   |   |   cof = 11: LOW_RATE (0.0)
+|   |   |   |   |   cof = 12: LOW_RATE (0.0)
+|   |   |   |   |   cof = 13: LOW_RATE (0.0)
+|   |   |   |   |   cof = 14: LOW_RATE (0.0)
+|   |   |   |   |   cof = 15: LOW_RATE (0.0)
+|   |   |   |   |   cof = 16: LOW_RATE (0.0)
+|   |   |   |   |   cof = 17: LOW_RATE (0.0)
+|   |   |   |   |   cof = 18: NORMAL (1.0)
+|   |   |   |   |   cof = 19: LOW_RATE (0.0)
+|   |   |   |   |   cof = 20: LOW_RATE (0.0)
+|   |   |   |   |   cof = 21: LOW_RATE (0.0)
+|   |   |   |   |   cof = 22: LOW_RATE (0.0)
+|   |   |   |   |   cof = 23: LOW_RATE (0.0)
+|   |   |   |   |   cof = 24: LOW_RATE (0.0)
+|   |   |   |   |   cof = 25: LOW_RATE (0.0)
+|   |   |   |   |   cof = 26: LOW_RATE (0.0)
+|   |   |   |   |   cof = 27: LOW_RATE (0.0)
+|   |   |   |   |   cof = 28: LOW_RATE (0.0)
+|   |   |   |   |   cof = 29: LOW_RATE (0.0)
+|   |   |   |   |   cof = 30: LOW_RATE (0.0)
+|   |   |   |   |   cof = 31: LOW_RATE (0.0)
+|   |   |   |   |   cof = 32: LOW_RATE (0.0)
+|   |   |   |   |   cof = 33: LOW_RATE (0.0)
+|   |   |   |   |   cof = 34: LOW_RATE (0.0)
+|   |   |   |   |   cof = 35: LOW_RATE (0.0)
+|   |   |   |   |   cof = 36: LOW_RATE (0.0)
+|   |   |   |   |   cof = 37: LOW_RATE (0.0)
+|   |   |   |   |   cof = 38: LOW_RATE (0.0)
+|   |   |   |   |   cof = 39: LOW_RATE (0.0)
+|   |   |   |   |   cof = 40: LOW_RATE (0.0)
+|   |   |   |   |   cof = 41: LOW_RATE (0.0)
+|   |   |   |   |   cof = 42: LOW_RATE (0.0)
+|   |   |   |   |   cof = 43: LOW_RATE (0.0)
+|   |   |   |   |   cof = 44: LOW_RATE (0.0)
+|   |   |   |   |   cof = 45: LOW_RATE (0.0)
+|   |   |   |   |   cof = 46: LOW_RATE (0.0)
+|   |   |   |   |   cof = 47: LOW_RATE (0.0)
+|   |   |   |   |   cof = 48: LOW_RATE (0.0)
+|   |   |   |   |   cof = 49: LOW_RATE (0.0)
+|   |   |   |   |   cof = 50: LOW_RATE (0.0)
+|   |   |   |   |   cof = 51: LOW_RATE (0.0)
+|   |   |   |   |   cof = 52: LOW_RATE (0.0)
+|   |   |   |   |   cof = 53: LOW_RATE (0.0)
+|   |   |   |   |   cof = 54: LOW_RATE (0.0)
+|   |   |   |   |   cof = 55: LOW_RATE (0.0)
+|   |   |   |   |   cof = 56: LOW_RATE (0.0)
+|   |   |   |   |   cof = 57: LOW_RATE (0.0)
+|   |   |   |   |   cof = 58: LOW_RATE (0.0)
+|   |   |   |   |   cof = 59: LOW_RATE (0.0)
+|   |   |   |   |   cof = 60: LOW_RATE (0.0)
+|   |   |   |   |   cof = 61: LOW_RATE (0.0)
+|   |   |   |   |   cof = 62: LOW_RATE (0.0)
+|   |   |   |   |   cof = 63: LOW_RATE (0.0)
+|   |   |   |   |   cof = 64: LOW_RATE (0.0)
+|   |   |   |   |   cof = 65: LOW_RATE (0.0)
+|   |   |   |   |   cof = 66: LOW_RATE (0.0)
+|   |   |   |   |   cof = 67: LOW_RATE (0.0)
+|   |   |   |   |   cof = 68: LOW_RATE (0.0)
+|   |   |   |   |   cof = 69: LOW_RATE (0.0)
+|   |   |   |   |   cof = 70: LOW_RATE (0.0)
+|   |   |   |   |   cof = 71: LOW_RATE (0.0)
+|   |   |   |   |   cof = 72: LOW_RATE (0.0)
+|   |   |   |   |   cof = 73: LOW_RATE (0.0)
+|   |   |   |   |   cof = 74: LOW_RATE (0.0)
+|   |   |   |   |   cof = 75: LOW_RATE (0.0)
+|   |   |   |   |   cof = 76: LOW_RATE (0.0)
+|   |   |   |   |   cof = 77: LOW_RATE (0.0)
+|   |   |   |   |   cof = 78: LOW_RATE (0.0)
+|   |   |   |   |   cof = 79: LOW_RATE (0.0)
+|   |   |   |   |   cof = 80: LOW_RATE (0.0)
+|   |   |   |   |   cof = 81: LOW_RATE (0.0)
+|   |   |   |   |   cof = 82: LOW_RATE (0.0)
+|   |   |   |   |   cof = 83: LOW_RATE (0.0)
+|   |   |   |   |   cof = 84: LOW_RATE (0.0)
+|   |   |   |   |   cof = 85: LOW_RATE (0.0)
+|   |   |   |   |   cof = 86: LOW_RATE (0.0)
+|   |   |   |   |   cof = 87: LOW_RATE (0.0)
+|   |   |   |   |   cof = 88: LOW_RATE (0.0)
+|   |   |   |   |   cof = 89: LOW_RATE (0.0)
+|   |   |   |   |   cof = 90: LOW_RATE (0.0)
+|   |   |   |   |   cof = 91: LOW_RATE (0.0)
+|   |   |   |   |   cof = 92: LOW_RATE (0.0)
+|   |   |   |   |   cof = 93: LOW_RATE (0.0)
+|   |   |   |   |   cof = 94: LOW_RATE (0.0)
+|   |   |   |   |   cof = 95: LOW_RATE (0.0)
+|   |   |   |   |   cof = 96: LOW_RATE (0.0)
+|   |   |   |   |   cof = 97: LOW_RATE (0.0)
+|   |   |   |   |   cof = 98: LOW_RATE (0.0)
+|   |   |   |   |   cof = 99: LOW_RATE (0.0)
+|   |   |   |   |   cof = 100: LOW_RATE (0.0)
+|   |   |   |   |   cof = 101: LOW_RATE (0.0)
+|   |   |   |   |   cof = 102: LOW_RATE (0.0)
+|   |   |   |   |   cof = 103: LOW_RATE (0.0)
+|   |   |   |   |   cof = 104: LOW_RATE (0.0)
+|   |   |   |   |   cof = 105: LOW_RATE (0.0)
+|   |   |   |   |   cof = 106: LOW_RATE (0.0)
+|   |   |   |   |   cof = 107: LOW_RATE (0.0)
+|   |   |   |   |   cof = 108: LOW_RATE (0.0)
+|   |   |   |   |   cof = 109: LOW_RATE (0.0)
+|   |   |   |   |   cof = 110: LOW_RATE (0.0)
+|   |   |   |   |   cof = 111: LOW_RATE (0.0)
+|   |   |   |   |   cof = 112: LOW_RATE (0.0)
+|   |   |   |   |   cof = 113: LOW_RATE (0.0)
+|   |   |   |   |   cof = 114: LOW_RATE (0.0)
+|   |   |   |   |   cof = 115: LOW_RATE (0.0)
+|   |   |   |   |   cof = 116: LOW_RATE (0.0)
+|   |   |   |   |   cof = 117: LOW_RATE (0.0)
+|   |   |   |   |   cof = 118: LOW_RATE (0.0)
+|   |   |   |   |   cof = 119: LOW_RATE (0.0)
+|   |   |   |   |   cof = 120: LOW_RATE (0.0)
+|   |   |   |   |   cof = 121: LOW_RATE (0.0)
+|   |   |   |   |   cof = 122: LOW_RATE (0.0)
+|   |   |   |   |   cof = 123: LOW_RATE (0.0)
+|   |   |   |   |   cof = 124: LOW_RATE (0.0)
+|   |   |   |   |   cof = 125: LOW_RATE (0.0)
+|   |   |   |   |   cof = 126: LOW_RATE (0.0)
+|   |   |   |   |   cof = 127: LOW_RATE (0.0)
+|   |   |   |   total_f_bytes > 60: HIGH_RATE (128.0)
+|   |   max_f_pkt > 71
+|   |   |   min_f_time <= 0.000016: LOW_RATE (102.0/1.0)
+|   |   |   min_f_time > 0.000016: NORMAL (4.0)
+|   max_f_time > 0.979988
+|   |   min_f_time <= 2.017056: LOW_RATE (3843.0/1.0)
+|   |   min_f_time > 2.017056
+|   |   |   total_f_packets <= 2: NORMAL (5.0)
+|   |   |   total_f_packets > 2: LOW_RATE (21.0/1.0)
+total_b_bytes > 11896
+|   max_f_pkt <= 169: NORMAL (3986.0)
+|   max_f_pkt > 169: LOW_RATE (32.0)
+
+Number of Leaves  : 	138
+
+Size of the tree : 	148
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2015               67.1667 %
+Incorrectly Classified Instances       985               32.8333 %
+Kappa statistic                          0.5075
+Mean absolute error                      0.2191
+Root mean squared error                  0.466 
+Relative absolute error                 49.3062 %
+Root relative squared error             98.8467 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.019    0.000    1.000      0.019    0.037      0.113    0.284     0.344     HIGH_RATE
+                 1.000    0.394    0.559      1.000    0.717      0.582    0.982     0.955     LOW_RATE
+                 0.996    0.099    0.835      0.996    0.908      0.864    0.949     0.834     NORMAL
+Weighted Avg.    0.672    0.164    0.798      0.672    0.554      0.520    0.738     0.711     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  19 784 197 |   a = HIGH_RATE
+   0 1000   0 |   b = LOW_RATE
+   0   4 996 |   c = NORMAL

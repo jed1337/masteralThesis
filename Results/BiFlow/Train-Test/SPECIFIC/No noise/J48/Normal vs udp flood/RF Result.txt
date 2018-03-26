@@ -1,0 +1,1310 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilitiesAll the base classifiers: 
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1900/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (5/0)
+|   |   max_f_pkt >= 64 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (1982/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1918/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (2/0)
+|   |   max_f_pkt >= 60 : udpFlood (101/0)
+max_f_pkt >= 73 : normal (1979/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1901/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (2/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (105/0)
+max_f_pkt >= 73 : normal (1992/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73 : udpFlood (2046/0)
+max_f_pkt >= 73 : normal (1954/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1886/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (129/0)
+max_f_pkt >= 73 : normal (1981/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1865/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (120/0)
+max_f_pkt >= 73 : normal (2012/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1943/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (5/0)
+|   |   max_f_pkt >= 60 : udpFlood (114/0)
+max_f_pkt >= 73 : normal (1938/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1844/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (4/0)
+|   |   max_f_pkt >= 60 : udpFlood (116/0)
+max_f_pkt >= 73 : normal (2036/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 118
+|   max_f_pkt < 47.5 : udpFlood (1855/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (110/0)
+max_f_pkt >= 118 : normal (2031/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1925/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (1/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (118/0)
+max_f_pkt >= 73 : normal (1956/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1893/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (1991/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1935/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (114/0)
+max_f_pkt >= 73 : normal (1947/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1954/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (6/0)
+|   |   max_f_pkt >= 64 : udpFlood (106/0)
+max_f_pkt >= 73 : normal (1934/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1904/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (1/0)
+|   |   max_f_pkt >= 60 : udpFlood (128/0)
+max_f_pkt >= 73 : normal (1967/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1881/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (1/0)
+|   |   max_f_pkt >= 60 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (2005/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1853/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (130/0)
+max_f_pkt >= 73 : normal (2015/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 53 : udpFlood (1862/0)
+|   max_f_pkt >= 53
+|   |   max_f_pkt < 64 : normal (1/0)
+|   |   max_f_pkt >= 64 : udpFlood (111/0)
+max_f_pkt >= 73 : normal (2026/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1882/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (128/0)
+max_f_pkt >= 73 : normal (1987/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1849/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (3/0)
+|   |   max_f_pkt >= 60 : udpFlood (119/0)
+max_f_pkt >= 73 : normal (2029/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1946/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (4/0)
+|   |   max_f_pkt >= 60 : udpFlood (101/0)
+max_f_pkt >= 73 : normal (1949/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1893/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (1991/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1881/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (115/0)
+max_f_pkt >= 73 : normal (2002/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 118
+|   max_f_pkt < 47.5 : udpFlood (1892/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (1/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (105/0)
+max_f_pkt >= 118 : normal (2002/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1868/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (103/0)
+max_f_pkt >= 73 : normal (2025/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1829/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (122/0)
+max_f_pkt >= 73 : normal (2045/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1880/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (1/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (119/0)
+max_f_pkt >= 73 : normal (2000/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1893/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (2/0)
+|   |   max_f_pkt >= 60 : udpFlood (100/0)
+max_f_pkt >= 73 : normal (2005/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1863/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (123/0)
+max_f_pkt >= 73 : normal (2010/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1885/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (147/0)
+max_f_pkt >= 73 : normal (1964/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1871/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (105/0)
+max_f_pkt >= 73 : normal (2020/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1911/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (1/0)
+|   |   max_f_pkt >= 60 : udpFlood (128/0)
+max_f_pkt >= 73 : normal (1960/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1887/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (2/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (123/0)
+max_f_pkt >= 73 : normal (1988/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73 : udpFlood (2003/0)
+max_f_pkt >= 73 : normal (1997/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1930/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (1/0)
+|   |   max_f_pkt >= 60 : udpFlood (103/0)
+max_f_pkt >= 73 : normal (1966/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1853/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (111/0)
+max_f_pkt >= 73 : normal (2032/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1867/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (5/0)
+|   |   max_f_pkt >= 64 : udpFlood (102/0)
+max_f_pkt >= 73 : normal (2026/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1923/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (123/0)
+max_f_pkt >= 73 : normal (1952/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1902/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (3/0)
+|   |   max_f_pkt >= 60 : udpFlood (134/0)
+max_f_pkt >= 73 : normal (1961/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1899/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (2/0)
+|   |   max_f_pkt >= 60 : udpFlood (112/0)
+max_f_pkt >= 73 : normal (1987/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1945/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (6/0)
+|   |   max_f_pkt >= 64 : udpFlood (109/0)
+max_f_pkt >= 73 : normal (1940/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1905/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (1/0)
+|   |   max_f_pkt >= 60 : udpFlood (111/0)
+max_f_pkt >= 73 : normal (1983/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1925/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (1958/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1964/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (3/0)
+|   |   max_f_pkt >= 60 : udpFlood (117/0)
+max_f_pkt >= 73 : normal (1916/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1907/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (117/0)
+max_f_pkt >= 73 : normal (1974/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1891/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (112/0)
+max_f_pkt >= 73 : normal (1995/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73 : udpFlood (1995/0)
+max_f_pkt >= 73 : normal (2005/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1909/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (117/0)
+max_f_pkt >= 73 : normal (1970/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1889/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (130/0)
+max_f_pkt >= 73 : normal (1978/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1879/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (107/0)
+max_f_pkt >= 73 : normal (2012/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1883/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (6/0)
+|   |   max_f_pkt >= 60 : udpFlood (122/0)
+max_f_pkt >= 73 : normal (1989/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73 : udpFlood (2006/0)
+max_f_pkt >= 73 : normal (1994/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1901/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (5/0)
+|   |   max_f_pkt >= 64 : udpFlood (114/0)
+max_f_pkt >= 73 : normal (1980/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1870/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (1/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (122/0)
+max_f_pkt >= 73 : normal (2007/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1928/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (123/0)
+max_f_pkt >= 73 : normal (1945/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73 : udpFlood (2026/0)
+max_f_pkt >= 73 : normal (1974/0)
+
+Size of the tree : 3
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1883/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (124/0)
+max_f_pkt >= 73 : normal (1990/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1843/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (117/0)
+max_f_pkt >= 73 : normal (2037/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1865/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (119/0)
+max_f_pkt >= 73 : normal (2013/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1951/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (2/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (94/0)
+max_f_pkt >= 73 : normal (1953/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1884/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (4/0)
+|   |   max_f_pkt >= 60 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (1999/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1859/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (2025/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1866/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (121/0)
+max_f_pkt >= 73 : normal (2009/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1858/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (134/0)
+max_f_pkt >= 73 : normal (2004/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 53 : udpFlood (1901/0)
+|   max_f_pkt >= 53
+|   |   max_f_pkt < 64 : normal (1/0)
+|   |   max_f_pkt >= 64 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (1985/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 118
+|   max_f_pkt < 49 : udpFlood (1843/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (122/0)
+max_f_pkt >= 118 : normal (2032/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1941/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (115/0)
+max_f_pkt >= 73 : normal (1941/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1905/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (113/0)
+max_f_pkt >= 73 : normal (1978/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1830/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (1/0)
+|   |   max_f_pkt >= 60 : udpFlood (121/0)
+max_f_pkt >= 73 : normal (2048/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1911/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (114/0)
+max_f_pkt >= 73 : normal (1972/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1901/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (6/0)
+|   |   max_f_pkt >= 64 : udpFlood (106/0)
+max_f_pkt >= 73 : normal (1987/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 118
+|   max_f_pkt < 47.5 : udpFlood (1872/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (2/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (126/0)
+max_f_pkt >= 118 : normal (2000/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1920/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (2/0)
+|   |   max_f_pkt >= 60 : udpFlood (112/0)
+max_f_pkt >= 73 : normal (1966/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1910/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 60 : normal (2/0)
+|   |   max_f_pkt >= 60 : udpFlood (108/0)
+max_f_pkt >= 73 : normal (1980/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1881/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (1/0)
+|   |   max_f_pkt >= 60 : udpFlood (114/0)
+max_f_pkt >= 73 : normal (2004/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1846/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (131/0)
+max_f_pkt >= 73 : normal (2021/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1866/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (5/0)
+|   |   max_f_pkt >= 64 : udpFlood (131/0)
+max_f_pkt >= 73 : normal (1998/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1904/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (5/0)
+|   |   max_f_pkt >= 64 : udpFlood (99/0)
+max_f_pkt >= 73 : normal (1992/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1905/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (122/0)
+max_f_pkt >= 73 : normal (1969/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1877/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (144/0)
+max_f_pkt >= 73 : normal (1975/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 118
+|   max_f_pkt < 49 : udpFlood (1906/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (2/0)
+|   |   max_f_pkt >= 60 : udpFlood (104/0)
+max_f_pkt >= 118 : normal (1988/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1847/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (5/0)
+|   |   max_f_pkt >= 64 : udpFlood (109/0)
+max_f_pkt >= 73 : normal (2039/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1932/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (2/0)
+|   |   max_f_pkt >= 60 : udpFlood (97/0)
+max_f_pkt >= 73 : normal (1969/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 118
+|   max_f_pkt < 47.5 : udpFlood (1916/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (1/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (118/0)
+max_f_pkt >= 118 : normal (1965/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 118
+|   max_f_pkt < 47.5 : udpFlood (1861/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (108/0)
+max_f_pkt >= 118 : normal (2028/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1862/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (112/0)
+max_f_pkt >= 73 : normal (2023/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1882/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (5/0)
+|   |   max_f_pkt >= 64 : udpFlood (126/0)
+max_f_pkt >= 73 : normal (1987/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1843/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (132/0)
+max_f_pkt >= 73 : normal (2021/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 53 : udpFlood (1847/0)
+|   max_f_pkt >= 53
+|   |   max_f_pkt < 64 : normal (1/0)
+|   |   max_f_pkt >= 64 : udpFlood (128/0)
+max_f_pkt >= 73 : normal (2024/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1896/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (117/0)
+max_f_pkt >= 73 : normal (1984/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1796/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (128/0)
+max_f_pkt >= 73 : normal (2074/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1896/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (107/0)
+max_f_pkt >= 73 : normal (1994/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1901/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (108/0)
+max_f_pkt >= 73 : normal (1987/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1920/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (114/0)
+max_f_pkt >= 73 : normal (1963/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 53 : udpFlood (1863/0)
+|   max_f_pkt >= 53
+|   |   max_f_pkt < 64 : normal (3/0)
+|   |   max_f_pkt >= 64 : udpFlood (134/0)
+max_f_pkt >= 73 : normal (2000/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1874/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 58.5 : normal (1/0)
+|   |   max_f_pkt >= 58.5 : udpFlood (131/0)
+max_f_pkt >= 73 : normal (1994/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1858/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (118/0)
+max_f_pkt >= 73 : normal (2022/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 53 : udpFlood (1869/0)
+|   max_f_pkt >= 53
+|   |   max_f_pkt < 64 : normal (2/0)
+|   |   max_f_pkt >= 64 : udpFlood (122/0)
+max_f_pkt >= 73 : normal (2007/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1945/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (5/0)
+|   |   max_f_pkt >= 64 : udpFlood (112/0)
+max_f_pkt >= 73 : normal (1938/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 49 : udpFlood (1908/0)
+|   max_f_pkt >= 49
+|   |   max_f_pkt < 60 : normal (3/0)
+|   |   max_f_pkt >= 60 : udpFlood (104/0)
+max_f_pkt >= 73 : normal (1985/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+max_f_pkt < 73
+|   max_f_pkt < 47.5 : udpFlood (1869/0)
+|   max_f_pkt >= 47.5
+|   |   max_f_pkt < 64 : normal (4/0)
+|   |   max_f_pkt >= 64 : udpFlood (112/0)
+max_f_pkt >= 73 : normal (2015/0)
+
+Size of the tree : 7
+
+
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances        1000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0001
+Root mean squared error                  0.0022
+Relative absolute error                  0.02   %
+Root relative squared error              0.4472 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     udpFlood
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+   0 500 |   b = udpFlood

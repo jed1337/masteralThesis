@@ -1,0 +1,166 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+cof = N/A: HIGH_RATE (2006.0/6.0)
+cof = 0: HIGH_RATE (0.0)
+cof = 1: HIGH_RATE (0.0)
+cof = 2: LOW_RATE (1487.0/2.0)
+cof = 3: HIGH_RATE (0.0)
+cof = 4: HIGH_RATE (123.0)
+cof = 5: HIGH_RATE (0.0)
+cof = 6: HIGH_RATE (0.0)
+cof = 7: HIGH_RATE (0.0)
+cof = 8: HIGH_RATE (0.0)
+cof = 9: HIGH_RATE (0.0)
+cof = 10: HIGH_RATE (0.0)
+cof = 11: HIGH_RATE (0.0)
+cof = 12: HIGH_RATE (0.0)
+cof = 13: HIGH_RATE (0.0)
+cof = 14: HIGH_RATE (0.0)
+cof = 15: HIGH_RATE (0.0)
+cof = 16: HIGH_RATE (0.0)
+cof = 17: NORMAL (1.0)
+cof = 18: HIGH_RATE (1828.0/3.0)
+cof = 19: HIGH_RATE (0.0)
+cof = 20: HIGH_RATE (0.0)
+cof = 21: HIGH_RATE (0.0)
+cof = 22
+|   min_b_pkt <= 52: HIGH_RATE (52.0)
+|   min_b_pkt > 52: LOW_RATE (4.0)
+cof = 23: HIGH_RATE (0.0)
+cof = 24: HIGH_RATE (0.0)
+cof = 25: HIGH_RATE (0.0)
+cof = 26: LOW_RATE (29.0)
+cof = 27
+|   total_b_packets <= 5: LOW_RATE (55.0/7.0)
+|   total_b_packets > 5: NORMAL (3958.0/6.0)
+cof = 28: HIGH_RATE (0.0)
+cof = 29: LOW_RATE (42.0)
+cof = 30: LOW_RATE (857.0/6.0)
+cof = 31: LOW_RATE (1558.0/28.0)
+cof = 32: HIGH_RATE (0.0)
+cof = 33: HIGH_RATE (0.0)
+cof = 34: HIGH_RATE (0.0)
+cof = 35: HIGH_RATE (0.0)
+cof = 36: HIGH_RATE (0.0)
+cof = 37: HIGH_RATE (0.0)
+cof = 38: HIGH_RATE (0.0)
+cof = 39: HIGH_RATE (0.0)
+cof = 40: HIGH_RATE (0.0)
+cof = 41: HIGH_RATE (0.0)
+cof = 42: HIGH_RATE (0.0)
+cof = 43: HIGH_RATE (0.0)
+cof = 44: HIGH_RATE (0.0)
+cof = 45: HIGH_RATE (0.0)
+cof = 46: HIGH_RATE (0.0)
+cof = 47: HIGH_RATE (0.0)
+cof = 48: HIGH_RATE (0.0)
+cof = 49: HIGH_RATE (0.0)
+cof = 50: HIGH_RATE (0.0)
+cof = 51: HIGH_RATE (0.0)
+cof = 52: HIGH_RATE (0.0)
+cof = 53: HIGH_RATE (0.0)
+cof = 54: HIGH_RATE (0.0)
+cof = 55: HIGH_RATE (0.0)
+cof = 56: HIGH_RATE (0.0)
+cof = 57: HIGH_RATE (0.0)
+cof = 58: HIGH_RATE (0.0)
+cof = 59: HIGH_RATE (0.0)
+cof = 60: HIGH_RATE (0.0)
+cof = 61: HIGH_RATE (0.0)
+cof = 62: HIGH_RATE (0.0)
+cof = 63: HIGH_RATE (0.0)
+cof = 64: HIGH_RATE (0.0)
+cof = 65: HIGH_RATE (0.0)
+cof = 66: HIGH_RATE (0.0)
+cof = 67: HIGH_RATE (0.0)
+cof = 68: HIGH_RATE (0.0)
+cof = 69: HIGH_RATE (0.0)
+cof = 70: HIGH_RATE (0.0)
+cof = 71: HIGH_RATE (0.0)
+cof = 72: HIGH_RATE (0.0)
+cof = 73: HIGH_RATE (0.0)
+cof = 74: HIGH_RATE (0.0)
+cof = 75: HIGH_RATE (0.0)
+cof = 76: HIGH_RATE (0.0)
+cof = 77: HIGH_RATE (0.0)
+cof = 78: HIGH_RATE (0.0)
+cof = 79: HIGH_RATE (0.0)
+cof = 80: HIGH_RATE (0.0)
+cof = 81: HIGH_RATE (0.0)
+cof = 82: HIGH_RATE (0.0)
+cof = 83: HIGH_RATE (0.0)
+cof = 84: HIGH_RATE (0.0)
+cof = 85: HIGH_RATE (0.0)
+cof = 86: HIGH_RATE (0.0)
+cof = 87: HIGH_RATE (0.0)
+cof = 88: HIGH_RATE (0.0)
+cof = 89: HIGH_RATE (0.0)
+cof = 90: HIGH_RATE (0.0)
+cof = 91: HIGH_RATE (0.0)
+cof = 92: HIGH_RATE (0.0)
+cof = 93: HIGH_RATE (0.0)
+cof = 94: HIGH_RATE (0.0)
+cof = 95: HIGH_RATE (0.0)
+cof = 96: HIGH_RATE (0.0)
+cof = 97: HIGH_RATE (0.0)
+cof = 98: HIGH_RATE (0.0)
+cof = 99: HIGH_RATE (0.0)
+cof = 100: HIGH_RATE (0.0)
+cof = 101: HIGH_RATE (0.0)
+cof = 102: HIGH_RATE (0.0)
+cof = 103: HIGH_RATE (0.0)
+cof = 104: HIGH_RATE (0.0)
+cof = 105: HIGH_RATE (0.0)
+cof = 106: HIGH_RATE (0.0)
+cof = 107: HIGH_RATE (0.0)
+cof = 108: HIGH_RATE (0.0)
+cof = 109: HIGH_RATE (0.0)
+cof = 110: HIGH_RATE (0.0)
+cof = 111: HIGH_RATE (0.0)
+cof = 112: HIGH_RATE (0.0)
+cof = 113: HIGH_RATE (0.0)
+cof = 114: HIGH_RATE (0.0)
+cof = 115: HIGH_RATE (0.0)
+cof = 116: HIGH_RATE (0.0)
+cof = 117: HIGH_RATE (0.0)
+cof = 118: HIGH_RATE (0.0)
+cof = 119: HIGH_RATE (0.0)
+cof = 120: HIGH_RATE (0.0)
+cof = 121: HIGH_RATE (0.0)
+cof = 122: HIGH_RATE (0.0)
+cof = 123: HIGH_RATE (0.0)
+cof = 124: HIGH_RATE (0.0)
+cof = 125: HIGH_RATE (0.0)
+cof = 126: HIGH_RATE (0.0)
+cof = 127: HIGH_RATE (0.0)
+
+Number of Leaves  : 	131
+
+Size of the tree : 	134
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2025               67.5    %
+Incorrectly Classified Instances       975               32.5    %
+Kappa statistic                          0.5125
+Mean absolute error                      0.2199
+Root mean squared error                  0.4617
+Relative absolute error                 49.4717 %
+Root relative squared error             97.9434 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.039    0.006    0.780      0.039    0.074      0.123    0.517     0.354     HIGH_RATE
+                 0.992    0.481    0.508      0.992    0.672      0.505    0.967     0.924     LOW_RATE
+                 0.994    0.001    0.998      0.994    0.996      0.994    0.995     0.995     NORMAL
+Weighted Avg.    0.675    0.163    0.762      0.675    0.581      0.541    0.826     0.758     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  39 961   0 |   a = HIGH_RATE
+   6 992   2 |   b = LOW_RATE
+   5   1 994 |   c = NORMAL

@@ -1,0 +1,36 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                  Class
+Attribute        normal slowRead
+                  (0.5)    (0.5)
+=================================
+std_f_pkt
+  mean            30.349  66.1312
+  std. dev.       1.7958   35.168
+  weight sum        2000     2000
+  precision       1.2167   1.2167
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances         997               99.7    %
+Incorrectly Classified Instances         3                0.3    %
+Kappa statistic                          0.994 
+Mean absolute error                      0.0181
+Root mean squared error                  0.0588
+Relative absolute error                  3.6241 %
+Root relative squared error             11.7664 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.000    1.000      0.994    0.997      0.994    0.999     0.999     normal
+                 1.000    0.006    0.994      1.000    0.997      0.994    0.997     0.993     slowRead
+Weighted Avg.    0.997    0.003    0.997      0.997    0.997      0.994    0.998     0.996     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 497   3 |   a = normal
+   0 500 |   b = slowRead

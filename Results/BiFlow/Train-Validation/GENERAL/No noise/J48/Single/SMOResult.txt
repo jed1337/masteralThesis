@@ -1,0 +1,67 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: HIGH_RATE, LOW_RATE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        10.6242 * (normalized) min_f_pkt
+ +      19.4574 * (normalized) mean_f_pkt
+ -       1.2858
+
+Number of kernel evaluations: 66903 (49.59% cached)
+
+Classifier for classes: HIGH_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         3.8492 * (normalized) min_f_pkt
+ +      27.4818 * (normalized) mean_f_pkt
+ -       1.283 
+
+Number of kernel evaluations: 16871 (45.403% cached)
+
+Classifier for classes: LOW_RATE, NORMAL
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+       -44.0595 * (normalized) min_f_pkt
+ +     -37.963  * (normalized) mean_f_pkt
+ +       5.8288
+
+Number of kernel evaluations: 40095 (44.873% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        1786               59.5333 %
+Incorrectly Classified Instances      1214               40.4667 %
+Kappa statistic                          0.393 
+Mean absolute error                      0.3855
+Root mean squared error                  0.4872
+Relative absolute error                 86.7333 %
+Root relative squared error            103.3441 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.013    0.000    1.000      0.013    0.026      0.093    0.506     0.342     HIGH_RATE
+                 0.774    0.053    0.880      0.774    0.823      0.747    0.860     0.756     LOW_RATE
+                 0.999    0.554    0.474      0.999    0.643      0.459    0.723     0.474     NORMAL
+Weighted Avg.    0.595    0.202    0.785      0.595    0.497      0.433    0.696     0.524     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  13 105 882 |   a = HIGH_RATE
+   0 774 226 |   b = LOW_RATE
+   0   1 999 |   c = NORMAL

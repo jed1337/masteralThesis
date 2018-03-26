@@ -1,0 +1,74 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.418  * (normalized) duration
+ +       0.5407 * (normalized) cof=N/A
+ +      -0.3395 * (normalized) cof=2
+ +      -0.2011 * (normalized) cof=18
+ +       0      * (normalized) cof=27
+ +      -0.0007 * (normalized) total_f_packets
+ +      -0.0223 * (normalized) total_b_packets
+ +      -0.0023 * (normalized) total_f_bytes
+ +      -0.001  * (normalized) total_b_bytes
+ +       0.0004 * (normalized) pps_f
+ +      -0      * (normalized) pps_b
+ +       0.0004 * (normalized) bps_f
+ +      -0      * (normalized) bps_b
+ +      -0.0718 * (normalized) rfb_packets
+ +      -0.2011 * (normalized) rfb_bytes
+ +      -0.7535 * (normalized) min_f_pkt
+ +      -0.7585 * (normalized) mean_f_pkt
+ +      -0.7609 * (normalized) max_f_pkt
+ +      -0.02   * (normalized) std_f_pkt
+ +      -0.2011 * (normalized) min_b_pkt
+ +      -0.0051 * (normalized) mean_b_pkt
+ +      -0.0017 * (normalized) max_b_pkt
+ +      -0      * (normalized) std_b_pkt
+ +       0.175  * (normalized) min_f_time
+ +       0.0032 * (normalized) mean_f_time
+ +      -0.0828 * (normalized) max_f_time
+ +      -0.3405 * (normalized) std_f_time
+ +      -0      * (normalized) min_b_time
+ +      -0      * (normalized) mean_b_time
+ +       0      * (normalized) max_b_time
+ +       0      * (normalized) std_b_time
+ +      -0.2703 * (normalized) psh_f_cnt
+ +      -0.5407 * (normalized) urg_f_cnt
+ +      -0.1006 * (normalized) psh_b_cnt
+ +      -0.2011 * (normalized) urg_b_cnt
+ +       0.733 
+
+Number of kernel evaluations: 11574 (65.971% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         998               99.8    %
+Incorrectly Classified Instances         2                0.2    %
+Kappa statistic                          0.996 
+Mean absolute error                      0.002 
+Root mean squared error                  0.0447
+Relative absolute error                  0.4    %
+Root relative squared error              8.9443 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.000    1.000      0.996    0.998      0.996    0.998     0.998     normal
+                 1.000    0.004    0.996      1.000    0.998      0.996    0.998     0.996     udpFlood
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    0.998     0.997     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 498   2 |   a = normal
+   0 500 |   b = udpFlood

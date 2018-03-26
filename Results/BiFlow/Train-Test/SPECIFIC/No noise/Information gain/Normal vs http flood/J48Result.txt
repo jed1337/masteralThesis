@@ -1,0 +1,37 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_b_pkt <= 307
+|   max_b_pkt <= 0
+|   |   mean_f_pkt <= 62.333333: httpFlood (35.0/2.0)
+|   |   mean_f_pkt > 62.333333: normal (4.0)
+|   max_b_pkt > 0: httpFlood (1968.0/1.0)
+max_b_pkt > 307: normal (1993.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances         998               99.8    %
+Incorrectly Classified Instances         2                0.2    %
+Kappa statistic                          0.996 
+Mean absolute error                      0.0028
+Root mean squared error                  0.0426
+Relative absolute error                  0.5639 %
+Root relative squared error              8.5259 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.000    1.000      0.996    0.998      0.996    1.000     1.000     normal
+                 1.000    0.004    0.996      1.000    0.998      0.996    1.000     1.000     httpFlood
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 498   2 |   a = normal
+   0 500 |   b = httpFlood

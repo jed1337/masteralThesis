@@ -1,0 +1,357 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_f_time <= 1.04374
+|   total_f_bytes <= 46: tcpFlood (2330.0/381.0)
+|   total_f_bytes > 46
+|   |   rfb_bytes <= 0.314223
+|   |   |   min_b_pkt <= 0
+|   |   |   |   total_f_packets <= 1525
+|   |   |   |   |   mean_f_time <= 0.00378
+|   |   |   |   |   |   total_f_bytes <= 60
+|   |   |   |   |   |   |   total_f_bytes <= 54: normal (2.0/1.0)
+|   |   |   |   |   |   |   total_f_bytes > 54: httpFlood (19.0/3.0)
+|   |   |   |   |   |   total_f_bytes > 60
+|   |   |   |   |   |   |   mean_f_time <= 0.002272
+|   |   |   |   |   |   |   |   mean_f_pkt <= 56
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.001001: httpFlood (23.0/7.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.001001
+|   |   |   |   |   |   |   |   |   |   total_f_packets <= 1473: normal (32.0)
+|   |   |   |   |   |   |   |   |   |   total_f_packets > 1473
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001645: udpFlood (14.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.001645
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.024784: normal (16.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.024784: udpFlood (3.0)
+|   |   |   |   |   |   |   |   mean_f_pkt > 56: udpFlood (146.0/33.0)
+|   |   |   |   |   |   |   mean_f_time > 0.002272
+|   |   |   |   |   |   |   |   mean_f_time <= 0.003201
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.002576
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001873
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002345
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.00175: udpFlood (17.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.00175
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1441: udpFlood (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1441: normal (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002345: udpFlood (74.0/2.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.001873
+|   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.032085
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.00248: normal (32.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.00248
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1340: normal (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1340: udpFlood (2.0)
+|   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.032085: udpFlood (11.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.002576
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002335: udpFlood (164.0/5.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.002335
+|   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.042644
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002531
+|   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.00289: normal (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.00289
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002451: udpFlood (20.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002451
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.019888: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.019888: udpFlood (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002531
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1069
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.003147: udpFlood (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.003147: normal (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1069: normal (8.0)
+|   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.042644: udpFlood (35.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.003201
+|   |   |   |   |   |   |   |   |   max_f_time <= 0.052167
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002732: udpFlood (6.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.002732
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.003621: normal (28.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.003621
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.024397: udpFlood (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.024397: normal (4.0/1.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 0.052167: udpFlood (7.0)
+|   |   |   |   |   mean_f_time > 0.00378
+|   |   |   |   |   |   mean_f_time <= 0.010771: udpFlood (1504.0/2.0)
+|   |   |   |   |   |   mean_f_time > 0.010771
+|   |   |   |   |   |   |   total_f_bytes <= 120: slowRead (14.0)
+|   |   |   |   |   |   |   total_f_bytes > 120: udpFlood (11.0/2.0)
+|   |   |   |   total_f_packets > 1525: normal (242.0/2.0)
+|   |   |   min_b_pkt > 0
+|   |   |   |   std_f_pkt <= 31.935699: normal (334.0)
+|   |   |   |   std_f_pkt > 31.935699
+|   |   |   |   |   rfb_packets <= 1.9: slowHeaders (17.0/1.0)
+|   |   |   |   |   rfb_packets > 1.9
+|   |   |   |   |   |   std_f_pkt <= 60.105636
+|   |   |   |   |   |   |   mean_f_time <= 0.038994
+|   |   |   |   |   |   |   |   std_f_time <= 0.000743
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.000492
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.000662
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.000416
+|   |   |   |   |   |   |   |   |   |   |   |   max_b_time <= 0.001168: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_b_time > 0.001168: slowHeaders (4.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.000416: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.000662: normal (19.0/6.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.000492: slowRead (2.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.000743
+|   |   |   |   |   |   |   |   |   total_b_bytes <= 11792: normal (2.0/1.0)
+|   |   |   |   |   |   |   |   |   total_b_bytes > 11792
+|   |   |   |   |   |   |   |   |   |   max_b_time <= 0.00144: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   max_b_time > 0.00144: slowRead (53.0/17.0)
+|   |   |   |   |   |   |   mean_f_time > 0.038994: slowHeaders (3.0)
+|   |   |   |   |   |   std_f_pkt > 60.105636
+|   |   |   |   |   |   |   max_f_time <= 0.0022: slowHeaders (4.0)
+|   |   |   |   |   |   |   max_f_time > 0.0022
+|   |   |   |   |   |   |   |   mean_f_pkt <= 80.733333: slowRead (89.0/8.0)
+|   |   |   |   |   |   |   |   mean_f_pkt > 80.733333: slowHeaders (2.0)
+|   |   rfb_bytes > 0.314223
+|   |   |   total_b_bytes <= 44
+|   |   |   |   mean_f_time <= 0.079777
+|   |   |   |   |   mean_f_time <= 0.028167: normal (8.0)
+|   |   |   |   |   mean_f_time > 0.028167: tcpFlood (76.0/25.0)
+|   |   |   |   mean_f_time > 0.079777: normal (20.0)
+|   |   |   total_b_bytes > 44
+|   |   |   |   max_b_time <= 0.013808
+|   |   |   |   |   rfb_packets <= 1.555556
+|   |   |   |   |   |   std_f_time <= 0.004681
+|   |   |   |   |   |   |   max_b_time <= 0.008226
+|   |   |   |   |   |   |   |   max_f_time <= 0.006811
+|   |   |   |   |   |   |   |   |   max_b_time <= 0.004298
+|   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.001713: httpFlood (514.0/21.0)
+|   |   |   |   |   |   |   |   |   |   mean_f_time > 0.001713
+|   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.005822: normal (7.0)
+|   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.005822: httpFlood (5.0/1.0)
+|   |   |   |   |   |   |   |   |   max_b_time > 0.004298
+|   |   |   |   |   |   |   |   |   |   total_f_packets <= 5: normal (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   total_f_packets > 5
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001192: httpFlood (2.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.001192
+|   |   |   |   |   |   |   |   |   |   |   |   max_b_time <= 0.007184: normal (75.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_b_time > 0.007184: httpFlood (2.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.006811
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.002131: httpFlood (13.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.002131
+|   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002569: normal (27.0/11.0)
+|   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002569
+|   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.008511: httpFlood (57.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.008511
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 478.528694: normal (27.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 478.528694
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.003386: normal (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.003386: httpFlood (23.0/3.0)
+|   |   |   |   |   |   |   max_b_time > 0.008226
+|   |   |   |   |   |   |   |   max_f_time <= 0.009068: normal (55.0/8.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.009068
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.003518: httpFlood (9.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.003518
+|   |   |   |   |   |   |   |   |   |   mean_f_pkt <= 74.583333: normal (76.0/24.0)
+|   |   |   |   |   |   |   |   |   |   mean_f_pkt > 74.583333
+|   |   |   |   |   |   |   |   |   |   |   max_b_time <= 0.009727: httpFlood (6.0)
+|   |   |   |   |   |   |   |   |   |   |   max_b_time > 0.009727: normal (4.0/1.0)
+|   |   |   |   |   |   std_f_time > 0.004681
+|   |   |   |   |   |   |   total_f_packets <= 4
+|   |   |   |   |   |   |   |   std_f_time <= 0.0058: normal (5.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.0058: httpFlood (3.0)
+|   |   |   |   |   |   |   total_f_packets > 4
+|   |   |   |   |   |   |   |   total_f_bytes <= 440: httpFlood (161.0/37.0)
+|   |   |   |   |   |   |   |   total_f_bytes > 440
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.004463: httpFlood (85.0/18.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.004463
+|   |   |   |   |   |   |   |   |   |   total_f_bytes <= 447
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.005089
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 327.238994: normal (37.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 327.238994
+|   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.004687: httpFlood (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.004687
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.004822: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.004822: httpFlood (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.005089
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 272.711573
+|   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.006716
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.008487: normal (16.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.008487: httpFlood (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.006716: httpFlood (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 272.711573: httpFlood (46.0/6.0)
+|   |   |   |   |   |   |   |   |   |   total_f_bytes > 447
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.006531
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 284.195819: httpFlood (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 284.195819
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.005759: httpFlood (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.005759: normal (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.006531: normal (6.0)
+|   |   |   |   |   rfb_packets > 1.555556
+|   |   |   |   |   |   max_f_time <= 0.012195
+|   |   |   |   |   |   |   mean_f_pkt <= 76.8: normal (5.0)
+|   |   |   |   |   |   |   mean_f_pkt > 76.8: httpFlood (15.0)
+|   |   |   |   |   |   max_f_time > 0.012195: httpFlood (30.0)
+|   |   |   |   max_b_time > 0.013808
+|   |   |   |   |   max_f_time <= 0.013795
+|   |   |   |   |   |   total_f_packets <= 5: httpFlood (2.0)
+|   |   |   |   |   |   total_f_packets > 5
+|   |   |   |   |   |   |   mean_f_time <= 0.005603: normal (14.0/3.0)
+|   |   |   |   |   |   |   mean_f_time > 0.005603: httpFlood (2.0)
+|   |   |   |   |   max_f_time > 0.013795: httpFlood (1010.0/33.0)
+max_f_time > 1.04374
+|   total_b_bytes <= 1075
+|   |   mean_f_time <= 2.90036
+|   |   |   mean_f_pkt <= 63.692308
+|   |   |   |   mean_f_pkt <= 57.333333: normal (3.0)
+|   |   |   |   mean_f_pkt > 57.333333
+|   |   |   |   |   total_f_packets <= 3: slowHeaders (33.0/3.0)
+|   |   |   |   |   total_f_packets > 3: slowRead (137.0/42.0)
+|   |   |   mean_f_pkt > 63.692308
+|   |   |   |   total_f_packets <= 7: normal (3.0/1.0)
+|   |   |   |   total_f_packets > 7: slowHeaders (12.0)
+|   |   mean_f_time > 2.90036
+|   |   |   std_f_time <= 5.485368: slowHeaders (1016.0)
+|   |   |   std_f_time > 5.485368
+|   |   |   |   pps_b <= 0.166791: slowHeaders (895.0/96.0)
+|   |   |   |   pps_b > 0.166791
+|   |   |   |   |   min_b_pkt <= 52: slowHeaders (7.0)
+|   |   |   |   |   min_b_pkt > 52: slowRead (10.0)
+|   total_b_bytes > 1075
+|   |   psh_b_cnt <= 1
+|   |   |   rfb_bytes <= 0.581409
+|   |   |   |   rfb_packets <= 1.9
+|   |   |   |   |   std_f_pkt <= 65.393003
+|   |   |   |   |   |   mean_f_time <= 4.336513
+|   |   |   |   |   |   |   mean_f_time <= 4.318059
+|   |   |   |   |   |   |   |   mean_f_pkt <= 66.6: slowRead (7.0/1.0)
+|   |   |   |   |   |   |   |   mean_f_pkt > 66.6: normal (11.0/1.0)
+|   |   |   |   |   |   |   mean_f_time > 4.318059: normal (52.0/1.0)
+|   |   |   |   |   |   mean_f_time > 4.336513
+|   |   |   |   |   |   |   mean_f_time <= 5.083473
+|   |   |   |   |   |   |   |   pps_b <= 0.207855
+|   |   |   |   |   |   |   |   |   pps_b <= 0.206272
+|   |   |   |   |   |   |   |   |   |   pps_b <= 0.205464
+|   |   |   |   |   |   |   |   |   |   |   std_f_pkt <= 50.864247: normal (20.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_pkt > 50.864247: slowRead (4.0)
+|   |   |   |   |   |   |   |   |   |   pps_b > 0.205464: slowRead (11.0)
+|   |   |   |   |   |   |   |   |   pps_b > 0.206272: normal (20.0)
+|   |   |   |   |   |   |   |   pps_b > 0.207855
+|   |   |   |   |   |   |   |   |   mean_f_pkt <= 67.071429
+|   |   |   |   |   |   |   |   |   |   pps_b <= 0.208843
+|   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.208089: slowRead (3.0)
+|   |   |   |   |   |   |   |   |   |   |   pps_b > 0.208089: slowHeaders (5.0)
+|   |   |   |   |   |   |   |   |   |   pps_b > 0.208843
+|   |   |   |   |   |   |   |   |   |   |   mean_f_pkt <= 65.818182
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 4.666605
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 14: slowRead (11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 14
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.215074
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.21414
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.21074: slowRead (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.21074: slowHeaders (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.21414: slowRead (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.215074
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.217313: normal (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.217313: slowRead (59.0/23.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 4.666605: normal (5.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_pkt > 65.818182
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.212531
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.21074
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.210427: slowHeaders (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.210427: slowRead (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.21074: normal (23.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.212531
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.2185: slowRead (19.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.2185
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_b_time <= 27.144783: slowRead (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_b_time > 27.144783: normal (14.0)
+|   |   |   |   |   |   |   |   |   mean_f_pkt > 67.071429
+|   |   |   |   |   |   |   |   |   |   pps_b <= 0.20855: normal (3.0)
+|   |   |   |   |   |   |   |   |   |   pps_b > 0.20855
+|   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.399651
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 28.163232: slowRead (52.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 28.163232
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.212217: slowRead (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.212217: normal (5.0)
+|   |   |   |   |   |   |   |   |   |   |   pps_b > 0.399651: normal (5.0/1.0)
+|   |   |   |   |   |   |   mean_f_time > 5.083473: slowHeaders (7.0)
+|   |   |   |   |   std_f_pkt > 65.393003
+|   |   |   |   |   |   total_b_bytes <= 2360
+|   |   |   |   |   |   |   total_f_bytes <= 1013: slowRead (89.0)
+|   |   |   |   |   |   |   total_f_bytes > 1013
+|   |   |   |   |   |   |   |   mean_f_time <= 5.072504
+|   |   |   |   |   |   |   |   |   pps_b <= 0.207855
+|   |   |   |   |   |   |   |   |   |   pps_b <= 0.204347: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   pps_b > 0.204347: slowRead (6.0)
+|   |   |   |   |   |   |   |   |   pps_b > 0.207855: normal (7.0)
+|   |   |   |   |   |   |   |   mean_f_time > 5.072504: slowRead (42.0/4.0)
+|   |   |   |   |   |   total_b_bytes > 2360
+|   |   |   |   |   |   |   total_b_bytes <= 11967: slowHeaders (2.0)
+|   |   |   |   |   |   |   total_b_bytes > 11967: normal (5.0)
+|   |   |   |   rfb_packets > 1.9
+|   |   |   |   |   total_b_bytes <= 11967
+|   |   |   |   |   |   max_f_time <= 1.470982: slowRead (3.0)
+|   |   |   |   |   |   max_f_time > 1.470982
+|   |   |   |   |   |   |   mean_f_time <= 0.276584
+|   |   |   |   |   |   |   |   std_f_pkt <= 83.629899: slowHeaders (6.0/1.0)
+|   |   |   |   |   |   |   |   std_f_pkt > 83.629899: slowRead (2.0)
+|   |   |   |   |   |   |   mean_f_time > 0.276584: slowHeaders (15.0)
+|   |   |   |   |   total_b_bytes > 11967: normal (2.0)
+|   |   |   rfb_bytes > 0.581409
+|   |   |   |   total_f_bytes <= 1050
+|   |   |   |   |   mean_f_time <= 4.043019
+|   |   |   |   |   |   std_f_time <= 5.089092: slowRead (9.0)
+|   |   |   |   |   |   std_f_time > 5.089092: normal (16.0)
+|   |   |   |   |   mean_f_time > 4.043019
+|   |   |   |   |   |   total_f_packets <= 13: normal (2.0)
+|   |   |   |   |   |   total_f_packets > 13: slowRead (91.0/8.0)
+|   |   |   |   total_f_bytes > 1050
+|   |   |   |   |   mean_f_pkt <= 66.928571
+|   |   |   |   |   |   rfb_packets <= 1.5
+|   |   |   |   |   |   |   pps_b <= 0.389483: slowRead (18.0)
+|   |   |   |   |   |   |   pps_b > 0.389483: normal (11.0)
+|   |   |   |   |   |   rfb_packets > 1.5: slowRead (68.0)
+|   |   |   |   |   mean_f_pkt > 66.928571
+|   |   |   |   |   |   mean_f_pkt <= 77.583333: slowRead (944.0/9.0)
+|   |   |   |   |   |   mean_f_pkt > 77.583333
+|   |   |   |   |   |   |   std_f_pkt <= 95.895016
+|   |   |   |   |   |   |   |   total_f_packets <= 16
+|   |   |   |   |   |   |   |   |   mean_f_time <= 4.051342: normal (10.0/1.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 4.051342
+|   |   |   |   |   |   |   |   |   |   max_b_time <= 19.258349: normal (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   max_b_time > 19.258349
+|   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.20673
+|   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 14
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 21.329141: slowRead (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 21.329141: normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 14
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 6.274783: normal (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 6.274783: slowRead (8.0)
+|   |   |   |   |   |   |   |   |   |   |   pps_b > 0.20673: slowRead (23.0)
+|   |   |   |   |   |   |   |   total_f_packets > 16: slowRead (9.0)
+|   |   |   |   |   |   |   std_f_pkt > 95.895016: slowRead (191.0)
+|   |   psh_b_cnt > 1: normal (75.0/1.0)
+
+Number of Leaves  : 	160
+
+Size of the tree : 	319
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2837               94.5982 %
+Incorrectly Classified Instances       162                5.4018 %
+Kappa statistic                          0.9352
+Mean absolute error                      0.0341
+Root mean squared error                  0.1314
+Relative absolute error                 12.2849 %
+Root relative squared error             35.2544 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    0.998      1.000    0.999      0.999    1.000     0.998     tcpFlood
+                 0.868    0.022    0.885      0.868    0.877      0.852    0.888     0.877     normal
+                 0.918    0.001    0.996      0.918    0.955      0.948    0.994     0.991     httpFlood
+                 0.944    0.009    0.954      0.944    0.949      0.939    0.992     0.959     slowRead
+                 0.956    0.032    0.857      0.956    0.904      0.885    0.980     0.836     slowHeaders
+                 0.990    0.000    1.000      0.990    0.995      0.994    0.997     0.996     udpFlood
+Weighted Avg.    0.946    0.011    0.948      0.946    0.946      0.936    0.975     0.943     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 500   0   0   0   0   0 |   a = tcpFlood
+   0 433   0   6  60   0 |   b = normal
+   0  41 459   0   0   0 |   c = httpFlood
+   0   8   0 472  20   0 |   d = slowRead
+   0   4   2  16 478   0 |   e = slowHeaders
+   1   3   0   1   0 495 |   f = udpFlood

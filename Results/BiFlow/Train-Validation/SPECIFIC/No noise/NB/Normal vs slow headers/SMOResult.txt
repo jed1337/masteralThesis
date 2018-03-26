@@ -1,0 +1,40 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         3.0756 * (normalized) max_f_pkt
+ -       2.0578
+
+Number of kernel evaluations: 149828 (56.324% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         648               64.8    %
+Incorrectly Classified Instances       352               35.2    %
+Kappa statistic                          0.296 
+Mean absolute error                      0.352 
+Root mean squared error                  0.5933
+Relative absolute error                 70.4    %
+Root relative squared error            118.6592 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.704    0.587      1.000    0.740      0.417    0.648     0.587     normal
+                 0.296    0.000    1.000      0.296    0.457      0.417    0.648     0.648     slowHeaders
+Weighted Avg.    0.648    0.352    0.793      0.648    0.598      0.417    0.648     0.617     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+ 352 148 |   b = slowHeaders

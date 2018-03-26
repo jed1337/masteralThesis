@@ -10,8 +10,9 @@ import driver.mode.HybridIsAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.HalfNoise;
 import driver.mode.noiseLevel.NoiseLevel;
+import driver.modeAdapter.NormalVersusSpecificAttack;
 import evaluation.Classify;
-import evaluation.TrainValidation;
+import evaluation.TrainTest;
 import featureExtraction.BiFlowExtraction;
 import featureExtraction.Decorator.FinalDatabase;
 import featureSelection.FeatureSelection;
@@ -23,6 +24,8 @@ import featureSelection.wrappers.NBWrapper;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import preprocessFiles.PreprocessTCPFlood;
+import preprocessFiles.PreprocessUDPFlood;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
@@ -75,8 +78,8 @@ public final class Driver {
 //         new Feb2CNISDatabase(new NetmateExtraction())
       );
 
-      final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
-//      final int instanceCount = ArffInstanceCount.SIX_K;
+//      final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
+      final int instanceCount = ArffInstanceCount.SIX_K;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
          NoFeatureSelection.getInstance(),
@@ -96,9 +99,9 @@ public final class Driver {
       };
 
       for (FeatureSelection fs : featureSelections) {
-         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
+//         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
+         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
+         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
 //         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
 //         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
 //         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
@@ -159,8 +162,8 @@ public final class Driver {
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
          throws IOException, Exception {
 
-      Classify classify = new TrainValidation();
-//      Classify classify = new TrainTest();
+//      Classify classify = new TrainValidation();
+      Classify classify = new TrainTest();
 //      Classify classify = new CrossValidation();
 
       new SystemTrain.Buidler()

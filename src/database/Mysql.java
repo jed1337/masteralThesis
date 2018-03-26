@@ -186,6 +186,8 @@ public final class Mysql implements Database {
             ps.setString(psIndex++, classifierName);
             ps.setString(psIndex++, classNames[i]);
 
+            //Used to manually calculate the accuracy per class 
+            //since True positive rate == recall (They point to the same function)
             double tp = eval.numTruePositives(i);
             double fp = eval.numFalsePositives(i);
             double tn = eval.numTrueNegatives(i);

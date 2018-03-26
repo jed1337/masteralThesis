@@ -1,0 +1,162 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+cof = N/A: normal (5.0)
+cof = 0: normal (0.0)
+cof = 1: normal (0.0)
+cof = 2: httpFlood (17.0/1.0)
+cof = 3: normal (0.0)
+cof = 4: httpFlood (17.0)
+cof = 5: normal (0.0)
+cof = 6: normal (0.0)
+cof = 7: normal (0.0)
+cof = 8: normal (0.0)
+cof = 9: normal (0.0)
+cof = 10: normal (0.0)
+cof = 11: normal (0.0)
+cof = 12: normal (0.0)
+cof = 13: normal (0.0)
+cof = 14: normal (0.0)
+cof = 15: normal (0.0)
+cof = 16: normal (0.0)
+cof = 17: normal (0.0)
+cof = 18: httpFlood (51.0/1.0)
+cof = 19: httpFlood (3.0)
+cof = 20: normal (0.0)
+cof = 21: httpFlood (6.0)
+cof = 22: normal (0.0)
+cof = 23: httpFlood (8.0)
+cof = 24: normal (0.0)
+cof = 25: normal (0.0)
+cof = 26: normal (0.0)
+cof = 27
+|   max_f_pkt <= 168: normal (1993.0)
+|   max_f_pkt > 168: httpFlood (52.0)
+cof = 28: normal (0.0)
+cof = 29: httpFlood (36.0)
+cof = 30: httpFlood (11.0)
+cof = 31: httpFlood (1801.0)
+cof = 32: normal (0.0)
+cof = 33: normal (0.0)
+cof = 34: normal (0.0)
+cof = 35: normal (0.0)
+cof = 36: normal (0.0)
+cof = 37: normal (0.0)
+cof = 38: normal (0.0)
+cof = 39: normal (0.0)
+cof = 40: normal (0.0)
+cof = 41: normal (0.0)
+cof = 42: normal (0.0)
+cof = 43: normal (0.0)
+cof = 44: normal (0.0)
+cof = 45: normal (0.0)
+cof = 46: normal (0.0)
+cof = 47: normal (0.0)
+cof = 48: normal (0.0)
+cof = 49: normal (0.0)
+cof = 50: normal (0.0)
+cof = 51: normal (0.0)
+cof = 52: normal (0.0)
+cof = 53: normal (0.0)
+cof = 54: normal (0.0)
+cof = 55: normal (0.0)
+cof = 56: normal (0.0)
+cof = 57: normal (0.0)
+cof = 58: normal (0.0)
+cof = 59: normal (0.0)
+cof = 60: normal (0.0)
+cof = 61: normal (0.0)
+cof = 62: normal (0.0)
+cof = 63: normal (0.0)
+cof = 64: normal (0.0)
+cof = 65: normal (0.0)
+cof = 66: normal (0.0)
+cof = 67: normal (0.0)
+cof = 68: normal (0.0)
+cof = 69: normal (0.0)
+cof = 70: normal (0.0)
+cof = 71: normal (0.0)
+cof = 72: normal (0.0)
+cof = 73: normal (0.0)
+cof = 74: normal (0.0)
+cof = 75: normal (0.0)
+cof = 76: normal (0.0)
+cof = 77: normal (0.0)
+cof = 78: normal (0.0)
+cof = 79: normal (0.0)
+cof = 80: normal (0.0)
+cof = 81: normal (0.0)
+cof = 82: normal (0.0)
+cof = 83: normal (0.0)
+cof = 84: normal (0.0)
+cof = 85: normal (0.0)
+cof = 86: normal (0.0)
+cof = 87: normal (0.0)
+cof = 88: normal (0.0)
+cof = 89: normal (0.0)
+cof = 90: normal (0.0)
+cof = 91: normal (0.0)
+cof = 92: normal (0.0)
+cof = 93: normal (0.0)
+cof = 94: normal (0.0)
+cof = 95: normal (0.0)
+cof = 96: normal (0.0)
+cof = 97: normal (0.0)
+cof = 98: normal (0.0)
+cof = 99: normal (0.0)
+cof = 100: normal (0.0)
+cof = 101: normal (0.0)
+cof = 102: normal (0.0)
+cof = 103: normal (0.0)
+cof = 104: normal (0.0)
+cof = 105: normal (0.0)
+cof = 106: normal (0.0)
+cof = 107: normal (0.0)
+cof = 108: normal (0.0)
+cof = 109: normal (0.0)
+cof = 110: normal (0.0)
+cof = 111: normal (0.0)
+cof = 112: normal (0.0)
+cof = 113: normal (0.0)
+cof = 114: normal (0.0)
+cof = 115: normal (0.0)
+cof = 116: normal (0.0)
+cof = 117: normal (0.0)
+cof = 118: normal (0.0)
+cof = 119: normal (0.0)
+cof = 120: normal (0.0)
+cof = 121: normal (0.0)
+cof = 122: normal (0.0)
+cof = 123: normal (0.0)
+cof = 124: normal (0.0)
+cof = 125: normal (0.0)
+cof = 126: normal (0.0)
+cof = 127: normal (0.0)
+
+Number of Leaves  : 	130
+
+Size of the tree : 	132
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0003
+Root mean squared error                  0.0037
+Relative absolute error                  0.0667 %
+Root relative squared error              0.7337 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     httpFlood
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = normal
+   0 500 |   b = httpFlood

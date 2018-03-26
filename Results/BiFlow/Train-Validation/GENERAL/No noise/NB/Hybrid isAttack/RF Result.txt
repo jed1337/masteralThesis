@@ -1,0 +1,1754 @@
+=== Classifier ===
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilitiesAll the base classifiers: 
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3953/13)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (5/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (8/1)
+|   |   |   std_f_pkt >= 11 : attack (10/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4384/0)
+|   std_f_pkt >= 36.78 : attack (2078/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3981/16)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 3.89 : attack (9/0)
+|   |   |   std_f_pkt >= 3.89
+|   |   |   |   std_f_pkt < 11.61 : attack (8/3)
+|   |   |   |   std_f_pkt >= 11.61 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4474/0)
+|   std_f_pkt >= 36.78 : attack (1958/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (4009/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (7/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (5/1)
+|   |   |   std_f_pkt >= 11 : attack (11/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.86 : normal (4378/0)
+|   std_f_pkt >= 36.86 : attack (2027/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   std_f_pkt < 0.94 : attack (4016/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (2/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (11/1)
+|   |   |   std_f_pkt >= 11 : attack (13/0)
+std_f_pkt >= 26.17
+|   std_f_pkt < 36.78 : normal (4376/0)
+|   std_f_pkt >= 36.78 : attack (2018/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3968/14)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (28/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.86 : normal (4400/0)
+|   std_f_pkt >= 36.86 : attack (2042/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3921/7)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (3/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (11/2)
+|   |   |   std_f_pkt >= 11 : attack (12/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4478/0)
+|   std_f_pkt >= 36.86 : attack (2013/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3946/5)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (32/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4395/0)
+|   std_f_pkt >= 36.78 : attack (2065/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3972/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83 : attack (27/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4432/0)
+|   std_f_pkt >= 36.78 : attack (2005/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3906/12)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.5
+|   |   |   std_f_pkt < 2.83 : normal (5/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 11
+|   |   |   |   |   std_f_pkt < 3.89 : attack (7/0)
+|   |   |   |   |   std_f_pkt >= 3.89 : attack (12/1)
+|   |   |   |   std_f_pkt >= 11 : attack (9/0)
+|   |   std_f_pkt >= 26.5 : normal (4455/0)
+|   std_f_pkt >= 36.78 : attack (2045/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3986/7)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.5
+|   |   |   std_f_pkt < 2.83 : normal (5/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 11
+|   |   |   |   |   std_f_pkt < 3.89 : attack (4/0)
+|   |   |   |   |   std_f_pkt >= 3.89 : attack (7/1)
+|   |   |   |   std_f_pkt >= 11 : attack (14/0)
+|   |   std_f_pkt >= 26.5 : normal (4388/0)
+|   std_f_pkt >= 36.78 : attack (2035/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   std_f_pkt < 0.94 : attack (3879/10)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (9/1)
+|   |   |   std_f_pkt >= 11 : attack (10/0)
+std_f_pkt >= 26.17
+|   std_f_pkt < 36.86 : normal (4459/0)
+|   std_f_pkt >= 36.86 : attack (2075/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (4086/13)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.86
+|   |   std_f_pkt < 26.48
+|   |   |   std_f_pkt < 2.83 : normal (4/0)
+|   |   |   std_f_pkt >= 2.83 : attack (18/0)
+|   |   std_f_pkt >= 26.48 : normal (4317/0)
+|   std_f_pkt >= 36.86 : attack (2014/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3955/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (5/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (7/2)
+|   |   |   std_f_pkt >= 11 : attack (11/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4410/0)
+|   std_f_pkt >= 36.78 : attack (2049/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3993/18)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (15/1)
+|   |   |   std_f_pkt >= 11 : attack (9/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4384/0)
+|   std_f_pkt >= 36.78 : attack (2031/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3950/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (24/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4426/0)
+|   std_f_pkt >= 36.86 : attack (2038/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3988/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83 : attack (17/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4443/0)
+|   std_f_pkt >= 36.86 : attack (1988/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3898/16)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 3.89 : attack (9/0)
+|   |   |   std_f_pkt >= 3.89
+|   |   |   |   std_f_pkt < 11.61 : attack (9/1)
+|   |   |   |   std_f_pkt >= 11.61 : attack (7/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4480/0)
+|   std_f_pkt >= 36.78 : attack (2035/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (4002/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (17/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4401/0)
+|   std_f_pkt >= 36.78 : attack (2018/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3921/18)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83 : attack (26/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4481/0)
+|   std_f_pkt >= 36.78 : attack (2008/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3964/8)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 12.27
+|   |   |   |   std_f_pkt < 3.89 : attack (5/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (17/1)
+|   |   |   std_f_pkt >= 12.27 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4335/0)
+|   std_f_pkt >= 36.86 : attack (2109/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 1.89 : attack (3913/16)
+|   std_f_pkt >= 1.89 : attack (18/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4437/0)
+|   std_f_pkt >= 36.78 : attack (2071/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3876/13)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11.61
+|   |   |   |   std_f_pkt < 3.89 : attack (8/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (11/2)
+|   |   |   std_f_pkt >= 11.61 : attack (9/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4512/0)
+|   std_f_pkt >= 36.86 : attack (2021/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3910/16)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (6/0)
+|   |   std_f_pkt >= 2.83 : attack (28/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4423/0)
+|   std_f_pkt >= 36.78 : attack (2072/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 1.89 : attack (3939/16)
+|   std_f_pkt >= 1.89 : attack (27/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4502/0)
+|   std_f_pkt >= 36.78 : attack (1971/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (4047/7)
+|   |   std_f_pkt >= 1.89 : attack (5/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11 : attack (9/2)
+|   |   std_f_pkt >= 11 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 37.02 : normal (4370/0)
+|   std_f_pkt >= 37.02 : attack (2000/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3905/14)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11.61
+|   |   |   |   std_f_pkt < 3.89 : attack (7/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (11/1)
+|   |   |   std_f_pkt >= 11.61 : attack (12/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.86 : normal (4443/0)
+|   std_f_pkt >= 36.86 : attack (2058/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3939/14)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (8/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (15/1)
+|   |   |   std_f_pkt >= 11 : attack (10/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4406/0)
+|   std_f_pkt >= 36.86 : attack (2058/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3935/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11.91
+|   |   |   |   std_f_pkt < 3.89 : attack (7/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (15/4)
+|   |   |   std_f_pkt >= 11.91 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 37.02 : normal (4500/0)
+|   std_f_pkt >= 37.02 : attack (1973/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3984/10)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (26/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4367/0)
+|   std_f_pkt >= 36.78 : attack (2061/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3909/12)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (22/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4448/0)
+|   std_f_pkt >= 36.78 : attack (2059/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3971/6)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 3.89 : attack (9/0)
+|   |   |   std_f_pkt >= 3.89
+|   |   |   |   std_f_pkt < 12.27 : attack (11/1)
+|   |   |   |   std_f_pkt >= 12.27 : attack (7/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4425/0)
+|   std_f_pkt >= 36.78 : attack (2015/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (3976/9)
+|   |   std_f_pkt >= 1.89 : attack (9/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11 : attack (12/2)
+|   |   std_f_pkt >= 11 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4394/0)
+|   std_f_pkt >= 36.78 : attack (2040/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (4059/9)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (9/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (9/1)
+|   |   |   std_f_pkt >= 11 : attack (10/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4311/0)
+|   std_f_pkt >= 36.78 : attack (2038/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3994/19)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (11/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (8/1)
+|   |   |   std_f_pkt >= 11 : attack (12/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4381/0)
+|   std_f_pkt >= 36.78 : attack (2031/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3912/4)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83 : attack (26/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4475/0)
+|   std_f_pkt >= 36.78 : attack (2024/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (4008/11)
+|   |   std_f_pkt >= 1.89 : attack (3/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11.61 : attack (11/2)
+|   |   std_f_pkt >= 11.61 : attack (11/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4410/0)
+|   std_f_pkt >= 36.86 : attack (1996/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (4033/15)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (4/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (9/2)
+|   |   |   std_f_pkt >= 11 : attack (13/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4342/0)
+|   std_f_pkt >= 36.78 : attack (2037/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3964/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (15/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4383/0)
+|   std_f_pkt >= 36.78 : attack (2076/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 1.89 : attack (3970/14)
+|   std_f_pkt >= 1.89 : attack (19/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4392/0)
+|   std_f_pkt >= 36.78 : attack (2058/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3975/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83 : attack (22/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4395/0)
+|   std_f_pkt >= 36.78 : attack (2045/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   std_f_pkt < 1.89 : attack (3956/14)
+|   std_f_pkt >= 1.89 : attack (27/0)
+std_f_pkt >= 26.17
+|   std_f_pkt < 36.78 : normal (4400/0)
+|   std_f_pkt >= 36.78 : attack (2056/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (4008/9)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.5
+|   |   |   std_f_pkt < 2.83 : normal (4/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 11
+|   |   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   |   std_f_pkt >= 3.89 : attack (8/1)
+|   |   |   |   std_f_pkt >= 11 : attack (11/0)
+|   |   std_f_pkt >= 26.5 : normal (4351/0)
+|   std_f_pkt >= 36.78 : attack (2051/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (4044/14)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (5/0)
+|   |   std_f_pkt >= 2.83 : attack (28/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4273/0)
+|   std_f_pkt >= 36.78 : attack (2089/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3971/12)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (5/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (5/1)
+|   |   |   std_f_pkt >= 11 : attack (9/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4369/0)
+|   std_f_pkt >= 36.78 : attack (2078/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3901/12)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83 : attack (28/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4467/0)
+|   std_f_pkt >= 36.78 : attack (2041/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3963/9)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (4/0)
+|   |   std_f_pkt >= 2.83 : attack (35/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4415/0)
+|   std_f_pkt >= 36.78 : attack (2022/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3893/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (5/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (11/2)
+|   |   |   std_f_pkt >= 11 : attack (13/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4420/0)
+|   std_f_pkt >= 36.78 : attack (2095/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3928/16)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (27/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4427/0)
+|   std_f_pkt >= 36.78 : attack (2056/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   std_f_pkt < 0.94 : attack (3978/15)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (34/0)
+std_f_pkt >= 26.17
+|   std_f_pkt < 36.78 : normal (4426/0)
+|   std_f_pkt >= 36.78 : attack (2000/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (3941/10)
+|   |   std_f_pkt >= 1.89 : attack (7/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11 : attack (6/1)
+|   |   std_f_pkt >= 11 : attack (15/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4429/0)
+|   std_f_pkt >= 36.78 : attack (2041/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (3945/16)
+|   |   std_f_pkt >= 1.89 : attack (4/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11 : attack (13/2)
+|   |   std_f_pkt >= 11 : attack (5/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4467/0)
+|   std_f_pkt >= 36.78 : attack (2005/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3988/12)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 11.61
+|   |   |   std_f_pkt < 2.94 : normal (1/0)
+|   |   |   std_f_pkt >= 2.94 : attack (10/2)
+|   |   std_f_pkt >= 11.61 : attack (16/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.86 : normal (4396/0)
+|   std_f_pkt >= 36.86 : attack (2028/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3922/12)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 3.89 : attack (9/0)
+|   |   |   std_f_pkt >= 3.89
+|   |   |   |   std_f_pkt < 11.61 : attack (12/1)
+|   |   |   |   std_f_pkt >= 11.61 : attack (8/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.86 : normal (4450/0)
+|   std_f_pkt >= 36.86 : attack (2036/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3964/15)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 25.74
+|   |   |   std_f_pkt < 2.83 : normal (5/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 3.89 : attack (9/0)
+|   |   |   |   std_f_pkt >= 3.89
+|   |   |   |   |   std_f_pkt < 11 : attack (13/3)
+|   |   |   |   |   std_f_pkt >= 11 : attack (7/0)
+|   |   std_f_pkt >= 25.74 : normal (4379/0)
+|   std_f_pkt >= 36.78 : attack (2062/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (3961/10)
+|   |   std_f_pkt >= 1.89 : attack (5/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11.61 : attack (9/1)
+|   |   std_f_pkt >= 11.61 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4411/0)
+|   std_f_pkt >= 36.78 : attack (2045/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   std_f_pkt < 0.94 : attack (3907/21)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83 : attack (31/0)
+std_f_pkt >= 26.17
+|   std_f_pkt < 36.86 : normal (4439/0)
+|   std_f_pkt >= 36.86 : attack (2060/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3862/15)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83 : attack (26/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4492/0)
+|   std_f_pkt >= 36.86 : attack (2057/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   std_f_pkt < 0.94 : attack (3950/16)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (4/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (10/1)
+|   |   |   std_f_pkt >= 11 : attack (10/0)
+std_f_pkt >= 26.17
+|   std_f_pkt < 36.78 : normal (4487/0)
+|   std_f_pkt >= 36.78 : attack (1975/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (3975/13)
+|   |   std_f_pkt >= 1.89 : attack (1/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11 : attack (10/1)
+|   |   std_f_pkt >= 11 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4378/0)
+|   std_f_pkt >= 36.78 : attack (2067/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3953/10)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (27/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4399/0)
+|   std_f_pkt >= 36.86 : attack (2059/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 25.74
+|   std_f_pkt < 0.94 : attack (3893/10)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83 : attack (27/0)
+std_f_pkt >= 25.74
+|   std_f_pkt < 36.78 : normal (4435/0)
+|   std_f_pkt >= 36.78 : attack (2082/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3976/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11.91
+|   |   |   |   std_f_pkt < 3.89 : attack (8/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (11/1)
+|   |   |   std_f_pkt >= 11.91 : attack (9/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4431/0)
+|   std_f_pkt >= 36.78 : attack (2002/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3964/13)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (1/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (12/1)
+|   |   |   std_f_pkt >= 11 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4453/0)
+|   std_f_pkt >= 36.78 : attack (1999/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (4035/8)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.5
+|   |   |   std_f_pkt < 2.83 : normal (6/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 11.61
+|   |   |   |   |   std_f_pkt < 3.89 : attack (8/0)
+|   |   |   |   |   std_f_pkt >= 3.89 : attack (7/1)
+|   |   |   |   std_f_pkt >= 11.61 : attack (9/0)
+|   |   std_f_pkt >= 26.5 : normal (4331/0)
+|   std_f_pkt >= 36.78 : attack (2043/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3975/7)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.17
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   |   |   std_f_pkt >= 2.83
+|   |   |   |   |   std_f_pkt < 3.89 : attack (5/0)
+|   |   |   |   |   std_f_pkt >= 3.89 : attack (13/4)
+|   |   |   std_f_pkt >= 11 : attack (7/0)
+|   |   std_f_pkt >= 26.17 : normal (4435/0)
+|   std_f_pkt >= 36.78 : attack (2003/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3873/14)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (7/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (13/3)
+|   |   |   std_f_pkt >= 11 : attack (13/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4448/0)
+|   std_f_pkt >= 36.86 : attack (2084/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 25.74
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (4124/8)
+|   |   std_f_pkt >= 1.89 : attack (8/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11.61 : attack (11/1)
+|   |   std_f_pkt >= 11.61 : attack (7/0)
+std_f_pkt >= 25.74
+|   std_f_pkt < 36.78 : normal (4352/0)
+|   std_f_pkt >= 36.78 : attack (1937/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3886/12)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (3/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (14/1)
+|   |   |   std_f_pkt >= 11 : attack (12/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4539/0)
+|   std_f_pkt >= 36.78 : attack (1983/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3995/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (20/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4346/0)
+|   std_f_pkt >= 36.78 : attack (2077/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3938/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (8/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (8/1)
+|   |   |   std_f_pkt >= 11 : attack (16/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4376/0)
+|   std_f_pkt >= 36.86 : attack (2092/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (4014/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11.61
+|   |   |   |   std_f_pkt < 3.89 : attack (8/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (11/1)
+|   |   |   std_f_pkt >= 11.61 : attack (9/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4362/0)
+|   std_f_pkt >= 36.86 : attack (2033/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3938/10)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11.61
+|   |   |   |   std_f_pkt < 3.89 : attack (3/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (17/1)
+|   |   |   std_f_pkt >= 11.61 : attack (17/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4400/0)
+|   std_f_pkt >= 36.78 : attack (2062/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 1.89 : attack (3994/10)
+|   std_f_pkt >= 1.89 : attack (24/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4355/0)
+|   std_f_pkt >= 36.86 : attack (2066/0)
+
+Size of the tree : 7
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   std_f_pkt < 0.94 : attack (3981/10)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (4/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (9/2)
+|   |   |   std_f_pkt >= 11 : attack (9/0)
+std_f_pkt >= 26.17
+|   std_f_pkt < 36.78 : normal (4426/0)
+|   std_f_pkt >= 36.78 : attack (2008/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (4064/12)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83 : attack (19/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4412/0)
+|   std_f_pkt >= 36.78 : attack (1941/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3969/14)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (14/1)
+|   |   |   std_f_pkt >= 11 : attack (11/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4378/0)
+|   std_f_pkt >= 36.78 : attack (2059/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3898/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (27/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.86 : normal (4478/0)
+|   std_f_pkt >= 36.86 : attack (2035/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3911/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83 : attack (27/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4451/0)
+|   std_f_pkt >= 36.86 : attack (2047/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3990/17)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (10/1)
+|   |   |   std_f_pkt >= 11 : attack (11/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4377/0)
+|   std_f_pkt >= 36.78 : attack (2043/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (3961/15)
+|   |   std_f_pkt >= 1.89 : attack (2/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11.61 : attack (7/1)
+|   |   std_f_pkt >= 11.61 : attack (8/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4397/0)
+|   std_f_pkt >= 36.78 : attack (2064/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3923/18)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11.91
+|   |   |   |   std_f_pkt < 3.89 : attack (2/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (15/1)
+|   |   |   std_f_pkt >= 11.91 : attack (10/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4487/0)
+|   std_f_pkt >= 36.78 : attack (1999/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3969/8)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.17
+|   |   |   std_f_pkt < 2.83 : normal (6/0)
+|   |   |   std_f_pkt >= 2.83 : attack (23/0)
+|   |   std_f_pkt >= 26.17 : normal (4361/0)
+|   std_f_pkt >= 36.78 : attack (2080/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 25.74
+|   std_f_pkt < 0.94 : attack (3890/9)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83 : attack (22/0)
+std_f_pkt >= 25.74
+|   std_f_pkt < 36.78 : normal (4462/0)
+|   std_f_pkt >= 36.78 : attack (2062/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 3.89
+|   |   std_f_pkt < 1.89 : attack (3915/8)
+|   |   std_f_pkt >= 1.89 : attack (6/0)
+|   std_f_pkt >= 3.89
+|   |   std_f_pkt < 11.91 : attack (7/1)
+|   |   std_f_pkt >= 11.91 : attack (13/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4534/0)
+|   std_f_pkt >= 36.86 : attack (1964/0)
+
+Size of the tree : 11
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3922/12)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (10/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (12/1)
+|   |   |   std_f_pkt >= 11 : attack (21/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.78 : normal (4466/0)
+|   std_f_pkt >= 36.78 : attack (2006/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3953/8)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (12/2)
+|   |   |   std_f_pkt >= 11 : attack (12/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4427/0)
+|   std_f_pkt >= 36.86 : attack (2027/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3959/7)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.5
+|   |   |   std_f_pkt < 2.83 : normal (4/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 3.89 : attack (5/0)
+|   |   |   |   std_f_pkt >= 3.89
+|   |   |   |   |   std_f_pkt < 11 : attack (7/1)
+|   |   |   |   |   std_f_pkt >= 11 : attack (5/0)
+|   |   std_f_pkt >= 26.5 : normal (4376/0)
+|   std_f_pkt >= 36.78 : attack (2083/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.17
+|   std_f_pkt < 0.94 : attack (3979/20)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (1/0)
+|   |   std_f_pkt >= 2.83 : attack (26/0)
+std_f_pkt >= 26.17
+|   std_f_pkt < 36.78 : normal (4452/0)
+|   std_f_pkt >= 36.78 : attack (1981/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3950/10)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (7/1)
+|   |   |   std_f_pkt >= 11 : attack (14/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4441/0)
+|   std_f_pkt >= 36.78 : attack (2019/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3877/8)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.5
+|   |   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 3.89 : attack (9/0)
+|   |   |   |   std_f_pkt >= 3.89
+|   |   |   |   |   std_f_pkt < 11 : attack (12/3)
+|   |   |   |   |   std_f_pkt >= 11 : attack (8/0)
+|   |   std_f_pkt >= 26.5 : normal (4497/0)
+|   std_f_pkt >= 36.78 : attack (2033/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (4032/13)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.48
+|   |   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   std_f_pkt >= 3.89
+|   |   |   |   |   std_f_pkt < 12.84 : attack (11/3)
+|   |   |   |   |   std_f_pkt >= 12.84 : attack (3/0)
+|   |   std_f_pkt >= 26.48 : normal (4329/0)
+|   std_f_pkt >= 36.78 : attack (2055/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3954/13)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 3.89 : attack (9/0)
+|   |   |   std_f_pkt >= 3.89
+|   |   |   |   std_f_pkt < 11 : attack (16/3)
+|   |   |   |   std_f_pkt >= 11 : attack (8/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4380/0)
+|   std_f_pkt >= 36.78 : attack (2069/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3972/11)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.86
+|   |   std_f_pkt < 26.5
+|   |   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 11
+|   |   |   |   |   std_f_pkt < 3.89 : attack (4/0)
+|   |   |   |   |   std_f_pkt >= 3.89 : attack (9/2)
+|   |   |   |   std_f_pkt >= 11 : attack (7/0)
+|   |   std_f_pkt >= 26.5 : normal (4410/0)
+|   std_f_pkt >= 36.86 : attack (2035/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3969/11)
+std_f_pkt >= 0.94
+|   std_f_pkt < 37.02
+|   |   std_f_pkt < 26.17
+|   |   |   std_f_pkt < 2.83 : normal (4/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 11
+|   |   |   |   |   std_f_pkt < 3.89 : attack (8/0)
+|   |   |   |   |   std_f_pkt >= 3.89 : attack (9/2)
+|   |   |   |   std_f_pkt >= 11 : attack (10/0)
+|   |   std_f_pkt >= 26.17 : normal (4398/0)
+|   std_f_pkt >= 37.02 : attack (2041/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3996/15)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.48
+|   |   |   std_f_pkt < 2.83 : normal (5/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 3.89 : attack (11/0)
+|   |   |   |   std_f_pkt >= 3.89
+|   |   |   |   |   std_f_pkt < 11 : attack (10/2)
+|   |   |   |   |   std_f_pkt >= 11 : attack (11/0)
+|   |   std_f_pkt >= 26.48 : normal (4372/0)
+|   std_f_pkt >= 36.78 : attack (2034/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3932/11)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 3.89 : attack (7/0)
+|   |   |   std_f_pkt >= 3.89
+|   |   |   |   std_f_pkt < 11 : attack (11/1)
+|   |   |   |   std_f_pkt >= 11 : attack (6/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4471/0)
+|   std_f_pkt >= 36.86 : attack (2009/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (4022/14)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (2/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 11
+|   |   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   |   std_f_pkt >= 3.89 : attack (13/2)
+|   |   |   std_f_pkt >= 11 : attack (14/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4389/0)
+|   std_f_pkt >= 36.86 : attack (1993/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.5
+|   std_f_pkt < 0.94 : attack (3954/10)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (4/0)
+|   |   std_f_pkt >= 2.83 : attack (26/0)
+std_f_pkt >= 26.5
+|   std_f_pkt < 36.86 : normal (4402/0)
+|   std_f_pkt >= 36.86 : attack (2053/0)
+
+Size of the tree : 9
+
+
+RandomTree
+==========
+
+std_f_pkt < 26.48
+|   std_f_pkt < 0.94 : attack (3946/14)
+|   std_f_pkt >= 0.94
+|   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   std_f_pkt >= 2.83
+|   |   |   std_f_pkt < 3.89 : attack (6/0)
+|   |   |   std_f_pkt >= 3.89
+|   |   |   |   std_f_pkt < 11.61 : attack (16/1)
+|   |   |   |   std_f_pkt >= 11.61 : attack (5/0)
+std_f_pkt >= 26.48
+|   std_f_pkt < 36.78 : normal (4399/0)
+|   std_f_pkt >= 36.78 : attack (2064/0)
+
+Size of the tree : 13
+
+
+RandomTree
+==========
+
+std_f_pkt < 0.94 : attack (3993/9)
+std_f_pkt >= 0.94
+|   std_f_pkt < 36.78
+|   |   std_f_pkt < 26.17
+|   |   |   std_f_pkt < 2.83 : normal (3/0)
+|   |   |   std_f_pkt >= 2.83
+|   |   |   |   std_f_pkt < 3.89 : attack (5/0)
+|   |   |   |   std_f_pkt >= 3.89
+|   |   |   |   |   std_f_pkt < 11 : attack (14/3)
+|   |   |   |   |   std_f_pkt >= 11 : attack (5/0)
+|   |   std_f_pkt >= 26.17 : normal (4424/0)
+|   std_f_pkt >= 36.78 : attack (1995/0)
+
+Size of the tree : 13
+
+
+=== Dedicated test set ===
+=== Summary of RF ===
+
+Correctly Classified Instances        2605               99.8084 %
+Incorrectly Classified Instances         5                0.1916 %
+Kappa statistic                          0.9961
+Mean absolute error                      0.0023
+Root mean squared error                  0.0439
+Relative absolute error                  0.4686 %
+Root relative squared error              8.8773 %
+Total Number of Instances             2610     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.995    0.000    1.000      0.995    0.998      0.996    1.000     0.999     normal
+                 1.000    0.005    0.997      1.000    0.998      0.996    1.000     1.000     attack
+Weighted Avg.    0.998    0.003    0.998      0.998    0.998      0.996    1.000     1.000     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1105    5 |    a = normal
+    0 1500 |    b = attack

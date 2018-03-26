@@ -1,0 +1,45 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.8803 * (normalized) cof=N/A
+ +      -0.3248 * (normalized) cof=2
+ +      -0.2798 * (normalized) cof=18
+ +      -0.2757 * (normalized) cof=27
+ +      -0.8861 * (normalized) mean_f_pkt
+ +      -0.8803 * (normalized) urg_f_cnt
+ +       0.2271
+
+Number of kernel evaluations: 386 (67.672% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances         997               99.7    %
+Incorrectly Classified Instances         3                0.3    %
+Kappa statistic                          0.994 
+Mean absolute error                      0.003 
+Root mean squared error                  0.0548
+Relative absolute error                  0.6    %
+Root relative squared error             10.9545 %
+Total Number of Instances             1000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.000    1.000      0.994    0.997      0.994    0.997     0.997     normal
+                 1.000    0.006    0.994      1.000    0.997      0.994    0.997     0.994     udpFlood
+Weighted Avg.    0.997    0.003    0.997      0.997    0.997      0.994    0.997     0.996     
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 497   3 |   a = normal
+   0 500 |   b = udpFlood

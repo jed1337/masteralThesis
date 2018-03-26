@@ -1,0 +1,104 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                      Class
+Attribute          tcpFlood      normal   httpFlood    slowRead slowHeaders    udpFlood
+                     (0.17)      (0.17)      (0.17)      (0.17)      (0.17)      (0.17)
+========================================================================================
+mean_f_time
+  mean                0.0011      0.3862      0.0078       3.945       5.114      0.0073
+  std. dev.           0.0072      1.0165      0.0321      1.3599      1.5056      0.0573
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision           0.0021      0.0021      0.0021      0.0021      0.0021      0.0021
+
+duration
+  mean                0.0011      4.5092      0.0351      51.809     43.8155      3.0189
+  std. dev.           0.0073       11.83      0.1065     19.4717     18.0673      0.9089
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision           0.0066      0.0066      0.0066      0.0066      0.0066      0.0066
+
+std_f_time
+  mean                     0      0.8871      0.0103      5.4665      4.7133      0.0047
+  std. dev.           0.0003      2.5319      0.0389      2.1921      1.4103      0.0025
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision            0.002       0.002       0.002       0.002       0.002       0.002
+
+urg_f_cnt
+  mean                     0     -0.0005           0     -0.0005      -0.001          -1
+  std. dev.           0.1667      0.1667      0.1667      0.1667      0.1667      0.1667
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision                1           1           1           1           1           1
+
+max_f_time
+  mean                0.0011      3.1281      0.0252     18.9116     12.7166        0.04
+  std. dev.           0.0073      9.0743      0.1031      8.0457      4.9339      0.0618
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision           0.0054      0.0054      0.0054      0.0054      0.0054      0.0054
+
+psh_b_cnt
+  mean               -0.0655       1.164      0.9215       0.789       0.052          -1
+  std. dev.           0.2474      0.4406      0.3261      0.6095      0.9911      0.1667
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision                1           1           1           1           1           1
+
+total_b_bytes
+  mean                     0  12181.8161    442.0213   2157.2946      845.11           0
+  std. dev.          39.2071    639.1226    112.4153   2603.9315   2036.4675     39.2071
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision         235.2429    235.2429    235.2429    235.2429    235.2429    235.2429
+
+mean_b_pkt
+  mean                44.434   1896.9191     92.7669    275.3052    113.9259           0
+  std. dev.          11.7638    197.4682     18.0182    517.8342    363.4986      7.9247
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision          47.5484     47.5484     47.5484     47.5484     47.5484     47.5484
+
+std_b_pkt
+  mean                     0   2621.4055    110.6359    374.4977    150.0391           0
+  std. dev.           6.5574     501.844     28.5796    660.4995    417.8989      6.5574
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision          39.3442     39.3442     39.3442     39.3442     39.3442     39.3442
+
+urg_b_cnt
+  mean               -0.0655      -0.001     -0.0165      -0.102     -0.4665          -1
+  std. dev.           0.2474      0.1667      0.1667      0.3026      0.4989      0.1667
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision                1           1           1           1           1           1
+
+max_b_pkt
+  mean                     0   6486.5655           0   1000.3298     488.564           0
+  std. dev.         110.4848   1538.7168    110.4848   1607.0479   1000.9337    110.4848
+  weight sum            2000        2000        2000        2000        2000        2000
+  precision         662.9091    662.9091    662.9091    662.9091    662.9091    662.9091
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances        2678               89.2667 %
+Incorrectly Classified Instances       322               10.7333 %
+Kappa statistic                          0.8712
+Mean absolute error                      0.0374
+Root mean squared error                  0.1608
+Relative absolute error                 13.4739 %
+Root relative squared error             43.1556 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.990    0.024    0.894      0.990    0.939      0.928    0.998     0.982     tcpFlood
+                 0.996    0.024    0.892      0.996    0.941      0.931    0.988     0.917     normal
+                 0.954    0.002    0.990      0.954    0.971      0.966    0.991     0.979     httpFlood
+                 0.570    0.008    0.938      0.570    0.709      0.695    0.947     0.864     slowRead
+                 0.928    0.072    0.722      0.928    0.812      0.778    0.959     0.854     slowHeaders
+                 0.918    0.000    1.000      0.918    0.957      0.950    1.000     0.999     udpFlood
+Weighted Avg.    0.893    0.021    0.906      0.893    0.888      0.875    0.981     0.932     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 495   0   5   0   0   0 |   a = tcpFlood
+   0 498   0   0   2   0 |   b = normal
+  17   0 477   6   0   0 |   c = httpFlood
+   0  39   0 285 176   0 |   d = slowRead
+   2  21   0  13 464   0 |   e = slowHeaders
+  40   0   0   0   1 459 |   f = udpFlood
