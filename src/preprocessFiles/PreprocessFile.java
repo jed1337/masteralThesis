@@ -1,40 +1,26 @@
 package preprocessFiles;
 
-<<<<<<< HEAD
-=======
-import constants.GeneralAttackTypeEnum;
->>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
 import constants.AttributeTypeConstants;
 import constants.DirectoryConstants;
-<<<<<<< HEAD
 import constants.GeneralAttackTypeEnum;
 import constants.SpecificAttackTypeEnum;
 import globalParameters.GlobalFeatureExtraction;
-=======
-import constants.SpecificAttackTypeEnum;
-import preprocessFiles.preprocessAs.FormatAsArff;
->>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
 import java.io.IOException;
 import preprocessFiles.preprocessAs.FormatAsArff;
 
 /**
- * A class That setups the files to be used by the classifier<p>
+ * An abstract class That setups the files to be used by the classifier<p>
  * This class doesn't classify<p>
  * This class keeps X instances, and certain attack types as stated by its sub classes<p>
  * This is sort of like the Template method wherein the subclasses supply the parameters
  */
 public abstract class PreprocessFile {
    private final int RANDOM_SEED = 11;
-<<<<<<< HEAD
-=======
-
->>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
    private final GeneralAttackTypeEnum  generalAttackType;
    private final SpecificAttackTypeEnum specificAttackType;
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
-<<<<<<< HEAD
 
    protected PreprocessFile(String filename, GeneralAttackTypeEnum generalAttackType, SpecificAttackTypeEnum specificAttackType)
            throws IOException {
@@ -43,16 +29,6 @@ public abstract class PreprocessFile {
 
       this.faa = new FormatAsArff(DirectoryConstants.UNFORMATTED_DIR+filename);
       this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+filename);
-=======
-      
-   protected PreprocessFile(String fileName, GeneralAttackTypeEnum generalAttackType, SpecificAttackTypeEnum specificAttackTypes)
-           throws IOException {
-      this.generalAttackType = generalAttackType;
-      this.specificAttackType = specificAttackTypes;
-      
-      this.faa = new FormatAsArff (DirectoryConstants.UNFORMATTED_DIR+""+fileName);
-      this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+  ""+fileName);
->>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
    }
 
    public final void setUp() throws IOException, Exception{
@@ -64,13 +40,8 @@ public abstract class PreprocessFile {
       
       this.faa.randomise(this.RANDOM_SEED);
 
-<<<<<<< HEAD
       keepXInstances();
    }
-=======
-      balanceInstances();
-      }
->>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
 
    /**
     * Uses the renameNominalValuesfunction in this.faa
@@ -83,8 +54,7 @@ public abstract class PreprocessFile {
    public final void relabel(String attributes, String toReplace) throws Exception {
       this.faa.renameNominalValues(attributes, toReplace);
    }
-   
-   
+
    public final void setInstancesCount(int instancesCount) {
       this.instancesCount = instancesCount;
    }
@@ -111,14 +81,10 @@ public abstract class PreprocessFile {
     */
    private void removeNonMatchingClasses() {
       this.faa.removeNonMatchingClasses(AttributeTypeConstants.ATTRIBUTE_CLASS, this.specificAttackType.getValue());
-<<<<<<< HEAD
       GlobalFeatureExtraction.getInstance()
          .removeNonMatchingClasses().accept(this.faa);
-=======
-      this.faa.removeNonMatchingClasses("service", "http", "http_443");
->>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
    }
-
+   
    /**
     * For example there are 5000 instances
     * <br>

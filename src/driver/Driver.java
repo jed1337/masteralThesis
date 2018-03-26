@@ -130,7 +130,6 @@ public final class Driver {
       }
    }
 
-<<<<<<< HEAD
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
          throws IOException, Exception {
 
@@ -153,23 +152,6 @@ public final class Driver {
          fs.getFSMethodName(),
          systemParameters.getSystemType()
       )+"/";
-=======
-   private static int[] systemTrain(final Mode mode, final ASEvaluation attributeEvaluator, final String folderPath)
-           throws IOException, Exception {
-      String fullFolderPath = String.join("/", 
-         "Results",
-         "Dry run",
-         "Edited mode",
-         mode.getCategoricalType().name(),
-         mode.getNoiseLevelString(),
-         folderPath
-      );
-      
-      SystemTrain st = new SystemTrain(mode);
-      st.setupTestTrainValidation();
-//      int[] result = st.applyFeatureSelection(attributeEvaluator);
-      st.evaluateClassifiers();
->>>>>>> 46d7ebb4cbe4bf9b987c4bfdfd55dc9c3014c8e9
       
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
    }
