@@ -1,14 +1,10 @@
 package driver;
 
-import constants.ArffInstanceCount;
 import database.NoDatabase;
 import driver.categoricalType.CategoricalType;
-import driver.categoricalType.GeneralAttackType;
-import driver.categoricalType.SpecificAttackType;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
 import driver.mode.Single;
-import driver.mode.noiseLevel.HalfNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import driver.modeAdapter.NormalVersusSpecificAttack;
 import evaluation.Classify;
@@ -16,24 +12,27 @@ import evaluation.TrainTest;
 import featureExtraction.BiFlowExtraction;
 import featureExtraction.Decorator.FinalDatabase;
 import featureSelection.FeatureSelection;
-import featureSelection.NoFeatureSelection;
-import featureSelection.filters.CorrelationFS;
-import featureSelection.filters.InfoGainFS;
-import featureSelection.wrappers.J48Wrapper;
-import featureSelection.wrappers.NBWrapper;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import preprocessFiles.PreprocessTCPFlood;
-import preprocessFiles.PreprocessUDPFlood;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 
 public final class Driver {
-//<editor-fold defaultstate="collapsed" desc="System">
-   public static void system() throws IOException, Exception {
+   public static void system(String[] args) throws IOException, Exception{
+      String rawPath   = args[0];
+      String modelPath = args[1];
+//      String rawPath = "Data/RawFiles/Final/Bi flow output/normal(Modified).arff";
+//      String modelPath = "Results/BiFlow/Train-Test/SPECIFIC/No noise/No feature selection/Single/RF .model";
+      SingleModelTest smt = new SingleModelTest(rawPath, modelPath);
+      smt.printClassAttribute();
+      smt.classify();
+   }
+   
+//<editor-fold defaultstate="collapsed" desc="OldSystem">
+   public static void oldSystem() throws IOException, Exception {
       Instances isAttackValidation = UtilsInstances.getInstances(
               "Results/The one in the DB/BINARY/No noise/J48/isAttack/Validation.arff");
       Instances ddosTypeValidation = UtilsInstances.getInstances(
@@ -48,18 +47,19 @@ public final class Driver {
               "Results/The one in the DB/BINARY/No noise/J48/DDoS type/RF .model");
 
       for (int i = 0; i < isAttackValidation.classAttribute().numValues(); i++) {
-         System.out.println("Value " + i + " = " + isAttackValidation.classAttribute()
-                 .value(i));
+         System.out.println("Value " + i + " = " + isAttackValidation.classAttribute().value(i));
       }
       for (int i = 0; i < isAttackValidation.size(); i++) {
 
          String predictedValue = isAttackValidation.classAttribute().value(
-                 (int) isAttackClassifier.classifyInstance(isAttackValidation.get(i)));
+            (int) isAttackClassifier.classifyInstance(isAttackValidation.get(i))
+         );
          String actualValue = isAttackValidation.get(i).stringValue(26);
 
          if (predictedValue.equalsIgnoreCase("attack")) {
             predictedValue = ddosTypeValidation.classAttribute().value(
-                    (int) ddosTypeClassifier.classifyInstance(isAttackValidation.get(i)));
+               (int) ddosTypeClassifier.classifyInstance(isAttackValidation.get(i))
+            );
          }
 
          System.out.println(
@@ -71,41 +71,41 @@ public final class Driver {
 //</editor-fold>
 
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
-//      system();
       GlobalFeatureExtraction.setInstance(
          new FinalDatabase(new BiFlowExtraction())
 //         new InitialDatabase(new KDDExtraction())
 //         new Feb2CNISDatabase(new NetmateExtraction())
       );
-
-//      final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
-      final int instanceCount = ArffInstanceCount.SIX_K;
-
-      final FeatureSelection[] featureSelections = new FeatureSelection[]{
-         NoFeatureSelection.getInstance(),
-         new InfoGainFS(),
-         new CorrelationFS(),
-         new NBWrapper(),
-         new J48Wrapper()
-      };
-      final CategoricalType[] categoricalTypes = new CategoricalType[]{
-         new GeneralAttackType(),
-         new SpecificAttackType()
-      };
-      final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-         new HalfNoise()
-//         new MultiNoise(),
-//         NoNoise.getInstance()
-      };
-
-      for (FeatureSelection fs : featureSelections) {
-//         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
-         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
-         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
-      }
+      system(args);
+//
+////      final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
+//      final int instanceCount = ArffInstanceCount.SIX_K;
+//
+//      final FeatureSelection[] featureSelections = new FeatureSelection[]{
+//         NoFeatureSelection.getInstance(),
+//         new InfoGainFS(),
+//         new CorrelationFS(),
+//         new NBWrapper(),
+//         new J48Wrapper()
+//      };
+//      final CategoricalType[] categoricalTypes = new CategoricalType[]{
+//         new GeneralAttackType(),
+//         new SpecificAttackType()
+//      };
+//      final NoiseLevel[] noiseLevels = new NoiseLevel[]{
+//         new HalfNoise()
+////         new MultiNoise(),
+////         NoNoise.getInstance()
+//      };
+//
+//      for (FeatureSelection fs : featureSelections) {
+////         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
+////         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
+////         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
+////         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
+//      }
    }
 
    private static void normalVSOther(FeatureSelection fs, final int instanceCount, final NormalVersusSpecificAttack mode)

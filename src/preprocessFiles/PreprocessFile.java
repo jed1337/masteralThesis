@@ -35,7 +35,7 @@ public abstract class PreprocessFile {
       removeNonMatchingClasses();
 
       this.faa.removeAttributes(
-            GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
+         GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
       );
       
       this.faa.randomise(this.RANDOM_SEED);
