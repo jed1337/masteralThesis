@@ -4,6 +4,7 @@ import database.NoDatabase;
 import driver.categoricalType.CategoricalType;
 import driver.mode.HybridDDoSType;
 import driver.mode.HybridIsAttack;
+import driver.mode.NormalVersusSpecificAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.NoiseLevel;
 import driver.modeAdapter.NormalVersusSpecificAttack;
@@ -15,6 +16,8 @@ import featureSelection.FeatureSelection;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import preprocessFiles.PreprocessTCPFlood;
+import preprocessFiles.PreprocessUDPFlood;
 import utils.UtilsClssifiers;
 import utils.UtilsInstances;
 import weka.classifiers.Classifier;
@@ -94,6 +97,7 @@ public final class Driver {
 //
 ////      final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
 //      final int instanceCount = ArffInstanceCount.SIX_K;
+<<<<<<< HEAD
 //
 //      final FeatureSelection[] featureSelections = new FeatureSelection[]{
 //         NoFeatureSelection.getInstance(),
@@ -120,6 +124,34 @@ public final class Driver {
 ////         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
 ////         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
 //      }
+=======
+
+      final FeatureSelection[] featureSelections = new FeatureSelection[]{
+         NoFeatureSelection.getInstance(),
+         new InfoGainFS(),
+         new CorrelationFS(),
+         new NBWrapper(),
+         new J48Wrapper()
+      };
+      final CategoricalType[] categoricalTypes = new CategoricalType[]{
+         new GeneralAttackType(),
+         new SpecificAttackType()
+      };
+      final NoiseLevel[] noiseLevels = new NoiseLevel[]{
+         new HalfNoise()
+//         new MultiNoise(),
+//         NoNoise.getInstance()
+      };
+
+      for (FeatureSelection fs : featureSelections) {
+         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
+         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
+         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
+      }
+>>>>>>> b79753d33bcf29a1fd9a85032ae0b7dd8df2d58e
    }
 
    private static void normalVSOther(FeatureSelection fs, final int instanceCount, final NormalVersusSpecificAttack mode)
