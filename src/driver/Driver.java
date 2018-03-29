@@ -21,11 +21,25 @@ import weka.classifiers.Classifier;
 import weka.core.Instances;
 
 public final class Driver {
-   public static void system(String[] args) throws IOException, Exception{
-      String rawPath   = args[0];
-      String modelPath = args[1];
-//      String rawPath = "Data/RawFiles/Final/Bi flow output/normal(Modified).arff";
-//      String modelPath = "Results/BiFlow/Train-Test/SPECIFIC/No noise/No feature selection/Single/RF .model";
+   public static void system(String[] args) throws IOException, IllegalArgumentException, Exception{
+      String rawPath = "";
+      String modelPath = "";
+
+//    This switch statement is here so that we don't repeatedly comment and uncomment stuff depending on
+//    if we're testing some configurations, or running the jar file as is through the CMD
+      switch (args.length) {
+         case 2:
+            rawPath   = args[0];
+            modelPath = args[1];
+            break;
+         case 0:
+            rawPath = "Data/RawFiles/Final/Bi flow output/normal(Modified).arff";
+            modelPath = "Results/BiFlow/Train-Test/SPECIFIC/No noise/No feature selection/Single/RF .model";
+            break;
+         default:
+            throw new IllegalArgumentException("Only valid arguments: 2 (CMD run), or 0 (Test run)");
+      }
+      
       SingleModelTest smt = new SingleModelTest(rawPath, modelPath);
       smt.printClassAttribute();
       smt.classify();
