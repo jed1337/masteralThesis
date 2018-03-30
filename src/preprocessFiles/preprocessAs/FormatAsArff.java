@@ -22,6 +22,11 @@ public final class FormatAsArff {
       this.savePath = path;
       this.instances = UtilsInstances.getInstances(path);
    }
+   
+   public FormatAsArff(Instances instances) throws FileNotFoundException, IOException {
+      this.savePath = null;
+      this.instances = instances;
+   }
 
    public String getSavePath() {
       return savePath;
@@ -82,7 +87,6 @@ public final class FormatAsArff {
    }
    
    /**
-    * 
     * For example <br>
     * <i>{@literal @}attribute myAttribute {first, second, third}<br><br></i>
     * {@code 

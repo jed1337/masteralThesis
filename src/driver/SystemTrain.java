@@ -37,12 +37,14 @@ public final class SystemTrain {
 	private SystemTrain(SystemTrain.Buidler builder, SystemParameters sp) throws IOException, Exception {
       this.db = builder.db;
 
-      List<PreprocessFile> preprocessFiles = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
+      final List<PreprocessFile> pfL = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
+      writePreprocessFile(pfL);
+      
       this.db.insertMainTable(sp);
 
       String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
       createCombinedData(
-         preprocessFiles,
+         pfL,
          combinedPath
       );
 
@@ -107,10 +109,16 @@ public final class SystemTrain {
 				AttributeTypeConstants.ATTRIBUTE_CLASS,
 				relabel
 			);
-			Utils.writePreprocessFile(pf);
+//			writePreprocessFile(pfL);
 		}
 		return pfL;
 	}
+
+   private void writePreprocessFile(final List<PreprocessFile> pfL) throws IOException {
+      for (PreprocessFile pf : pfL) {
+         Utils.writePreprocessFile(pf);
+      }
+   }
 
    /**
     * Combines the data in the this.preprocessFiles and stores the output to this.combinedPath

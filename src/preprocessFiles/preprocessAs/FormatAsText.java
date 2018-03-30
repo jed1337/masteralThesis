@@ -1,12 +1,12 @@
 package preprocessFiles.preprocessAs;
 
 import constants.CharConstants;
-import utils.Utils;
-import utils.UtilsInstances;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import preprocessFiles.utils.MutableInt;
+import utils.Utils;
+import utils.UtilsInstances;
 import weka.core.Instances;
 
 public final class FormatAsText {
@@ -98,6 +98,13 @@ public final class FormatAsText {
       insertString(sbHeader.toString(), 0);
    }
 
+   /**
+    * entry.getKey() = String to search, entry.getValue() = String to replace it with<p>
+    * Despite each HashMap being able to store multiple key-value pairs, the parameter here is
+    * a HashMap var args so that HashMaps form different sources can be passed.
+    * @param hashMaps
+    * @throws IOException 
+    */
    public void replaceAllStrings(HashMap<String, String>... hashMaps) throws IOException {
       String allLines = Utils.getFileContents(PATH);
       for (HashMap<String, String> hashMap : hashMaps) {

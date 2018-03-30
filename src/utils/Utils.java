@@ -21,23 +21,32 @@ import preprocessFiles.PreprocessFile;
 public final class Utils {
    private Utils() {}
 
-   public static HashMap<String, String> replaceAttribute(String attribute, String... toReplace){
-      return replaceAttribute(attribute, String.join(",",toReplace));
+   public static HashMap<String, String> replaceAttribute(String attributeName, String... toReplace){
+      return replaceAttribute(attributeName, String.join(",",toReplace));
    }
 
-   public static HashMap<String, String> replaceAttribute(String attribute, String toReplace){
+   public static HashMap<String, String> replaceAttribute(String attributeName, String toReplace){
       final HashMap<String, String> OTHER_REPLACEMENTS = new HashMap<>();
       Utils.addToMap(
         OTHER_REPLACEMENTS,
-        "(?m)^@attribute "+attribute+".*",
-        "@attribute "+attribute+" {"+toReplace+"}"
+        "(?m)^@attribute "+attributeName+".*",
+        "@attribute "+attributeName+" {"+toReplace+"}"
       );
 
       return OTHER_REPLACEMENTS;
    }
 
-   public static <T> boolean arrayContains(final T[] array, final T v) {
-      if (v == null) {
+   /**
+    * Returns true if the value is found in the array. 
+    * Takes into consideration null values, ==, .equals(), 
+    * and case insensitive comparison for Strings
+    * @param <T>
+    * @param array
+    * @param value
+    * @return 
+    */
+   public static <T> boolean arrayContains(final T[] array, final T value) {
+      if (value == null) {
          for (final T e : array) {
             if (e == null) {
                return true;
@@ -45,11 +54,11 @@ public final class Utils {
          }
       } else {
          for (final T e : array) {
-            if (e == v || e.equals(v)){
+            if (e == value || e.equals(value)){
                return true;
             }
-            if(e instanceof String && v instanceof String){
-               if( ((String) e).equalsIgnoreCase( ((String)v)) ){
+            if(e instanceof String && value instanceof String){
+               if( ((String) e).equalsIgnoreCase( ((String)value)) ){
                   return true;
                }
             }
@@ -142,6 +151,13 @@ public final class Utils {
       writeStringFile(destination, allLines, false);
    }
 
+   /**
+    * Creates the file if it doesn't exist along with the parent directories if needed
+    * @param destination
+    * @param allLines
+    * @param append
+    * @throws IOException 
+    */
    public static void writeStringFile(String destination, String allLines, boolean append) throws IOException {
       //FileWriter just creates the file if it doesn't exist.
       //It won't create the possible parent directories of that file.
@@ -160,9 +176,11 @@ public final class Utils {
    }
    
    /**
+    * Won't create any folders if filePath doesn't have a parent
+    * <p>
     * Assume that only the Data/ folder exists,
     * {@code
-    * makeParentFolder(Data/subdir1/subdir2/file.txt)
+    * makeParentFolder("Data/subdir1/subdir2/file.txt")
     * }
     * Creates subdir1 and subdir2. File.txt, however, isn't created
     * <br>
@@ -173,7 +191,14 @@ public final class Utils {
     * (if none, or only some were created)
     */
    public static boolean makeParentFolder(String filePath){
-      return makeFolders(new File(filePath).getParentFile());
+      final File parentFile = new File(filePath).getParentFile();
+      
+      //It will be null if the file name given is already the root (since it has no parent)
+      if(parentFile == null){
+         return false;
+      }
+      
+      return makeFolders(parentFile);
    }
 
    public static boolean makeFolders(File file){

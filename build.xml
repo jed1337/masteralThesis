@@ -72,6 +72,7 @@
     -->
 
   <!-- New stuff that Jed added -->
+  <!-- Creates a fat jar (A jar file also containing all dependencies) -->
   <!-- Source: https://dzone.com/articles/how-build-fat-jar-using -->
   <target name="package-for-store" depends="jar">
 
@@ -79,7 +80,7 @@
              minus the .jar extension. It should not have spaces.
              <property name="store.jar.name" value="MyJarName"/>
         -->
-        <property name="store.jar.name" value="SCHEDULAR"/>
+        <property name="store.jar.name" value="JedsProgram"/>
 
 
         <!-- don't edit below this line -->

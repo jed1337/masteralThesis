@@ -41,6 +41,21 @@ public final class UtilsInstances{
       faa.removeAttributes(featuresToRemove);
       return faa.getInstances();
    }
+   
+   public static String getClassAttributeName(String instancesPath) throws FileNotFoundException, IOException{
+      return getClassAttributeName(
+         UtilsInstances.getInstances(instancesPath)
+      );
+   }
+   
+   /**
+    * Return the class attribute name. Assumes that the class attribute has been set.
+    * @param instances
+    * @return 
+    */
+   public static String getClassAttributeName(Instances instances){
+      return instances.classAttribute().name();
+   }
 
    /**
     * Gets the index of the attribute name
