@@ -17,9 +17,9 @@ public class ModelTest{
    /*** Used to pass the classification to a different ModelTest*/
    private final ArrayList<ConnectModelTest> cmtAL;
 
+   private final String systemName;
    private final Instances rawInstances;
    private final Instances formattedInstances;
-   private final int classAttributeIndex;
    private final Attribute classAttribute;
    private final Classifier model;
 
@@ -28,10 +28,23 @@ public class ModelTest{
    private final int destIPIndex;
    private final int destPortIndex;
    private final int protocolIndex;
+   
+//   Variables below here are reset
+   private final double[] totalClassDistribution;
+   
+   /** 
+    * This variable exists instead of just using this.formattedInstances.numInstances() 
+    * since when connecting models together depending on their responsibilities,
+    * it's possible that the connected model only classifies a few instances.<br> 
+    * This isn't a final variable since we may need to reset it.
+    */
+   private int instancesClassified;
+   
 
-   public ModelTest(Instances rawInstances, Classifier model) throws IOException, Exception{
+   public ModelTest(String systemName, Instances rawInstances, Classifier model) throws IOException, Exception{
       this.cmtAL = new ArrayList<>();
-
+      
+      this.systemName = systemName;
       this.rawInstances = rawInstances;
 
       this.sourceIPIndex = UtilsInstances.getAttributeIndex(this.rawInstances, "src_ip");
@@ -46,55 +59,72 @@ public class ModelTest{
          GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
       );
 
-      this.formattedInstances = faa.getInstances();
-      classAttributeIndex   = this.formattedInstances.classAttribute().index();
-      classAttribute = this.formattedInstances.classAttribute();
+      this.formattedInstances  = faa.getInstances();
+      this.classAttribute      = this.formattedInstances.classAttribute();
+      
+      this.totalClassDistribution = new double[classAttribute.numValues()];
+      this.instancesClassified    = 0;
 
       this.model = model;
+   }
+   
+   /**
+    * This function exists since we add to double[] totalClassDistribution
+    * every time an item is classified in function classifySingle(int).
+    * Therefore, we need to reset its value before we retest stuff. <br>
+    * This function also resets the variables of those within cmtAL
+    */
+   private void resetVariables(){
+      for (int i = 0; i < this.totalClassDistribution.length; i++) {
+         this.totalClassDistribution[i] = 0;
+      }
+      this.instancesClassified    = 0;
+      
+      this.cmtAL.forEach((cmt)->{
+         cmt.getConnectingModel().resetVariables();
+      });
    }
 
    /**
     * Classify all instances
     * @throws Exception
     */
-   public void classify() throws Exception{
-      final double[] totalClassDistribution = new double[classAttribute.numValues()];
-
+   public void classifyAll() throws Exception{
+      resetVariables();
+      
 //      We can use a fore loop, but we need the index here
       for (int i = 0; i < this.formattedInstances.numInstances(); i++) {
-         double[] classDistribution = classify(i);
-         matrixAddition(totalClassDistribution, classDistribution);
-
-         System.out.println(Arrays.toString(classDistribution));
-         System.out.println();
+         classifySingle(i);
       }
-
-      printTotalClassDistribution(totalClassDistribution);
    }
 
    /**
     * Only classify the instance at the given index
-    * Passes the instance to the first ConnectModelTest it matches
+    * Passes the instance to the first ConnectModelTest it matches. <br>
+    * This function also adjusts 
+    * int instnaceClassified and double classDistirbution accordingly.
     * @param index
-    * @return Th class distribution
     * @throws Exception
     */
-   public double[] classify(int index) throws Exception {
+   public void classifySingle(int index) throws Exception {
       final Instance formattedInstance = this.formattedInstances.get(index);
-      final String actualValue = formattedInstance.stringValue(this.classAttributeIndex);
       final String predictedClass = getPredictedClass(this.classAttribute, this.model, formattedInstance);
-
-      displayClassificationResults(actualValue, predictedClass);
+      System.out.println("Predicted class: "+ predictedClass);
 
       for (ConnectModelTest cmt : this.cmtAL) {
          if(Utils.arrayContains(cmt.getNominalValues(), predictedClass)){
-            return cmt.getConnectModelTest().classify(index);
+            cmt.getConnectingModel().classifySingle(index);
          }
       }
 
       System.out.println("Information: "+basicIPDetails(this.rawInstances.get(index)));
 
-      return this.model.distributionForInstance(formattedInstance);
+      final double[] classDistribution = this.model.distributionForInstance(formattedInstance);
+      System.out.println(Arrays.toString(classDistribution));
+      System.out.println();
+      
+      this.instancesClassified++;
+      matrixAddition(this.totalClassDistribution, classDistribution);
    }
 
    /**
@@ -125,23 +155,38 @@ public class ModelTest{
 
    /**
     * Print the percentage that a certain class was classified. 
-    * This also includes the class index corresponding to it
-    * @param totalClassDistribution 
+    * It is reliant on this.totalClassDistribution and this.instancesClassified. <br>
+    * The function also includes the class index corresponding to it.<br>
+    * 
+    * String format source: 
+    * <a href="http://www.java2s.com/Code/Java/Development-Class/Useprintfalignfloatnumbers.htm">
+    * Java2s.com</a>
     */
-   private void printTotalClassDistribution(double[] totalClassDistribution){
-      final int numInstances = this.formattedInstances.numInstances();
+   public void printTotalClassDistribution(){
+      System.out.println();
+      System.out.printf("Total class distribution: (%s)\n", this.systemName);
+      
+      if(this.instancesClassified == 0){
+         System.out.println("(No classifications made)");
+         return;
+      }
+//      final int numInstances = this.formattedInstances.numInstances();
 
-      System.out.println("Total class distribution:");
       for (int i = 0; i < this.rawInstances.classAttribute().numValues(); i++) {
          System.out.println(
-            //"%%" Means a literal "%" symbol
-            String.format("Index %d: %s:\t %.4f%%",
+            //"%%"      Means a literal "%" symbol
+            //"%3.4f"   Means 3 digit palces, 4 decimal places
+            String.format("Index %d: %s: \t %13.4f%%",
                i,
                this.rawInstances.classAttribute().value(i),
-               (totalClassDistribution[i]/numInstances)*100
+               (this.totalClassDistribution[i]/this.instancesClassified)*100
             )
          );
       }
+      
+      this.cmtAL.forEach((cmt)->{
+         cmt.getConnectingModel().printTotalClassDistribution();
+      });
    }
 
    /**
@@ -186,10 +231,5 @@ public class ModelTest{
 
    private String getPredictedClass(Attribute classAttribute, Classifier classifier, Instance toClassify) throws Exception{
       return classAttribute.value((int) classifier.classifyInstance(toClassify));
-   }
-
-   private void displayClassificationResults(final String actualValue, final String predictedClass) {
-      System.out.println("Actual class:    "+ actualValue);
-      System.out.println("Predicted class: "+ predictedClass);
    }
 }

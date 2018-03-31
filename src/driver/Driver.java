@@ -24,12 +24,13 @@ public final class Driver {
       );
       String[] params = {
          "hybrid",
+//         "Data/RawFiles/Final/Bi flow output/normal(Modified)(test).arff",
          "Data/RawFiles/Final/Bi flow output/normal(Modified).arff",
          "Results/BiFlow/Train-Test/GENERAL/No noise/No feature selection/Hybrid isAttack/RF .model",
          "Results/BiFlow/Train-Test/SPECIFIC/No noise/No feature selection/Hybrid DDoS Type/nb .model"
       };
 
-      LiveSystemController.getInstance().execute(params);
+      LiveSystemController.getInstance().execute(args);
 
 //      final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
 //      final int instanceCount = ArffInstanceCount.SIX_K;

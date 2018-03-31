@@ -64,11 +64,11 @@ public final class LiveSystemController {
       System.out.println("Single system");
 
       ModelTest single = new ModelTest(
-         UtilsInstances.getInstancesFromFile(rawPath),
+         "Single", UtilsInstances.getInstancesFromFile(rawPath),
          UtilsClssifiers.readModel(singleModelPath)
       );
       single.printClassAttribute();
-      single.classify();
+      single.classifyAll();
    }
 
    private void hybridSystemTest(String rawPath, String isAttackClassifierPath, String ddosTypeClassifierPath) throws Exception {
@@ -82,12 +82,17 @@ public final class LiveSystemController {
          "tcpFlood", "httpFlood", "slowRead", "slowHeaders", "udpFlood"
       );
 
-      ModelTest hia = new ModelTest(tsIsAttackFat, UtilsClssifiers.readModel(isAttackClassifierPath));
-      ModelTest hdt = new ModelTest(tsDDoSType,    UtilsClssifiers.readModel(ddosTypeClassifierPath));
+      ModelTest hia = new ModelTest("Hybrid isAttack", tsIsAttackFat, UtilsClssifiers.readModel(isAttackClassifierPath));
+      ModelTest hdt = new ModelTest("Hybrid DDoS type", tsDDoSType,    UtilsClssifiers.readModel(ddosTypeClassifierPath));
 
       hia.addConnectModel(new ConnectModelTest(hdt, "attack"));
       hia.printClassAttribute();
-      hia.classify();
+      hia.classifyAll();
+      hia.classifyAll();
+      hia.classifyAll();
+      hia.classifyAll();
+      hia.classifyAll();
+      hia.printTotalClassDistribution();
    }
 
    private Instances getFormattedInstances(
