@@ -28,7 +28,7 @@ public final class CrossValidation implements Classify{
    @Override
    public void setupEvaluationSets(String combinedPath) 
            throws IOException,Exception {
-      this.combinedInstances = UtilsInstances.getInstances(combinedPath);
+      this.combinedInstances = UtilsInstances.getInstancesFromFile(combinedPath);
    }
 
    @Override

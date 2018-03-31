@@ -2,6 +2,7 @@ package utils;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.HashMap;
 import java.util.List;
 import preprocessFiles.preprocessAs.FormatAsArff;
@@ -13,15 +14,23 @@ public final class UtilsInstances{
    private UtilsInstances() {}
    
    /**
-    * Gets the Instances specified in the path and sets the class index 
-    * as the last attribute
-    * @param path Where to get the instances from
+    * Gets the Instances from the filePath 
+    * and sets the class index as the last attribute
+    * @param filePath Where to get the instances from
     * @return
     * @throws FileNotFoundException
     * @throws IOException 
     */
-   public static Instances getInstances(String path) throws FileNotFoundException, IOException {
-      Instances instances = new Instances(Utils.getBufferedReader(path));
+   public static Instances getInstancesFromFile(String filePath) throws FileNotFoundException, IOException {
+      return getInstances(Utils.getBufferedReader(filePath));
+   }
+   
+   public static Instances getInstancesFromString(String contents) throws IOException{
+      return getInstances(Utils.getStringReader(contents));
+   }
+   
+   public static Instances getInstances(Reader reader) throws FileNotFoundException, IOException {
+      Instances instances = new Instances(reader);
       instances.setClassIndex(instances.numAttributes()-1);
       return instances;
    }
@@ -43,8 +52,7 @@ public final class UtilsInstances{
    }
    
    public static String getClassAttributeName(String instancesPath) throws FileNotFoundException, IOException{
-      return getClassAttributeName(
-         UtilsInstances.getInstances(instancesPath)
+      return getClassAttributeName(UtilsInstances.getInstancesFromFile(instancesPath)
       );
    }
    

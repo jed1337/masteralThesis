@@ -81,7 +81,7 @@ public final class FormatAsText {
    }
 
    public void addClassCount(String attributeName) throws IOException{
-      Instances instances = UtilsInstances.getInstances(this.PATH);
+      Instances instances = UtilsInstances.getInstancesFromFile(this.PATH);
       HashMap<String, MutableInt> freq = UtilsInstances.getClassCount(attributeName, instances);
 
       StringBuilder sbHeader = new StringBuilder();

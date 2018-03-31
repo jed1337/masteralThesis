@@ -74,7 +74,7 @@ public class FormatAsArffTest {
    }
 
    /**
-    * Test of getInstances method, of class FormatAsArff.
+    * Test of getInstancesFromFile method, of class FormatAsArff.
     */
    @Test
    public void testGetInstances() {

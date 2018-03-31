@@ -12,6 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -26,14 +27,14 @@ public final class Utils {
    }
 
    public static HashMap<String, String> replaceAttribute(String attributeName, String toReplace){
-      final HashMap<String, String> OTHER_REPLACEMENTS = new HashMap<>();
+      final HashMap<String, String> otherReplacements = new HashMap<>();
       Utils.addToMap(
-        OTHER_REPLACEMENTS,
+        otherReplacements,
         "(?m)^@attribute "+attributeName+".*",
         "@attribute "+attributeName+" {"+toReplace+"}"
       );
 
-      return OTHER_REPLACEMENTS;
+      return otherReplacements;
    }
 
    /**
@@ -67,27 +68,37 @@ public final class Utils {
       return false;
    }
 
-   public static BufferedReader getBufferedReader(String path) throws FileNotFoundException {
-      return new BufferedReader(new FileReader(path));
+   public static BufferedReader getBufferedReader(String filePath) throws FileNotFoundException {
+      return new BufferedReader(new FileReader(filePath));
+   }
+   
+   public static StringReader getStringReader(String contents) {
+      return new StringReader(contents);
    }
 
+   /**
+    * {@code return getFileContents(filename, s->false);}
+    * @param filename
+    * @return
+    * @throws IOException 
+    */
    public static String getFileContents(String filename) throws IOException{
       return getFileContents(filename, s->false);
    }
 
    /**
-    * Returns the String contents within the file in filename
-    * @param filename
+    * Returns the String contents within the file in filePath
+    * @param filePath
     * @param breakCondition Stop adding to the current contents 
     * if this condition is met
     * @return The string contents
     * @throws IOException 
     */
    public static String getFileContents(
-      String filename, Predicate<String> breakCondition) throws IOException{
+      String filePath, Predicate<String> breakCondition) throws IOException{
 
       StringBuilder sb = new StringBuilder();
-      try (BufferedReader br = Utils.getBufferedReader(filename)) {
+      try (BufferedReader br = Utils.getBufferedReader(filePath)) {
          String line;
          while ((line = br.readLine()) != null) {
             sb.append(line);

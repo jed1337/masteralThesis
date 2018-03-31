@@ -20,7 +20,7 @@ public final class FormatAsArff {
    
    public FormatAsArff(String path) throws FileNotFoundException, IOException {
       this.savePath = path;
-      this.instances = UtilsInstances.getInstances(path);
+      this.instances = UtilsInstances.getInstancesFromFile(path);
    }
    
    public FormatAsArff(Instances instances) throws FileNotFoundException, IOException {

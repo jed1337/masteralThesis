@@ -48,7 +48,7 @@ public final class UtilsARFF{
       FormatAsText fat = combineArff(outputPath, inputPaths);
 
       int attributeIndex = UtilsInstances.getAttributeIndex(
-         UtilsInstances.getInstances(inputPaths.get(0)),
+         UtilsInstances.getInstancesFromFile(inputPaths.get(0)),
          attributeName
       );
 

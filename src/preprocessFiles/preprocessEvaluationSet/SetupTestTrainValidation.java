@@ -27,7 +27,7 @@ public final class SetupTestTrainValidation {
     */
 	public SetupTestTrainValidation(String combinedPath, ArrayList<EvaluationSet> evaluationSets) throws IOException, Exception{
 		this.combinedPath      = combinedPath;
-		this.combinedInstances = UtilsInstances.getInstances(combinedPath);
+		this.combinedInstances = UtilsInstances.getInstancesFromFile(combinedPath);
       
       final ArrayList<SplitFileCounter> splitFileCounters = 
          setSplitFileCounters(evaluationSets);
