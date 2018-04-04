@@ -15,7 +15,7 @@ public abstract class HybridIntermediaryStage implements CategoricalType{
     * @return CategoricalTypeConstants.GENERAL
     */
    @Override
-   public CategoricalTypeConstants getCategoricalType() {
+   public CategoricalTypeConstants getCategoricalTypeConstant() {
       return CategoricalTypeConstants.GENERAL;
    }
 }

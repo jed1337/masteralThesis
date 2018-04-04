@@ -17,7 +17,7 @@ import utils.UtilsInstances;
 import weka.core.Attribute;
 import weka.core.Instances;
 
-public final class CrossValidation implements Classify{
+public final class CrossValidation implements Evaluation{
    private Instances combinedInstances;
 
    @Override

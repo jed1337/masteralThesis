@@ -3,6 +3,7 @@ package preprocessFiles;
 import constants.AttributeTypeConstants;
 import constants.DirectoryConstants;
 import constants.GeneralAttackTypeEnum;
+import constants.PreprocessFileName;
 import constants.SpecificAttackTypeEnum;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.IOException;
@@ -16,19 +17,41 @@ import preprocessFiles.preprocessAs.FormatAsArff;
  */
 public abstract class PreprocessFile {
    private final int RANDOM_SEED = 11;
+
    private final GeneralAttackTypeEnum  generalAttackType;
    private final SpecificAttackTypeEnum specificAttackType;
+   private final PreprocessFileName preprocessFileName;
+
    private final FormatAsArff faa;
 
    private int instancesCount = -1;
 
-   protected PreprocessFile(String filename, GeneralAttackTypeEnum generalAttackType, SpecificAttackTypeEnum specificAttackType)
-           throws IOException {
-      this.generalAttackType = generalAttackType;
-      this.specificAttackType = specificAttackType;
+   protected PreprocessFile
+         (String filename, GeneralAttackTypeEnum gat, SpecificAttackTypeEnum sat, PreprocessFileName pfName)
+         throws IOException {
+
+      this.generalAttackType = gat;
+      this.specificAttackType = sat;
+      this.preprocessFileName = pfName;
 
       this.faa = new FormatAsArff(DirectoryConstants.UNFORMATTED_DIR+filename);
       this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+filename);
+   }
+
+   public final GeneralAttackTypeEnum getGeneralAttackType() {
+      return this.generalAttackType;
+   }
+
+   public final SpecificAttackTypeEnum getSpecificAttackType() {
+      return this.specificAttackType;
+   }
+
+   public PreprocessFileName getPreprocessFileName() {
+      return this.preprocessFileName;
+   }
+
+   public final FormatAsArff getFaa() {
+      return this.faa;
    }
 
    public final void setUp() throws IOException, Exception{
@@ -37,7 +60,7 @@ public abstract class PreprocessFile {
       this.faa.removeAttributes(
          GlobalFeatureExtraction.getInstance().getFeaturesToRemove()
       );
-      
+
       this.faa.randomise(this.RANDOM_SEED);
 
       keepXInstances();
@@ -46,7 +69,7 @@ public abstract class PreprocessFile {
    /**
     * Uses the renameNominalValuesfunction in this.faa
     * @see preprocessFiles.preprocessAs.FormatAsArff#renameNominalValues(String, String)
-    * 
+    *
     * @param attributes
     * @param toReplace
     * @throws java.lang.Exception
@@ -57,18 +80,6 @@ public abstract class PreprocessFile {
 
    public final void setInstancesCount(int instancesCount) {
       this.instancesCount = instancesCount;
-   }
-
-   public final GeneralAttackTypeEnum getGeneralAttackType() {
-      return generalAttackType;
-   }
-
-   public final SpecificAttackTypeEnum getSpecificAttackType() {
-      return specificAttackType;
-   }
-
-   public final FormatAsArff getFaa() {
-      return faa;
    }
 
    public int getInstancesCount() {
@@ -84,7 +95,7 @@ public abstract class PreprocessFile {
       GlobalFeatureExtraction.getInstance()
          .removeNonMatchingClasses().accept(this.faa);
    }
-   
+
    /**
     * For example there are 5000 instances
     * <br>

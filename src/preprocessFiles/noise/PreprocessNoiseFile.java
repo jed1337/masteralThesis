@@ -1,16 +1,18 @@
 package preprocessFiles.noise;
 
 import constants.GeneralAttackTypeEnum;
+import constants.PreprocessFileName;
 import constants.SpecificAttackTypeEnum;
 import java.io.IOException;
 import preprocessFiles.PreprocessFile;
 
 public abstract class PreprocessNoiseFile extends PreprocessFile{
-   public PreprocessNoiseFile(String fileName)throws IOException {
+   protected PreprocessNoiseFile(String fileName, PreprocessFileName pfName)throws IOException {
       super(
          fileName, 
          GeneralAttackTypeEnum.NORMAL,
-         SpecificAttackTypeEnum.NORMAL
+         SpecificAttackTypeEnum.NORMAL,
+         pfName
       );
    }
 }

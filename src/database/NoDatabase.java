@@ -17,7 +17,7 @@ import weka.core.Attribute;
 public class NoDatabase implements Database{
    private static NoDatabase instance;
    private NoDatabase(){}
-   
+
    public static NoDatabase getInstance(){
       if(NoDatabase.instance == null){
          NoDatabase.instance = new NoDatabase();
@@ -25,13 +25,13 @@ public class NoDatabase implements Database{
       System.err.println("Warning, getting NoDatabase");
       return NoDatabase.instance;
    }
-   
+
    @Override
    public void insertMainTable(String systemType, String categoricalType, Float noiseLevel, String dataset, String extractionTool)
            throws SQLException {
       System.err.println("Not doing inserting to insertMainTable");
    }
-   
+
    @Override
    public void insertMainTable(SystemParameters sp) throws SQLException {
       System.err.println("Not doing inserting to insertMainTable");
@@ -44,15 +44,12 @@ public class NoDatabase implements Database{
    }
 
    @Override
-   public void insertToFeatureSelectionTable(FeatureSelection fs) throws
-                                                                         SQLException {
+   public void insertToFeatureSelectionTable(FeatureSelection fs) throws SQLException {
       System.err.println("Not doing inserting to insertToFeatureSelectionTable");
    }
 
    @Override
-   public void insertToFeatureTable(Enumeration<Attribute> attributes) throws
-                                                                NoSuchElementException,
-                                                                SQLException {
+   public void insertToFeatureTable(Enumeration<Attribute> attributes) throws NoSuchElementException, SQLException {
       System.err.println("Not doing inserting to insertToFeatureTable");
    }
 }

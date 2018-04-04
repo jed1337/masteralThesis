@@ -17,7 +17,7 @@ import weka.core.WekaEnumeration;
  * It's implemented as a singleton since it's ok for many objects to have
  * reference to this since this class does nothing
  */
-public class NoEvaluation implements Classify{
+public class NoEvaluation implements Evaluation{
    private static NoEvaluation instance;
 
    private NoEvaluation(){}

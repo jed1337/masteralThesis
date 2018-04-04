@@ -18,7 +18,7 @@ public interface CategoricalType {
    /**
     * @return General or nominal
     */
-   public CategoricalTypeConstants getCategoricalType();
+   public CategoricalTypeConstants getCategoricalTypeConstant();
    
    /**
     * Evenly splits the totalInstanceCount among the instances

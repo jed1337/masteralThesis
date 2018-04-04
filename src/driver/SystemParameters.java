@@ -57,7 +57,7 @@ public final class SystemParameters implements GetPreprocessFiles{
    }
 
    public CategoricalTypeConstants getCategoricalType() {
-      return this.categoricalType.getCategoricalType();
+      return this.categoricalType.getCategoricalTypeConstant();
    }
 
    public String getRelabel() {

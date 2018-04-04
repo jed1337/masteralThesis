@@ -26,7 +26,7 @@ import weka.core.Instances;
  * <br> 
  * The paths for train, test, and validation, are statically set as private variables
  */
-public abstract class AbstractTrainTest implements Classify{
+public abstract class AbstractTrainTest implements Evaluation{
    protected final String TRAIN_PATH      = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TRAIN;
    protected final String TEST_PATH       = DirectoryConstants.FORMATTED_DIR + FileNameConstants.TEST;
    protected final String VALIDATION_PATH = DirectoryConstants.FORMATTED_DIR + FileNameConstants.VALIDATION;

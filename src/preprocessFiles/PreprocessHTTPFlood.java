@@ -1,6 +1,7 @@
 package preprocessFiles;
 
 import constants.GeneralAttackTypeEnum;
+import constants.PreprocessFileName;
 import constants.SpecificAttackTypeEnum;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.IOException;
@@ -10,7 +11,8 @@ public class PreprocessHTTPFlood extends PreprocessFile{
       super(
          GlobalFeatureExtraction.getInstance().getHTTPFloodPath(),
          GeneralAttackTypeEnum.HIGH_RATE,
-         SpecificAttackTypeEnum.HTTP_FLOOD
+         SpecificAttackTypeEnum.HTTP_FLOOD,
+         PreprocessFileName.HTTP_FLOOD
       );
    }
 }

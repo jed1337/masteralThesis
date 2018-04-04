@@ -24,7 +24,7 @@ public final class SpecificAttackType implements CategoricalType{
     * @return 
     */
    @Override
-   public CategoricalTypeConstants getCategoricalType() {
+   public CategoricalTypeConstants getCategoricalTypeConstant() {
       return CategoricalTypeConstants.SPECIFIC;
    }
    

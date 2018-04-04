@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import preprocessFiles.PreprocessFile;
+import preprocessFiles.PreprocessNormal;
 
 public class NormalVersusSpecificAttack extends Mode{
    private final String type;
@@ -16,6 +17,7 @@ public class NormalVersusSpecificAttack extends Mode{
       this.type = type;
       
       this.pfL = new ArrayList<>();
+      this.pfL.add(new PreprocessNormal());
       this.pfL.add(pf);
    }
    

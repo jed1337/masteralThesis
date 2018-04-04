@@ -7,7 +7,6 @@ import constants.FileNameConstants;
 import customWeka.CustomEvaluation;
 import database.Database;
 import database.NoDatabase;
-import evaluation.Classify;
 import evaluation.NoEvaluation;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
@@ -27,6 +26,7 @@ import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Attribute;
+import evaluation.Evaluation;
 
 /**
  * A class to train the system given a wide variety of different parameters.
@@ -66,7 +66,7 @@ public final class SystemTrain {
    private void execute(SystemTrain.Buidler builder, String combinedPath) throws Exception {
       ArrayList<ClassifierHolder> classifierHolders = getClassifierHolders();
 
-      Classify classify = builder.eval;
+      Evaluation classify = builder.eval;
       classify.setupEvaluationSets(combinedPath);
       
       Enumeration<Attribute> selectedAttributes =
@@ -145,7 +145,7 @@ public final class SystemTrain {
       //Initialised to null objects
       private FeatureSelection fs = NoFeatureSelection.getInstance();
       private Database db = NoDatabase.getInstance();
-      private Classify eval = NoEvaluation.getInstance();
+      private Evaluation eval = NoEvaluation.getInstance();
 
       public SystemTrain.Buidler featureSelection(FeatureSelection fs) {
          this.fs = fs;
@@ -157,7 +157,7 @@ public final class SystemTrain {
          return this;
       }
 
-      public SystemTrain.Buidler evaluation(Classify eval) {
+      public SystemTrain.Buidler evaluation(Evaluation eval) {
          this.eval = eval;
          return this;
       }

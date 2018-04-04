@@ -1,6 +1,7 @@
 package preprocessFiles;
 
 import constants.GeneralAttackTypeEnum;
+import constants.PreprocessFileName;
 import constants.SpecificAttackTypeEnum;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.IOException;
@@ -10,7 +11,8 @@ public class PreprocessSlowHeaders extends PreprocessFile {
       super(
          GlobalFeatureExtraction.getInstance().getSlowHeadersPath(),
          GeneralAttackTypeEnum.LOW_RATE,
-         SpecificAttackTypeEnum.SLOW_HEADERS
+         SpecificAttackTypeEnum.SLOW_HEADERS,
+         PreprocessFileName.SLOW_HEADERS
       );
    }
 }

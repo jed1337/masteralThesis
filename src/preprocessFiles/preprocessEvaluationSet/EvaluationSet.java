@@ -9,9 +9,7 @@ public final class EvaluationSet {
    private Instances instances;
 
    public EvaluationSet(String name, float splitValue) {
-      this.name = name;
-      this.splitValue = splitValue;
-      this.instances = null;
+      this(name, splitValue, null);
    }
 
    public EvaluationSet(String name, float splitValue, Instances instances) {

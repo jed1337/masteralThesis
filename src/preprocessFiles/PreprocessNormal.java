@@ -1,6 +1,7 @@
 package preprocessFiles;
 
 import constants.GeneralAttackTypeEnum;
+import constants.PreprocessFileName;
 import constants.SpecificAttackTypeEnum;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.IOException;
@@ -10,7 +11,8 @@ public final class PreprocessNormal extends PreprocessFile{
       super(
          GlobalFeatureExtraction.getInstance().getNormalPath(),
          GeneralAttackTypeEnum.NORMAL,
-         SpecificAttackTypeEnum.NORMAL
+         SpecificAttackTypeEnum.NORMAL,
+         PreprocessFileName.NORMAL
       );
    }
 }

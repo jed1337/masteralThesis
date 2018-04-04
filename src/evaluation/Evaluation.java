@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.NoSuchElementException;
 import weka.core.Attribute;
 
-public interface Classify {
+public interface Evaluation {
    /**
     * Return the type of classification done. 
     * E.g. Cross validation, train-test, train-validation, etc.
