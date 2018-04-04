@@ -14,6 +14,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 import org.apache.commons.io.FileUtils;
@@ -252,5 +254,19 @@ public final class Utils {
     */
    public static String doubleToString(double value, int width, int afterDecimalPoint) {
       return weka.core.Utils.doubleToString(value, width, afterDecimalPoint);
+   }
+   
+   /**
+    * Checks that all items in the list are unique.
+    * @param <T>
+    * @param list 
+    * @return if the list is unique
+    */
+   public static <T extends Object> boolean isListUnique(List<T> list){
+      //A set only contains unique instances
+      HashSet<T> set = new HashSet<>(list);
+
+      // If there are no duplicates, the set will have the same size as the list
+      return set.size() == list.size();
    }
 }

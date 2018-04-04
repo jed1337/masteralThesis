@@ -7,7 +7,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import preprocessFiles.PreprocessFile;
+import utils.Utils;
 
 public final class CustomInstanceDistributionCategoricalType implements CategoricalType{
    private final String relabelSpecificAttack;
@@ -24,7 +27,15 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
       this.relabelSpecificAttack = relabelSpecificAttack;
       this.categoricalTypeConstant = categoricalTypeConstant;
       this.fileDistributions = fileDistributions;
+      
+      checkDistributionValues();
+   }
 
+   private void checkDistributionValues() throws IllegalArgumentException {
+      if(this.fileDistributions == null){
+         throw new IllegalArgumentException("The file distribution needs to be set");
+      }
+      
       for (Map.Entry<PreprocessFileName, Double> entry : this.fileDistributions.entrySet()) {
          PreprocessFileName key = entry.getKey();
          double value           = entry.getValue();
@@ -66,7 +77,8 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
    public void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstancesCount) 
       throws NoSuchElementException, IllegalArgumentException{
       checkPFExistence(pfL);
-      checkPFUnique(pfL);
+      
+      checkUniquePreprocesFiles(pfL);
       
       double totalDistribution = this.fileDistributions.values().stream()
          .reduce(0.0, Double::sum);
@@ -86,29 +98,31 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
     * @param pfL 
     */
    private void checkPFExistence(List<PreprocessFile> pfL) throws NoSuchElementException{
+      final Predicate<PreprocessFileName> notInDistribution = (pfName)->(!this.fileDistributions.containsKey(pfName));
+      
       pfL.stream()
          .map((pf)->pf.getPreprocessFileName())
-         .filter((pfName)->(!this.fileDistributions.containsKey(pfName)))
+         .filter(notInDistribution)
          .forEachOrdered((pfName)->{
             throw new NoSuchElementException(pfName + " wasn't set in this.fileDistributions");
          });
    }
-   
-   /**
-    * Checks that all the preprocess files are unique. <br>
-    * This will still work with duplicate instances 
-    * but since we use the pfName in it to differentiate different preprocess files, 
-    * they will end up having the wrong number of instances
-    * @param pfL 
-    */
-   private void checkPFUnique(List<PreprocessFile> pfL){
-      //A set only contains unique instances
-      HashSet<PreprocessFile> set = new HashSet<>(pfL);
 
-      // If there are no duplicates, the set will have
-      // the same size as pfL
-      // todo check if this works since we've used an object, not a Stirng or some other immutable thing
-      if (set.size() < pfL.size()) {
+   /**
+    * Uses Utils.isListUnique internally
+    * @see utils.Utils#isListUnique(List)
+    * @param pfL
+    * @throws IllegalArgumentException 
+    */
+   private void checkUniquePreprocesFiles(List<PreprocessFile> pfL) 
+         throws IllegalArgumentException {
+      boolean uniqueInstances = Utils.isListUnique(
+         pfL.stream()
+            .map(pf->pf.getPreprocessFileName())
+            .collect(Collectors.toList())
+      );
+      
+      if (!uniqueInstances) {
          throw new IllegalArgumentException("The preprocess files given contain duplicates");
       }
    }

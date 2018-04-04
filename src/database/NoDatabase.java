@@ -1,6 +1,5 @@
 package database;
 
-import classifier.ClassifierHolder;
 import customWeka.CustomEvaluation;
 import driver.SystemParameters;
 import featureSelection.FeatureSelection;
