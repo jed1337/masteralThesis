@@ -1,5 +1,5 @@
-## What it does
-It uses a hybrid approach: it first identifies if the traffic is normal or an attack, if it is an attack, it identifies if it is part of a high rate or low rate DDoS attack
+# Training and testing
+It first identifies if the traffic is normal or an attack, if it is an attack, it identifies if it is part of a high rate or low rate DDoS attack. The system can be configured to provide the specific attack name.
 
 ## Input
 Normal, high rate, and low rate data whose features were extracted using [KDD99 Feature extractor](https://github.com/AI-IDS/kdd99_feature_extractor)
@@ -7,25 +7,35 @@ Normal, high rate, and low rate data whose features were extracted using [KDD99 
 ## Output
 Classification
 
-## Specifics
+## Training system specifics
 ### Tools used:
 * [Weka](https://www.cs.waikato.ac.nz/ml/weka/)
-* [Low Orbit Ion Cannon](https://github.com/NewEraCracker/LOIC)
 * [Wireshark](wireshark.org/)
-* [Apache Benchmark](https://httpd.apache.org/docs/2.4/programs/ab.html)
-* [Netmate](https://github.com/DanielArndt/netmate-flowcalc)
+* [Low Orbit Ion Cannon](https://github.com/NewEraCracker/LOIC)
+* [SlowHTTPTest](https://github.com/shekyan/slowhttptest)
+* [Hping](https://github.com/antirez/hping)
 
 ### Uses 5 machine learning algorithms:
 * J48
 * IBk
-* NaiveBayes
-* RandomForest
+* Naive Bayes
+* Random Forest
 * SMO
 
-# Things to do
-* Classify
-	* Create a train model function
+### 5 feature selection methods
+* None (baseline)
+* Information gain
+* Attribute correlation
+* J48 wrapper
+* Naive Bayes wrapper
 
-* Add JUnit tests
-	* Use checksum to verify that the files are the same
-	* Add more tests in general
+### Database compatibility
+* Mysql
+
+# Live system specifics
+
+## Input
+A trained model
+
+## Output
+Probability of being in a certain class as well as the IP addresses involved in the flow
