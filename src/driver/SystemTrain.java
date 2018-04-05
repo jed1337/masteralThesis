@@ -4,9 +4,11 @@ import classifier.ClassifierHolder;
 import constants.AttributeTypeConstants;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
+import constants.NoiseDatasetNames;
 import customWeka.CustomEvaluation;
 import database.Database;
 import database.NoDatabase;
+import evaluation.Evaluation;
 import evaluation.NoEvaluation;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
@@ -26,7 +28,6 @@ import weka.classifiers.lazy.IBk;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Attribute;
-import evaluation.Evaluation;
 
 /**
  * A class to train the system given a wide variety of different parameters.
@@ -52,13 +53,21 @@ public final class SystemTrain {
 	}
 
 	private SystemTrain(
-      SystemTrain.Buidler builder, String combinedPath,
-      String systemType, String categoricalType, Float noiseLevel,
-      String dataset, String extractionTool)
-      throws IOException, Exception {
+         SystemTrain.Buidler builder,
+         
+         String combinedPath,
+         String systemType,
+         String categoricalType,
+         
+         NoiseDatasetNames noiseDatasetName,
+         float noiseToAttackRatio,
+         
+         String dataset,
+         String extractionTool
+      ) throws IOException, Exception {
 
       this.db = builder.db;
-      this.db.insertMainTable(systemType, categoricalType, noiseLevel, dataset, extractionTool);
+      this.db.insertMainTable(systemType, categoricalType, noiseDatasetName, noiseToAttackRatio, dataset, extractionTool);
 
       execute(builder, combinedPath);
 	}
@@ -172,7 +181,8 @@ public final class SystemTrain {
        * @param combinedPath The path to the arff file containing all the instances
        * @param systemType
        * @param categoricalType
-       * @param noiseLevel
+       * @param noiseDatasetName
+       * @param noiseToAttackRatio
        * @param dataset
        * @param extractionTool
        * @return
@@ -180,7 +190,11 @@ public final class SystemTrain {
        */
       public SystemTrain build(
             String combinedPath,
-            String systemType, String categoricalType, Float noiseLevel,
+            String systemType, String categoricalType, 
+            
+            NoiseDatasetNames noiseDatasetName,
+            float noiseToAttackRatio,
+            
             String dataset, String extractionTool)
             throws Exception{
 
@@ -189,7 +203,10 @@ public final class SystemTrain {
             combinedPath,
             systemType,
             categoricalType,
-            noiseLevel,
+            
+            noiseDatasetName,
+            noiseToAttackRatio,
+            
             dataset,
             extractionTool
          );

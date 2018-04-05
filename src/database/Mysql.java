@@ -6,6 +6,7 @@ import constants.DBConstants.EvaluationTableConstants;
 import constants.DBConstants.FeatureSelectionTableConstants;
 import constants.DBConstants.FeatureTableConstants;
 import constants.DBConstants.MainTableConstants;
+import constants.NoiseDatasetNames;
 import customWeka.CustomEvaluation;
 import driver.SystemParameters;
 import featureSelection.FeatureSelection;
@@ -32,7 +33,8 @@ public final class Mysql implements Database {
       Class.forName(DBConnectionConstants.DRIVER_CLASS);
       System.out.println("MySQL JDBC Driver Registered!");
 
-      this.connection = DriverManager.getConnection(DBConnectionConstants.CONNECTION_URL+DBConnectionConstants.DATABASE_NAME,
+      this.connection = DriverManager.getConnection(
+         DBConnectionConstants.CONNECTION_URL+DBConnectionConstants.DATABASE_NAME,
          DBConnectionConstants.USERNAME,
          DBConnectionConstants.PASSWORD
       );
@@ -43,7 +45,10 @@ public final class Mysql implements Database {
       insertMainTable(
          sp.getSystemType(),
          sp.getCategoricalType().name(),
-         sp.getNoiseLevelFloat(),
+         
+         sp.getNoiseDatasetName(), 
+         sp.getNoiseToAttackcRatio(),
+         
          GlobalFeatureExtraction.getInstance().getDatasetName(),
          GlobalFeatureExtraction.getInstance().getName()
       );
@@ -51,17 +56,17 @@ public final class Mysql implements Database {
    
    @Override
    public void insertMainTable(
-      String systemType, String categoricalType, Float noiseLevel, 
-      String dataset, String extractionTool)
+      String systemType, String categoricalType, NoiseDatasetNames noiseDataset, float noiseToAttackRatio, String dataset, String extractionTool)
+      
       throws SQLException{
 
-      String query = getQueryString(
-         DBConnectionConstants.DATABASE_NAME,
+      String query = getQueryString(DBConnectionConstants.DATABASE_NAME,
          MainTableConstants.TABLE_NAME,
 
          MainTableConstants.SYSTEM_TYPE,
          MainTableConstants.CATEGORICAL_TYPE,
-         MainTableConstants.NOISE_LEVEL,
+         MainTableConstants.NOISE_DATASET,
+         MainTableConstants.NOISE_TO_ATTACK_RATIO,
          MainTableConstants.DATASET,
          MainTableConstants.EXTRACTION_TOOL,
          MainTableConstants.TIMESTAMP
@@ -79,7 +84,10 @@ public final class Mysql implements Database {
       int i=1;
       ps.setString(i++, systemType);
       ps.setString(i++, categoricalType);
-      ps.setFloat (i++, noiseLevel);
+      
+      ps.setString(i++, noiseDataset.toString());
+      ps.setFloat(i++, noiseToAttackRatio);
+      
       ps.setString(i++, dataset);
       ps.setString(i++, extractionTool);
       ps.setTimestamp(i++, timestamp);

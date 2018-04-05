@@ -1,5 +1,6 @@
 package database;
 
+import constants.NoiseDatasetNames;
 import customWeka.CustomEvaluation;
 import driver.SystemParameters;
 import featureSelection.FeatureSelection;
@@ -23,14 +24,17 @@ public interface Database {
     * to SystemTrain instead of using multiple PreprocessFile
     * @param systemType
     * @param categoricalType
-    * @param noiseLevel
+    * @param noiseDataset
+    * @param noiseToAttackRatio the value of noiseToAttackRatio
     * @param dataset
     * @param extractionTool
     * @throws SQLException 
     */
    public void insertMainTable(
-      String systemType, String categoricalType, Float noiseLevel, 
-      String dataset, String extractionTool) throws SQLException;
+      String systemType, String categoricalType, 
+      NoiseDatasetNames noiseDataset, float noiseToAttackRatio, 
+      String dataset, String extractionTool) 
+      throws SQLException;
 
    public void insertToEvaluationTable(String classifyType, String classifierName, CustomEvaluation eval)
            throws SQLException, Exception;

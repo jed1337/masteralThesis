@@ -1,5 +1,6 @@
 package driver.mode.noiseLevel;
 
+import constants.NoiseDatasetNames;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,17 +17,15 @@ public final class NoiseRandomWebsite implements NoiseLevel{
    }
    
    /**
-    * @return 0.5 since the amount of normal data and noise gets
-    * evenly distributed by categoricalType.setPreprocessFileCount(). I.E.
-    * 50% noise, 50% normal
+    * @return the NosieDatasetNames
     */
    @Override
-   public float getNoiseLevelFloat(){
-      return 0.50f;
+   public NoiseDatasetNames getNoiseDatasetName(){
+      return NoiseDatasetNames.RANDOM_WEBSITES;
    }
    
    @Override
-   public String getNoiseLevelString() {
-      return "Random websites";
+   public float getNoiseToAttackcRatio() {
+      return 0.5f;
    }
 }

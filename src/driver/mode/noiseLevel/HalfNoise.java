@@ -1,5 +1,6 @@
 package driver.mode.noiseLevel;
 
+import constants.NoiseDatasetNames;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,18 +10,16 @@ import preprocessFiles.noise.PreprocessNoiseNormal;
 
 public class HalfNoise implements NoiseLevel{
    /**
-    * @return 0.5 since the amount of normal data and noise gets
-    * evenly distributed by categoricalType.setPreprocessFileCount(). I.E.
-    * 1/2: Normal, 1/2: NormalNoise
+    * @return the NosieDatasetNames
     */
    @Override
-   public float getNoiseLevelFloat() {
-      return 0.5f;
+   public NoiseDatasetNames getNoiseDatasetName() {
+      return NoiseDatasetNames.NOISE_1;
    }
 
    @Override
-   public String getNoiseLevelString() {
-      return "Half Noise";
+   public float getNoiseToAttackcRatio() {
+      return 0.5f;
    }
 
    @Override

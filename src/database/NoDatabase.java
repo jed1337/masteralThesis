@@ -1,5 +1,6 @@
 package database;
 
+import constants.NoiseDatasetNames;
 import customWeka.CustomEvaluation;
 import driver.SystemParameters;
 import featureSelection.FeatureSelection;
@@ -26,8 +27,8 @@ public class NoDatabase implements Database{
    }
 
    @Override
-   public void insertMainTable(String systemType, String categoricalType, Float noiseLevel, String dataset, String extractionTool)
-           throws SQLException {
+   public void insertMainTable(String systemType, String categoricalType, NoiseDatasetNames noiseDataset, float noiseToAttackRatio, String dataset, String extractionTool)
+      throws SQLException {
       System.err.println("Not doing inserting to insertMainTable");
    }
 

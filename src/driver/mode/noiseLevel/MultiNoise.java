@@ -1,5 +1,6 @@
 package driver.mode.noiseLevel;
 
+import constants.NoiseDatasetNames;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,18 +15,16 @@ import preprocessFiles.noise.PreprocessNoiseUDPFlood;
 
 public final class MultiNoise implements NoiseLevel{
    /**
-    * @return 0.83333 since the amount of normal data and noise gets
-    * evenly distributed by categoricalType.setPreprocessFileCount(). I.E.
-    * 1/7: normal, 1/7: normalNoise, 1/7: noiseHTTPFlood, etc
+    * @return the NosieDatasetNames
     */
    @Override
-   public float getNoiseLevelFloat(){
-      return 0.83333f;
+   public NoiseDatasetNames getNoiseDatasetName(){
+      return NoiseDatasetNames.NOISE_2;
    }
 
    @Override
-   public String getNoiseLevelString() {
-      return "Noise";
+   public float getNoiseToAttackcRatio() {
+      return 0.83333f;
    }
 
    @Override

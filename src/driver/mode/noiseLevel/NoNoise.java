@@ -1,5 +1,6 @@
 package driver.mode.noiseLevel;
 
+import constants.NoiseDatasetNames;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -36,15 +37,15 @@ public final class NoNoise implements NoiseLevel{
    }
    
    /**
-    * @return 0.0 since there's no noise
+    * @return the NosieDatasetNames
     */
    @Override
-   public float getNoiseLevelFloat(){
-      return 0.0f;
+   public NoiseDatasetNames getNoiseDatasetName(){
+      return NoiseDatasetNames.NO_NOISE;
    }
 
    @Override
-   public String getNoiseLevelString() {
-      return "No noise";
+   public float getNoiseToAttackcRatio() {
+      return 0.0f;
    }
 }

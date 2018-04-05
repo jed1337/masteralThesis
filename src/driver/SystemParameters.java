@@ -1,6 +1,7 @@
 package driver;
 
 import constants.CategoricalTypeConstants;
+import constants.NoiseDatasetNames;
 import driver.categoricalType.CategoricalType;
 import driver.mode.Mode;
 import driver.mode.noiseLevel.NoiseLevel;
@@ -48,12 +49,12 @@ public final class SystemParameters implements GetPreprocessFiles{
       return Collections.unmodifiableList(this.pfL);
    }
 
-   public float getNoiseLevelFloat() {
-      return this.nl.getNoiseLevelFloat();
+   public NoiseDatasetNames getNoiseDatasetName() {
+      return this.nl.getNoiseDatasetName();
    }
 
-   public String getNoiseLevelString() {
-      return this.nl.getNoiseLevelString();
+   public float getNoiseToAttackcRatio() {
+      return this.nl.getNoiseToAttackcRatio();
    }
 
    public CategoricalTypeConstants getCategoricalType() {
