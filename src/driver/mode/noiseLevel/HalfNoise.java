@@ -18,7 +18,7 @@ public class HalfNoise implements NoiseLevel{
    }
 
    @Override
-   public float getNoiseToAttackcRatio() {
+   public float normalToNoiseRatio() {
       return 0.5f;
    }
 

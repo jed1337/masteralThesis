@@ -45,7 +45,7 @@ public final class NoNoise implements NoiseLevel{
    }
 
    @Override
-   public float getNoiseToAttackcRatio() {
+   public float normalToNoiseRatio() {
       return 0.0f;
    }
 }

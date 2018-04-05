@@ -101,9 +101,9 @@ public final class SystemTrain {
       classifierHolders.add(new ClassifierHolder(new IBk(), "KNN"));
       classifierHolders.add(new ClassifierHolder(new NaiveBayes(), "NB "));
       
-      //We just extracted rf so that we can set print to be true
+      //We just extracted rf so that we can set print to be true (We stopped this since we don't even check the RF's output)
       RandomForest rf = new RandomForest();
-      rf.setPrintClassifiers(true);
+//      rf.setPrintClassifiers(true);
       classifierHolders.add(new ClassifierHolder(rf, "RF "));
       
       classifierHolders.add(new ClassifierHolder(new SMO(), "SMO"));

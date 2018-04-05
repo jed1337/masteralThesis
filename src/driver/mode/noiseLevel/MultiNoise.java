@@ -23,7 +23,7 @@ public final class MultiNoise implements NoiseLevel{
    }
 
    @Override
-   public float getNoiseToAttackcRatio() {
+   public float normalToNoiseRatio() {
       return 0.83333f;
    }
 

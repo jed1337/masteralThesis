@@ -1,16 +1,14 @@
 package driver;
 
 import constants.ArffInstanceCount;
+import constants.CategoricalTypeConstants;
+import constants.PreprocessFileName;
 import database.Mysql;
 import driver.categoricalType.CategoricalType;
-import driver.categoricalType.GeneralAttackType;
-import driver.categoricalType.SpecificAttackType;
-import driver.mode.HybridDDoSType;
-import driver.mode.HybridIsAttack;
+import driver.categoricalType.CustomInstanceDistributionCategoricalType;
 import driver.mode.NormalVersusSpecificAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.HalfNoise;
-import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.NoiseLevel;
 import evaluation.Evaluation;
 import evaluation.TrainTest;
@@ -25,18 +23,16 @@ import featureSelection.wrappers.NBWrapper;
 import globalParameters.GlobalFeatureExtraction;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import preprocessFiles.PreprocessHTTPFlood;
-import preprocessFiles.PreprocessSlowHeaders;
-import preprocessFiles.PreprocessSlowRead;
-import preprocessFiles.PreprocessTCPFlood;
-import preprocessFiles.PreprocessUDPFlood;
+import java.util.EnumMap;
+import utils.Utils;
 
 public final class Driver {
    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
       GlobalFeatureExtraction.setInstance(
          new FinalDatabase(new BiFlowExtraction())
       );
-      
+
+//<editor-fold defaultstate="collapsed" desc="live system">
 //      String[] params = {
 //         "hybrid",
 ////         "Data/RawFiles/Final/Bi flow output/normal(Modified)(test).arff",
@@ -46,6 +42,7 @@ public final class Driver {
 //      };
 //
 //      LiveSystemController.getInstance().execute(args);
+//</editor-fold>
 
       final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
 
@@ -56,23 +53,50 @@ public final class Driver {
          new NBWrapper(),
          new J48Wrapper()
       };
-      final CategoricalType[] categoricalTypes = new CategoricalType[]{
-         new GeneralAttackType(),
-         new SpecificAttackType()
-      };
+
       final NoiseLevel[] noiseLevels = new NoiseLevel[]{
-         new HalfNoise(),
-         NoNoise.getInstance()
+         new HalfNoise()
+//         NoNoise.getInstance()
 //         new MultiNoise(),
       };
 
+//      final CategoricalType[] categoricalTypes = new CategoricalType[]{
+//         // new GeneralAttackType(),
+//         // new SpecificAttackType()
+//        new CustomInstanceDistributionCategoricalType ("", CategoricalTypeConstants.SPECIFIC, fileDistributions)
+//      };
+
       for (FeatureSelection fs : featureSelections) {
-         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
-         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
-         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
-         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
-         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
-         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
+         final double totalNormal = 1.0;
+         final int slices = 10;
+         
+         for (int i = 1; i < slices; i++) {
+            double normalRatio      = i * (totalNormal/slices);
+            double noiseNormalRatio = totalNormal-normalRatio;
+            
+            EnumMap<PreprocessFileName, Double> fileDistributions = new EnumMap<>(PreprocessFileName.class);
+
+            Utils.addToMap(fileDistributions,PreprocessFileName.NORMAL,        0.5d);
+            Utils.addToMap(fileDistributions,PreprocessFileName.NOISE_NORMAL,  0.5d);
+            Utils.addToMap(fileDistributions,PreprocessFileName.TCP_FLOOD,     1d);
+            Utils.addToMap(fileDistributions,PreprocessFileName.UDP_FLOOD,     1d);
+            Utils.addToMap(fileDistributions,PreprocessFileName.HTTP_FLOOD,    1d);
+            Utils.addToMap(fileDistributions,PreprocessFileName.SLOW_HEADERS,  1d);
+            Utils.addToMap(fileDistributions,PreprocessFileName.SLOW_READ,     1d);
+
+            CustomInstanceDistributionCategoricalType c = new CustomInstanceDistributionCategoricalType ("", CategoricalTypeConstants.SPECIFIC, fileDistributions);
+            singleHybridTest(new CategoricalType[]{c}, noiseLevels, fs, instanceCount);
+            System.out.println("");
+         }
+         
+         
+         
+//         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
       }
    }
 
@@ -107,24 +131,24 @@ public final class Driver {
             System.out.println("");
          }
       }
-      for (NoiseLevel noiseLevel : noiseLevels) {
-         systemTrain(
-            fs,
-            new SystemParameters(
-               instanceCount,
-               new HybridIsAttack(noiseLevel)
-            )
-         );
-      }
-     for (CategoricalType categoricalType : categoricalTypes) {
-        systemTrain(
-            fs,
-            new SystemParameters(
-               instanceCount,
-               new HybridDDoSType(categoricalType)
-            )
-        );
-     }
+//      for (NoiseLevel noiseLevel : noiseLevels) {
+//         systemTrain(
+//            fs,
+//            new SystemParameters(
+//               instanceCount,
+//               new HybridIsAttack(noiseLevel)
+//            )
+//         );
+//      }
+//     for (CategoricalType categoricalType : categoricalTypes) {
+//        systemTrain(
+//            fs,
+//            new SystemParameters(
+//               instanceCount,
+//               new HybridDDoSType(categoricalType)
+//            )
+//        );
+//     }
    }
 
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)

@@ -15,5 +15,5 @@ public interface NoiseLevel extends GetPreprocessFiles{
     * Returns the percentage of noise data to put with the normal data
     * @return
     */
-   public abstract float getNoiseToAttackcRatio();
+   public abstract float normalToNoiseRatio();
 }

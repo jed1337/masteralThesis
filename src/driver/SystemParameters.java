@@ -54,7 +54,7 @@ public final class SystemParameters implements GetPreprocessFiles{
    }
 
    public float getNoiseToAttackcRatio() {
-      return this.nl.getNoiseToAttackcRatio();
+      return this.nl.normalToNoiseRatio();
    }
 
    public CategoricalTypeConstants getCategoricalType() {
