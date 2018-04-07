@@ -52,4 +52,9 @@ public final class HybridStageIsAttack extends HybridIntermediaryStage{
          }
       }
    }
+
+   @Override
+   public float normalToNoiseRatio(List<PreprocessFile> pfL) {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   }
 }

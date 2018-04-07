@@ -4,7 +4,7 @@ import constants.CategoricalTypeConstants;
 import constants.NoiseDatasetNames;
 import driver.categoricalType.CategoricalType;
 import driver.mode.Mode;
-import driver.mode.noiseLevel.NoiseLevel;
+import driver.mode.noiseLevel.NoiseDataset;
 import generalInterfaces.GetPreprocessFiles;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.List;
 import preprocessFiles.PreprocessFile;
 
 public final class SystemParameters implements GetPreprocessFiles{
-   private final NoiseLevel nl;
+   private final NoiseDataset nl;
    private final CategoricalType categoricalType;
    private final String systemType;
 
@@ -54,7 +54,7 @@ public final class SystemParameters implements GetPreprocessFiles{
    }
 
    public float getNoiseToAttackcRatio() {
-      return this.nl.normalToNoiseRatio();
+      return this.categoricalType.normalToNoiseRatio(this.pfL);
    }
 
    public CategoricalTypeConstants getCategoricalType() {

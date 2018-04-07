@@ -8,18 +8,14 @@ import java.util.List;
 import preprocessFiles.PreprocessFile;
 import preprocessFiles.noise.PreprocessNoiseNormal;
 
-public class HalfNoise implements NoiseLevel{
-   /**
-    * @return the NosieDatasetNames
-    */
+/**
+ * Contains the noise files involving normal accesses that behave like DDoS attacks
+ */
+public class HalfNoise implements NoiseDataset{
+
    @Override
    public NoiseDatasetNames getNoiseDatasetName() {
       return NoiseDatasetNames.NOISE_1;
-   }
-
-   @Override
-   public float normalToNoiseRatio() {
-      return 0.5f;
    }
 
    @Override

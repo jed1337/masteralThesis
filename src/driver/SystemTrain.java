@@ -4,7 +4,6 @@ import classifier.ClassifierHolder;
 import constants.AttributeTypeConstants;
 import constants.DirectoryConstants;
 import constants.FileNameConstants;
-import constants.NoiseDatasetNames;
 import customWeka.CustomEvaluation;
 import database.Database;
 import database.NoDatabase;
@@ -49,30 +48,6 @@ public final class SystemTrain {
          combinedPath
       );
 
-      execute(builder, combinedPath);
-	}
-
-	private SystemTrain(
-         SystemTrain.Buidler builder,
-         
-         String combinedPath,
-         String systemType,
-         String categoricalType,
-         
-         NoiseDatasetNames noiseDatasetName,
-         float noiseToAttackRatio,
-         
-         String dataset,
-         String extractionTool
-      ) throws IOException, Exception {
-
-      this.db = builder.db;
-      this.db.insertMainTable(systemType, categoricalType, noiseDatasetName, noiseToAttackRatio, dataset, extractionTool);
-
-      execute(builder, combinedPath);
-	}
-
-   private void execute(SystemTrain.Buidler builder, String combinedPath) throws Exception {
       ArrayList<ClassifierHolder> classifierHolders = getClassifierHolders();
 
       Evaluation classify = builder.eval;
@@ -118,7 +93,6 @@ public final class SystemTrain {
 				AttributeTypeConstants.ATTRIBUTE_CLASS,
 				relabel
 			);
-//			writePreprocessFile(pfL);
 		}
 		return pfL;
 	}
@@ -173,43 +147,6 @@ public final class SystemTrain {
 
       public SystemTrain build(SystemParameters sp) throws Exception{
          return new SystemTrain(this, sp);
-      }
-
-      /**
-       * This has a lot of parameters since those parameters needed to know
-       * What stuff to insert to the Database
-       * @param combinedPath The path to the arff file containing all the instances
-       * @param systemType
-       * @param categoricalType
-       * @param noiseDatasetName
-       * @param noiseToAttackRatio
-       * @param dataset
-       * @param extractionTool
-       * @return
-       * @throws Exception
-       */
-      public SystemTrain build(
-            String combinedPath,
-            String systemType, String categoricalType, 
-            
-            NoiseDatasetNames noiseDatasetName,
-            float noiseToAttackRatio,
-            
-            String dataset, String extractionTool)
-            throws Exception{
-
-         return new SystemTrain(
-            this,
-            combinedPath,
-            systemType,
-            categoricalType,
-            
-            noiseDatasetName,
-            noiseToAttackRatio,
-            
-            dataset,
-            extractionTool
-         );
       }
    }
 }

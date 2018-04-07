@@ -1,20 +1,20 @@
 package driver.mode;
 
 import driver.categoricalType.CategoricalType;
-import driver.mode.noiseLevel.NoiseLevel;
 import generalInterfaces.GetPreprocessFiles;
 import java.io.IOException;
+import driver.mode.noiseLevel.NoiseDataset;
 
 public abstract class Mode implements GetPreprocessFiles{
-   private final NoiseLevel nl;
+   private final NoiseDataset nl;
    private final CategoricalType categoricalType;
 
-   public Mode(NoiseLevel nl, CategoricalType categoricalType) throws IOException {
+   public Mode(NoiseDataset nl, CategoricalType categoricalType) throws IOException {
       this.nl = nl;
       this.categoricalType = categoricalType;
    }
 
-   public final NoiseLevel getNoiseLevel() {
+   public final NoiseDataset getNoiseLevel() {
       return this.nl;
    }
 

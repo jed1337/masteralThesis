@@ -8,7 +8,7 @@ import java.util.List;
 import preprocessFiles.PreprocessFile;
 import preprocessFiles.noise.PreprocessNoiseRandomWebsites;
 
-public final class NoiseRandomWebsite implements NoiseLevel{
+public final class NoiseRandomWebsite implements NoiseDataset{
    @Override
    public List<PreprocessFile> getPreprocessFiles() throws IOException {
       return Collections.unmodifiableList(Arrays.asList(
@@ -24,8 +24,8 @@ public final class NoiseRandomWebsite implements NoiseLevel{
       return NoiseDatasetNames.RANDOM_WEBSITES;
    }
    
-   @Override
-   public float normalToNoiseRatio() {
-      return 0.5f;
-   }
+//   @Override
+//   public float normalToNoiseRatio() {
+//      return 0.5f;
+//   }
 }

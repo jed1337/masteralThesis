@@ -13,18 +13,15 @@ import preprocessFiles.noise.PreprocessNoiseSlowRead;
 import preprocessFiles.noise.PreprocessNoiseTCPFlood;
 import preprocessFiles.noise.PreprocessNoiseUDPFlood;
 
-public final class MultiNoise implements NoiseLevel{
-   /**
-    * @return the NosieDatasetNames
-    */
+/**
+ * The noise data here contains DDoS attacks that have been relabeled to "Normal"
+ * as well as everything from  {@link driver.mode.noiseLevel.HalfNoise}
+ */
+public final class MultiNoise implements NoiseDataset{
+
    @Override
    public NoiseDatasetNames getNoiseDatasetName(){
       return NoiseDatasetNames.NOISE_2;
-   }
-
-   @Override
-   public float normalToNoiseRatio() {
-      return 0.83333f;
    }
 
    @Override
@@ -34,7 +31,6 @@ public final class MultiNoise implements NoiseLevel{
 			new PreprocessNoiseHttpFlood(),
 			new PreprocessNoiseUDPFlood(),
 			new PreprocessNoiseTCPFlood(),
-//			new PreprocessNoiseSlowBody(),
 			new PreprocessNoiseSlowRead(),
 			new PreprocessNoiseSlowHeaders()
       ));

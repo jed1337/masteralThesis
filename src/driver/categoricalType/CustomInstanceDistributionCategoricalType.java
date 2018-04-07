@@ -6,6 +6,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import preprocessFiles.PreprocessFile;
@@ -28,6 +29,37 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
       this.fileDistributions = fileDistributions;
       
       checkDistributionValues();
+   }
+
+   @Override
+   public float normalToNoiseRatio(List<PreprocessFile> pfL) {
+      final Optional<PreprocessFile> optNormal = pfL.stream()
+         .filter(pf -> pf.getPreprocessFileName() == PreprocessFileName.NORMAL)
+         .findFirst();
+      
+      //If the normal class isn't present, return -1.0
+      if(!optNormal.isPresent()){
+         return -1.0f;
+      }
+       
+      final int normalInstanceCount = optNormal.get().getInstancesCount();
+      
+      final PreprocessFileName[] noiseNames = {
+         PreprocessFileName.NOISE_NORMAL,
+         PreprocessFileName.NOISE_TCP_FLOOD,
+         PreprocessFileName.NOISE_UDP_FLOOD,
+         PreprocessFileName.NOISE_HTTP_FLOOD,
+         PreprocessFileName.NOISE_SLOW_HEADERS,
+         PreprocessFileName.NOISE_SLOW_BODY,
+         PreprocessFileName.NOISE_SLOW_READ,
+      };
+      
+      final int noiseInstanceCount = pfL.stream()
+         .filter(pf ->Utils.arrayContains(noiseNames, pf.getPreprocessFileName()))
+         .mapToInt(pf -> pf.getInstancesCount())
+         .sum();
+      
+      return (float) normalInstanceCount / (normalInstanceCount+noiseInstanceCount);
    }
 
    private void checkDistributionValues() throws IllegalArgumentException {
@@ -75,8 +107,8 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
    @Override
    public void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstancesCount) 
       throws NoSuchElementException, IllegalArgumentException{
+      checkPFAndDistributionSameSize(pfL);
       checkPFExistence(pfL);
-      
       checkUniquePreprocesFiles(pfL);
       
       double totalDistribution = this.fileDistributions.values().stream()
@@ -84,7 +116,7 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
       
       int instancesPerDistributionValue = (int) (totalInstancesCount/totalDistribution);
       
-      pfL.forEach((PreprocessFile pf)->{
+      pfL.forEach(pf->{
          final double distributionValue = CustomInstanceDistributionCategoricalType.this.fileDistributions.get(pf.getPreprocessFileName());
          int instanceCount = (int) (instancesPerDistributionValue * distributionValue);
          
@@ -92,6 +124,20 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
       });
    }
 
+   /**
+    * Simply checks that pfL and the fileDistribution have the same size. 
+    * The program will still work if it isn't the same size, but will give invalid values.
+    * @param pfL
+    * @throws IllegalArgumentException 
+    */
+   private void checkPFAndDistributionSameSize(List<PreprocessFile> pfL) throws IllegalArgumentException{
+      if(pfL.size()!=this.fileDistributions.size()){
+         throw new IllegalArgumentException(
+            "The number of preprocess files isn't hte same as the size of the fileDistributions"
+         );
+      }
+   }
+   
    /**
     * Makes sure that all the preprocess files are declared in this.fileDistribution.
     * @param pfL 

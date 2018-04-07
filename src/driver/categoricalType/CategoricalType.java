@@ -36,5 +36,18 @@ public interface CategoricalType {
     * @param pfL
     * @param totalInstancesCount 
     */
-   public void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstancesCount) ;
+   public void setPreprocessFileCount(List<PreprocessFile> pfL, int totalInstancesCount);
+   
+   /**
+    * Returns the percentage of normal data in relation to noise data. <p>
+    * 1.0: all normal data <br>
+    * 0.75: 75% normal data, 25% noise data. <br>
+    * 0.5: 50% normal and noise data. <br>
+    * 0: all noise data. <br>
+    * -1.0: no normal data
+    * 
+    * @param pfL The list from which to get the ratio from 
+    * @return
+    */
+   public abstract float normalToNoiseRatio(List<PreprocessFile> pfL);
 }

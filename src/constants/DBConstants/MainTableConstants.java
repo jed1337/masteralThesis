@@ -6,7 +6,7 @@ public class MainTableConstants {
 	public final static String CATEGORICAL_TYPE = "CategoricalType";
    
 	public final static String NOISE_DATASET         = "NoiseDataset";
-	public final static String NOISE_TO_ATTACK_RATIO = "NoiseToAttackRatio";
+	public final static String NORMAL_TO_NOISE_RATIO = "NormalToNoiseRatio";
    
 	public final static String DATASET          = "Dataset";
 	public final static String EXTRACTION_TOOL  = "ExtractionTool";

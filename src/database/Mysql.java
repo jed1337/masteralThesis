@@ -66,7 +66,7 @@ public final class Mysql implements Database {
          MainTableConstants.SYSTEM_TYPE,
          MainTableConstants.CATEGORICAL_TYPE,
          MainTableConstants.NOISE_DATASET,
-         MainTableConstants.NOISE_TO_ATTACK_RATIO,
+         MainTableConstants.NORMAL_TO_NOISE_RATIO,
          MainTableConstants.DATASET,
          MainTableConstants.EXTRACTION_TOOL,
          MainTableConstants.TIMESTAMP

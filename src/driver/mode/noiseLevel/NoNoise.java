@@ -7,11 +7,11 @@ import java.util.List;
 import preprocessFiles.PreprocessFile;
 
 /**
- * Null pattern implementation of NoiseLevel. <br>
+ * Null pattern implementation of NoiseDataset. <br>
  * It's implemented as a singleton since it's ok for many objects to have
  * reference to this since this class does nothing
  */
-public final class NoNoise implements NoiseLevel{
+public final class NoNoise implements NoiseDataset{
    private static NoNoise instance = null;
    private NoNoise(){}
    
@@ -44,8 +44,8 @@ public final class NoNoise implements NoiseLevel{
       return NoiseDatasetNames.NO_NOISE;
    }
 
-   @Override
-   public float normalToNoiseRatio() {
-      return 0.0f;
-   }
+//   @Override
+//   public float normalToNoiseRatio() {
+//      return 0.0f;
+//   }
 }
