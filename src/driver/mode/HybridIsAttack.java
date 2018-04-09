@@ -2,6 +2,7 @@ package driver.mode;
 
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.HybridStageIsAttack;
+import driver.mode.noiseLevel.NoiseDataset;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,6 @@ import preprocessFiles.PreprocessSlowHeaders;
 import preprocessFiles.PreprocessSlowRead;
 import preprocessFiles.PreprocessTCPFlood;
 import preprocessFiles.PreprocessUDPFlood;
-import driver.mode.noiseLevel.NoiseDataset;
 
 public final class HybridIsAttack extends Mode{
    public HybridIsAttack(NoiseDataset nl)

@@ -1,0 +1,67 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.0336 * (normalized) duration
+ +       0.9588 * (normalized) cof=N/A
+ +       1.6726 * (normalized) cof=2
+ +       0.0927 * (normalized) cof=4
+ +       0.0929 * (normalized) cof=18
+ +       0.6047 * (normalized) cof=19
+ +       0.5951 * (normalized) cof=21
+ +      -1.8987 * (normalized) cof=22
+ +       0.6043 * (normalized) cof=23
+ +      -1      * (normalized) cof=26
+ +      -0.8298 * (normalized) cof=27
+ +       0.4114 * (normalized) cof=29
+ +      -1.782  * (normalized) cof=30
+ +       0.478  * (normalized) cof=31
+ +      -5.7702 * (normalized) total_f_packets
+ +      -5.8157 * (normalized) total_f_bytes
+ +      -0.1617 * (normalized) pps_f
+ +      -0.7691 * (normalized) bps_f
+ +      -3.035  * (normalized) min_f_pkt
+ +       2.9852 * (normalized) mean_f_pkt
+ +      -2.6321 * (normalized) max_f_pkt
+ +       1.0906 * (normalized) std_f_pkt
+ +      -0.7655 * (normalized) min_f_time
+ +       0.0106 * (normalized) mean_f_time
+ +      -1.3416 * (normalized) max_f_time
+ +      -1.4832 * (normalized) std_f_time
+ +      -0.2433 * (normalized) psh_f_cnt
+ +      -0.9588 * (normalized) urg_f_cnt
+ +       2.0495
+
+Number of kernel evaluations: 56306754 (58.61% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        1477               49.2497 %
+Incorrectly Classified Instances      1522               50.7503 %
+Kappa statistic                         -0.0148
+Mean absolute error                      0.5075
+Root mean squared error                  0.7124
+Relative absolute error                101.5005 %
+Root relative squared error            142.4784 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.865    0.880    0.496      0.865    0.630      -0.022   0.493     0.496     normal
+                 0.120    0.135    0.471      0.120    0.191      -0.022   0.493     0.497     attack
+Weighted Avg.    0.492    0.507    0.483      0.492    0.411      -0.022   0.493     0.496     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1297  202 |    a = normal
+ 1320  180 |    b = attack

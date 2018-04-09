@@ -2,6 +2,7 @@ package driver;
 
 import constants.ArffInstanceCount;
 import constants.CategoricalTypeConstants;
+import constants.DirectoryConstants;
 import constants.PreprocessFileName;
 import database.Mysql;
 import driver.categoricalType.CategoricalType;
@@ -12,9 +13,11 @@ import driver.mode.HybridIsAttack;
 import driver.mode.NormalVersusSpecificAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.MultiNoise;
+import driver.mode.noiseLevel.NoNoise;
+import driver.mode.noiseLevel.Noise1;
 import driver.mode.noiseLevel.NoiseDataset;
 import evaluation.Evaluation;
-import evaluation.TrainTest;
+import evaluation.TrainValidation;
 import featureExtraction.CaidaNormalBiFlowExtraction;
 import featureExtraction.Decorator.FinalDatabase;
 import featureSelection.FeatureSelection;
@@ -53,9 +56,9 @@ public final class Driver {
       };
 
       final NoiseDataset[] noiseLevels = new NoiseDataset[]{
+         NoNoise.getInstance(),
+         new Noise1(),
          new MultiNoise()
-//         NoNoise.getInstance(),
-//         new Noise1(),
       };
 
       for (FeatureSelection fs : featureSelections) {
@@ -182,27 +185,27 @@ public final class Driver {
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
       throws IOException, Exception {
 
-      Evaluation classify = new TrainTest();
+      Evaluation classify = new TrainValidation();
 
-      new SystemTrain.Buidler()
-         .database(new Mysql())
-//         .database(NoDatabase.getInstance())
-         .featureSelection(fs)
-         .evaluation(classify)
-         .build(systemParameters);
+//      new SystemTrain.Buidler()
+//         .database(new Mysql())
+////         .database(NoDatabase.getInstance())
+//         .featureSelection(fs)
+//         .evaluation(classify)
+//         .build(systemParameters);
 
-      //<editor-fold defaultstate="collapsed" desc="Write to file">
-//      String fullFolderPath = String.join("/",
-//         "Results",
-//         GlobalFeatureExtraction.getInstance().getDatasetName(),
-//         GlobalFeatureExtraction.getInstance().getName(),
-//         classify.getType(),
-//         systemParameters.getCategoricalType().name(),
-//         systemParameters.getNoiseLevelString(),
-//         fs.getFSMethodName(),
-//         systemParameters.getSystemType()
-//      )+"/";
-//      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
+//<editor-fold defaultstate="collapsed" desc="Write to file">
+      String fullFolderPath = String.join("/",
+         "Results",
+         GlobalFeatureExtraction.getInstance().getDatasetName(),
+         GlobalFeatureExtraction.getInstance().getName(),
+         classify.getType(),
+         systemParameters.getCategoricalType().name(),
+         systemParameters.getNoiseDatasetName().toString(),
+         fs.getFSMethodName(),
+         systemParameters.getSystemType()
+      )+"/";
+      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
 //</editor-fold>
    }
 }

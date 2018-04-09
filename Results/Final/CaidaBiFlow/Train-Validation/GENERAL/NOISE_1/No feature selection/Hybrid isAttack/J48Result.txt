@@ -1,0 +1,61 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+min_f_pkt <= 46
+|   max_f_pkt <= 224: attack (5237.0)
+|   max_f_pkt > 224
+|   |   pps_f <= 1053.804492: attack (220.0)
+|   |   pps_f > 1053.804492
+|   |   |   max_f_pkt <= 226
+|   |   |   |   std_f_time <= 0.00071: attack (2.0)
+|   |   |   |   std_f_time > 0.00071
+|   |   |   |   |   std_f_time <= 0.000773: normal (6.0)
+|   |   |   |   |   std_f_time > 0.000773
+|   |   |   |   |   |   duration <= 0.005823: attack (2.0)
+|   |   |   |   |   |   duration > 0.005823: normal (4.0/1.0)
+|   |   |   max_f_pkt > 226: normal (31.0/1.0)
+min_f_pkt > 46
+|   total_f_bytes <= 440
+|   |   mean_f_pkt <= 56
+|   |   |   min_f_time <= 1.150793
+|   |   |   |   min_f_pkt <= 52: attack (18.0)
+|   |   |   |   min_f_pkt > 52: normal (3.0/1.0)
+|   |   |   min_f_time > 1.150793: normal (6.0)
+|   |   mean_f_pkt > 56: attack (496.0/2.0)
+|   total_f_bytes > 440
+|   |   duration <= 59.926209
+|   |   |   psh_f_cnt <= 4: normal (5924.0/5.0)
+|   |   |   psh_f_cnt > 4
+|   |   |   |   psh_f_cnt <= 8: normal (22.0/1.0)
+|   |   |   |   psh_f_cnt > 8: attack (4.0)
+|   |   duration > 59.926209
+|   |   |   min_f_time <= 0.000013: normal (11.0)
+|   |   |   min_f_time > 0.000013: attack (14.0)
+
+Number of Leaves  : 	16
+
+Size of the tree : 	31
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2741               91.3667 %
+Incorrectly Classified Instances       259                8.6333 %
+Kappa statistic                          0.8273
+Mean absolute error                      0.0856
+Root mean squared error                  0.2891
+Relative absolute error                 17.1133 %
+Root relative squared error             57.8205 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.171    0.854      0.999    0.920      0.840    0.901     0.896     normal
+                 0.829    0.001    0.998      0.829    0.906      0.840    0.901     0.942     attack
+Weighted Avg.    0.914    0.086    0.926      0.914    0.913      0.840    0.901     0.919     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1498    2 |    a = normal
+  257 1243 |    b = attack
