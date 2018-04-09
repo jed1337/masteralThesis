@@ -11,7 +11,7 @@ import preprocessFiles.noise.PreprocessNoiseNormal;
 /**
  * Contains the noise files involving normal accesses that behave like DDoS attacks
  */
-public class HalfNoise implements NoiseDataset{
+public class Noise1 implements NoiseDataset{
 
    @Override
    public NoiseDatasetNames getNoiseDatasetName() {

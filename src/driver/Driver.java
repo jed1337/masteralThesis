@@ -6,12 +6,16 @@ import constants.PreprocessFileName;
 import database.Mysql;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.CustomInstanceDistributionCategoricalType;
+import driver.categoricalType.SpecificAttackType;
+import driver.mode.HybridDDoSType;
+import driver.mode.HybridIsAttack;
 import driver.mode.NormalVersusSpecificAttack;
 import driver.mode.Single;
 import driver.mode.noiseLevel.MultiNoise;
+import driver.mode.noiseLevel.NoiseDataset;
 import evaluation.Evaluation;
 import evaluation.TrainTest;
-import featureExtraction.BiFlowExtraction;
+import featureExtraction.CaidaNormalBiFlowExtraction;
 import featureExtraction.Decorator.FinalDatabase;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
@@ -20,12 +24,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.EnumMap;
 import utils.Utils;
-import driver.mode.noiseLevel.NoiseDataset;
 
 public final class Driver {
-   public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
+   public static void main(String[] args) throws FileNotFoundException,IOException, Exception {
       GlobalFeatureExtraction.setInstance(
-         new FinalDatabase(new BiFlowExtraction())
+         new FinalDatabase(new CaidaNormalBiFlowExtraction())
       );
 
 //<editor-fold defaultstate="collapsed" desc="live system">
@@ -39,28 +42,37 @@ public final class Driver {
 //
 //      LiveSystemController.getInstance().execute(args);
 //</editor-fold>
-
       final int instanceCount = ArffInstanceCount.EIGHTEEN_K;
 
       final FeatureSelection[] featureSelections = new FeatureSelection[]{
          NoFeatureSelection.getInstance()
-//         new InfoGainFS(),
-//         new CorrelationFS(),
-//         new NBWrapper(),
-//         new J48Wrapper()
+      };
+
+      final CategoricalType[] categoricalTypes = new CategoricalType[]{
+         new SpecificAttackType()
       };
 
       final NoiseDataset[] noiseLevels = new NoiseDataset[]{
          new MultiNoise()
-//         new HalfNoise()
-//         NoNoise.getInstance()
+//         NoNoise.getInstance(),
+//         new Noise1(),
       };
 
-//      final CategoricalType[] categoricalTypes = new CategoricalType[]{
-//         // new GeneralAttackType(),
-//         // new SpecificAttackType()
-//        new CustomInstanceDistributionCategoricalType ("", CategoricalTypeConstants.SPECIFIC, fileDistributions)
-//      };
+      for (FeatureSelection fs : featureSelections) {
+         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
+         //<editor-fold defaultstate="collapsed" desc="NormalVsOther">
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
+//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
+//</editor-fold>
+      }
+   }
+//<editor-fold defaultstate="collapsed" desc="Noise ratio and normalVsOther">
+
+   private static void noiseRatioTest(final FeatureSelection[] featureSelections, final NoiseDataset[] noiseLevels, final int instanceCount)
+      throws Exception {
 
       final PreprocessFileName[] noiseNames = {
          PreprocessFileName.NOISE_NORMAL,
@@ -71,97 +83,104 @@ public final class Driver {
          PreprocessFileName.NOISE_SLOW_READ
       };
 
+      final double totalNormal = 1.0;
+      final int slices = 10;
+
       for (FeatureSelection fs : featureSelections) {
-         final double totalNormal = 1.0;
-         final int slices = 10;
-         
          for (int i = 1; i < slices; i++) {
-            final double normalRatio      = i * (totalNormal/slices);
-            final double overallNoiseNormalRatio = totalNormal-normalRatio;
+            final double normalRatio = i * (totalNormal / slices);
+            final double overallNoiseNormalRatio = totalNormal - normalRatio;
 
-            final double noiseNormalRatio = overallNoiseNormalRatio/noiseNames.length;
-            final EnumMap<PreprocessFileName, Double> fileDistributions = new EnumMap<>(PreprocessFileName.class);
+            final double noiseNormalRatio = overallNoiseNormalRatio / noiseNames.length;
+            final EnumMap<PreprocessFileName, Double> fileDistributions = new EnumMap<>(
+               PreprocessFileName.class);
 
-            Utils.addToMap(fileDistributions,PreprocessFileName.NORMAL,            normalRatio);
+            Utils.addToMap(fileDistributions, PreprocessFileName.NORMAL,
+                           normalRatio);
             for (PreprocessFileName noiseName : noiseNames) {
-               Utils.addToMap(fileDistributions,noiseName, noiseNormalRatio);
+               Utils.addToMap(fileDistributions, noiseName, noiseNormalRatio);
             }
-            
-            Utils.addToMap(fileDistributions,PreprocessFileName.TCP_FLOOD,     1d);
-            Utils.addToMap(fileDistributions,PreprocessFileName.UDP_FLOOD,     1d);
-            Utils.addToMap(fileDistributions,PreprocessFileName.HTTP_FLOOD,    1d);
-            Utils.addToMap(fileDistributions,PreprocessFileName.SLOW_HEADERS,  1d);
-            Utils.addToMap(fileDistributions,PreprocessFileName.SLOW_READ,     1d);
 
-            CustomInstanceDistributionCategoricalType c = new CustomInstanceDistributionCategoricalType ("", CategoricalTypeConstants.SPECIFIC, fileDistributions);
-            systemTrain(new CategoricalType[]{c}, noiseLevels, fs, instanceCount);
+            Utils
+               .addToMap(fileDistributions, PreprocessFileName.TCP_FLOOD, 0.2d);
+            Utils
+               .addToMap(fileDistributions, PreprocessFileName.UDP_FLOOD, 0.2d);
+            Utils.addToMap(fileDistributions, PreprocessFileName.HTTP_FLOOD,
+                           0.2d);
+            Utils.addToMap(fileDistributions, PreprocessFileName.SLOW_HEADERS,
+                           0.2d);
+            Utils
+               .addToMap(fileDistributions, PreprocessFileName.SLOW_READ, 0.2d);
+
+            CustomInstanceDistributionCategoricalType c = new CustomInstanceDistributionCategoricalType(
+               "normal:normal, normal:normal, tcpFlood:attack, udpFlood:attack, httpFlood:attack, slowHeaders:attack, slowRead:attack",
+               CategoricalTypeConstants.GENERAL,
+               fileDistributions
+            );
+
+            singleHybridTest(new CategoricalType[]{c}, noiseLevels, fs,
+                             instanceCount);
          }
-         System.out.println("");
-
-
-
-//         singleHybridTest(categoricalTypes, noiseLevels, fs, instanceCount);
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs syn flood", new PreprocessTCPFlood()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs udp flood", new PreprocessUDPFlood()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs http flood", new PreprocessHTTPFlood()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow read", new PreprocessSlowRead()));
-//         normalVSOther(fs, instanceCount, new NormalVersusSpecificAttack("Normal vs slow headers", new PreprocessSlowHeaders()));
       }
    }
 
    private static void normalVSOther(FeatureSelection fs, final int instanceCount, final NormalVersusSpecificAttack mode)
-           throws Exception {
+      throws Exception {
       systemTrain(
          fs,
          new SystemParameters(instanceCount, mode)
       );
    }
+//</editor-fold>
 
    /**
     * This function separates the training in the code.
     * This makes it easier to comment out
+    *
     * @param categoricalTypes
     * @param noiseLevels
     * @param fs
     * @param instanceCount
+    *
     * @throws Exception
     */
-   private static void systemTrain(final CategoricalType[] categoricalTypes, final NoiseDataset[] noiseLevels, FeatureSelection fs, final int instanceCount)
-           throws Exception {
+   private static void singleHybridTest(final CategoricalType[] categoricalTypes, final NoiseDataset[] noiseLevels, FeatureSelection fs, final int instanceCount)
+      throws Exception {
       for (CategoricalType categoricalType : categoricalTypes) {
          for (NoiseDataset noiseLevel : noiseLevels) {
             systemTrain(
                fs,
                new SystemParameters(
                   instanceCount,
-                  new Single (noiseLevel, categoricalType)
+                  new Single(noiseLevel, categoricalType)
+               // new HybridIsAttack(noiseLevel, categoricalType)
                )
             );
-            System.out.println("");
          }
+         System.out.println("");
       }
-//      for (NoiseDataset noiseLevel : noiseLevels) {
-//         systemTrain(
-//            fs,
-//            new SystemParameters(
-//               instanceCount,
-//               new HybridIsAttack(noiseLevel)
-//            )
-//         );
-//      }
-//     for (CategoricalType categoricalType : categoricalTypes) {
-//        systemTrain(
-//            fs,
-//            new SystemParameters(
-//               instanceCount,
-//               new HybridDDoSType(categoricalType)
-//            )
-//        );
-//     }
+      for (NoiseDataset noiseLevel : noiseLevels) {
+         systemTrain(
+            fs,
+            new SystemParameters(
+               instanceCount,
+               new HybridIsAttack(noiseLevel)
+            )
+         );
+      }
+      for (CategoricalType categoricalType : categoricalTypes) {
+         systemTrain(
+            fs,
+            new SystemParameters(
+               instanceCount,
+               new HybridDDoSType(categoricalType)
+            )
+         );
+      }
    }
 
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
-         throws IOException, Exception {
+      throws IOException, Exception {
 
       Evaluation classify = new TrainTest();
 
@@ -172,6 +191,7 @@ public final class Driver {
          .evaluation(classify)
          .build(systemParameters);
 
+      //<editor-fold defaultstate="collapsed" desc="Write to file">
 //      String fullFolderPath = String.join("/",
 //         "Results",
 //         GlobalFeatureExtraction.getInstance().getDatasetName(),
@@ -182,7 +202,7 @@ public final class Driver {
 //         fs.getFSMethodName(),
 //         systemParameters.getSystemType()
 //      )+"/";
-
 //      Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
+//</editor-fold>
    }
 }

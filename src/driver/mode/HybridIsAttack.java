@@ -1,5 +1,6 @@
 package driver.mode;
 
+import driver.categoricalType.CategoricalType;
 import driver.categoricalType.HybridStageIsAttack;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,6 +18,11 @@ public final class HybridIsAttack extends Mode{
    public HybridIsAttack(NoiseDataset nl)
          throws IOException {
       super(nl, new HybridStageIsAttack());
+   }
+   
+   public HybridIsAttack(NoiseDataset nl, CategoricalType categoricalType)
+         throws IOException {
+      super(nl, categoricalType);
    }
 
    @Override

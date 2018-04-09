@@ -56,4 +56,10 @@ public final class SpecificAttackType implements CategoricalType{
          );
       }
    }
+
+   @Override
+   public float normalToNoiseRatio(List<PreprocessFile> pfL) {
+      System.err.println("Dummy value");
+      return -1.0f;
+   }
 }

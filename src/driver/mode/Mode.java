@@ -1,9 +1,9 @@
 package driver.mode;
 
 import driver.categoricalType.CategoricalType;
+import driver.mode.noiseLevel.NoiseDataset;
 import generalInterfaces.GetPreprocessFiles;
 import java.io.IOException;
-import driver.mode.noiseLevel.NoiseDataset;
 
 public abstract class Mode implements GetPreprocessFiles{
    private final NoiseDataset nl;
