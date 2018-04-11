@@ -27,13 +27,18 @@ public class NoDatabase implements Database{
    }
 
    @Override
-   public void insertMainTable(String systemType, String categoricalType, NoiseDatasetNames noiseDataset, float noiseToAttackRatio, String dataset, String extractionTool)
+   public void insertMainTable(
+         String systemType, String categoricalType, 
+         NoiseDatasetNames noiseDataset, float noiseToAttackRatio, 
+         String dataset, String extractionTool, 
+         int randomSeed)
+      
       throws SQLException {
       System.err.println("Not doing inserting to insertMainTable");
    }
 
    @Override
-   public void insertMainTable(SystemParameters sp) throws SQLException {
+   public void insertMainTable(SystemParameters sp, int randomSeed) throws SQLException {
       System.err.println("Not doing inserting to insertMainTable");
    }
 

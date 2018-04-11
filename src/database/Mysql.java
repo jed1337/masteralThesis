@@ -41,7 +41,7 @@ public final class Mysql implements Database {
    }
 
    @Override
-   public void insertMainTable(SystemParameters sp) throws SQLException {
+   public void insertMainTable(SystemParameters sp, int randomSeed) throws SQLException {
       insertMainTable(
          sp.getSystemType(),
          sp.getCategoricalType().name(),
@@ -50,13 +50,18 @@ public final class Mysql implements Database {
          sp.getNoiseToAttackcRatio(),
          
          GlobalFeatureExtraction.getInstance().getDatasetName(),
-         GlobalFeatureExtraction.getInstance().getName()
+         GlobalFeatureExtraction.getInstance().getName(),
+         
+         randomSeed
       );
    }
    
    @Override
    public void insertMainTable(
-      String systemType, String categoricalType, NoiseDatasetNames noiseDataset, float noiseToAttackRatio, String dataset, String extractionTool)
+         String systemType, String categoricalType, 
+         NoiseDatasetNames noiseDataset, float noiseToAttackRatio, 
+         String dataset, String extractionTool, 
+         int randomSeed)
       
       throws SQLException{
 

@@ -16,7 +16,7 @@ import preprocessFiles.preprocessAs.FormatAsArff;
  * This is sort of like the Template method wherein the subclasses supply the parameters
  */
 public abstract class PreprocessFile {
-   private final int RANDOM_SEED = 11;
+   public static final int RANDOM_SEED = 11;
 
    private final GeneralAttackTypeEnum  generalAttackType;
    private final SpecificAttackTypeEnum specificAttackType;
@@ -38,6 +38,10 @@ public abstract class PreprocessFile {
       this.faa.setSavePath(DirectoryConstants.FORMATTED_DIR+filename);
    }
 
+   public final int getRANDOM_SEED() {
+      return RANDOM_SEED;
+   }
+         
    public final GeneralAttackTypeEnum getGeneralAttackType() {
       return this.generalAttackType;
    }

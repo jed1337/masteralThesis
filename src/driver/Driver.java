@@ -4,7 +4,7 @@ import constants.ArffInstanceCount;
 import constants.CategoricalTypeConstants;
 import constants.DirectoryConstants;
 import constants.PreprocessFileName;
-import database.Mysql;
+import database.NoDatabase;
 import driver.categoricalType.CategoricalType;
 import driver.categoricalType.CustomInstanceDistributionCategoricalType;
 import driver.categoricalType.SpecificAttackType;
@@ -17,8 +17,8 @@ import driver.mode.noiseLevel.NoNoise;
 import driver.mode.noiseLevel.Noise1;
 import driver.mode.noiseLevel.NoiseDataset;
 import evaluation.Evaluation;
-import evaluation.TrainValidation;
-import featureExtraction.CaidaNormalBiFlowExtraction;
+import evaluation.TrainTest;
+import featureExtraction.BiFlowExtraction;
 import featureExtraction.Decorator.FinalDatabase;
 import featureSelection.FeatureSelection;
 import featureSelection.NoFeatureSelection;
@@ -31,7 +31,7 @@ import utils.Utils;
 public final class Driver {
    public static void main(String[] args) throws FileNotFoundException,IOException, Exception {
       GlobalFeatureExtraction.setInstance(
-         new FinalDatabase(new CaidaNormalBiFlowExtraction())
+         new FinalDatabase(new BiFlowExtraction())
       );
 
 //<editor-fold defaultstate="collapsed" desc="live system">
@@ -159,8 +159,8 @@ public final class Driver {
                // new HybridIsAttack(noiseLevel, categoricalType)
                )
             );
+            System.out.println("");
          }
-         System.out.println("");
       }
       for (NoiseDataset noiseLevel : noiseLevels) {
          systemTrain(
@@ -185,16 +185,20 @@ public final class Driver {
    private static void systemTrain(FeatureSelection fs, SystemParameters systemParameters)
       throws IOException, Exception {
 
-      Evaluation classify = new TrainValidation();
+      Evaluation classify = new TrainTest();
+         new SystemTrain.Buidler()
+//      .database(new Mysql())
+         .database(NoDatabase.getInstance())
+      .featureSelection(fs)
+      .evaluation(classify)
+      .build(systemParameters);
 
-//      new SystemTrain.Buidler()
-//         .database(new Mysql())
-////         .database(NoDatabase.getInstance())
-//         .featureSelection(fs)
-//         .evaluation(classify)
-//         .build(systemParameters);
+      writeToFile(classify, systemParameters, fs);
+   }
 
-//<editor-fold defaultstate="collapsed" desc="Write to file">
+   private static void writeToFile(Evaluation classify, SystemParameters systemParameters, FeatureSelection fs)
+      throws IOException {
+
       String fullFolderPath = String.join("/",
          "Results",
          GlobalFeatureExtraction.getInstance().getDatasetName(),
@@ -206,6 +210,5 @@ public final class Driver {
          systemParameters.getSystemType()
       )+"/";
       Utils.duplicateDirectory(DirectoryConstants.FORMATTED_DIR, fullFolderPath);
-//</editor-fold>
    }
 }

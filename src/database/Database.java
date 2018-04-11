@@ -14,9 +14,10 @@ public interface Database {
     * Calls database.Database#insertMainTable(String, String, Float, String, String)
     * @see database.Database#insertMainTable(String, String, Float, String, String)
     * @param sp
+    * @param randomSeed
     * @throws SQLException 
     */
-   public void insertMainTable(SystemParameters sp) throws SQLException;
+   public void insertMainTable(SystemParameters sp, int randomSeed) throws SQLException;
    
    /**
     * Inserts into the main table the following parameters.<br>
@@ -31,9 +32,7 @@ public interface Database {
     * @throws SQLException 
     */
    public void insertMainTable(
-      String systemType, String categoricalType, 
-      NoiseDatasetNames noiseDataset, float noiseToAttackRatio, 
-      String dataset, String extractionTool) 
+      String systemType, String categoricalType, NoiseDatasetNames noiseDataset, float noiseToAttackRatio, String dataset, String extractionTool, int randomSeed) 
       throws SQLException;
 
    public void insertToEvaluationTable(String classifyType, String classifierName, CustomEvaluation eval)

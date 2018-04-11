@@ -40,7 +40,9 @@ public final class SystemTrain {
       final List<PreprocessFile> pfL = setupPreprocessFiles(sp.getPreprocessFiles(), sp.getRelabel());
       writePreprocessFile(pfL);
       
-      this.db.insertMainTable(sp);
+      //We just arbitrarily get the first pfL for its randomSeed
+      //todo make this not the case (this looks awful)
+      this.db.insertMainTable(sp, pfL.get(0).getRANDOM_SEED());
 
       String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
       createCombinedData(
