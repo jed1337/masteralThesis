@@ -1,0 +1,61 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+total_b_bytes <= 11896
+|   std_f_time <= 0.056573
+|   |   max_f_pkt <= 68
+|   |   |   min_f_pkt <= 46: HIGH_RATE (3868.0)
+|   |   |   min_f_pkt > 46
+|   |   |   |   min_f_pkt <= 60: LOW_RATE (14.0/2.0)
+|   |   |   |   min_f_pkt > 60: HIGH_RATE (132.0)
+|   |   max_f_pkt > 68
+|   |   |   max_f_pkt <= 168: NORMAL (7.0)
+|   |   |   max_f_pkt > 168
+|   |   |   |   total_b_packets <= 4
+|   |   |   |   |   min_b_time <= 0.000546: LOW_RATE (5.0/1.0)
+|   |   |   |   |   min_b_time > 0.000546: NORMAL (3.0)
+|   |   |   |   total_b_packets > 4
+|   |   |   |   |   std_b_time <= 0.000369
+|   |   |   |   |   |   std_f_time <= 0.000685: LOW_RATE (7.0)
+|   |   |   |   |   |   std_f_time > 0.000685
+|   |   |   |   |   |   |   total_f_packets <= 13
+|   |   |   |   |   |   |   |   mean_f_time <= 0.000501
+|   |   |   |   |   |   |   |   |   std_f_time <= 0.000767: LOW_RATE (8.0/1.0)
+|   |   |   |   |   |   |   |   |   std_f_time > 0.000767: NORMAL (6.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.000501: LOW_RATE (2.0)
+|   |   |   |   |   |   |   total_f_packets > 13: NORMAL (3.0)
+|   |   |   |   |   std_b_time > 0.000369: LOW_RATE (91.0/8.0)
+|   std_f_time > 0.056573: LOW_RATE (3851.0/4.0)
+total_b_bytes > 11896
+|   min_f_pkt <= 46: LOW_RATE (36.0)
+|   min_f_pkt > 46: NORMAL (3967.0/2.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	29
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2001               66.7    %
+Incorrectly Classified Instances       999               33.3    %
+Kappa statistic                          0.5005
+Mean absolute error                      0.2234
+Root mean squared error                  0.4347
+Relative absolute error                 50.2705 %
+Root relative squared error             92.223  %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.007    0.000    1.000      0.007    0.014      0.068    0.504     0.338     HIGH_RATE
+                 0.998    0.488    0.506      0.998    0.671      0.507    0.989     0.962     LOW_RATE
+                 0.996    0.012    0.977      0.996    0.987      0.980    0.986     0.973     NORMAL
+Weighted Avg.    0.667    0.167    0.828      0.667    0.557      0.518    0.826     0.758     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   7 972  21 |   a = HIGH_RATE
+   0 998   2 |   b = LOW_RATE
+   0   4 996 |   c = NORMAL

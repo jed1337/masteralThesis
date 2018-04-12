@@ -1,0 +1,26 @@
+=== Classifier ===
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+=== Dedicated test set ===
+=== Summary of KNN===
+
+Correctly Classified Instances        1532               51.0667 %
+Incorrectly Classified Instances      1468               48.9333 %
+Kappa statistic                          0.0213
+Mean absolute error                      0.4893
+Root mean squared error                  0.6995
+Relative absolute error                 97.867  %
+Root relative squared error            139.8932 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.021    0.000    1.000      0.021    0.042      0.104    0.505     0.508     HIGH_RATE
+                 1.000    0.979    0.505      1.000    0.671      0.104    0.505     0.505     LOW_RATE
+Weighted Avg.    0.511    0.489    0.753      0.511    0.357      0.104    0.505     0.507     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+   32 1468 |    a = HIGH_RATE
+    0 1500 |    b = LOW_RATE

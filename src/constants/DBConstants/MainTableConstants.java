@@ -10,6 +10,7 @@ public class MainTableConstants {
    
 	public final static String DATASET          = "Dataset";
 	public final static String EXTRACTION_TOOL  = "ExtractionTool";
+	public final static String RANDOM_SEED      = "RandomSeed";
 
 	public final static String TIMESTAMP        = "Timestamp";
    

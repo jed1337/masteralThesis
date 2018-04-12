@@ -1,0 +1,495 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+std_f_time <= 0.074851
+|   bps_f <= 20600.514805
+|   |   min_b_pkt <= 44
+|   |   |   std_f_time <= 0.003469
+|   |   |   |   min_f_time <= 0.011424
+|   |   |   |   |   duration <= 3.359532
+|   |   |   |   |   |   mean_f_time <= 0.003764
+|   |   |   |   |   |   |   mean_f_time <= 0.003194
+|   |   |   |   |   |   |   |   max_f_time <= 0.038462
+|   |   |   |   |   |   |   |   |   std_f_time <= 0.002487
+|   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002704
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002051
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002571
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001861
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002265: HIGH_RATE (2926.0/832.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002265
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f <= 425.460045: HIGH_RATE (82.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f > 425.460045
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001688: HIGH_RATE (15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.001688
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   min_f_time <= 0.000489: NORMAL (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   min_f_time > 0.000489: HIGH_RATE (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.001861
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002481: NORMAL (33.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002481
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001994
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1340: HIGH_RATE (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1340
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.020126: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.020126: HIGH_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.001994: NORMAL (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002571: HIGH_RATE (28.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002051
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002625: NORMAL (27.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002625
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002247: HIGH_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002247: NORMAL (8.0)
+|   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002704: HIGH_RATE (158.0/10.0)
+|   |   |   |   |   |   |   |   |   std_f_time > 0.002487
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 0.019523
+|   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1071: HIGH_RATE (4.0)
+|   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1071: NORMAL (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 0.019523: NORMAL (30.0/2.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.038462: HIGH_RATE (39.0)
+|   |   |   |   |   |   |   mean_f_time > 0.003194
+|   |   |   |   |   |   |   |   max_f_time <= 0.057524
+|   |   |   |   |   |   |   |   |   std_f_time <= 0.002803
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002705: HIGH_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.002705
+|   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1017: HIGH_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1017: NORMAL (4.0/1.0)
+|   |   |   |   |   |   |   |   |   std_f_time > 0.002803: NORMAL (52.0/4.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.057524: HIGH_RATE (6.0)
+|   |   |   |   |   |   mean_f_time > 0.003764: HIGH_RATE (43.0)
+|   |   |   |   |   duration > 3.359532
+|   |   |   |   |   |   std_f_time <= 0.001771: HIGH_RATE (5.0)
+|   |   |   |   |   |   std_f_time > 0.001771
+|   |   |   |   |   |   |   max_f_time <= 0.034835: NORMAL (27.0/1.0)
+|   |   |   |   |   |   |   max_f_time > 0.034835: HIGH_RATE (2.0)
+|   |   |   |   min_f_time > 0.011424
+|   |   |   |   |   cof = N/A
+|   |   |   |   |   |   duration <= 0.979988: HIGH_RATE (5.0)
+|   |   |   |   |   |   duration > 0.979988: NORMAL (4.0/1.0)
+|   |   |   |   |   cof = 0: NORMAL (0.0)
+|   |   |   |   |   cof = 1: NORMAL (0.0)
+|   |   |   |   |   cof = 2: LOW_RATE (8.0)
+|   |   |   |   |   cof = 3: NORMAL (0.0)
+|   |   |   |   |   cof = 4: NORMAL (0.0)
+|   |   |   |   |   cof = 5: NORMAL (0.0)
+|   |   |   |   |   cof = 6: NORMAL (0.0)
+|   |   |   |   |   cof = 7: NORMAL (0.0)
+|   |   |   |   |   cof = 8: NORMAL (0.0)
+|   |   |   |   |   cof = 9: NORMAL (0.0)
+|   |   |   |   |   cof = 10: NORMAL (0.0)
+|   |   |   |   |   cof = 11: NORMAL (0.0)
+|   |   |   |   |   cof = 12: NORMAL (0.0)
+|   |   |   |   |   cof = 13: NORMAL (0.0)
+|   |   |   |   |   cof = 14: NORMAL (0.0)
+|   |   |   |   |   cof = 15: NORMAL (0.0)
+|   |   |   |   |   cof = 16: NORMAL (0.0)
+|   |   |   |   |   cof = 17: NORMAL (0.0)
+|   |   |   |   |   cof = 18: NORMAL (0.0)
+|   |   |   |   |   cof = 19: NORMAL (0.0)
+|   |   |   |   |   cof = 20: NORMAL (0.0)
+|   |   |   |   |   cof = 21: NORMAL (0.0)
+|   |   |   |   |   cof = 22
+|   |   |   |   |   |   duration <= 0.073891
+|   |   |   |   |   |   |   duration <= 0.040548: NORMAL (93.0/25.0)
+|   |   |   |   |   |   |   duration > 0.040548: HIGH_RATE (20.0)
+|   |   |   |   |   |   duration > 0.073891: NORMAL (39.0)
+|   |   |   |   |   cof = 23: NORMAL (0.0)
+|   |   |   |   |   cof = 24: NORMAL (0.0)
+|   |   |   |   |   cof = 25: NORMAL (0.0)
+|   |   |   |   |   cof = 26: NORMAL (0.0)
+|   |   |   |   |   cof = 27: NORMAL (0.0)
+|   |   |   |   |   cof = 28: NORMAL (0.0)
+|   |   |   |   |   cof = 29: NORMAL (0.0)
+|   |   |   |   |   cof = 30: NORMAL (0.0)
+|   |   |   |   |   cof = 31: NORMAL (0.0)
+|   |   |   |   |   cof = 32: NORMAL (0.0)
+|   |   |   |   |   cof = 33: NORMAL (0.0)
+|   |   |   |   |   cof = 34: NORMAL (0.0)
+|   |   |   |   |   cof = 35: NORMAL (0.0)
+|   |   |   |   |   cof = 36: NORMAL (0.0)
+|   |   |   |   |   cof = 37: NORMAL (0.0)
+|   |   |   |   |   cof = 38: NORMAL (0.0)
+|   |   |   |   |   cof = 39: NORMAL (0.0)
+|   |   |   |   |   cof = 40: NORMAL (0.0)
+|   |   |   |   |   cof = 41: NORMAL (0.0)
+|   |   |   |   |   cof = 42: NORMAL (0.0)
+|   |   |   |   |   cof = 43: NORMAL (0.0)
+|   |   |   |   |   cof = 44: NORMAL (0.0)
+|   |   |   |   |   cof = 45: NORMAL (0.0)
+|   |   |   |   |   cof = 46: NORMAL (0.0)
+|   |   |   |   |   cof = 47: NORMAL (0.0)
+|   |   |   |   |   cof = 48: NORMAL (0.0)
+|   |   |   |   |   cof = 49: NORMAL (0.0)
+|   |   |   |   |   cof = 50: NORMAL (0.0)
+|   |   |   |   |   cof = 51: NORMAL (0.0)
+|   |   |   |   |   cof = 52: NORMAL (0.0)
+|   |   |   |   |   cof = 53: NORMAL (0.0)
+|   |   |   |   |   cof = 54: NORMAL (0.0)
+|   |   |   |   |   cof = 55: NORMAL (0.0)
+|   |   |   |   |   cof = 56: NORMAL (0.0)
+|   |   |   |   |   cof = 57: NORMAL (0.0)
+|   |   |   |   |   cof = 58: NORMAL (0.0)
+|   |   |   |   |   cof = 59: NORMAL (0.0)
+|   |   |   |   |   cof = 60: NORMAL (0.0)
+|   |   |   |   |   cof = 61: NORMAL (0.0)
+|   |   |   |   |   cof = 62: NORMAL (0.0)
+|   |   |   |   |   cof = 63: NORMAL (0.0)
+|   |   |   |   |   cof = 64: NORMAL (0.0)
+|   |   |   |   |   cof = 65: NORMAL (0.0)
+|   |   |   |   |   cof = 66: NORMAL (0.0)
+|   |   |   |   |   cof = 67: NORMAL (0.0)
+|   |   |   |   |   cof = 68: NORMAL (0.0)
+|   |   |   |   |   cof = 69: NORMAL (0.0)
+|   |   |   |   |   cof = 70: NORMAL (0.0)
+|   |   |   |   |   cof = 71: NORMAL (0.0)
+|   |   |   |   |   cof = 72: NORMAL (0.0)
+|   |   |   |   |   cof = 73: NORMAL (0.0)
+|   |   |   |   |   cof = 74: NORMAL (0.0)
+|   |   |   |   |   cof = 75: NORMAL (0.0)
+|   |   |   |   |   cof = 76: NORMAL (0.0)
+|   |   |   |   |   cof = 77: NORMAL (0.0)
+|   |   |   |   |   cof = 78: NORMAL (0.0)
+|   |   |   |   |   cof = 79: NORMAL (0.0)
+|   |   |   |   |   cof = 80: NORMAL (0.0)
+|   |   |   |   |   cof = 81: NORMAL (0.0)
+|   |   |   |   |   cof = 82: NORMAL (0.0)
+|   |   |   |   |   cof = 83: NORMAL (0.0)
+|   |   |   |   |   cof = 84: NORMAL (0.0)
+|   |   |   |   |   cof = 85: NORMAL (0.0)
+|   |   |   |   |   cof = 86: NORMAL (0.0)
+|   |   |   |   |   cof = 87: NORMAL (0.0)
+|   |   |   |   |   cof = 88: NORMAL (0.0)
+|   |   |   |   |   cof = 89: NORMAL (0.0)
+|   |   |   |   |   cof = 90: NORMAL (0.0)
+|   |   |   |   |   cof = 91: NORMAL (0.0)
+|   |   |   |   |   cof = 92: NORMAL (0.0)
+|   |   |   |   |   cof = 93: NORMAL (0.0)
+|   |   |   |   |   cof = 94: NORMAL (0.0)
+|   |   |   |   |   cof = 95: NORMAL (0.0)
+|   |   |   |   |   cof = 96: NORMAL (0.0)
+|   |   |   |   |   cof = 97: NORMAL (0.0)
+|   |   |   |   |   cof = 98: NORMAL (0.0)
+|   |   |   |   |   cof = 99: NORMAL (0.0)
+|   |   |   |   |   cof = 100: NORMAL (0.0)
+|   |   |   |   |   cof = 101: NORMAL (0.0)
+|   |   |   |   |   cof = 102: NORMAL (0.0)
+|   |   |   |   |   cof = 103: NORMAL (0.0)
+|   |   |   |   |   cof = 104: NORMAL (0.0)
+|   |   |   |   |   cof = 105: NORMAL (0.0)
+|   |   |   |   |   cof = 106: NORMAL (0.0)
+|   |   |   |   |   cof = 107: NORMAL (0.0)
+|   |   |   |   |   cof = 108: NORMAL (0.0)
+|   |   |   |   |   cof = 109: NORMAL (0.0)
+|   |   |   |   |   cof = 110: NORMAL (0.0)
+|   |   |   |   |   cof = 111: NORMAL (0.0)
+|   |   |   |   |   cof = 112: NORMAL (0.0)
+|   |   |   |   |   cof = 113: NORMAL (0.0)
+|   |   |   |   |   cof = 114: NORMAL (0.0)
+|   |   |   |   |   cof = 115: NORMAL (0.0)
+|   |   |   |   |   cof = 116: NORMAL (0.0)
+|   |   |   |   |   cof = 117: NORMAL (0.0)
+|   |   |   |   |   cof = 118: NORMAL (0.0)
+|   |   |   |   |   cof = 119: NORMAL (0.0)
+|   |   |   |   |   cof = 120: NORMAL (0.0)
+|   |   |   |   |   cof = 121: NORMAL (0.0)
+|   |   |   |   |   cof = 122: NORMAL (0.0)
+|   |   |   |   |   cof = 123: NORMAL (0.0)
+|   |   |   |   |   cof = 124: NORMAL (0.0)
+|   |   |   |   |   cof = 125: NORMAL (0.0)
+|   |   |   |   |   cof = 126: NORMAL (0.0)
+|   |   |   |   |   cof = 127: NORMAL (0.0)
+|   |   |   std_f_time > 0.003469
+|   |   |   |   mean_f_time <= 0.00405
+|   |   |   |   |   mean_f_time <= 0.003795: NORMAL (8.0)
+|   |   |   |   |   mean_f_time > 0.003795: HIGH_RATE (25.0/2.0)
+|   |   |   |   mean_f_time > 0.00405: HIGH_RATE (1426.0/4.0)
+|   |   min_b_pkt > 44: NORMAL (339.0)
+|   bps_f > 20600.514805
+|   |   max_f_pkt <= 192
+|   |   |   bps_f <= 21178.910616
+|   |   |   |   std_f_time <= 0.001595
+|   |   |   |   |   total_f_packets <= 1506: NORMAL (3.0)
+|   |   |   |   |   total_f_packets > 1506: HIGH_RATE (6.0)
+|   |   |   |   std_f_time > 0.001595: NORMAL (46.0/1.0)
+|   |   |   bps_f > 21178.910616: NORMAL (1679.0/1.0)
+|   |   max_f_pkt > 192
+|   |   |   max_f_pkt <= 263
+|   |   |   |   total_f_bytes <= 887
+|   |   |   |   |   max_b_time <= 0.001379: NORMAL (15.0/4.0)
+|   |   |   |   |   max_b_time > 0.001379: LOW_RATE (66.0/15.0)
+|   |   |   |   total_f_bytes > 887: NORMAL (4.0)
+|   |   |   max_f_pkt > 263
+|   |   |   |   total_f_bytes <= 1028: LOW_RATE (72.0/5.0)
+|   |   |   |   total_f_bytes > 1028
+|   |   |   |   |   mean_f_time <= 0.000441: NORMAL (4.0)
+|   |   |   |   |   mean_f_time > 0.000441
+|   |   |   |   |   |   min_b_time <= 0.000354: LOW_RATE (3.0)
+|   |   |   |   |   |   min_b_time > 0.000354: NORMAL (2.0)
+std_f_time > 0.074851
+|   total_b_bytes <= 1524
+|   |   pps_b <= 0.344142
+|   |   |   total_f_packets <= 3
+|   |   |   |   max_f_pkt <= 60: LOW_RATE (65.0/1.0)
+|   |   |   |   max_f_pkt > 60: NORMAL (3.0)
+|   |   |   total_f_packets > 3: LOW_RATE (2956.0/4.0)
+|   |   pps_b > 0.344142
+|   |   |   rfb_bytes <= 0.875635: NORMAL (12.0)
+|   |   |   rfb_bytes > 0.875635: LOW_RATE (13.0)
+|   total_b_bytes > 1524
+|   |   psh_b_cnt <= 1
+|   |   |   max_f_pkt <= 263
+|   |   |   |   max_f_time <= 16.595535
+|   |   |   |   |   total_b_bytes <= 11967: LOW_RATE (66.0)
+|   |   |   |   |   total_b_bytes > 11967: NORMAL (3.0/1.0)
+|   |   |   |   max_f_time > 16.595535
+|   |   |   |   |   cof = N/A: NORMAL (0.0)
+|   |   |   |   |   cof = 0: NORMAL (0.0)
+|   |   |   |   |   cof = 1: NORMAL (0.0)
+|   |   |   |   |   cof = 2: NORMAL (0.0)
+|   |   |   |   |   cof = 3: NORMAL (0.0)
+|   |   |   |   |   cof = 4: NORMAL (0.0)
+|   |   |   |   |   cof = 5: NORMAL (0.0)
+|   |   |   |   |   cof = 6: NORMAL (0.0)
+|   |   |   |   |   cof = 7: NORMAL (0.0)
+|   |   |   |   |   cof = 8: NORMAL (0.0)
+|   |   |   |   |   cof = 9: NORMAL (0.0)
+|   |   |   |   |   cof = 10: NORMAL (0.0)
+|   |   |   |   |   cof = 11: NORMAL (0.0)
+|   |   |   |   |   cof = 12: NORMAL (0.0)
+|   |   |   |   |   cof = 13: NORMAL (0.0)
+|   |   |   |   |   cof = 14: NORMAL (0.0)
+|   |   |   |   |   cof = 15: NORMAL (0.0)
+|   |   |   |   |   cof = 16: NORMAL (0.0)
+|   |   |   |   |   cof = 17: NORMAL (0.0)
+|   |   |   |   |   cof = 18: NORMAL (0.0)
+|   |   |   |   |   cof = 19: NORMAL (0.0)
+|   |   |   |   |   cof = 20: NORMAL (0.0)
+|   |   |   |   |   cof = 21: NORMAL (0.0)
+|   |   |   |   |   cof = 22: NORMAL (0.0)
+|   |   |   |   |   cof = 23: NORMAL (0.0)
+|   |   |   |   |   cof = 24: NORMAL (0.0)
+|   |   |   |   |   cof = 25: NORMAL (0.0)
+|   |   |   |   |   cof = 26: NORMAL (0.0)
+|   |   |   |   |   cof = 27: NORMAL (13.0)
+|   |   |   |   |   cof = 28: NORMAL (0.0)
+|   |   |   |   |   cof = 29: NORMAL (0.0)
+|   |   |   |   |   cof = 30
+|   |   |   |   |   |   pps_f <= 0.263777
+|   |   |   |   |   |   |   std_f_pkt <= 42.37903
+|   |   |   |   |   |   |   |   max_f_time <= 16.703899: NORMAL (5.0)
+|   |   |   |   |   |   |   |   max_f_time > 16.703899
+|   |   |   |   |   |   |   |   |   bps_f <= 17.200866: LOW_RATE (23.0/1.0)
+|   |   |   |   |   |   |   |   |   bps_f > 17.200866
+|   |   |   |   |   |   |   |   |   |   pps_b <= 0.390005: LOW_RATE (8.0)
+|   |   |   |   |   |   |   |   |   |   pps_b > 0.390005
+|   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.399177: NORMAL (10.0)
+|   |   |   |   |   |   |   |   |   |   |   pps_b > 0.399177: LOW_RATE (4.0)
+|   |   |   |   |   |   |   std_f_pkt > 42.37903
+|   |   |   |   |   |   |   |   pps_f <= 0.246746
+|   |   |   |   |   |   |   |   |   total_b_packets <= 11
+|   |   |   |   |   |   |   |   |   |   pps_b <= 0.400262
+|   |   |   |   |   |   |   |   |   |   |   max_f_time <= 26.145896
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.397188
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_b_time <= 20.227213
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   total_b_packets <= 9: LOW_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   total_b_packets > 9
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   total_f_bytes <= 996
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_b_time <= 4.209343
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   min_b_time <= 0.000222: LOW_RATE (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   min_b_time > 0.000222: NORMAL (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_b_time > 4.209343: NORMAL (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   total_f_bytes > 996
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   min_b_time <= 0.000074
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 25.529141: NORMAL (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 25.529141: LOW_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   min_b_time > 0.000074: LOW_RATE (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   max_b_time > 20.227213: NORMAL (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.397188: NORMAL (18.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   max_f_time > 26.145896: LOW_RATE (8.0)
+|   |   |   |   |   |   |   |   |   |   pps_b > 0.400262: NORMAL (7.0)
+|   |   |   |   |   |   |   |   |   total_b_packets > 11
+|   |   |   |   |   |   |   |   |   |   pps_b <= 0.203654: LOW_RATE (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pps_b > 0.203654
+|   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.208411: NORMAL (59.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   pps_b > 0.208411
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.210967
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 13: LOW_RATE (27.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 13
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.209429: NORMAL (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.209429: LOW_RATE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.210967
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.211728: NORMAL (27.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.211728
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 7.932758
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 28.164108
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f <= 0.246298
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.212914: NORMAL (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.212914
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.2146: LOW_RATE (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.2146
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.216857: NORMAL (12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.216857
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b <= 0.218445
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 7.301643: NORMAL (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 7.301643: LOW_RATE (19.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_b > 0.218445
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f <= 0.246006: NORMAL (17.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f > 0.246006: LOW_RATE (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f > 0.246298: NORMAL (24.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 28.164108: LOW_RATE (10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 7.932758: NORMAL (23.0)
+|   |   |   |   |   |   |   |   pps_f > 0.246746
+|   |   |   |   |   |   |   |   |   max_f_time <= 17.162539
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 5.174731: NORMAL (2.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 5.174731: LOW_RATE (7.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 17.162539: NORMAL (196.0/9.0)
+|   |   |   |   |   |   pps_f > 0.263777: NORMAL (52.0/1.0)
+|   |   |   |   |   cof = 31: LOW_RATE (2.0)
+|   |   |   |   |   cof = 32: NORMAL (0.0)
+|   |   |   |   |   cof = 33: NORMAL (0.0)
+|   |   |   |   |   cof = 34: NORMAL (0.0)
+|   |   |   |   |   cof = 35: NORMAL (0.0)
+|   |   |   |   |   cof = 36: NORMAL (0.0)
+|   |   |   |   |   cof = 37: NORMAL (0.0)
+|   |   |   |   |   cof = 38: NORMAL (0.0)
+|   |   |   |   |   cof = 39: NORMAL (0.0)
+|   |   |   |   |   cof = 40: NORMAL (0.0)
+|   |   |   |   |   cof = 41: NORMAL (0.0)
+|   |   |   |   |   cof = 42: NORMAL (0.0)
+|   |   |   |   |   cof = 43: NORMAL (0.0)
+|   |   |   |   |   cof = 44: NORMAL (0.0)
+|   |   |   |   |   cof = 45: NORMAL (0.0)
+|   |   |   |   |   cof = 46: NORMAL (0.0)
+|   |   |   |   |   cof = 47: NORMAL (0.0)
+|   |   |   |   |   cof = 48: NORMAL (0.0)
+|   |   |   |   |   cof = 49: NORMAL (0.0)
+|   |   |   |   |   cof = 50: NORMAL (0.0)
+|   |   |   |   |   cof = 51: NORMAL (0.0)
+|   |   |   |   |   cof = 52: NORMAL (0.0)
+|   |   |   |   |   cof = 53: NORMAL (0.0)
+|   |   |   |   |   cof = 54: NORMAL (0.0)
+|   |   |   |   |   cof = 55: NORMAL (0.0)
+|   |   |   |   |   cof = 56: NORMAL (0.0)
+|   |   |   |   |   cof = 57: NORMAL (0.0)
+|   |   |   |   |   cof = 58: NORMAL (0.0)
+|   |   |   |   |   cof = 59: NORMAL (0.0)
+|   |   |   |   |   cof = 60: NORMAL (0.0)
+|   |   |   |   |   cof = 61: NORMAL (0.0)
+|   |   |   |   |   cof = 62: NORMAL (0.0)
+|   |   |   |   |   cof = 63: NORMAL (0.0)
+|   |   |   |   |   cof = 64: NORMAL (0.0)
+|   |   |   |   |   cof = 65: NORMAL (0.0)
+|   |   |   |   |   cof = 66: NORMAL (0.0)
+|   |   |   |   |   cof = 67: NORMAL (0.0)
+|   |   |   |   |   cof = 68: NORMAL (0.0)
+|   |   |   |   |   cof = 69: NORMAL (0.0)
+|   |   |   |   |   cof = 70: NORMAL (0.0)
+|   |   |   |   |   cof = 71: NORMAL (0.0)
+|   |   |   |   |   cof = 72: NORMAL (0.0)
+|   |   |   |   |   cof = 73: NORMAL (0.0)
+|   |   |   |   |   cof = 74: NORMAL (0.0)
+|   |   |   |   |   cof = 75: NORMAL (0.0)
+|   |   |   |   |   cof = 76: NORMAL (0.0)
+|   |   |   |   |   cof = 77: NORMAL (0.0)
+|   |   |   |   |   cof = 78: NORMAL (0.0)
+|   |   |   |   |   cof = 79: NORMAL (0.0)
+|   |   |   |   |   cof = 80: NORMAL (0.0)
+|   |   |   |   |   cof = 81: NORMAL (0.0)
+|   |   |   |   |   cof = 82: NORMAL (0.0)
+|   |   |   |   |   cof = 83: NORMAL (0.0)
+|   |   |   |   |   cof = 84: NORMAL (0.0)
+|   |   |   |   |   cof = 85: NORMAL (0.0)
+|   |   |   |   |   cof = 86: NORMAL (0.0)
+|   |   |   |   |   cof = 87: NORMAL (0.0)
+|   |   |   |   |   cof = 88: NORMAL (0.0)
+|   |   |   |   |   cof = 89: NORMAL (0.0)
+|   |   |   |   |   cof = 90: NORMAL (0.0)
+|   |   |   |   |   cof = 91: NORMAL (0.0)
+|   |   |   |   |   cof = 92: NORMAL (0.0)
+|   |   |   |   |   cof = 93: NORMAL (0.0)
+|   |   |   |   |   cof = 94: NORMAL (0.0)
+|   |   |   |   |   cof = 95: NORMAL (0.0)
+|   |   |   |   |   cof = 96: NORMAL (0.0)
+|   |   |   |   |   cof = 97: NORMAL (0.0)
+|   |   |   |   |   cof = 98: NORMAL (0.0)
+|   |   |   |   |   cof = 99: NORMAL (0.0)
+|   |   |   |   |   cof = 100: NORMAL (0.0)
+|   |   |   |   |   cof = 101: NORMAL (0.0)
+|   |   |   |   |   cof = 102: NORMAL (0.0)
+|   |   |   |   |   cof = 103: NORMAL (0.0)
+|   |   |   |   |   cof = 104: NORMAL (0.0)
+|   |   |   |   |   cof = 105: NORMAL (0.0)
+|   |   |   |   |   cof = 106: NORMAL (0.0)
+|   |   |   |   |   cof = 107: NORMAL (0.0)
+|   |   |   |   |   cof = 108: NORMAL (0.0)
+|   |   |   |   |   cof = 109: NORMAL (0.0)
+|   |   |   |   |   cof = 110: NORMAL (0.0)
+|   |   |   |   |   cof = 111: NORMAL (0.0)
+|   |   |   |   |   cof = 112: NORMAL (0.0)
+|   |   |   |   |   cof = 113: NORMAL (0.0)
+|   |   |   |   |   cof = 114: NORMAL (0.0)
+|   |   |   |   |   cof = 115: NORMAL (0.0)
+|   |   |   |   |   cof = 116: NORMAL (0.0)
+|   |   |   |   |   cof = 117: NORMAL (0.0)
+|   |   |   |   |   cof = 118: NORMAL (0.0)
+|   |   |   |   |   cof = 119: NORMAL (0.0)
+|   |   |   |   |   cof = 120: NORMAL (0.0)
+|   |   |   |   |   cof = 121: NORMAL (0.0)
+|   |   |   |   |   cof = 122: NORMAL (0.0)
+|   |   |   |   |   cof = 123: NORMAL (0.0)
+|   |   |   |   |   cof = 124: NORMAL (0.0)
+|   |   |   |   |   cof = 125: NORMAL (0.0)
+|   |   |   |   |   cof = 126: NORMAL (0.0)
+|   |   |   |   |   cof = 127: NORMAL (0.0)
+|   |   |   max_f_pkt > 263
+|   |   |   |   total_b_bytes <= 1784
+|   |   |   |   |   mean_f_pkt <= 77.888889
+|   |   |   |   |   |   total_b_packets <= 11
+|   |   |   |   |   |   |   pps_b <= 0.404578
+|   |   |   |   |   |   |   |   bps_b <= 58.829671
+|   |   |   |   |   |   |   |   |   std_f_time <= 6.554527: LOW_RATE (39.0)
+|   |   |   |   |   |   |   |   |   std_f_time > 6.554527: NORMAL (5.0)
+|   |   |   |   |   |   |   |   bps_b > 58.829671: LOW_RATE (331.0/3.0)
+|   |   |   |   |   |   |   pps_b > 0.404578
+|   |   |   |   |   |   |   |   total_f_bytes <= 1089: NORMAL (4.0)
+|   |   |   |   |   |   |   |   total_f_bytes > 1089: LOW_RATE (41.0)
+|   |   |   |   |   |   total_b_packets > 11: LOW_RATE (122.0)
+|   |   |   |   |   mean_f_pkt > 77.888889
+|   |   |   |   |   |   psh_f_cnt <= 2
+|   |   |   |   |   |   |   total_f_bytes <= 1031: LOW_RATE (42.0/15.0)
+|   |   |   |   |   |   |   total_f_bytes > 1031: NORMAL (5.0)
+|   |   |   |   |   |   psh_f_cnt > 2: LOW_RATE (19.0)
+|   |   |   |   total_b_bytes > 1784
+|   |   |   |   |   total_b_packets <= 7: LOW_RATE (25.0)
+|   |   |   |   |   total_b_packets > 7
+|   |   |   |   |   |   min_f_pkt <= 46: LOW_RATE (2.0)
+|   |   |   |   |   |   min_f_pkt > 46: NORMAL (28.0)
+|   |   psh_b_cnt > 1: NORMAL (166.0/1.0)
+
+Number of Leaves  : 	359
+
+Size of the tree : 	463
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1255               41.8333 %
+Incorrectly Classified Instances      1745               58.1667 %
+Kappa statistic                          0.1275
+Mean absolute error                      0.3918
+Root mean squared error                  0.6194
+Relative absolute error                 88.1438 %
+Root relative squared error            131.4038 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.003    0.000    1.000      0.003    0.006      0.045    0.695     0.593     HIGH_RATE
+                 0.955    0.358    0.572      0.955    0.715      0.567    0.802     0.669     LOW_RATE
+                 0.297    0.515    0.224      0.297    0.255      -0.206   0.350     0.304     NORMAL
+Weighted Avg.    0.418    0.291    0.598      0.418    0.325      0.135    0.615     0.522     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   3  13 984 |   a = HIGH_RATE
+   0 955  45 |   b = LOW_RATE
+   0 703 297 |   c = NORMAL

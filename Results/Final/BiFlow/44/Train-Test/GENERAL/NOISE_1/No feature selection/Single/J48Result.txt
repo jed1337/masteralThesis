@@ -1,0 +1,67 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+total_b_bytes <= 11896
+|   std_f_time <= 0.024871
+|   |   max_f_pkt <= 68
+|   |   |   min_f_time <= 0.048898: HIGH_RATE (3987.0/4.0)
+|   |   |   min_f_time > 0.048898
+|   |   |   |   duration <= 0.999986: HIGH_RATE (17.0)
+|   |   |   |   duration > 0.999986: LOW_RATE (8.0/1.0)
+|   |   max_f_pkt > 68
+|   |   |   max_f_pkt <= 168: NORMAL (6.0)
+|   |   |   max_f_pkt > 168
+|   |   |   |   max_b_time <= 0.001453
+|   |   |   |   |   pps_b <= 1451.818622
+|   |   |   |   |   |   mean_f_time <= 0.000512
+|   |   |   |   |   |   |   std_f_time <= 0.000639: LOW_RATE (3.0/1.0)
+|   |   |   |   |   |   |   std_f_time > 0.000639
+|   |   |   |   |   |   |   |   mean_f_pkt <= 62.333333: LOW_RATE (3.0/1.0)
+|   |   |   |   |   |   |   |   mean_f_pkt > 62.333333: NORMAL (23.0/3.0)
+|   |   |   |   |   |   mean_f_time > 0.000512: LOW_RATE (2.0)
+|   |   |   |   |   pps_b > 1451.818622: LOW_RATE (19.0)
+|   |   |   |   max_b_time > 0.001453
+|   |   |   |   |   std_b_pkt <= 2981.870795
+|   |   |   |   |   |   min_b_time <= 0.000071
+|   |   |   |   |   |   |   std_b_time <= 0.000678: NORMAL (2.0)
+|   |   |   |   |   |   |   std_b_time > 0.000678: LOW_RATE (10.0/1.0)
+|   |   |   |   |   |   min_b_time > 0.000071: LOW_RATE (68.0)
+|   |   |   |   |   std_b_pkt > 2981.870795
+|   |   |   |   |   |   std_f_time <= 0.001097: NORMAL (3.0)
+|   |   |   |   |   |   std_f_time > 0.001097: LOW_RATE (3.0)
+|   std_f_time > 0.024871: LOW_RATE (3848.0/2.0)
+total_b_bytes > 11896
+|   min_f_pkt <= 46
+|   |   total_b_bytes <= 12000: LOW_RATE (32.0)
+|   |   total_b_bytes > 12000: NORMAL (2.0)
+|   min_f_pkt > 46: NORMAL (3964.0/4.0)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	35
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        2036               67.8667 %
+Incorrectly Classified Instances       964               32.1333 %
+Kappa statistic                          0.518 
+Mean absolute error                      0.215 
+Root mean squared error                  0.4488
+Relative absolute error                 48.3858 %
+Root relative squared error             95.2148 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.047    0.002    0.940      0.047    0.090      0.168    0.523     0.362     HIGH_RATE
+                 0.993    0.477    0.510      0.993    0.674      0.510    0.844     0.709     LOW_RATE
+                 0.996    0.004    0.992      0.996    0.994      0.991    0.996     0.994     NORMAL
+Weighted Avg.    0.679    0.161    0.814      0.679    0.586      0.556    0.788     0.688     
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+  47 952   1 |   a = HIGH_RATE
+   0 993   7 |   b = LOW_RATE
+   3   1 996 |   c = NORMAL

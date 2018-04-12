@@ -1,0 +1,85 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.2849 * (normalized) duration
+ +      -0.2261 * (normalized) cof=N/A
+ +      -0.0958 * (normalized) cof=2
+ +       0      * (normalized) cof=4
+ +      -1      * (normalized) cof=17
+ +      -0      * (normalized) cof=18
+ +       0      * (normalized) cof=19
+ +       0      * (normalized) cof=21
+ +       0      * (normalized) cof=22
+ +       0      * (normalized) cof=23
+ +       0.1947 * (normalized) cof=25
+ +      -0.9769 * (normalized) cof=27
+ +       0.4334 * (normalized) cof=28
+ +       0      * (normalized) cof=29
+ +       0.794  * (normalized) cof=30
+ +       0.8767 * (normalized) cof=31
+ +      -0.0105 * (normalized) total_f_packets
+ +      -0.465  * (normalized) total_b_packets
+ +      -0.0134 * (normalized) total_f_bytes
+ +      -1.6039 * (normalized) total_b_bytes
+ +      -0.0016 * (normalized) pps_f
+ +       0.361  * (normalized) pps_b
+ +      -0.0016 * (normalized) bps_f
+ +       0.0915 * (normalized) bps_b
+ +      -0.3781 * (normalized) rfb_packets
+ +      -0.0428 * (normalized) rfb_bytes
+ +      -1.0625 * (normalized) min_f_pkt
+ +      -0.7383 * (normalized) mean_f_pkt
+ +       0.3929 * (normalized) max_f_pkt
+ +       0.9112 * (normalized) std_f_pkt
+ +       0.1076 * (normalized) min_b_pkt
+ +      -0.4378 * (normalized) mean_b_pkt
+ +       0.0696 * (normalized) max_b_pkt
+ +      -0.0608 * (normalized) std_b_pkt
+ +      -1.3922 * (normalized) min_f_time
+ +      -0.6808 * (normalized) mean_f_time
+ +       0.0927 * (normalized) max_f_time
+ +       0.5343 * (normalized) std_f_time
+ +      -0.0001 * (normalized) min_b_time
+ +       0.005  * (normalized) mean_b_time
+ +       0.0092 * (normalized) max_b_time
+ +       0.0104 * (normalized) std_b_time
+ +       0.1191 * (normalized) psh_f_cnt
+ +       0.2261 * (normalized) urg_f_cnt
+ +       0.172  * (normalized) psh_b_cnt
+ +       0.1272 * (normalized) urg_b_cnt
+ +       1.3632
+
+Number of kernel evaluations: 606940 (69.095% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        2600               99.6169 %
+Incorrectly Classified Instances        10                0.3831 %
+Kappa statistic                          0.9922
+Mean absolute error                      0.0038
+Root mean squared error                  0.0619
+Relative absolute error                  0.7838 %
+Root relative squared error             12.5203 %
+Total Number of Instances             2610     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.995    0.003    0.996      0.995    0.995      0.992    0.996     0.993     normal
+                 0.997    0.005    0.996      0.997    0.997      0.992    0.996     0.995     attack
+Weighted Avg.    0.996    0.004    0.996      0.996    0.996      0.992    0.996     0.994     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1104    6 |    a = normal
+    4 1496 |    b = attack

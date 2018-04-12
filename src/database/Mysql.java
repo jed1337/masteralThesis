@@ -74,6 +74,7 @@ public final class Mysql implements Database {
          MainTableConstants.NORMAL_TO_NOISE_RATIO,
          MainTableConstants.DATASET,
          MainTableConstants.EXTRACTION_TOOL,
+         MainTableConstants.RANDOM_SEED,
          MainTableConstants.TIMESTAMP
       );
 
@@ -95,6 +96,8 @@ public final class Mysql implements Database {
       
       ps.setString(i++, dataset);
       ps.setString(i++, extractionTool);
+      ps.setInt(i++, randomSeed);
+      
       ps.setTimestamp(i++, timestamp);
 
       ps.executeUpdate();

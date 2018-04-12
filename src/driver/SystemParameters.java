@@ -41,7 +41,6 @@ public final class SystemParameters implements GetPreprocessFiles{
       this.pfL.addAll(mode.getPreprocessFiles());
 
       this.categoricalType.setPreprocessFileCount(this.pfL, instanceCount);
-      System.out.println("");
    }
 
    @Override

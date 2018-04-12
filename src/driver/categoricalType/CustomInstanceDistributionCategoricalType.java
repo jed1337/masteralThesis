@@ -32,7 +32,7 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
    }
 
    @Override
-   public float normalToNoiseRatio(List<PreprocessFile> pfL) {
+   public float normalToNoiseRatio(List<PreprocessFile> pfL){
       final Optional<PreprocessFile> optNormal = pfL.stream()
          .filter(pf -> pf.getPreprocessFileName() == PreprocessFileName.NORMAL)
          .findFirst();
@@ -40,6 +40,7 @@ public final class CustomInstanceDistributionCategoricalType implements Categori
       //If the normal class isn't present, return -1.0
       if(!optNormal.isPresent()){
          return -1.0f;
+//         throw new Exception();
       }
        
       final int normalInstanceCount = optNormal.get().getInstancesCount();

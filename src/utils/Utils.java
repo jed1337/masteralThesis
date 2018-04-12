@@ -244,6 +244,14 @@ public final class Utils {
       }
    }
    
+   public static <K extends Object, V extends Object> void removeFromMap(Map map, K key) throws IllegalArgumentException{
+      if(!map.containsKey(key)){
+         map.remove(key);
+      } else{
+         throw new IllegalArgumentException(key+" does not exist");
+      }
+   }
+   
    /**
     * Uses the corresponding function in Weka's Utils
     * @see weka.core.Utils.doubleToString#doubleToString(double, int, int)

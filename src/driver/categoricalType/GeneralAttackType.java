@@ -60,6 +60,7 @@ public final class GeneralAttackType implements CategoricalType{
 
    @Override
    public float normalToNoiseRatio(List<PreprocessFile> pfL) {
-      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      System.err.println("Temporary since this wasn't actually implemented");
+      return -1;
    }
 }

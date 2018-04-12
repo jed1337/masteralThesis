@@ -1,0 +1,777 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: tcpFlood, normal
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0351 * (normalized) duration
+ +       0.5389 * (normalized) cof=N/A
+ +       0.7419 * (normalized) cof=2
+ +      -0.8573 * (normalized) cof=4
+ +       0.9785 * (normalized) cof=17
+ +      -0.8531 * (normalized) cof=18
+ +      -0.8854 * (normalized) cof=22
+ +       0.3366 * (normalized) cof=27
+ +       0.0054 * (normalized) total_f_packets
+ +       0.1756 * (normalized) total_b_packets
+ +       0.0074 * (normalized) total_f_bytes
+ +       0.335  * (normalized) total_b_bytes
+ +       0.0014 * (normalized) pps_f
+ +       0      * (normalized) pps_b
+ +       0.0016 * (normalized) bps_f
+ +       0.0002 * (normalized) bps_b
+ +       0.302  * (normalized) rfb_packets
+ +       0.0638 * (normalized) rfb_bytes
+ +       0.1671 * (normalized) min_f_pkt
+ +       0.1803 * (normalized) mean_f_pkt
+ +       0.2364 * (normalized) max_f_pkt
+ +       0.0631 * (normalized) std_f_pkt
+ +       0.2597 * (normalized) min_b_pkt
+ +       0.1709 * (normalized) mean_b_pkt
+ +       0.1358 * (normalized) max_b_pkt
+ +       0.1586 * (normalized) std_b_pkt
+ +       0.5095 * (normalized) min_f_time
+ +       0.1339 * (normalized) mean_f_time
+ +       0.045  * (normalized) max_f_time
+ +       0.0001 * (normalized) std_f_time
+ +       0      * (normalized) min_b_time
+ +       0      * (normalized) mean_b_time
+ +       0.0001 * (normalized) max_b_time
+ +       0.0001 * (normalized) std_b_time
+ +      -0.0135 * (normalized) psh_f_cnt
+ +      -0.5389 * (normalized) urg_f_cnt
+ +       0.0293 * (normalized) psh_b_cnt
+ +      -0.2487 * (normalized) urg_b_cnt
+ +       0.3931
+
+Number of kernel evaluations: 8779 (82.73% cached)
+
+Classifier for classes: tcpFlood, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0002 * (normalized) duration
+ +       2.1049 * (normalized) cof=2
+ +       0.3454 * (normalized) cof=4
+ +      -1.6157 * (normalized) cof=18
+ +      -0      * (normalized) cof=19
+ +       0.0663 * (normalized) cof=21
+ +      -1.5985 * (normalized) cof=22
+ +       0.6782 * (normalized) cof=23
+ +      -0      * (normalized) cof=27
+ +      -0      * (normalized) cof=29
+ +      -0      * (normalized) cof=30
+ +       0.0193 * (normalized) cof=31
+ +       0.0089 * (normalized) total_f_packets
+ +      -0.1461 * (normalized) total_b_packets
+ +       0.0157 * (normalized) total_f_bytes
+ +       0.0354 * (normalized) total_b_bytes
+ +       2.6177 * (normalized) pps_f
+ +       0      * (normalized) pps_b
+ +       2.6177 * (normalized) bps_f
+ +       0      * (normalized) bps_b
+ +      -0.2062 * (normalized) rfb_packets
+ +      -0.0836 * (normalized) rfb_bytes
+ +       1.7492 * (normalized) min_f_pkt
+ +       1.7735 * (normalized) mean_f_pkt
+ +       1.3563 * (normalized) max_f_pkt
+ +       0.0444 * (normalized) std_f_pkt
+ +       6.4255 * (normalized) min_b_pkt
+ +       0.1331 * (normalized) mean_b_pkt
+ +       0.0548 * (normalized) max_b_pkt
+ +       0.0023 * (normalized) std_b_pkt
+ +      -0.0071 * (normalized) min_f_time
+ +      -0.0012 * (normalized) mean_f_time
+ +       0      * (normalized) max_f_time
+ +       0.001  * (normalized) std_f_time
+ +       0.0007 * (normalized) min_b_time
+ +       0.0007 * (normalized) mean_b_time
+ +       0.0006 * (normalized) max_b_time
+ +       0      * (normalized) std_b_time
+ +       0.0013 * (normalized) psh_f_cnt
+ +       0      * (normalized) urg_f_cnt
+ +      -0.8168 * (normalized) psh_b_cnt
+ +      -2.4503 * (normalized) urg_b_cnt
+ -       1.3803
+
+Number of kernel evaluations: 76025 (71.874% cached)
+
+Classifier for classes: tcpFlood, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.2375 * (normalized) duration
+ +       1.0931 * (normalized) cof=2
+ +      -0.2116 * (normalized) cof=4
+ +      -0.4802 * (normalized) cof=18
+ +      -0.5294 * (normalized) cof=22
+ +       0      * (normalized) cof=26
+ +       0      * (normalized) cof=27
+ +       0.0587 * (normalized) cof=30
+ +       0.0694 * (normalized) cof=31
+ +       0.0167 * (normalized) total_f_packets
+ +       1.4644 * (normalized) total_b_packets
+ +       0.0238 * (normalized) total_f_bytes
+ +       0.2219 * (normalized) total_b_bytes
+ +       0.0001 * (normalized) pps_f
+ +       0      * (normalized) pps_b
+ +       0.0001 * (normalized) bps_f
+ +       0.0001 * (normalized) bps_b
+ +       0.0629 * (normalized) rfb_packets
+ +       0.0007 * (normalized) rfb_bytes
+ +       0.4854 * (normalized) min_f_pkt
+ +       0.4932 * (normalized) mean_f_pkt
+ +       0.4284 * (normalized) max_f_pkt
+ +       0.0358 * (normalized) std_f_pkt
+ +       1.504  * (normalized) min_b_pkt
+ +       0.1428 * (normalized) mean_b_pkt
+ +       0.1279 * (normalized) max_b_pkt
+ +       0.1227 * (normalized) std_b_pkt
+ +       2.1618 * (normalized) min_f_time
+ +       1.2505 * (normalized) mean_f_time
+ +       0.7135 * (normalized) max_f_time
+ +       0.6935 * (normalized) std_f_time
+ +       0.1791 * (normalized) min_b_time
+ +       0.2635 * (normalized) mean_b_time
+ +       0.3361 * (normalized) max_b_time
+ +       0.19   * (normalized) std_b_time
+ +       0.0085 * (normalized) psh_f_cnt
+ +       0      * (normalized) urg_f_cnt
+ +      -0.2511 * (normalized) psh_b_cnt
+ +      -0.8815 * (normalized) urg_b_cnt
+ -       0.7982
+
+Number of kernel evaluations: 44962 (71.292% cached)
+
+Classifier for classes: tcpFlood, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.3548 * (normalized) duration
+ +       1.2781 * (normalized) cof=2
+ +      -0.6898 * (normalized) cof=4
+ +      -0.6839 * (normalized) cof=18
+ +      -0.6956 * (normalized) cof=22
+ +       0.2075 * (normalized) cof=27
+ +       0.3326 * (normalized) cof=29
+ +       0.0409 * (normalized) cof=30
+ +       0.2102 * (normalized) cof=31
+ +       0.0054 * (normalized) total_f_packets
+ +       0.3546 * (normalized) total_b_packets
+ +       0.0117 * (normalized) total_f_bytes
+ +       0.3203 * (normalized) total_b_bytes
+ +       0.0001 * (normalized) pps_f
+ +       0      * (normalized) pps_b
+ +       0.0001 * (normalized) bps_f
+ +       0.0002 * (normalized) bps_b
+ +       0.1231 * (normalized) rfb_packets
+ +       0.0878 * (normalized) rfb_bytes
+ +       0.0763 * (normalized) min_f_pkt
+ +       0.2457 * (normalized) mean_f_pkt
+ +       0.3985 * (normalized) max_f_pkt
+ +       0.2404 * (normalized) std_f_pkt
+ +       0.2061 * (normalized) min_b_pkt
+ +       0.1778 * (normalized) mean_b_pkt
+ +       0.1439 * (normalized) max_b_pkt
+ +       0.1576 * (normalized) std_b_pkt
+ +      -0.0201 * (normalized) min_f_time
+ +       0.1774 * (normalized) mean_f_time
+ +       0.1197 * (normalized) max_f_time
+ +       0.165  * (normalized) std_f_time
+ +       0      * (normalized) min_b_time
+ +       0.0561 * (normalized) mean_b_time
+ +       0.0808 * (normalized) max_b_time
+ +       0.0776 * (normalized) std_b_time
+ +       0.2211 * (normalized) psh_f_cnt
+ +       0      * (normalized) urg_f_cnt
+ +       0.1397 * (normalized) psh_b_cnt
+ +      -0.2488 * (normalized) urg_b_cnt
+ -       0.3304
+
+Number of kernel evaluations: 74201 (68.307% cached)
+
+Classifier for classes: tcpFlood, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0019 * (normalized) duration
+ +       0.8239 * (normalized) cof=N/A
+ +      -0.3473 * (normalized) cof=4
+ +      -0.3471 * (normalized) cof=18
+ +      -0.1295 * (normalized) cof=22
+ +       0.0167 * (normalized) total_f_packets
+ +      -0.0108 * (normalized) total_b_packets
+ +       0.0167 * (normalized) total_f_bytes
+ +      -0.0005 * (normalized) total_b_bytes
+ +       0.0001 * (normalized) pps_f
+ +       0.0001 * (normalized) bps_f
+ +      -0.0199 * (normalized) rfb_packets
+ +      -0.0053 * (normalized) rfb_bytes
+ +       0.0034 * (normalized) min_f_pkt
+ +       0.0034 * (normalized) mean_f_pkt
+ +       0.0026 * (normalized) max_f_pkt
+ +      -0.095  * (normalized) min_b_pkt
+ +      -0.0019 * (normalized) mean_b_pkt
+ +      -0.0008 * (normalized) max_b_pkt
+ +      -0.0007 * (normalized) min_f_time
+ +       0      * (normalized) mean_f_time
+ +       0.0002 * (normalized) max_f_time
+ +       0.0002 * (normalized) std_f_time
+ +      -0.0549 * (normalized) psh_f_cnt
+ +      -0.8239 * (normalized) urg_f_cnt
+ +      -0.0432 * (normalized) psh_b_cnt
+ +      -0.1295 * (normalized) urg_b_cnt
+ +       0.1752
+
+Number of kernel evaluations: 3538 (55.753% cached)
+
+Classifier for classes: normal, httpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1733 * (normalized) duration
+ +      -0.8685 * (normalized) cof=N/A
+ +       0.2623 * (normalized) cof=2
+ +       0.2633 * (normalized) cof=4
+ +      -1      * (normalized) cof=17
+ +       0.1218 * (normalized) cof=18
+ +       0.1661 * (normalized) cof=19
+ +       0.1319 * (normalized) cof=21
+ +       0.1847 * (normalized) cof=23
+ +       0.2447 * (normalized) cof=25
+ +       0.0997 * (normalized) cof=27
+ +       0.127  * (normalized) cof=28
+ +       0.0674 * (normalized) cof=29
+ +       0.0597 * (normalized) cof=30
+ +       0.1397 * (normalized) cof=31
+ +      -0.0096 * (normalized) total_f_packets
+ +      -0.3278 * (normalized) total_b_packets
+ +      -0.01   * (normalized) total_f_bytes
+ +      -1.2337 * (normalized) total_b_bytes
+ +       0.0044 * (normalized) pps_f
+ +       0.0212 * (normalized) pps_b
+ +       0.0041 * (normalized) bps_f
+ +       0.0048 * (normalized) bps_b
+ +      -0.324  * (normalized) rfb_packets
+ +      -0.0531 * (normalized) rfb_bytes
+ +      -0.1248 * (normalized) min_f_pkt
+ +       0.0354 * (normalized) mean_f_pkt
+ +       0.1382 * (normalized) max_f_pkt
+ +       0.3038 * (normalized) std_f_pkt
+ +       0.0606 * (normalized) min_b_pkt
+ +      -0.5568 * (normalized) mean_b_pkt
+ +      -0.4589 * (normalized) max_b_pkt
+ +      -0.5534 * (normalized) std_b_pkt
+ +      -1.4014 * (normalized) min_f_time
+ +      -0.4425 * (normalized) mean_f_time
+ +      -0.1616 * (normalized) max_f_time
+ +      -0.066  * (normalized) std_f_time
+ +       0.0004 * (normalized) min_b_time
+ +       0.0014 * (normalized) mean_b_time
+ +       0.0033 * (normalized) max_b_time
+ +       0.0031 * (normalized) std_b_time
+ +       0.1071 * (normalized) psh_f_cnt
+ +       0.8685 * (normalized) urg_f_cnt
+ +       0.1748 * (normalized) psh_b_cnt
+ +       0.0981 * (normalized) urg_b_cnt
+ -       0.1308
+
+Number of kernel evaluations: 43416 (76.357% cached)
+
+Classifier for classes: normal, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.3325 * (normalized) duration
+ +      -0.9089 * (normalized) cof=N/A
+ +       0.9917 * (normalized) cof=2
+ +      -0.8016 * (normalized) cof=17
+ +       0.972  * (normalized) cof=18
+ +       0.5522 * (normalized) cof=22
+ +      -1.1892 * (normalized) cof=27
+ +       0.1528 * (normalized) cof=30
+ +       0.231  * (normalized) cof=31
+ +      -0.0013 * (normalized) total_f_packets
+ +      -0.0643 * (normalized) total_b_packets
+ +       0.0122 * (normalized) total_f_bytes
+ +      -0.7828 * (normalized) total_b_bytes
+ +      -0.0008 * (normalized) pps_f
+ +      -0      * (normalized) pps_b
+ +       0.0003 * (normalized) bps_f
+ +       0.0009 * (normalized) bps_b
+ +      -0.1845 * (normalized) rfb_packets
+ +      -0.0631 * (normalized) rfb_bytes
+ +      -0.4937 * (normalized) min_f_pkt
+ +      -0.1883 * (normalized) mean_f_pkt
+ +       2.5957 * (normalized) max_f_pkt
+ +       1.6032 * (normalized) std_f_pkt
+ +       0.1315 * (normalized) min_b_pkt
+ +       0.1029 * (normalized) mean_b_pkt
+ +       0.0768 * (normalized) max_b_pkt
+ +      -0.0697 * (normalized) std_b_pkt
+ +      -0.0996 * (normalized) min_f_time
+ +       0.225  * (normalized) mean_f_time
+ +       0.2854 * (normalized) max_f_time
+ +       0.338  * (normalized) std_f_time
+ +       0.0564 * (normalized) min_b_time
+ +       0.1231 * (normalized) mean_b_time
+ +       0.2363 * (normalized) max_b_time
+ +       0.1748 * (normalized) std_b_time
+ +       0.0069 * (normalized) psh_f_cnt
+ +       0.9089 * (normalized) urg_f_cnt
+ +      -0.2961 * (normalized) psh_b_cnt
+ +      -0.0828 * (normalized) urg_b_cnt
+ -       0.9803
+
+Number of kernel evaluations: 82627 (70.227% cached)
+
+Classifier for classes: normal, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.4564 * (normalized) duration
+ +      -0.7451 * (normalized) cof=N/A
+ +       0.9659 * (normalized) cof=2
+ +      -0.7247 * (normalized) cof=17
+ +      -0.6733 * (normalized) cof=18
+ +       1      * (normalized) cof=22
+ +      -1.0887 * (normalized) cof=27
+ +       0.3898 * (normalized) cof=29
+ +       0.3509 * (normalized) cof=30
+ +       0.5252 * (normalized) cof=31
+ +       0.0063 * (normalized) total_f_packets
+ +      -0.0251 * (normalized) total_b_packets
+ +       0.0209 * (normalized) total_f_bytes
+ +      -0.3729 * (normalized) total_b_bytes
+ +      -0.0006 * (normalized) pps_f
+ +       0.0001 * (normalized) pps_b
+ +       0.0001 * (normalized) bps_f
+ +       0.0015 * (normalized) bps_b
+ +       0.1271 * (normalized) rfb_packets
+ +       0.0902 * (normalized) rfb_bytes
+ +      -0.4602 * (normalized) min_f_pkt
+ +      -0.1236 * (normalized) mean_f_pkt
+ +       1.7617 * (normalized) max_f_pkt
+ +       1.1442 * (normalized) std_f_pkt
+ +      -0.1241 * (normalized) min_b_pkt
+ +       0.0094 * (normalized) mean_b_pkt
+ +       0.0025 * (normalized) max_b_pkt
+ +      -0.005  * (normalized) std_b_pkt
+ +      -0.2199 * (normalized) min_f_time
+ +       0.1663 * (normalized) mean_f_time
+ +       0.1576 * (normalized) max_f_time
+ +       0.2231 * (normalized) std_f_time
+ +       0.0366 * (normalized) min_b_time
+ +       0.1007 * (normalized) mean_b_time
+ +       0.1231 * (normalized) max_b_time
+ +       0.0879 * (normalized) std_b_time
+ +       0.2779 * (normalized) psh_f_cnt
+ +       0.7451 * (normalized) urg_f_cnt
+ +      -0.0738 * (normalized) psh_b_cnt
+ +      -0.2208 * (normalized) urg_b_cnt
+ -       0.7736
+
+Number of kernel evaluations: 72125 (79.762% cached)
+
+Classifier for classes: normal, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1628 * (normalized) duration
+ +       0.6333 * (normalized) cof=N/A
+ +      -0.3226 * (normalized) cof=2
+ +      -0.1774 * (normalized) cof=17
+ +      -0.1333 * (normalized) cof=18
+ +       0      * (normalized) cof=27
+ +      -0.0008 * (normalized) total_f_packets
+ +      -0.0259 * (normalized) total_b_packets
+ +      -0.0027 * (normalized) total_f_bytes
+ +      -0.0014 * (normalized) total_b_bytes
+ +      -0.0002 * (normalized) pps_f
+ +       0      * (normalized) pps_b
+ +      -0.0003 * (normalized) bps_f
+ +      -0      * (normalized) bps_b
+ +      -0.0921 * (normalized) rfb_packets
+ +      -0.0232 * (normalized) rfb_bytes
+ +      -0.5625 * (normalized) min_f_pkt
+ +      -0.5625 * (normalized) mean_f_pkt
+ +      -0.4215 * (normalized) max_f_pkt
+ +       0      * (normalized) std_f_pkt
+ +      -0.287  * (normalized) min_b_pkt
+ +      -0.0058 * (normalized) mean_b_pkt
+ +      -0.0024 * (normalized) max_b_pkt
+ +      -0      * (normalized) std_b_pkt
+ +      -0.6166 * (normalized) min_f_time
+ +      -0.2545 * (normalized) mean_f_time
+ +      -0.1164 * (normalized) max_f_time
+ +      -0.0988 * (normalized) std_f_time
+ +       0      * (normalized) min_b_time
+ +      -0      * (normalized) mean_b_time
+ +       0      * (normalized) max_b_time
+ +      -0      * (normalized) std_b_time
+ +      -0.0422 * (normalized) psh_f_cnt
+ +      -0.6333 * (normalized) urg_f_cnt
+ +      -0.1036 * (normalized) psh_b_cnt
+ +      -0.3107 * (normalized) urg_b_cnt
+ +       0.4987
+
+Number of kernel evaluations: 6465 (63.359% cached)
+
+Classifier for classes: httpFlood, slowRead
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.3505 * (normalized) duration
+ +       0.4774 * (normalized) cof=2
+ +      -0.1411 * (normalized) cof=4
+ +       0.1953 * (normalized) cof=18
+ +       0      * (normalized) cof=19
+ +      -0      * (normalized) cof=21
+ +      -0.0279 * (normalized) cof=23
+ +      -0.0823 * (normalized) cof=25
+ +       0.0657 * (normalized) cof=26
+ +      -0.1687 * (normalized) cof=27
+ +       0      * (normalized) cof=29
+ +      -0.0373 * (normalized) cof=30
+ +      -0.281  * (normalized) cof=31
+ +       0.0278 * (normalized) total_f_packets
+ +       1.1845 * (normalized) total_b_packets
+ +       0.0368 * (normalized) total_f_bytes
+ +       1.1609 * (normalized) total_b_bytes
+ +      -0.0017 * (normalized) pps_f
+ +      -0.0001 * (normalized) pps_b
+ +      -0.0021 * (normalized) bps_f
+ +       0.0003 * (normalized) bps_b
+ +       0.1756 * (normalized) rfb_packets
+ +       0.0048 * (normalized) rfb_bytes
+ +       0.0064 * (normalized) min_f_pkt
+ +      -0.1476 * (normalized) mean_f_pkt
+ +       0.0401 * (normalized) max_f_pkt
+ +      -0.2143 * (normalized) std_f_pkt
+ +      -0.13   * (normalized) min_b_pkt
+ +       0.5613 * (normalized) mean_b_pkt
+ +       0.417  * (normalized) max_b_pkt
+ +       0.5103 * (normalized) std_b_pkt
+ +       4.6393 * (normalized) min_f_time
+ +       1.8342 * (normalized) mean_f_time
+ +       0.9032 * (normalized) max_f_time
+ +       0.6437 * (normalized) std_f_time
+ +       0.1556 * (normalized) min_b_time
+ +       0.2394 * (normalized) mean_b_time
+ +       0.3171 * (normalized) max_b_time
+ +       0.1913 * (normalized) std_b_time
+ +       0.0035 * (normalized) psh_f_cnt
+ +       0      * (normalized) urg_f_cnt
+ +      -0.2376 * (normalized) psh_b_cnt
+ +      -0.254  * (normalized) urg_b_cnt
+ -       0.8577
+
+Number of kernel evaluations: 180026 (69.433% cached)
+
+Classifier for classes: httpFlood, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.0953 * (normalized) duration
+ +       0.9912 * (normalized) cof=2
+ +      -0.2973 * (normalized) cof=4
+ +      -0.0385 * (normalized) cof=18
+ +      -0.0447 * (normalized) cof=19
+ +       1      * (normalized) cof=22
+ +      -0.07   * (normalized) cof=23
+ +      -0.3651 * (normalized) cof=25
+ +      -0.3256 * (normalized) cof=27
+ +      -0.1019 * (normalized) cof=28
+ +      -0.2101 * (normalized) cof=29
+ +      -0.2033 * (normalized) cof=30
+ +      -0.3346 * (normalized) cof=31
+ +       0.0225 * (normalized) total_f_packets
+ +       0.3902 * (normalized) total_b_packets
+ +       0.059  * (normalized) total_f_bytes
+ +       1.2984 * (normalized) total_b_bytes
+ +      -0.0019 * (normalized) pps_f
+ +      -0.06   * (normalized) pps_b
+ +      -0.002  * (normalized) bps_f
+ +      -0.0464 * (normalized) bps_b
+ +       0.6959 * (normalized) rfb_packets
+ +       0.9262 * (normalized) rfb_bytes
+ +      -0.265  * (normalized) min_f_pkt
+ +       0.2513 * (normalized) mean_f_pkt
+ +       0.1008 * (normalized) max_f_pkt
+ +       0.0361 * (normalized) std_f_pkt
+ +      -0.0782 * (normalized) min_b_pkt
+ +       0.6495 * (normalized) mean_b_pkt
+ +       0.4956 * (normalized) max_b_pkt
+ +       0.5884 * (normalized) std_b_pkt
+ +       2.1308 * (normalized) min_f_time
+ +       1.0827 * (normalized) mean_f_time
+ +       0.6252 * (normalized) max_f_time
+ +       0.5747 * (normalized) std_f_time
+ +      -0.0003 * (normalized) min_b_time
+ +       0.0504 * (normalized) mean_b_time
+ +       0.0807 * (normalized) max_b_time
+ +       0.0857 * (normalized) std_b_time
+ +       0.5201 * (normalized) psh_f_cnt
+ +      -0      * (normalized) urg_f_cnt
+ +      -0.1984 * (normalized) psh_b_cnt
+ +      -0.3289 * (normalized) urg_b_cnt
+ -       0.7375
+
+Number of kernel evaluations: 245269 (71.391% cached)
+
+Classifier for classes: httpFlood, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0001 * (normalized) duration
+ +       0.8671 * (normalized) cof=N/A
+ +      -0.2654 * (normalized) cof=2
+ +      -0.2726 * (normalized) cof=4
+ +      -0.0137 * (normalized) cof=18
+ +      -0.0135 * (normalized) cof=19
+ +      -0.041  * (normalized) cof=21
+ +      -0.0476 * (normalized) cof=23
+ +      -0.1963 * (normalized) cof=25
+ +      -0      * (normalized) cof=27
+ +       0      * (normalized) cof=29
+ +       0      * (normalized) cof=30
+ +      -0.0169 * (normalized) cof=31
+ +      -0.0003 * (normalized) total_f_packets
+ +      -0.0176 * (normalized) total_b_packets
+ +      -0.0005 * (normalized) total_f_bytes
+ +      -0.0009 * (normalized) total_b_bytes
+ +      -0.0014 * (normalized) pps_f
+ +      -0      * (normalized) pps_b
+ +      -0.0014 * (normalized) bps_f
+ +      -0      * (normalized) bps_b
+ +      -0.0136 * (normalized) rfb_packets
+ +      -0.0041 * (normalized) rfb_bytes
+ +      -0.0488 * (normalized) min_f_pkt
+ +      -0.0517 * (normalized) mean_f_pkt
+ +      -0.0445 * (normalized) max_f_pkt
+ +      -0.007  * (normalized) std_f_pkt
+ +      -0.1017 * (normalized) min_b_pkt
+ +      -0.0023 * (normalized) mean_b_pkt
+ +      -0.001  * (normalized) max_b_pkt
+ +      -0.0002 * (normalized) std_b_pkt
+ +      -0.0003 * (normalized) min_f_time
+ +      -0.0001 * (normalized) mean_f_time
+ +      -0.0001 * (normalized) max_f_time
+ +      -0.0001 * (normalized) std_f_time
+ +      -0.0001 * (normalized) min_b_time
+ +      -0.0001 * (normalized) mean_b_time
+ +      -0.0001 * (normalized) max_b_time
+ +       0      * (normalized) std_b_time
+ +      -0.072  * (normalized) psh_f_cnt
+ +      -0.8671 * (normalized) urg_f_cnt
+ +      -0.0442 * (normalized) psh_b_cnt
+ +      -0.1327 * (normalized) urg_b_cnt
+ +       0.1447
+
+Number of kernel evaluations: 6566 (63.406% cached)
+
+Classifier for classes: slowRead, slowHeaders
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.361  * (normalized) duration
+ +       0.4876 * (normalized) cof=2
+ +       0      * (normalized) cof=18
+ +      -2      * (normalized) cof=22
+ +      -0.8369 * (normalized) cof=26
+ +       1.2173 * (normalized) cof=27
+ +       1.2003 * (normalized) cof=29
+ +      -1.2854 * (normalized) cof=30
+ +       1.217  * (normalized) cof=31
+ +       0.0129 * (normalized) total_f_packets
+ +       0.1111 * (normalized) total_b_packets
+ +       0.0083 * (normalized) total_f_bytes
+ +       4.147  * (normalized) total_b_bytes
+ +      -0.0028 * (normalized) pps_f
+ +      -0      * (normalized) pps_b
+ +      -0.0033 * (normalized) bps_f
+ +      -0.0054 * (normalized) bps_b
+ +       1.0652 * (normalized) rfb_packets
+ +       1.6392 * (normalized) rfb_bytes
+ +      -0.0175 * (normalized) min_f_pkt
+ +      -0.167  * (normalized) mean_f_pkt
+ +      -0.0088 * (normalized) max_f_pkt
+ +      -0.1359 * (normalized) std_f_pkt
+ +      -0.4209 * (normalized) min_b_pkt
+ +       0.6966 * (normalized) mean_b_pkt
+ +      -2.3326 * (normalized) max_b_pkt
+ +      -1.4859 * (normalized) std_b_pkt
+ +       2.3557 * (normalized) min_f_time
+ +       1.8865 * (normalized) mean_f_time
+ +       0.32   * (normalized) max_f_time
+ +       0.3716 * (normalized) std_f_time
+ +       0.1482 * (normalized) min_b_time
+ +      -0.1154 * (normalized) mean_b_time
+ +      -0.0345 * (normalized) max_b_time
+ +      -0.5326 * (normalized) std_b_time
+ +       0.2735 * (normalized) psh_f_cnt
+ +      -0      * (normalized) urg_f_cnt
+ +      -0.3293 * (normalized) psh_b_cnt
+ +      -0.4876 * (normalized) urg_b_cnt
+ -       2.2187
+
+Number of kernel evaluations: 3360067 (80.319% cached)
+
+Classifier for classes: slowRead, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.036  * (normalized) duration
+ +       0.7293 * (normalized) cof=N/A
+ +      -0.5378 * (normalized) cof=2
+ +      -0.1019 * (normalized) cof=18
+ +      -0.0594 * (normalized) cof=22
+ +      -0.0012 * (normalized) cof=26
+ +      -0.0086 * (normalized) cof=27
+ +      -0.0062 * (normalized) cof=30
+ +      -0.0141 * (normalized) cof=31
+ +       0.0029 * (normalized) total_f_packets
+ +      -0.0661 * (normalized) total_b_packets
+ +       0.0028 * (normalized) total_f_bytes
+ +      -0.0317 * (normalized) total_b_bytes
+ +      -0      * (normalized) pps_f
+ +      -0      * (normalized) pps_b
+ +      -0      * (normalized) bps_f
+ +      -0      * (normalized) bps_b
+ +      -0.02   * (normalized) rfb_packets
+ +      -0.0038 * (normalized) rfb_bytes
+ +       0.0145 * (normalized) min_f_pkt
+ +       0.0089 * (normalized) mean_f_pkt
+ +      -0.0113 * (normalized) max_f_pkt
+ +      -0.0131 * (normalized) std_f_pkt
+ +      -0.1875 * (normalized) min_b_pkt
+ +      -0.0228 * (normalized) mean_b_pkt
+ +      -0.0184 * (normalized) max_b_pkt
+ +      -0.019  * (normalized) std_b_pkt
+ +       0.0049 * (normalized) min_f_time
+ +      -0.0247 * (normalized) mean_f_time
+ +      -0.025  * (normalized) max_f_time
+ +      -0.0323 * (normalized) std_f_time
+ +      -0.0036 * (normalized) min_b_time
+ +      -0.0087 * (normalized) mean_b_time
+ +      -0.0152 * (normalized) max_b_time
+ +      -0.0113 * (normalized) std_b_time
+ +      -0.0511 * (normalized) psh_f_cnt
+ +      -0.7293 * (normalized) urg_f_cnt
+ +      -0.0739 * (normalized) psh_b_cnt
+ +      -0.1915 * (normalized) urg_b_cnt
+ +       0.2715
+
+Number of kernel evaluations: 7114 (71.723% cached)
+
+Classifier for classes: slowHeaders, udpFlood
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.031  * (normalized) duration
+ +       0.7285 * (normalized) cof=N/A
+ +      -0.5381 * (normalized) cof=2
+ +      -0.1217 * (normalized) cof=22
+ +      -0.0201 * (normalized) cof=27
+ +      -0.0193 * (normalized) cof=29
+ +      -0.0098 * (normalized) cof=30
+ +      -0.0195 * (normalized) cof=31
+ +       0.0085 * (normalized) total_f_packets
+ +      -0.0498 * (normalized) total_b_packets
+ +       0.008  * (normalized) total_f_bytes
+ +      -0.0351 * (normalized) total_b_bytes
+ +      -0      * (normalized) pps_f
+ +      -0      * (normalized) pps_b
+ +      -0      * (normalized) bps_f
+ +      -0      * (normalized) bps_b
+ +      -0.0415 * (normalized) rfb_packets
+ +      -0.0127 * (normalized) rfb_bytes
+ +       0.0217 * (normalized) min_f_pkt
+ +       0.008  * (normalized) mean_f_pkt
+ +      -0.018  * (normalized) max_f_pkt
+ +      -0.0235 * (normalized) std_f_pkt
+ +      -0.1797 * (normalized) min_b_pkt
+ +      -0.0227 * (normalized) mean_b_pkt
+ +      -0.0162 * (normalized) max_b_pkt
+ +      -0.0165 * (normalized) std_b_pkt
+ +       0.0068 * (normalized) min_f_time
+ +      -0.0137 * (normalized) mean_f_time
+ +      -0.0115 * (normalized) max_f_time
+ +      -0.0154 * (normalized) std_f_time
+ +      -0.0086 * (normalized) min_b_time
+ +      -0.0122 * (normalized) mean_b_time
+ +      -0.0142 * (normalized) max_b_time
+ +      -0.0055 * (normalized) std_b_time
+ +      -0.0653 * (normalized) psh_f_cnt
+ +      -0.7285 * (normalized) urg_f_cnt
+ +      -0.0831 * (normalized) psh_b_cnt
+ +      -0.1904 * (normalized) urg_b_cnt
+ +       0.2705
+
+Number of kernel evaluations: 19604 (68.272% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        2927               97.5667 %
+Incorrectly Classified Instances        73                2.4333 %
+Kappa statistic                          0.9708
+Mean absolute error                      0.2228
+Root mean squared error                  0.3113
+Relative absolute error                 80.2187 %
+Root relative squared error             83.5235 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.001    0.994      1.000    0.997      0.996    0.999     0.994     tcpFlood
+                 0.998    0.001    0.996      0.998    0.997      0.996    0.999     0.995     normal
+                 0.990    0.000    0.998      0.990    0.994      0.993    0.998     0.990     httpFlood
+                 0.944    0.016    0.924      0.944    0.934      0.920    0.975     0.886     slowRead
+                 0.922    0.011    0.945      0.922    0.933      0.920    0.985     0.908     slowHeaders
+                 1.000    0.000    0.998      1.000    0.999      0.999    1.000     0.998     udpFlood
+Weighted Avg.    0.976    0.005    0.976      0.976    0.976      0.971    0.993     0.962     
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 500   0   0   0   0   0 |   a = tcpFlood
+   0 499   0   0   0   1 |   b = normal
+   3   0 495   2   0   0 |   c = httpFlood
+   0   1   0 472  27   0 |   d = slowRead
+   0   1   1  37 461   0 |   e = slowHeaders
+   0   0   0   0   0 500 |   f = udpFlood

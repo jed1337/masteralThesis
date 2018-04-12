@@ -1,0 +1,348 @@
+=== Classifier ===
+Naive Bayes Classifier
+
+                         Class
+Attribute               normal       attack
+                         (0.5)        (0.5)
+============================================
+duration
+  mean                   4.8004       5.3436
+  std. dev.             12.1728       14.317
+  weight sum               6000         6000
+  precision              0.0073       0.0073
+
+cof
+  N/A                       5.0       1801.0
+  0                         1.0          1.0
+  1                         1.0          1.0
+  2                         1.0        274.0
+  3                         1.0          1.0
+  4                         1.0        116.0
+  5                         1.0          1.0
+  6                         1.0          1.0
+  7                         1.0          1.0
+  8                         1.0          1.0
+  9                         1.0          1.0
+  10                        1.0          1.0
+  11                        1.0          1.0
+  12                        1.0          1.0
+  13                        1.0          1.0
+  14                        1.0          1.0
+  15                        1.0          1.0
+  16                        1.0          1.0
+  17                        2.0          1.0
+  18                        1.0       1708.0
+  19                        1.0          7.0
+  20                        1.0          1.0
+  21                        1.0          5.0
+  22                        1.0         42.0
+  23                        1.0          5.0
+  24                        1.0          1.0
+  25                        1.0          1.0
+  26                        1.0          2.0
+  27                     5952.0         55.0
+  28                        1.0          2.0
+  29                        1.0         25.0
+  30                        9.0         12.0
+  31                       37.0       1960.0
+  32                        1.0          1.0
+  33                        1.0          1.0
+  34                        1.0          1.0
+  35                        1.0          1.0
+  36                        1.0          1.0
+  37                        1.0          1.0
+  38                        1.0          1.0
+  39                        1.0          1.0
+  40                        1.0          1.0
+  41                        1.0          1.0
+  42                        1.0          1.0
+  43                        1.0          1.0
+  44                        1.0          1.0
+  45                        1.0          1.0
+  46                        1.0          1.0
+  47                        1.0          1.0
+  48                        1.0          1.0
+  49                        1.0          1.0
+  50                        1.0          1.0
+  51                        1.0          1.0
+  52                        1.0          1.0
+  53                        1.0          1.0
+  54                        1.0          1.0
+  55                        1.0          1.0
+  56                        1.0          1.0
+  57                        1.0          1.0
+  58                        1.0          1.0
+  59                        1.0          1.0
+  60                        1.0          1.0
+  61                        1.0          1.0
+  62                        1.0          1.0
+  63                        1.0          1.0
+  64                        1.0          1.0
+  65                        1.0          1.0
+  66                        1.0          1.0
+  67                        1.0          1.0
+  68                        1.0          1.0
+  69                        1.0          1.0
+  70                        1.0          1.0
+  71                        1.0          1.0
+  72                        1.0          1.0
+  73                        1.0          1.0
+  74                        1.0          1.0
+  75                        1.0          1.0
+  76                        1.0          1.0
+  77                        1.0          1.0
+  78                        1.0          1.0
+  79                        1.0          1.0
+  80                        1.0          1.0
+  81                        1.0          1.0
+  82                        1.0          1.0
+  83                        1.0          1.0
+  84                        1.0          1.0
+  85                        1.0          1.0
+  86                        1.0          1.0
+  87                        1.0          1.0
+  88                        1.0          1.0
+  89                        1.0          1.0
+  90                        1.0          1.0
+  91                        1.0          1.0
+  92                        1.0          1.0
+  93                        1.0          1.0
+  94                        1.0          1.0
+  95                        1.0          1.0
+  96                        1.0          1.0
+  97                        1.0          1.0
+  98                        1.0          1.0
+  99                        1.0          1.0
+  100                       1.0          1.0
+  101                       1.0          1.0
+  102                       1.0          1.0
+  103                       1.0          1.0
+  104                       1.0          1.0
+  105                       1.0          1.0
+  106                       1.0          1.0
+  107                       1.0          1.0
+  108                       1.0          1.0
+  109                       1.0          1.0
+  110                       1.0          1.0
+  111                       1.0          1.0
+  112                       1.0          1.0
+  113                       1.0          1.0
+  114                       1.0          1.0
+  115                       1.0          1.0
+  116                       1.0          1.0
+  117                       1.0          1.0
+  118                       1.0          1.0
+  119                       1.0          1.0
+  120                       1.0          1.0
+  121                       1.0          1.0
+  122                       1.0          1.0
+  123                       1.0          1.0
+  124                       1.0          1.0
+  125                       1.0          1.0
+  126                       1.0          1.0
+  127                       1.0          1.0
+  [total]                6129.0       6129.0
+
+total_f_packets
+  mean                  13.4604     198.6131
+  std. dev.              0.8105     351.1547
+  weight sum               6000         6000
+  precision              3.3891       3.3891
+
+total_b_packets
+  mean                   6.5537       1.9532
+  std. dev.              1.0455       2.4582
+  weight sum               6000         6000
+  precision                   1            1
+
+total_f_bytes
+  mean                 820.1692    9234.5131
+  std. dev.            138.5986   16102.6496
+  weight sum               6000         6000
+  precision             96.9314      96.9314
+
+total_b_bytes
+  mean               12107.8318     256.2874
+  std. dev.            714.2608     780.9182
+  weight sum               6000         6000
+  precision            281.3768     281.3768
+
+pps_f
+  mean                1718.0922    1813.3943
+  std. dev.           1033.7443    49123.541
+  weight sum               6000         6000
+  precision            289.6719     289.6719
+
+pps_b
+  mean                 809.8559     278.1266
+  std. dev.             475.042     2602.037
+  weight sum               6000         6000
+  precision             23.8599      23.8599
+
+bps_f
+  mean              106124.2929   87784.3064
+  std. dev.          63491.1566 2259696.2326
+  weight sum               6000         6000
+  precision           13265.813    13265.813
+
+bps_b
+  mean              1588334.376   39905.2014
+  std. dev.          950994.533  461745.2039
+  weight sum               6000         6000
+  precision           4243.4285    4243.4285
+
+rfb_packets
+  mean                    2.085       0.8065
+  std. dev.              0.3168       0.7329
+  weight sum               6000         6000
+  precision              0.1884       0.1884
+
+rfb_bytes
+  mean                   0.0621       0.7101
+  std. dev.              0.0155       1.4046
+  weight sum               6000         6000
+  precision              0.0612       0.0612
+
+min_f_pkt
+  mean                   46.304      47.9034
+  std. dev.              3.8542       5.9583
+  weight sum               6000         6000
+  precision              23.125       23.125
+
+mean_f_pkt
+  mean                  64.4529      58.0945
+  std. dev.              8.1171      17.8182
+  weight sum               6000         6000
+  precision              0.4054       0.4054
+
+max_f_pkt
+  mean                 194.5816       99.076
+  std. dev.             57.7832      80.2885
+  weight sum               6000         6000
+  precision             10.6364      10.6364
+
+std_f_pkt
+  mean                  37.8622      18.5515
+  std. dev.             16.9465      26.7321
+  weight sum               6000         6000
+  precision               0.245        0.245
+
+min_b_pkt
+  mean                   47.968        30.51
+  std. dev.                   2      23.2488
+  weight sum               6000         6000
+  precision                  12           12
+
+mean_b_pkt
+  mean                1877.0473      62.0767
+  std. dev.            199.6812     131.5743
+  weight sum               6000         6000
+  precision                  44           44
+
+max_b_pkt
+  mean                6399.1039     205.4848
+  std. dev.           1565.5583     417.1749
+  weight sum               6000         6000
+  precision            560.9231     560.9231
+
+std_b_pkt
+  mean                2601.6731      43.5908
+  std. dev.            523.3905     147.0099
+  weight sum               6000         6000
+  precision             32.9984      32.9984
+
+min_f_time
+  mean                   0.0009       0.0454
+  std. dev.              0.0501        0.217
+  weight sum               6000         6000
+  precision              0.0034       0.0034
+
+mean_f_time
+  mean                   0.4072       0.5034
+  std. dev.              1.0393       1.5756
+  weight sum               6000         6000
+  precision              0.0016       0.0016
+
+max_f_time
+  mean                   3.2737       1.2611
+  std. dev.              9.2784        4.046
+  weight sum               6000         6000
+  precision              0.0064       0.0064
+
+std_f_time
+  mean                   0.9282       0.4696
+  std. dev.                2.58       1.4702
+  weight sum               6000         6000
+  precision              0.0028       0.0028
+
+min_b_time
+  mean                        0        0.042
+  std. dev.              0.0056        1.148
+  weight sum               6000         6000
+  precision              0.0338       0.0338
+
+mean_b_time
+  mean                   0.5646        0.373
+  std. dev.              1.5138        1.808
+  weight sum               6000         6000
+  precision              0.0079       0.0079
+
+max_b_time
+  mean                   3.2422       0.6484
+  std. dev.              9.2191       3.0174
+  weight sum               6000         6000
+  precision              0.0079       0.0079
+
+std_b_time
+  mean                   1.1143       0.2617
+  std. dev.               3.139       1.1724
+  weight sum               6000         6000
+  precision              0.0046       0.0046
+
+psh_f_cnt
+  mean                   1.0265       0.3735
+  std. dev.              0.3499       1.8405
+  weight sum               6000         6000
+  precision                   1            1
+
+urg_f_cnt
+  mean                  -0.0007         -0.3
+  std. dev.              0.1667       0.4583
+  weight sum               6000         6000
+  precision                   1            1
+
+psh_b_cnt
+  mean                   1.1783      -0.0298
+  std. dev.              0.4603       0.8384
+  weight sum               6000         6000
+  precision                   1            1
+
+urg_b_cnt
+  mean                  -0.0007      -0.3665
+  std. dev.              0.1667       0.4818
+  weight sum               6000         6000
+  precision                   1            1
+
+
+=== Dedicated test set ===
+=== Summary of NB ===
+
+Correctly Classified Instances        2939               97.9667 %
+Incorrectly Classified Instances        61                2.0333 %
+Kappa statistic                          0.9593
+Mean absolute error                      0.0203
+Root mean squared error                  0.1426
+Relative absolute error                  4.0666 %
+Root relative squared error             28.5189 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.993    0.034    0.967      0.993    0.980      0.960    0.980     0.966     normal
+                 0.966    0.007    0.993      0.966    0.979      0.960    0.985     0.982     attack
+Weighted Avg.    0.980    0.020    0.980      0.980    0.980      0.960    0.982     0.974     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1490   10 |    a = normal
+   51 1449 |    b = attack

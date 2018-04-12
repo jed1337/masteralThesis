@@ -1,0 +1,594 @@
+=== Classifier ===
+J48 pruned tree
+------------------
+
+max_b_pkt <= 535
+|   std_f_time <= 0.006651
+|   |   std_b_time <= 0.001572
+|   |   |   bps_b <= 123085.182804
+|   |   |   |   rfb_bytes <= 2.037587
+|   |   |   |   |   pps_f <= 390.276093
+|   |   |   |   |   |   mean_f_time <= 0.003859
+|   |   |   |   |   |   |   mean_f_time <= 0.003352
+|   |   |   |   |   |   |   |   max_f_time <= 0.048183
+|   |   |   |   |   |   |   |   |   std_f_time <= 0.002542
+|   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002707
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002056
+|   |   |   |   |   |   |   |   |   |   |   |   cof = N/A: attack (236.0/96.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 0: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 1: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 2: attack (16.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 3: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 4: normal (231.0/107.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 5: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 6: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 7: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 8: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 9: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 10: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 11: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 12: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 13: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 14: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 15: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 16: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 17: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 18: attack (2734.0/1043.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 19: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 20: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 21: attack (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 22: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 23: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 24: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 25: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 26: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 27: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 28: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 29: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 30: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 31: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 32: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 33: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 34: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 35: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 36: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 37: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 38: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 39: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 40: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 41: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 42: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 43: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 44: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 45: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 46: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 47: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 48: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 49: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 50: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 51: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 52: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 53: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 54: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 55: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 56: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 57: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 58: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 59: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 60: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 61: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 62: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 63: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 64: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 65: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 66: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 67: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 68: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 69: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 70: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 71: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 72: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 73: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 74: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 75: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 76: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 77: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 78: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 79: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 80: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 81: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 82: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 83: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 84: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 85: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 86: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 87: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 88: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 89: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 90: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 91: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 92: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 93: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 94: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 95: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 96: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 97: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 98: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 99: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 100: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 101: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 102: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 103: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 104: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 105: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 106: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 107: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 108: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 109: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 110: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 111: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 112: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 113: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 114: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 115: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 116: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 117: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 118: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 119: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 120: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 121: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 122: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 123: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 124: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 125: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 126: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   cof = 127: attack (0.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002056
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002263
+|   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002587: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002587
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time <= 0.019366
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002656: normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002656: attack (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   max_f_time > 0.019366: attack (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002263: normal (12.0)
+|   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002707
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002294
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.002167: attack (45.0)
+|   |   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002167
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1187: attack (43.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1187
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f <= 360.576179: normal (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pps_f > 360.576179: attack (2.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.002294
+|   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1165: attack (55.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1165: normal (4.0)
+|   |   |   |   |   |   |   |   |   std_f_time > 0.002542
+|   |   |   |   |   |   |   |   |   |   max_f_time <= 0.020089
+|   |   |   |   |   |   |   |   |   |   |   pps_f <= 305.796181: attack (3.0)
+|   |   |   |   |   |   |   |   |   |   |   pps_f > 305.796181: normal (12.0/3.0)
+|   |   |   |   |   |   |   |   |   |   max_f_time > 0.020089: normal (71.0/5.0)
+|   |   |   |   |   |   |   |   max_f_time > 0.048183: attack (36.0)
+|   |   |   |   |   |   |   mean_f_time > 0.003352
+|   |   |   |   |   |   |   |   mean_f_time <= 0.003653: normal (51.0/1.0)
+|   |   |   |   |   |   |   |   mean_f_time > 0.003653
+|   |   |   |   |   |   |   |   |   max_f_time <= 0.021475: attack (6.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 0.021475: normal (19.0/5.0)
+|   |   |   |   |   |   mean_f_time > 0.003859
+|   |   |   |   |   |   |   min_f_pkt <= 60: attack (956.0/8.0)
+|   |   |   |   |   |   |   min_f_pkt > 60: normal (11.0/4.0)
+|   |   |   |   |   pps_f > 390.276093
+|   |   |   |   |   |   urg_f_cnt <= -1
+|   |   |   |   |   |   |   mean_f_time <= 0.002233: normal (813.0/5.0)
+|   |   |   |   |   |   |   mean_f_time > 0.002233
+|   |   |   |   |   |   |   |   std_f_time <= 0.001714
+|   |   |   |   |   |   |   |   |   std_f_time <= 0.001654: attack (33.0/1.0)
+|   |   |   |   |   |   |   |   |   std_f_time > 0.001654
+|   |   |   |   |   |   |   |   |   |   total_f_packets <= 1446: attack (18.0)
+|   |   |   |   |   |   |   |   |   |   total_f_packets > 1446: normal (12.0/2.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.001714
+|   |   |   |   |   |   |   |   |   max_f_time <= 0.031446
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.001852
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.002355: normal (36.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.002355: attack (28.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.001852
+|   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1342
+|   |   |   |   |   |   |   |   |   |   |   |   total_f_packets <= 1336: normal (28.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1336: attack (3.0)
+|   |   |   |   |   |   |   |   |   |   |   total_f_packets > 1342: normal (119.0/1.0)
+|   |   |   |   |   |   |   |   |   max_f_time > 0.031446: attack (13.0)
+|   |   |   |   |   |   urg_f_cnt > -1
+|   |   |   |   |   |   |   duration <= 0.008545
+|   |   |   |   |   |   |   |   min_b_time <= 0.000022: attack (44.0/14.0)
+|   |   |   |   |   |   |   |   min_b_time > 0.000022
+|   |   |   |   |   |   |   |   |   total_f_bytes <= 441: attack (4.0/1.0)
+|   |   |   |   |   |   |   |   |   total_f_bytes > 441: normal (3.0)
+|   |   |   |   |   |   |   duration > 0.008545
+|   |   |   |   |   |   |   |   total_f_bytes <= 447
+|   |   |   |   |   |   |   |   |   mean_b_time <= 0.001623: normal (5.0)
+|   |   |   |   |   |   |   |   |   mean_b_time > 0.001623
+|   |   |   |   |   |   |   |   |   |   bps_f <= 42294.856305: normal (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   bps_f > 42294.856305: attack (4.0)
+|   |   |   |   |   |   |   |   total_f_bytes > 447: normal (3.0)
+|   |   |   |   rfb_bytes > 2.037587
+|   |   |   |   |   duration <= 0.079864
+|   |   |   |   |   |   duration <= 0.043033
+|   |   |   |   |   |   |   cof = N/A: normal (0.0)
+|   |   |   |   |   |   |   cof = 0: normal (0.0)
+|   |   |   |   |   |   |   cof = 1: normal (0.0)
+|   |   |   |   |   |   |   cof = 2: normal (0.0)
+|   |   |   |   |   |   |   cof = 3: normal (0.0)
+|   |   |   |   |   |   |   cof = 4: normal (0.0)
+|   |   |   |   |   |   |   cof = 5: normal (0.0)
+|   |   |   |   |   |   |   cof = 6: normal (0.0)
+|   |   |   |   |   |   |   cof = 7: normal (0.0)
+|   |   |   |   |   |   |   cof = 8: normal (0.0)
+|   |   |   |   |   |   |   cof = 9: normal (0.0)
+|   |   |   |   |   |   |   cof = 10: normal (0.0)
+|   |   |   |   |   |   |   cof = 11: normal (0.0)
+|   |   |   |   |   |   |   cof = 12: normal (0.0)
+|   |   |   |   |   |   |   cof = 13: normal (0.0)
+|   |   |   |   |   |   |   cof = 14: normal (0.0)
+|   |   |   |   |   |   |   cof = 15: normal (0.0)
+|   |   |   |   |   |   |   cof = 16: normal (0.0)
+|   |   |   |   |   |   |   cof = 17: normal (1.0)
+|   |   |   |   |   |   |   cof = 18: normal (0.0)
+|   |   |   |   |   |   |   cof = 19: normal (0.0)
+|   |   |   |   |   |   |   cof = 20: normal (0.0)
+|   |   |   |   |   |   |   cof = 21: normal (0.0)
+|   |   |   |   |   |   |   cof = 22: normal (108.0/26.0)
+|   |   |   |   |   |   |   cof = 23: normal (0.0)
+|   |   |   |   |   |   |   cof = 24: normal (0.0)
+|   |   |   |   |   |   |   cof = 25: normal (0.0)
+|   |   |   |   |   |   |   cof = 26: normal (0.0)
+|   |   |   |   |   |   |   cof = 27: attack (6.0/2.0)
+|   |   |   |   |   |   |   cof = 28: normal (0.0)
+|   |   |   |   |   |   |   cof = 29: normal (1.0)
+|   |   |   |   |   |   |   cof = 30: normal (0.0)
+|   |   |   |   |   |   |   cof = 31: attack (5.0)
+|   |   |   |   |   |   |   cof = 32: normal (0.0)
+|   |   |   |   |   |   |   cof = 33: normal (0.0)
+|   |   |   |   |   |   |   cof = 34: normal (0.0)
+|   |   |   |   |   |   |   cof = 35: normal (0.0)
+|   |   |   |   |   |   |   cof = 36: normal (0.0)
+|   |   |   |   |   |   |   cof = 37: normal (0.0)
+|   |   |   |   |   |   |   cof = 38: normal (0.0)
+|   |   |   |   |   |   |   cof = 39: normal (0.0)
+|   |   |   |   |   |   |   cof = 40: normal (0.0)
+|   |   |   |   |   |   |   cof = 41: normal (0.0)
+|   |   |   |   |   |   |   cof = 42: normal (0.0)
+|   |   |   |   |   |   |   cof = 43: normal (0.0)
+|   |   |   |   |   |   |   cof = 44: normal (0.0)
+|   |   |   |   |   |   |   cof = 45: normal (0.0)
+|   |   |   |   |   |   |   cof = 46: normal (0.0)
+|   |   |   |   |   |   |   cof = 47: normal (0.0)
+|   |   |   |   |   |   |   cof = 48: normal (0.0)
+|   |   |   |   |   |   |   cof = 49: normal (0.0)
+|   |   |   |   |   |   |   cof = 50: normal (0.0)
+|   |   |   |   |   |   |   cof = 51: normal (0.0)
+|   |   |   |   |   |   |   cof = 52: normal (0.0)
+|   |   |   |   |   |   |   cof = 53: normal (0.0)
+|   |   |   |   |   |   |   cof = 54: normal (0.0)
+|   |   |   |   |   |   |   cof = 55: normal (0.0)
+|   |   |   |   |   |   |   cof = 56: normal (0.0)
+|   |   |   |   |   |   |   cof = 57: normal (0.0)
+|   |   |   |   |   |   |   cof = 58: normal (0.0)
+|   |   |   |   |   |   |   cof = 59: normal (0.0)
+|   |   |   |   |   |   |   cof = 60: normal (0.0)
+|   |   |   |   |   |   |   cof = 61: normal (0.0)
+|   |   |   |   |   |   |   cof = 62: normal (0.0)
+|   |   |   |   |   |   |   cof = 63: normal (0.0)
+|   |   |   |   |   |   |   cof = 64: normal (0.0)
+|   |   |   |   |   |   |   cof = 65: normal (0.0)
+|   |   |   |   |   |   |   cof = 66: normal (0.0)
+|   |   |   |   |   |   |   cof = 67: normal (0.0)
+|   |   |   |   |   |   |   cof = 68: normal (0.0)
+|   |   |   |   |   |   |   cof = 69: normal (0.0)
+|   |   |   |   |   |   |   cof = 70: normal (0.0)
+|   |   |   |   |   |   |   cof = 71: normal (0.0)
+|   |   |   |   |   |   |   cof = 72: normal (0.0)
+|   |   |   |   |   |   |   cof = 73: normal (0.0)
+|   |   |   |   |   |   |   cof = 74: normal (0.0)
+|   |   |   |   |   |   |   cof = 75: normal (0.0)
+|   |   |   |   |   |   |   cof = 76: normal (0.0)
+|   |   |   |   |   |   |   cof = 77: normal (0.0)
+|   |   |   |   |   |   |   cof = 78: normal (0.0)
+|   |   |   |   |   |   |   cof = 79: normal (0.0)
+|   |   |   |   |   |   |   cof = 80: normal (0.0)
+|   |   |   |   |   |   |   cof = 81: normal (0.0)
+|   |   |   |   |   |   |   cof = 82: normal (0.0)
+|   |   |   |   |   |   |   cof = 83: normal (0.0)
+|   |   |   |   |   |   |   cof = 84: normal (0.0)
+|   |   |   |   |   |   |   cof = 85: normal (0.0)
+|   |   |   |   |   |   |   cof = 86: normal (0.0)
+|   |   |   |   |   |   |   cof = 87: normal (0.0)
+|   |   |   |   |   |   |   cof = 88: normal (0.0)
+|   |   |   |   |   |   |   cof = 89: normal (0.0)
+|   |   |   |   |   |   |   cof = 90: normal (0.0)
+|   |   |   |   |   |   |   cof = 91: normal (0.0)
+|   |   |   |   |   |   |   cof = 92: normal (0.0)
+|   |   |   |   |   |   |   cof = 93: normal (0.0)
+|   |   |   |   |   |   |   cof = 94: normal (0.0)
+|   |   |   |   |   |   |   cof = 95: normal (0.0)
+|   |   |   |   |   |   |   cof = 96: normal (0.0)
+|   |   |   |   |   |   |   cof = 97: normal (0.0)
+|   |   |   |   |   |   |   cof = 98: normal (0.0)
+|   |   |   |   |   |   |   cof = 99: normal (0.0)
+|   |   |   |   |   |   |   cof = 100: normal (0.0)
+|   |   |   |   |   |   |   cof = 101: normal (0.0)
+|   |   |   |   |   |   |   cof = 102: normal (0.0)
+|   |   |   |   |   |   |   cof = 103: normal (0.0)
+|   |   |   |   |   |   |   cof = 104: normal (0.0)
+|   |   |   |   |   |   |   cof = 105: normal (0.0)
+|   |   |   |   |   |   |   cof = 106: normal (0.0)
+|   |   |   |   |   |   |   cof = 107: normal (0.0)
+|   |   |   |   |   |   |   cof = 108: normal (0.0)
+|   |   |   |   |   |   |   cof = 109: normal (0.0)
+|   |   |   |   |   |   |   cof = 110: normal (0.0)
+|   |   |   |   |   |   |   cof = 111: normal (0.0)
+|   |   |   |   |   |   |   cof = 112: normal (0.0)
+|   |   |   |   |   |   |   cof = 113: normal (0.0)
+|   |   |   |   |   |   |   cof = 114: normal (0.0)
+|   |   |   |   |   |   |   cof = 115: normal (0.0)
+|   |   |   |   |   |   |   cof = 116: normal (0.0)
+|   |   |   |   |   |   |   cof = 117: normal (0.0)
+|   |   |   |   |   |   |   cof = 118: normal (0.0)
+|   |   |   |   |   |   |   cof = 119: normal (0.0)
+|   |   |   |   |   |   |   cof = 120: normal (0.0)
+|   |   |   |   |   |   |   cof = 121: normal (0.0)
+|   |   |   |   |   |   |   cof = 122: normal (0.0)
+|   |   |   |   |   |   |   cof = 123: normal (0.0)
+|   |   |   |   |   |   |   cof = 124: normal (0.0)
+|   |   |   |   |   |   |   cof = 125: normal (0.0)
+|   |   |   |   |   |   |   cof = 126: normal (0.0)
+|   |   |   |   |   |   |   cof = 127: normal (0.0)
+|   |   |   |   |   |   duration > 0.043033: attack (12.0)
+|   |   |   |   |   duration > 0.079864: normal (52.0)
+|   |   |   bps_b > 123085.182804
+|   |   |   |   total_b_packets <= 3
+|   |   |   |   |   total_f_bytes <= 304: attack (14.0)
+|   |   |   |   |   total_f_bytes > 304: normal (18.0/4.0)
+|   |   |   |   total_b_packets > 3: attack (367.0/18.0)
+|   |   std_b_time > 0.001572
+|   |   |   cof = N/A: normal (0.0)
+|   |   |   cof = 0: normal (0.0)
+|   |   |   cof = 1: normal (0.0)
+|   |   |   cof = 2: normal (0.0)
+|   |   |   cof = 3: normal (0.0)
+|   |   |   cof = 4: normal (0.0)
+|   |   |   cof = 5: normal (0.0)
+|   |   |   cof = 6: normal (0.0)
+|   |   |   cof = 7: normal (0.0)
+|   |   |   cof = 8: normal (0.0)
+|   |   |   cof = 9: normal (0.0)
+|   |   |   cof = 10: normal (0.0)
+|   |   |   cof = 11: normal (0.0)
+|   |   |   cof = 12: normal (0.0)
+|   |   |   cof = 13: normal (0.0)
+|   |   |   cof = 14: normal (0.0)
+|   |   |   cof = 15: normal (0.0)
+|   |   |   cof = 16: normal (0.0)
+|   |   |   cof = 17: normal (0.0)
+|   |   |   cof = 18: normal (0.0)
+|   |   |   cof = 19: normal (0.0)
+|   |   |   cof = 20: normal (0.0)
+|   |   |   cof = 21: normal (0.0)
+|   |   |   cof = 22: normal (0.0)
+|   |   |   cof = 23: normal (0.0)
+|   |   |   cof = 24: normal (0.0)
+|   |   |   cof = 25: normal (0.0)
+|   |   |   cof = 26: attack (1.0)
+|   |   |   cof = 27: normal (15.0/2.0)
+|   |   |   cof = 28: normal (0.0)
+|   |   |   cof = 29
+|   |   |   |   std_b_time <= 0.002307: normal (5.0)
+|   |   |   |   std_b_time > 0.002307: attack (3.0)
+|   |   |   cof = 30: normal (2.0/1.0)
+|   |   |   cof = 31
+|   |   |   |   std_f_time <= 0.002787
+|   |   |   |   |   pps_f <= 732.224505
+|   |   |   |   |   |   min_f_time <= 0.00008: normal (259.0/18.0)
+|   |   |   |   |   |   min_f_time > 0.00008
+|   |   |   |   |   |   |   max_f_time <= 0.003203: attack (3.0)
+|   |   |   |   |   |   |   max_f_time > 0.003203
+|   |   |   |   |   |   |   |   std_f_time <= 0.002226: normal (11.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.002226
+|   |   |   |   |   |   |   |   |   min_b_time <= 0.000131: normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   min_b_time > 0.000131: attack (3.0)
+|   |   |   |   |   pps_f > 732.224505
+|   |   |   |   |   |   min_f_time <= 0.00011
+|   |   |   |   |   |   |   mean_b_time <= 0.001887: normal (39.0/16.0)
+|   |   |   |   |   |   |   mean_b_time > 0.001887: attack (4.0)
+|   |   |   |   |   |   min_f_time > 0.00011: attack (5.0)
+|   |   |   |   std_f_time > 0.002787
+|   |   |   |   |   max_b_time <= 0.007835
+|   |   |   |   |   |   max_b_time <= 0.005701
+|   |   |   |   |   |   |   mean_f_pkt <= 74
+|   |   |   |   |   |   |   |   min_f_time <= 0.000029: attack (27.0/10.0)
+|   |   |   |   |   |   |   |   min_f_time > 0.000029: normal (4.0)
+|   |   |   |   |   |   |   mean_f_pkt > 74: normal (42.0/7.0)
+|   |   |   |   |   |   max_b_time > 0.005701: attack (126.0/53.0)
+|   |   |   |   |   max_b_time > 0.007835
+|   |   |   |   |   |   std_b_time <= 0.005512: normal (631.0/178.0)
+|   |   |   |   |   |   std_b_time > 0.005512
+|   |   |   |   |   |   |   std_f_time <= 0.006384
+|   |   |   |   |   |   |   |   max_b_time <= 0.013129
+|   |   |   |   |   |   |   |   |   mean_f_time <= 0.005154
+|   |   |   |   |   |   |   |   |   |   std_b_time <= 0.005664
+|   |   |   |   |   |   |   |   |   |   |   std_f_time <= 0.006053: normal (23.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   std_f_time > 0.006053: attack (4.0)
+|   |   |   |   |   |   |   |   |   |   std_b_time > 0.005664: normal (65.0/5.0)
+|   |   |   |   |   |   |   |   |   mean_f_time > 0.005154
+|   |   |   |   |   |   |   |   |   |   max_b_time <= 0.012794: attack (5.0)
+|   |   |   |   |   |   |   |   |   |   max_b_time > 0.012794
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time <= 0.005215: normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   mean_f_time > 0.005215
+|   |   |   |   |   |   |   |   |   |   |   |   mean_b_time <= 0.004802: attack (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mean_b_time > 0.004802: normal (2.0)
+|   |   |   |   |   |   |   |   max_b_time > 0.013129: normal (95.0/6.0)
+|   |   |   |   |   |   |   std_f_time > 0.006384
+|   |   |   |   |   |   |   |   std_f_time <= 0.006619
+|   |   |   |   |   |   |   |   |   min_b_time <= 0.000129: normal (31.0/11.0)
+|   |   |   |   |   |   |   |   |   min_b_time > 0.000129: attack (4.0/1.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.006619: attack (7.0)
+|   |   |   cof = 32: normal (0.0)
+|   |   |   cof = 33: normal (0.0)
+|   |   |   cof = 34: normal (0.0)
+|   |   |   cof = 35: normal (0.0)
+|   |   |   cof = 36: normal (0.0)
+|   |   |   cof = 37: normal (0.0)
+|   |   |   cof = 38: normal (0.0)
+|   |   |   cof = 39: normal (0.0)
+|   |   |   cof = 40: normal (0.0)
+|   |   |   cof = 41: normal (0.0)
+|   |   |   cof = 42: normal (0.0)
+|   |   |   cof = 43: normal (0.0)
+|   |   |   cof = 44: normal (0.0)
+|   |   |   cof = 45: normal (0.0)
+|   |   |   cof = 46: normal (0.0)
+|   |   |   cof = 47: normal (0.0)
+|   |   |   cof = 48: normal (0.0)
+|   |   |   cof = 49: normal (0.0)
+|   |   |   cof = 50: normal (0.0)
+|   |   |   cof = 51: normal (0.0)
+|   |   |   cof = 52: normal (0.0)
+|   |   |   cof = 53: normal (0.0)
+|   |   |   cof = 54: normal (0.0)
+|   |   |   cof = 55: normal (0.0)
+|   |   |   cof = 56: normal (0.0)
+|   |   |   cof = 57: normal (0.0)
+|   |   |   cof = 58: normal (0.0)
+|   |   |   cof = 59: normal (0.0)
+|   |   |   cof = 60: normal (0.0)
+|   |   |   cof = 61: normal (0.0)
+|   |   |   cof = 62: normal (0.0)
+|   |   |   cof = 63: normal (0.0)
+|   |   |   cof = 64: normal (0.0)
+|   |   |   cof = 65: normal (0.0)
+|   |   |   cof = 66: normal (0.0)
+|   |   |   cof = 67: normal (0.0)
+|   |   |   cof = 68: normal (0.0)
+|   |   |   cof = 69: normal (0.0)
+|   |   |   cof = 70: normal (0.0)
+|   |   |   cof = 71: normal (0.0)
+|   |   |   cof = 72: normal (0.0)
+|   |   |   cof = 73: normal (0.0)
+|   |   |   cof = 74: normal (0.0)
+|   |   |   cof = 75: normal (0.0)
+|   |   |   cof = 76: normal (0.0)
+|   |   |   cof = 77: normal (0.0)
+|   |   |   cof = 78: normal (0.0)
+|   |   |   cof = 79: normal (0.0)
+|   |   |   cof = 80: normal (0.0)
+|   |   |   cof = 81: normal (0.0)
+|   |   |   cof = 82: normal (0.0)
+|   |   |   cof = 83: normal (0.0)
+|   |   |   cof = 84: normal (0.0)
+|   |   |   cof = 85: normal (0.0)
+|   |   |   cof = 86: normal (0.0)
+|   |   |   cof = 87: normal (0.0)
+|   |   |   cof = 88: normal (0.0)
+|   |   |   cof = 89: normal (0.0)
+|   |   |   cof = 90: normal (0.0)
+|   |   |   cof = 91: normal (0.0)
+|   |   |   cof = 92: normal (0.0)
+|   |   |   cof = 93: normal (0.0)
+|   |   |   cof = 94: normal (0.0)
+|   |   |   cof = 95: normal (0.0)
+|   |   |   cof = 96: normal (0.0)
+|   |   |   cof = 97: normal (0.0)
+|   |   |   cof = 98: normal (0.0)
+|   |   |   cof = 99: normal (0.0)
+|   |   |   cof = 100: normal (0.0)
+|   |   |   cof = 101: normal (0.0)
+|   |   |   cof = 102: normal (0.0)
+|   |   |   cof = 103: normal (0.0)
+|   |   |   cof = 104: normal (0.0)
+|   |   |   cof = 105: normal (0.0)
+|   |   |   cof = 106: normal (0.0)
+|   |   |   cof = 107: normal (0.0)
+|   |   |   cof = 108: normal (0.0)
+|   |   |   cof = 109: normal (0.0)
+|   |   |   cof = 110: normal (0.0)
+|   |   |   cof = 111: normal (0.0)
+|   |   |   cof = 112: normal (0.0)
+|   |   |   cof = 113: normal (0.0)
+|   |   |   cof = 114: normal (0.0)
+|   |   |   cof = 115: normal (0.0)
+|   |   |   cof = 116: normal (0.0)
+|   |   |   cof = 117: normal (0.0)
+|   |   |   cof = 118: normal (0.0)
+|   |   |   cof = 119: normal (0.0)
+|   |   |   cof = 120: normal (0.0)
+|   |   |   cof = 121: normal (0.0)
+|   |   |   cof = 122: normal (0.0)
+|   |   |   cof = 123: normal (0.0)
+|   |   |   cof = 124: normal (0.0)
+|   |   |   cof = 125: normal (0.0)
+|   |   |   cof = 126: normal (0.0)
+|   |   |   cof = 127: normal (0.0)
+|   std_f_time > 0.006651
+|   |   pps_b <= 0.421427
+|   |   |   total_f_packets <= 4
+|   |   |   |   min_f_pkt <= 60: attack (27.0/1.0)
+|   |   |   |   min_f_pkt > 60: normal (3.0)
+|   |   |   total_f_packets > 4: attack (962.0)
+|   |   pps_b > 0.421427
+|   |   |   psh_f_cnt <= 0
+|   |   |   |   rfb_bytes <= 1.470821: normal (23.0/1.0)
+|   |   |   |   rfb_bytes > 1.470821: attack (2.0)
+|   |   |   psh_f_cnt > 0
+|   |   |   |   std_b_time <= 0.006315
+|   |   |   |   |   total_f_packets <= 5: attack (44.0)
+|   |   |   |   |   total_f_packets > 5
+|   |   |   |   |   |   pps_b <= 288.625378
+|   |   |   |   |   |   |   min_b_time <= 0.000157
+|   |   |   |   |   |   |   |   std_f_time <= 0.008019: normal (68.0/21.0)
+|   |   |   |   |   |   |   |   std_f_time > 0.008019
+|   |   |   |   |   |   |   |   |   min_b_time <= 0.000109
+|   |   |   |   |   |   |   |   |   |   std_f_time <= 0.008354: attack (10.0)
+|   |   |   |   |   |   |   |   |   |   std_f_time > 0.008354
+|   |   |   |   |   |   |   |   |   |   |   std_b_time <= 0.004991: attack (5.0)
+|   |   |   |   |   |   |   |   |   |   |   std_b_time > 0.004991
+|   |   |   |   |   |   |   |   |   |   |   |   max_b_time <= 0.01372: normal (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   max_b_time > 0.01372: attack (8.0/1.0)
+|   |   |   |   |   |   |   |   |   min_b_time > 0.000109: normal (3.0)
+|   |   |   |   |   |   |   min_b_time > 0.000157: attack (9.0/1.0)
+|   |   |   |   |   |   pps_b > 288.625378
+|   |   |   |   |   |   |   mean_f_time <= 0.005523
+|   |   |   |   |   |   |   |   max_b_time <= 0.009516: attack (4.0)
+|   |   |   |   |   |   |   |   max_b_time > 0.009516: normal (4.0)
+|   |   |   |   |   |   |   mean_f_time > 0.005523: attack (19.0)
+|   |   |   |   std_b_time > 0.006315: attack (901.0/85.0)
+max_b_pkt > 535
+|   min_f_pkt <= 46
+|   |   max_b_pkt <= 4396: attack (12.0)
+|   |   max_b_pkt > 4396: normal (79.0/5.0)
+|   min_f_pkt > 46: normal (2057.0/7.0)
+
+Number of Leaves  : 	473
+
+Size of the tree : 	564
+
+=== Dedicated test set ===
+=== Summary of J48===
+
+Correctly Classified Instances        1647               54.9183 %
+Incorrectly Classified Instances      1352               45.0817 %
+Kappa statistic                          0.0982
+Mean absolute error                      0.452 
+Root mean squared error                  0.6697
+Relative absolute error                 90.3987 %
+Root relative squared error            133.9368 %
+Total Number of Instances             2999     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.308    0.210    0.595      0.308    0.406      0.112    0.536     0.531     normal
+                 0.790    0.692    0.533      0.790    0.637      0.112    0.536     0.517     attack
+Weighted Avg.    0.549    0.451    0.564      0.549    0.521      0.112    0.536     0.524     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+  462 1037 |    a = normal
+  315 1185 |    b = attack

@@ -42,7 +42,7 @@ public final class SystemTrain {
       
       //We just arbitrarily get the first pfL for its randomSeed
       //todo make this not the case (this looks awful)
-      this.db.insertMainTable(sp, pfL.get(0).getRANDOM_SEED());
+      this.db.insertMainTable(sp, PreprocessFile.RANDOM_SEED);
 
       String combinedPath = DirectoryConstants.FORMATTED_DIR + FileNameConstants.COMBINED;
       createCombinedData(

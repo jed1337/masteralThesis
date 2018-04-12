@@ -1,0 +1,81 @@
+=== Classifier ===
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: normal, attack
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.979  * (normalized) duration
+ +      -0.4652 * (normalized) cof=N/A
+ +       0.4913 * (normalized) cof=2
+ +      -0      * (normalized) cof=4
+ +      -1      * (normalized) cof=17
+ +       0      * (normalized) cof=18
+ +       0      * (normalized) cof=19
+ +      -0      * (normalized) cof=22
+ +      -0.7192 * (normalized) cof=27
+ +       0.1505 * (normalized) cof=29
+ +       0.3131 * (normalized) cof=30
+ +       1.2295 * (normalized) cof=31
+ +      -0.0092 * (normalized) total_f_packets
+ +      -0.2242 * (normalized) total_b_packets
+ +      -0.0141 * (normalized) total_f_bytes
+ +      -0.8209 * (normalized) total_b_bytes
+ +      -0.006  * (normalized) pps_f
+ +      -0.0304 * (normalized) pps_b
+ +      -0.0088 * (normalized) bps_f
+ +      -0.3455 * (normalized) bps_b
+ +       0.1179 * (normalized) rfb_packets
+ +       0.2437 * (normalized) rfb_bytes
+ +      -1.1174 * (normalized) min_f_pkt
+ +      -0.5046 * (normalized) mean_f_pkt
+ +      -0.3159 * (normalized) max_f_pkt
+ +       0.5082 * (normalized) std_f_pkt
+ +       0.0123 * (normalized) min_b_pkt
+ +      -0.1105 * (normalized) mean_b_pkt
+ +      -2.1904 * (normalized) max_b_pkt
+ +      -1.378  * (normalized) std_b_pkt
+ +      -0.461  * (normalized) min_f_time
+ +      -0.2721 * (normalized) mean_f_time
+ +      -0.8268 * (normalized) max_f_time
+ +      -0.3895 * (normalized) std_f_time
+ +      -0      * (normalized) min_b_time
+ +       0.4889 * (normalized) mean_b_time
+ +       1.1041 * (normalized) max_b_time
+ +       1.0568 * (normalized) std_b_time
+ +       0.1077 * (normalized) psh_f_cnt
+ +       0.4652 * (normalized) urg_f_cnt
+ +      -0.2185 * (normalized) psh_b_cnt
+ +      -0.0261 * (normalized) urg_b_cnt
+ +       1.6804
+
+Number of kernel evaluations: 1146597 (62.508% cached)
+
+
+=== Dedicated test set ===
+=== Summary of SMO===
+
+Correctly Classified Instances        2957               98.5667 %
+Incorrectly Classified Instances        43                1.4333 %
+Kappa statistic                          0.9713
+Mean absolute error                      0.0143
+Root mean squared error                  0.1197
+Relative absolute error                  2.8667 %
+Root relative squared error             23.9444 %
+Total Number of Instances             3000     
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.995    0.023    0.977      0.995    0.986      0.971    0.986     0.975     normal
+                 0.977    0.005    0.995      0.977    0.986      0.971    0.986     0.983     attack
+Weighted Avg.    0.986    0.014    0.986      0.986    0.986      0.971    0.986     0.979     
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1492    8 |    a = normal
+   35 1465 |    b = attack
